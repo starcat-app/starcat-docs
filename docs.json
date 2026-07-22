@@ -362,24 +362,176 @@
                 "group": "Product",
                 "pages": [
                   "en/changelog",
-                  "en/support/feedback",
-                  "en/subscribe/plan-comparison"
+                  "en/support/feedback"
                 ]
               },
               {
-                "group": "Core",
+                "group": "Main interface",
                 "pages": [
                   "en/main-interface/overview",
+                  "en/main-interface/sidebar",
+                  "en/main-interface/repo-list",
+                  "en/main-interface/repo-detail",
+                  "en/main-interface/repo-health",
+                  "en/main-interface/toolbar"
+                ]
+              },
+              {
+                "group": "Manage Stars",
+                "pages": [
+                  "en/manage-stars/tags",
+                  "en/manage-stars/notes-and-status",
+                  "en/manage-stars/batch-operations",
+                  "en/manage-stars/smart-collections",
+                  "en/manage-stars/github-lists"
+                ]
+              },
+              {
+                "group": "Search",
+                "pages": [
+                  "en/search/global-search",
+                  "en/search/semantic-search",
+                  "en/search/external-search",
+                  "en/search/filters",
+                  "en/search/search-center"
+                ]
+              },
+              {
+                "group": "AI features",
+                "pages": [
                   "en/ai-features/overview",
-                  "en/knowledge-base/overview",
+                  "en/ai-features/chat",
+                  "en/ai-features/summary",
+                  "en/ai-features/tag-recommendation",
+                  "en/ai-features/readme-translation",
+                  "en/ai-features/personal-notes",
+                  "en/ai-features/auto-tidy",
+                  "en/ai-features/configuration"
+                ]
+              },
+              {
+                "group": "Discover",
+                "pages": [
+                  "en/discover/explore/overview",
+                  "en/discover/trending/trending",
+                  "en/discover/explore/hot-and-new",
+                  "en/discover/weekly/weekly",
+                  "en/discover/activity/activity",
+                  "en/discover/explore/similar-repos"
+                ]
+              },
+              {
+                "group": "Release subscriptions",
+                "pages": [
+                  "en/release/subscription",
+                  "en/release/timeline",
+                  "en/release/notifications",
+                  "en/release/assets-download",
+                  "en/release/background-refresh"
+                ]
+              },
+              {
+                "group": "Pro",
+                "pages": [
+                  "en/subscribe/plan-comparison",
+                  "en/subscribe/purchase",
+                  "en/subscribe/license",
+                  "en/subscribe/byok",
+                  "en/subscribe/restore"
+                ]
+              },
+              {
+                "group": "Share & export",
+                "pages": [
+                  "en/share-export/share-cards",
+                  "en/share-export/export-files",
+                  "en/share-export/data-import",
+                  "en/share-export/data-export"
+                ]
+              },
+              {
+                "group": "Browser plugins",
+                "pages": [
+                  "en/browser-plugin/chrome",
+                  "en/browser-plugin/safari",
+                  "en/browser-plugin/features"
+                ]
+              },
+              {
+                "group": "Settings",
+                "pages": [
+                  "en/settings/general",
+                  "en/settings/list-preferences",
+                  "en/settings/ai",
+                  "en/settings/mcp",
+                  "en/settings/integrations",
+                  "en/settings/external-search",
+                  "en/settings/sync",
+                  "en/settings/shortcuts",
+                  "en/settings/storage",
+                  "en/settings/diagnostics",
+                  "en/settings/about"
+                ]
+              },
+              {
+                "group": "Data & privacy",
+                "pages": [
+                  "en/data-privacy/storage",
+                  "en/data-privacy/backup",
+                  "en/data-privacy/privacy",
+                  "en/data-privacy/telemetry"
+                ]
+              },
+              {
+                "group": "FAQ",
+                "pages": [
+                  "en/faq/login",
+                  "en/faq/sync",
+                  "en/faq/ai",
+                  "en/faq/other",
                   "en/faq/more-docs"
+                ]
+              },
+              {
+                "group": "Starcat CLI",
+                "pages": [
+                  "en/cli/installation",
+                  "en/cli/usage",
+                  "en/cli/skill"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "RAG workspace",
+            "groups": [
+              {
+                "group": "Knowledge base",
+                "pages": [
+                  "en/knowledge-base/overview",
+                  "en/knowledge-base/adding-repos",
+                  "en/knowledge-base/rag-workspace",
+                  "en/knowledge-base/session-management",
+                  "en/knowledge-base/index-management",
+                  "en/knowledge-base/citations"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Agent workspace",
+            "groups": [
+              {
+                "group": "Agent workspace",
+                "pages": [
+                  "en/agent-workspace/overview"
                 ]
               }
             ]
           }
         ],
         "banner": {
-          "content": "Starcat is on the [Mac App Store](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) and at [starcat.ink](https://starcat.ink). Full topic coverage is also available in [Chinese](/).",
+          "content": "Starcat is on the [Mac App Store](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) and at [starcat.ink](https://starcat.ink).",
           "dismissible": true,
           "type": "info"
         },
@@ -447,29 +599,50 @@
                   "href": "/en/getting-started/github-connection"
                 },
                 {
-                  "label": "More docs",
-                  "href": "/en/faq/more-docs"
+                  "label": "FAQ",
+                  "href": "/en/faq/login"
                 }
               ]
             },
             {
-              "header": "Support",
+              "header": "Features",
               "items": [
                 {
-                  "label": "Feedback",
-                  "href": "/en/support/feedback"
+                  "label": "Main interface",
+                  "href": "/en/main-interface/overview"
+                },
+                {
+                  "label": "RAG workspace",
+                  "href": "/en/knowledge-base/overview"
+                },
+                {
+                  "label": "AI features",
+                  "href": "/en/ai-features/overview"
+                },
+                {
+                  "label": "CLI / MCP",
+                  "href": "/en/cli/installation"
+                }
+              ]
+            },
+            {
+              "header": "Download & support",
+              "items": [
+                {
+                  "label": "Mac App Store",
+                  "href": "https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12"
+                },
+                {
+                  "label": "Direct download",
+                  "href": "https://starcat.ink"
                 },
                 {
                   "label": "Privacy",
                   "href": "https://starcat.ink/privacy"
                 },
                 {
-                  "label": "Email",
-                  "href": "mailto:dong4j@gmail.com"
-                },
-                {
-                  "label": "Chinese docs",
-                  "href": "/"
+                  "label": "Feedback",
+                  "href": "/en/support/feedback"
                 }
               ]
             }

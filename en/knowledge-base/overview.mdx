@@ -1,40 +1,60 @@
 ---
-title: "RAG workspace"
-description: "Local-first knowledge base Q&A with citations"
+title: "Knowledge base overview"
+description: "Stars vs knowledge base boundaries, capability map, and onboarding path"
 ---
 
-## What it is
+## What the knowledge base is
 
-The **RAG workspace** answers questions against repositories you **ingest** into the knowledge base—not against every Star automatically.
+The knowledge base is a **curated set of repositories you explicitly ingest** for retrieval and Q&A in the RAG workspace. It is not the same as “all Stars.”
 
-- Local-first indexing and retrieval
-- Streaming answers with **citations / evidence**
-- Sessions, groups, pins, history, drafts
-- Hybrid retrieval (vectors, keywords, metadata, optional external / live GitHub context)
+## Stars vs knowledge base
 
-## Prerequisites
+| | Stars | Knowledge base |
+|--|-------|----------------|
+| Source | Synced from GitHub stars | Marked for ingest in Starcat |
+| Scale | Can reach thousands | Curated (often dozens to ~200) |
+| List search | ✅ | ✅ (can also limit to knowledge) |
+| Default RAG scope | ❌ | ✅ ingested repos only |
+| Typical index | FTS, etc. | Chunks + keywords + vectors |
 
-- **Pro** entitlement
-- BYOK (or configured AI) under Settings → AI
-- At least one ingested repository (heart / ingest from Stars)
+Independence (remember this):
 
-## Mental model
+- Starring **does not** auto-ingest  
+- Unstarring **does not** auto-remove from the knowledge base  
+- Not starred but ingested: still searchable; you can also [subscribe to Releases](/en/release/subscription)  
 
-| Concept | Meaning |
-|---------|---------|
-| Stars | Your GitHub starred list |
-| Knowledge base | Explicitly ingested subset used for RAG |
-| RAG workspace | Dedicated window / tab for grounded chat |
+## What you need
 
-## Chinese deep-dive
+1. [Pro](/en/subscribe/plan-comparison)  
+2. Chat + **Embedding** → [AI configuration](/en/ai-features/configuration)  
+3. Some ingested repositories → [Adding repos](/en/knowledge-base/adding-repos)  
 
-- [知识库概述](/knowledge-base/overview)
-- [添加仓库](/knowledge-base/adding-repos)
-- [RAG 工作台](/knowledge-base/rag-workspace)
-- [会话管理](/knowledge-base/session-management)
-- [索引管理](/knowledge-base/index-management)
-- [引用](/knowledge-base/citations)
+## Capability map
 
-## Not shipped
+| I want to… | Go to |
+|------------|-------|
+| Add repos to the knowledge base | [Adding repos](/en/knowledge-base/adding-repos) |
+| Start asking questions | [RAG workspace](/en/knowledge-base/rag-workspace) (⇧⌘K) |
+| Inspect cited source text | [Citations & evidence](/en/knowledge-base/citations) |
+| Manage session history | [Session management](/en/knowledge-base/session-management) |
+| Fix low index coverage | [Index management](/en/knowledge-base/index-management) |
 
-CloudKit sync of user annotations and JSON import/export are **not** documented as available yet.
+## Recommended onboarding path
+
+<Steps>
+  <Step title="Ingest 20–50 repos">Prioritize repos you actively use or consult often.</Step>
+  <Step title="Confirm Embedding and coverage">[Settings → AI](/en/settings/ai) + workspace Index tab.</Step>
+  <Step title="Try @ one repo first">Verify citations open correctly.</Step>
+  <Step title="Then ask cross-repo questions">Remove overly narrow @, or @ two or three repos to compare.</Step>
+</Steps>
+
+## Entry points
+
+- Sidebar Manage → Knowledge base / Library  
+- Toolbar “Knowledge base Q&A” or default **⇧⌘K**  
+- Knowledge-related Smart Collections  
+
+## Related
+
+- [Semantic search](/en/search/semantic-search) (list-level vector retrieval, not workspace Q&A)
+- [AI overview](/en/ai-features/overview)

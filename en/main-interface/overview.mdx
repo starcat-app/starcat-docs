@@ -1,32 +1,63 @@
 ---
-title: "Main interface"
-description: "Three-column layout: sidebar, list, and detail"
+title: "Interface overview"
+description: "Three-column layout, top-level navigation, and separate windows"
 ---
 
-## Layout
+## Three-column layout
 
-Starcat’s main window is a classic **three-column** macOS workspace:
+Starcat’s main window uses the familiar macOS three-column structure:
 
-| Column | Role |
-|--------|------|
-| **Left** | Navigation: Manage, Discover, Releases, Knowledge, settings entry points |
-| **Center** | Repository list for the current filter / collection |
-| **Right** | Detail: metadata, README, notes, tags, health, AI entry points |
+```
+┌────────────┬─────────────────────┬──────────────────────┐
+│  Sidebar   │  List + toolbar     │  Detail panel        │
+│            │  Repo / Activity    │  README · metadata   │
+└────────────┴─────────────────────┴──────────────────────┘
+```
 
-## Everyday flow
+| Column | Role | Docs |
+|--------|------|------|
+| Left | Switch Manage / Discover / Activity; sub-entries for tags, collections, and more | [Sidebar](/en/main-interface/sidebar) |
+| Center | Repos or activity for the current category; page toolbar on top | [Repository list](/en/main-interface/repo-list), [Toolbar](/en/main-interface/toolbar) |
+| Right | README, tags, notes, AI, Health, and more for the selection | [Repository detail](/en/main-interface/repo-detail) |
 
-1. Pick a sidebar section (e.g. All Stars, a tag, Untagged)
-2. Scan / search the list (⌘F for list search; ⌘K for Search Center)
-3. Select a repo and read the README; add tags or status as needed
+As the window narrows, the detail column may collapse or the list may take priority (actual behavior follows adaptive layout).
 
-## Related Chinese guides
+## Three top-level sidebar areas
 
-- [侧边栏](/main-interface/sidebar)
-- [仓库列表](/main-interface/repo-list)
-- [仓库详情](/main-interface/repo-detail)
-- [Repo Health](/main-interface/repo-health)
-- [工具栏](/main-interface/toolbar)
+| Area | What it solves |
+|------|----------------|
+| **Manage** | Organize Stars you already follow / knowledge base / tags / collections / Release timeline |
+| **Discover** | Find projects not yet in your library (Trending, Weekly, Hot, and more) |
+| **Activity** | Feed, announcements, subscribed Release stream, and related |
 
-## Next
+Discover modes: [Discover overview](/en/discover/explore/overview).
 
-[Quickstart](/en/getting-started/quickstart) · [AI](/en/ai-features/overview) · [RAG](/en/knowledge-base/overview)
+## Separate windows
+
+Some capabilities work better pulled out beside the main window:
+
+| Window | How to open (common) | Docs |
+|--------|----------------------|------|
+| Repo AI | Detail overlay → separate window; default **⇧⌘A** | [AI chat](/en/ai-features/chat) |
+| RAG workspace | Toolbar / default **⇧⌘K** | [RAG workspace](/en/knowledge-base/rag-workspace) |
+| Agent workspace | Dedicated entry | [Agent (Beta)](/en/agent-workspace/overview) |
+
+## Appearance and density
+
+In [General settings](/en/settings/general) you can adjust:
+
+- UI language (Chinese / English)
+- Theme (System / Light / Dark)
+- Font scale, list density
+- Reduce motion
+
+## Related
+
+- [Quickstart](/en/getting-started/quickstart)
+- [Repo Health](/en/main-interface/repo-health)
+
+## Next steps
+
+- First time: follow [Quickstart](/en/getting-started/quickstart) for sync and triage  
+- Daily triage: start from [Sidebar](/en/main-interface/sidebar) Smart Collections / Untagged  
+- For AI: begin with [AI overview](/en/ai-features/overview)
