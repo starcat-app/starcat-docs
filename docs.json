@@ -1,68 +1,180 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Starcat",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#007AFF",
+    "light": "#0A84FF",
+    "dark": "#0057D9"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "使用指南",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "入门指南",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "getting-started/welcome",
+              "getting-started/installation",
+              "getting-started/quickstart",
+              "getting-started/github-connection"
             ]
           },
           {
-            "group": "Customization",
+            "group": "主界面",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "main-interface/overview",
+              "main-interface/sidebar",
+              "main-interface/repo-list",
+              "main-interface/repo-detail",
+              "main-interface/toolbar"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "管理 Stars",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "manage-stars/tags",
+              "manage-stars/notes-and-status",
+              "manage-stars/batch-operations",
+              "manage-stars/smart-collections",
+              "manage-stars/github-lists"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "搜索与发现",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "search/global-search",
+              "search/semantic-search",
+              "search/external-search",
+              "search/filters",
+              "search/search-center"
+            ]
+          },
+          {
+            "group": "AI 功能",
+            "pages": [
+              "ai-features/overview",
+              "ai-features/chat",
+              "ai-features/summary",
+              "ai-features/tag-recommendation",
+              "ai-features/readme-translation",
+              "ai-features/personal-notes",
+              "ai-features/configuration"
+            ]
+          },
+          {
+            "group": "发现与探索",
+            "pages": [
+              "discover/explore/overview",
+              "discover/trending/trending",
+              "discover/explore/hot-and-new",
+              "discover/weekly/weekly",
+              "discover/activity/activity",
+              "discover/explore/similar-repos"
+            ]
+          },
+          {
+            "group": "Release 订阅",
+            "pages": [
+              "release/subscription",
+              "release/timeline",
+              "release/notifications",
+              "release/assets-download",
+              "release/background-refresh"
+            ]
+          },
+          {
+            "group": "Pro 订阅",
+            "pages": [
+              "subscribe/plan-comparison",
+              "subscribe/purchase",
+              "subscribe/license",
+              "subscribe/byok",
+              "subscribe/restore"
+            ]
+          },
+          {
+            "group": "分享与导出",
+            "pages": [
+              "share-export/share-cards",
+              "share-export/export-files",
+              "share-export/data-import",
+              "share-export/data-export"
+            ]
+          },
+          {
+            "group": "浏览器插件",
+            "pages": [
+              "browser-plugin/chrome",
+              "browser-plugin/safari",
+              "browser-plugin/features"
+            ]
+          },
+          {
+            "group": "设置",
+            "pages": [
+              "settings/general",
+              "settings/list-preferences",
+              "settings/sync",
+              "settings/ai",
+              "settings/external-search",
+              "settings/shortcuts",
+              "settings/storage",
+              "settings/about"
+            ]
+          },
+          {
+            "group": "数据与隐私",
+            "pages": [
+              "data-privacy/storage",
+              "data-privacy/backup",
+              "data-privacy/privacy",
+              "data-privacy/telemetry"
+            ]
+          },
+          {
+            "group": "常见问题",
+            "pages": [
+              "faq/login",
+              "faq/sync",
+              "faq/ai",
+              "faq/other"
+            ]
+          },
+          {
+            "group": "Starcat CLI",
+            "pages": [
+              "cli/installation",
+              "cli/usage"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "知识库 RAG",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "知识库",
             "pages": [
-              "api-reference/introduction"
+              "knowledge-base/overview",
+              "knowledge-base/adding-repos",
+              "knowledge-base/rag-workspace",
+              "knowledge-base/session-management",
+              "knowledge-base/index-management",
+              "knowledge-base/citations"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Agent 工作台",
+        "groups": [
           {
-            "group": "Endpoint examples",
+            "group": "Agent 工作台",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "agent-workspace/overview"
             ]
           }
         ]
@@ -71,14 +183,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "GitHub",
+          "href": "https://github.com/starcat-app",
+          "icon": "github"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "官方网站",
+          "href": "https://starcat.ink",
+          "icon": "globe"
         }
       ]
     }
@@ -90,33 +202,29 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "支持",
+        "href": "mailto:dong4j@gmail.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "下载 Starcat",
+      "href": "https://starcat.ink"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "claude",
+      "cursor",
+      "mcp",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/starcat-app"
     }
   }
 }

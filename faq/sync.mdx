@@ -1,0 +1,37 @@
+---
+title: "同步问题"
+description: "Stars 同步相关常见问题"
+---
+
+## 同步问题
+
+<AccordionGroup>
+  <Accordion title="同步失败怎么办？">
+    1. 检查 GitHub 是否可达（访问 github.com）
+    2. 点击工具栏同步按钮手动重试
+    3. 检查 Rate Limit：如果触发了 API 限制，Starcat 会自动退避并显示倒计时
+    4. 尝试重启应用
+  </Accordion>
+  <Accordion title="Rate Limit 是什么？">
+    GitHub 对 API 请求有频率限制。Starcat 会自动处理 Rate Limit：
+    - 检测到限制后自动暂停
+    - 显示距离重置的倒计时
+    - 重置时间到达后自动恢复
+  </Accordion>
+  <Accordion title="新 Star 的仓库没出现？">
+    增量同步只检测变化的页。如果新 Star 的仓库在已有页面中，应该被增量同步检测到。
+    
+    手动点击同步按钮触发完整检查，或等待后台定时同步。
+  </Accordion>
+  <Accordion title="Star 数量与 GitHub 不一致？">
+    可能的原因：
+    - 同步过程被中断
+    - 某些仓库已被删除或设为私有
+    - 本地数据未完全刷新
+
+    尝试手动同步，或登出再登录触发全量同步。
+  </Accordion>
+  <Accordion title="取消 Star 后本地没更新？">
+    Starcat 调用 Unstar API 后会立即标记本地仓库为 unstarred。如果远端状态不一致，尝试手动同步。
+  </Accordion>
+</AccordionGroup>

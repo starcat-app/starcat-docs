@@ -1,0 +1,46 @@
+---
+title: "数据存储说明"
+description: "Starcat 的数据存储方式与位置"
+---
+
+## 数据存储说明
+
+理解 Starcat 如何存储你的数据，有助于你做出明智的隐私决策。
+
+## 存储架构
+
+### 本地 SQLite
+
+所有数据以 SQLite 数据库格式存储在本地：
+
+| 数据类型 | 存储位置 | 可重建 |
+|----------|----------|--------|
+| 仓库缓存（元数据、README） | Application Support/Starcat | ✅ 是 |
+| 用户数据（标签、笔记、状态） | Application Support/Starcat | ❌ 否 |
+| AI 对话历史 | Application Support/Starcat | ✅ 是（但如果需要可备份） |
+| AI 摘要缓存 | Application Support/Starcat | ✅ 是 |
+| 设置偏好 | UserDefaults | ✅ 是 |
+
+### 数据库技术
+
+- 使用 GRDB.swift（SQLite 封装）
+- FTS5 全文搜索引擎
+- 数据库迁移走版本化 Migration 机制
+
+## Keychain 存储
+
+以下敏感信息存储在 macOS Keychain 中（AES-GCM 加密）：
+
+- GitHub OAuth Token
+- GitHub PAT Token
+- AI Provider API Key
+
+## CloudKit (Pro)
+
+Pro 用户可选择将用户数据同步到 iCloud。详见 [备份与恢复](/data-privacy/backup)。
+
+## 数据隔离
+
+- 每个 GitHub 账号的数据完全隔离
+- 切换账号不会丢失前一个账号的数据
+- App Store 版本在沙盒容器中运行

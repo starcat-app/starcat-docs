@@ -1,0 +1,66 @@
+---
+title: "AI 功能概览"
+description: "Starcat 的 AI 能力一览与使用前提"
+---
+
+## AI 功能概述
+
+Starcat 集成了多种 AI 能力，帮助你更高效地理解和管理 GitHub Stars。
+
+## 功能列表
+
+| 功能 | 说明 | 需要 Pro |
+|------|------|----------|
+| **AI 摘要** | 生成仓库的结构化中文摘要 | ✅ |
+| **AI 标签推荐** | 自动推荐 3-8 个标签 | ✅ |
+| **README 翻译** | 将 README 翻译为中文或其他语言 | ✅ |
+| **AI 对话** | 与仓库对话，提问和探索 | ✅ |
+| **语义搜索** | 自然语言搜索 Stars | ✅ |
+| **RAG 知识库** | 知识库问答系统 | ✅ |
+| **AI 个人笔记** | 自动生成仓库学习笔记 | ✅ |
+
+## 使用前提
+
+使用 AI 功能需要：
+
+1. **Pro 订阅** — 解锁全量 AI 功能
+2. **AI Provider 配置** — 设置 AI 服务提供商和 API Key
+
+## 配置方式
+
+两种配置模式：
+
+### BYOK（自带 Key）
+
+用自己的 AI Provider API Key：
+
+- OpenAI / OpenAI-compatible
+- DeepSeek
+- Google Gemini
+- OpenRouter
+- Ollama（本地模型）
+
+> API Key 通过 AES-GCM 加密存储在本地 Keychain 中。
+
+### 自建代理
+
+使用自己的云服务器作为 AI 代理，聚合多个 Provider。
+
+## AI 保守策略
+
+Starcat 的 AI 遵循保守策略：
+
+- **标签推荐**：用户确认后才写入
+- **笔记生成**：用户确认后才保存
+- **AI 不会自动修改你的数据**
+
+## 下一步
+
+<CardGroup cols={2}>
+  <Card title="配置 AI" icon="gear" href="/ai-features/configuration">
+    设置 Provider 和 API Key
+  </Card>
+  <Card title="AI 对话" icon="message" href="/ai-features/chat">
+    与仓库对话
+  </Card>
+</CardGroup>

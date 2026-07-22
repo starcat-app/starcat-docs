@@ -1,0 +1,43 @@
+---
+title: "AI 问题"
+description: "AI 功能常见问题排查"
+---
+
+## AI 问题
+
+<AccordionGroup>
+  <Accordion title="AI 摘要生成失败？">
+    常见原因：
+    1. **缺少 AI Provider**：确认已在 设置 → AI 中配置至少一个 Provider
+    2. **API Key 无效**：使用「测试」按钮验证配置
+    3. **配额耗尽**：检查 API Key 的配额余额
+    4. **网络问题**：确认能访问 API 端点
+    5. **模型不支持**：尝试更换模型
+  </Accordion>
+  <Accordion title="API Key 配置后仍提示需要 Pro？">
+    AI 功能需要 Pro 订阅才能使用。BYOK 模式的前提是已经是 Pro 用户。
+    
+    如果你已经是 Pro 用户但仍有问题，尝试：
+    1. 恢复购买（设置 → Pro → 恢复购买）
+    2. 重启应用
+  </Accordion>
+  <Accordion title="语义搜索没结果？">
+    可能原因：
+    - 尚未构建 Embedding 索引（新用户的索引需要后台构建）
+    - README 较短的仓库可能没有足够的语义信息
+    - 尝试使用关键词搜索作为替代
+  </Accordion>
+  <Accordion title="AI 回答质量不好？">
+    建议：
+    - 使用能力更强的模型（Claude Sonnet / GPT-4o）
+    - 确保知识库中有足够的仓库内容
+    - 尝试更具体的问题
+    - 在 AI 设置中调整提示词和检索参数
+  </Accordion>
+  <Accordion title="RAG 检索不到我知识库里的内容？">
+    1. 确认仓库已入库且索引完成（知识库浏览器中查看状态）
+    2. 确认问题使用了相关的关键词
+    3. 尝试 @ 指定具体仓库缩小范围
+    4. 检查 Embedding 索引是否构建完成
+  </Accordion>
+</AccordionGroup>

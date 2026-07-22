@@ -1,0 +1,84 @@
+---
+title: "GitHub 账号连接"
+description: "三种登录方式、权限说明与多账号支持"
+---
+
+## 登录方式
+
+Starcat 支持三种方式连接 GitHub 账号：
+
+### Web Application Flow（推荐）
+
+标准的 OAuth 流程，通过浏览器完成授权：
+
+1. 在 Starcat 登录页点击「使用 GitHub 登录」
+2. 浏览器打开 GitHub 授权页面
+3. 登录 GitHub 并授权
+4. 自动跳转回 Starcat，完成登录
+
+<Tip>这是最安全的方式，Starcat 不会接触到你的 GitHub 密码。</Tip>
+
+### Personal Access Token (PAT)
+
+适合高级用户，手动创建 Token 登录：
+
+<Steps>
+  <Step title="创建 PAT">
+    前往 GitHub [Settings → Developer settings → Personal access tokens](https://github.com/settings/tokens)，创建一个 Fine-grained token。
+  </Step>
+  <Step title="设置权限">
+    Token 需要以下权限：
+    - `public_repo`：读取 Stars 和公开仓库信息
+    - `read:user`：读取用户信息
+  </Step>
+  <Step title="粘贴 Token">
+    在 Starcat 登录页展开「其他登录方式」，粘贴你的 Token 即可。
+  </Step>
+</Steps>
+
+<Warning>
+  PAT 在本地通过 AES-GCM 加密存储。登录成功后你可以删除 GitHub 上的 Token，但下次重新登录时需要重新创建。
+</Warning>
+
+## 权限说明
+
+Starcat 请求的 GitHub 权限及用途：
+
+| 权限 | 用途 |
+|------|------|
+| `read:user` | 读取你的 GitHub 用户名、头像 |
+| `public_repo` | 读取你的 Stars 列表、公开仓库信息 |
+
+> Starcat **不会**读取你的私有仓库、修改你的 Stars、或代表你进行任何操作（取消 Star 除外）。
+
+## 多账号支持
+
+Starcat 支持多个 GitHub 账号：
+
+1. 在侧边栏点击头像 → 「登出」
+2. 使用另一个账号重新登录
+3. 每个账号的数据完全隔离，互不影响
+
+<Note>
+  切换到另一个账号后，本地缓存、标签、笔记等数据保留。切换回来即可继续使用。
+</Note>
+
+## Token 安全
+
+- 所有 Token 通过 **AES-GCM 加密**存储在 macOS Keychain 中
+- Starcat 不会将你的 Token 发送到第三方服务器
+- BYOK 模式的 AI API Key 同样加密存储
+
+## 常见问题
+
+<AccordionGroup>
+  <Accordion title="登录后一直显示「同步中」？">
+    首次同步需要拉取全部 Stars，时间取决于你的 Star 数量（通常 1-5 分钟）。请耐心等待，或检查网络连接。
+  </Accordion>
+  <Accordion title="Token 过期了怎么办？">
+    Starcat 会自动检测 401 错误并提示重新登录。你也可以在侧边栏手动登出再登录。
+  </Accordion>
+  <Accordion title="可以同时登录多个账号吗？">
+    目前 Starcat 同一时间只支持一个账号。切换账号需要先登出。
+  </Accordion>
+</AccordionGroup>

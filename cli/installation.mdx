@@ -1,0 +1,48 @@
+---
+title: "CLI 安装"
+description: "安装 Starcat CLI 命令行工具"
+---
+
+## Starcat CLI
+
+Starcat CLI 是一个命令行工具，让你在终端中查询和管理 Starcat 数据，也可以作为外部 Agent 的 Skill 使用。
+
+## 安装
+
+### 通过 Homebrew
+
+```bash
+brew install starcat-app/tap/starcat
+```
+
+### 从源码安装
+
+```bash
+git clone https://github.com/starcat-app/starcat-cli.git
+cd starcat-cli
+make install
+```
+
+## 验证安装
+
+```bash
+starcat --version
+```
+
+## 配置
+
+CLI 需要 Starcat 桌面应用提供本地 API 服务：
+
+1. 确保 Starcat 桌面应用正在运行
+2. CLI 自动检测本地服务地址
+3. 首次使用需要授权
+
+<Tip>
+  CLI 通过本地 HTTP 与 Starcat 桌面应用通信，始终在本地网络内完成，不需要外部网络连接。
+</Tip>
+
+## 系统要求
+
+- macOS 15+
+- Starcat 桌面应用已在运行
+- 终端支持

@@ -1,0 +1,32 @@
+---
+title: "Release 通知"
+description: "新版本推送通知"
+---
+
+## Release 通知
+
+当订阅的仓库发布新版本时，Starcat 会通过 macOS 系统通知提醒你。
+
+## 通知方式
+
+- **macOS 推送通知** — 系统级别的横幅提醒
+- **应用内角标** — 侧边栏 Activity 显示未读数量
+
+## 通知内容
+
+每条通知包含：
+- 仓库名称
+- 版本号（Tag Name）
+- Release 标题
+
+点击通知直接跳转到对应 Release 详情。
+
+## 后台轮询
+
+Starcat 在后台定时检查订阅仓库的新 Release：
+
+- 自动轮询间隔可配置
+- 轮询范围：仅扫描已 Star 或已入库的仓库
+- Release 检测使用 GitHub API 的 ETag 缓存
+
+> 未 Star 且未入库的订阅保留但暂停轮询，恢复关联后自动恢复。

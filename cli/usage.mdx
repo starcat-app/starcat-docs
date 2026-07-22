@@ -1,0 +1,69 @@
+---
+title: "CLI 使用指南"
+description: "Starcat CLI 命令参考与 Skill 集成"
+---
+
+## CLI 命令
+
+### 搜索仓库
+
+```bash
+# 按名称搜索
+starcat search "react"
+
+# 按标签搜索
+starcat search --tag iOS
+
+# 按语言搜索
+starcat search --language swift
+```
+
+### 查看仓库信息
+
+```bash
+# 查看仓库详情
+starcat info owner/repo
+
+# 查看仓库笔记
+starcat notes owner/repo
+
+# 查看仓库标签
+starcat tags owner/repo
+```
+
+### 管理操作
+
+```bash
+# 添加标签
+starcat tag add owner/repo --tag "iOS"
+
+# 写入笔记
+starcat note write owner/repo --content "这是一条笔记"
+
+# 查看知识库状态
+starcat library status owner/repo
+```
+
+## Skill 集成
+
+Starcat CLI 配有 `skill.md`，可被 Claude Code、Cursor 等 AI 工具作为 Skill 调用。
+
+安装 Skill：
+
+```bash
+starcat skill install
+```
+
+安装后，AI 工具可以直接通过 Starcat CLI 查询你的 Stars 数据。
+
+## MCP 支持的 AI 工具
+
+以下工具可以直接通过 MCP 协议使用 Starcat：
+
+- Claude Code
+- Cursor
+- VS Code（通过 MCP 插件）
+
+## 更多信息
+
+完整命令参考：`starcat --help`

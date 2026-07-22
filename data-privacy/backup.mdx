@@ -1,0 +1,54 @@
+---
+title: "备份与恢复"
+description: "如何备份 Starcat 数据以及 CloudKit 同步恢复"
+---
+
+## 备份与恢复
+
+保护你的 Starcat 数据，防止意外丢失。
+
+## 备份方式
+
+### CloudKit 同步 (Pro)
+
+最推荐的备份方式：
+
+1. 开启 CloudKit 同步（设置 → 同步）
+2. 数据自动同步到 iCloud
+3. 在新设备上用同一 Apple ID 登录即可恢复
+
+### 手动备份
+
+将以下目录复制到安全位置：
+
+```
+~/Library/Application Support/Starcat/
+```
+
+<Note>
+  App Store 版本的沙盒路径不同，可通过 Finder 中的「存储管理」找到数据库路径。
+</Note>
+
+## 恢复方式
+
+### CloudKit 恢复
+
+1. 在新设备安装 Starcat
+2. 用同一 Apple ID 登录
+3. 登录 GitHub 账号
+4. CloudKit 自动拉取用户数据
+
+### 手动恢复
+
+1. 将备份的 Application Support 目录复制回原位
+2. 重启 Starcat
+
+## 什么数据需要备份
+
+| 优先级 | 数据 | 原因 |
+|--------|------|------|
+| **高** | 标签、笔记、状态 | 不可重建，丢失无法恢复 |
+| **中** | AI 对话历史 | 有价值但可接受丢失 |
+| **低** | README 缓存、图片缓存 | 可随时从 GitHub 重建 |
+
+> 仓库 Stars 列表始终与 GitHub 同步，无需额外备份。

@@ -1,0 +1,42 @@
+---
+title: "BYOK 模式"
+description: "自带 API Key，使用自己的 AI Provider"
+---
+
+## BYOK（Bring Your Own Key）
+
+BYOK 模式允许 Pro 用户使用自己的 AI Provider API Key，而不使用 Starcat 的 AI 代理服务。
+
+## 优势
+
+- **省钱**：使用你自己的 API 配额，不额外收费
+- **隐私**：AI 请求直接发送到你配置的 Provider，不经过 Starcat 服务器
+- **灵活**：自由选择和切换 AI Provider
+- **配额透明**：完全由你自己的 API 账户控制
+
+## 支持的 Provider
+
+| Provider | 说明 |
+|----------|------|
+| OpenAI | 直接调用 OpenAI API |
+| OpenAI-compatible | 兼容 OpenAI 格式的第三方服务 |
+| DeepSeek | 国产大模型 |
+| Google Gemini | Google 的 Gemini 系列 |
+| OpenRouter | 聚合多个模型的路由 |
+| Ollama | 本地运行的开源模型 |
+
+## 配置
+
+1. 确保已是 Pro 用户
+2. 前往 设置 → AI
+3. 点击「+」添加 Provider
+4. 输入 API Key 和配置
+5. 测试连接
+
+详见 [AI 配置](/ai-features/configuration)。
+
+## 安全性
+
+- API Key 通过 AES-GCM 加密存储在 macOS Keychain
+- 请求直接到你配置的 API 端点
+- Starcat 不会缓存或转发你的 API Key

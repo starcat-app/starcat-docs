@@ -1,0 +1,40 @@
+---
+title: "语义搜索"
+description: "基于 AI 的自然语言语义搜索"
+---
+
+## 语义搜索 (Pro)
+
+语义搜索允许你用自然语言描述你想要找的项目，而不局限于关键词匹配。
+
+### 示例
+
+| 关键词搜索 | 语义搜索 |
+|------------|----------|
+| `python http server` | `用来快速搭建 HTTP 服务的 Python 库` |
+| `react state` | `React 状态管理库，支持中间件` |
+| `cli tool` | `命令行下的 JSON 处理工具` |
+
+## 工作原理
+
+1. 你的查询文本通过 AI Provider 转换为向量 (Embedding)
+2. 与本地缓存的仓库向量进行余弦相似度计算
+3. 返回最相关的结果
+
+## 如何启用
+
+1. 配置 AI Provider（详见 [AI 配置](/ai-features/configuration)）
+2. 在搜索框切换模式为「语义搜索」
+3. 输入自然语言查询
+
+<Note>
+  语义搜索需要 Pro 订阅。非 Pro 用户可以看到语义搜索选项但带 🔒 标识，点击会弹出升级提示。
+</Note>
+
+## 混合搜索
+
+Starcat 支持 BM25 关键词搜索 + Embedding 语义搜索的混合模式：
+
+- 两种搜索独立执行
+- 使用 RRF (Reciprocal Rank Fusion) 合并排序
+- 兼顾精确匹配和语义理解
