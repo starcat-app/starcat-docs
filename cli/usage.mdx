@@ -1,18 +1,18 @@
 ---
-title: "CLI 使用指南"
-description: "常用命令、统计、写入 --apply、MCP 与更新"
+title: "CLI usage guide"
+description: "Common commands, stats, writes with --apply, MCP, and updates"
 ---
 
-## 命令风格
+## Command style
 
-| 类型 | 输出 | 例子 |
-|------|------|------|
-| 运维/友好 | 文本 | `help` `doctor` `stats` `pair` |
-| 数据 | JSON | `capabilities` `repo` `tags` |
+| Type | Output | Examples |
+|------|--------|----------|
+| Ops / friendly | Text | `help` `doctor` `stats` `pair` |
+| Data | JSON | `capabilities` `repo` `tags` |
 
-完整列表以 `starcat help` 与 [README](https://github.com/starcat-app/starcat-cli/blob/main/README-ZH.md) 为准。
+Full list: `starcat help` and the [README](https://github.com/starcat-app/starcat-cli/blob/main/README-ZH.md).
 
-## 只读常用
+## Common read-only commands
 
 ```bash
 starcat capabilities
@@ -27,21 +27,21 @@ starcat repo summary owner/repo
 starcat tags list
 ```
 
-`stats` 是本地聚合只读视图（Star / 知识库 / AI token / RAG 等），便于巡检。
+`stats` is a local read-only aggregate (Stars / knowledge base / AI tokens / RAG, etc.) for quick inspection.
 
-## 写入（默认 dry-run）
+## Writes (dry-run by default)
 
 ```bash
-# 预览，不写入
+# Preview only — no write
 printf '%s' 'A private note' | starcat repo note set owner/repo
 
-# 真正写入
+# Actually write
 printf '%s' 'A private note' | starcat repo note set owner/repo --apply
 starcat repo tags add owner/repo Swift macOS --apply
 starcat repo status set owner/repo using --apply
 ```
 
-App 侧写权限开关关掉时，即使 `--apply` 也会失败。见 [MCP 设置](/settings/mcp)。
+If write permission switches are off in the app, `--apply` still fails. See [MCP settings](/settings/mcp).
 
 ## MCP
 
@@ -49,20 +49,20 @@ App 侧写权限开关关掉时，即使 `--apply` 也会失败。见 [MCP 设�
 starcat mcp
 ```
 
-在 Cursor / Claude Code / Codex 等里注册 MCP server：`command=starcat`，`args=["mcp"]`。  
-协议消息只走 stdout；诊断走 stderr。
+Register as an MCP server in Cursor / Claude Code / Codex: `command=starcat`, `args=["mcp"]`.  
+Protocol messages use stdout only; diagnostics go to stderr.
 
-## 更新
+## Updates
 
 ```bash
 starcat update
-# 或
+# or
 brew update && brew upgrade starcat
 ```
 
-交互式终端最多约每天提示一次新版本；`starcat mcp` 管道不会打印更新骚扰。
+Interactive terminals may prompt for updates at most about once per day; `starcat mcp` in a pipe does not spam update notices.
 
-## 相关
+## Related
 
-- [安装与配对](/cli/installation)
+- [Installation and pairing](/cli/installation)
 - [Skill](/cli/skill)

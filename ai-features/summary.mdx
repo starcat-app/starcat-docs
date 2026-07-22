@@ -1,34 +1,34 @@
 ---
-title: "AI 摘要"
-description: "生成结构化摘要、缓存位置与质量注意"
+title: "AI summary"
+description: "Generate structured summaries, cache location, and quality notes"
 ---
 
-## 用途
+## Purpose
 
-在通读长 README 之前，先拿一版结构化要点（背景、特性、适用场景、注意事项等；具体结构随提示词变化）。
+Before reading a long README end to end, get a structured outline (background, features, use cases, caveats, etc.; exact structure varies with the prompt).
 
-<Frame caption="AI 摘要">
-  <img src="/images/screenshots/ai-summary.webp" alt="AI 摘要截图" className="rounded-xl" />
+<Frame caption="AI summary">
+  <img src="/images/screenshots/ai-summary.webp" alt="AI summary screenshot" className="rounded-xl" />
 </Frame>
 
-## 入口
+## Entry points
 
-1. 详情 AI 浮层 → 摘要（**⇧⌘A**）  
-2. [Auto Tidy](/ai-features/auto-tidy) 批量生成  
+1. Detail AI panel → Summary (**⇧⌘A**)  
+2. [Auto Tidy](/ai-features/auto-tidy) batch generation  
 
-## 缓存
+## Cache
 
-摘要写入本地缓存，避免重复消耗 token。可在 **设置 → 存储** 清理摘要缓存。见 [存储管理](/settings/storage)。
+Summaries are stored in local cache to avoid repeat token use. Clear summary cache under **Settings → Storage**. See [Storage management](/settings/storage).
 
-重新生成会再次调用模型（费用与配额取决于你的 Provider）。
+Regenerating calls the model again (cost and quota depend on your Provider).
 
-## 质量注意
+## Quality notes
 
-- 摘要不能替代阅读许可证、安全公告与最新 Release  
-- README 极短或纯图片时，摘要质量会下降  
-- 需要 Pro + 可用 Chat 模型  
+- Summaries do not replace reading the license, security advisories, or latest Release  
+- Very short or image-only READMEs produce weaker summaries  
+- Requires Pro + an available Chat model  
 
-## 相关
+## Related
 
-- [AI 对话](/ai-features/chat)
-- [AI 配置](/ai-features/configuration)
+- [AI chat](/ai-features/chat)
+- [AI configuration](/ai-features/configuration)

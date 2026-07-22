@@ -1,38 +1,38 @@
 ---
-title: "自托管后端概览"
-description: "六套开源支持 API：用途、默认地址与 GitHub 仓库"
+title: "Self-hosted backends overview"
+description: "Six open-source support APIs: purpose, defaults, and GitHub repos"
 ---
 
-普通用户**不必**自托管：Starcat 已内置指向官方 Fly.io 实例的默认地址与 API Key。
+Most users **do not** need to self-host. Starcat ships with default Fly.io endpoints and baked-in API keys.
 
-本专题面向希望自行部署后端的进阶用户：检查源码、本地联调，或把探索 / 周刊 / 分享等流量接到自己的实例。
+This topic is for advanced users who want to inspect the source, run APIs locally, or point Explore / Weekly / Sharing at their own instances.
 
-## 服务一览
+## Services
 
-| 服务 | 用途（App 内） | 默认生产地址 | 本地默认端口 | GitHub |
-|------|----------------|--------------|--------------|--------|
-| **Trending** | 探索 → 趋势 | `https://starcat-trending-api.fly.dev` | `5002` | [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api) |
-| **Weekly** | 探索 → 周刊 | `https://starcat-weekly-api.fly.dev` | `5003` | [starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api) |
-| **Discovery** | 探索 → 发现 / 热门 / 新发布 | `https://starcat-discovery-api.fly.dev` | `5006` | [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api) |
-| **Wiki** | Wiki / 外部文档索引探测 | `https://starcat-wiki-api.fly.dev` | `5004` | [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api) |
-| **Recommend** | 相似仓库推荐 | `https://starcat-recommend-api.fly.dev` | `5005` | [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api) |
-| **Sharing** | AI 分享页 / 短链 | `https://starcat-sharing-api.fly.dev` | `5001` | [starcat-sharing-api](https://github.com/starcat-app/starcat-sharing-api) |
+| Service | Used for (in-app) | Default production URL | Local port | GitHub |
+|---------|-------------------|------------------------|------------|--------|
+| **Trending** | Explore → Trending | `https://starcat-trending-api.fly.dev` | `5002` | [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api) |
+| **Weekly** | Explore → Weekly | `https://starcat-weekly-api.fly.dev` | `5003` | [starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api) |
+| **Discovery** | Explore → Discover / Hot / New releases | `https://starcat-discovery-api.fly.dev` | `5006` | [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api) |
+| **Wiki** | Wiki / external docs probes | `https://starcat-wiki-api.fly.dev` | `5004` | [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api) |
+| **Recommend** | Similar-repository recommendations | `https://starcat-recommend-api.fly.dev` | `5005` | [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api) |
+| **Sharing** | AI share pages / short links | `https://starcat-sharing-api.fly.dev` | `5001` | [starcat-sharing-api](https://github.com/starcat-app/starcat-sharing-api) |
 
 <Note>
-  Direct 许可证 / 支付相关后端**不在**「设置 → 服务」里配置，也不在本专题范围内。
+  The Direct license / payment backend is **not** listed under **Settings → Services** and is out of scope here.
 </Note>
 
-## 鉴权约定
+## Auth conventions
 
-- 业务与探测接口：`/api/v1/*` 需要 `Authorization: Bearer <API_KEY>`
-- 进程存活：`GET /healthz` **无鉴权**（状态栏可用性）
-- 设置页「测试连接」：`GET /api/v1/ping`（校验地址 + Key + 服务身份）
+- Business and probe routes: `/api/v1/*` require `Authorization: Bearer <API_KEY>`
+- Liveness: `GET /healthz` is **unauthenticated** (status-bar availability)
+- Settings **Test connection**: `GET /api/v1/ping` (URL + key + service identity)
 
-Key 格式一般为 `sk-starcat-` + 32 位字符；可用各仓库 README 或 monorepo 脚本 `supports/scripts/gen-api-key.sh` 生成。
+Keys usually look like `sk-starcat-` plus 32 characters. Generate with each repo’s README guidance or the monorepo script `supports/scripts/gen-api-key.sh`.
 
-## 下一步
+## Next
 
-1. [自部署](/self-hosting/deploy) — 本地运行或 Fly.io  
-2. [在 Starcat 中配置](/self-hosting/configure) — **设置 → 服务**
+1. [Deploy](/self-hosting/deploy) — local or Fly.io  
+2. [Configure in Starcat](/self-hosting/configure) — **Settings → Services**
 
-相关产品能力：[探索概览](/discover/explore/overview)、[周刊](/discover/weekly/weekly)、[趋势](/discover/trending/trending)、[分享卡](/share-export/share-cards)。
+Related product docs: [Explore overview](/discover/explore/overview), [Weekly](/discover/weekly/weekly), [Trending](/discover/trending/trending), [Share cards](/share-export/share-cards).

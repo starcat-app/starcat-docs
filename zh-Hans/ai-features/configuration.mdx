@@ -1,0 +1,53 @@
+---
+title: "AI 配置"
+description: "添加 Provider、映射任务模型、Embedding 与测试"
+---
+
+## 入口
+
+**设置 → AI**
+
+## 配置步骤
+
+<Steps>
+  <Step title="添加 Provider">
+    选择类型（OpenAI / 兼容接口、DeepSeek、OpenRouter、Gemini、Ollama、LM Studio 等，以列表为准）。
+    填写 API Key、Base URL（自建或兼容端点时）。
+  </Step>
+  <Step title="发现模型">
+    刷新「已发现模型」；必要时在行内调整温度等参数。
+  </Step>
+  <Step title="默认任务映射">
+    为下列任务分别指定 Provider + 模型（名称以界面为准）：
+    - 摘要、标签、对话
+    - Embedding（语义搜索 / RAG 向量）
+    - 翻译
+  </Step>
+  <Step title="测试">
+    使用测试连接；再到详情页用 ⇧⌘A 做一次真实调用。
+  </Step>
+</Steps>
+
+Key 存 macOS Keychain。更多说明：[BYOK](/zh-Hans/subscribe/byok)。
+
+## Embedding 特别重要
+
+没有可用 Embedding 时：
+
+- [语义搜索](/zh-Hans/search/semantic-search) 不可用  
+- [RAG 索引](/zh-Hans/knowledge-base/index-management) 向量侧无法建立  
+
+Chat 模型配好但 Embedding 空着，是最常见的「Pro 了但仍不能语义/RAG」原因。
+
+## 提示词（若开放）
+
+部分任务允许自定义系统提示词。改动会影响风格与长度；建议先对单个仓库试验再用于 Auto Tidy。
+
+## 输出语言
+
+默认跟随界面语言，也可单独指定 AI 输出语言。见 [AI 设置](/zh-Hans/settings/ai)。
+
+## 相关
+
+- [Auto Tidy](/zh-Hans/ai-features/auto-tidy)
+- [FAQ · AI](/zh-Hans/faq/ai)

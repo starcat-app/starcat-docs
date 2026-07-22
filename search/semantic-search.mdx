@@ -1,43 +1,43 @@
 ---
-title: "语义搜索"
-description: "Pro：用自然语言检索 Stars / 知识库向量索引"
+title: "Semantic search"
+description: "Pro: find Stars and knowledge-base entries with natural language"
 ---
 
-## 适用场景
+## When to use it
 
-当你说不清准确关键词，但能描述「我想要什么」时：
+When you cannot name exact keywords but can describe what you want:
 
-| 关键词思维 | 语义示例 |
-|------------|----------|
-| `python http server` | 「快速搭建 HTTP 服务的 Python 库」 |
-| `react state` | 「带中间件的 React 状态管理」 |
-| `cli json` | 「命令行下处理 JSON 的工具」 |
+| Keyword mindset | Semantic example |
+|---------------|------------------|
+| `python http server` | “Python libraries for quickly standing up an HTTP service” |
+| `react state` | “React state management with middleware” |
+| `cli json` | “CLI tools for working with JSON” |
 
-## 前提条件
+## Prerequisites
 
-1. 已激活 [Pro](/subscribe/purchase)  
-2. **设置 → AI** 配置可用的 **Embedding** Provider / 模型  
-3. 按界面提示构建或更新 AI 索引  
-4. 在列表搜索切换到「语义」模式  
+1. Active [Pro](/subscribe/purchase)  
+2. **Settings → AI**: configure a working **Embedding** provider / model  
+3. Build or update the AI index as prompted in the UI  
+4. Switch list search to **Semantic** mode  
 
-非 Pro 会看到锁定态并打开付费墙。
+Non-Pro users see a locked state and the paywall.
 
-## 范围
+## Scope
 
-常见可选：
+Common options:
 
-- **starred**：已 Star  
-- **knowledge**：知识库  
-- **all**：更广（以 App 为准）  
+- **starred**: starred repos  
+- **knowledge**: knowledge base  
+- **all**: broader (exact options follow the app)  
 
-若目标是「只在我精选入库的内容里找」，优先 knowledge，或直接用 [RAG 工作台](/knowledge-base/rag-workspace) 提问。
+If you only want curated ingested content, prefer **knowledge**, or ask directly in the [RAG workspace](/knowledge-base/rag-workspace).
 
-## 原理（用户向）
+## How it works (user-facing)
 
-查询被编码为向量，与本地缓存的仓库向量比相似度；部分场景会与关键词结果融合排序。质量强烈依赖 Embedding 模型与索引是否覆盖目标仓库。
+Your query is encoded as a vector and compared with locally cached repo vectors; some flows may blend with keyword results. Quality depends heavily on the Embedding model and whether the index covers target repos.
 
-## 相关
+## Related
 
-- [AI 设置](/settings/ai)
+- [AI settings](/settings/ai)
 - [Search Center](/search/search-center)
-- [方案对比](/subscribe/plan-comparison)
+- [Plan comparison](/subscribe/plan-comparison)

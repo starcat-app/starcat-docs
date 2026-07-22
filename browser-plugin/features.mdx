@@ -1,44 +1,44 @@
 ---
-title: "浏览器插件功能"
-description: "Companion v1：推荐、Wiki、笔记、Health 等"
+title: "Browser plugin features"
+description: "Companion v1: recommendations, Wiki, notes, Health, and more"
 ---
 
-## 设计范围（v1）
+## Design scope (v1)
 
-在 **GitHub 仓库页**注入增强，典型包括：
+Enhancements inject on **GitHub repo pages**, typically including:
 
-| 能力 | 说明 |
-|------|------|
-| 相似推荐 | 只读列表（条数有上限） |
-| Wiki 入口 | 跳转 / 打开 Wiki 相关 |
-| 私有笔记 | 编辑本机笔记；通常限**已 Star** 仓库 |
-| Health / OpenSSF | 展示本地已缓存分数；不在网页里完整重算 |
-| CodeFlow / Codebase 按钮 | 若桌面端启用，提供跳转 |
+| Capability | Description |
+|------------|-------------|
+| Similar recommendations | Read-only list (capped count) |
+| Wiki entry | Jump / open Wiki-related flows |
+| Private notes | Edit local notes; usually **starred repos only** |
+| Health / OpenSSF | Show locally cached scores; no full recompute in the browser |
+| CodeFlow / Codebase buttons | Jump when enabled on desktop |
 
-**明确不做（v1）**：完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单等。完整 AI 请回 App。
+**Explicitly out of scope (v1)**: full Inbox, desktop-grade AI summary workflows, complex context menus, etc. Use the app for full AI.
 
-正式方案背景（高级阅读）：仓库内 `docs/2-产品/需求讨论/正式方案/Chrome-Companion-v1-正式方案.md`。
+Formal design background (advanced): `docs/2-产品/需求讨论/正式方案/Chrome-Companion-v1-正式方案.md` in the repo.
 
-## 通信
+## Communication
 
 - `http://127.0.0.1:{port}/plugin/v1/...`  
 - `Authorization: Bearer <token>`  
-- 流量留在本机  
+- Traffic stays on localhost  
 
-Token 在 [集成设置](/settings/integrations) 管理。
+Manage the token under [Integrations settings](/settings/integrations).
 
-## 相关
+## Related
 
-- [Chrome 安装](/browser-plugin/chrome)
-- [相似推荐](/discover/explore/similar-repos)
+- [Chrome install](/browser-plugin/chrome)
+- [Similar repos](/discover/explore/similar-repos)
 - [Repo Health](/main-interface/repo-health)
 
-## 排障
+## Troubleshooting
 
-| 现象 | 处理 |
-|------|------|
-| GitHub 页无注入 | App 是否运行；扩展是否启用；端口/Token 是否一致 |
-| 笔记不能编 | 是否已 Star；Token 是否过期 |
-| Health 不显示 | 本机是否已有缓存；回 App 打开详情触发评分 |
+| Symptom | Fix |
+|---------|-----|
+| No injection on GitHub | Is the app running? Extension enabled? Port/token match? |
+| Can't edit notes | Starred? Token expired? |
+| Health missing | Local cache empty? Open detail in the app to trigger scoring |
 
-详见 [Chrome](/browser-plugin/chrome)、[集成](/settings/integrations)。
+See [Chrome](/browser-plugin/chrome) and [Integrations](/settings/integrations).

@@ -1,34 +1,34 @@
 ---
-title: "引用与证据"
-description: "引用芯片、来源类型、核对与无引用时怎么办"
+title: "Citations & evidence"
+description: "Citation chips, source types, verification, and when citations are missing"
 ---
 
-## 引用如何出现
+## How citations appear
 
-回答里的仓库引用芯片（如 `[owner/repo]`）表示命中了该仓的分片。点击后：
+Repository citation chips in answers (e.g. `[owner/repo]`) mean chunks from that repo matched. On click:
 
-- 右侧 Inspector 展示证据  
-- 可能自动切到引用页并滚动定位  
-- 来源类型可包括 README、笔记、AI 摘要等  
+- Right Inspector shows evidence  
+- May auto-switch to the citations pane and scroll  
+- Source types can include README, notes, AI summary, etc.  
 
-## 如何用好
+## Best practices
 
-| 做法 | 原因 |
-|------|------|
-| 关键结论点开原文 | 防止概括过度或串仓 |
-| 用 @ 缩小范围 | 引用更干净 |
-| 导出含引用的回答 | 便于事后审计 → [会话](/knowledge-base/session-management) |
+| Practice | Why |
+|----------|-----|
+| Open source for key claims | Avoid over-summary or cross-repo mix-ups |
+| Narrow with @ | Cleaner citations |
+| Export answers with citations | Easier audit later → [Sessions](/knowledge-base/session-management) |
 
-## 没有引用时
+## No citations?
 
-可能原因：
+Possible causes:
 
-- 问题过宽，模型未标注  
-- 索引未覆盖相关仓  
-- @ 范围把真正来源排除了  
+- Question too broad; model did not attach sources  
+- Index does not cover relevant repos  
+- @ scope excluded the real sources  
 
-处理：换问法 → 查 [索引](/knowledge-base/index-management) → 明确 @ 仓库。
+Try: rephrase → check [index](/knowledge-base/index-management) → @ specific repos.
 
-## 相关
+## Related
 
-- [RAG 工作台](/knowledge-base/rag-workspace)
+- [RAG workspace](/knowledge-base/rag-workspace)

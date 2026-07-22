@@ -1,63 +1,61 @@
 ---
-title: "安装与系统要求"
-description: "系统要求、App Store 与 Direct 安装、更新与数据目录差异"
+title: "Install and requirements"
+description: "System requirements, App Store vs Direct, updates, and data directories"
 ---
 
-## 系统要求
+## Requirements
 
-| 要求 | 说明 |
-|------|------|
-| **操作系统** | macOS 15 Sequoia 或更高 |
-| **芯片** | Apple Silicon（M 系列） |
-| **网络** | 同步 GitHub、探索、在线购买等需要联网 |
-| **GitHub** | 需要 GitHub 账号以同步 Stars |
+| Requirement | Detail |
+|-------------|--------|
+| **OS** | macOS 15 Sequoia or later |
+| **Chip** | Apple Silicon (M-series) |
+| **Network** | Needed for GitHub sync, Explore, online purchase |
+| **GitHub** | Account required to sync Stars |
 
-目前仅提供 macOS 客户端，无 Windows / Linux 桌面版。CLI 可在多平台安装，但数据与权限仍由本机（或已配对的）Starcat App 提供，见 [CLI 安装](/cli/installation)。
+Desktop clients are macOS-only. CLI can run on more platforms, but data still comes from a paired Starcat app.
 
-## 下载渠道
+## Download channels
 
 ### Mac App Store
 
-- 链接：[Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
-- 自动更新；运行在 App Store **沙盒** 中
-- Pro 走 StoreKit（Apple ID）
+- [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
+- Auto updates; App Store **sandbox**
+- Pro via StoreKit (Apple ID)
 
-### Direct（官网）
+### Direct (website)
 
-- 链接：[starcat.ink](https://starcat.ink)
-- 下载 DMG，拖入「应用程序」
-- 更新由 **Sparkle** 检查
-- Pro 走官网结账 + License（见 [许可证](/subscribe/license)）
+- [starcat.ink](https://starcat.ink)
+- Download DMG → drag to Applications
+- Updates via **Sparkle**
+- Pro via web checkout + license key
 
 <Warning>
-  App Store 版与 Direct 版的**本地数据目录相互独立**。换渠道等于换一套本地库，请先按 [备份与恢复](/data-privacy/backup) 处理，不要直接混拷数据库文件。
+  App Store and Direct builds use **separate local data directories**. Switching channels means a new local library—back up first; do not copy database files blindly.
 </Warning>
 
-## 安装步骤
+## Install steps
 
 <Steps>
-  <Step title="下载">从 App Store 或官网获取最新版。</Step>
-  <Step title="安装">
-    - App Store：自动装入 Applications
-    - Direct：打开 DMG，将 Starcat 拖到 Applications
+  <Step title="Download">Get the latest build from the App Store or website.</Step>
+  <Step title="Install">
+    - App Store: installs into Applications automatically
+    - Direct: open the DMG and drag Starcat to Applications
   </Step>
-  <Step title="首次打开">
-    若被 Gatekeeper 拦截：系统设置 → 隐私与安全性 → 仍要打开。
+  <Step title="First launch">
+    If Gatekeeper blocks: System Settings → Privacy & Security → Open Anyway.
   </Step>
-  <Step title="首次引导">
-    全屏欢迎仅首次出现。之后可在 **设置 → 通用** 重看首次引导（会重置 Getting Started 清单进度）。
+  <Step title="Onboarding">
+    Full-screen welcome appears once. Replay later from **Settings → General** (resets Getting Started checklist progress).
   </Step>
 </Steps>
 
-## 更新
+## Updates
 
-| 渠道 | 方式 |
-|------|------|
-| App Store | App Store 更新 |
-| Direct | 启动时 / 手动检查 Sparkle 更新 |
+| Channel | How |
+|---------|-----|
+| App Store | App Store updates |
+| Direct | Sparkle on launch / manual check |
 
-## 下一步
+## Next
 
-- [快速开始](/getting-started/quickstart)
-- [连接 GitHub](/getting-started/github-connection)
-- [购买 Pro](/subscribe/purchase)
+[Quickstart](/getting-started/quickstart)

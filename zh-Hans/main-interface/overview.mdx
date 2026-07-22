@@ -1,0 +1,63 @@
+---
+title: "界面概览"
+description: "三栏布局、一级导航与独立窗口"
+---
+
+## 三栏布局
+
+Starcat 主窗口采用 macOS 常见的三栏结构：
+
+```
+┌────────────┬─────────────────────┬──────────────────────┐
+│  侧边栏     │  列表 + 工具栏        │  详情面板              │
+│  Sidebar   │  Repo / Activity 列表 │  README · 元数据 · 操作 │
+└────────────┴─────────────────────┴──────────────────────┘
+```
+
+| 栏 | 作用 | 文档 |
+|----|------|------|
+| 左 | 在 Manage / 探索 / Activity 间切换，并进入标签、集合等子入口 | [侧边栏](/zh-Hans/main-interface/sidebar) |
+| 中 | 当前分类下的仓库或动态列表；顶栏是页面工具条 | [仓库列表](/zh-Hans/main-interface/repo-list)、[工具栏](/zh-Hans/main-interface/toolbar) |
+| 右 | 选中项的 README、标签、笔记、AI、Health 等 | [仓库详情](/zh-Hans/main-interface/repo-detail) |
+
+窗口宽度变化时，详情栏可能折叠或优先保证列表可读（以实际自适应为准）。
+
+## 侧栏三个一级区域
+
+| 区域 | 解决什么问题 |
+|------|----------------|
+| **Manage** | 整理你已经关注的 Stars / 知识库 / 标签 / 集合 / Release 时间线 |
+| **探索** | 发现尚未整理进库的新项目（趋势、周刊、热门等） |
+| **Activity** | 看动态、公告、与订阅相关的 Release 流等 |
+
+探索模式说明见 [探索概览](/zh-Hans/discover/explore/overview)。
+
+## 独立窗口
+
+部分能力适合拉出主窗口对照使用：
+
+| 窗口 | 打开方式（常见） | 文档 |
+|------|------------------|------|
+| 仓库 AI | 详情浮层 → 独立窗口；默认 **⇧⌘A** | [AI 对话](/zh-Hans/ai-features/chat) |
+| RAG 工作台 | 工具栏 / 默认 **⇧⌘K** | [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) |
+| Agent 工作台 | 独立入口 | [Agent（Beta）](/zh-Hans/agent-workspace/overview) |
+
+## 外观与密度
+
+在 [通用设置](/zh-Hans/settings/general) 可调整：
+
+- 界面语言（中 / 英）
+- 主题（跟随系统 / 浅 / 深）
+- 字体倍率、列表密度
+- 减少动画
+
+## 相关
+
+- [快速开始](/zh-Hans/getting-started/quickstart)
+- [Repo Health](/zh-Hans/main-interface/repo-health)
+
+## 下一步
+
+- 第一次用：跟 [快速开始](/zh-Hans/getting-started/quickstart) 走一遍同步与整理  
+- 每天整理：从 [侧边栏](/zh-Hans/main-interface/sidebar) 的 Smart Collections / 未分类入手  
+- 需要 AI：先看 [AI 概览](/zh-Hans/ai-features/overview)

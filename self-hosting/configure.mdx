@@ -1,46 +1,46 @@
 ---
-title: "在 Starcat 中配置自托管 API"
-description: "设置 → 服务：自定义 URL、API Key、测试连接与重置"
+title: "Configure self-hosted APIs in Starcat"
+description: "Settings → Services: custom URL, API key, test connection, reset"
 ---
 
-## 入口
+## Entry
 
-**设置 → 服务**
+**Settings → Services**
 
-页顶说明：「配置 Starcat 后端服务地址。」每个服务一张卡片，含：
+Intro copy: “Configure custom endpoints for Starcat backend services.” Each service card includes:
 
-| 控件 | 作用 |
-|------|------|
-| **自托管** 链接 | 打开该服务的 GitHub 源码仓库 |
-| **URL** | 自定义 baseURL；留空则用官方默认 |
-| **API Key** | 覆盖该服务的 Bearer Token；留空则用 App 内置生产 Key |
-| **测试连接** | 请求 `GET /api/v1/ping`（带鉴权） |
-| **重置** | 清掉该服务的自定义 URL 与 Key，回到内置默认 |
+| Control | Purpose |
+|---------|---------|
+| **Self-host** link | Opens that service’s GitHub repository |
+| **URL** | Custom baseURL; empty = official default |
+| **API Key** | Override Bearer token; empty = baked-in production key |
+| **Test connection** | `GET /api/v1/ping` with auth |
+| **Reset** | Clear custom URL/key for that service |
 
-## 填写规则
+## Rules
 
-1. **URL 只填服务根**，不要带业务 path，也不要末尾多余 `/`。  
-   - 正确：`http://127.0.0.1:5002` 或 `https://trending.example.com`  
-   - 错误：`http://127.0.0.1:5002/api/v1`、`…/api`（历史 Sharing 带 `/api` 的写法会在保存时被规范化剥掉）
-2. **API Key** 必须是你自托管实例 `API_KEYS` 白名单中的某一个。  
-   客户端优先级：本页自定义 Key → App 内置生产 Key → 都没有则请求不带 `Authorization`（通常 401）。
-3. 点 **测试连接**：成功表示地址可达、Key 正确、且 `data.service` 与卡片服务一致（防填错端口）。
-4. 可只覆盖部分服务（例如只自托管 Discovery，趋势仍用官方）。
+1. **URL is the service root only** — no business path, no trailing slash noise.  
+   - Good: `http://127.0.0.1:5002` or `https://trending.example.com`  
+   - Bad: `http://127.0.0.1:5002/api/v1` or a legacy `…/api` suffix (Sharing’s old `/api` form is stripped on save)
+2. **API Key** must be one entry from the instance’s `API_KEYS` allowlist.  
+   Client priority: custom key on this page → baked-in production key → none (requests omit `Authorization`, usually 401).
+3. **Test connection** succeeds when the host is reachable, the key is accepted, and `data.service` matches the card (catches wrong ports).
+4. You may override only some services (e.g. self-host Discovery, keep official Trending).
 
-## 与本页无关的「自托管」
+## Related “self-host” that is not this page
 
-| 能力 | 入口 | 说明 |
-|------|------|------|
-| Meilisearch / Qdrant（RAG 可选检索） | **设置 → AI** | 不是 Go 支持 API，不在「服务」Tab |
-| AI Provider Base URL | **设置 → AI** | BYOK 模型端点 |
-| Direct License | 无用户覆盖入口 | 支付 / 授权，不在本专题 |
+| Capability | Where | Notes |
+|------------|-------|-------|
+| Meilisearch / Qdrant (optional RAG) | **Settings → AI** | Not the Go support APIs |
+| AI Provider base URL | **Settings → AI** | BYOK model endpoints |
+| Direct License | No user override | Payments / entitlement; out of scope |
 
-## 本地联调示例
+## Local wiring example
 
-假设本机已按 [自部署](/self-hosting/deploy) 启动全部 API：
+If all APIs are running per [Deploy](/self-hosting/deploy):
 
-| 服务 | URL 示例 |
-|------|----------|
+| Service | Example URL |
+|---------|-------------|
 | Sharing | `http://127.0.0.1:5001` |
 | Trending | `http://127.0.0.1:5002` |
 | Weekly | `http://127.0.0.1:5003` |
@@ -48,31 +48,31 @@ description: "设置 → 服务：自定义 URL、API Key、测试连接与重�
 | Recommend | `http://127.0.0.1:5005` |
 | Discovery | `http://127.0.0.1:5006` |
 
-每张卡片填入同一套或各服务独立的 Key，逐个「测试连接」。
+Paste matching keys and test each card.
 
-## 生效方式
+## How it takes effect
 
-保存后，App 会热更新对应客户端的 baseURL / Key（无需重启整个 App；若个别面板仍显示旧数据，切换分区或手动刷新即可）。
+Saving hot-updates the client baseURL / key (full app restart usually unnecessary; refresh the Explore pane if a list looks stale).
 
-状态栏上的服务可用性巡检走 **`/healthz`**（不校验 Key），与设置页「测试连接」语义不同：
+Status-bar availability uses **`/healthz`** (no key), which is different from **Test connection**:
 
-| 入口 | 路径 | 鉴权 | 含义 |
-|------|------|------|------|
-| 设置 → 测试连接 | `/api/v1/ping` | Bearer | 地址 + Key + 服务身份 |
-| 状态栏可用性 | `/healthz` | 无 | 进程是否在线 |
+| Entry | Path | Auth | Meaning |
+|-------|------|------|---------|
+| Settings → Test | `/api/v1/ping` | Bearer | URL + key + service identity |
+| Status bar | `/healthz` | None | Process liveness |
 
-## 排障
+## Troubleshooting
 
-| 现象 | 排查 |
-|------|------|
-| 无法连接 | 防火墙 / 是否监听 `0.0.0.0`；本机请用 `127.0.0.1` |
-| Unauthorized | Key 未写入服务端 `API_KEYS`，或客户端填错 |
-| 服务不匹配 | URL 指到了另一个端口上的服务 |
-| 业务 404 | baseURL 多写了 `/api` 或 path；应只保留 host:port |
-| 趋势/发现为空 | 自托管实例尚未完成抓取；查该服务日志与 GitHub PAT 配额 |
+| Symptom | Check |
+|---------|-------|
+| Unreachable | Firewall / bind address; use `127.0.0.1` locally |
+| Unauthorized | Key missing from server `API_KEYS` or mistyped in the app |
+| Service mismatch | URL points at another service’s port |
+| Business 404 | Extra `/api` or path on the baseURL |
+| Empty Trending/Discover | Self-hosted crawler not warm yet; logs + GitHub PAT quota |
 
-## 相关
+## Related
 
-- [自托管概览](/self-hosting/overview)
-- [自部署](/self-hosting/deploy)
-- [设置 · 集成](/settings/integrations)（插件 / External Search，与后端 API 不同）
+- [Overview](/self-hosting/overview)
+- [Deploy](/self-hosting/deploy)
+- [Integrations](/settings/integrations) (plugins / External Search — different from these APIs)

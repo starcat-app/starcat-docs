@@ -1,0 +1,64 @@
+---
+title: "筛选与过滤"
+description: "工具栏统一筛选：维度、组合、重置与和搜索叠加"
+---
+
+## 入口
+
+Manage（以及部分列表页）工具栏的 **统一筛选** 菜单（漏斗图标，文案以 App 为准）。
+
+推荐工作流：
+
+1. 侧栏先选一个范围（如「未分类」或某个 Smart Collection）  
+2. 再用筛选收窄  
+3. 需要时 [多选批量处理](/zh-Hans/manage-stars/batch-operations)  
+
+比在「全部 Stars」里裸勾选高效得多。
+
+## 维度说明
+
+| 维度 | 说明 | 延伸 |
+|------|------|------|
+| **状态** | 未读 / 已读 / 正在使用 | [笔记与状态](/zh-Hans/manage-stars/notes-and-status) |
+| **已 Star / 未 Star** | 顶栏也可能有快捷切换 | — |
+| **知识库** | 已入库 / 未入库 | [知识库](/zh-Hans/knowledge-base/overview) |
+| **语言** | 多选；可与「感兴趣语言」配合 | [列表偏好](/zh-Hans/settings/list-preferences) |
+| **标签** | 按标签收窄 | [标签](/zh-Hans/manage-stars/tags) |
+| **Wiki** | 仅有 Wiki 信号的仓库 | 详情 Wiki 入口 |
+| **Health** | 已有健康度缓存 | [Repo Health](/zh-Hans/main-interface/repo-health) |
+| **OpenSSF** | 已有安全评分缓存 | 同上 |
+| **隐藏归档** | 去掉 archived | — |
+| **隐藏 Fork** | 去掉 fork | — |
+
+不是每一页都暴露全部维度；探索列表的筛选会更少或不同。
+
+## 组合逻辑
+
+多条件一般为 **AND**。
+
+示例：
+
+> 语言 = Swift **且** 状态 = 正在使用 **且** 未入库  
+
+适合找出「我正在用、但还没放进知识库的 Swift 项目」。
+
+## 与搜索叠加
+
+| 层 | 作用 |
+|----|------|
+| 侧栏分类 | 最大范围 |
+| 筛选 | 结构化约束 |
+| 列表搜索（⌘F） | 关键词 / 语义再找 |
+
+三者同时生效时，先理解「当前列表已经是筛选后的子集」。见 [列表搜索](/zh-Hans/search/global-search)。
+
+## 重置与记忆
+
+- 菜单底部 **重置**：清掉当前筛选  
+- 条件常按模块持久化：切到「标签 A」再切回「All Stars」，可能恢复各自上次条件  
+- 若行为怪异： [通用设置](/zh-Hans/settings/general) → 重置列表偏好  
+
+## 相关
+
+- [智能集合](/zh-Hans/manage-stars/smart-collections)（规则过滤 ≈ 可保存的筛选）
+- [仓库列表](/zh-Hans/main-interface/repo-list)

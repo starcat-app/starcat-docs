@@ -1,61 +1,61 @@
 ---
-title: "笔记与状态"
-description: "私有 Markdown 笔记与 unread / read / using"
+title: "Notes and status"
+description: "Private Markdown notes and unread / read / using"
 ---
 
-## 私有笔记
+## Private notes
 
-每个仓库可以有一份私有笔记：
+Each repo can have one private note:
 
-- 仅存本地 SQLite，**不上传 GitHub**
-- 支持 Markdown 编辑 / 预览
-- 正文会被本地搜索索引（见 [列表搜索](/search/global-search)）
+- Stored in local SQLite only—**not uploaded to GitHub**
+- Markdown edit / preview
+- Body is indexed for local search (see [List search](/search/global-search))
 
-### 编辑步骤
+### Edit workflow
 
 <Steps>
-  <Step title="打开详情">选中仓库，右侧找到「私有笔记」折叠区。</Step>
-  <Step title="编辑">在编辑 Tab 输入；可切换预览。</Step>
-  <Step title="保存">界面有自动保存指示；保存后写入数据库。</Step>
+  <Step title="Open detail">Select a repo; find the **Private notes** collapsible section on the right.</Step>
+  <Step title="Edit">Type in the Edit tab; switch to Preview when needed.</Step>
+  <Step title="Save">Auto-save indicator in the UI; persisted to the database on save.</Step>
 </Steps>
 
-外部写入（浏览器插件、MCP/CLI）成功后，详情区会刷新显示。
+After external writes (browser extension, MCP/CLI), the detail pane refreshes to show the new content.
 
-### AI 生成笔记（Pro）
+### AI-generated notes (Pro)
 
-笔记区头部 **AI 生成**：先出草稿，**你确认后**才写入，不会静默覆盖。见 [AI 个人笔记](/ai-features/personal-notes)。
+**AI generate** in the notes header: produces a draft first; **you confirm before write**—no silent overwrite. See [AI personal notes](/ai-features/personal-notes).
 
-## 阅读状态
+## Reading status
 
-当前状态模型为三个值：
+The current model has three values:
 
-| 状态 | 含义 | 典型用法 |
-|------|------|----------|
-| **未读 (unread)** | 尚未处理 | 新 Star 的默认常见状态 |
-| **已读 (read)** | 已看过 / 已了解 | 浏览过 README |
-| **正在使用 (using)** | 正在项目中使用 | 真正依赖的库 |
+| Status | Meaning | Typical use |
+|--------|---------|-------------|
+| **Unread** | Not processed yet | Common default for new Stars |
+| **Read** | Seen / understood | After browsing the README |
+| **Using** | In active use in a project | Libraries you actually depend on |
 
 <Note>
-  请以 App 内三种状态为准。旧文案里的「在读 / 废弃」等已废弃。
+  Follow the three in-app statuses. Older copy such as “reading” or “deprecated” is obsolete.
 </Note>
 
-### 如何切换（详情）
+### How to change (detail)
 
-- 未读 / 已读：点击状态胶囊 → 进入「正在使用」
-- 正在使用：点 × → 回到「已读」
+- Unread / Read: click the status pill → moves to **Using**
+- Using: click × → back to **Read**
 
-也可用 CLI（配对后）：
+You can also use the CLI (after pairing):
 
 ```bash
 starcat repo status set owner/repo using --apply
 ```
 
-见 [CLI 使用](/cli/usage)。
+See [CLI usage](/cli/usage).
 
-### 按状态筛选
+### Filter by status
 
-工具栏统一筛选可按状态过滤。见 [筛选](/search/filters)。
+Unified toolbar filters support status. See [Filters](/search/filters).
 
-## 与知识库
+## Knowledge base
 
-标记为「正在使用」时，界面可能提示是否加入知识库，便于 RAG。入库与 Star、状态彼此独立。见 [添加入库](/knowledge-base/adding-repos)。
+When marked **Using**, the UI may prompt whether to add the repo to the knowledge base for RAG. Ingest, Star, and status are independent. See [Adding repos](/knowledge-base/adding-repos).

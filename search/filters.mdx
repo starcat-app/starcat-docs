@@ -1,64 +1,64 @@
 ---
-title: "筛选与过滤"
-description: "工具栏统一筛选：维度、组合、重置与和搜索叠加"
+title: "Filters"
+description: "Unified toolbar filters: dimensions, combinations, reset, and stacking with search"
 ---
 
-## 入口
+## Entry point
 
-Manage（以及部分列表页）工具栏的 **统一筛选** 菜单（漏斗图标，文案以 App 为准）。
+The **unified filter** menu on the Manage toolbar (and some list pages)—funnel icon; label follows the app.
 
-推荐工作流：
+Recommended workflow:
 
-1. 侧栏先选一个范围（如「未分类」或某个 Smart Collection）  
-2. 再用筛选收窄  
-3. 需要时 [多选批量处理](/manage-stars/batch-operations)  
+1. Pick a scope in the sidebar first (e.g. Untagged or a Smart Collection)  
+2. Narrow with filters  
+3. Use [batch multi-select](/manage-stars/batch-operations) when needed  
 
-比在「全部 Stars」里裸勾选高效得多。
+Much faster than toggling filters on raw All Stars.
 
-## 维度说明
+## Dimensions
 
-| 维度 | 说明 | 延伸 |
-|------|------|------|
-| **状态** | 未读 / 已读 / 正在使用 | [笔记与状态](/manage-stars/notes-and-status) |
-| **已 Star / 未 Star** | 顶栏也可能有快捷切换 | — |
-| **知识库** | 已入库 / 未入库 | [知识库](/knowledge-base/overview) |
-| **语言** | 多选；可与「感兴趣语言」配合 | [列表偏好](/settings/list-preferences) |
-| **标签** | 按标签收窄 | [标签](/manage-stars/tags) |
-| **Wiki** | 仅有 Wiki 信号的仓库 | 详情 Wiki 入口 |
-| **Health** | 已有健康度缓存 | [Repo Health](/main-interface/repo-health) |
-| **OpenSSF** | 已有安全评分缓存 | 同上 |
-| **隐藏归档** | 去掉 archived | — |
-| **隐藏 Fork** | 去掉 fork | — |
+| Dimension | Description | More |
+|-----------|-------------|------|
+| **Status** | unread / read / using | [Notes and status](/manage-stars/notes-and-status) |
+| **Starred / not starred** | Top bar may also offer a quick toggle | — |
+| **Knowledge base** | Ingested / not ingested | [Knowledge base](/knowledge-base/overview) |
+| **Language** | Multi-select; pairs with “languages of interest” | [List preferences](/settings/list-preferences) |
+| **Tags** | Filter by tag | [Tags](/manage-stars/tags) |
+| **Wiki** | Repos with Wiki signals | Wiki entry on detail |
+| **Health** | Repos with cached health scores | [Repo Health](/main-interface/repo-health) |
+| **OpenSSF** | Repos with cached security scores | Same as above |
+| **Hide archived** | Exclude archived | — |
+| **Hide fork** | Exclude forks | — |
 
-不是每一页都暴露全部维度；探索列表的筛选会更少或不同。
+Not every page exposes every dimension; Explore lists may offer fewer or different filters.
 
-## 组合逻辑
+## Combination logic
 
-多条件一般为 **AND**。
+Multiple conditions are usually **AND**.
 
-示例：
+Example:
 
-> 语言 = Swift **且** 状态 = 正在使用 **且** 未入库  
+> Language = Swift **and** status = using **and** not ingested  
 
-适合找出「我正在用、但还没放进知识库的 Swift 项目」。
+Good for finding “Swift projects I’m actively using but haven’t added to the knowledge base yet.”
 
-## 与搜索叠加
+## Stacking with search
 
-| 层 | 作用 |
-|----|------|
-| 侧栏分类 | 最大范围 |
-| 筛选 | 结构化约束 |
-| 列表搜索（⌘F） | 关键词 / 语义再找 |
+| Layer | Role |
+|-------|------|
+| Sidebar category | Broadest scope |
+| Filters | Structured constraints |
+| List search (⌘F) | Keyword / semantic refinement |
 
-三者同时生效时，先理解「当前列表已经是筛选后的子集」。见 [列表搜索](/search/global-search)。
+When all three apply, remember the current list is already a filtered subset. See [List search](/search/global-search).
 
-## 重置与记忆
+## Reset and persistence
 
-- 菜单底部 **重置**：清掉当前筛选  
-- 条件常按模块持久化：切到「标签 A」再切回「All Stars」，可能恢复各自上次条件  
-- 若行为怪异： [通用设置](/settings/general) → 重置列表偏好  
+- **Reset** at the bottom of the menu clears current filters  
+- Conditions often persist per module: switch to “Tag A” then back to All Stars and each may restore its last state  
+- If behavior seems wrong: [General settings](/settings/general) → reset list preferences  
 
-## 相关
+## Related
 
-- [智能集合](/manage-stars/smart-collections)（规则过滤 ≈ 可保存的筛选）
-- [仓库列表](/main-interface/repo-list)
+- [Smart collections](/manage-stars/smart-collections) (rule filters ≈ savable filters)
+- [Repository list](/main-interface/repo-list)

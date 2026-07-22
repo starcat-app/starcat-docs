@@ -1,33 +1,33 @@
 ---
-title: "同步设置"
-description: "GitHub Stars 同步行为；云同步尚未上线"
+title: "Sync settings"
+description: "GitHub Stars sync behavior; cloud sync not shipped yet"
 ---
 
-## 本页范围
+## Scope of this page
 
-这里只描述 **GitHub Stars** 与本机缓存的同步。标签/笔记的 iCloud 同步**尚未上线**。
+This page covers **GitHub Stars** and local cache sync only. iCloud sync for tags and notes is **not available yet**.
 
-## 手动同步
+## Manual sync
 
-点击列表工具栏同步按钮：
+Click the sync button on the list toolbar:
 
-- 首次：全量拉取  
-- 之后：增量 / ETag 策略，尽量少拉未变数据  
+- First run: full fetch  
+- Later: incremental / ETag strategy to minimize unchanged data  
 
-Getting Started 清单要求你主动点同步，见 [快速开始](/getting-started/quickstart)。
+Getting Started expects you to tap sync yourself — see [Quickstart](/getting-started/quickstart).
 
-## Rate Limit
+## Rate limit
 
-GitHub API 有频率限制。触发后 Starcat 会退避并显示重置倒计时。排障见 [FAQ · 同步](/faq/sync)。
+The GitHub API has rate limits. When hit, Starcat backs off and shows a reset countdown. Troubleshooting: [FAQ · Sync](/faq/sync).
 
-## 后台同步
+## Background sync
 
-在系统允许时，可使用后台任务做定时检查（开关以 App 为准）。
+When the system allows, scheduled checks may run in the background (toggle follows the app).
 
-## 跨设备用户数据（即将推出）
+## Cross-device user data (coming soon)
 
 <Warning>
-  CloudKit / iCloud 用户数据同步尚未提供。换机请 [手动备份](/data-privacy/backup)。
+  CloudKit / iCloud user-data sync is **not available**. Before switching Macs, [back up manually](/data-privacy/backup).
 </Warning>
 
-JSON 导入导出亦为 [即将推出](/share-export/data-export)。
+JSON import and export are also [coming soon](/share-export/data-export).

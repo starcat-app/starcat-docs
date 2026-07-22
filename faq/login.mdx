@@ -1,25 +1,25 @@
 ---
-title: "登录问题"
-description: "OAuth、PAT、同步勾选与换号"
+title: "Sign-in issues"
+description: "OAuth, PAT, sync checklist, and switching accounts"
 ---
 
 <AccordionGroup>
-  <Accordion title="无法完成 GitHub 登录？">
-    1. 确认能打开 [github.com](https://github.com)  
-    2. 先在浏览器登录 GitHub，再回 Starcat 授权  
-    3. 公司网络拦截回调时，改用 PAT  
-    详见 [账号连接](/getting-started/github-connection)。
+  <Accordion title="Can't finish GitHub sign-in?">
+    1. Confirm you can open [github.com](https://github.com)  
+    2. Sign in to GitHub in the browser first, then authorize in Starcat  
+    3. If corporate networks block the callback, use a PAT instead  
+    See [GitHub connection](/getting-started/github-connection).
   </Accordion>
-  <Accordion title="登录后 Getting Started 的同步一直不勾？">
-    需要**主动点击**工具栏同步。见 [快速开始](/getting-started/quickstart)。
+  <Accordion title="Getting Started sync never checks off after sign-in?">
+    You must **tap Sync** on the toolbar yourself. See [Quickstart](/getting-started/quickstart).
   </Accordion>
-  <Accordion title="Token / 会话失效（401）？">
-    按提示重新登录；PAT 用户到 GitHub 创建新 Token 后再贴入。
+  <Accordion title="Token / session expired (401)?">
+    Sign in again when prompted; PAT users create a new token on GitHub and paste it in.
   </Accordion>
-  <Accordion title="如何切换 GitHub 账号？">
-    侧栏头像 → 登出 → 新账号登录。数据按账号隔离。
+  <Accordion title="How do I switch GitHub accounts?">
+    Sidebar avatar → Sign out → sign in with the new account. Data is isolated per account.
   </Accordion>
-  <Accordion title="PAT 需要哪些权限？">
-    Classic 常见：`read:user` + `public_repo`。Fine-grained 按 GitHub 当前选项授予读取用户与公开仓库元数据的只读权限。
+  <Accordion title="What PAT scopes are needed?">
+    Classic token common case: `read:user` + `public_repo`. For fine-grained tokens, grant read-only access to user profile and public repo metadata per GitHub's current options.
   </Accordion>
 </AccordionGroup>

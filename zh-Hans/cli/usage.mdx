@@ -1,0 +1,68 @@
+---
+title: "CLI 使用指南"
+description: "常用命令、统计、写入 --apply、MCP 与更新"
+---
+
+## 命令风格
+
+| 类型 | 输出 | 例子 |
+|------|------|------|
+| 运维/友好 | 文本 | `help` `doctor` `stats` `pair` |
+| 数据 | JSON | `capabilities` `repo` `tags` |
+
+完整列表以 `starcat help` 与 [README](https://github.com/starcat-app/starcat-cli/blob/main/README-ZH.md) 为准。
+
+## 只读常用
+
+```bash
+starcat capabilities
+starcat stats
+starcat stats ai --range 30d
+starcat stats knowledge
+
+starcat repo search "local RAG" --scope starred --limit 20
+starcat repo context owner/repo
+starcat repo readme owner/repo
+starcat repo summary owner/repo
+starcat tags list
+```
+
+`stats` 是本地聚合只读视图（Star / 知识库 / AI token / RAG 等），便于巡检。
+
+## 写入（默认 dry-run）
+
+```bash
+# 预览，不写入
+printf '%s' 'A private note' | starcat repo note set owner/repo
+
+# 真正写入
+printf '%s' 'A private note' | starcat repo note set owner/repo --apply
+starcat repo tags add owner/repo Swift macOS --apply
+starcat repo status set owner/repo using --apply
+```
+
+App 侧写权限开关关掉时，即使 `--apply` 也会失败。见 [MCP 设置](/zh-Hans/settings/mcp)。
+
+## MCP
+
+```bash
+starcat mcp
+```
+
+在 Cursor / Claude Code / Codex 等里注册 MCP server：`command=starcat`，`args=["mcp"]`。  
+协议消息只走 stdout；诊断走 stderr。
+
+## 更新
+
+```bash
+starcat update
+# 或
+brew update && brew upgrade starcat
+```
+
+交互式终端最多约每天提示一次新版本；`starcat mcp` 管道不会打印更新骚扰。
+
+## 相关
+
+- [安装与配对](/zh-Hans/cli/installation)
+- [Skill](/zh-Hans/cli/skill)

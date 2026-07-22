@@ -1,0 +1,33 @@
+---
+title: "同步设置"
+description: "GitHub Stars 同步行为；云同步尚未上线"
+---
+
+## 本页范围
+
+这里只描述 **GitHub Stars** 与本机缓存的同步。标签/笔记的 iCloud 同步**尚未上线**。
+
+## 手动同步
+
+点击列表工具栏同步按钮：
+
+- 首次：全量拉取  
+- 之后：增量 / ETag 策略，尽量少拉未变数据  
+
+Getting Started 清单要求你主动点同步，见 [快速开始](/zh-Hans/getting-started/quickstart)。
+
+## Rate Limit
+
+GitHub API 有频率限制。触发后 Starcat 会退避并显示重置倒计时。排障见 [FAQ · 同步](/zh-Hans/faq/sync)。
+
+## 后台同步
+
+在系统允许时，可使用后台任务做定时检查（开关以 App 为准）。
+
+## 跨设备用户数据（即将推出）
+
+<Warning>
+  CloudKit / iCloud 用户数据同步尚未提供。换机请 [手动备份](/zh-Hans/data-privacy/backup)。
+</Warning>
+
+JSON 导入导出亦为 [即将推出](/zh-Hans/share-export/data-export)。

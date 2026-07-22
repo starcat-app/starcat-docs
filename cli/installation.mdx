@@ -1,19 +1,19 @@
 ---
-title: "CLI 安装"
-description: "Homebrew / 脚本安装、配对与平台说明"
+title: "CLI installation"
+description: "Homebrew / script install, pairing, and platform notes"
 ---
 
-## Starcat CLI 是什么
+## What is Starcat CLI
 
-[`starcat-cli`](https://github.com/starcat-app/starcat-cli) 是跨平台命令行客户端，并可作为 AI Agent 的 **stdio MCP** 桥：
+[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a cross-platform command-line client and **stdio MCP** bridge for AI agents:
 
-- **不**直接读取 Starcat SQLite  
-- 读写一律走 App 的 MCP Tools  
-- 权限、dry-run、Pro 校验、审计仍由 **macOS 上的 Starcat App** 执行  
+- Does **not** read Starcat SQLite directly  
+- All reads and writes go through the app's MCP tools  
+- Permissions, dry-run, Pro checks, and audit still run in the **macOS Starcat app**  
 
-App 跑在 Mac；CLI 可装在同一台 Mac，或经可信网络连接已配对的 App。
+The app runs on Mac; the CLI can install on the same Mac or connect over a trusted network to a paired app.
 
-## 安装
+## Install
 
 ### Homebrew
 
@@ -22,15 +22,15 @@ brew tap starcat-app/starcat-cli
 brew install starcat
 ```
 
-Tap 仓库：[`homebrew-starcat-cli`](https://github.com/starcat-app/homebrew-starcat-cli)。
+Tap repo: [`homebrew-starcat-cli`](https://github.com/starcat-app/homebrew-starcat-cli).
 
-### macOS / Linux 一键脚本
+### macOS / Linux one-line script
 
 ```bash
 curl -fsSL https://github.com/starcat-app/starcat-cli/releases/latest/download/install.sh | sh
 ```
 
-默认装到 `~/.local/bin/starcat`（可用 `STARCAT_INSTALL_DIR` 覆盖）。脚本会校验 SHA-256。
+Installs to `~/.local/bin/starcat` by default (`STARCAT_INSTALL_DIR` overrides). The script verifies SHA-256.
 
 ### Windows PowerShell
 
@@ -38,25 +38,25 @@ curl -fsSL https://github.com/starcat-app/starcat-cli/releases/latest/download/i
 irm https://github.com/starcat-app/starcat-cli/releases/latest/download/install.ps1 | iex
 ```
 
-## 配对（必做）
+## Pairing (required)
 
 <Steps>
-  <Step title="打开 App MCP">Starcat → **设置 → MCP** → 启用服务。需 [Pro](/subscribe/plan-comparison)。</Step>
-  <Step title="复制配对命令">在设置页复制；URI 约 5 分钟有效、单次兑换。</Step>
-  <Step title="终端执行">
+  <Step title="Enable MCP in the app">Starcat → **Settings → MCP** → enable the service. Requires [Pro](/subscribe/plan-comparison).</Step>
+  <Step title="Copy the pairing command">Copy from Settings; URI valid ~5 minutes, single-use.</Step>
+  <Step title="Run in Terminal">
 ```bash
 starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
   </Step>
-  <Step title="回到 App 确认设备">未确认则配对未完成。</Step>
+  <Step title="Confirm device in the app">Pairing is incomplete until you confirm.</Step>
 </Steps>
 
-也可运行 `starcat pair` 后粘贴 URI。长期凭据存系统钥匙串 / Credential Manager / Secret Service。
+You can also run `starcat pair` and paste the URI. Long-lived credentials live in Keychain / Credential Manager / Secret Service.
 
-详见 [MCP 设置](/settings/mcp)。
+See [MCP settings](/settings/mcp).
 
-## 验证
+## Verify
 
 ```bash
 starcat --version
@@ -64,8 +64,8 @@ starcat doctor
 starcat capabilities
 ```
 
-## 下一步
+## Next steps
 
-- [使用指南](/cli/usage)
+- [Usage guide](/cli/usage)
 - [Agent Skill](/cli/skill)
-- Skill 仓库：[starcat-skill](https://github.com/starcat-app/starcat-skill)
+- Skill repo: [starcat-skill](https://github.com/starcat-app/starcat-skill)

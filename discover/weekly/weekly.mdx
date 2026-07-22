@@ -1,44 +1,44 @@
 ---
-title: "周刊 Weekly"
-description: "多来源技术周刊：数据来源、入选规则与缓存"
+title: "Weekly"
+description: "Multi-source weeklies: data sources, selection rules, and cache"
 ---
 
-## 入口
+## Entry
 
-侧栏 **探索 → 周刊**。
+Sidebar **Explore → Weekly**.
 
-<Frame caption="App 内「周刊」说明面板">
-  <img src="/images/screenshots/weekly-info.png" alt="周刊说明" className="rounded-xl" />
+<Frame caption="In-app Weekly info panel">
+  <img src="/images/screenshots/weekly-info.png" alt="Weekly info" className="rounded-xl" />
 </Frame>
 
-## 数据来源
+## Data sources
 
-聚合多个周刊 / 情报源中的仓库条目，包括：
+Aggregates repository entries from multiple weeklies / digests, including:
 
-- 阮一峰科技爱好者周刊  
+- Ruan Yifeng’s Tech Enthusiast Weekly  
 - ZRead  
 - Hacker News  
 - HelloGitHub  
-- 经核验的 AI 情报  
+- Verified AI intelligence  
 
-可按来源或语言浏览（以界面为准）。
+Browse by source or language (options follow the UI).
 
-## 入选规则
+## Selection rules
 
-- 项目至少被一个**已启用**来源收录后才会出现。
-- 同一项目可能来自多个来源；**编辑置顶**的项目会优先展示。
+- A project appears only after at least one **enabled** source includes it.
+- The same project may come from multiple sources; **editor-pinned** items rank first.
 
-## 缓存说明
+## Cache
 
-- **缓存有效期**：**6 小时**。
-- **更新方式**：有效期内直接使用本地缓存；过期后先显示已有内容并在后台静默更新；手动刷新会立即请求最新数据。
-- **离线处理**：更新失败时继续保留上次成功缓存，不影响已有内容浏览。
+- **TTL**: **6 hours**.
+- **Refresh**: Use local cache while valid; after expiry, show existing content and silently refresh in the background; a manual refresh requests the latest data immediately.
+- **Offline**: On update failure, keep the last successful cache so browsing is not interrupted.
 
-## 适合怎样用
+## How to use it
 
-把周刊当「每周输入」：扫条目 → Star → 标签 → 精选入库 → 必要时 [订阅 Release](/release/subscription)。
+Treat weeklies as weekly input: scan entries → Star → tag → ingest picks → [Subscribe to Release](/release/subscription) when needed.
 
-## 相关
+## Related
 
-- [探索概览](/discover/explore/overview)
-- 服务仓库（外部）：[starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api)
+- [Explore overview](/discover/explore/overview)
+- Service repo (external): [starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api)

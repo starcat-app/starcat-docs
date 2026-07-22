@@ -1,53 +1,53 @@
 ---
-title: "AI 配置"
-description: "添加 Provider、映射任务模型、Embedding 与测试"
+title: "AI configuration"
+description: "Add Providers, map task models, Embedding, and testing"
 ---
 
-## 入口
+## Entry point
 
-**设置 → AI**
+**Settings → AI**
 
-## 配置步骤
+## Setup steps
 
 <Steps>
-  <Step title="添加 Provider">
-    选择类型（OpenAI / 兼容接口、DeepSeek、OpenRouter、Gemini、Ollama、LM Studio 等，以列表为准）。
-    填写 API Key、Base URL（自建或兼容端点时）。
+  <Step title="Add a Provider">
+    Pick a type (OpenAI / compatible API, DeepSeek, OpenRouter, Gemini, Ollama, LM Studio, etc.; list is authoritative).
+    Enter API Key and Base URL (for self-hosted or compatible endpoints).
   </Step>
-  <Step title="发现模型">
-    刷新「已发现模型」；必要时在行内调整温度等参数。
+  <Step title="Discover models">
+    Refresh **Discovered models**; adjust temperature and other row-level params if needed.
   </Step>
-  <Step title="默认任务映射">
-    为下列任务分别指定 Provider + 模型（名称以界面为准）：
-    - 摘要、标签、对话
-    - Embedding（语义搜索 / RAG 向量）
-    - 翻译
+  <Step title="Default task mapping">
+    Assign Provider + model per task (labels follow UI):
+    - Summary, tags, chat
+    - Embedding (semantic search / RAG vectors)
+    - Translation
   </Step>
-  <Step title="测试">
-    使用测试连接；再到详情页用 ⇧⌘A 做一次真实调用。
+  <Step title="Test">
+    Use **Test connection**; then run a real call on detail with ⇧⌘A.
   </Step>
 </Steps>
 
-Key 存 macOS Keychain。更多说明：[BYOK](/subscribe/byok)。
+Keys are stored in macOS Keychain. More: [BYOK](/subscribe/byok).
 
-## Embedding 特别重要
+## Embedding matters
 
-没有可用 Embedding 时：
+Without a working Embedding model:
 
-- [语义搜索](/search/semantic-search) 不可用  
-- [RAG 索引](/knowledge-base/index-management) 向量侧无法建立  
+- [Semantic search](/search/semantic-search) is unavailable  
+- [RAG index](/knowledge-base/index-management) cannot build the vector side  
 
-Chat 模型配好但 Embedding 空着，是最常见的「Pro 了但仍不能语义/RAG」原因。
+Chat configured but Embedding empty is the most common “I have Pro but semantic/RAG still fails” case.
 
-## 提示词（若开放）
+## Prompts (when exposed)
 
-部分任务允许自定义系统提示词。改动会影响风格与长度；建议先对单个仓库试验再用于 Auto Tidy。
+Some tasks allow custom system prompts. Changes affect tone and length; test on one repo before using with Auto Tidy.
 
-## 输出语言
+## Output language
 
-默认跟随界面语言，也可单独指定 AI 输出语言。见 [AI 设置](/settings/ai)。
+Default follows UI language; you can set AI output language separately. See [AI settings](/settings/ai).
 
-## 相关
+## Related
 
 - [Auto Tidy](/ai-features/auto-tidy)
 - [FAQ · AI](/faq/ai)

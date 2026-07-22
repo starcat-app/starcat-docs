@@ -1,50 +1,50 @@
 ---
-title: "添加仓库到知识库"
-description: "单仓、批量、搜索/探索入库、移出与独立性"
+title: "Adding repositories to the knowledge base"
+description: "Single, batch, search/explore ingest, removal, and independence from Stars"
 ---
 
-## 入库方式对照
+## Ingest methods
 
-| 方式 | 适合 | 怎么做 |
-|------|------|--------|
-| 详情心形 | 精选单个 | 打开详情 → 加入知识库 |
-| 多选批量 | 一次几十个 | [批量操作](/manage-stars/batch-operations) |
-| Search / 探索 | 边发现边收 | 结果上的入库控件 |
-| 状态联动 | 正在使用的库 | 设为 using 时按提示入库 → [状态](/manage-stars/notes-and-status) |
+| Method | Best for | How |
+|--------|----------|-----|
+| Detail heart | One curated repo | Open detail → Add to knowledge base |
+| Multi-select batch | Dozens at once | [Batch operations](/manage-stars/batch-operations) |
+| Search / Explore | Discover and collect | Ingest control on results |
+| Status linkage | Repos you actively use | Prompt on **using** status → [Notes & status](/manage-stars/notes-and-status) |
 
-## 批量步骤
+## Batch steps
 
 <Steps>
-  <Step title="进入多选">列表工具栏 → 多选。</Step>
-  <Step title="勾选仓库">可先用[筛选](/search/filters)缩小范围。</Step>
-  <Step title="加入知识库">底部栏确认。</Step>
-  <Step title="看索引">打开 [RAG 工作台](/knowledge-base/rag-workspace) 查看覆盖率是否上升。</Step>
+  <Step title="Enter multi-select">List toolbar → multi-select.</Step>
+  <Step title="Select repos">Narrow with [filters](/search/filters) first if needed.</Step>
+  <Step title="Add to knowledge base">Confirm in the bottom bar.</Step>
+  <Step title="Check index">Open [RAG workspace](/knowledge-base/rag-workspace) and watch coverage rise.</Step>
 </Steps>
 
-## 入库后发生什么
+## After ingest
 
-1. 拉取 README 等来源到本地缓存  
-2. 切分片并建关键词 / 向量索引（需 Embedding）  
-3. 进入默认 RAG 检索范围  
+1. Fetch README and other sources into local cache  
+2. Chunk and build keyword / vector index (requires Embedding)  
+3. Include in default RAG retrieval scope  
 
-进度与失败提示见 [索引管理](/knowledge-base/index-management)。
+Progress and failures → [Index management](/knowledge-base/index-management).
 
-## 移出
+## Remove from knowledge base
 
-再次点击入库控件。移出后不再参与默认 RAG；是否立刻删本地缓存以 App 为准。
+Tap the ingest control again. Removed repos leave default RAG; whether local cache is deleted immediately depends on app behavior.
 
-## 空库
+## Empty library
 
-工作台会引导你先入库。不要期望「只 Star 不入库」就能问到全部收藏。
+The workspace guides you to ingest first. Do not expect “starred but not ingested” repos to answer across your full collection.
 
-## 独立性复习
+## Independence recap
 
 ```text
-Star  ──✗──► 自动入库
-Unstar ──✗──► 自动移出
-入库   ──✓──► 可未 Star
+Star   ──✗──► auto-ingest
+Unstar ──✗──► auto-remove
+Ingest ──✓──► can be not starred
 ```
 
-## 相关
+## Related
 
-- [知识库概述](/knowledge-base/overview)
+- [Knowledge base overview](/knowledge-base/overview)

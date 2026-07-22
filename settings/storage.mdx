@@ -1,40 +1,40 @@
 ---
-title: "存储管理"
-description: "缓存占用、清除、Finder 入口与危险区"
+title: "Storage management"
+description: "Cache usage, cleanup, Finder shortcuts, and danger zone"
 ---
 
-## 入口
+## Entry
 
-**设置 → 存储**
+**Settings → Storage**
 
-## 缓存类型（示例）
+## Cache types (examples)
 
-| 类型 | 说明 |
-|------|------|
-| README / 图片 | 详情渲染缓存，可重建 |
-| AI 对话历史 | 单仓 AI 浮层历史 |
-| RAG 会话历史 | 知识库问答历史 |
-| 外部搜索缓存 | 网页搜索与 AI 上下文缓存 |
-| AI 摘要缓存 | 生成过的摘要 |
+| Type | Description |
+|------|-------------|
+| README / images | Detail rendering cache; rebuildable |
+| AI chat history | Per-repo AI overlay history |
+| RAG session history | Knowledge-base Q&A history |
+| External search cache | Web search and AI context cache |
+| AI summary cache | Generated summaries |
 
-可单行清除或全部清除。清 README 后，下次打开详情会重新下载。
+Clear one row or everything. After clearing README cache, the next detail open re-downloads content.
 
-## Finder 入口
+## Finder shortcuts
 
-行旁文件夹按钮可打开对应目录（沙盒允许时）。App Store 与 Direct 路径不同。
+The folder button beside a row opens the matching directory when the sandbox allows. App Store and Direct use different paths.
 
-## 危险区
+## Danger zone
 
-### 恢复出厂设置
+### Factory reset
 
-删除本地用户数据与缓存等（以确认文案为准）。**不可逆**。
+Deletes local user data, caches, and more (confirm the dialog). **Irreversible.**
 
-操作前请先 [手动备份](/data-privacy/backup)。云同步与 JSON 导出尚未上线，不要假设能从云端拉回。
+Back up first: [Manual backup](/data-privacy/backup). Cloud sync and JSON export are not shipped — do not assume you can pull data back from the cloud.
 
-### 仅清数据保留设置
+### Clear data but keep settings
 
-若提供「删除本地数据库但保留设置」，同样先备份。
+If **Delete local database but keep settings** is offered, back up first as well.
 
-## 相关
+## Related
 
-- [数据存储说明](/data-privacy/storage)
+- [Data storage](/data-privacy/storage)

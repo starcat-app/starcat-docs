@@ -1,0 +1,35 @@
+---
+title: "Chrome 插件"
+description: "安装 Chrome Companion 并连接本机 Starcat"
+---
+
+## 前置清单
+
+1. 本机已安装并**正在运行** Starcat  
+2. **设置 → 集成**：配置 Local API Key 与 Browser Plugin（端口、Token）  
+3. 安装 Chrome 扩展  
+
+扩展仓库 / 发布说明：[starcat-chrome-plugin](https://github.com/starcat-app/starcat-chrome-plugin)。若已上架 Chrome Web Store，以官网或仓库 README 的安装链接为准。
+
+## 连接关系
+
+```text
+Chrome 扩展 ──HTTP──► 127.0.0.1:端口 /plugin/v1/*
+        Bearer Token（与集成设置一致）
+                │
+                ▼
+         本机 Starcat App
+```
+
+App 退出后，注入会失败或过期——先开 App 再刷 GitHub 页。
+
+## 验证
+
+1. 打开任意已 Star 的 GitHub 仓库页  
+2. 应看到 Starcat 增强区（笔记 / Health 等，见 [功能](/zh-Hans/browser-plugin/features)）  
+3. 若无：检查扩展权限、端口/Token、App 是否运行  
+
+## 相关
+
+- [集成设置](/zh-Hans/settings/integrations)
+- [Safari](/zh-Hans/browser-plugin/safari)

@@ -1,47 +1,47 @@
 ---
-title: "外部搜索"
-description: "网页 Scope 与 AI/RAG 联网上下文共用的 Provider"
+title: "External search"
+description: "Web Scope and AI/RAG web context share the same providers"
 ---
 
-## 做什么用
+## What it does
 
-外部搜索把第三方网页检索接到 Starcat：
+External search connects third-party web retrieval to Starcat:
 
-1. [Search Center](/search/search-center) 的 **网页** Scope  
-2. AI / RAG 需要时的**联网上下文**（受开关与隐私选项约束）  
+1. **Web** Scope in [Search Center](/search/search-center)  
+2. **Web context** for AI / RAG when needed (subject to toggles and privacy options)  
 
-AnySearch、Tavily 等是 Provider，不是另一套互不相干的产品。
+AnySearch, Tavily, and others are providers—not separate unrelated products.
 
-## Provider 示例
+## Provider examples
 
-| Provider | 说明 |
-|----------|------|
-| AnySearch | 常用选项；是否需 Key 以 App 为准 |
-| Tavily | 需 API Key |
-| Exa | 需 API Key |
-| Brave LLM Context | 需 API Key |
+| Provider | Notes |
+|----------|-------|
+| AnySearch | Common option; whether a key is required follows the app |
+| Tavily | API key required |
+| Exa | API key required |
+| Brave LLM Context | API key required |
 
-## 配置步骤
+## Setup
 
 <Steps>
-  <Step title="打开集成">**设置 → 集成 → External Search**。</Step>
-  <Step title="启用 Provider">填写 Key（如需），保存。</Step>
-  <Step title="测试">用测试连接确认可用。</Step>
-  <Step title="设默认">为网页搜索 / AI 上下文选择默认 Provider（选项以界面为准）。</Step>
+  <Step title="Open Integrations">**Settings → Integrations → External Search**.</Step>
+  <Step title="Enable a provider">Enter the key if required, then save.</Step>
+  <Step title="Test">Use **Test connection** to confirm it works.</Step>
+  <Step title="Set default">Choose the default provider for web search / AI context (options follow the UI).</Step>
 </Steps>
 
-也见 [集成设置](/settings/integrations)。
+Also see [Integrations settings](/settings/integrations).
 
-## 在 Search Center 使用
+## Use in Search Center
 
-⌘K → Scope 选 **网页** → 输入查询 → 查看带来源站点的结果。
+⌘K → Scope **Web** → enter a query → review results with source sites.
 
-## 缓存与清理
+## Cache and cleanup
 
-结果会本地缓存以减少重复计费/请求；可在 **设置 → 存储** 清除外部搜索缓存。
+Results are cached locally to reduce repeat billing / requests. Clear external search cache in **Settings → Storage**.
 
-## 隐私注意
+## Privacy notes
 
-- 查询会发往你启用的第三方搜索服务  
-- 私有仓库是否允许附带外部上下文，受集成/AI 相关开关约束  
-- 原则见 [隐私](/data-privacy/privacy)
+- Queries are sent to the third-party search services you enable  
+- Whether private repos may attach external context is governed by integration / AI toggles  
+- Principles: [Privacy](/data-privacy/privacy)

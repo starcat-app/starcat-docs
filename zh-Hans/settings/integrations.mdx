@@ -1,0 +1,38 @@
+---
+title: "集成设置"
+description: "Local API Key、浏览器插件、External Search"
+---
+
+## 入口
+
+**设置 → 集成**
+
+## Local API Key
+
+供本机插件与本地 HTTP API 鉴权。请：
+
+- 定期轮换（若界面提供）  
+- 不要提交到公开 git  
+- 仅在受信本机使用  
+
+## 浏览器插件
+
+| 项 | 说明 |
+|----|------|
+| 启用 | 打开插件本地服务 |
+| 端口 / Token | 扩展请求需一致 |
+| 前提 | **Starcat 必须在运行** |
+
+请求形态：`http://127.0.0.1:{port}/plugin/v1/...`，`Authorization: Bearer <token>`。
+
+详见 [Chrome](/zh-Hans/browser-plugin/chrome)、[功能](/zh-Hans/browser-plugin/features)、[Safari](/zh-Hans/browser-plugin/safari)。
+
+## External Search
+
+配置网页搜索与 AI 联网上下文 Provider。步骤见 [外部搜索](/zh-Hans/search/external-search)。
+
+导航里的 [外部搜索设置](/zh-Hans/settings/external-search) 页指向此处。
+
+## 其他
+
+可能包含 CodeFlow / CodebaseMemory 输出目录等。以界面为准；未开放的能力不要当作已上线。

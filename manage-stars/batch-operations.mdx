@@ -1,37 +1,37 @@
 ---
-title: "批量操作"
-description: "多选流程；Manage 与 Explore 动作差异"
+title: "Batch operations"
+description: "Multi-select workflow; Manage vs Explore action differences"
 ---
 
-## 何时用
+## When to use
 
-- 清空一大批未分类：筛选后批量打标  
-- 把「正在使用」批量入库  
-- 探索里一次 Star / 入库多个榜单项目  
+- Clear a large Untagged backlog: filter, then batch tag  
+- Batch ingest repos marked **Using**  
+- Star / ingest multiple ranked items from Discover  
 
-## 标准流程
+## Standard workflow
 
 <Steps>
-  <Step title="收窄范围">侧栏选分类 + [筛选](/search/filters) / 列表搜索。</Step>
-  <Step title="多选">工具栏 → 多选 → 勾选仓库。</Step>
-  <Step title="执行">底部栏选动作并确认。</Step>
-  <Step title="结束">通常自动退出多选并 Toast 摘要；或 Esc 取消。</Step>
+  <Step title="Narrow scope">Pick a sidebar category + [filters](/search/filters) / list search.</Step>
+  <Step title="Multi-select">Toolbar → Multi-select → check repos.</Step>
+  <Step title="Run action">Choose an action on the bottom bar and confirm.</Step>
+  <Step title="Finish">Usually exits multi-select automatically with a toast summary; or press Esc to cancel.</Step>
 </Steps>
 
-## Manage 动作
+## Manage actions
 
-| 动作 | 行为 | 注意 |
-|------|------|------|
-| 标签 | 追加，不删旧标签 | 免费标签上限 20 |
-| 加入/移出知识库 | 改入库状态 | [入库](/knowledge-base/adding-repos) |
-| Unstar | 调 GitHub API | 不可在 App 内一键撤销；多仓二次确认 |
-| 移到 Stars List | 若已同步 List | [GitHub Lists](/manage-stars/github-lists) |
+| Action | Behavior | Notes |
+|--------|----------|-------|
+| Tags | Append; does not remove existing tags | Free tag limit: 20 |
+| Add / remove from knowledge base | Changes ingest state | [Adding repos](/knowledge-base/adding-repos) |
+| Unstar | Calls GitHub API | Cannot undo in-app with one tap; multi-repo confirmation |
+| Move to Stars List | When Lists are synced | [GitHub Lists](/manage-stars/github-lists) |
 
-## Explore 动作
+## Explore actions
 
-更常见：Star / Unstar、加入知识库。见 [探索概览](/discover/explore/overview)。
+More common: Star / Unstar, add to knowledge base. See [Discover overview](/discover/explore/overview).
 
-## 相关
+## Related
 
-- [标签](/manage-stars/tags)
-- [智能集合](/manage-stars/smart-collections)
+- [Tags](/manage-stars/tags)
+- [Smart collections](/manage-stars/smart-collections)

@@ -1,55 +1,55 @@
 ---
-title: "AI 功能概览"
-description: "Pro AI 能力表、入口、配置前提与保守策略"
+title: "AI features overview"
+description: "Pro AI capability map, entry points, setup prerequisites, and conservative policy"
 ---
 
-## 使用前提
+## Prerequisites
 
-1. 激活 [Pro](/subscribe/purchase) → 权益表见 [方案对比](/subscribe/plan-comparison)  
-2. **设置 → AI** 配置 Provider（[BYOK](/subscribe/byok)、[逐步配置](/ai-features/configuration)）  
-3. 为任务选好默认模型：Chat（摘要/对话/标签）与 **Embedding**（语义/RAG）  
+1. Activate [Pro](/subscribe/purchase) → see the entitlement table in [Plan comparison](/subscribe/plan-comparison)  
+2. Configure a Provider under **Settings → AI** ([BYOK](/subscribe/byok), [step-by-step setup](/ai-features/configuration))  
+3. Pick default models for each task: Chat (summary / chat / tags) and **Embedding** (semantic search / RAG)  
 
-缺 Embedding 是最常见的「开了 Pro 仍不能语义/RAG」原因。
+Missing Embedding is the most common reason you have Pro but still cannot use semantic search or RAG.
 
-## 能力一览
+## Capability map
 
-| 功能 | 典型入口 | 文档 |
-|------|----------|------|
-| AI 摘要 | 详情浮层 **⇧⌘A** | [摘要](/ai-features/summary) |
-| AI 对话 | 同上，可拆独立窗口 | [对话](/ai-features/chat) |
-| 标签推荐 | 浮层 / Auto Tidy | [标签推荐](/ai-features/tag-recommendation) |
-| README 翻译 | README 工具区 | [翻译](/ai-features/readme-translation) |
-| AI 个人笔记 | 笔记区「AI 生成」 | [个人笔记](/ai-features/personal-notes) |
-| 语义搜索 | 列表语义模式 | [语义搜索](/search/semantic-search) |
-| RAG 问答 | **⇧⌘K** | [知识库](/knowledge-base/overview) |
-| Auto Tidy | 设置 → AI | [自动整理](/ai-features/auto-tidy) |
-| Agent 工作台 | 独立窗口 | [Agent Beta](/agent-workspace/overview) |
+| Feature | Typical entry | Docs |
+|---------|---------------|------|
+| AI summary | Detail panel **⇧⌘A** | [Summary](/ai-features/summary) |
+| AI chat | Same panel; can detach to a separate window | [Chat](/ai-features/chat) |
+| Tag recommendations | Panel / Auto Tidy | [Tag recommendations](/ai-features/tag-recommendation) |
+| README translation | README toolbar | [Translation](/ai-features/readme-translation) |
+| AI personal notes | **Generate with AI** in the notes area | [Personal notes](/ai-features/personal-notes) |
+| Semantic search | List semantic mode | [Semantic search](/search/semantic-search) |
+| RAG Q&A | **⇧⌘K** | [Knowledge base](/knowledge-base/overview) |
+| Auto Tidy | Settings → AI | [Auto Tidy](/ai-features/auto-tidy) |
+| Agent workspace | Separate window | [Agent Beta](/agent-workspace/overview) |
 
-说明：
+Notes:
 
-- [Search Center](/search/search-center) 的**网页** Scope 不强制 Pro  
-- AI 若附带联网上下文，仍受 Pro / 开关约束 → [外部搜索](/search/external-search)  
+- The **web** scope in [Search Center](/search/search-center) does not require Pro  
+- If AI attaches live web context, Pro and toggle rules still apply → [External search](/search/external-search)  
 
-## 保守策略
+## Conservative policy
 
-| 场景 | 规则 |
-|------|------|
-| 标签推荐 | 确认后才写入 |
-| AI 笔记 | 草稿确认后才保存 |
-| Agent | 改数据需明确授权 |
-| Auto Tidy | 只跑你打开的动作与触发器 |
+| Scenario | Rule |
+|----------|------|
+| Tag recommendations | Written only after you confirm |
+| AI notes | Saved only after you confirm the draft |
+| Agent | Data changes require explicit authorization |
+| Auto Tidy | Runs only the actions and triggers you enable |
 
-## 推荐上手顺序
+## Recommended onboarding order
 
 <Steps>
-  <Step title="配通模型">[AI 配置](/ai-features/configuration) → 测试连接。</Step>
-  <Step title="单仓试用">详情 → ⇧⌘A → 摘要或问一句。</Step>
-  <Step title="需要语义时">补齐 Embedding → 建索引 → 列表语义模式。</Step>
-  <Step title="需要跨仓问答">精选入库 → [RAG 工作台](/knowledge-base/rag-workspace)。</Step>
-  <Step title="再谈自动">确认输出质量后，再开 [Auto Tidy](/ai-features/auto-tidy)。</Step>
+  <Step title="Configure models">[AI configuration](/ai-features/configuration) → test connection.</Step>
+  <Step title="Try one repo">Detail → ⇧⌘A → summary or ask one question.</Step>
+  <Step title="When you need semantic search">Add Embedding → build index → list semantic mode.</Step>
+  <Step title="When you need cross-repo Q&A">Curate ingest → [RAG workspace](/knowledge-base/rag-workspace).</Step>
+  <Step title="Then automate">After output quality looks good, enable [Auto Tidy](/ai-features/auto-tidy).</Step>
 </Steps>
 
-## 相关
+## Related
 
-- [AI 设置总览](/settings/ai)
+- [AI settings overview](/settings/ai)
 - [FAQ · AI](/faq/ai)

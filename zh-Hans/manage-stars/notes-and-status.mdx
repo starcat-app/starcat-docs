@@ -1,0 +1,61 @@
+---
+title: "笔记与状态"
+description: "私有 Markdown 笔记与 unread / read / using"
+---
+
+## 私有笔记
+
+每个仓库可以有一份私有笔记：
+
+- 仅存本地 SQLite，**不上传 GitHub**
+- 支持 Markdown 编辑 / 预览
+- 正文会被本地搜索索引（见 [列表搜索](/zh-Hans/search/global-search)）
+
+### 编辑步骤
+
+<Steps>
+  <Step title="打开详情">选中仓库，右侧找到「私有笔记」折叠区。</Step>
+  <Step title="编辑">在编辑 Tab 输入；可切换预览。</Step>
+  <Step title="保存">界面有自动保存指示；保存后写入数据库。</Step>
+</Steps>
+
+外部写入（浏览器插件、MCP/CLI）成功后，详情区会刷新显示。
+
+### AI 生成笔记（Pro）
+
+笔记区头部 **AI 生成**：先出草稿，**你确认后**才写入，不会静默覆盖。见 [AI 个人笔记](/zh-Hans/ai-features/personal-notes)。
+
+## 阅读状态
+
+当前状态模型为三个值：
+
+| 状态 | 含义 | 典型用法 |
+|------|------|----------|
+| **未读 (unread)** | 尚未处理 | 新 Star 的默认常见状态 |
+| **已读 (read)** | 已看过 / 已了解 | 浏览过 README |
+| **正在使用 (using)** | 正在项目中使用 | 真正依赖的库 |
+
+<Note>
+  请以 App 内三种状态为准。旧文案里的「在读 / 废弃」等已废弃。
+</Note>
+
+### 如何切换（详情）
+
+- 未读 / 已读：点击状态胶囊 → 进入「正在使用」
+- 正在使用：点 × → 回到「已读」
+
+也可用 CLI（配对后）：
+
+```bash
+starcat repo status set owner/repo using --apply
+```
+
+见 [CLI 使用](/zh-Hans/cli/usage)。
+
+### 按状态筛选
+
+工具栏统一筛选可按状态过滤。见 [筛选](/zh-Hans/search/filters)。
+
+## 与知识库
+
+标记为「正在使用」时，界面可能提示是否加入知识库，便于 RAG。入库与 Star、状态彼此独立。见 [添加入库](/zh-Hans/knowledge-base/adding-repos)。

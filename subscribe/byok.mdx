@@ -1,64 +1,64 @@
 ---
-title: "BYOK 模式"
-description: "Pro 用户自带 API Key，配置自己的 AI Provider"
+title: "BYOK mode"
+description: "Pro users bring their own API key and configure their AI provider"
 ---
 
-## BYOK（Bring Your Own Key）
+## BYOK (Bring Your Own Key)
 
-Starcat 的 AI 能力采用 **自带 Key** 模式：你在「设置 → AI」配置 Provider 与 API Key 后，请求发往你指定的服务。这是当前正式可用的配置方式，不是「即将推出」的卖点。
+Starcat AI uses a **bring-your-own-key** model: after you configure a provider and API key under **Settings → AI**, requests go to the endpoint you specify. This is the current, shipping configuration path — not a “coming soon” feature.
 
-使用 AI 功能仍需要 **Pro**（见 [方案对比](/subscribe/plan-comparison)）。
+Using AI still requires **Pro** (see [Plan comparison](/subscribe/plan-comparison)).
 
-## 优势
+## Benefits
 
-- **配额自控**：使用你自己的 API 账户与账单  
-- **路径清晰**：请求直达你配置的端点  
-- **模型灵活**：按任务切换 Chat / Embedding 等模型  
+- **Quota control**: use your own API account and billing  
+- **Clear path**: requests go straight to your configured endpoint  
+- **Flexible models**: switch Chat / Embedding models per task  
 
-## 支持的 Provider（示例）
+## Supported providers (examples)
 
-| Provider | 说明 |
-|----------|------|
-| OpenAI | 官方 API |
-| OpenAI-compatible | 兼容 OpenAI 协议的第三方 |
+| Provider | Notes |
+|----------|-------|
+| OpenAI | Official API |
+| OpenAI-compatible | Third parties that speak the OpenAI protocol |
 | DeepSeek | DeepSeek API |
-| Google Gemini | Gemini 系列 |
-| OpenRouter | 多模型路由 |
-| Ollama | 本机开源模型（需本机服务可用） |
+| Google Gemini | Gemini family |
+| OpenRouter | Multi-model routing |
+| Ollama | Local open models (requires a running local service) |
 
-具体可用列表以 App 内「设置 → AI」为准。
+The live list in **Settings → AI** is authoritative.
 
-## 配置步骤
+## Setup steps
 
-1. 确认已购买并激活 Pro  
-2. 打开 **设置 → AI**  
-3. 添加 Provider，填入 API Key / Base URL（如需要）  
-4. 为摘要、对话、Embedding 等任务选择模型  
-5. 使用「测试连接」确认可用  
+1. Confirm Pro is purchased and active  
+2. Open **Settings → AI**  
+3. Add a provider; enter API key / Base URL if needed  
+4. Assign models for summary, chat, embedding, translation, and other tasks  
+5. Use **Test connection** to confirm it works  
 
-详见 [AI 配置](/ai-features/configuration)。
+See [AI configuration](/ai-features/configuration) for step-by-step details.
 
-## 安全性
+## Security
 
-- API Key 经 AES-GCM 加密后存入 macOS Keychain  
-- Starcat 不会把你的 Key 当作明文上传到自有业务服务器  
-- 请妥善保管 Key，并在 Provider 控制台设置用量上限  
+- API keys are encrypted with AES-GCM and stored in the macOS Keychain  
+- Starcat does not upload your key in plaintext to its own business servers  
+- Keep keys safe and set usage limits in your provider console  
 
-## 相关页面
+## Related pages
 
-- [AI 功能概览](/ai-features/overview)  
-- [Pro 购买](/subscribe/purchase)
+- [AI features overview](/ai-features/overview)  
+- [Buy Pro](/subscribe/purchase)
 
-## 常见问题
+## FAQ
 
 <AccordionGroup>
-  <Accordion title="必须用 OpenAI 吗？">
-    不必。可用兼容接口、DeepSeek、OpenRouter、Ollama 等，以设置页列表为准。
+  <Accordion title="Do I have to use OpenAI?">
+    No. Compatible endpoints, DeepSeek, OpenRouter, Ollama, and others work — follow the list in Settings.
   </Accordion>
-  <Accordion title="Key 会上传到 Starcat 服务器吗？">
-    Key 存本机 Keychain；请求发往你配置的 Provider 端点。见 [隐私](/data-privacy/privacy)。
+  <Accordion title="Are keys uploaded to Starcat servers?">
+    Keys stay in the local Keychain; requests go to your configured provider. See [Privacy](/data-privacy/privacy).
   </Accordion>
-  <Accordion title="配好了仍不能 RAG？">
-    检查是否单独配置了 **Embedding** 模型，而不只是 Chat。见 [AI 配置](/ai-features/configuration)。
+  <Accordion title="RAG still doesn't work after setup?">
+    Check that you configured an **Embedding** model separately — Chat alone is not enough. See [AI configuration](/ai-features/configuration).
   </Accordion>
 </AccordionGroup>

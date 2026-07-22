@@ -1,29 +1,29 @@
 ---
-title: "后台刷新"
-description: "定时轮询订阅仓库；立即检查与 Rate Limit"
+title: "Background refresh"
+description: "Scheduled polling for subscribed repos; check now and rate limits"
 ---
 
-## 机制（用户向）
+## How it works (user-facing)
 
-Starcat 使用 macOS 后台任务，按间隔检查已订阅仓库是否有新 Release（默认约数小时一级，带抖动；以当前实现为准）。
+Starcat uses macOS background tasks to check subscribed repos for new Releases on an interval (default on the order of hours with jitter; exact timing follows the current build).
 
-- 使用条件请求 / ETag，降低 GitHub API 消耗  
-- 仅轮询仍有效关联的目标（已 Star 或已入库）  
-- 可在时间线点 **立即检查** 手动跑一轮  
+- Conditional requests / ETag reduce GitHub API usage  
+- Only polls targets still linked (starred or ingested)  
+- Tap **Check now** on the timeline to run one round manually  
 
-## 与限额
+## Limits
 
-免费最多 **5** 个订阅；名额内才会持续对你有价值。见 [订阅管理](/release/subscription)。
+Free tier: up to **5** subscriptions; only active slots keep delivering value. See [Subscriptions](/release/subscription).
 
-## 排障
+## Troubleshooting
 
-| 现象 | 尝试 |
-|------|------|
-| 很久没有新通知 | 打开时间线 → 立即检查；确认订阅仍有效 |
-| Rate Limit | 等待重置；减少并发手动刷新 |
-| 系统杀掉后台 | 检查是否允许 App 后台活动；打开 App 后再查一次 |
-| 通知没有横幅 | [通知设置](/release/notifications) + 系统通知权限 |
+| Symptom | Try |
+|---------|-----|
+| No new notifications for a long time | Open timeline → Check now; confirm subscription still valid |
+| Rate limit | Wait for reset; reduce concurrent manual refreshes |
+| System killed background work | Allow background activity for the app; open the app and check again |
+| No banner | [Notification settings](/release/notifications) + system notification permission |
 
-## 相关
+## Related
 
-- [FAQ · 同步](/faq/sync)（GitHub API 限额同类问题）
+- [FAQ · Sync](/faq/sync) (similar GitHub API limit issues)

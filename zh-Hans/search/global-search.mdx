@@ -1,0 +1,49 @@
+---
+title: "全局搜索与列表搜索"
+description: "⌘K Search Center 与 ⌘F 列表搜索的分工"
+---
+
+## 先分清两个入口
+
+| 入口 | 默认快捷键 | 作用 |
+|------|------------|------|
+| **Search Center** | **⌘K** | 独立面板：全部 / 本地 / GitHub / 网页 |
+| **列表搜索框** | **⌘F** | 过滤**当前** Manage/探索列表 |
+
+两者都可在 [快捷键](/zh-Hans/settings/shortcuts) 修改。旧文档若写「⌘F 打开全局搜索」已过时。
+
+Search Center 专页：[Search Center](/zh-Hans/search/search-center)。
+
+## 列表关键词搜索
+
+在中栏搜索框输入关键词，使用本地 FTS5，通常覆盖：
+
+- 仓库名、owner、描述  
+- topics  
+- 私有笔记正文  
+
+特性概览：
+
+- 多词组合匹配  
+- 相关性排序（BM25 一类机制）  
+- 可与[工具栏筛选](/zh-Hans/search/filters)叠加  
+
+## 列表语义搜索（Pro）
+
+切换到「语义」模式后，可用自然语言描述目标库。
+
+前提：
+
+1. [Pro](/zh-Hans/subscribe/plan-comparison)  
+2. [设置 → AI](/zh-Hans/settings/ai) 配置 Embedding  
+3. 按需构建 AI 索引  
+
+范围可选 starred / knowledge / all（以 App 为准）。详见 [语义搜索](/zh-Hans/search/semantic-search)。
+
+## 使用建议
+
+| 场景 | 用哪个 |
+|------|--------|
+| 在「未分类」里快速缩小列表 | ⌘F 列表搜索 + 筛选 |
+| 同时搜本地 + GitHub + 网页 | ⌘K Search Center |
+| 「有没有做本地 RAG 的库」这类语义问法 | 列表语义或后续 RAG |

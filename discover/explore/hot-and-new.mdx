@@ -1,64 +1,64 @@
 ---
-title: "热门与新发布"
-description: "探索中热门、新发布的数据来源、入选规则与缓存"
+title: "Hot and new releases"
+description: "Hot and New releases: data source, selection rules, and cache"
 ---
 
-## 热门
+## Hot
 
-侧栏 **探索 → 热门**。
+Sidebar **Explore → Hot**.
 
-<Frame caption="App 内「热门」说明面板">
-  <img src="/images/screenshots/hot-info.png" alt="热门说明" className="rounded-xl" />
+<Frame caption="In-app Hot info panel">
+  <img src="/images/screenshots/hot-info.png" alt="Hot info" className="rounded-xl" />
 </Frame>
 
-### 数据来源
+### Data source
 
-Starcat 的发现项目池。
+Starcat’s discovery project pool.
 
-### 入选规则
+### Selection rules
 
-- 归档项目和 Fork 项目不会进入本分类。
-- 项目需要达到 **1,000 Stars**，或达到综合热度门槛。
-- 综合热度会参考 Stars、Forks、Release 下载量和近期活跃度。
+- Archived and Fork repositories are excluded.
+- A project must reach **1,000 Stars**, or meet the composite heat threshold.
+- Composite heat considers Stars, Forks, Release download counts, and recent activity.
 
-### 缓存说明
+### Cache
 
-- **缓存有效期**：3 小时，与发现、新发布共享同一份项目目录缓存。
-- **更新方式**：缓存过期后重新获取共享目录，并计算最新热门列表。
-- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
+- **TTL**: 3 hours; shares one project-catalog cache with Discover and New releases.
+- **Refresh**: After expiry, refetch the shared catalog and recompute the Hot list.
+- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
 
-## 新发布
+## New releases
 
-侧栏 **探索 → 新发布**。
+Sidebar **Explore → New releases**.
 
-<Frame caption="App 内「新发布」说明面板">
-  <img src="/images/screenshots/new-releases-info.png" alt="新发布说明" className="rounded-xl" />
+<Frame caption="In-app New releases info panel">
+  <img src="/images/screenshots/new-releases-info.png" alt="New releases info" className="rounded-xl" />
 </Frame>
 
-### 数据来源
+### Data source
 
-Starcat 发现项目池中的 GitHub Releases。
+GitHub Releases within Starcat’s discovery project pool.
 
-### 入选规则
+### Selection rules
 
-- 仅收录最近 **180 天**发布过稳定版本的项目。
-- 草稿版、预发布版、没有可下载内容的 Release、归档项目和 Fork 项目不会进入本分类。
-- 默认按照项目最近一次发布时间排序。
+- Only projects that shipped a **stable** release in the last **180 days**.
+- Drafts, pre-releases, releases with no downloadable assets, archived projects, and Forks are excluded.
+- Default sort: most recent release time.
 
-### 缓存说明
+### Cache
 
-- **缓存有效期**：3 小时，与发现、热门共享同一份项目目录缓存。
-- **更新方式**：缓存过期后重新获取最新项目及 Release 信息。
-- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
+- **TTL**: 3 hours; shares one project-catalog cache with Discover and Hot.
+- **Refresh**: After expiry, refetch projects and Release info.
+- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
 
-## 整理建议
+## Organize after discovery
 
-发现好项目后：
+When something looks worth keeping:
 
-1. Star（可选）  
-2. 打标签 / 写一句笔记  
-3. 真正要长期用的 → [入库](/knowledge-base/adding-repos)  
+1. Star (optional)  
+2. Tag / write a short note  
+3. For long-term use → [Ingest](/knowledge-base/adding-repos)  
 
-## 相关
+## Related
 
-- [探索概览](/discover/explore/overview)
+- [Explore overview](/discover/explore/overview)

@@ -1,0 +1,34 @@
+---
+title: "AI 摘要"
+description: "生成结构化摘要、缓存位置与质量注意"
+---
+
+## 用途
+
+在通读长 README 之前，先拿一版结构化要点（背景、特性、适用场景、注意事项等；具体结构随提示词变化）。
+
+<Frame caption="AI 摘要">
+  <img src="/images/screenshots/ai-summary.webp" alt="AI 摘要截图" className="rounded-xl" />
+</Frame>
+
+## 入口
+
+1. 详情 AI 浮层 → 摘要（**⇧⌘A**）  
+2. [Auto Tidy](/zh-Hans/ai-features/auto-tidy) 批量生成  
+
+## 缓存
+
+摘要写入本地缓存，避免重复消耗 token。可在 **设置 → 存储** 清理摘要缓存。见 [存储管理](/zh-Hans/settings/storage)。
+
+重新生成会再次调用模型（费用与配额取决于你的 Provider）。
+
+## 质量注意
+
+- 摘要不能替代阅读许可证、安全公告与最新 Release  
+- README 极短或纯图片时，摘要质量会下降  
+- 需要 Pro + 可用 Chat 模型  
+
+## 相关
+
+- [AI 对话](/zh-Hans/ai-features/chat)
+- [AI 配置](/zh-Hans/ai-features/configuration)

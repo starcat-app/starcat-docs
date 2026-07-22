@@ -1,75 +1,32 @@
 ---
-title: "GitHub 账号连接"
-description: "OAuth、PAT、权限、Keychain 与多账号"
+title: "Connect GitHub"
+description: "OAuth, PAT, scopes, multi-account notes"
 ---
 
-## 登录方式
+## Sign-in options
 
-### 1. Web Application Flow（推荐）
+Starcat supports browser / OAuth-style GitHub login and personal access token (PAT) flows. Prefer the in-app chooser on first launch.
 
-1. 登录页点击「使用 GitHub 登录」
-2. 系统浏览器打开 GitHub 授权页
-3. 登录并授权后回到 Starcat
+### Suggested scopes
 
-<Tip>Starcat 不会接触你的 GitHub 密码；授权码交换在客户端 OAuth 流程内完成。</Tip>
+Typical OAuth scopes used by Starcat: `read:user`, `public_repo` (exact list follows the app’s auth screen).
 
-### 2. Personal Access Token (PAT)
+### PAT tips
 
-适合无法顺畅完成浏览器回调，或偏好手动凭证的用户：
+- Create a classic or fine-grained token with enough read access for your Stars
+- Store the token only in Starcat’s Keychain-backed storage
+- Revoke unused tokens on GitHub if you rotate
 
-<Steps>
-  <Step title="创建 Token">
-    打开 GitHub [Developer settings → Personal access tokens](https://github.com/settings/tokens)。
-  </Step>
-  <Step title="权限">
-    - **Classic**：通常勾选 `read:user`、`public_repo`
-    - **Fine-grained**：按界面需要授予读取用户信息与公开仓库元数据的只读权限（以 GitHub 当前选项为准）
-  </Step>
-  <Step title="粘贴到 Starcat">
-    登录页展开「其他登录方式」，粘贴 Token。
-  </Step>
-</Steps>
+## After connect
 
-Token 经加密后写入 macOS Keychain。
+1. Tap **Sync** to pull Stars ([Quickstart](/getting-started/quickstart))
+2. Rate limits: GitHub may throttle large accounts—wait and retry
+3. Switching GitHub accounts may clear or isolate local caches depending on channel—export / backup first when unsure
 
-## Starcat 请求的权限
+## Multi-account
 
-| Scope / 能力 | 用途 |
-|--------------|------|
-| `read:user` | 用户名、头像等资料 |
-| `public_repo` | 读取 Stars 列表与公开仓库信息 |
+Use one GitHub identity per Starcat profile/session. If you maintain work and personal Stars, prefer separate Mac user accounts or be careful when switching tokens.
 
-日常浏览**不会**为了读 README 去扫你的私有业务仓。  
-**取消 Star** 会调用 GitHub Unstar API，属于你在详情里明确触发的操作。
+## Troubleshooting
 
-## 多账号
-
-- 同一时间一个活跃 GitHub 账号
-- 切换：侧栏头像 → 登出 → 用另一账号登录
-- 各账号本地数据隔离；切回原账号后数据仍在
-
-## 安全要点
-
-- GitHub Token、AI API Key 均存 Keychain
-- 不要把 PAT 发到聊天工具或提交进 git
-- Token 失效出现 401 时，按提示重新登录或更换 PAT
-
-## 常见问题
-
-<AccordionGroup>
-  <Accordion title="授权后卡在同步？">
-    先确认已[主动点同步](/getting-started/quickstart)。首次全量耗时与 Star 数量相关。仍失败见 [FAQ · 同步](/faq/sync)。
-  </Accordion>
-  <Accordion title="PAT 与 OAuth 可以混用吗？">
-    同一活跃会话使用一种凭证。换登录方式前先登出。
-  </Accordion>
-  <Accordion title="公司网络拦截回调？">
-    优先尝试 PAT；或检查是否允许打开系统浏览器完成 GitHub 授权。
-  </Accordion>
-</AccordionGroup>
-
-## 相关
-
-- [快速开始](/getting-started/quickstart)
-- [FAQ · 登录](/faq/login)
-- GitHub 文档：[Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+See [Login FAQ](/faq/login) for deeper cases, or [email support](/support/feedback).

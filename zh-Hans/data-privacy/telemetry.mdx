@@ -1,0 +1,37 @@
+---
+title: "遥测与诊断"
+description: "默认关闭的匿名遥测；诊断日志导出"
+---
+
+## 匿名遥测
+
+路径：**设置 → 诊断 → 匿名遥测**（**默认关**）。
+
+### 可能包含
+
+- 事件名：如应用启动、打开 Manage、执行搜索、同步起止等（白名单）  
+- App 版本、粗粒度分桶指标  
+
+### 不包含
+
+- GitHub 用户名、Stars 内容  
+- 搜索词、README、笔记  
+- AI Prompt / 响应、API Key、本机路径  
+
+实现上走 Aptabase 一类管道；细节以隐私政策为准。
+
+## 诊断导出
+
+通过菜单导出诊断包，协助排障：
+
+- 版本与构建号  
+- 数据库状态摘要  
+- 近期错误（脱敏）  
+- 同步相关信息  
+
+发送至 [dong4j@gmail.com](mailto:dong4j@gmail.com)。
+
+## 相关
+
+- [隐私](/zh-Hans/data-privacy/privacy)
+- [诊断设置](/zh-Hans/settings/diagnostics)

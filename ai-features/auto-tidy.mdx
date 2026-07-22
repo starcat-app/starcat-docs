@@ -1,35 +1,35 @@
 ---
-title: "自动整理 Auto Tidy"
-description: "触发器、动作、配额注意与安全边界"
+title: "Auto Tidy"
+description: "Triggers, actions, quota notes, and safety boundaries"
 ---
 
-## 是什么
+## What it is
 
-**设置 → AI → Auto Tidy** 里的后台整理：在你允许的时机，对仓库跑摘要、标签推荐等动作。
+Background tidy under **Settings → AI → Auto Tidy**: at times you allow, run summary, tag recommendations, and other actions on repositories.
 
-## 典型可配项
+## Typical settings
 
-| 项 | 说明 |
-|----|------|
-| 总开关 | 立即停用全部自动整理 |
-| 触发 | 启动后延迟、同步完成、定时等 |
-| 动作 | 摘要、标签推荐等（以界面勾选项为准） |
-| 立刻执行 | 手动跑一轮，用于试配置 |
+| Item | Notes |
+|------|-------|
+| Master toggle | Stop all auto-tidy immediately |
+| Triggers | Delay after launch, after sync, scheduled, etc. |
+| Actions | Summary, tag recommendations, etc. (per UI checkboxes) |
+| Run now | Manual one-off run to test configuration |
 
-## 建议开启顺序
+## Suggested rollout
 
-1. 先在单仓浮层确认模型输出可读  
-2. 动只勾选你真正需要的动作  
-3. 小范围触发（例如仅同步完成）观察一天  
-4. 再考虑定时  
+1. Confirm model output quality in the single-repo panel first  
+2. Enable only actions you actually want  
+3. Start with a narrow trigger (e.g. after sync only) and observe for a day  
+4. Then consider scheduled runs  
 
-## 风险与限额
+## Risks and limits
 
-- 大库 + 定时 = Provider 账单上升  
-- 标签写入仍受[确认策略](/ai-features/tag-recommendation)与免费 **20** 标签上限约束  
-- 需要 Pro 与有效 Provider  
+- Large libraries + schedules → higher Provider bills  
+- Tag writes still follow [confirm policy](/ai-features/tag-recommendation) and the free **20**-tag cap  
+- Requires Pro and a working Provider  
 
-## 相关
+## Related
 
-- [AI 设置](/settings/ai)
-- [AI 配置](/ai-features/configuration)
+- [AI settings](/settings/ai)
+- [AI configuration](/ai-features/configuration)

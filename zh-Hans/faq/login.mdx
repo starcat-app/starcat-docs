@@ -1,0 +1,25 @@
+---
+title: "登录问题"
+description: "OAuth、PAT、同步勾选与换号"
+---
+
+<AccordionGroup>
+  <Accordion title="无法完成 GitHub 登录？">
+    1. 确认能打开 [github.com](https://github.com)  
+    2. 先在浏览器登录 GitHub，再回 Starcat 授权  
+    3. 公司网络拦截回调时，改用 PAT  
+    详见 [账号连接](/zh-Hans/getting-started/github-connection)。
+  </Accordion>
+  <Accordion title="登录后 Getting Started 的同步一直不勾？">
+    需要**主动点击**工具栏同步。见 [快速开始](/zh-Hans/getting-started/quickstart)。
+  </Accordion>
+  <Accordion title="Token / 会话失效（401）？">
+    按提示重新登录；PAT 用户到 GitHub 创建新 Token 后再贴入。
+  </Accordion>
+  <Accordion title="如何切换 GitHub 账号？">
+    侧栏头像 → 登出 → 新账号登录。数据按账号隔离。
+  </Accordion>
+  <Accordion title="PAT 需要哪些权限？">
+    Classic 常见：`read:user` + `public_repo`。Fine-grained 按 GitHub 当前选项授予读取用户与公开仓库元数据的只读权限。
+  </Accordion>
+</AccordionGroup>

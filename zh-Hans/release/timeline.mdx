@@ -1,0 +1,40 @@
+---
+title: "Release 时间线"
+description: "聚合已订阅仓库的 Release：已读、分页、立即检查"
+---
+
+## 入口
+
+Manage 侧栏 **Release 时间线**（打开为面板/Sheet，以 App 为准）。
+
+## 你能看到什么
+
+- 所有已订阅仓库的 Release，按时间倒序  
+- **未读**高亮；可单条已读或全部已读  
+- 展开后阅读 Release 正文（GFM）与资产列表  
+- **每页约 20 条**，滚动加载更多  
+
+## 立即检查
+
+顶部 **立即检查** 会触发一轮轮询（`ReleasePoller.runNow` 一类路径），不等待后台间隔。适合刚发版、想马上确认的时候。
+
+后台默认间隔见 [后台刷新](/zh-Hans/release/background-refresh)。
+
+## 资产过滤
+
+顶部过滤框可按文件名片段筛选资产，例如：
+
+- `dmg` / `pkg`  
+- `arm64` / `aarch64`  
+- `linux` / `windows`  
+
+详见 [资产下载](/zh-Hans/release/assets-download)。
+
+## 字号
+
+时间线正文字号跟随 [通用设置](/zh-Hans/settings/general) 的界面字体倍率。
+
+## 相关
+
+- [订阅管理](/zh-Hans/release/subscription)
+- [通知](/zh-Hans/release/notifications)

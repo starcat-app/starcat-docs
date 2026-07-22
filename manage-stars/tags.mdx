@@ -1,80 +1,80 @@
 ---
-title: "标签管理"
-description: "创建与编辑标签、打标、批量打标与免费限额"
+title: "Tag management"
+description: "Create and edit tags, apply tags, batch tagging, and Free limits"
 ---
 
-## 标签是什么
+## What tags are
 
-标签是 Starcat 里最核心的本地分类方式：颜色、图标、名称都由你定义，**只存在本机**（跨设备云同步尚未上线，见 [备份](/data-privacy/backup)）。
+Tags are Starcat’s core local classification: you define color, icon, and name. They **live on this Mac only** (cross-device cloud sync is not shipped yet—see [Backup](/data-privacy/backup)).
 
 <Note>
-  免费版最多创建 **20** 个标签；Pro 不限数量。见 [方案对比](/subscribe/plan-comparison)。
+  Free tier: up to **20** tags; Pro: unlimited. See [Plan comparison](/subscribe/plan-comparison).
 </Note>
 
-## 创建标签
+## Create a tag
 
 <Steps>
-  <Step title="打开管理入口">
-    侧栏 Tags 分组旁点「+」，或进入标签管理面板。
+  <Step title="Open management">
+    Tap “+” next to the Tags group in the sidebar, or open the tag management panel.
   </Step>
-  <Step title="新建">
-    设置：
-    - **名称**
-    - **颜色**（预设色板）
-    - **图标**（SF Symbol 集合）
+  <Step title="Create">
+    Set:
+    - **Name**
+    - **Color** (preset palette)
+    - **Icon** (SF Symbols collection)
   </Step>
-  <Step title="保存">
-    标签出现在侧栏，可立即用于打标。
+  <Step title="Save">
+    The tag appears in the sidebar and is ready to apply.
   </Step>
 </Steps>
 
-达到免费上限时，创建会被权益门控拦截，并提示升级 Pro。
+At the Free limit, creation is blocked by entitlement gating with an upgrade-to-Pro prompt.
 
-## 编辑与删除
+## Edit and delete
 
-| 操作 | 典型路径 |
-|------|----------|
-| 重命名 | 右键标签 → 重命名 |
-| 改颜色 / 图标 | 右键 → 编辑 |
-| 删除 | 右键 → 删除 |
+| Action | Typical path |
+|--------|--------------|
+| Rename | Right-click tag → Rename |
+| Change color / icon | Right-click → Edit |
+| Delete | Right-click → Delete |
 
-删除标签**不会**删除仓库，只移除关联。
+Deleting a tag **does not** delete repositories—only the association.
 
-## 给仓库打标签
+## Tag a repository
 
-### 单个
+### Single repo
 
-1. 打开 [仓库详情](/main-interface/repo-detail)  
-2. 点击标签区域  
-3. 搜索并选择标签（可多选，视控件而定）  
-4. 即时生效  
+1. Open [Repository detail](/main-interface/repo-detail)  
+2. Click the tag area  
+3. Search and select tag(s) (multi-select depends on the control)  
+4. Takes effect immediately  
 
-### 批量
+### Batch
 
-1. 列表进入[多选](/manage-stars/batch-operations)  
-2. 勾选仓库 → 底部栏「标签」  
-3. 选择标签并应用  
+1. Enter [multi-select](/manage-stars/batch-operations) from the list  
+2. Select repos → bottom bar **Tags**  
+3. Choose tag(s) and apply  
 
-批量打标一般为**追加**，不会清掉已有标签。
+Batch tagging usually **appends** tags; it does not clear existing ones.
 
-## 按标签浏览与筛选
+## Browse and filter by tag
 
-- 侧栏点某个标签 → 列表只显示带该标签的仓库  
-- 工具栏筛选也可按标签收窄 → [筛选](/search/filters)  
+- Click a tag in the sidebar → list shows only repos with that tag  
+- Toolbar filters can narrow by tag too → [Filters](/search/filters)  
 
-## AI 标签推荐（Pro）
+## AI tag recommendations (Pro)
 
-详情 AI 能力可推荐 3–8 个标签；**确认后才写入**。见 [AI 标签推荐](/ai-features/tag-recommendation)、[Auto Tidy](/ai-features/auto-tidy)。
+Detail AI can suggest 3–8 tags; **nothing is written until you confirm**. See [AI tag recommendations](/ai-features/tag-recommendation) and [Auto Tidy](/ai-features/auto-tidy).
 
-## 实践建议
+## Practical tips
 
-| 建议 | 原因 |
-|------|------|
-| 控制在数十个以内 | 过多标签会降低筛选效率 |
-| 用一致命名 | 如 `frontend/react`、`ops/k8s` |
-| 与 Stars List 分工 | List 偏 GitHub 侧分组；标签偏个人精细分类 → [GitHub Lists](/manage-stars/github-lists) |
+| Tip | Why |
+|-----|-----|
+| Keep the count in the dozens | Too many tags hurt filter efficiency |
+| Use consistent naming | e.g. `frontend/react`, `ops/k8s` |
+| Split work with Stars Lists | Lists for GitHub-side grouping; tags for personal fine-grained sorting → [GitHub Lists](/manage-stars/github-lists) |
 
-## 相关
+## Related
 
-- [笔记与状态](/manage-stars/notes-and-status)
-- [智能集合](/manage-stars/smart-collections)（规则里可用标签条件）
+- [Notes and status](/manage-stars/notes-and-status)
+- [Smart collections](/manage-stars/smart-collections) (rules can include tag conditions)

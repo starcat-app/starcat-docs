@@ -1,48 +1,48 @@
 ---
-title: "MCP 设置"
-description: "启用 MCP、配对 CLI、写权限与端口"
+title: "MCP settings"
+description: "Enable MCP, pair the CLI, write permissions, and port"
 ---
 
-## 入口与前提
+## Entry and prerequisites
 
-**设置 → MCP**
+**Settings → MCP**
 
-- 需要 [Pro](/subscribe/plan-comparison)  
-- 本机或可信任网络上的 [CLI](/cli/installation) 通过 MCP 访问 App 能力  
+- Requires [Pro](/subscribe/plan-comparison)  
+- A local or trusted-network [CLI](/cli/installation) reaches app capabilities through MCP  
 
-## 启用步骤
+## Enable steps
 
 <Steps>
-  <Step title="打开开关">启用 MCP Service。</Step>
-  <Step title="确认端口">常见默认 **5555**（以界面为准）；避免端口冲突。</Step>
-  <Step title="权限子开关">按需允许：读私有笔记、本地写入、批量写入、替换式写入等。</Step>
-  <Step title="配对">复制配对命令，在终端执行（见下）。</Step>
+  <Step title="Turn on the switch">Enable MCP Service.</Step>
+  <Step title="Confirm the port">Default is often **5555** (follow the UI); avoid port conflicts.</Step>
+  <Step title="Permission sub-switches">As needed: read private notes, local writes, batch writes, replace-style writes, etc.</Step>
+  <Step title="Pair">Copy the pairing command and run it in Terminal (below).</Step>
 </Steps>
 
-## 配对
+## Pairing
 
 ```bash
 starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
 
-- URI 约 **5 分钟**有效、单次兑换  
-- 必须在 App 内**确认设备**  
-- 长期凭据存系统钥匙串 / Credential Manager  
+- The URI is valid for about **5 minutes** and is single-use  
+- You must **confirm the device** in the app  
+- Long-lived credentials live in Keychain / Credential Manager  
 
-完整说明：[CLI 安装](/cli/installation)、[CLI 使用](/cli/usage)。
+Full details: [CLI installation](/cli/installation), [CLI usage](/cli/usage).
 
-## 安全要点
+## Security notes
 
-- 写命令默认 dry-run，需 `--apply`  
-- 远程连接要求 TLS 与证书指纹约束（见 CLI 安全模型）  
-- 权限与审计由 App 执行，CLI 不直读数据库  
+- Write commands default to dry-run; use `--apply` to commit  
+- Remote connections require TLS and certificate fingerprint constraints (see the CLI security model)  
+- Permissions and audit run in the app; the CLI does not read the database directly  
 
-## Agent 安装片段
+## Agent install snippets
 
-设置页可复制 Claude / Codex 等 MCP 配置片段，将 `starcat mcp` 注册为 MCP server。
+Settings can copy MCP config snippets for Claude, Codex, etc., registering `starcat mcp` as an MCP server.
 
-## 相关
+## Related
 
 - [Skill](/cli/skill)
-- 设计背景（高级）：仓库内 `docs/3-设计/详细设计/34-StarcatCLI与外部MCP桥接设计.md`
+- Design background (advanced): `docs/3-设计/详细设计/34-StarcatCLI与外部MCP桥接设计.md` in the repo

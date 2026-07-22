@@ -1,22 +1,22 @@
 ---
-title: "同步问题"
-description: "Stars 同步、Rate Limit、数量不一致、云同步"
+title: "Sync issues"
+description: "Stars sync, rate limits, count mismatches, cloud sync"
 ---
 
 <AccordionGroup>
-  <Accordion title="同步失败？">
-    检查网络 → 手动同步 → 查看 Rate Limit 倒计时 → 重启后再试。见 [同步设置](/settings/sync)。
+  <Accordion title="Sync failed?">
+    Check network → tap manual sync → watch the rate-limit countdown → restart and retry. See [Sync settings](/settings/sync).
   </Accordion>
-  <Accordion title="什么是 Rate Limit？">
-    GitHub 限制 API 频率。Starcat 会解析响应头并退避。等待重置后再同步。
+  <Accordion title="What is rate limit?">
+    GitHub limits API frequency. Starcat parses response headers and backs off. Wait for reset, then sync again.
   </Accordion>
-  <Accordion title="新 Star 没出现？">
-    再点同步；仍没有则登出登录做更完整刷新。
+  <Accordion title="New Star not showing?">
+    Sync again; if it still missing, sign out and sign in for a fuller refresh.
   </Accordion>
-  <Accordion title="本地 Star 数和 GitHub 不一致？">
-    同步中断、仓库删除/私有化、本地未刷完都可能导致。手动同步或重新登录。
+  <Accordion title="Local Star count doesn't match GitHub?">
+    Interrupted sync, deleted/private repos, or incomplete local fetch can cause this. Manual sync or sign in again.
   </Accordion>
-  <Accordion title="标签能两台 Mac 自动同步吗？">
-    用户数据云同步尚未上线。请 [手动备份](/data-privacy/backup)。
+  <Accordion title="Can tags sync automatically across two Macs?">
+    User-data cloud sync is not shipped yet. [Back up manually](/data-privacy/backup).
   </Accordion>
 </AccordionGroup>

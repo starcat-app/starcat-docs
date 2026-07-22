@@ -1,35 +1,35 @@
 ---
 title: "Agent Skill"
-description: "starcat-skill 安装前置与和 CLI/MCP 的关系"
+description: "starcat-skill prerequisites and how it relates to CLI / MCP"
 ---
 
-## 是什么
+## What it is
 
-[`starcat-skill`](https://github.com/starcat-app/starcat-skill) 把 Starcat CLI 能力描述成 Agent 可加载的 Skill，方便在 Claude Code、Codex 等环境里：
+[`starcat-skill`](https://github.com/starcat-app/starcat-skill) describes Starcat CLI capabilities as an Agent-loadable Skill for Claude Code, Codex, and similar environments:
 
-- 搜 Stars / 知识库、看统计  
-- 读 context / README / summary  
-- 在 dry-run 与授权下改笔记、标签、状态  
+- Search Stars / knowledge base, view stats  
+- Read context / README / summary  
+- Change notes, tags, and status under dry-run and authorization  
 
-## 前置（缺一不可）
+## Prerequisites (all required)
 
-1. 安装 [CLI](/cli/installation)  
-2. Starcat App 运行，[MCP](/settings/mcp) 已启用并完成 `starcat pair`  
-3. 写操作理解 `--apply` 与 App 侧写权限  
+1. Install the [CLI](/cli/installation)  
+2. Starcat app running, [MCP](/settings/mcp) enabled, and `starcat pair` completed  
+3. Understand `--apply` and app-side write permissions for mutations  
 
-Skill **不能**绕过 App 直连数据库。
+The Skill **cannot** bypass the app and talk to the database directly.
 
-## 安装
+## Install
 
-按 Skill 仓库 README，复制到对应 Agent 的 skills 目录（Claude / Codex 路径不同）。
+Follow the Skill repo README — copy into the skills directory for your Agent (Claude vs Codex paths differ).
 
-## 和 App 内 Agent 的区别
+## vs in-app Agent
 
-| | Skill + CLI | App Agent 工作台 |
-|--|-------------|------------------|
-| 运行位置 | 外部 Agent 终端/会话 | Starcat 窗口 |
-| 状态 | 随 CLI/MCP 正式能力 | [Beta](/agent-workspace/overview) |
+| | Skill + CLI | App Agent workspace |
+|--|-------------|---------------------|
+| Runs in | External Agent terminal / session | Starcat window |
+| Status | Tracks CLI / MCP shipping capabilities | [Beta](/agent-workspace/overview) |
 
-## 相关
+## Related
 
-- [CLI 使用](/cli/usage)
+- [CLI usage](/cli/usage)

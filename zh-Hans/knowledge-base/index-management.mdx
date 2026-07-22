@@ -1,0 +1,38 @@
+---
+title: "索引管理"
+description: "覆盖率含义、重建时机、Embedding 与排障清单"
+---
+
+## 状态看哪里
+
+RAG 工作台顶栏或 **Index** 页签：
+
+- 知识库仓库数  
+- 索引覆盖率（关键词 / 向量等维度以界面为准）  
+- 当前 Embedding 相关提示  
+
+覆盖率低 = 很多已入库仓还不能被向量/关键词好好检索。
+
+## 何时重建
+
+| 情况 | 建议 |
+|------|------|
+| 换了 Embedding 模型 | 重建，否则空间不一致 |
+| 刚批量入库很多仓 | 等自动索引或手动补齐 |
+| 清过缓存后检索变空 | 重建 |
+| 长期「找不到」但库非空 | 先看覆盖率与 @ 是否过窄 |
+
+重建耗时与 API 费用随库规模上升；大库请盯紧进度与取消。
+
+## 排障清单
+
+1. Pro 是否有效 → [恢复购买](/zh-Hans/subscribe/restore)  
+2. Embedding 测试是否通过 → [AI 配置](/zh-Hans/ai-features/configuration)  
+3. 目标仓是否真的已入库 → [添加入库](/zh-Hans/knowledge-base/adding-repos)  
+4. 是否错误 @ 排除了关键仓 → [工作台](/zh-Hans/knowledge-base/rag-workspace)  
+5. 仅 Chat 配好、Embedding 为空 → 补 Embedding  
+
+## 相关
+
+- [引用](/zh-Hans/knowledge-base/citations)
+- [FAQ · AI](/zh-Hans/faq/ai)

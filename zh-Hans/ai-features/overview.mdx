@@ -1,0 +1,55 @@
+---
+title: "AI 功能概览"
+description: "Pro AI 能力表、入口、配置前提与保守策略"
+---
+
+## 使用前提
+
+1. 激活 [Pro](/zh-Hans/subscribe/purchase) → 权益表见 [方案对比](/zh-Hans/subscribe/plan-comparison)  
+2. **设置 → AI** 配置 Provider（[BYOK](/zh-Hans/subscribe/byok)、[逐步配置](/zh-Hans/ai-features/configuration)）  
+3. 为任务选好默认模型：Chat（摘要/对话/标签）与 **Embedding**（语义/RAG）  
+
+缺 Embedding 是最常见的「开了 Pro 仍不能语义/RAG」原因。
+
+## 能力一览
+
+| 功能 | 典型入口 | 文档 |
+|------|----------|------|
+| AI 摘要 | 详情浮层 **⇧⌘A** | [摘要](/zh-Hans/ai-features/summary) |
+| AI 对话 | 同上，可拆独立窗口 | [对话](/zh-Hans/ai-features/chat) |
+| 标签推荐 | 浮层 / Auto Tidy | [标签推荐](/zh-Hans/ai-features/tag-recommendation) |
+| README 翻译 | README 工具区 | [翻译](/zh-Hans/ai-features/readme-translation) |
+| AI 个人笔记 | 笔记区「AI 生成」 | [个人笔记](/zh-Hans/ai-features/personal-notes) |
+| 语义搜索 | 列表语义模式 | [语义搜索](/zh-Hans/search/semantic-search) |
+| RAG 问答 | **⇧⌘K** | [知识库](/zh-Hans/knowledge-base/overview) |
+| Auto Tidy | 设置 → AI | [自动整理](/zh-Hans/ai-features/auto-tidy) |
+| Agent 工作台 | 独立窗口 | [Agent Beta](/zh-Hans/agent-workspace/overview) |
+
+说明：
+
+- [Search Center](/zh-Hans/search/search-center) 的**网页** Scope 不强制 Pro  
+- AI 若附带联网上下文，仍受 Pro / 开关约束 → [外部搜索](/zh-Hans/search/external-search)  
+
+## 保守策略
+
+| 场景 | 规则 |
+|------|------|
+| 标签推荐 | 确认后才写入 |
+| AI 笔记 | 草稿确认后才保存 |
+| Agent | 改数据需明确授权 |
+| Auto Tidy | 只跑你打开的动作与触发器 |
+
+## 推荐上手顺序
+
+<Steps>
+  <Step title="配通模型">[AI 配置](/zh-Hans/ai-features/configuration) → 测试连接。</Step>
+  <Step title="单仓试用">详情 → ⇧⌘A → 摘要或问一句。</Step>
+  <Step title="需要语义时">补齐 Embedding → 建索引 → 列表语义模式。</Step>
+  <Step title="需要跨仓问答">精选入库 → [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)。</Step>
+  <Step title="再谈自动">确认输出质量后，再开 [Auto Tidy](/zh-Hans/ai-features/auto-tidy)。</Step>
+</Steps>
+
+## 相关
+
+- [AI 设置总览](/zh-Hans/settings/ai)
+- [FAQ · AI](/zh-Hans/faq/ai)

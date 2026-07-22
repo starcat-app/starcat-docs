@@ -1,82 +1,43 @@
 ---
-title: "更新日志"
-description: "Starcat 各版本重要变化摘要；完整说明以官网为准"
+title: "Changelog"
+description: "Notable Starcat release highlights; full archive on the website"
 ---
 
-本页摘录产品重要版本说明，便于在文档站内快速查阅。
+In-docs summary of major releases. Full formatted archive: [starcat.ink/changelog](https://starcat.ink/changelog)
 
-<Note>
-  官网完整更新日志（含排版与历史归档）：[starcat.ink/changelog](https://starcat.ink/changelog)
-</Note>
+## 1.2.0 (upcoming)
 
-## 1.2.0（待发布）
+### New
 
-### 新增
+- Share links that open Starcat and locate the shared repository
+- Customizable shortcuts for search, refresh, RAG workspace, and current-repo AI
 
-- 分享链接：打开后可在 Starcat 中定位对应仓库
-- 可自定义应用快捷键（搜索、刷新、打开 RAG 工作台、当前仓库 AI），含总开关与单项开关
+### Improvements
 
-### 优化
-
-- AI 分享复用已有摘要，支持取消与重新生成链接
-- RAG 工作台 UI 优化
+- AI sharing reuses existing summaries; cancel / regenerate supported
+- RAG workspace UI polish
 
 ## 1.1.0
 
-将收藏仓库升级为本地优先、过程可解释的 RAG 知识库，并集中优化性能、稳定性与 macOS 体验。
+Local-first, explainable RAG knowledge base plus performance and macOS UX work.
 
-### 新增
+### Highlights
 
-- 完整 **RAG 工作台**：多仓上下文、流式回答、引用证据、会话分组 / 置顶、历史与草稿
-- **混合检索**：向量、双语关键词、元数据、Wiki、RepoContext；可选重排、GitHub 实时上下文、外部搜索
-- 知识库浏览与索引管理：批量导入 Stars、README 补全、片段编辑 / 排除、定向重建、健康检查
-- 可解释执行视图：查询计划、时间线、检索漏斗、上下文预算、回放与调试导出
-- 本地 AI 用量面板（请求数 / Token / 延迟 / 失败；不保存 Prompt 与回答正文）
-- 全局 Star 状态过滤与 AI 摘要状态标识
-
-### 优化
-
-- 大规模知识库与长会话性能（有界索引、批量向量、增量持久化、预取与缓存）
-- RAG 交互：可调分栏、骨架屏、证据面板、复制与滚动稳定性
-- AI 设置与后台任务诊断、进度、取消 / 跳过
-- Explore / Trending / Weekly 加载与筛选体验
-- Direct Pro Pass 激活、设备管理与席位提示
-
-### 修复
-
-- RAG 在切仓 / 切账号 / 并发与取消时的上下文串线
-- 显式仓库范围、私有笔记、排除片段与无证据拒答等正确性
-- 会话标题、置顶、草稿恢复与流式滚动稳定性
-- GitHub 浏览器登录与 AI / RAG 错误本地化等
+- Full **RAG workspace**: multi-repo context, streaming answers, citations, groups / pins, history and drafts
+- **Hybrid retrieval**: vectors, bilingual keywords, metadata, Wiki, RepoContext; optional rerank, live GitHub context, external search
+- Index management: batch Star ingest, README fill, chunk edit / exclude, rebuild, health checks
+- Explainable execution UI and local AI usage dashboard (no prompt/answer body stored)
+- Global Star-status filters and AI-summary indicators
 
 ## 1.0.0
 
-正式初始版本。
+Initial public release: native three-column Stars manager, sync, tags/notes/status, search, Explore/Weekly/Activity, Release tracking, BYOK AI, health signals, share cards, App Store + Direct.
 
-### 亮点
+## How updates arrive
 
-- 原生 macOS 三栏管理 GitHub Stars
-- GitHub 登录与 Stars 同步（进度、刷新、限流提示）
-- 标签、笔记、状态、智能集合、列表搜索与筛选
-- README 渲染、Release 订阅、探索 / 周刊 / Activity
-- BYOK AI：摘要、标签建议、对话、语义搜索、README 翻译
-- Repo Health / OpenSSF、分享卡、设置与诊断
-- 英 / 简中界面；App Store 与 Direct 双渠道
+| Channel | Mechanism |
+|---------|-----------|
+| Mac App Store | App Store updates |
+| Direct | Sparkle |
 
-### 同期能力摘要
-
-- Getting Started 新手清单与引导
-- Agent / RAG 独立窗口工作台（Agent 为 Beta）
-- 浏览器 Companion、相似仓库推荐、代码智能分析（Pro）
-- Direct Sparkle 更新与许可证体系
-
-## 如何跟进版本
-
-| 渠道 | 更新方式 |
-|------|----------|
-| Mac App Store | App Store 更新 |
-| Direct | Sparkle 检查更新（启动或手动） |
-
-安装与数据目录差异见 [安装](/getting-started/installation)。
-
-发现问题或想提需求？见 [反馈与支持](/support/feedback)。
+See [Install](/getting-started/installation). Feedback: [Support](/support/feedback).

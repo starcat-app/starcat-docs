@@ -1,38 +1,38 @@
 ---
-title: "集成设置"
-description: "Local API Key、浏览器插件、External Search"
+title: "Integrations settings"
+description: "Local API Key, browser plugin, and External Search"
 ---
 
-## 入口
+## Entry
 
-**设置 → 集成**
+**Settings → Integrations**
 
 ## Local API Key
 
-供本机插件与本地 HTTP API 鉴权。请：
+Authenticates the local HTTP API for plugins on this Mac. Please:
 
-- 定期轮换（若界面提供）  
-- 不要提交到公开 git  
-- 仅在受信本机使用  
+- Rotate periodically (when the UI offers it)  
+- Never commit it to public git  
+- Use only on trusted local machines  
 
-## 浏览器插件
+## Browser plugin
 
-| 项 | 说明 |
-|----|------|
-| 启用 | 打开插件本地服务 |
-| 端口 / Token | 扩展请求需一致 |
-| 前提 | **Starcat 必须在运行** |
+| Item | Description |
+|------|-------------|
+| Enable | Starts the plugin local service |
+| Port / Token | Must match what the extension sends |
+| Prerequisite | **Starcat must be running** |
 
-请求形态：`http://127.0.0.1:{port}/plugin/v1/...`，`Authorization: Bearer <token>`。
+Request shape: `http://127.0.0.1:{port}/plugin/v1/...` with `Authorization: Bearer <token>`.
 
-详见 [Chrome](/browser-plugin/chrome)、[功能](/browser-plugin/features)、[Safari](/browser-plugin/safari)。
+See [Chrome](/browser-plugin/chrome), [Features](/browser-plugin/features), and [Safari](/browser-plugin/safari).
 
 ## External Search
 
-配置网页搜索与 AI 联网上下文 Provider。步骤见 [外部搜索](/search/external-search)。
+Configure web search and AI web-context providers. Steps are in [External search](/search/external-search).
 
-导航里的 [外部搜索设置](/settings/external-search) 页指向此处。
+The nav page [External search settings](/settings/external-search) points here.
 
-## 其他
+## Other
 
-可能包含 CodeFlow / CodebaseMemory 输出目录等。以界面为准；未开放的能力不要当作已上线。
+May include CodeFlow / CodebaseMemory output directories and similar items. Follow the UI; do not treat unreleased capabilities as shipped.

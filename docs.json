@@ -18,7 +18,7 @@
           "iconType": "brands"
         },
         {
-          "anchor": "官方网站",
+          "anchor": "Website",
           "href": "https://starcat.ink",
           "icon": "globe",
           "iconType": "solid"
@@ -33,15 +33,15 @@
     },
     "languages": [
       {
-        "language": "zh-Hans",
-        "default": true,
+        "language": "en",
         "tabs": [
           {
-            "tab": "使用指南",
+            "tab": "Guide",
             "groups": [
               {
-                "group": "入门指南",
+                "group": "Getting started",
                 "pages": [
+                  "index",
                   "getting-started/welcome",
                   "getting-started/installation",
                   "getting-started/quickstart",
@@ -49,14 +49,14 @@
                 ]
               },
               {
-                "group": "产品动态",
+                "group": "Product",
                 "pages": [
                   "changelog",
                   "support/feedback"
                 ]
               },
               {
-                "group": "主界面",
+                "group": "Main interface",
                 "pages": [
                   "main-interface/overview",
                   "main-interface/sidebar",
@@ -67,7 +67,7 @@
                 ]
               },
               {
-                "group": "管理 Stars",
+                "group": "Manage Stars",
                 "pages": [
                   "manage-stars/tags",
                   "manage-stars/notes-and-status",
@@ -77,7 +77,7 @@
                 ]
               },
               {
-                "group": "搜索与发现",
+                "group": "Search",
                 "pages": [
                   "search/global-search",
                   "search/semantic-search",
@@ -87,7 +87,7 @@
                 ]
               },
               {
-                "group": "AI 功能",
+                "group": "AI features",
                 "pages": [
                   "ai-features/overview",
                   "ai-features/chat",
@@ -100,7 +100,7 @@
                 ]
               },
               {
-                "group": "发现与探索",
+                "group": "Discover",
                 "pages": [
                   "discover/explore/overview",
                   "discover/trending/trending",
@@ -111,7 +111,7 @@
                 ]
               },
               {
-                "group": "Release 订阅",
+                "group": "Release subscriptions",
                 "pages": [
                   "release/subscription",
                   "release/timeline",
@@ -121,7 +121,7 @@
                 ]
               },
               {
-                "group": "Pro 订阅",
+                "group": "Pro",
                 "pages": [
                   "subscribe/plan-comparison",
                   "subscribe/purchase",
@@ -131,7 +131,7 @@
                 ]
               },
               {
-                "group": "分享与导出",
+                "group": "Share & export",
                 "pages": [
                   "share-export/share-cards",
                   "share-export/export-files",
@@ -140,7 +140,7 @@
                 ]
               },
               {
-                "group": "浏览器插件",
+                "group": "Browser plugins",
                 "pages": [
                   "browser-plugin/chrome",
                   "browser-plugin/safari",
@@ -148,7 +148,7 @@
                 ]
               },
               {
-                "group": "设置",
+                "group": "Settings",
                 "pages": [
                   "settings/general",
                   "settings/list-preferences",
@@ -165,7 +165,7 @@
                 ]
               },
               {
-                "group": "数据与隐私",
+                "group": "Data & privacy",
                 "pages": [
                   "data-privacy/storage",
                   "data-privacy/backup",
@@ -174,16 +174,17 @@
                 ]
               },
               {
-                "group": "常见问题",
+                "group": "FAQ",
                 "pages": [
                   "faq/login",
                   "faq/sync",
                   "faq/ai",
-                  "faq/other"
+                  "faq/other",
+                  "faq/more-docs"
                 ]
               },
               {
-                "group": "自托管后端",
+                "group": "Self-hosted backends",
                 "pages": [
                   "self-hosting/overview",
                   "self-hosting/deploy",
@@ -201,10 +202,10 @@
             ]
           },
           {
-            "tab": "RAG 工作台",
+            "tab": "RAG workspace",
             "groups": [
               {
-                "group": "知识库",
+                "group": "Knowledge base",
                 "pages": [
                   "knowledge-base/overview",
                   "knowledge-base/adding-repos",
@@ -217,12 +218,328 @@
             ]
           },
           {
+            "tab": "Agent workspace",
+            "groups": [
+              {
+                "group": "Agent workspace",
+                "pages": [
+                  "agent-workspace/overview"
+                ]
+              }
+            ]
+          }
+        ],
+        "banner": {
+          "content": "Starcat is on the [Mac App Store](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) and at [starcat.ink](https://starcat.ink).",
+          "dismissible": true,
+          "type": "info"
+        },
+        "navbar": {
+          "links": [
+            {
+              "label": "Website",
+              "href": "https://starcat.ink"
+            },
+            {
+              "label": "App Store",
+              "href": "https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12"
+            },
+            {
+              "label": "Changelog",
+              "href": "/changelog"
+            },
+            {
+              "label": "Feedback",
+              "href": "/support/feedback"
+            }
+          ],
+          "primary": {
+            "type": "button",
+            "label": "Download Starcat",
+            "href": "https://starcat.ink"
+          }
+        },
+        "footer": {
+          "socials": {
+            "github": "https://github.com/starcat-app",
+            "website": "https://starcat.ink"
+          },
+          "links": [
+            {
+              "header": "Product",
+              "items": [
+                {
+                  "label": "Website",
+                  "href": "https://starcat.ink"
+                },
+                {
+                  "label": "Plans",
+                  "href": "/subscribe/plan-comparison"
+                },
+                {
+                  "label": "Changelog",
+                  "href": "/changelog"
+                }
+              ]
+            },
+            {
+              "header": "Start",
+              "items": [
+                {
+                  "label": "Install",
+                  "href": "/getting-started/installation"
+                },
+                {
+                  "label": "Quickstart",
+                  "href": "/getting-started/quickstart"
+                },
+                {
+                  "label": "Connect GitHub",
+                  "href": "/getting-started/github-connection"
+                },
+                {
+                  "label": "FAQ",
+                  "href": "/faq/login"
+                }
+              ]
+            },
+            {
+              "header": "Features",
+              "items": [
+                {
+                  "label": "Main interface",
+                  "href": "/main-interface/overview"
+                },
+                {
+                  "label": "RAG workspace",
+                  "href": "/knowledge-base/overview"
+                },
+                {
+                  "label": "AI features",
+                  "href": "/ai-features/overview"
+                },
+                {
+                  "label": "CLI / MCP",
+                  "href": "/cli/installation"
+                }
+              ]
+            },
+            {
+              "header": "Download & support",
+              "items": [
+                {
+                  "label": "Mac App Store",
+                  "href": "https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12"
+                },
+                {
+                  "label": "Direct download",
+                  "href": "https://starcat.ink"
+                },
+                {
+                  "label": "Privacy",
+                  "href": "https://starcat.ink/privacy"
+                },
+                {
+                  "label": "Feedback",
+                  "href": "/support/feedback"
+                }
+              ]
+            }
+          ]
+        },
+        "default": true
+      },
+      {
+        "language": "zh-Hans",
+        "tabs": [
+          {
+            "tab": "使用指南",
+            "groups": [
+              {
+                "group": "入门指南",
+                "pages": [
+                  "zh-Hans/index",
+                  "zh-Hans/getting-started/welcome",
+                  "zh-Hans/getting-started/installation",
+                  "zh-Hans/getting-started/quickstart",
+                  "zh-Hans/getting-started/github-connection"
+                ]
+              },
+              {
+                "group": "产品动态",
+                "pages": [
+                  "zh-Hans/changelog",
+                  "zh-Hans/support/feedback"
+                ]
+              },
+              {
+                "group": "主界面",
+                "pages": [
+                  "zh-Hans/main-interface/overview",
+                  "zh-Hans/main-interface/sidebar",
+                  "zh-Hans/main-interface/repo-list",
+                  "zh-Hans/main-interface/repo-detail",
+                  "zh-Hans/main-interface/repo-health",
+                  "zh-Hans/main-interface/toolbar"
+                ]
+              },
+              {
+                "group": "管理 Stars",
+                "pages": [
+                  "zh-Hans/manage-stars/tags",
+                  "zh-Hans/manage-stars/notes-and-status",
+                  "zh-Hans/manage-stars/batch-operations",
+                  "zh-Hans/manage-stars/smart-collections",
+                  "zh-Hans/manage-stars/github-lists"
+                ]
+              },
+              {
+                "group": "搜索与发现",
+                "pages": [
+                  "zh-Hans/search/global-search",
+                  "zh-Hans/search/semantic-search",
+                  "zh-Hans/search/external-search",
+                  "zh-Hans/search/filters",
+                  "zh-Hans/search/search-center"
+                ]
+              },
+              {
+                "group": "AI 功能",
+                "pages": [
+                  "zh-Hans/ai-features/overview",
+                  "zh-Hans/ai-features/chat",
+                  "zh-Hans/ai-features/summary",
+                  "zh-Hans/ai-features/tag-recommendation",
+                  "zh-Hans/ai-features/readme-translation",
+                  "zh-Hans/ai-features/personal-notes",
+                  "zh-Hans/ai-features/auto-tidy",
+                  "zh-Hans/ai-features/configuration"
+                ]
+              },
+              {
+                "group": "发现与探索",
+                "pages": [
+                  "zh-Hans/discover/explore/overview",
+                  "zh-Hans/discover/trending/trending",
+                  "zh-Hans/discover/explore/hot-and-new",
+                  "zh-Hans/discover/weekly/weekly",
+                  "zh-Hans/discover/activity/activity",
+                  "zh-Hans/discover/explore/similar-repos"
+                ]
+              },
+              {
+                "group": "Release 订阅",
+                "pages": [
+                  "zh-Hans/release/subscription",
+                  "zh-Hans/release/timeline",
+                  "zh-Hans/release/notifications",
+                  "zh-Hans/release/assets-download",
+                  "zh-Hans/release/background-refresh"
+                ]
+              },
+              {
+                "group": "Pro 订阅",
+                "pages": [
+                  "zh-Hans/subscribe/plan-comparison",
+                  "zh-Hans/subscribe/purchase",
+                  "zh-Hans/subscribe/license",
+                  "zh-Hans/subscribe/byok",
+                  "zh-Hans/subscribe/restore"
+                ]
+              },
+              {
+                "group": "分享与导出",
+                "pages": [
+                  "zh-Hans/share-export/share-cards",
+                  "zh-Hans/share-export/export-files",
+                  "zh-Hans/share-export/data-import",
+                  "zh-Hans/share-export/data-export"
+                ]
+              },
+              {
+                "group": "浏览器插件",
+                "pages": [
+                  "zh-Hans/browser-plugin/chrome",
+                  "zh-Hans/browser-plugin/safari",
+                  "zh-Hans/browser-plugin/features"
+                ]
+              },
+              {
+                "group": "设置",
+                "pages": [
+                  "zh-Hans/settings/general",
+                  "zh-Hans/settings/list-preferences",
+                  "zh-Hans/settings/ai",
+                  "zh-Hans/settings/mcp",
+                  "zh-Hans/settings/integrations",
+                  "zh-Hans/settings/external-search",
+                  "zh-Hans/settings/services",
+                  "zh-Hans/settings/sync",
+                  "zh-Hans/settings/shortcuts",
+                  "zh-Hans/settings/storage",
+                  "zh-Hans/settings/diagnostics",
+                  "zh-Hans/settings/about"
+                ]
+              },
+              {
+                "group": "数据与隐私",
+                "pages": [
+                  "zh-Hans/data-privacy/storage",
+                  "zh-Hans/data-privacy/backup",
+                  "zh-Hans/data-privacy/privacy",
+                  "zh-Hans/data-privacy/telemetry"
+                ]
+              },
+              {
+                "group": "常见问题",
+                "pages": [
+                  "zh-Hans/faq/login",
+                  "zh-Hans/faq/sync",
+                  "zh-Hans/faq/ai",
+                  "zh-Hans/faq/other"
+                ]
+              },
+              {
+                "group": "自托管后端",
+                "pages": [
+                  "zh-Hans/self-hosting/overview",
+                  "zh-Hans/self-hosting/deploy",
+                  "zh-Hans/self-hosting/configure"
+                ]
+              },
+              {
+                "group": "Starcat CLI",
+                "pages": [
+                  "zh-Hans/cli/installation",
+                  "zh-Hans/cli/usage",
+                  "zh-Hans/cli/skill"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "RAG 工作台",
+            "groups": [
+              {
+                "group": "知识库",
+                "pages": [
+                  "zh-Hans/knowledge-base/overview",
+                  "zh-Hans/knowledge-base/adding-repos",
+                  "zh-Hans/knowledge-base/rag-workspace",
+                  "zh-Hans/knowledge-base/session-management",
+                  "zh-Hans/knowledge-base/index-management",
+                  "zh-Hans/knowledge-base/citations"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Agent 工作台",
             "groups": [
               {
                 "group": "Agent 工作台",
                 "pages": [
-                  "agent-workspace/overview"
+                  "zh-Hans/agent-workspace/overview"
                 ]
               }
             ]
@@ -245,11 +562,11 @@
             },
             {
               "label": "更新日志",
-              "href": "/changelog"
+              "href": "/zh-Hans/changelog"
             },
             {
               "label": "反馈",
-              "href": "/support/feedback"
+              "href": "/zh-Hans/support/feedback"
             }
           ],
           "primary": {
@@ -273,11 +590,11 @@
                 },
                 {
                   "label": "方案对比",
-                  "href": "/subscribe/plan-comparison"
+                  "href": "/zh-Hans/subscribe/plan-comparison"
                 },
                 {
                   "label": "更新日志",
-                  "href": "/changelog"
+                  "href": "/zh-Hans/changelog"
                 }
               ]
             },
@@ -286,19 +603,19 @@
               "items": [
                 {
                   "label": "安装",
-                  "href": "/getting-started/installation"
+                  "href": "/zh-Hans/getting-started/installation"
                 },
                 {
                   "label": "快速开始",
-                  "href": "/getting-started/quickstart"
+                  "href": "/zh-Hans/getting-started/quickstart"
                 },
                 {
                   "label": "连接 GitHub",
-                  "href": "/getting-started/github-connection"
+                  "href": "/zh-Hans/getting-started/github-connection"
                 },
                 {
                   "label": "常见问题",
-                  "href": "/faq/login"
+                  "href": "/zh-Hans/faq/login"
                 }
               ]
             },
@@ -307,19 +624,19 @@
               "items": [
                 {
                   "label": "主界面",
-                  "href": "/main-interface/overview"
+                  "href": "/zh-Hans/main-interface/overview"
                 },
                 {
                   "label": "RAG 工作台",
-                  "href": "/knowledge-base/overview"
+                  "href": "/zh-Hans/knowledge-base/overview"
                 },
                 {
                   "label": "AI 功能",
-                  "href": "/ai-features/overview"
+                  "href": "/zh-Hans/ai-features/overview"
                 },
                 {
                   "label": "CLI / MCP",
-                  "href": "/cli/installation"
+                  "href": "/zh-Hans/cli/installation"
                 }
               ]
             },
@@ -344,323 +661,7 @@
                 },
                 {
                   "label": "文档反馈",
-                  "href": "/support/feedback"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "language": "en",
-        "tabs": [
-          {
-            "tab": "Guide",
-            "groups": [
-              {
-                "group": "Getting started",
-                "pages": [
-                  "en/index",
-                  "en/getting-started/welcome",
-                  "en/getting-started/installation",
-                  "en/getting-started/quickstart",
-                  "en/getting-started/github-connection"
-                ]
-              },
-              {
-                "group": "Product",
-                "pages": [
-                  "en/changelog",
-                  "en/support/feedback"
-                ]
-              },
-              {
-                "group": "Main interface",
-                "pages": [
-                  "en/main-interface/overview",
-                  "en/main-interface/sidebar",
-                  "en/main-interface/repo-list",
-                  "en/main-interface/repo-detail",
-                  "en/main-interface/repo-health",
-                  "en/main-interface/toolbar"
-                ]
-              },
-              {
-                "group": "Manage Stars",
-                "pages": [
-                  "en/manage-stars/tags",
-                  "en/manage-stars/notes-and-status",
-                  "en/manage-stars/batch-operations",
-                  "en/manage-stars/smart-collections",
-                  "en/manage-stars/github-lists"
-                ]
-              },
-              {
-                "group": "Search",
-                "pages": [
-                  "en/search/global-search",
-                  "en/search/semantic-search",
-                  "en/search/external-search",
-                  "en/search/filters",
-                  "en/search/search-center"
-                ]
-              },
-              {
-                "group": "AI features",
-                "pages": [
-                  "en/ai-features/overview",
-                  "en/ai-features/chat",
-                  "en/ai-features/summary",
-                  "en/ai-features/tag-recommendation",
-                  "en/ai-features/readme-translation",
-                  "en/ai-features/personal-notes",
-                  "en/ai-features/auto-tidy",
-                  "en/ai-features/configuration"
-                ]
-              },
-              {
-                "group": "Discover",
-                "pages": [
-                  "en/discover/explore/overview",
-                  "en/discover/trending/trending",
-                  "en/discover/explore/hot-and-new",
-                  "en/discover/weekly/weekly",
-                  "en/discover/activity/activity",
-                  "en/discover/explore/similar-repos"
-                ]
-              },
-              {
-                "group": "Release subscriptions",
-                "pages": [
-                  "en/release/subscription",
-                  "en/release/timeline",
-                  "en/release/notifications",
-                  "en/release/assets-download",
-                  "en/release/background-refresh"
-                ]
-              },
-              {
-                "group": "Pro",
-                "pages": [
-                  "en/subscribe/plan-comparison",
-                  "en/subscribe/purchase",
-                  "en/subscribe/license",
-                  "en/subscribe/byok",
-                  "en/subscribe/restore"
-                ]
-              },
-              {
-                "group": "Share & export",
-                "pages": [
-                  "en/share-export/share-cards",
-                  "en/share-export/export-files",
-                  "en/share-export/data-import",
-                  "en/share-export/data-export"
-                ]
-              },
-              {
-                "group": "Browser plugins",
-                "pages": [
-                  "en/browser-plugin/chrome",
-                  "en/browser-plugin/safari",
-                  "en/browser-plugin/features"
-                ]
-              },
-              {
-                "group": "Settings",
-                "pages": [
-                  "en/settings/general",
-                  "en/settings/list-preferences",
-                  "en/settings/ai",
-                  "en/settings/mcp",
-                  "en/settings/integrations",
-                  "en/settings/external-search",
-                  "en/settings/services",
-                  "en/settings/sync",
-                  "en/settings/shortcuts",
-                  "en/settings/storage",
-                  "en/settings/diagnostics",
-                  "en/settings/about"
-                ]
-              },
-              {
-                "group": "Data & privacy",
-                "pages": [
-                  "en/data-privacy/storage",
-                  "en/data-privacy/backup",
-                  "en/data-privacy/privacy",
-                  "en/data-privacy/telemetry"
-                ]
-              },
-              {
-                "group": "FAQ",
-                "pages": [
-                  "en/faq/login",
-                  "en/faq/sync",
-                  "en/faq/ai",
-                  "en/faq/other",
-                  "en/faq/more-docs"
-                ]
-              },
-              {
-                "group": "Self-hosted backends",
-                "pages": [
-                  "en/self-hosting/overview",
-                  "en/self-hosting/deploy",
-                  "en/self-hosting/configure"
-                ]
-              },
-              {
-                "group": "Starcat CLI",
-                "pages": [
-                  "en/cli/installation",
-                  "en/cli/usage",
-                  "en/cli/skill"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "RAG workspace",
-            "groups": [
-              {
-                "group": "Knowledge base",
-                "pages": [
-                  "en/knowledge-base/overview",
-                  "en/knowledge-base/adding-repos",
-                  "en/knowledge-base/rag-workspace",
-                  "en/knowledge-base/session-management",
-                  "en/knowledge-base/index-management",
-                  "en/knowledge-base/citations"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Agent workspace",
-            "groups": [
-              {
-                "group": "Agent workspace",
-                "pages": [
-                  "en/agent-workspace/overview"
-                ]
-              }
-            ]
-          }
-        ],
-        "banner": {
-          "content": "Starcat is on the [Mac App Store](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) and at [starcat.ink](https://starcat.ink).",
-          "dismissible": true,
-          "type": "info"
-        },
-        "navbar": {
-          "links": [
-            {
-              "label": "Website",
-              "href": "https://starcat.ink"
-            },
-            {
-              "label": "App Store",
-              "href": "https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12"
-            },
-            {
-              "label": "Changelog",
-              "href": "/en/changelog"
-            },
-            {
-              "label": "Feedback",
-              "href": "/en/support/feedback"
-            }
-          ],
-          "primary": {
-            "type": "button",
-            "label": "Download Starcat",
-            "href": "https://starcat.ink"
-          }
-        },
-        "footer": {
-          "socials": {
-            "github": "https://github.com/starcat-app",
-            "website": "https://starcat.ink"
-          },
-          "links": [
-            {
-              "header": "Product",
-              "items": [
-                {
-                  "label": "Website",
-                  "href": "https://starcat.ink"
-                },
-                {
-                  "label": "Plans",
-                  "href": "/en/subscribe/plan-comparison"
-                },
-                {
-                  "label": "Changelog",
-                  "href": "/en/changelog"
-                }
-              ]
-            },
-            {
-              "header": "Start",
-              "items": [
-                {
-                  "label": "Install",
-                  "href": "/en/getting-started/installation"
-                },
-                {
-                  "label": "Quickstart",
-                  "href": "/en/getting-started/quickstart"
-                },
-                {
-                  "label": "Connect GitHub",
-                  "href": "/en/getting-started/github-connection"
-                },
-                {
-                  "label": "FAQ",
-                  "href": "/en/faq/login"
-                }
-              ]
-            },
-            {
-              "header": "Features",
-              "items": [
-                {
-                  "label": "Main interface",
-                  "href": "/en/main-interface/overview"
-                },
-                {
-                  "label": "RAG workspace",
-                  "href": "/en/knowledge-base/overview"
-                },
-                {
-                  "label": "AI features",
-                  "href": "/en/ai-features/overview"
-                },
-                {
-                  "label": "CLI / MCP",
-                  "href": "/en/cli/installation"
-                }
-              ]
-            },
-            {
-              "header": "Download & support",
-              "items": [
-                {
-                  "label": "Mac App Store",
-                  "href": "https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12"
-                },
-                {
-                  "label": "Direct download",
-                  "href": "https://starcat.ink"
-                },
-                {
-                  "label": "Privacy",
-                  "href": "https://starcat.ink/privacy"
-                },
-                {
-                  "label": "Feedback",
-                  "href": "/en/support/feedback"
+                  "href": "/zh-Hans/support/feedback"
                 }
               ]
             }
@@ -677,7 +678,7 @@
   "navbar": {
     "links": [
       {
-        "label": "官网",
+        "label": "Website",
         "href": "https://starcat.ink"
       },
       {
@@ -685,17 +686,17 @@
         "href": "https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12"
       },
       {
-        "label": "更新日志",
+        "label": "Changelog",
         "href": "/changelog"
       },
       {
-        "label": "反馈",
+        "label": "Feedback",
         "href": "/support/feedback"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "下载 Starcat",
+      "label": "Download Starcat",
       "href": "https://starcat.ink"
     }
   },
@@ -805,7 +806,7 @@
   "icons": {
     "library": "fontawesome"
   },
-  "description": "Starcat user docs — organize GitHub Stars into a searchable personal knowledge base.",
+  "description": "Starcat user docs — turn GitHub Stars into a searchable personal knowledge base.",
   "appearance": {
     "default": "system",
     "strict": false
@@ -823,7 +824,7 @@
     "drilldown": true
   },
   "search": {
-    "prompt": "搜索文档… / Search docs…"
+    "prompt": "Search docs…"
   },
   "metadata": {
     "timestamp": true

@@ -1,49 +1,49 @@
 ---
-title: "全局搜索与列表搜索"
-description: "⌘K Search Center 与 ⌘F 列表搜索的分工"
+title: "Global search and list search"
+description: "How ⌘K Search Center and ⌘F list search divide the work"
 ---
 
-## 先分清两个入口
+## Know the two entry points first
 
-| 入口 | 默认快捷键 | 作用 |
-|------|------------|------|
-| **Search Center** | **⌘K** | 独立面板：全部 / 本地 / GitHub / 网页 |
-| **列表搜索框** | **⌘F** | 过滤**当前** Manage/探索列表 |
+| Entry | Default shortcut | Purpose |
+|-------|------------------|---------|
+| **Search Center** | **⌘K** | Standalone panel: All / Local / GitHub / Web |
+| **List search box** | **⌘F** | Filter the **current** Manage / Explore list |
 
-两者都可在 [快捷键](/settings/shortcuts) 修改。旧文档若写「⌘F 打开全局搜索」已过时。
+Both shortcuts can be changed in [Keyboard shortcuts](/settings/shortcuts). Older docs that say “⌘F opens global search” are outdated.
 
-Search Center 专页：[Search Center](/search/search-center)。
+Dedicated Search Center page: [Search Center](/search/search-center).
 
-## 列表关键词搜索
+## List keyword search
 
-在中栏搜索框输入关键词，使用本地 FTS5，通常覆盖：
+Type keywords in the middle-column search box. Uses local FTS5 and typically covers:
 
-- 仓库名、owner、描述  
+- Repository name, owner, description  
 - topics  
-- 私有笔记正文  
+- Private note body  
 
-特性概览：
+Overview:
 
-- 多词组合匹配  
-- 相关性排序（BM25 一类机制）  
-- 可与[工具栏筛选](/search/filters)叠加  
+- Multi-word matching  
+- Relevance ranking (BM25-style)  
+- Can stack with [toolbar filters](/search/filters)  
 
-## 列表语义搜索（Pro）
+## List semantic search (Pro)
 
-切换到「语义」模式后，可用自然语言描述目标库。
+Switch to **Semantic** mode to describe the repo you want in natural language.
 
-前提：
+Prerequisites:
 
 1. [Pro](/subscribe/plan-comparison)  
-2. [设置 → AI](/settings/ai) 配置 Embedding  
-3. 按需构建 AI 索引  
+2. Configure Embedding in [Settings → AI](/settings/ai)  
+3. Build or refresh the AI index as prompted  
 
-范围可选 starred / knowledge / all（以 App 为准）。详见 [语义搜索](/search/semantic-search)。
+Scope options include starred / knowledge / all (exact options follow the app). See [Semantic search](/search/semantic-search).
 
-## 使用建议
+## When to use which
 
-| 场景 | 用哪个 |
-|------|--------|
-| 在「未分类」里快速缩小列表 | ⌘F 列表搜索 + 筛选 |
-| 同时搜本地 + GitHub + 网页 | ⌘K Search Center |
-| 「有没有做本地 RAG 的库」这类语义问法 | 列表语义或后续 RAG |
+| Scenario | Use |
+|----------|-----|
+| Quickly narrow a list like Untagged | ⌘F list search + filters |
+| Search local + GitHub + web at once | ⌘K Search Center |
+| Semantic questions like “repos that do local RAG” | List semantic mode or RAG later |

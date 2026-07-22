@@ -1,39 +1,39 @@
 ---
-title: "趋势 Trending"
-description: "探索 → 趋势：数据来源、入选规则与缓存"
+title: "Trending"
+description: "Explore → Trending: data source, selection rules, and cache"
 ---
 
-## 入口
+## Entry
 
-侧栏 **探索 → 趋势**。
+Sidebar **Explore → Trending**.
 
-<Frame caption="App 内「趋势」说明面板">
-  <img src="/images/screenshots/trending-info.png" alt="趋势说明" className="rounded-xl" />
+<Frame caption="In-app Trending info panel">
+  <img src="/images/screenshots/trending-info.png" alt="Trending info" className="rounded-xl" />
 </Frame>
 
-## 数据来源
+## Data source
 
-GitHub Trending，并通过 GitHub API 补全仓库资料。
+GitHub Trending, with repository details completed via the GitHub API.
 
-## 入选规则
+## Selection rules
 
-- 展示 GitHub **日榜、周榜和月榜**中的项目。
-- 趋势反映短期关注度变化，**不等同于长期热门**。
+- Shows projects from GitHub’s **daily, weekly, and monthly** trending lists.
+- Trends reflect **short-term** attention shifts—not the same as long-term popularity.
 
-## 缓存说明
+## Cache
 
-- **缓存有效期**：日榜 **1 小时**、周榜 **6 小时**、月榜 **24 小时**。
-- **更新方式**：过期后先显示已有榜单，同时在后台更新；手动刷新会立即请求最新数据。
-- **离线处理**：更新失败时保留当前缓存，不会清空已有榜单。
+- **TTL**: daily **1 hour**, weekly **6 hours**, monthly **24 hours**.
+- **Refresh**: After expiry, show the existing list first while updating in the background; a manual refresh requests the latest data immediately.
+- **Offline**: On update failure, keep the current cache; the list is not cleared.
 
-## 能做什么
+## What you can do
 
-- 按语言等条件查看近期趋势仓库（控件以 App 为准）  
-- 打开详情、Star、入库  
+- Browse recently trending repos by language and other filters (controls follow the app)  
+- Open detail, Star, ingest  
 
-适合每日扫一眼「今天热门」，再把值得跟进的项目打上标签或入库。
+Good for a daily scan of “what’s hot today,” then tagging or ingesting follow-ups worth keeping.
 
-## 相关
+## Related
 
-- [探索概览](/discover/explore/overview)
-- 服务仓库（外部）：[starcat-trending-api](https://github.com/starcat-app/starcat-trending-api)
+- [Explore overview](/discover/explore/overview)
+- Service repo (external): [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api)

@@ -1,65 +1,65 @@
 ---
-title: "探索概览"
-description: "五模式对比、发现数据来源与入选规则、整理建议"
+title: "Explore overview"
+description: "Five modes, Discover data source / rules / cache, organize-after-discover"
 ---
 
-## 三个一级区域怎么选
+## Pick the right top-level area
 
-| 区域 | 目的 | 文档 |
-|------|------|------|
-| **Manage** | 整理已有 Stars / 知识库 | [侧边栏](/main-interface/sidebar) |
-| **探索** | 发现新项目 | 本页 |
-| **Activity** | 动态与通知流 | [Activity](/discover/activity/activity) |
+| Area | Purpose | Docs |
+|------|---------|------|
+| **Manage** | Organize existing Stars / knowledge base | [Sidebar](/main-interface/sidebar) |
+| **Explore** | Discover new projects | This page |
+| **Activity** | Feed and notifications | [Activity](/discover/activity/activity) |
 
-## 五种探索模式
+## Five Explore modes
 
-| 模式 | 你在找什么 | 专页 |
-|------|------------|------|
-| **发现** | 综合推荐流；可按 topic / platform 筛 | 本页下方 |
-| **趋势** | 近期热度变化 | [趋势](/discover/trending/trending) |
-| **热门** | 高热度仓库 | [热门与新发布](/discover/explore/hot-and-new) |
-| **新发布** | 稳定版 Release 相关 | 同上 |
-| **周刊** | 多来源周刊条目 | [周刊](/discover/weekly/weekly) |
+| Mode | What you’re looking for | Dedicated page |
+|------|-------------------------|----------------|
+| **Discover** | Curated recommendation feed; filter by topic / platform | Below on this page |
+| **Trending** | Recent momentum | [Trending](/discover/trending/trending) |
+| **Hot** | High-heat repositories | [Hot and new](/discover/explore/hot-and-new) |
+| **New releases** | Stable-release activity | Same as above |
+| **Weekly** | Multi-source weekly entries | [Weekly](/discover/weekly/weekly) |
 
-数据来自 Starcat 的 discovery / trending / weekly 等服务，不是本机 Stars 镜像。若要改用自己的实例，见 [自托管后端](/self-hosting/overview)。
+Data comes from Starcat discovery / trending / weekly services—not a mirror of your local Stars. To point at your own instances, see [Self-hosted backends](/self-hosting/overview).
 
-## 发现（Discover）
+## Discover
 
-侧栏 **探索 → 发现**。
+Sidebar **Explore → Discover**.
 
-<Frame caption="App 内「发现」说明面板">
-  <img src="/images/screenshots/discover-info.png" alt="发现说明" className="rounded-xl" />
+<Frame caption="In-app Discover info panel">
+  <img src="/images/screenshots/discover-info.png" alt="Discover info" className="rounded-xl" />
 </Frame>
 
-### 数据来源
+### Data source
 
-GitHub Search、仓库资料和 Release 数据。
+GitHub Search, repository metadata, and Release data.
 
-### 入选规则
+### Selection rules
 
-- Starcat 综合收录高关注度、近 30 天活跃，以及近一年出现的新项目。
-- 推荐会综合考虑近期活跃度、主题相关性和平台匹配度。
-- 项目池会定期更新，并不代表 GitHub 全站的全部仓库。
+- Starcat includes high-attention projects, projects active in the last 30 days, and new projects that appeared within the last year.
+- Recommendations weigh recent activity, topic relevance, and platform fit.
+- The project pool updates regularly and does **not** represent every repository on GitHub.
 
-### 缓存说明
+### Cache
 
-- **缓存有效期**：3 小时，与热门、新发布共享同一份项目目录缓存。
-- **更新方式**：有效期内优先读取本地缓存；过期后重新获取最新项目目录。
-- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
+- **TTL**: 3 hours; shares one project-catalog cache with Hot and New releases.
+- **Refresh**: Prefer local cache while valid; refetch the catalog after expiry.
+- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
 
-## 发现好项目之后
+## After you find something good
 
-建议流水线：
+Suggested pipeline:
 
-1. 打开详情读 README  
-2. 可选：Star  
-3. 打标签或写一句笔记  
-4. 长期要用 → [入库](/knowledge-base/adding-repos)  
-5. 要追版本 → [订阅 Release](/release/subscription)（注意免费 5 仓限额）  
+1. Open detail and read the README  
+2. Optional: Star  
+3. Tag or jot a short note  
+4. Long-term use → [Ingest](/knowledge-base/adding-repos)  
+5. Track versions → [Subscribe to Release](/release/subscription) (free **5**-repo limit)  
 
-批量处理见 [批量操作](/manage-stars/batch-operations)。
+Batch work: [Batch operations](/manage-stars/batch-operations).
 
-## 相关
+## Related
 
-- [相似推荐](/discover/explore/similar-repos)
-- [Search Center · GitHub Scope](/search/search-center)（主动搜索 vs 浏览榜单）
+- [Similar repos](/discover/explore/similar-repos)
+- [Search Center · GitHub scope](/search/search-center) (active search vs browsing lists)

@@ -1,0 +1,47 @@
+---
+title: "外部搜索"
+description: "网页 Scope 与 AI/RAG 联网上下文共用的 Provider"
+---
+
+## 做什么用
+
+外部搜索把第三方网页检索接到 Starcat：
+
+1. [Search Center](/zh-Hans/search/search-center) 的 **网页** Scope  
+2. AI / RAG 需要时的**联网上下文**（受开关与隐私选项约束）  
+
+AnySearch、Tavily 等是 Provider，不是另一套互不相干的产品。
+
+## Provider 示例
+
+| Provider | 说明 |
+|----------|------|
+| AnySearch | 常用选项；是否需 Key 以 App 为准 |
+| Tavily | 需 API Key |
+| Exa | 需 API Key |
+| Brave LLM Context | 需 API Key |
+
+## 配置步骤
+
+<Steps>
+  <Step title="打开集成">**设置 → 集成 → External Search**。</Step>
+  <Step title="启用 Provider">填写 Key（如需），保存。</Step>
+  <Step title="测试">用测试连接确认可用。</Step>
+  <Step title="设默认">为网页搜索 / AI 上下文选择默认 Provider（选项以界面为准）。</Step>
+</Steps>
+
+也见 [集成设置](/zh-Hans/settings/integrations)。
+
+## 在 Search Center 使用
+
+⌘K → Scope 选 **网页** → 输入查询 → 查看带来源站点的结果。
+
+## 缓存与清理
+
+结果会本地缓存以减少重复计费/请求；可在 **设置 → 存储** 清除外部搜索缓存。
+
+## 隐私注意
+
+- 查询会发往你启用的第三方搜索服务  
+- 私有仓库是否允许附带外部上下文，受集成/AI 相关开关约束  
+- 原则见 [隐私](/zh-Hans/data-privacy/privacy)

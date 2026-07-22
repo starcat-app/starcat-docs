@@ -1,40 +1,40 @@
 ---
-title: "Release 时间线"
-description: "聚合已订阅仓库的 Release：已读、分页、立即检查"
+title: "Release timeline"
+description: "Aggregated Releases from subscribed repos: unread, pagination, check now"
 ---
 
-## 入口
+## Entry
 
-Manage 侧栏 **Release 时间线**（打开为面板/Sheet，以 App 为准）。
+Manage sidebar **Release timeline** (opens as a panel/sheet; layout follows the app).
 
-## 你能看到什么
+## What you see
 
-- 所有已订阅仓库的 Release，按时间倒序  
-- **未读**高亮；可单条已读或全部已读  
-- 展开后阅读 Release 正文（GFM）与资产列表  
-- **每页约 20 条**，滚动加载更多  
+- Releases from all subscribed repos, newest first  
+- **Unread** items highlighted; mark one read or mark all read  
+- Expand to read Release body (GFM) and asset list  
+- **About 20 items per page**, load more on scroll  
 
-## 立即检查
+## Check now
 
-顶部 **立即检查** 会触发一轮轮询（`ReleasePoller.runNow` 一类路径），不等待后台间隔。适合刚发版、想马上确认的时候。
+**Check now** at the top triggers one polling round (`ReleasePoller.runNow`-style path) without waiting for the background interval. Handy right after a release ships.
 
-后台默认间隔见 [后台刷新](/release/background-refresh)。
+Default background interval: [Background refresh](/release/background-refresh).
 
-## 资产过滤
+## Asset filter
 
-顶部过滤框可按文件名片段筛选资产，例如：
+Use the top filter box to match asset file names, for example:
 
 - `dmg` / `pkg`  
 - `arm64` / `aarch64`  
 - `linux` / `windows`  
 
-详见 [资产下载](/release/assets-download)。
+See [Asset downloads](/release/assets-download).
 
-## 字号
+## Font size
 
-时间线正文字号跟随 [通用设置](/settings/general) 的界面字体倍率。
+Timeline body text follows the UI font scale in [General settings](/settings/general).
 
-## 相关
+## Related
 
-- [订阅管理](/release/subscription)
-- [通知](/release/notifications)
+- [Subscriptions](/release/subscription)
+- [Notifications](/release/notifications)

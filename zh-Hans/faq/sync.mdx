@@ -1,0 +1,22 @@
+---
+title: "同步问题"
+description: "Stars 同步、Rate Limit、数量不一致、云同步"
+---
+
+<AccordionGroup>
+  <Accordion title="同步失败？">
+    检查网络 → 手动同步 → 查看 Rate Limit 倒计时 → 重启后再试。见 [同步设置](/zh-Hans/settings/sync)。
+  </Accordion>
+  <Accordion title="什么是 Rate Limit？">
+    GitHub 限制 API 频率。Starcat 会解析响应头并退避。等待重置后再同步。
+  </Accordion>
+  <Accordion title="新 Star 没出现？">
+    再点同步；仍没有则登出登录做更完整刷新。
+  </Accordion>
+  <Accordion title="本地 Star 数和 GitHub 不一致？">
+    同步中断、仓库删除/私有化、本地未刷完都可能导致。手动同步或重新登录。
+  </Accordion>
+  <Accordion title="标签能两台 Mac 自动同步吗？">
+    用户数据云同步尚未上线。请 [手动备份](/zh-Hans/data-privacy/backup)。
+  </Accordion>
+</AccordionGroup>

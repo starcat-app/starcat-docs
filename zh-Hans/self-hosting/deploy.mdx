@@ -1,0 +1,96 @@
+---
+title: "自部署后端 API"
+description: "本地 Go 运行、环境变量要点、Fly.io 部署与健康检查"
+---
+
+## 前置
+
+- Go（版本与各仓库 `go.mod` 一致，当前多为 1.25+）
+- 可选：`flyctl`（部署到 [Fly.io](https://fly.io)）
+- 至少一个 GitHub PAT（**Trending / Weekly / Discovery** 抓取需要；Sharing 的公开页补全仓库信息时也建议配置）
+
+源码任选其一：
+
+- 单独 clone 上表各 [GitHub 仓库](/zh-Hans/self-hosting/overview)  
+- 或使用 Starcat monorepo：`cd supports && ./clone-all.sh` 拉取各 `starcat-*-api/`，再进入对应目录
+
+## 本地单服务（通用步骤）
+
+以 Trending 为例，其它服务同理（端口与环境变量见各仓库 `.env.example`）：
+
+```bash
+git clone https://github.com/starcat-app/starcat-trending-api.git
+cd starcat-trending-api
+cp .env.example .env
+# 编辑 .env：至少设置 API_KEYS；Trending/Weekly/Discovery 再设 GITHUB_TOKENS
+go run ./cmd/server/
+```
+
+| 服务 | 典型 `PORT` | 必填环境变量（摘要） |
+|------|-------------|----------------------|
+| Sharing | `5001` | `API_KEYS`；生产建议 `GITHUB_TOKENS`、`BASE_URL` |
+| Trending | `5002` | `API_KEYS`、`GITHUB_TOKENS` |
+| Weekly | `5003` | `API_KEYS`、`GITHUB_TOKENS` |
+| Wiki | `5004` | `API_KEYS` |
+| Recommend | `5005` | `API_KEYS`、上游推荐相关变量（如 `SIMREPO_API_KEY`，见仓库 README） |
+| Discovery | `5006` | `API_KEYS`、`GITHUB_TOKENS`（及 Admin key，见 `.env.example`） |
+
+有状态服务默认把 SQLite 写在进程工作目录；生产请挂持久卷（Fly 上通常为 `/data/...`）。
+
+### 健康检查
+
+```bash
+curl -sS http://127.0.0.1:5002/healthz
+curl -sS -H "Authorization: Bearer <你的 API_KEYS 之一>" \
+  http://127.0.0.1:5002/api/v1/ping
+```
+
+`ping` 应返回含 `data.service` / `data.ok` 的 JSON；服务名需与所测服务一致。
+
+## monorepo：一次启动全部本地 API
+
+若在完整 Starcat 仓库的 `supports/` 下：
+
+```bash
+cd supports
+./start-all.sh          # 构建并启动 5001–5006
+./start-all.sh --status
+./start-all.sh --stop
+```
+
+约束：端口 5001–5006 空闲；从 `supports/` 根启动（不要只进 `bin/` 跑二进制）。
+
+## 部署到 Fly.io
+
+各仓库自带 `Dockerfile` 与 `fly.toml`。典型流程：
+
+```bash
+# 在对应 API 仓库根目录
+fly apps create starcat-trending-api   # 若尚未创建；名称可自定
+fly volumes create ...                 # 有状态服务需要 /data（见仓库 README / fly.toml）
+fly secrets set API_KEYS=... GITHUB_TOKENS=...
+fly deploy
+```
+
+在 monorepo `supports/` 下也可用 Makefile（维护者常用）：
+
+```bash
+cd supports
+make fly-deploy-trending    # 或 fly-deploy-all
+make fly-health-all
+```
+
+Secrets 不要提交到 git；本地 `.env` 与 Fly secrets 是两套渠道。更细的变量表见仓库内文档与（若有）`supports/docs/fly-io-环境变量.md`。
+
+### 服务间依赖（可选）
+
+- Trending / Weekly 可配置 `WIKI_API_URL` + `WIKI_API_KEY`，在抓到新仓后通知 Wiki 预热。
+- Sharing 的 `BASE_URL` 应指向你对外公开的分享域名（用于拼短链）。
+
+## 部署完成后
+
+把公网 HTTPS 地址（或局域网 `http://IP:端口`）与 `API_KEYS` 中的某一个 Key，填进 Starcat：见 [在 Starcat 中配置](/zh-Hans/self-hosting/configure)。
+
+<Warning>
+  自托管实例的可用性、配额、合规与密钥安全由你自行负责。App Store / Direct 正式版默认仍指向官方实例，直到你在「设置 → 服务」显式覆盖。
+</Warning>
