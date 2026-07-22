@@ -1,0 +1,37 @@
+---
+title: "Batch operations"
+description: "Multi-select workflow; Manage vs Explore action differences"
+---
+
+## When to use
+
+- Clear a large Untagged backlog: filter, then batch tag  
+- Batch ingest repos marked **Using**  
+- Star / ingest multiple ranked items from Discover  
+
+## Standard workflow
+
+<Steps>
+  <Step title="Narrow scope">Pick a sidebar category + [filters](/en/search/filters) / list search.</Step>
+  <Step title="Multi-select">Toolbar → Multi-select → check repos.</Step>
+  <Step title="Run action">Choose an action on the bottom bar and confirm.</Step>
+  <Step title="Finish">Usually exits multi-select automatically with a toast summary; or press Esc to cancel.</Step>
+</Steps>
+
+## Manage actions
+
+| Action | Behavior | Notes |
+|--------|----------|-------|
+| Tags | Append; does not remove existing tags | Free tag limit: 20 |
+| Add / remove from knowledge base | Changes ingest state | [Adding repos](/en/knowledge-base/adding-repos) |
+| Unstar | Calls GitHub API | Cannot undo in-app with one tap; multi-repo confirmation |
+| Move to Stars List | When Lists are synced | [GitHub Lists](/en/manage-stars/github-lists) |
+
+## Explore actions
+
+More common: Star / Unstar, add to knowledge base. See [Discover overview](/en/discover/explore/overview).
+
+## Related
+
+- [Tags](/en/manage-stars/tags)
+- [Smart collections](/en/manage-stars/smart-collections)

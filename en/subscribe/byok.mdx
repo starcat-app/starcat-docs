@@ -1,0 +1,64 @@
+---
+title: "BYOK mode"
+description: "Pro users bring their own API key and configure their AI provider"
+---
+
+## BYOK (Bring Your Own Key)
+
+Starcat AI uses a **bring-your-own-key** model: after you configure a provider and API key under **Settings → AI**, requests go to the endpoint you specify. This is the current, shipping configuration path — not a “coming soon” feature.
+
+Using AI still requires **Pro** (see [Plan comparison](/en/subscribe/plan-comparison)).
+
+## Benefits
+
+- **Quota control**: use your own API account and billing  
+- **Clear path**: requests go straight to your configured endpoint  
+- **Flexible models**: switch Chat / Embedding models per task  
+
+## Supported providers (examples)
+
+| Provider | Notes |
+|----------|-------|
+| OpenAI | Official API |
+| OpenAI-compatible | Third parties that speak the OpenAI protocol |
+| DeepSeek | DeepSeek API |
+| Google Gemini | Gemini family |
+| OpenRouter | Multi-model routing |
+| Ollama | Local open models (requires a running local service) |
+
+The live list in **Settings → AI** is authoritative.
+
+## Setup steps
+
+1. Confirm Pro is purchased and active  
+2. Open **Settings → AI**  
+3. Add a provider; enter API key / Base URL if needed  
+4. Assign models for summary, chat, embedding, translation, and other tasks  
+5. Use **Test connection** to confirm it works  
+
+See [AI configuration](/en/ai-features/configuration) for step-by-step details.
+
+## Security
+
+- API keys are encrypted with AES-GCM and stored in the macOS Keychain  
+- Starcat does not upload your key in plaintext to its own business servers  
+- Keep keys safe and set usage limits in your provider console  
+
+## Related pages
+
+- [AI features overview](/en/ai-features/overview)  
+- [Buy Pro](/en/subscribe/purchase)
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I have to use OpenAI?">
+    No. Compatible endpoints, DeepSeek, OpenRouter, Ollama, and others work — follow the list in Settings.
+  </Accordion>
+  <Accordion title="Are keys uploaded to Starcat servers?">
+    Keys stay in the local Keychain; requests go to your configured provider. See [Privacy](/en/data-privacy/privacy).
+  </Accordion>
+  <Accordion title="RAG still doesn't work after setup?">
+    Check that you configured an **Embedding** model separately — Chat alone is not enough. See [AI configuration](/en/ai-features/configuration).
+  </Accordion>
+</AccordionGroup>

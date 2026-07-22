@@ -1,0 +1,61 @@
+---
+title: "Notes and status"
+description: "Private Markdown notes and unread / read / using"
+---
+
+## Private notes
+
+Each repo can have one private note:
+
+- Stored in local SQLite only—**not uploaded to GitHub**
+- Markdown edit / preview
+- Body is indexed for local search (see [List search](/en/search/global-search))
+
+### Edit workflow
+
+<Steps>
+  <Step title="Open detail">Select a repo; find the **Private notes** collapsible section on the right.</Step>
+  <Step title="Edit">Type in the Edit tab; switch to Preview when needed.</Step>
+  <Step title="Save">Auto-save indicator in the UI; persisted to the database on save.</Step>
+</Steps>
+
+After external writes (browser extension, MCP/CLI), the detail pane refreshes to show the new content.
+
+### AI-generated notes (Pro)
+
+**AI generate** in the notes header: produces a draft first; **you confirm before write**—no silent overwrite. See [AI personal notes](/en/ai-features/personal-notes).
+
+## Reading status
+
+The current model has three values:
+
+| Status | Meaning | Typical use |
+|--------|---------|-------------|
+| **Unread** | Not processed yet | Common default for new Stars |
+| **Read** | Seen / understood | After browsing the README |
+| **Using** | In active use in a project | Libraries you actually depend on |
+
+<Note>
+  Follow the three in-app statuses. Older copy such as “reading” or “deprecated” is obsolete.
+</Note>
+
+### How to change (detail)
+
+- Unread / Read: click the status pill → moves to **Using**
+- Using: click × → back to **Read**
+
+You can also use the CLI (after pairing):
+
+```bash
+starcat repo status set owner/repo using --apply
+```
+
+See [CLI usage](/en/cli/usage).
+
+### Filter by status
+
+Unified toolbar filters support status. See [Filters](/en/search/filters).
+
+## Knowledge base
+
+When marked **Using**, the UI may prompt whether to add the repo to the knowledge base for RAG. Ingest, Star, and status are independent. See [Adding repos](/en/knowledge-base/adding-repos).

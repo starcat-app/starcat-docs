@@ -1,0 +1,71 @@
+---
+title: "CLI installation"
+description: "Homebrew / script install, pairing, and platform notes"
+---
+
+## What is Starcat CLI
+
+[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a cross-platform command-line client and **stdio MCP** bridge for AI agents:
+
+- Does **not** read Starcat SQLite directly  
+- All reads and writes go through the app's MCP tools  
+- Permissions, dry-run, Pro checks, and audit still run in the **macOS Starcat app**  
+
+The app runs on Mac; the CLI can install on the same Mac or connect over a trusted network to a paired app.
+
+## Install
+
+### Homebrew
+
+```bash
+brew tap starcat-app/starcat-cli
+brew install starcat
+```
+
+Tap repo: [`homebrew-starcat-cli`](https://github.com/starcat-app/homebrew-starcat-cli).
+
+### macOS / Linux one-line script
+
+```bash
+curl -fsSL https://github.com/starcat-app/starcat-cli/releases/latest/download/install.sh | sh
+```
+
+Installs to `~/.local/bin/starcat` by default (`STARCAT_INSTALL_DIR` overrides). The script verifies SHA-256.
+
+### Windows PowerShell
+
+```powershell
+irm https://github.com/starcat-app/starcat-cli/releases/latest/download/install.ps1 | iex
+```
+
+## Pairing (required)
+
+<Steps>
+  <Step title="Enable MCP in the app">Starcat → **Settings → MCP** → enable the service. Requires [Pro](/en/subscribe/plan-comparison).</Step>
+  <Step title="Copy the pairing command">Copy from Settings; URI valid ~5 minutes, single-use.</Step>
+  <Step title="Run in Terminal">
+```bash
+starcat pair "starcat-pair://connect?..."
+starcat doctor
+```
+  </Step>
+  <Step title="Confirm device in the app">Pairing is incomplete until you confirm.</Step>
+</Steps>
+
+You can also run `starcat pair` and paste the URI. Long-lived credentials live in Keychain / Credential Manager / Secret Service.
+
+See [MCP settings](/en/settings/mcp).
+
+## Verify
+
+```bash
+starcat --version
+starcat doctor
+starcat capabilities
+```
+
+## Next steps
+
+- [Usage guide](/en/cli/usage)
+- [Agent Skill](/en/cli/skill)
+- Skill repo: [starcat-skill](https://github.com/starcat-app/starcat-skill)

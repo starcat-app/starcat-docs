@@ -1,0 +1,22 @@
+---
+title: "Sync issues"
+description: "Stars sync, rate limits, count mismatches, cloud sync"
+---
+
+<AccordionGroup>
+  <Accordion title="Sync failed?">
+    Check network → tap manual sync → watch the rate-limit countdown → restart and retry. See [Sync settings](/en/settings/sync).
+  </Accordion>
+  <Accordion title="What is rate limit?">
+    GitHub limits API frequency. Starcat parses response headers and backs off. Wait for reset, then sync again.
+  </Accordion>
+  <Accordion title="New Star not showing?">
+    Sync again; if it still missing, sign out and sign in for a fuller refresh.
+  </Accordion>
+  <Accordion title="Local Star count doesn't match GitHub?">
+    Interrupted sync, deleted/private repos, or incomplete local fetch can cause this. Manual sync or sign in again.
+  </Accordion>
+  <Accordion title="Can tags sync automatically across two Macs?">
+    User-data cloud sync is not shipped yet. [Back up manually](/en/data-privacy/backup).
+  </Accordion>
+</AccordionGroup>

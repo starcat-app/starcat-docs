@@ -1,0 +1,84 @@
+---
+title: "RAG workspace"
+description: "Detached three-column window: questions, @ repo picker, timeline, citations, and index"
+---
+
+## Open (Pro)
+
+| Method | Notes |
+|--------|-------|
+| Shortcut | Default **⇧⌘K** (changeable → [Shortcuts](/en/settings/shortcuts)) |
+| Toolbar | “Knowledge base Q&A” |
+| Other | Knowledge base page / related Smart Collection |
+
+Prerequisites:
+
+1. [Pro](/en/subscribe/plan-comparison)  
+2. Chat + Embedding configured under [Settings → AI](/en/settings/ai)  
+3. At least some [ingested](/en/knowledge-base/adding-repos) repos in the knowledge base  
+
+## Three-column layout
+
+```
+┌────────────┬─────────────────────┬──────────────────┐
+│ Sessions   │ Q&A stream +        │ Citations /      │
+│ New / pin  │ execution timeline  │ plan / index     │
+│            │ Composer + @        │ Evidence / Index │
+└────────────┴─────────────────────┴──────────────────┘
+```
+
+- Left and right columns are resizable; width often restores on reopen  
+- Center column shows retrieve / plan / generate steps while running; you can collapse manually  
+
+## Question flow
+
+<Steps>
+  <Step title="Write your question">
+    Be specific. For example:
+    - “Among repos in my knowledge base for local-first sync, what conflict strategies exist?”
+    - “@foo/bar @baz/qux — how do I choose between these for embedded use?”
+  </Step>
+  <Step title="@ pick repos (optional)">
+    Type `@` to open the knowledge-base repo picker; multi-select; remove chips at the top.
+    Used for only / prefer / exclude style scope (per UI semantics).
+  </Step>
+  <Step title="Send">
+    Watch the timeline; wait for streaming or segmented output.
+  </Step>
+  <Step title="Verify citations">
+    Click citation chips in the answer → evidence on the right. See [Citations & evidence](/en/knowledge-base/citations).
+  </Step>
+</Steps>
+
+## Default retrieval scope
+
+**Ingested repositories only**—not “starred but not ingested.”
+
+When empty, onboarding points you to Smart Collections, Search, or Explore to ingest. See [Adding repos](/en/knowledge-base/adding-repos).
+
+## Live web context
+
+If External Search is enabled as live context:
+
+- Successful runs may mix in web evidence  
+- Failures may surface a card pointing to **Settings → Integrations → External Search**  
+
+See [External search](/en/search/external-search).
+
+## Read-only by design
+
+The workspace is Q&A-first: it **does not** change tags / notes / status without confirmation. To mutate data, use organize UI or [CLI `--apply`](/en/cli/usage).
+
+## Sessions and export
+
+Manage history in the left column; export Markdown. See [Session management](/en/knowledge-base/session-management).
+
+## Unhealthy index
+
+Low coverage in the header or “no index” hints → [Index management](/en/knowledge-base/index-management).
+
+## Related
+
+- [Knowledge base overview](/en/knowledge-base/overview)
+- [AI configuration](/en/ai-features/configuration)
+- [FAQ · AI](/en/faq/ai)

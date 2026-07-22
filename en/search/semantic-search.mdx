@@ -1,0 +1,43 @@
+---
+title: "Semantic search"
+description: "Pro: find Stars and knowledge-base entries with natural language"
+---
+
+## When to use it
+
+When you cannot name exact keywords but can describe what you want:
+
+| Keyword mindset | Semantic example |
+|---------------|------------------|
+| `python http server` | “Python libraries for quickly standing up an HTTP service” |
+| `react state` | “React state management with middleware” |
+| `cli json` | “CLI tools for working with JSON” |
+
+## Prerequisites
+
+1. Active [Pro](/en/subscribe/purchase)  
+2. **Settings → AI**: configure a working **Embedding** provider / model  
+3. Build or update the AI index as prompted in the UI  
+4. Switch list search to **Semantic** mode  
+
+Non-Pro users see a locked state and the paywall.
+
+## Scope
+
+Common options:
+
+- **starred**: starred repos  
+- **knowledge**: knowledge base  
+- **all**: broader (exact options follow the app)  
+
+If you only want curated ingested content, prefer **knowledge**, or ask directly in the [RAG workspace](/en/knowledge-base/rag-workspace).
+
+## How it works (user-facing)
+
+Your query is encoded as a vector and compared with locally cached repo vectors; some flows may blend with keyword results. Quality depends heavily on the Embedding model and whether the index covers target repos.
+
+## Related
+
+- [AI settings](/en/settings/ai)
+- [Search Center](/en/search/search-center)
+- [Plan comparison](/en/subscribe/plan-comparison)

@@ -1,0 +1,35 @@
+---
+title: "Chrome extension"
+description: "Install Chrome Companion and connect to local Starcat"
+---
+
+## Prerequisites
+
+1. Starcat installed and **running** on this Mac  
+2. **Settings → Integrations**: configure Local API Key and Browser Plugin (port, token)  
+3. Install the Chrome extension  
+
+Extension repo / release notes: [starcat-chrome-plugin](https://github.com/starcat-app/starcat-chrome-plugin). If listed on Chrome Web Store, follow install links on the website or repo README.
+
+## Connection model
+
+```text
+Chrome extension ──HTTP──► 127.0.0.1:port /plugin/v1/*
+        Bearer Token (matches Integrations settings)
+                │
+                ▼
+         Local Starcat app
+```
+
+When the app quits, injection fails or goes stale — launch Starcat before browsing GitHub.
+
+## Verify
+
+1. Open any GitHub repo page you've starred  
+2. You should see Starcat enhancements (notes / Health, etc. — see [Features](/en/browser-plugin/features))  
+3. If missing: check extension permissions, port/token, and whether the app is running  
+
+## Related
+
+- [Integrations settings](/en/settings/integrations)
+- [Safari](/en/browser-plugin/safari)

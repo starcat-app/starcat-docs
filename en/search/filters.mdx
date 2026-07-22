@@ -1,0 +1,64 @@
+---
+title: "Filters"
+description: "Unified toolbar filters: dimensions, combinations, reset, and stacking with search"
+---
+
+## Entry point
+
+The **unified filter** menu on the Manage toolbar (and some list pages)—funnel icon; label follows the app.
+
+Recommended workflow:
+
+1. Pick a scope in the sidebar first (e.g. Untagged or a Smart Collection)  
+2. Narrow with filters  
+3. Use [batch multi-select](/en/manage-stars/batch-operations) when needed  
+
+Much faster than toggling filters on raw All Stars.
+
+## Dimensions
+
+| Dimension | Description | More |
+|-----------|-------------|------|
+| **Status** | unread / read / using | [Notes and status](/en/manage-stars/notes-and-status) |
+| **Starred / not starred** | Top bar may also offer a quick toggle | — |
+| **Knowledge base** | Ingested / not ingested | [Knowledge base](/en/knowledge-base/overview) |
+| **Language** | Multi-select; pairs with “languages of interest” | [List preferences](/en/settings/list-preferences) |
+| **Tags** | Filter by tag | [Tags](/en/manage-stars/tags) |
+| **Wiki** | Repos with Wiki signals | Wiki entry on detail |
+| **Health** | Repos with cached health scores | [Repo Health](/en/main-interface/repo-health) |
+| **OpenSSF** | Repos with cached security scores | Same as above |
+| **Hide archived** | Exclude archived | — |
+| **Hide fork** | Exclude forks | — |
+
+Not every page exposes every dimension; Explore lists may offer fewer or different filters.
+
+## Combination logic
+
+Multiple conditions are usually **AND**.
+
+Example:
+
+> Language = Swift **and** status = using **and** not ingested  
+
+Good for finding “Swift projects I’m actively using but haven’t added to the knowledge base yet.”
+
+## Stacking with search
+
+| Layer | Role |
+|-------|------|
+| Sidebar category | Broadest scope |
+| Filters | Structured constraints |
+| List search (⌘F) | Keyword / semantic refinement |
+
+When all three apply, remember the current list is already a filtered subset. See [List search](/en/search/global-search).
+
+## Reset and persistence
+
+- **Reset** at the bottom of the menu clears current filters  
+- Conditions often persist per module: switch to “Tag A” then back to All Stars and each may restore its last state  
+- If behavior seems wrong: [General settings](/en/settings/general) → reset list preferences  
+
+## Related
+
+- [Smart collections](/en/manage-stars/smart-collections) (rule filters ≈ savable filters)
+- [Repository list](/en/main-interface/repo-list)

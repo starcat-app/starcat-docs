@@ -1,0 +1,37 @@
+---
+title: "Telemetry and diagnostics"
+description: "Anonymous telemetry off by default; diagnostic log export"
+---
+
+## Anonymous telemetry
+
+Path: **Settings → Diagnostics → Anonymous telemetry** (**off by default**).
+
+### May include
+
+- Event names: app launch, open Manage, run search, sync start/end, etc. (whitelist)  
+- App version, coarse bucket metrics  
+
+### Does not include
+
+- GitHub username, Stars content  
+- Search terms, README, notes  
+- AI prompts / responses, API keys, local paths  
+
+Implementation uses a pipeline such as Aptabase; details follow the privacy policy.
+
+## Diagnostic export
+
+Export a diagnostics bundle from the menu for troubleshooting:
+
+- Version and build number  
+- Database status summary  
+- Recent errors (redacted)  
+- Sync-related info  
+
+Send to [dong4j@gmail.com](mailto:dong4j@gmail.com).
+
+## Related
+
+- [Privacy](/en/data-privacy/privacy)
+- [Diagnostics settings](/en/settings/diagnostics)

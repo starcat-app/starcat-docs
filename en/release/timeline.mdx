@@ -1,0 +1,40 @@
+---
+title: "Release timeline"
+description: "Aggregated Releases from subscribed repos: unread, pagination, check now"
+---
+
+## Entry
+
+Manage sidebar **Release timeline** (opens as a panel/sheet; layout follows the app).
+
+## What you see
+
+- Releases from all subscribed repos, newest first  
+- **Unread** items highlighted; mark one read or mark all read  
+- Expand to read Release body (GFM) and asset list  
+- **About 20 items per page**, load more on scroll  
+
+## Check now
+
+**Check now** at the top triggers one polling round (`ReleasePoller.runNow`-style path) without waiting for the background interval. Handy right after a release ships.
+
+Default background interval: [Background refresh](/en/release/background-refresh).
+
+## Asset filter
+
+Use the top filter box to match asset file names, for example:
+
+- `dmg` / `pkg`  
+- `arm64` / `aarch64`  
+- `linux` / `windows`  
+
+See [Asset downloads](/en/release/assets-download).
+
+## Font size
+
+Timeline body text follows the UI font scale in [General settings](/en/settings/general).
+
+## Related
+
+- [Subscriptions](/en/release/subscription)
+- [Notifications](/en/release/notifications)
