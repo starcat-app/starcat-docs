@@ -1,6 +1,6 @@
 ---
 title: "探索概览"
-description: "五模式对比、与 Manage/Activity 分工、整理建议"
+description: "五模式对比、发现数据来源与入选规则、整理建议"
 ---
 
 ## 三个一级区域怎么选
@@ -15,13 +15,37 @@ description: "五模式对比、与 Manage/Activity 分工、整理建议"
 
 | 模式 | 你在找什么 | 专页 |
 |------|------------|------|
-| **发现** | 综合推荐流；可按 topic / platform 筛 | 本页 |
+| **发现** | 综合推荐流；可按 topic / platform 筛 | 本页下方 |
 | **趋势** | 近期热度变化 | [趋势](/discover/trending/trending) |
 | **热门** | 高热度仓库 | [热门与新发布](/discover/explore/hot-and-new) |
-| **新发布** | 新出现 / 新版本相关 | 同上 |
-| **周刊** | 编辑精选周刊条目 | [周刊](/discover/weekly/weekly) |
+| **新发布** | 稳定版 Release 相关 | 同上 |
+| **周刊** | 多来源周刊条目 | [周刊](/discover/weekly/weekly) |
 
-数据来自 Starcat 的 discovery / trending / weekly 等服务，不是本机 Stars 镜像。
+数据来自 Starcat 的 discovery / trending / weekly 等服务，不是本机 Stars 镜像。若要改用自己的实例，见 [自托管后端](/self-hosting/overview)。
+
+## 发现（Discover）
+
+侧栏 **探索 → 发现**。
+
+<Frame caption="App 内「发现」说明面板">
+  <img src="/images/screenshots/discover-info.png" alt="发现说明" className="rounded-xl" />
+</Frame>
+
+### 数据来源
+
+GitHub Search、仓库资料和 Release 数据。
+
+### 入选规则
+
+- Starcat 综合收录高关注度、近 30 天活跃，以及近一年出现的新项目。
+- 推荐会综合考虑近期活跃度、主题相关性和平台匹配度。
+- 项目池会定期更新，并不代表 GitHub 全站的全部仓库。
+
+### 缓存说明
+
+- **缓存有效期**：3 小时，与热门、新发布共享同一份项目目录缓存。
+- **更新方式**：有效期内优先读取本地缓存；过期后重新获取最新项目目录。
+- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
 
 ## 发现好项目之后
 

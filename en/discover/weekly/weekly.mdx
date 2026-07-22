@@ -1,21 +1,38 @@
 ---
 title: "Weekly"
-description: "Repository entries from curated tech weeklies"
+description: "Multi-source weeklies: data sources, selection rules, and cache"
 ---
 
 ## Entry
 
 Sidebar **Explore → Weekly**.
 
-## Sources (examples)
+<Frame caption="In-app Weekly info panel">
+  <img src="/images/screenshots/weekly-info.png" alt="Weekly info" className="rounded-xl" />
+</Frame>
 
-Aggregates repo entries from multiple weeklies / digests, for example:
+## Data sources
 
+Aggregates repository entries from multiple weeklies / digests, including:
+
+- Ruan Yifeng’s Tech Enthusiast Weekly  
+- ZRead  
+- Hacker News  
 - HelloGitHub  
-- Ruanyifeng’s weekly-related projects  
-- AI digest and other extended sources  
+- Verified AI intelligence  
 
 Browse by source or language (options follow the UI).
+
+## Selection rules
+
+- A project appears only after at least one **enabled** source includes it.
+- The same project may come from multiple sources; **editor-pinned** items rank first.
+
+## Cache
+
+- **TTL**: **6 hours**.
+- **Refresh**: Use local cache while valid; after expiry, show existing content and silently refresh in the background; a manual refresh requests the latest data immediately.
+- **Offline**: On update failure, keep the last successful cache so browsing is not interrupted.
 
 ## How to use it
 

@@ -1,15 +1,55 @@
 ---
 title: "Hot and new releases"
-description: "Hot and New releases modes in Explore"
+description: "Hot and New releases: data source, selection rules, and cache"
 ---
 
 ## Hot
 
-**Explore → Hot**: a leaderboard of high-heat repositories, usually with language filters.
+Sidebar **Explore → Hot**.
+
+<Frame caption="In-app Hot info panel">
+  <img src="/images/screenshots/hot-info.png" alt="Hot info" className="rounded-xl" />
+</Frame>
+
+### Data source
+
+Starcat’s discovery project pool.
+
+### Selection rules
+
+- Archived and Fork repositories are excluded.
+- A project must reach **1,000 Stars**, or meet the composite heat threshold.
+- Composite heat considers Stars, Forks, Release download counts, and recent activity.
+
+### Cache
+
+- **TTL**: 3 hours; shares one project-catalog cache with Discover and New releases.
+- **Refresh**: After expiry, refetch the shared catalog and recompute the Hot list.
+- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
 
 ## New releases
 
-**Explore → New releases**: repos that are new or tied to fresh releases (sort rules follow the app).
+Sidebar **Explore → New releases**.
+
+<Frame caption="In-app New releases info panel">
+  <img src="/images/screenshots/new-releases-info.png" alt="New releases info" className="rounded-xl" />
+</Frame>
+
+### Data source
+
+GitHub Releases within Starcat’s discovery project pool.
+
+### Selection rules
+
+- Only projects that shipped a **stable** release in the last **180 days**.
+- Drafts, pre-releases, releases with no downloadable assets, archived projects, and Forks are excluded.
+- Default sort: most recent release time.
+
+### Cache
+
+- **TTL**: 3 hours; shares one project-catalog cache with Discover and Hot.
+- **Refresh**: After expiry, refetch projects and Release info.
+- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
 
 ## Organize after discovery
 

@@ -1,0 +1,96 @@
+---
+title: "Deploy support APIs"
+description: "Local Go runs, env essentials, Fly.io deploy, and health checks"
+---
+
+## Prerequisites
+
+- Go (match each repo’s `go.mod`; currently often 1.25+)
+- Optional: `flyctl` for [Fly.io](https://fly.io)
+- At least one GitHub PAT (**Trending / Weekly / Discovery** need it; Sharing benefits from tokens for public repo enrichment)
+
+Get the code either by:
+
+- Cloning each [GitHub repo](/en/self-hosting/overview) separately, or  
+- From a full Starcat tree: `cd supports && ./clone-all.sh`, then enter each `starcat-*-api/`
+
+## Local single service
+
+Trending example (same pattern for others; see each `.env.example`):
+
+```bash
+git clone https://github.com/starcat-app/starcat-trending-api.git
+cd starcat-trending-api
+cp .env.example .env
+# Edit .env: set API_KEYS; for Trending/Weekly/Discovery also set GITHUB_TOKENS
+go run ./cmd/server/
+```
+
+| Service | Typical `PORT` | Required env (summary) |
+|---------|----------------|------------------------|
+| Sharing | `5001` | `API_KEYS`; production: `GITHUB_TOKENS`, `BASE_URL` |
+| Trending | `5002` | `API_KEYS`, `GITHUB_TOKENS` |
+| Weekly | `5003` | `API_KEYS`, `GITHUB_TOKENS` |
+| Wiki | `5004` | `API_KEYS` |
+| Recommend | `5005` | `API_KEYS` + upstream vars (e.g. `SIMREPO_API_KEY`; see README) |
+| Discovery | `5006` | `API_KEYS`, `GITHUB_TOKENS` (+ admin keys; see `.env.example`) |
+
+Stateful services write SQLite under the working directory by default; production should use a persistent volume (on Fly usually `/data/...`).
+
+### Health checks
+
+```bash
+curl -sS http://127.0.0.1:5002/healthz
+curl -sS -H "Authorization: Bearer <one of your API_KEYS>" \
+  http://127.0.0.1:5002/api/v1/ping
+```
+
+`ping` should return JSON with `data.service` / `data.ok`; `service` must match the API you intended.
+
+## Monorepo: start all local APIs
+
+From a full Starcat checkout’s `supports/`:
+
+```bash
+cd supports
+./start-all.sh
+./start-all.sh --status
+./start-all.sh --stop
+```
+
+Ports `5001`–`5006` must be free; start from the `supports/` root (do not run binaries only from `bin/`).
+
+## Deploy on Fly.io
+
+Each repo includes `Dockerfile` and `fly.toml`. Typical flow:
+
+```bash
+# In the API repo root
+fly apps create starcat-trending-api   # if needed; name can differ
+# Create a /data volume for stateful apps (see README / fly.toml)
+fly secrets set API_KEYS=... GITHUB_TOKENS=...
+fly deploy
+```
+
+Maintainer Makefile shortcuts under `supports/`:
+
+```bash
+cd supports
+make fly-deploy-trending    # or fly-deploy-all
+make fly-health-all
+```
+
+Never commit secrets. Local `.env` and Fly secrets are separate. See each repo’s docs and (if present) `supports/docs/fly-io-环境变量.md`.
+
+### Optional cross-service wiring
+
+- Trending / Weekly may set `WIKI_API_URL` + `WIKI_API_KEY` to warm Wiki after crawls.
+- Sharing `BASE_URL` should be your public share origin used when building short links.
+
+## After deploy
+
+Paste the public HTTPS URL (or LAN `http://IP:port`) and one key from `API_KEYS` into Starcat — see [Configure in Starcat](/en/self-hosting/configure).
+
+<Warning>
+  You own uptime, quotas, compliance, and key security for self-hosted instances. Released App Store / Direct builds keep official defaults until you override them under **Settings → Services**.
+</Warning>

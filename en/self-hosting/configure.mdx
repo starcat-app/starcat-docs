@@ -1,0 +1,78 @@
+---
+title: "Configure self-hosted APIs in Starcat"
+description: "Settings → Services: custom URL, API key, test connection, reset"
+---
+
+## Entry
+
+**Settings → Services**
+
+Intro copy: “Configure custom endpoints for Starcat backend services.” Each service card includes:
+
+| Control | Purpose |
+|---------|---------|
+| **Self-host** link | Opens that service’s GitHub repository |
+| **URL** | Custom baseURL; empty = official default |
+| **API Key** | Override Bearer token; empty = baked-in production key |
+| **Test connection** | `GET /api/v1/ping` with auth |
+| **Reset** | Clear custom URL/key for that service |
+
+## Rules
+
+1. **URL is the service root only** — no business path, no trailing slash noise.  
+   - Good: `http://127.0.0.1:5002` or `https://trending.example.com`  
+   - Bad: `http://127.0.0.1:5002/api/v1` or a legacy `…/api` suffix (Sharing’s old `/api` form is stripped on save)
+2. **API Key** must be one entry from the instance’s `API_KEYS` allowlist.  
+   Client priority: custom key on this page → baked-in production key → none (requests omit `Authorization`, usually 401).
+3. **Test connection** succeeds when the host is reachable, the key is accepted, and `data.service` matches the card (catches wrong ports).
+4. You may override only some services (e.g. self-host Discovery, keep official Trending).
+
+## Related “self-host” that is not this page
+
+| Capability | Where | Notes |
+|------------|-------|-------|
+| Meilisearch / Qdrant (optional RAG) | **Settings → AI** | Not the Go support APIs |
+| AI Provider base URL | **Settings → AI** | BYOK model endpoints |
+| Direct License | No user override | Payments / entitlement; out of scope |
+
+## Local wiring example
+
+If all APIs are running per [Deploy](/en/self-hosting/deploy):
+
+| Service | Example URL |
+|---------|-------------|
+| Sharing | `http://127.0.0.1:5001` |
+| Trending | `http://127.0.0.1:5002` |
+| Weekly | `http://127.0.0.1:5003` |
+| Wiki | `http://127.0.0.1:5004` |
+| Recommend | `http://127.0.0.1:5005` |
+| Discovery | `http://127.0.0.1:5006` |
+
+Paste matching keys and test each card.
+
+## How it takes effect
+
+Saving hot-updates the client baseURL / key (full app restart usually unnecessary; refresh the Explore pane if a list looks stale).
+
+Status-bar availability uses **`/healthz`** (no key), which is different from **Test connection**:
+
+| Entry | Path | Auth | Meaning |
+|-------|------|------|---------|
+| Settings → Test | `/api/v1/ping` | Bearer | URL + key + service identity |
+| Status bar | `/healthz` | None | Process liveness |
+
+## Troubleshooting
+
+| Symptom | Check |
+|---------|-------|
+| Unreachable | Firewall / bind address; use `127.0.0.1` locally |
+| Unauthorized | Key missing from server `API_KEYS` or mistyped in the app |
+| Service mismatch | URL points at another service’s port |
+| Business 404 | Extra `/api` or path on the baseURL |
+| Empty Trending/Discover | Self-hosted crawler not warm yet; logs + GitHub PAT quota |
+
+## Related
+
+- [Overview](/en/self-hosting/overview)
+- [Deploy](/en/self-hosting/deploy)
+- [Integrations](/en/settings/integrations) (plugins / External Search — different from these APIs)

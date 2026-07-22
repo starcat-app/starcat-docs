@@ -1,0 +1,38 @@
+---
+title: "自托管后端概览"
+description: "六套开源支持 API：用途、默认地址与 GitHub 仓库"
+---
+
+普通用户**不必**自托管：Starcat 已内置指向官方 Fly.io 实例的默认地址与 API Key。
+
+本专题面向希望自行部署后端的进阶用户：检查源码、本地联调，或把探索 / 周刊 / 分享等流量接到自己的实例。
+
+## 服务一览
+
+| 服务 | 用途（App 内） | 默认生产地址 | 本地默认端口 | GitHub |
+|------|----------------|--------------|--------------|--------|
+| **Trending** | 探索 → 趋势 | `https://starcat-trending-api.fly.dev` | `5002` | [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api) |
+| **Weekly** | 探索 → 周刊 | `https://starcat-weekly-api.fly.dev` | `5003` | [starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api) |
+| **Discovery** | 探索 → 发现 / 热门 / 新发布 | `https://starcat-discovery-api.fly.dev` | `5006` | [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api) |
+| **Wiki** | Wiki / 外部文档索引探测 | `https://starcat-wiki-api.fly.dev` | `5004` | [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api) |
+| **Recommend** | 相似仓库推荐 | `https://starcat-recommend-api.fly.dev` | `5005` | [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api) |
+| **Sharing** | AI 分享页 / 短链 | `https://starcat-sharing-api.fly.dev` | `5001` | [starcat-sharing-api](https://github.com/starcat-app/starcat-sharing-api) |
+
+<Note>
+  Direct 许可证 / 支付相关后端**不在**「设置 → 服务」里配置，也不在本专题范围内。
+</Note>
+
+## 鉴权约定
+
+- 业务与探测接口：`/api/v1/*` 需要 `Authorization: Bearer <API_KEY>`
+- 进程存活：`GET /healthz` **无鉴权**（状态栏可用性）
+- 设置页「测试连接」：`GET /api/v1/ping`（校验地址 + Key + 服务身份）
+
+Key 格式一般为 `sk-starcat-` + 32 位字符；可用各仓库 README 或 monorepo 脚本 `supports/scripts/gen-api-key.sh` 生成。
+
+## 下一步
+
+1. [自部署](/self-hosting/deploy) — 本地运行或 Fly.io  
+2. [在 Starcat 中配置](/self-hosting/configure) — **设置 → 服务**
+
+相关产品能力：[探索概览](/discover/explore/overview)、[周刊](/discover/weekly/weekly)、[趋势](/discover/trending/trending)、[分享卡](/share-export/share-cards)。

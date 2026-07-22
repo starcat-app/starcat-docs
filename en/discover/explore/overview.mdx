@@ -1,6 +1,6 @@
 ---
 title: "Explore overview"
-description: "Five modes compared, Manage/Activity split, organize-after-discover workflow"
+description: "Five modes, Discover data source / rules / cache, organize-after-discover"
 ---
 
 ## Pick the right top-level area
@@ -15,13 +15,37 @@ description: "Five modes compared, Manage/Activity split, organize-after-discove
 
 | Mode | What you’re looking for | Dedicated page |
 |------|-------------------------|----------------|
-| **Discover** | Curated recommendation feed; filter by topic / platform | This page |
+| **Discover** | Curated recommendation feed; filter by topic / platform | Below on this page |
 | **Trending** | Recent momentum | [Trending](/en/discover/trending/trending) |
 | **Hot** | High-heat repositories | [Hot and new](/en/discover/explore/hot-and-new) |
-| **New releases** | New or freshly released projects | Same as above |
-| **Weekly** | Editor-curated weekly entries | [Weekly](/en/discover/weekly/weekly) |
+| **New releases** | Stable-release activity | Same as above |
+| **Weekly** | Multi-source weekly entries | [Weekly](/en/discover/weekly/weekly) |
 
-Data comes from Starcat discovery / trending / weekly services—not a mirror of your local Stars.
+Data comes from Starcat discovery / trending / weekly services—not a mirror of your local Stars. To point at your own instances, see [Self-hosted backends](/en/self-hosting/overview).
+
+## Discover
+
+Sidebar **Explore → Discover**.
+
+<Frame caption="In-app Discover info panel">
+  <img src="/images/screenshots/discover-info.png" alt="Discover info" className="rounded-xl" />
+</Frame>
+
+### Data source
+
+GitHub Search, repository metadata, and Release data.
+
+### Selection rules
+
+- Starcat includes high-attention projects, projects active in the last 30 days, and new projects that appeared within the last year.
+- Recommendations weigh recent activity, topic relevance, and platform fit.
+- The project pool updates regularly and does **not** represent every repository on GitHub.
+
+### Cache
+
+- **TTL**: 3 hours; shares one project-catalog cache with Hot and New releases.
+- **Refresh**: Prefer local cache while valid; refetch the catalog after expiry.
+- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
 
 ## After you find something good
 

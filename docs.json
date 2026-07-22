@@ -156,6 +156,7 @@
                   "settings/mcp",
                   "settings/integrations",
                   "settings/external-search",
+                  "settings/services",
                   "settings/sync",
                   "settings/shortcuts",
                   "settings/storage",
@@ -179,6 +180,14 @@
                   "faq/sync",
                   "faq/ai",
                   "faq/other"
+                ]
+              },
+              {
+                "group": "自托管后端",
+                "pages": [
+                  "self-hosting/overview",
+                  "self-hosting/deploy",
+                  "self-hosting/configure"
                 ]
               },
               {
@@ -466,6 +475,7 @@
                   "en/settings/mcp",
                   "en/settings/integrations",
                   "en/settings/external-search",
+                  "en/settings/services",
                   "en/settings/sync",
                   "en/settings/shortcuts",
                   "en/settings/storage",
@@ -490,6 +500,14 @@
                   "en/faq/ai",
                   "en/faq/other",
                   "en/faq/more-docs"
+                ]
+              },
+              {
+                "group": "Self-hosted backends",
+                "pages": [
+                  "en/self-hosting/overview",
+                  "en/self-hosting/deploy",
+                  "en/self-hosting/configure"
                 ]
               },
               {
