@@ -1,5 +1,6 @@
 # Starcat Documentation
 
+<!-- starcat-promo:start -->
 <div align="center">
 <a href="https://starcat.ink"><img src="https://raw.githubusercontent.com/starcat-app/starcat-pro/main/banner.webp" width="100%" alt="Starcat" /></a>
 
@@ -38,6 +39,8 @@ brew install --cask starcat
 - CLI / MCP: [starcat-cli](https://github.com/starcat-app/starcat-cli) / [Homebrew tap](https://github.com/starcat-app/homebrew-starcat-cli)
 - AI Agent Skill: https://github.com/starcat-app/starcat-skill
 - Browser plugins: [Chrome](https://github.com/starcat-app/starcat-chrome-plugin) / [Safari](https://github.com/starcat-app/starcat-safari-plugin)
+- Documentation: https://github.com/starcat-app/starcat-docs
+- Website source: https://github.com/starcat-app/starcat-site
 - Localization: https://github.com/starcat-app/starcat-localization
 
 **Self-hostable support APIs:**
@@ -48,6 +51,7 @@ brew install --cask starcat
 - [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api)
 - [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)
 - [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api)
+<!-- starcat-promo:end -->
 
 This repository contains the official user documentation for Starcat. The documentation is built with [Mintlify](https://mintlify.com/) and published at [starcat.mintlify.site](https://starcat.mintlify.site/).
 

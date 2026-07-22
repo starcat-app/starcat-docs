@@ -1,5 +1,6 @@
 # Starcat 官方文档
 
+<!-- starcat-promo:start -->
 <div align="center">
 <a href="https://starcat.ink"><img src="https://raw.githubusercontent.com/starcat-app/starcat-pro/main/banner.webp" width="100%" alt="Starcat" /></a>
 
@@ -38,6 +39,8 @@ brew install --cask starcat
 - CLI / MCP: [starcat-cli](https://github.com/starcat-app/starcat-cli) / [Homebrew tap](https://github.com/starcat-app/homebrew-starcat-cli)
 - AI Agent Skill: https://github.com/starcat-app/starcat-skill
 - 浏览器插件: [Chrome](https://github.com/starcat-app/starcat-chrome-plugin) / [Safari](https://github.com/starcat-app/starcat-safari-plugin)
+- 官方文档: https://github.com/starcat-app/starcat-docs
+- 官网源码: https://github.com/starcat-app/starcat-site
 - 本地化: https://github.com/starcat-app/starcat-localization
 
 **可自部署支撑 API：**
@@ -48,6 +51,7 @@ brew install --cask starcat
 - [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api)
 - [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)
 - [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api)
+<!-- starcat-promo:end -->
 
 这个仓库用于维护 Starcat 的官方用户文档。文档使用 [Mintlify](https://mintlify.com/) 构建，并发布在 [starcat.mintlify.site](https://starcat.mintlify.site/)。
 
