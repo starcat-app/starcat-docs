@@ -1,46 +1,33 @@
 ---
 title: "数据存储说明"
-description: "Starcat 的数据存储方式与位置"
+description: "SQLite、Keychain、沙盒与数据隔离"
 ---
 
-## 数据存储说明
+## 本地 SQLite
 
-理解 Starcat 如何存储你的数据，有助于你做出明智的隐私决策。
+| 数据类型 | 可重建？ |
+|----------|----------|
+| 仓库元数据 / README 缓存 | 是 |
+| 标签 / 笔记 / 状态 / 集合 | **否** |
+| AI / RAG 历史 | 视需求备份 |
+| 摘要等 AI 缓存 | 可再生成 |
 
-## 存储架构
+技术栈：GRDB.swift + FTS5；Schema 通过版本化 Migration 升级，正式版用户无需删库。
 
-### 本地 SQLite
+## Keychain
 
-所有数据以 SQLite 数据库格式存储在本地：
+- GitHub OAuth / PAT  
+- AI Provider API Key  
+- 本地集成相关密钥  
 
-| 数据类型 | 存储位置 | 可重建 |
-|----------|----------|--------|
-| 仓库缓存（元数据、README） | Application Support/Starcat | ✅ 是 |
-| 用户数据（标签、笔记、状态） | Application Support/Starcat | ❌ 否 |
-| AI 对话历史 | Application Support/Starcat | ✅ 是（但如果需要可备份） |
-| AI 摘要缓存 | Application Support/Starcat | ✅ 是 |
-| 设置偏好 | UserDefaults | ✅ 是 |
+## App Store vs Direct
 
-### 数据库技术
+两套容器/目录，**数据不自动互通**。见 [安装](/getting-started/installation)。
 
-- 使用 GRDB.swift（SQLite 封装）
-- FTS5 全文搜索引擎
-- 数据库迁移走版本化 Migration 机制
+## 账号隔离
 
-## Keychain 存储
+不同 GitHub 账号的本地数据隔离；切换账号不会自动清空另一账号数据。
 
-以下敏感信息存储在 macOS Keychain 中（AES-GCM 加密）：
+## 云同步
 
-- GitHub OAuth Token
-- GitHub PAT Token
-- AI Provider API Key
-
-## CloudKit (Pro)
-
-Pro 用户可选择将用户数据同步到 iCloud。详见 [备份与恢复](/data-privacy/backup)。
-
-## 数据隔离
-
-- 每个 GitHub 账号的数据完全隔离
-- 切换账号不会丢失前一个账号的数据
-- App Store 版本在沙盒容器中运行
+尚未上线。见 [备份](/data-privacy/backup)。

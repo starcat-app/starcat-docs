@@ -1,49 +1,35 @@
 ---
 title: "隐私政策"
-description: "Starcat 的隐私保护承诺"
+description: "本地优先、BYOK、遥测与完整法律文本入口"
 ---
 
-## 隐私保护
+## 原则摘要
 
-Starcat 将隐私保护作为核心设计原则。
+Starcat 以**本地优先**为默认：
 
-## 隐私原则
+- 标签、笔记、状态等用户数据优先只在本机  
+- 不出售个人数据、无广告追踪  
+- 不读取 GitHub 密码  
+- AI Key 存 Keychain；笔记不用于「拿去训练你们的模型」这类用途  
 
-### 本地优先
+完整法律文本以官网为准：[starcat.ink/privacy](https://starcat.ink/privacy)。
 
-- 你的数据（标签、笔记、状态、设置）优先存储在本地
-- 没有你的明确操作，数据不会离开你的设备
+## 数据分类
 
-### 数据分离
+| 类型 | 例子 | 可否从 GitHub 重建 |
+|------|------|--------------------|
+| 仓库缓存 | 元数据、README | 可以 |
+| 用户数据 | 标签、笔记、状态、集合规则 | **不可以** |
+| 密钥 | GitHub Token、AI Key | Keychain |
 
-- **仓库缓存**：可以从 GitHub 重建，不包含个人信息
-- **用户数据**：标签、笔记等，是你个人创造的内容，受到保护
+跨设备云同步尚未上线 → [备份](/data-privacy/backup)。
 
-### AI 隐私
+## AI 与第三方
 
-- **BYOK 模式**：AI 请求直接到你配置的 Provider，不经过 Starcat 服务器
-- Starcat 不会存储或转发你的 API Key
-- AI 摘要的公开分享需要你的明确操作
+- **BYOK**：请求发往你配置的 Provider → [BYOK](/subscribe/byok)  
+- **外部搜索**：仅在启用时把查询发给对应 Provider → [外部搜索](/search/external-search)  
+- **分享**：卡片导出或公开链接需你主动操作 → [分享卡片](/share-export/share-cards)  
 
-## 数据收集
+## 遥测
 
-### 匿名遥测
-
-Starcat 收集匿名的使用统计数据以改进产品：
-
-- 功能使用频率
-- 性能指标
-- 崩溃报告
-
-> 你可以选择关闭匿名遥测。
-
-### 不上传的内容
-
-- 你的 GitHub Stars 数据
-- 你的标签、笔记
-- 你的 README 浏览历史
-- 你的 AI 对话内容
-
-## 完整隐私政策
-
-查看完整隐私政策：[starcat.ink/privacy](https://starcat.ink/privacy)
+匿名遥测**默认关**，在 **设置 → 诊断** 开启。详见 [遥测](/data-privacy/telemetry)。

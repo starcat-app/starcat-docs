@@ -1,36 +1,33 @@
 ---
 title: "导出文件"
-description: "将 Stars 列表导出为 Markdown 或 HTML 文件"
+description: "Starred / 知识库导出为 HTML 或 Markdown"
 ---
 
-## 文件导出
+## 已支持
 
-将你的 Stars 列表导出为单文件，方便分享或归档。
+在分享相关界面中选择范围与格式：
 
-## 支持的格式
-
-| 格式 | 说明 |
+| 范围 | 格式 |
 |------|------|
-| **Markdown** | `.md` 文件，适合在 GitHub、博客等平台展示 |
-| **HTML** | `.html` 文件，可在浏览器中直接打开 |
+| Starred | HTML / Markdown |
+| 知识库 | HTML / Markdown |
 
-## 导出范围
+知识库导出可包含本地笔记、标签、状态、README、Health、摘要缓存等只读快照（以实际文件为准）。
 
-- **Starred 列表** — 导出 GitHub Stars List 分组
-- **知识库** — 导出知识库仓库列表
+## 步骤（典型）
 
-## 使用方式
+1. 打开分享 / 导出入口  
+2. 选择 Starred 或知识库  
+3. 选择 HTML 或 Markdown  
+4. 选保存位置  
 
-1. 打开分享卡编辑器
-2. 选择「导出 Markdown」或「导出 HTML」
-3. 选择保存位置
-4. 文件自动生成并保存
+## 其他导出
 
-## 导出内容
+| 来源 | 方式 |
+|------|------|
+| 单仓 README | 详情 README 工具栏 → 导出 Markdown |
+| RAG 会话 | 工作台导出 `.md` → [会话管理](/knowledge-base/session-management) |
 
-导出的文件包含：
-- 仓库名称和链接
-- 描述
-- 语言
-- Star 数
-- 标签（如果有）
+## 尚未支持
+
+整库 JSON 备份/迁移见 [数据导出](/share-export/data-export)（即将推出）。换机请先 [手动备份目录](/data-privacy/backup)。

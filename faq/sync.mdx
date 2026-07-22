@@ -1,37 +1,22 @@
 ---
 title: "同步问题"
-description: "Stars 同步相关常见问题"
+description: "Stars 同步、Rate Limit、数量不一致、云同步"
 ---
 
-## 同步问题
-
 <AccordionGroup>
-  <Accordion title="同步失败怎么办？">
-    1. 检查 GitHub 是否可达（访问 github.com）
-    2. 点击工具栏同步按钮手动重试
-    3. 检查 Rate Limit：如果触发了 API 限制，Starcat 会自动退避并显示倒计时
-    4. 尝试重启应用
+  <Accordion title="同步失败？">
+    检查网络 → 手动同步 → 查看 Rate Limit 倒计时 → 重启后再试。见 [同步设置](/settings/sync)。
   </Accordion>
-  <Accordion title="Rate Limit 是什么？">
-    GitHub 对 API 请求有频率限制。Starcat 会自动处理 Rate Limit：
-    - 检测到限制后自动暂停
-    - 显示距离重置的倒计时
-    - 重置时间到达后自动恢复
+  <Accordion title="什么是 Rate Limit？">
+    GitHub 限制 API 频率。Starcat 会解析响应头并退避。等待重置后再同步。
   </Accordion>
-  <Accordion title="新 Star 的仓库没出现？">
-    增量同步只检测变化的页。如果新 Star 的仓库在已有页面中，应该被增量同步检测到。
-    
-    手动点击同步按钮触发完整检查，或等待后台定时同步。
+  <Accordion title="新 Star 没出现？">
+    再点同步；仍没有则登出登录做更完整刷新。
   </Accordion>
-  <Accordion title="Star 数量与 GitHub 不一致？">
-    可能的原因：
-    - 同步过程被中断
-    - 某些仓库已被删除或设为私有
-    - 本地数据未完全刷新
-
-    尝试手动同步，或登出再登录触发全量同步。
+  <Accordion title="本地 Star 数和 GitHub 不一致？">
+    同步中断、仓库删除/私有化、本地未刷完都可能导致。手动同步或重新登录。
   </Accordion>
-  <Accordion title="取消 Star 后本地没更新？">
-    Starcat 调用 Unstar API 后会立即标记本地仓库为 unstarred。如果远端状态不一致，尝试手动同步。
+  <Accordion title="标签能两台 Mac 自动同步吗？">
+    用户数据云同步尚未上线。请 [手动备份](/data-privacy/backup)。
   </Accordion>
 </AccordionGroup>

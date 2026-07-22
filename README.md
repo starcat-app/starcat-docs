@@ -1,43 +1,34 @@
-# Mintlify Starter Kit
+# Starcat Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+Starcat 用户文档站点（[Mintlify](https://mintlify.com)）。
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## 本地预览
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
-
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
+```bash
 npm i -g mint
-```
-
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+浏览器打开 `http://localhost:3000`。
 
-## Publishing changes
+## 内容约定
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+- 事实优先级：App 内码（如 `EntitlementGate`）> `功能实现总览` > 正式方案 > 本站文案
+- 未上线能力须标 `badge: "即将推出"` 或 Beta，禁止写成可操作步骤
+- 官网与购买入口统一 `https://starcat.ink`；App Store 链接见 `docs.json` / 安装页
+- 双语：`docs.json` → `navigation.languages`（`zh-Hans` 默认 + `en`）；英文页路径必须以 `en/` 开头，**禁止**与中文共用同一 path
+- 站内更新日志：`/changelog`（中）与 `/en/changelog`（英）；完整归档仍指向官网
+- 页面反馈：`integrations.telemetry.enabled: true`；并在 Mintlify Dashboard 打开 Feedback。文案页：`/support/feedback`
 
-## Need help?
+## 本地预览注意
 
-### Troubleshooting
+`mint` 不支持 Node 25+。若本机默认是 Node 26，请用 LTS：
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+```bash
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+mint dev
+```
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+## 发布
+
+通过 Mintlify GitHub App 关联本仓库后，推送到默认分支即可部署。

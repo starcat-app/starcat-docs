@@ -1,55 +1,44 @@
 ---
 title: "侧边栏"
-description: "侧边栏的导航结构、数据分类与快捷入口"
+description: "Manage、探索、Activity 子入口与用户区"
 ---
 
-## 侧边栏概览
+## 结构
 
-侧边栏是 Starcat 的主要导航入口，所有数据分类都在这里。
+侧栏自上而下通常是：
 
-## 导航结构
+1. **一级切换**：Manage / 探索 / Activity  
+2. **当前一级下的子导航**（分组可折叠）  
+3. **用户区**：头像、账号、Pro 状态、分享与登出  
 
-### 用户卡片
+分组标题行一般**整行可点**折叠/展开，chevron 只表示状态。
 
-顶部显示你的 GitHub 头像、用户名和统计信息：
+## Manage 常见子入口
 
-- **Stars 总数** — 你收藏的仓库总量
-- **标签数** — 已创建的标签数量
-- **知识库** — 已加入知识库的仓库数量
+| 入口 | 说明 | 延伸阅读 |
+|------|------|----------|
+| All Stars | 全部已同步 Stars | — |
+| 未分类 / Untagged | 尚无标签的仓库 | [标签](/manage-stars/tags) |
+| 知识库 / Library | 已入库仓库 | [知识库](/knowledge-base/overview) |
+| Languages | 按语言浏览 | [筛选](/search/filters) |
+| Tags | 按标签浏览；旁路「+」管理标签 | [标签](/manage-stars/tags) |
+| Smart Collections | 系统 + 自定义规则集合 | [智能集合](/manage-stars/smart-collections) |
+| GitHub Stars Lists | 同步自 GitHub 的 List | [GitHub Lists](/manage-stars/github-lists) |
+| Release 时间线 | 订阅 Release 聚合视图 | [时间线](/release/timeline) |
 
-点击头像弹出账户菜单：登出、切换账号。
+具体文案与排序以当前版 App 为准。
 
-<Note>分享按钮位于用户卡片左侧，可将你的 Stars 统计生成分享卡片。</Note>
+## 探索
 
-### 数据分类
+五个模式：发现、趋势、热门、新发布、周刊。见 [探索概览](/discover/explore/overview)。
 
-#### All Repos
-展示所有已 Star 的仓库列表。
+## Activity
 
-#### Tags
-按标签分组浏览。每个标签旁显示该标签下的仓库数量。
+动态分类（全部、公告、Release、Star、关注等）。见 [Activity](/discover/activity/activity)。
 
-#### Untagged
-未添加任何标签的仓库，帮助你逐步整理。
+## 用户区
 
-#### Languages
-按编程语言聚合仓库，显示每种语言的仓库数量。
-
-#### Starred
-基于 GitHub Stars List 的分组视图，同步你在 GitHub 上创建的分组。
-
-#### 知识库
-已加入本地知识库的仓库集合，支持 RAG 检索与问答。
-
-### 探索入口
-
-侧边栏底部提供探索发现入口：
-
-- **Explore** — 发现/热门/新发布/趋势四个模块
-- **Weekly** — 多来源技术周刊聚合
-- **Activity** — Release 动态与订阅更新
-
-## 侧边栏操作
-
-- **折叠分组**：点击分组标题展开/折叠
-- **右键菜单**：标签等条目支持右键操作（重命名、删除等）
+- 查看当前 GitHub 用户
+- 进入 Pro / 设置相关入口（或经菜单打开设置）
+- [分享卡片](/share-export/share-cards)
+- 登出并换号（见 [账号连接](/getting-started/github-connection)）

@@ -1,36 +1,33 @@
 ---
 title: "README 翻译"
-description: "将 README 翻译为目标语言，保留原始格式"
+description: "详情 README 翻译控件、语言与限制"
 ---
 
-## README 翻译 (Pro)
+## 入口
 
-一键将仓库的 README 翻译为你选择的语言。
+本地仓库详情 README 工具区中的 **翻译** 按钮。
 
-## 功能特性
+| 场景 | 通常是否可用 |
+|------|----------------|
+| Manage / Explore 本地详情 | 是 |
+| 部分 Activity / 外链预览 | 可能否 |
 
-- **保留 HTML 结构** — 翻译后的内容保持原 README 的排版
-- **保留代码块** — 代码块不被翻译
-- **保留链接** — 内部链接和外部链接完整保留
-- **缓存机制** — 翻译结果按 `(repo_id, target_language)` 缓存
+## 步骤
 
-## 使用方式
+<Steps>
+  <Step title="打开详情">等待 README 加载完成。</Step>
+  <Step title="点翻译">选择目标语言；默认可跟随界面语言。</Step>
+  <Step title="对照阅读">可在译文与原文间切换（以 App 为准）。</Step>
+</Steps>
 
-在仓库详情面板中：
-1. 点击「翻译」按钮
-2. 选择目标语言（默认跟随系统语言）
-3. 等待翻译完成
+需 Pro，并在 [AI 配置](/ai-features/configuration) 指定翻译模型。
 
-## 支持的语言
+## 注意
 
-翻译输出语言默认跟随你的 Display Language 设置。你也可以手动选择其他语言。
+- 超长 README 耗时与费用更高  
+- 代码块 / 表格可能排版不如原文  
+- 翻译结果是否缓存以 App 行为为准  
 
-## 翻译缓存
+## 相关
 
-- 翻译结果本地缓存
-- 源 README 变更后提示用户重新翻译
-- 缓存不占用额外空间
-
-## 翻译质量
-
-翻译质量取决于 AI Provider 的能力，建议使用 Claude 或 GPT-4 系列模型。
+- [仓库详情](/main-interface/repo-detail)

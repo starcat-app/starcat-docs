@@ -1,45 +1,33 @@
 ---
 title: "AI 标签推荐"
-description: "AI 自动分析仓库并推荐标签"
+description: "推荐、确认写入、与免费标签上限"
 ---
 
-## AI 标签推荐 (Pro)
+## 行为
 
-AI 分析仓库的 README、描述和技术栈，自动推荐适合的标签。
+AI 根据 README / 上下文推荐若干标签（常见 3–8 个；可能显示置信度）。
 
-## 工作流程
+**确认前不会写入**——这是 Starcat AI 保守策略的一部分。见 [AI 概览](/ai-features/overview)。
 
-<Steps>
-  <Step title="触发推荐">
-    在仓库详情页标签区域，点击「AI 推荐标签」按钮。
-  </Step>
-  <Step title="AI 分析">
-    AI 读取仓库的 README、描述和 Topics，分析项目的领域和技术方向。
-  </Step>
-  <Step title="推荐结果">
-    AI 返回 3-8 个推荐标签，每个标签附带：
-    - **标签名** — 推荐的标签名称
-    - **置信度** — AI 认为该标签的匹配程度（百分比）
-  </Step>
-  <Step title="用户确认">
-    勾选你认可的标签，点击「应用」。
+## 入口
 
-    <Warning>
-      AI **不会**自动写入标签。你必须手动确认，这是 Starcat 的 AI 保守策略。
-    </Warning>
-  </Step>
-</Steps>
+- 详情 AI 浮层中的标签推荐  
+- [Auto Tidy](/ai-features/auto-tidy) 批量推荐（仍受确认/动作配置约束）  
 
-## 推荐质量
+## 与限额的关系
 
-AI 标签推荐的质量取决于：
+免费版最多 **20** 个标签。若已满：
 
-- README 的完整程度
-- 项目的领域是否清晰
-- AI Provider 的能力
+1. 删除不用的标签，或  
+2. 升级 [Pro](/subscribe/plan-comparison)  
 
-> 建议使用能力较强的模型（如 Claude Sonnet、GPT-4o）以获得更好的推荐效果。
+见 [标签管理](/manage-stars/tags)。
 
-## 批量推荐
+## 建议
 
-在「未分类仓库」视图中，可以触发批量 AI 标签推荐，一次性整理多个未打标签的仓库。
+- 先建立自己的命名约定，再让 AI 往现有体系上靠  
+- 对推荐结果做减法，避免标签爆炸  
+
+## 相关
+
+- [批量人工打标](/manage-stars/batch-operations)

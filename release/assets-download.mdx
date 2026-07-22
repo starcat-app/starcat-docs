@@ -1,33 +1,33 @@
 ---
-title: "资产下载"
-description: "智能过滤和下载 Release 资产"
+title: "Release 资产下载"
+description: "浏览 Release 附件并按文件名过滤"
 ---
 
-## Release 资产下载
+## 资产列表
 
-订阅仓库发布新版本后，你可以浏览和下载 Release 资产。
+在[时间线](/release/timeline)或 Release 详情中展开资产区：
 
-## 智能资产过滤
+- 显示文件名与大小  
+- 可下载 / 打开（交由系统处理）  
+- 资产较多时可展开查看全部  
 
-自动按平台和文件类型分类资产：
+## 过滤技巧
 
-- **按平台**：macOS、iOS、Linux、Windows
-- **按文件类型**：dmg、pkg、zip、tar.gz、AppImage 等
+使用时间线顶部过滤框，按关键字匹配文件名，例如只看 macOS 安装包：
 
-## 下载操作
+```text
+dmg
+```
 
-在 Release 详情页的资产列表中：
+或 CPU 架构：
 
-### 一键复制
+```text
+arm64
+```
 
-点击资产旁的「复制」图标，复制下载链接到剪贴板。
+无需记完整文件名。
 
-### 直接下载
+## 相关
 
-点击「下载」按钮：
-1. 弹出保存对话框（NSSavePanel）
-2. 选择保存位置
-3. 开始下载，显示进度
-4. 下载完成后通知
-
-> 下载功能需要网络权限，大文件下载可能需要一些时间。
+- [订阅](/release/subscription)
+- GitHub Release 概念：[GitHub Docs · Releases](https://docs.github.com/en/repositories/releasing-projects-on-github)

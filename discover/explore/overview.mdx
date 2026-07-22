@@ -1,47 +1,41 @@
 ---
-title: "探索页概览"
-description: "发现更多有趣的技术项目"
+title: "探索概览"
+description: "五模式对比、与 Manage/Activity 分工、整理建议"
 ---
 
-## 探索页
+## 三个一级区域怎么选
 
-探索页汇集了多种发现新项目的渠道，帮助你扩展技术视野。
+| 区域 | 目的 | 文档 |
+|------|------|------|
+| **Manage** | 整理已有 Stars / 知识库 | [侧边栏](/main-interface/sidebar) |
+| **探索** | 发现新项目 | 本页 |
+| **Activity** | 动态与通知流 | [Activity](/discover/activity/activity) |
 
-## 四大模块
+## 五种探索模式
 
-| 模块 | 内容来源 | 更新频率 |
-|------|----------|----------|
-| **发现** | Discovery API 智能推荐 | 每日 |
-| **热门** | 社区当前热门项目 | 每日 |
-| **新发布** | 近期新发布的开源项目 | 每日 |
-| **趋势** | GitHub Trending | 每日/周/月 |
+| 模式 | 你在找什么 | 专页 |
+|------|------------|------|
+| **发现** | 综合推荐流；可按 topic / platform 筛 | 本页 |
+| **趋势** | 近期热度变化 | [趋势](/discover/trending/trending) |
+| **热门** | 高热度仓库 | [热门与新发布](/discover/explore/hot-and-new) |
+| **新发布** | 新出现 / 新版本相关 | 同上 |
+| **周刊** | 编辑精选周刊条目 | [周刊](/discover/weekly/weekly) |
 
-## 界面布局
+数据来自 Starcat 的 discovery / trending / weekly 等服务，不是本机 Stars 镜像。
 
-```
-┌──────────────┬────────────────────┬──────────────────┐
-│  模块导航     │     项目列表        │    项目详情       │
-│              │                    │                  │
-│ · 发现       │  排序 · 筛选       │  README          │
-│ · 热门       │                    │  推荐理由         │
-│ · 新发布     │  项目卡片列表      │  信号标签         │
-│ · 趋势       │  (UnifiedRepoRow)  │  Release 信息     │
-│              │                    │  AI 摘要          │
-└──────────────┴────────────────────┴──────────────────┘
-```
+## 发现好项目之后
 
-## 使用方法
+建议流水线：
 
-1. 在侧边栏点击「Explore」
-2. 选择子模块（发现/热门/新发布/趋势）
-3. 浏览项目，支持排序和语言筛选
-4. 点击项目查看详情
-5. 感兴趣可以直接 Star 或加入知识库
+1. 打开详情读 README  
+2. 可选：Star  
+3. 打标签或写一句笔记  
+4. 长期要用 → [入库](/knowledge-base/adding-repos)  
+5. 要追版本 → [订阅 Release](/release/subscription)（注意免费 5 仓限额）  
 
-## 快捷操作
+批量处理见 [批量操作](/manage-stars/batch-operations)。
 
-- **Star**：点击星标按钮一键收藏到 GitHub
-- **入库**：点击心形按钮加入知识库
-- **查看详情**：点击展开 README 和元数据
+## 相关
 
-> 探索页的项目数据通过 Discovery API 下发，享受本地缓存加速。
+- [相似推荐](/discover/explore/similar-repos)
+- [Search Center · GitHub Scope](/search/search-center)（主动搜索 vs 浏览榜单）

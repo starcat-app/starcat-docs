@@ -1,43 +1,33 @@
 ---
 title: "同步设置"
-description: "GitHub Stars 同步与 CloudKit 同步配置"
+description: "GitHub Stars 同步行为；云同步尚未上线"
 ---
 
-## 同步设置
+## 本页范围
 
-管理 Starcat 的数据同步行为。
+这里只描述 **GitHub Stars** 与本机缓存的同步。标签/笔记的 iCloud 同步**尚未上线**。
 
-## GitHub Stars 同步
+## 手动同步
 
-### 手动同步
+点击列表工具栏同步按钮：
 
-点击工具栏的同步按钮，立即触发全量 Stars 同步。
+- 首次：全量拉取  
+- 之后：增量 / ETag 策略，尽量少拉未变数据  
 
-### 增量同步
+Getting Started 清单要求你主动点同步，见 [快速开始](/getting-started/quickstart)。
 
-Starcat 使用智能增量同步策略：
+## Rate Limit
 
-- 首次同步：全量拉取所有 Stars
-- 后续同步：ETag 缓存 + 增量检查
-- 跳过未变化的页
+GitHub API 有频率限制。触发后 Starcat 会退避并显示重置倒计时。排障见 [FAQ · 同步](/faq/sync)。
 
-### Rate Limit 处理
+## 后台同步
 
-- 自动解析 GitHub API Rate Limit 响应头
-- 触发限制时主动退避到 reset 时间
-- 退避期间显示倒计时
+在系统允许时，可使用后台任务做定时检查（开关以 App 为准）。
 
-### 后台同步
+## 跨设备用户数据（即将推出）
 
-Starcat 支持后台定时同步（需要 macOS 后台任务权限）。
+<Warning>
+  CloudKit / iCloud 用户数据同步尚未提供。换机请 [手动备份](/data-privacy/backup)。
+</Warning>
 
-## CloudKit 同步 (Pro)
-
-Pro 用户可将用户数据同步到 iCloud：
-
-- **同步内容**：标签、笔记、状态、智能集合规则
-- **不同步**：仓库缓存数据（README、AI 摘要等，这些可重建）
-- **冲突解决**：基于时间戳的合并策略
-- **删除保护**：CloudKit 保留 tombstone 记录
-
-> CloudKit 同步需要 iCloud 账号和网络连接。
+JSON 导入导出亦为 [即将推出](/share-export/data-export)。

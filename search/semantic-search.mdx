@@ -1,40 +1,43 @@
 ---
 title: "语义搜索"
-description: "基于 AI 的自然语言语义搜索"
+description: "Pro：用自然语言检索 Stars / 知识库向量索引"
 ---
 
-## 语义搜索 (Pro)
+## 适用场景
 
-语义搜索允许你用自然语言描述你想要找的项目，而不局限于关键词匹配。
+当你说不清准确关键词，但能描述「我想要什么」时：
 
-### 示例
-
-| 关键词搜索 | 语义搜索 |
+| 关键词思维 | 语义示例 |
 |------------|----------|
-| `python http server` | `用来快速搭建 HTTP 服务的 Python 库` |
-| `react state` | `React 状态管理库，支持中间件` |
-| `cli tool` | `命令行下的 JSON 处理工具` |
+| `python http server` | 「快速搭建 HTTP 服务的 Python 库」 |
+| `react state` | 「带中间件的 React 状态管理」 |
+| `cli json` | 「命令行下处理 JSON 的工具」 |
 
-## 工作原理
+## 前提条件
 
-1. 你的查询文本通过 AI Provider 转换为向量 (Embedding)
-2. 与本地缓存的仓库向量进行余弦相似度计算
-3. 返回最相关的结果
+1. 已激活 [Pro](/subscribe/purchase)  
+2. **设置 → AI** 配置可用的 **Embedding** Provider / 模型  
+3. 按界面提示构建或更新 AI 索引  
+4. 在列表搜索切换到「语义」模式  
 
-## 如何启用
+非 Pro 会看到锁定态并打开付费墙。
 
-1. 配置 AI Provider（详见 [AI 配置](/ai-features/configuration)）
-2. 在搜索框切换模式为「语义搜索」
-3. 输入自然语言查询
+## 范围
 
-<Note>
-  语义搜索需要 Pro 订阅。非 Pro 用户可以看到语义搜索选项但带 🔒 标识，点击会弹出升级提示。
-</Note>
+常见可选：
 
-## 混合搜索
+- **starred**：已 Star  
+- **knowledge**：知识库  
+- **all**：更广（以 App 为准）  
 
-Starcat 支持 BM25 关键词搜索 + Embedding 语义搜索的混合模式：
+若目标是「只在我精选入库的内容里找」，优先 knowledge，或直接用 [RAG 工作台](/knowledge-base/rag-workspace) 提问。
 
-- 两种搜索独立执行
-- 使用 RRF (Reciprocal Rank Fusion) 合并排序
-- 兼顾精确匹配和语义理解
+## 原理（用户向）
+
+查询被编码为向量，与本地缓存的仓库向量比相似度；部分场景会与关键词结果融合排序。质量强烈依赖 Embedding 模型与索引是否覆盖目标仓库。
+
+## 相关
+
+- [AI 设置](/settings/ai)
+- [Search Center](/search/search-center)
+- [方案对比](/subscribe/plan-comparison)

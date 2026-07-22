@@ -1,33 +1,23 @@
 ---
 title: "相似仓库推荐"
-description: "基于当前仓库发现相似的项目"
+description: "详情页相似推荐（Pro）与插件只读展示"
 ---
 
-## 相似仓库推荐 (Pro)
+## 桌面端（Pro）
 
-在浏览仓库时，Starcat 可以推荐与之相似的其他项目。
+在仓库详情操作区打开 **相似仓库 / 推荐**。
 
-## 触发方式
+- 需要网络访问推荐服务  
+- 用于发现替代实现或同领域项目  
+- 非 Pro 会遇到付费墙  
 
-在仓库详情面板中，点击推荐入口，弹出相似仓库推荐面板。
+见 [方案对比](/subscribe/plan-comparison)。
 
-## 推荐原理
+## 浏览器插件
 
-相似推荐通过 SimRepo 算法分析：
+GitHub 仓库页可展示只读推荐列表（通常有条数上限）。需本机 App + [集成设置](/settings/integrations)。见 [插件功能](/browser-plugin/features)。
 
-- 项目 Topics 和描述的语义相似度
-- 技术栈重合度
-- 同一领域内被 Star 的共现关系
+## 相关
 
-## 推荐面板
-
-- 以 Popover 形式弹出
-- 复用 `UnifiedRepoRow` 展示，与主列表视觉一致
-- 支持分页加载更多
-- 可直接 Star 或打开推荐项目
-
-## 使用场景
-
-- 评估技术选型时，比较多款同类工具
-- 发现某个热门库的替代品
-- 探索一个领域内的相关项目
+- [仓库详情](/main-interface/repo-detail)
+- 服务仓库（外部）：[starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)

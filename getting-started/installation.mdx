@@ -1,57 +1,63 @@
 ---
 title: "安装与系统要求"
-description: "Starcat 的下载渠道与系统要求"
+description: "系统要求、App Store 与 Direct 安装、更新与数据目录差异"
 ---
 
 ## 系统要求
 
 | 要求 | 说明 |
 |------|------|
-| **操作系统** | macOS 15 (Sequoia) 或更高版本 |
-| **芯片** | Apple Silicon (M1 / M2 / M3 / M4 系列) |
-| **网络** | 需要互联网连接以同步 GitHub 数据 |
-| **GitHub 账号** | 需要 GitHub 账号以使用 Star 同步功能 |
+| **操作系统** | macOS 15 Sequoia 或更高 |
+| **芯片** | Apple Silicon（M 系列） |
+| **网络** | 同步 GitHub、探索、在线购买等需要联网 |
+| **GitHub** | 需要 GitHub 账号以同步 Stars |
 
-> **注意**：Starcat 目前仅支持 macOS，暂不提供 Windows / Linux 版本。
+目前仅提供 macOS 客户端，无 Windows / Linux 桌面版。CLI 可在多平台安装，但数据与权限仍由本机（或已配对的）Starcat App 提供，见 [CLI 安装](/cli/installation)。
 
 ## 下载渠道
 
-Starcat 提供两种分发渠道：
+### Mac App Store
 
-### App Store（推荐）
+- 链接：[Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
+- 自动更新；运行在 App Store **沙盒** 中
+- Pro 走 StoreKit（Apple ID）
 
-从 Mac App Store 下载可获得自动更新、最简安装体验。
+### Direct（官网）
 
-<Note>
-  App Store 版本受 Apple 沙盒保护，数据存储在沙盒容器中。
-</Note>
+- 链接：[starcat.ink](https://starcat.ink)
+- 下载 DMG，拖入「应用程序」
+- 更新由 **Sparkle** 检查
+- Pro 走官网结账 + License（见 [许可证](/subscribe/license)）
 
-### Direct 分发
-
-从 [starcat.ink](https://starcat.ink) 下载 DMG 安装包，适合偏好手动管理的用户。
-
-<Note>
-  Direct 版本需要手动拖拽到 Applications 文件夹，更新通过 Sparkle 自动完成。
-</Note>
+<Warning>
+  App Store 版与 Direct 版的**本地数据目录相互独立**。换渠道等于换一套本地库，请先按 [备份与恢复](/data-privacy/backup) 处理，不要直接混拷数据库文件。
+</Warning>
 
 ## 安装步骤
 
 <Steps>
-  <Step title="下载 Starcat">
-    从 App Store 或官方网站下载最新版本。
-  </Step>
+  <Step title="下载">从 App Store 或官网获取最新版。</Step>
   <Step title="安装">
-    - **App Store**：自动安装到 Applications 文件夹
-    - **Direct**：打开 DMG 文件，将 Starcat 拖入 Applications 文件夹
+    - App Store：自动装入 Applications
+    - Direct：打开 DMG，将 Starcat 拖到 Applications
   </Step>
-  <Step title="首次启动">
-    首次打开时，macOS 可能会提示确认。点击「打开」即可。
-
-    > 如果系统提示「无法验证开发者」：前往「系统设置 → 隐私与安全性」中点击「仍要打开」。
+  <Step title="首次打开">
+    若被 Gatekeeper 拦截：系统设置 → 隐私与安全性 → 仍要打开。
+  </Step>
+  <Step title="首次引导">
+    全屏欢迎仅首次出现。之后可在 **设置 → 通用** 重看首次引导（会重置 Getting Started 清单进度）。
   </Step>
 </Steps>
 
-## 版本更新
+## 更新
 
-- **App Store**：通过 App Store 自动更新
-- **Direct**：通过 Sparkle 框架自动检查更新，启动时或手动触发
+| 渠道 | 方式 |
+|------|------|
+| App Store | App Store 更新 |
+| Direct | 启动时 / 手动检查 Sparkle 更新 |
+
+## 下一步
+
+- [快速开始](/getting-started/quickstart)
+- [连接 GitHub](/getting-started/github-connection)
+- [购买 Pro](/subscribe/purchase)

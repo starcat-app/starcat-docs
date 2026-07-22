@@ -1,48 +1,71 @@
 ---
 title: "CLI 安装"
-description: "安装 Starcat CLI 命令行工具"
+description: "Homebrew / 脚本安装、配对与平台说明"
 ---
 
-## Starcat CLI
+## Starcat CLI 是什么
 
-Starcat CLI 是一个命令行工具，让你在终端中查询和管理 Starcat 数据，也可以作为外部 Agent 的 Skill 使用。
+[`starcat-cli`](https://github.com/starcat-app/starcat-cli) 是跨平台命令行客户端，并可作为 AI Agent 的 **stdio MCP** 桥：
+
+- **不**直接读取 Starcat SQLite  
+- 读写一律走 App 的 MCP Tools  
+- 权限、dry-run、Pro 校验、审计仍由 **macOS 上的 Starcat App** 执行  
+
+App 跑在 Mac；CLI 可装在同一台 Mac，或经可信网络连接已配对的 App。
 
 ## 安装
 
-### 通过 Homebrew
+### Homebrew
 
 ```bash
-brew install starcat-app/tap/starcat
+brew tap starcat-app/starcat-cli
+brew install starcat
 ```
 
-### 从源码安装
+Tap 仓库：[`homebrew-starcat-cli`](https://github.com/starcat-app/homebrew-starcat-cli)。
+
+### macOS / Linux 一键脚本
 
 ```bash
-git clone https://github.com/starcat-app/starcat-cli.git
-cd starcat-cli
-make install
+curl -fsSL https://github.com/starcat-app/starcat-cli/releases/latest/download/install.sh | sh
 ```
 
-## 验证安装
+默认装到 `~/.local/bin/starcat`（可用 `STARCAT_INSTALL_DIR` 覆盖）。脚本会校验 SHA-256。
+
+### Windows PowerShell
+
+```powershell
+irm https://github.com/starcat-app/starcat-cli/releases/latest/download/install.ps1 | iex
+```
+
+## 配对（必做）
+
+<Steps>
+  <Step title="打开 App MCP">Starcat → **设置 → MCP** → 启用服务。需 [Pro](/subscribe/plan-comparison)。</Step>
+  <Step title="复制配对命令">在设置页复制；URI 约 5 分钟有效、单次兑换。</Step>
+  <Step title="终端执行">
+```bash
+starcat pair "starcat-pair://connect?..."
+starcat doctor
+```
+  </Step>
+  <Step title="回到 App 确认设备">未确认则配对未完成。</Step>
+</Steps>
+
+也可运行 `starcat pair` 后粘贴 URI。长期凭据存系统钥匙串 / Credential Manager / Secret Service。
+
+详见 [MCP 设置](/settings/mcp)。
+
+## 验证
 
 ```bash
 starcat --version
+starcat doctor
+starcat capabilities
 ```
 
-## 配置
+## 下一步
 
-CLI 需要 Starcat 桌面应用提供本地 API 服务：
-
-1. 确保 Starcat 桌面应用正在运行
-2. CLI 自动检测本地服务地址
-3. 首次使用需要授权
-
-<Tip>
-  CLI 通过本地 HTTP 与 Starcat 桌面应用通信，始终在本地网络内完成，不需要外部网络连接。
-</Tip>
-
-## 系统要求
-
-- macOS 15+
-- Starcat 桌面应用已在运行
-- 终端支持
+- [使用指南](/cli/usage)
+- [Agent Skill](/cli/skill)
+- Skill 仓库：[starcat-skill](https://github.com/starcat-app/starcat-skill)

@@ -1,32 +1,34 @@
 ---
 title: "Release 通知"
-description: "新版本推送通知"
+description: "系统通知与应用内未读如何打开"
 ---
 
-## Release 通知
+## 通知从哪来
 
-当订阅的仓库发布新版本时，Starcat 会通过 macOS 系统通知提醒你。
+当**已订阅**仓库出现新 Release，且轮询检测到更新时，你可能收到：
 
-## 通知方式
+1. **macOS 系统通知**（横幅 / 通知中心）  
+2. **应用内未读**（时间线红点、Activity 等）  
 
-- **macOS 推送通知** — 系统级别的横幅提醒
-- **应用内角标** — 侧边栏 Activity 显示未读数量
+## 打开条件清单
+
+| 检查项 | 在哪里 |
+|--------|--------|
+| 已订阅该仓 | [订阅管理](/release/subscription) |
+| 未超免费 5 仓限额（或已是 Pro） | [方案对比](/subscribe/plan-comparison) |
+| 系统通知权限已允许 | 首次订阅时的系统对话框；可在系统设置里改 |
+| App 内 Release 通知开关 | **设置 → 通用 → 通知** |
+| 后台轮询正常 | [后台刷新](/release/background-refresh) |
 
 ## 通知内容
 
-每条通知包含：
-- 仓库名称
-- 版本号（Tag Name）
-- Release 标题
+通常含：仓库名、版本号（tag）、Release 标题。点击可跳到对应 Release / 时间线。
 
-点击通知直接跳转到对应 Release 详情。
+## 不想被打扰时
 
-## 后台轮询
+- 关系统通知，或关 App 内 Release 通知开关  
+- 或取消低优先级仓库的订阅以省名额  
 
-Starcat 在后台定时检查订阅仓库的新 Release：
+## 相关
 
-- 自动轮询间隔可配置
-- 轮询范围：仅扫描已 Star 或已入库的仓库
-- Release 检测使用 GitHub API 的 ETag 缓存
-
-> 未 Star 且未入库的订阅保留但暂停轮询，恢复关联后自动恢复。
+- [时间线](/release/timeline)

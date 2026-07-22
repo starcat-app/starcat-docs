@@ -1,40 +1,25 @@
 ---
 title: "登录问题"
-description: "常见登录相关问题排查"
+description: "OAuth、PAT、同步勾选与换号"
 ---
 
-## 登录问题
-
 <AccordionGroup>
-  <Accordion title="无法登录 GitHub？">
-    1. 检查网络连接，确认能访问 github.com
-    2. 确认 GitHub 账号没有被限制
-    3. 尝试在浏览器中先登录 GitHub，再在 Starcat 中授权
-    4. 如果 OAuth 跳转失败，尝试使用 PAT（Personal Access Token）方式登录
+  <Accordion title="无法完成 GitHub 登录？">
+    1. 确认能打开 [github.com](https://github.com)  
+    2. 先在浏览器登录 GitHub，再回 Starcat 授权  
+    3. 公司网络拦截回调时，改用 PAT  
+    详见 [账号连接](/getting-started/github-connection)。
   </Accordion>
-  <Accordion title="登录后一直显示「同步中」？">
-    首次同步需要拉取全部 Stars，时间取决于你的 Star 数量：
-    - 100 个以内：通常 < 1 分钟
-    - 1000 个左右：3-5 分钟
-    - 超过 5000 个：可能需要 10 分钟以上
-
-    如果超过 30 分钟仍未完成，检查网络并尝试重启应用。
+  <Accordion title="登录后 Getting Started 的同步一直不勾？">
+    需要**主动点击**工具栏同步。见 [快速开始](/getting-started/quickstart)。
   </Accordion>
-  <Accordion title="Token 失效怎么办？">
-    Starcat 在使用中会自动检测 401 错误（Token 过期），并提示你重新登录。你也可以在侧边栏点击头像手动登出再登录。
-
-    PAT 登录的用户：如果 Token 过期，需要在 GitHub 创建新 Token 后重新登录。
+  <Accordion title="Token / 会话失效（401）？">
+    按提示重新登录；PAT 用户到 GitHub 创建新 Token 后再贴入。
   </Accordion>
   <Accordion title="如何切换 GitHub 账号？">
-    1. 侧边栏点击头像 → 登出
-    2. 使用另一个 GitHub 账号重新登录
-    3. 不同账号的数据完全隔离
+    侧栏头像 → 登出 → 新账号登录。数据按账号隔离。
   </Accordion>
-  <Accordion title="PAT 创建的 Token 需要什么权限？">
-    Fine-grained personal access token 需要：
-    - Repository access: Public Repositories (read-only)
-    - Permissions → Metadata: Read-only
-
-    或者使用 Classic token 勾选 `public_repo` 和 `read:user`。
+  <Accordion title="PAT 需要哪些权限？">
+    Classic 常见：`read:user` + `public_repo`。Fine-grained 按 GitHub 当前选项授予读取用户与公开仓库元数据的只读权限。
   </Accordion>
 </AccordionGroup>

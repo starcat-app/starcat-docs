@@ -1,61 +1,53 @@
 ---
 title: "AI 配置"
-description: "配置 AI Provider、API Key 和模型选择"
+description: "添加 Provider、映射任务模型、Embedding 与测试"
 ---
 
-## AI 配置
+## 入口
 
-在 设置 → AI 中配置 AI 服务提供商。
+**设置 → AI**
 
-## 添加 Provider
+## 配置步骤
 
 <Steps>
-  <Step title="打开 AI 设置">
-    前往 设置 → AI 标签。
-  </Step>
   <Step title="添加 Provider">
-    点击「+」按钮，选择 Provider 类型：
-
-    | Provider | 说明 |
-    |----------|------|
-    | **OpenAI-compatible** | 兼容 OpenAI API 格式的服务 |
-    | **OpenAI** | 官方 OpenAI API |
-    | **DeepSeek** | 国产大模型 |
-    | **Google Gemini** | Google 的 Gemini 模型 |
-    | **OpenRouter** | 聚合多个模型的路由服务 |
-    | **Ollama** | 本地运行的开源模型 |
+    选择类型（OpenAI / 兼容接口、DeepSeek、OpenRouter、Gemini、Ollama、LM Studio 等，以列表为准）。
+    填写 API Key、Base URL（自建或兼容端点时）。
   </Step>
-  <Step title="填写配置">
-    - **API Base URL** — API 端点地址
-    - **API Key** — 你的 API 密钥
-    - **Model** — 要使用的模型名称
+  <Step title="发现模型">
+    刷新「已发现模型」；必要时在行内调整温度等参数。
   </Step>
-  <Step title="测试连接">
-    点击「测试」按钮验证配置是否正确。
+  <Step title="默认任务映射">
+    为下列任务分别指定 Provider + 模型（名称以界面为准）：
+    - 摘要、标签、对话
+    - Embedding（语义搜索 / RAG 向量）
+    - 翻译
+  </Step>
+  <Step title="测试">
+    使用测试连接；再到详情页用 ⇧⌘A 做一次真实调用。
   </Step>
 </Steps>
 
-## 安全说明
+Key 存 macOS Keychain。更多说明：[BYOK](/subscribe/byok)。
 
-- API Key 通过 **AES-GCM 加密**后存储在 macOS Keychain 中
-- Starcat 不会将你的 API Key 发送到第三方
-- 删除 Provider 时需要二次确认
+## Embedding 特别重要
 
-## 模型选择建议
+没有可用 Embedding 时：
 
-| 场景 | 推荐模型 |
-|------|----------|
-| AI 摘要 | Claude Sonnet / GPT-4o-mini |
-| AI 对话 | Claude Sonnet / GPT-4o |
-| 标签推荐 | Claude Haiku / GPT-4o-mini |
-| 语义搜索 | text-embedding-3-small |
+- [语义搜索](/search/semantic-search) 不可用  
+- [RAG 索引](/knowledge-base/index-management) 向量侧无法建立  
 
-> 使用更轻量的模型可以节省 API 费用。BYOK 用户按自己的配额自行平衡。
+Chat 模型配好但 Embedding 空着，是最常见的「Pro 了但仍不能语义/RAG」原因。
 
-## BYOK 模式说明
+## 提示词（若开放）
 
-BYOK（Bring Your Own Key）用户：
+部分任务允许自定义系统提示词。改动会影响风格与长度；建议先对单个仓库试验再用于 Auto Tidy。
 
-- 用自己的 API Key，AI 请求直接到你配置的 Provider
-- 不经过 Starcat 服务器
-- API 费用由你的 Provider 账户承担
+## 输出语言
+
+默认跟随界面语言，也可单独指定 AI 输出语言。见 [AI 设置](/settings/ai)。
+
+## 相关
+
+- [Auto Tidy](/ai-features/auto-tidy)
+- [FAQ · AI](/faq/ai)

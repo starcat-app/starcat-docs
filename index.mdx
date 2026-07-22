@@ -1,11 +1,18 @@
 ---
 title: "Starcat"
-description: "Starcat —— 你的 GitHub Stars 知识管理助手"
+description: "把 GitHub Stars 变成可搜索的个人技术知识库"
 ---
 
 ## Starcat
 
 **把你的 GitHub Stars 变成个人技术知识库。**
+
+原生 macOS · 本地优先 · BYOK · App Store 与官网双渠道
+
+<Frame>
+  <img src="/images/hero-light.png" alt="Starcat 主界面示意（浅色）" className="block dark:hidden rounded-xl" />
+  <img src="/images/hero-dark.png" alt="Starcat 主界面示意（深色）" className="hidden dark:block rounded-xl" />
+</Frame>
 
 <Card
   title="快速开始"
@@ -13,66 +20,91 @@ description: "Starcat —— 你的 GitHub Stars 知识管理助手"
   href="/getting-started/quickstart"
   horizontal
 >
-  三步上手 Starcat：登录 → 同步 → 开始整理
+  登录 → 主动同步 → 整理第一个仓库
 </Card>
+
+## 五分钟功能导览
+
+按日常路径走一遍，比从目录扫更高效：
+
+<Steps>
+  <Step title="装好并连上 GitHub">
+    [安装](/getting-started/installation) → [连接 GitHub](/getting-started/github-connection) → 点同步拉取 Stars
+  </Step>
+  <Step title="三栏主界面">
+    侧栏筛选 → 中间列表 → 右侧 README / 笔记。[主界面总览](/main-interface/overview)
+  </Step>
+  <Step title="整理与找回">
+    [标签](/manage-stars/tags)、[笔记与状态](/manage-stars/notes-and-status)、[⌘K Search Center](/search/search-center)
+  </Step>
+  <Step title="进阶：AI 与知识库">
+    [AI 总览](/ai-features/overview)（Pro）→ 心形入库 → [RAG 工作台](/knowledge-base/overview)
+  </Step>
+  <Step title="追踪与发现">
+    [Release 订阅](/release/subscription) · [探索](/discover/explore/overview)
+  </Step>
+</Steps>
 
 ## 核心功能
 
 <Columns cols={2}>
-  <Card
-    title="整理 Stars"
-    icon="tag"
-    href="/manage-stars/tags"
-  >
-    标签、笔记、状态管理，告别凌乱的收藏列表
+  <Card title="整理 Stars" icon="tag" href="/manage-stars/tags">
+    标签、笔记、状态、智能集合
   </Card>
-  <Card
-    title="智能搜索"
-    icon="magnifying-glass"
-    href="/search/global-search"
-  >
-    全文搜索、语义搜索、多维筛选，秒找项目
+  <Card title="搜索" icon="magnifying-glass" href="/search/search-center">
+    ⌘K Search Center、语义搜索、筛选
   </Card>
-  <Card
-    title="AI 增强"
-    icon="sparkles"
-    href="/ai-features/overview"
-  >
-    AI 摘要、标签推荐、README 翻译、AI 对话
+  <Card title="AI" icon="sparkles" href="/ai-features/overview">
+    摘要、对话、翻译、Auto Tidy
   </Card>
-  <Card
-    title="知识库 RAG"
-    icon="brain"
-    href="/knowledge-base/overview"
-  >
-    与你的 Stars 对话，把收藏变成可用的知识
+  <Card title="RAG 工作台" icon="brain" href="/knowledge-base/overview">
+    入库问答与引用证据
   </Card>
-  <Card
-    title="发现探索"
-    icon="compass"
-    href="/discover/explore/overview"
-  >
-    Trending、Weekly、热门项目，发现更多
+  <Card title="发现" icon="compass" href="/discover/explore/overview">
+    趋势、周刊、热门、Activity
   </Card>
-  <Card
-    title="Release 订阅"
-    icon="bell"
-    href="/release/subscription"
-  >
-    关注的项目发布新版本，第一时间知道
+  <Card title="Release" icon="bell" href="/release/subscription">
+    免费 5 仓起，Pro 不限
   </Card>
 </Columns>
 
-## 了解更多
+## 界面一瞥
+
+<Frame caption="构建与检查通过示意（开发/诊断相关视觉）">
+  <img src="/images/checks-passed.png" alt="Checks passed" className="rounded-xl" />
+</Frame>
+
+<Note>
+  产品演示视频若后续发布，会挂在 [starcat.ink](https://starcat.ink)；当前以截图与文档导览为准。
+</Note>
+
+## 下载与购买
 
 <CardGroup cols={3}>
-  <Card title="入门指南" icon="book-open" href="/getting-started/welcome">
-    了解 Starcat 是什么
+  <Card title="App Store" icon="apple" href="https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12">
+    Mac App Store
   </Card>
-  <Card title="主界面导览" icon="map" href="/main-interface/overview">
-    熟悉三栏布局
+  <Card title="官网" icon="globe" href="https://starcat.ink">
+    Direct 下载与购买
   </Card>
-  <Card title="Pro 订阅" icon="crown" href="/subscribe/plan-comparison">
-    方案对比与购买
+  <Card title="方案对比" icon="crown" href="/subscribe/plan-comparison">
+    限额与三档定价
+  </Card>
+</CardGroup>
+
+## 生态与支持
+
+<CardGroup cols={3}>
+  <Card title="CLI / MCP" href="/cli/installation">终端与 Agent 桥接</Card>
+  <Card title="浏览器插件" href="/browser-plugin/chrome">GitHub 页增强</Card>
+  <Card title="隐私" href="/data-privacy/privacy">本地优先与遥测</Card>
+</CardGroup>
+
+<CardGroup cols={2}>
+  <Card title="更新日志" icon="clock-rotate-left" href="/changelog">
+    站内版本摘要；官网有完整归档
+  </Card>
+  <Card title="反馈与支持" icon="envelope" href="/support/feedback">
+    文档赞踩、邮件与诊断建议
   </Card>
 </CardGroup>

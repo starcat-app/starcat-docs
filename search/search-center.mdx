@@ -1,38 +1,56 @@
 ---
 title: "Search Center"
-description: "多 Tab 搜索聚合中心"
+description: "⌘K：全部 / 本地 / GitHub / 网页 聚合搜索"
 ---
 
-## Search Center
+## 打开
 
-Search Center 是 Starcat 的统一搜索聚合界面，在一个面板中整合多种搜索源。
+- 默认 **⌘K**
+- 列表旁全局搜索入口
+- 菜单「打开全局搜索」（文案以 App 为准）
 
-## 搜索 Tab
+## 四个 Scope
 
-### 本地 (Local)
+| Scope | 搜什么 | 备注 |
+|-------|--------|------|
+| **全部** | 多源聚合 | 适合不确定来源时 |
+| **本地** | 你的 Stars / 本地库 | FTS；与列表搜索同源能力 |
+| **GitHub** | GitHub Search API | 可看入库角标；可 Star / 入库 |
+| **网页** | External Search | 配置见下 |
 
-搜索你的 Stars 仓库，使用 FTS5 全文搜索。详见 [全局搜索](/search/global-search)。
+**网页搜索**对所有用户开放（Provider 可能需要 Key）。**语义搜索**仍是 Pro，主要在列表语义模式；不要与「网页 Scope」混淆。
 
-### GitHub
+## GitHub Scope 筛选（示例）
 
-直接搜索 GitHub 上的公开仓库：
+语言、topic、最低 stars、创建/推送时间、排序与顺序等。具体控件以面板为准。
 
-- 使用 GitHub Search API
-- 支持分页加载更多
-- 搜索结果展示入库状态（❤️ 角标）
-- 可直接从搜索结果加入知识库或 Star
+适合：发现尚未 Star 的库，再一键入库或 Star。
 
-### Web
+## 网页 Scope
 
-使用外部搜索 Provider 搜索网络内容。详见 [外部搜索](/search/external-search)。
+使用 **设置 → 集成 → External Search** 中启用的 Provider：
 
-### 语义搜索 (Semantic)
+- AnySearch / Tavily / Exa / Brave LLM Context 等  
+- 可设域名、内容类型、新鲜度、白黑名单等  
 
-自然语言语义搜索（Pro）。详见 [语义搜索](/search/semantic-search)。
+详见 [外部搜索](/search/external-search)、[集成设置](/settings/integrations)。
 
-## 使用方式
+## 结果上能做什么
 
-- 按 `Cmd+F` 打开 Search Center
-- 点击顶部 Tab 切换搜索源
-- 输入查询并按 Return
-- 点击结果跳转或操作
+- 打开本地详情或系统浏览器  
+- 加入知识库 / Star（视结果类型与登录状态）  
+- 从 GitHub 结果直接进入整理流  
+
+## 相关
+
+- [列表搜索](/search/global-search)
+- [筛选](/search/filters)
+
+## 排障
+
+| 现象 | 处理 |
+|------|------|
+| ⌘K 没反应 | 到 [快捷键](/settings/shortcuts) 看是否改键或冲突 |
+| GitHub Scope 空 | 检查登录与 Rate Limit → [FAQ 同步](/faq/sync) |
+| 网页 Scope 失败 | 检查 [集成 → External Search](/settings/integrations) 的 Key / 测试 |
+| 本地找不到笔记里的词 | 确认笔记已保存；试 [列表搜索](/search/global-search) |

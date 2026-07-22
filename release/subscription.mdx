@@ -1,34 +1,44 @@
 ---
 title: "Release 订阅管理"
-description: "订阅和取消订阅仓库的 Release 更新"
+description: "谁能订、怎么订、免费 5 仓与 Pro"
 ---
 
-## Release 订阅 (Pro)
+## 做什么
 
-订阅你关注的仓库，在新版本发布时第一时间获取通知。
+订阅后，Starcat 轮询该仓 GitHub Release，更新[时间线](/release/timeline)，并可选发[系统通知](/release/notifications)。
 
-## 订阅仓库
+<Note>
+  免费最多 **5** 个仓库；Pro 不限。见 [方案对比](/subscribe/plan-comparison)。
+</Note>
 
-在仓库详情面板中，点击「订阅 Release」按钮即可订阅。
+## 订阅步骤
 
-## 取消订阅
+<Steps>
+  <Step title="打开详情">目标仓需已 Star 或已入库。</Step>
+  <Step title="点订阅">详情区「订阅 Release」。</Step>
+  <Step title="允许通知">首次可能弹出系统权限，建议允许。</Step>
+</Steps>
 
-在订阅列表或详情面板中，点击「取消订阅」。
+## 资格表
 
-## 订阅资格
+| 状态 | 可订阅 |
+|------|--------|
+| 已 Star | ✅ |
+| 未 Star 但已入库 | ✅ |
+| 两者皆无 | ❌ |
 
-以下仓库可以订阅：
+未关联时历史订阅可能保留但暂停轮询 → [后台刷新](/release/background-refresh)。
 
-- ✅ 已 Star 的仓库
-- ✅ 已加入知识库的仓库（即使未 Star）
-- ❌ 既未 Star 也未入库的仓库
+## 取消
 
-> 已入库未 Star 的仓库依然可以订阅 Release，扩宽了订阅范围。
+详情或订阅列表中取消，释放免费名额。
 
-## 订阅管理
+## 管理入口
 
-在 Release 时间线或侧边栏中查看所有订阅：
+- 侧栏 Release 时间线  
+- Activity → Release 分类  
 
-- 订阅列表显示订阅总数
-- 按仓库查看 Release 历史
-- 管理每个仓库的订阅状态
+## 相关
+
+- [资产下载](/release/assets-download)
+- [购买 Pro](/subscribe/purchase)

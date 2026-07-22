@@ -1,32 +1,35 @@
 ---
 title: "Agent 工作台"
-description: "Starcat Agent 工作台 —— AI 驱动的多步骤任务执行"
+description: "Pro · Beta：多步骤工具调用；确认后才改数据"
+badge: "Beta"
 ---
 
-## Agent 工作台 (Pro)
+## 定位（Beta）
 
-Agent 工作台是 Starcat 的高级 AI 功能，支持多步骤的自动化任务执行。
+App 内 **Agent 工作台**面向需要多步骤、调用工具的任务，与单仓 AI 浮层、RAG 问答互补。
 
-<Note>
-  Agent 工作台的详细文档正在编写中，敬请期待。
-</Note>
+| 能力 | 文档 |
+|------|------|
+| 单仓聊天 / 摘要 | [AI 对话](/ai-features/chat) |
+| 跨入库仓问答 | [RAG](/knowledge-base/rag-workspace) |
+| 外部 Agent + CLI | [CLI](/cli/usage)、[Skill](/cli/skill) |
+| App 内 Agent 工作台 | 本页 |
 
-## 概述
+当前处于 **Beta**：界面与可用工具仍会迭代；文档只描述已贯彻的安全边界与入口，不罗列未交付的「调研报告生成器」等路线图当操作说明。
 
-Agent 工作台允许 AI 在你的授权下执行多步骤任务，例如：
+## 前提
 
-- 批量整理未分类仓库
-- 生成技术调研报告
-- 多仓库对比分析
+- [Pro](/subscribe/plan-comparison)  
+- [AI 配置](/ai-features/configuration) 可用  
 
-## 安全设计
+## 安全设计（已贯彻）
 
-与所有 Starcat AI 功能一样，Agent 工作台遵循保守策略：
+- **改数据前需你确认**  
+- 可取消进行中的运行  
+- 关键步骤保留可追踪信息  
 
-- 需要你的明确确认才会执行修改操作
-- 所有操作有审计记录
-- 可以随时取消任务
+与全体 Starcat AI 的保守策略一致。见 [AI 概览](/ai-features/overview)。
 
----
+## 反馈
 
-> 完整文档即将上线。如需了解更多，请联系 dong4j@gmail.com。
+Beta 问题可邮件 [dong4j@gmail.com](mailto:dong4j@gmail.com)。

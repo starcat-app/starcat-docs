@@ -1,46 +1,44 @@
 ---
 title: "浏览器插件功能"
-description: "Starcat 浏览器插件的完整功能说明"
+description: "Companion v1：推荐、Wiki、笔记、Health 等"
 ---
 
-## 浏览器插件功能详解
+## 设计范围（v1）
 
-Starcat 浏览器插件在 GitHub 页面上注入增强功能，让你在浏览 GitHub 时无缝使用 Starcat。
+在 **GitHub 仓库页**注入增强，典型包括：
 
-## 核心功能
+| 能力 | 说明 |
+|------|------|
+| 相似推荐 | 只读列表（条数有上限） |
+| Wiki 入口 | 跳转 / 打开 Wiki 相关 |
+| 私有笔记 | 编辑本机笔记；通常限**已 Star** 仓库 |
+| Health / OpenSSF | 展示本地已缓存分数；不在网页里完整重算 |
+| CodeFlow / Codebase 按钮 | 若桌面端启用，提供跳转 |
 
-### 标签同步
+**明确不做（v1）**：完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单等。完整 AI 请回 App。
 
-- GitHub 仓库页面上显示你在 Starcat 中为该仓库打的标签
-- 可以直接在页面上添加/删除标签
-- 标签实时同步到 Starcat 桌面应用
+正式方案背景（高级阅读）：仓库内 `docs/2-产品/需求讨论/正式方案/Chrome-Companion-v1-正式方案.md`。
 
-### 笔记联动
+## 通信
 
-- 显示该仓库的 Starcat 笔记
-- 在浏览器中直接编辑笔记
-- 保存后自动同步到桌面应用
+- `http://127.0.0.1:{port}/plugin/v1/...`  
+- `Authorization: Bearer <token>`  
+- 流量留在本机  
 
-### 入库标识
+Token 在 [集成设置](/settings/integrations) 管理。
 
-- 显示仓库是否已加入你的知识库
-- 提供一键入库/移出操作
-- 已入库的仓库有心形角标
+## 相关
 
-### Google 搜索结果增强
+- [Chrome 安装](/browser-plugin/chrome)
+- [相似推荐](/discover/explore/similar-repos)
+- [Repo Health](/main-interface/repo-health)
 
-在 Google 搜索结果中：
+## 排障
 
-- GitHub 仓库结果旁显示 Starcat 标记
-- 已 Star 的项目显示星标
-- 已入库的项目显示心形
+| 现象 | 处理 |
+|------|------|
+| GitHub 页无注入 | App 是否运行；扩展是否启用；端口/Token 是否一致 |
+| 笔记不能编 | 是否已 Star；Token 是否过期 |
+| Health 不显示 | 本机是否已有缓存；回 App 打开详情触发评分 |
 
-### AI 摘要
-
-插件在 GitHub README 旁展示 Starcat 生成的 AI 摘要（需要 Pro）。
-
-## 技术说明
-
-- 插件通过本地 HTTP 代理与 Starcat 桌面应用通信
-- 请求走 `localhost`，不经过外部网络
-- Token 用于认证本地通信
+详见 [Chrome](/browser-plugin/chrome)、[集成](/settings/integrations)。

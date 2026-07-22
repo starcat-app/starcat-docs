@@ -1,56 +1,64 @@
 ---
 title: "快速开始"
-description: "三步上手 Starcat，从登录到浏览你的第一个仓库"
+description: "登录、主动同步、Getting Started 清单与第一天常用操作"
 ---
 
-## 快速上手
+## 目标
 
-第一次打开 Starcat 只需几步，就能开始管理你的 GitHub Stars。
+第一次打开 Starcat，完成：**登录 → 同步 Stars → 浏览并整理一个仓库**。
+
+## 三步上手
 
 <Steps>
-  <Step title="连接 GitHub 账号">
-    启动 Starcat 后，你会看到登录页面。点击「使用 GitHub 登录」按钮：
-
-    1. 浏览器会打开 GitHub 授权页面
-    2. 登录你的 GitHub 账号并授权 Starcat
-    3. 授权完成后自动返回 Starcat
-
-    <Tip>Starcat 只需要 `read:user` 和 `public_repo` 权限，不会访问你的私有仓库。</Tip>
+  <Step title="连接 GitHub">
+    使用「GitHub 登录」或 PAT。权限与多账号说明见 [GitHub 账号连接](/getting-started/github-connection)。
   </Step>
-
-  <Step title="等待首次同步">
-    登录成功后，Starcat 会自动开始拉取你的所有 Stars：
-
-    - 同步进度显示在工具栏的同步按钮中
-    - 首次同步可能需要几分钟（取决于 Star 数量）
-    - 同步完成后，侧边栏会显示统计数据
-
-    <Note>同步过程中你可以正常使用 Starcat，数据会逐步出现。</Note>
+  <Step title="主动点击同步">
+    登录后，点击列表工具栏的 **同步** 按钮，拉取 Stars。
+    <Warning>
+      界面上的 Getting Started 清单里，「同步」一步通常要你**亲手点同步**才会勾选完成；登录本身不等于已同步。
+    </Warning>
+    - 进度体现在同步按钮上
+    - Star 很多时可能需要数分钟；同步过程中已拉到的仓库可先浏览
+    - 若近期刚同步过，启动时可能跳过自动同步（以 App 策略为准），仍建议首次手动点一次
   </Step>
-
-  <Step title="浏览你的 Stars">
-    同步完成后，在左侧边栏选择「All Repos」即可浏览你的全部 Star 仓库：
-
-    - **点击仓库**：右侧详情面板显示 README 和元数据
-    - **搜索**：按 `Cmd+F` 打开全局搜索
-    - **打标签**：在详情面板中为仓库添加标签
-
+  <Step title="浏览与整理">
+    侧栏进入 **Manage → All Stars**（文案以 App 为准）：
+    1. 点击一个仓库 → 右侧阅读 README
+    2. 在详情里添加标签或笔记
+    3. 需要时点心形加入[知识库](/knowledge-base/adding-repos)
   </Step>
 </Steps>
 
-## 接下来？
+## Getting Started 清单
+
+登录后主界面可能出现可折叠清单（约十余步），例如：同步、选中仓库、打开 GitHub 主页、入库、整理、搜索、试用 AI、打开 RAG、分享卡、Unstar 等。
+
+| 特性 | 说明 |
+|------|------|
+| 推进方式 | 由**真实操作**驱动，不是点「下一步」 |
+| 关闭 | 可折叠或关闭 |
+| 重看 | **设置 → 通用 → 重看首次引导**（同时重置清单进度） |
+
+部分控件带 TipKit 局部提示（同步、搜索、AI 等）。
+
+## 第一天建议捷径
+
+| 你想… | 怎么做 |
+|------|--------|
+| 全局找仓库 / 搜 GitHub / 搜网页 | 默认 **⌘K** 打开 [Search Center](/search/search-center) |
+| 过滤当前列表 | 列表搜索框（默认常为 **⌘F**，可改）+ [筛选](/search/filters) |
+| 打开仓库 AI | 默认 **⇧⌘A**（需 [Pro](/subscribe/plan-comparison) + [AI 配置](/ai-features/configuration)） |
+| 打开 RAG 工作台 | 默认 **⇧⌘K** 或工具栏「知识库问答」 |
+| 看新版本 | [Release 订阅](/release/subscription)（免费最多 5 个仓库） |
+
+快捷键均可在 [快捷键设置](/settings/shortcuts) 修改。
+
+## 接下来
 
 <CardGroup cols={2}>
-  <Card title="了解主界面" icon="map" href="/main-interface/overview">
-    熟悉三栏布局和各项功能
-  </Card>
-  <Card title="整理 Stars" icon="tag" href="/manage-stars/tags">
-    开始用标签整理你的收藏
-  </Card>
-  <Card title="配置 AI" icon="sparkles" href="/ai-features/configuration">
-    设置 AI Provider 解锁智能功能
-  </Card>
-  <Card title="探索发现" icon="compass" href="/discover/explore/overview">
-    发现更多有趣的项目
-  </Card>
+  <Card title="主界面" icon="map" href="/main-interface/overview">三栏与侧栏一级导航</Card>
+  <Card title="标签" icon="tag" href="/manage-stars/tags">免费最多 20 个标签</Card>
+  <Card title="Search Center" icon="magnifying-glass" href="/search/search-center">⌘K 四 Scope</Card>
+  <Card title="Pro" icon="crown" href="/subscribe/plan-comparison">限额与定价</Card>
 </CardGroup>

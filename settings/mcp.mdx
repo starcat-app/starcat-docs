@@ -1,0 +1,48 @@
+---
+title: "MCP 设置"
+description: "启用 MCP、配对 CLI、写权限与端口"
+---
+
+## 入口与前提
+
+**设置 → MCP**
+
+- 需要 [Pro](/subscribe/plan-comparison)  
+- 本机或可信任网络上的 [CLI](/cli/installation) 通过 MCP 访问 App 能力  
+
+## 启用步骤
+
+<Steps>
+  <Step title="打开开关">启用 MCP Service。</Step>
+  <Step title="确认端口">常见默认 **5555**（以界面为准）；避免端口冲突。</Step>
+  <Step title="权限子开关">按需允许：读私有笔记、本地写入、批量写入、替换式写入等。</Step>
+  <Step title="配对">复制配对命令，在终端执行（见下）。</Step>
+</Steps>
+
+## 配对
+
+```bash
+starcat pair "starcat-pair://connect?..."
+starcat doctor
+```
+
+- URI 约 **5 分钟**有效、单次兑换  
+- 必须在 App 内**确认设备**  
+- 长期凭据存系统钥匙串 / Credential Manager  
+
+完整说明：[CLI 安装](/cli/installation)、[CLI 使用](/cli/usage)。
+
+## 安全要点
+
+- 写命令默认 dry-run，需 `--apply`  
+- 远程连接要求 TLS 与证书指纹约束（见 CLI 安全模型）  
+- 权限与审计由 App 执行，CLI 不直读数据库  
+
+## Agent 安装片段
+
+设置页可复制 Claude / Codex 等 MCP 配置片段，将 `starcat mcp` 注册为 MCP server。
+
+## 相关
+
+- [Skill](/cli/skill)
+- 设计背景（高级）：仓库内 `docs/3-设计/详细设计/34-StarcatCLI与外部MCP桥接设计.md`

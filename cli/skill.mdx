@@ -1,0 +1,35 @@
+---
+title: "Agent Skill"
+description: "starcat-skill 安装前置与和 CLI/MCP 的关系"
+---
+
+## 是什么
+
+[`starcat-skill`](https://github.com/starcat-app/starcat-skill) 把 Starcat CLI 能力描述成 Agent 可加载的 Skill，方便在 Claude Code、Codex 等环境里：
+
+- 搜 Stars / 知识库、看统计  
+- 读 context / README / summary  
+- 在 dry-run 与授权下改笔记、标签、状态  
+
+## 前置（缺一不可）
+
+1. 安装 [CLI](/cli/installation)  
+2. Starcat App 运行，[MCP](/settings/mcp) 已启用并完成 `starcat pair`  
+3. 写操作理解 `--apply` 与 App 侧写权限  
+
+Skill **不能**绕过 App 直连数据库。
+
+## 安装
+
+按 Skill 仓库 README，复制到对应 Agent 的 skills 目录（Claude / Codex 路径不同）。
+
+## 和 App 内 Agent 的区别
+
+| | Skill + CLI | App Agent 工作台 |
+|--|-------------|------------------|
+| 运行位置 | 外部 Agent 终端/会话 | Starcat 窗口 |
+| 状态 | 随 CLI/MCP 正式能力 | [Beta](/agent-workspace/overview) |
+
+## 相关
+
+- [CLI 使用](/cli/usage)

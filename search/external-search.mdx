@@ -1,45 +1,47 @@
 ---
 title: "外部搜索"
-description: "集成第三方搜索服务，搜索网络上的技术内容"
+description: "网页 Scope 与 AI/RAG 联网上下文共用的 Provider"
 ---
 
-## 外部搜索
+## 做什么用
 
-Starcat 支持接入外部搜索 Provider，在应用内直接搜索网络上的技术内容。
+外部搜索把第三方网页检索接到 Starcat：
 
-## 支持的 Provider
+1. [Search Center](/search/search-center) 的 **网页** Scope  
+2. AI / RAG 需要时的**联网上下文**（受开关与隐私选项约束）  
 
-| Provider | 说明 | 需要 API Key |
-|----------|------|-------------|
-| **AnySearch** | 默认搜索引擎，无需 Key | 否 |
-| **Tavily** | AI 优化的搜索 API | 是 |
-| **Exa** | 语义搜索 API | 是 |
-| **Brave LLM Context** | Brave 搜索的 AI 上下文 | 是 |
+AnySearch、Tavily 等是 Provider，不是另一套互不相干的产品。
 
-## 配置外部搜索
+## Provider 示例
 
-1. 前往 设置 → 外部搜索
-2. 启用需要的 Provider
-3. 输入 API Key（如需要）
-4. 点击「测试」验证连接
-5. 设置默认 Provider
+| Provider | 说明 |
+|----------|------|
+| AnySearch | 常用选项；是否需 Key 以 App 为准 |
+| Tavily | 需 API Key |
+| Exa | 需 API Key |
+| Brave LLM Context | 需 API Key |
 
-## 在搜索中使用
+## 配置步骤
 
-在 Search Center 切换到「Web」标签，即可使用外部搜索。搜索结果会显示 Provider 图标，来自不同 Provider 的结果可区分。
+<Steps>
+  <Step title="打开集成">**设置 → 集成 → External Search**。</Step>
+  <Step title="启用 Provider">填写 Key（如需），保存。</Step>
+  <Step title="测试">用测试连接确认可用。</Step>
+  <Step title="设默认">为网页搜索 / AI 上下文选择默认 Provider（选项以界面为准）。</Step>
+</Steps>
 
-## AI 外部上下文
+也见 [集成设置](/settings/integrations)。
 
-AI 助手对话中，外部搜索可以作为附加上下文源：
+## 在 Search Center 使用
 
-- 开启后，AI 回答时会搜索相关网络内容
-- 可在 AI 设置中控制是否启用
-- 搜索内容会缓存到本地，减少重复 API 调用
+⌘K → Scope 选 **网页** → 输入查询 → 查看带来源站点的结果。
 
-## 缓存
+## 缓存与清理
 
-外部搜索结果缓存到本地：
+结果会本地缓存以减少重复计费/请求；可在 **设置 → 存储** 清除外部搜索缓存。
 
-- 搜索缓存：6 小时 TTL
-- AI 上下文缓存：24 小时 TTL
-- 可在存储管理中清除缓存
+## 隐私注意
+
+- 查询会发往你启用的第三方搜索服务  
+- 私有仓库是否允许附带外部上下文，受集成/AI 相关开关约束  
+- 原则见 [隐私](/data-privacy/privacy)

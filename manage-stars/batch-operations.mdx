@@ -1,49 +1,37 @@
 ---
 title: "批量操作"
-description: "多选模式下的批量标签、批量入库等操作"
+description: "多选流程；Manage 与 Explore 动作差异"
 ---
 
-## 多选模式
+## 何时用
 
-批量操作可以一次性处理多个仓库，大幅提升整理效率。
+- 清空一大批未分类：筛选后批量打标  
+- 把「正在使用」批量入库  
+- 探索里一次 Star / 入库多个榜单项目  
 
-### 进入多选模式
+## 标准流程
 
-点击仓库卡片左侧的复选框。底部会出现浮动操作栏。
+<Steps>
+  <Step title="收窄范围">侧栏选分类 + [筛选](/search/filters) / 列表搜索。</Step>
+  <Step title="多选">工具栏 → 多选 → 勾选仓库。</Step>
+  <Step title="执行">底部栏选动作并确认。</Step>
+  <Step title="结束">通常自动退出多选并 Toast 摘要；或 Esc 取消。</Step>
+</Steps>
 
-### 退出多选模式
+## Manage 动作
 
-点击操作栏的「取消」或按 `Esc` 键。
+| 动作 | 行为 | 注意 |
+|------|------|------|
+| 标签 | 追加，不删旧标签 | 免费标签上限 20 |
+| 加入/移出知识库 | 改入库状态 | [入库](/knowledge-base/adding-repos) |
+| Unstar | 调 GitHub API | 不可在 App 内一键撤销；多仓二次确认 |
+| 移到 Stars List | 若已同步 List | [GitHub Lists](/manage-stars/github-lists) |
 
-## 批量操作类型
+## Explore 动作
 
-### 批量打标签
+更常见：Star / Unstar、加入知识库。见 [探索概览](/discover/explore/overview)。
 
-1. 勾选目标仓库
-2. 点击操作栏「标签」按钮
-3. 选择一个或多个标签
-4. 点击「应用」
+## 相关
 
-> 批量打标签是**追加**操作，不会移除已有关联。
-
-### 批量加入知识库
-
-1. 勾选目标仓库
-2. 点击操作栏「知识库」按钮
-3. 确认加入
-
-详见 [知识库](/knowledge-base/overview)。
-
-### 批量 Star/Unstar
-
-1. 勾选目标仓库
-2. 点击「Unstar」批量取消收藏
-
-<Warning>
-  取消 Star 会调用 GitHub API，**不可撤销**。操作前请确认。
-</Warning>
-
-## 快捷全选
-
-- 拖拽选择：在列表区域拖拽可快速选中连续仓库
-- `Cmd+A`：全选当前列表
+- [标签](/manage-stars/tags)
+- [智能集合](/manage-stars/smart-collections)

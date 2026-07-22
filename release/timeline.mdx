@@ -1,39 +1,40 @@
 ---
 title: "Release 时间线"
-description: "统一时间线查看所有订阅仓库的 Release"
+description: "聚合已订阅仓库的 Release：已读、分页、立即检查"
 ---
 
-## Release 时间线
+## 入口
 
-时间线视图统一展示你所有订阅仓库的 Release 更新。
+Manage 侧栏 **Release 时间线**（打开为面板/Sheet，以 App 为准）。
 
-## 视图特性
+## 你能看到什么
 
-- **按时间排序** — 最新发布在上
-- **20 条分页** — 上拉加载更多
-- **已读/未读** — 新 Release 高亮显示，阅读后标记已读
-- **已读状态同步** — 阅读状态持久化
+- 所有已订阅仓库的 Release，按时间倒序  
+- **未读**高亮；可单条已读或全部已读  
+- 展开后阅读 Release 正文（GFM）与资产列表  
+- **每页约 20 条**，滚动加载更多  
 
-## Release 详情
+## 立即检查
 
-点击 Release 展开详情：
+顶部 **立即检查** 会触发一轮轮询（`ReleasePoller.runNow` 一类路径），不等待后台间隔。适合刚发版、想马上确认的时候。
 
-### Markdown 渲染
+后台默认间隔见 [后台刷新](/release/background-refresh)。
 
-Release Body 以 GitHub Flavored Markdown 渲染，保持与 GitHub 一致的排版。
+## 资产过滤
 
-### 资产列表
+顶部过滤框可按文件名片段筛选资产，例如：
 
-展示 Release 附带的下载资产：
+- `dmg` / `pkg`  
+- `arm64` / `aarch64`  
+- `linux` / `windows`  
 
-- 默认显示前 3 个资产
-- 超过 3 个可展开查看全部
-- 每个资产显示文件名和大小
+详见 [资产下载](/release/assets-download)。
 
-### 发布日期
+## 字号
 
-底部信息行显示发布日期。
+时间线正文字号跟随 [通用设置](/settings/general) 的界面字体倍率。
 
-## 字号联动
+## 相关
 
-时间线内容字号跟随界面字体倍率设置，确保阅读舒适。
+- [订阅管理](/release/subscription)
+- [通知](/release/notifications)
