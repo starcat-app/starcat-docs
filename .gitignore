@@ -1,0 +1,17 @@
+# macOS metadata
+.DS_Store
+
+# Local Node.js dependencies and package-manager logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Mintlify local cache
+.mintlify/
+
+# Local environment overrides may contain secrets
+.env
+.env.*
+!.env.example
