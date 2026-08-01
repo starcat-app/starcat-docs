@@ -23,6 +23,10 @@ Typical OAuth scopes used by Starcat: `read:user`, `public_repo` (exact list fol
 2. Rate limits: GitHub may throttle large accounts—wait and retry
 3. Switching GitHub accounts may clear or isolate local caches depending on channel—export / backup first when unsure
 
+## GitHub App (My Projects)
+
+Browsing **private / Internal** repositories under [My Projects](/main-interface/my-projects) uses an additional **GitHub App** authorization (installation scope). Public project listing can still work from the main OAuth / PAT session. Complete the in-app App install when private projects are missing.
+
 ## Multi-account
 
 Use one GitHub identity per Starcat profile/session. If you maintain work and personal Stars, prefer separate Mac user accounts or be careful when switching tokens.

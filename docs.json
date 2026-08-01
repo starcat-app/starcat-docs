@@ -60,9 +60,12 @@
                 "pages": [
                   "main-interface/overview",
                   "main-interface/sidebar",
+                  "main-interface/my-projects",
+                  "main-interface/insights",
                   "main-interface/repo-list",
                   "main-interface/repo-detail",
                   "main-interface/repo-health",
+                  "main-interface/widgets",
                   "main-interface/toolbar"
                 ]
               },
@@ -134,6 +137,7 @@
                 "group": "Share & export",
                 "pages": [
                   "share-export/share-cards",
+                  "share-export/share-links",
                   "share-export/export-files",
                   "share-export/data-import",
                   "share-export/data-export"
@@ -145,6 +149,12 @@
                   "browser-plugin/chrome",
                   "browser-plugin/safari",
                   "browser-plugin/features"
+                ]
+              },
+              {
+                "group": "Integrations",
+                "pages": [
+                  "integrations/desktop-launchers"
                 ]
               },
               {
@@ -377,9 +387,12 @@
                 "pages": [
                   "zh-Hans/main-interface/overview",
                   "zh-Hans/main-interface/sidebar",
+                  "zh-Hans/main-interface/my-projects",
+                  "zh-Hans/main-interface/insights",
                   "zh-Hans/main-interface/repo-list",
                   "zh-Hans/main-interface/repo-detail",
                   "zh-Hans/main-interface/repo-health",
+                  "zh-Hans/main-interface/widgets",
                   "zh-Hans/main-interface/toolbar"
                 ]
               },
@@ -451,6 +464,7 @@
                 "group": "分享与导出",
                 "pages": [
                   "zh-Hans/share-export/share-cards",
+                  "zh-Hans/share-export/share-links",
                   "zh-Hans/share-export/export-files",
                   "zh-Hans/share-export/data-import",
                   "zh-Hans/share-export/data-export"
@@ -462,6 +476,12 @@
                   "zh-Hans/browser-plugin/chrome",
                   "zh-Hans/browser-plugin/safari",
                   "zh-Hans/browser-plugin/features"
+                ]
+              },
+              {
+                "group": "集成扩展",
+                "pages": [
+                  "zh-Hans/integrations/desktop-launchers"
                 ]
               },
               {

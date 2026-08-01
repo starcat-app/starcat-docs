@@ -1,6 +1,6 @@
 ---
 title: "README translation"
-description: "Detail README translation control, languages, and limits"
+description: "Segmented bilingual and full README translation modes"
 ---
 
 ## Entry point
@@ -12,12 +12,21 @@ The **Translate** button in the local repository detail README toolbar.
 | Manage / Explore local detail | Yes |
 | Some Activity / external previews | Maybe not |
 
+## Modes
+
+| Mode | Behavior |
+|------|----------|
+| **Segmented** (default) | Side-by-side / bilingual reading per segment |
+| **Full** | Replaces visible README text while keeping structure |
+
+Translation is faster than earlier releases: smaller first batch, incremental display, up to four concurrent requests, per-segment caching, and resume for unfinished segments.
+
 ## Steps
 
 <Steps>
   <Step title="Open detail">Wait for README to finish loading.</Step>
-  <Step title="Translate">Pick target language; default can follow UI language.</Step>
-  <Step title="Read side by side">Switch between translation and original (per app UI).</Step>
+  <Step title="Translate">Pick target language; default can follow UI language. Choose segmented or full mode in the control (wording follows the app).</Step>
+  <Step title="Read">Switch between translation and original as needed.</Step>
 </Steps>
 
 Requires Pro and a translation model in [AI configuration](/ai-features/configuration).
@@ -26,7 +35,7 @@ Requires Pro and a translation model in [AI configuration](/ai-features/configur
 
 - Very long READMEs cost more time and tokens  
 - Code blocks / tables may layout worse than the original  
-- Whether translation is cached depends on app behavior  
+- Mermaid and complex diagrams may stay closer to the source when translation is imperfect  
 
 ## Related
 

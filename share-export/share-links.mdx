@@ -1,0 +1,37 @@
+---
+title: "Share links"
+description: "Public repository links that open Starcat and locate the shared repo"
+---
+
+## What it is
+
+A **share link** is a public `https://starcat.ink/r/{owner}/{repo}` URL you can copy from Starcat. When the recipient has Starcat installed, opening the link should **launch the app and select that repository**.
+
+Share links are for locating a repository inside Starcat—not the same as [share cards](/share-export/share-cards) (image export).
+
+## Typical flow
+
+<Steps>
+  <Step title="Open a repository">Select it in Manage, Discover, or My Projects.</Step>
+  <Step title="Copy the share link">Use the share / copy-link control in the detail or toolbar (wording follows the app).</Step>
+  <Step title="Open on another Mac">Paste into a browser or messenger. With Universal Links / app association configured, Starcat should take over.</Step>
+</Steps>
+
+## Link shape
+
+| Form | Example use |
+|------|-------------|
+| Public HTTPS | `https://starcat.ink/r/owner/repo?v=1` (optional `rid` for stable GitHub repo id) |
+| Local app URL | `starcat://repo/owner/repo` (used by widgets and local integrations) |
+
+Older links without `rid` still resolve by `owner/name`.
+
+## AI sharing
+
+When creating AI-assisted share material, Starcat can **reuse an existing AI summary**, and you can **cancel** or **regenerate** the share link from the UI.
+
+## Related
+
+- [Share cards](/share-export/share-cards)
+- [Repository detail](/main-interface/repo-detail)
+- [Desktop launchers](/integrations/desktop-launchers)

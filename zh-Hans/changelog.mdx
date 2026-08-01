@@ -9,17 +9,55 @@ description: "Starcat 各版本重要变化摘要；完整说明以官网为准"
   官网完整更新日志（含排版与历史归档）：[starcat.ink/changelog](https://starcat.ink/changelog)
 </Note>
 
-## 1.2.0（待发布）
+## 1.3.0
+
+新增「我的项目」、全局与单仓库洞察、macOS 桌面小组件、可复用于 AI / RAG 的洞察上下文，以及 Alfred / uTools / Raycast 外部搜索集成。
 
 ### 新增
 
-- 分享链接：打开后可在 Starcat 中定位对应仓库
-- 可自定义应用快捷键（搜索、刷新、打开 RAG 工作台、当前仓库 AI），含总开关与单项开关
+- **我的项目**：集中查看个人、组织及外部协作仓库；通过 GitHub App 按授权范围浏览公开、私有和 Internal 项目 — [我的项目](/zh-Hans/main-interface/my-projects)
+- **我的洞察**：从全部收藏或知识库范围查看整理进度、技术分布、项目状态与待处理事项，并可下钻到仓库列表 — [洞察](/zh-Hans/main-interface/insights)
+- **仓库洞察**：Star 增长、协作活动、提交趋势、贡献者、发布节奏、健康度、社区规范与安全信号
+- **洞察上下文**：生成后的洞察可复用于 AI 摘要、仓库对话与 RAG，并以可移除的只读 XML 上下文展示
+- **macOS 桌面小组件**：Starcat Focus、今日重逢、Release Watch、收藏趋势 — [桌面小组件](/zh-Hans/main-interface/widgets)
+- **桌面启动器**：Alfred、uTools、Raycast 可搜索本地仓库与 GitHub — [桌面启动器](/zh-Hans/integrations/desktop-launchers)
 
 ### 优化
 
+- 洞察聚合数据可作为上下文参与 RAG 知识库问答
+- RAG 提示词设置：对照并复制只读默认提示词；问答与压缩模板 Markdown 更清晰
+- 自定义提示词诊断：明确支持的上下文能力与占位符，且不再自动改写用户内容
+- 首次使用引导：功能截图、欢迎音效、卡片层级与窗口尺寸优化
+
+### 修复
+
+- 分享卡片主题切换：版式与配色按钮使用完整点击区域
+- RAG 引用证据：关键词命中的元数据分片与知识库统计可显示实际引用片段（无需向量化）
+
+## 1.2.0
+
+聚焦稳定性、易用性与界面观感：新增 18 种语言界面，并补齐置顶、分享链接、快捷键与 README 能力。
+
+### 新增
+
+- **18 种语言界面**：英语、简体中文、繁体中文、日语、韩语、德语、法语、西班牙语、巴西葡萄牙语、意大利语、俄语、荷兰语、波兰语、乌克兰语、土耳其语、越南语、印度尼西亚语、阿拉伯语 — [通用设置](/zh-Hans/settings/general)
+- **Manage 仓库置顶**：Pin / Unpin，按最近置顶优先，卡片左上角显示标识 — [仓库列表](/zh-Hans/main-interface/repo-list)
+- **仓库分享链接**：打开后在 Starcat 中定位对应仓库 — [分享链接](/zh-Hans/share-export/share-links)
+- **可自定义应用快捷键**：搜索、列表搜索、刷新、打开 RAG 工作台、当前仓库 AI（总开关与单项开关） — [快捷键](/zh-Hans/settings/shortcuts)
+- **README Mermaid 图表**：本地渲染，失败时回退原始内容
+- **README 分段与全文翻译**：默认分段中英对照；全文翻译替换可见文本并保留结构 — [README 翻译](/zh-Hans/ai-features/readme-translation)
+
+### 优化
+
+- 添加标签弹出层、Pro 侧栏用户名渐变、星标与探索导航层级
+- README 翻译速度：更小首批、并发、分段缓存与续译
+- 个人笔记：可基于 README 用 AI 生成或优化，含 Markdown 预览
 - AI 分享复用已有摘要，支持取消与重新生成链接
-- RAG 工作台 UI 优化
+- 知识库分片管理：编辑与详情显示更新时间与约略 token 数
+
+### 修复
+
+- 知识库入口：偶发无响应、最小化无法恢复、索引未就绪时误进空库引导
 
 ## 1.1.0
 

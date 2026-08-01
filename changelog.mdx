@@ -5,17 +5,55 @@ description: "Notable Starcat release highlights; full archive on the website"
 
 In-docs summary of major releases. Full formatted archive: [starcat.ink/changelog](https://starcat.ink/changelog)
 
-## 1.2.0 (upcoming)
+## 1.3.0
+
+My Projects, library-wide and repository insights, macOS desktop widgets, reusable insight context for AI / RAG, and desktop launcher integrations.
 
 ### New
 
-- Share links that open Starcat and locate the shared repository
-- Customizable shortcuts for search, refresh, RAG workspace, and current-repo AI
+- **My Projects**: browse personal, organization, and collaborator repositories; GitHub App unlocks authorized private / Internal projects alongside public ones — [My Projects](/main-interface/my-projects)
+- **My Insights**: organization progress, tech distribution, status, and action items across Stars or Knowledge Base, with drill-down lists — [Insights](/main-interface/insights)
+- **Repository Insights**: Star growth, collaboration, commits, contributors, releases, health, community, and security signals
+- **Insight context**: reuse generated insights in AI summary, repo chat, and RAG as removable read-only XML context
+- **macOS widgets**: Starcat Focus, Rediscovery, Release Watch, Collection Trend — [Desktop widgets](/main-interface/widgets)
+- **Desktop launchers**: Alfred, uTools, and Raycast search local Stars and GitHub — [Desktop launchers](/integrations/desktop-launchers)
 
 ### Improvements
 
-- AI sharing reuses existing summaries; cancel / regenerate supported
-- RAG workspace UI polish
+- Insight aggregates feed RAG knowledge-base answers
+- RAG prompt settings: compare / copy read-only defaults; clearer Markdown templates
+- Custom prompt diagnostics for supported placeholders (no silent rewriting)
+- First-run onboarding polish (screenshots, welcome audio, card hierarchy)
+
+### Fixes
+
+- Share card theme controls use full click targets
+- RAG citations show real snippets for keyword-hit metadata and library stats without requiring vectors
+
+## 1.2.0
+
+Stability, usability, and visual polish: 18 UI languages, pinning, share links, shortcuts, and richer README features.
+
+### New
+
+- **18 UI languages**: English, Simplified / Traditional Chinese, Japanese, Korean, German, French, Spanish, Brazilian Portuguese, Italian, Russian, Dutch, Polish, Ukrainian, Turkish, Vietnamese, Indonesian, Arabic — [General settings](/settings/general)
+- **Repository pinning** in Manage (Pin / Unpin, most-recently-pinned first, corner badge) — [Repository list](/main-interface/repo-list)
+- **Share links** that open Starcat and locate the repository — [Share links](/share-export/share-links)
+- **Customizable shortcuts**: Search Center, list search, refresh, RAG workspace, current-repo AI (master + per-action toggles) — [Shortcuts](/settings/shortcuts)
+- **README Mermaid** diagrams with local rendering and source fallback
+- **README translation modes**: segmented bilingual by default; full mode replaces visible text while keeping structure — [README translation](/ai-features/readme-translation)
+
+### Improvements
+
+- Tag popover, Pro sidebar username gradient, Starred / Explore navigation hierarchy
+- Faster README translation (smaller first batch, concurrency, segment cache, resume)
+- Personal notes: AI generate / refine from README with Markdown preview
+- AI sharing reuses existing summaries; cancel / regenerate links
+- Knowledge-base chunk cards show update time and approximate token counts
+
+### Fixes
+
+- Knowledge Base entry reliability (no-response, restore after minimize, empty-library gate timing)
 
 ## 1.1.0
 

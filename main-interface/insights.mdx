@@ -1,0 +1,58 @@
+---
+title: "Insights"
+description: "My Insights for the whole library and Repository Insights per repo"
+---
+
+## Overview
+
+Starcat insights help you **see the shape of your library** and **understand a single repository** without leaving the app.
+
+| Surface | Scope | Entry |
+|---------|-------|-------|
+| **My Insights** | All Stars **or** Knowledge Base | Sidebar → Manage → My Insights |
+| **Repository Insights** | Selected repository | Detail pane / Insights entry on a repo |
+
+## My Insights
+
+Review:
+
+- Organization progress and triage metrics  
+- Technology / language / topic-style distributions (as shown in the UI)  
+- Project status and assets that may need cleanup  
+- Action items that **drill down** into the matching repository list  
+
+Switch scope between **All Stars** and **Knowledge Base**, then refresh when you want a fresh snapshot.
+
+## Repository Insights
+
+Typical sections (availability depends on network, permissions, and cache):
+
+- Star growth and collaboration activity  
+- Commit trends and contributors  
+- Release cadence  
+- Project health, community standards, and security signals  
+
+Content should stay stable while you switch repositories or refresh; some GitHub stats endpoints may briefly show a generating state and retry automatically.
+
+### Private My Projects
+
+For private repos listed under [My Projects](/main-interface/my-projects), metrics that require elevated access use the **GitHub App** token. Some public-only signals (for example certain OpenSSF paths) may remain unavailable.
+
+## Insight context for AI and RAG
+
+After insights are generated, Starcat can attach them as a **removable, read-only XML context** to:
+
+- AI repository summaries  
+- Repository chat  
+- [RAG workspace](/knowledge-base/rag-workspace) answers  
+
+You should see clear status when insights are unavailable, when a custom prompt omits them, or when the app falls back.
+
+Library-level insight aggregates can also feed knowledge-base Q&A as shared facts.
+
+## Related
+
+- [My Projects](/main-interface/my-projects)
+- [Repo Health](/main-interface/repo-health)
+- [AI overview](/ai-features/overview)
+- [RAG workspace](/knowledge-base/rag-workspace)
