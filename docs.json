@@ -233,7 +233,8 @@
               {
                 "group": "Agent workspace",
                 "pages": [
-                  "agent-workspace/overview"
+                  "agent-workspace/overview",
+                  "agent-workspace/runtime-setup"
                 ]
               }
             ]
@@ -559,7 +560,8 @@
               {
                 "group": "Agent 工作台",
                 "pages": [
-                  "zh-Hans/agent-workspace/overview"
+                  "zh-Hans/agent-workspace/overview",
+                  "zh-Hans/agent-workspace/runtime-setup"
                 ]
               }
             ]
