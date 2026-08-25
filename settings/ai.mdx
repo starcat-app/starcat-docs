@@ -17,9 +17,16 @@ This page is the settings-side overview; step-by-step setup is in [AI configurat
 | Discovered models | Refresh model lists and tune parameters |
 | Default task mapping | Pick models for summary, tags, chat, embedding, translation, etc. |
 | Auto Tidy | Background tidy toggle and triggers → [Auto Tidy](/ai-features/auto-tidy) |
-| AI index | Semantic vector build / refresh → [Semantic search](/search/semantic-search) |
-| RAG-related | Retrieval / rerank / self-hosted backend and other advanced items (when shown) |
+| AI index | Semantic vector build / refresh; last prefetch time, counts, and green / orange / red result → [Semantic search](/search/semantic-search) |
+| RAG-related | Retrieval / rerank, optional Meilisearch / Qdrant (when shown) |
 | Output language | Follow UI language or set separately |
+| AI usage | Local request counts, tokens, latency, and failures; newer builds can show estimated cost. Prompt and answer bodies are not stored |
+
+## AI index and external retrieval
+
+**AI index** shows the last prefetch time and counts. You can start, pause, or resume background prefetch; cancelling embedding is not treated as a network outage.
+
+If you configure external **Meilisearch** or **Qdrant**, each **Test and save** control shows its own result: green check on success, orange warning when a rebuild is needed, red cross on failure. These are not the Go backends under [Settings → Services](/settings/services). See [Index management](/knowledge-base/index-management).
 
 ## Pre-flight checklist
 

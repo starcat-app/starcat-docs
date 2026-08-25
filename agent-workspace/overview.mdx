@@ -17,6 +17,12 @@ The in-app **Agent workspace** targets multi-step tasks with tool calls, complem
 
 Currently **Beta**: UI and available tools still evolve; this doc covers enforced safety boundaries and entry points—not roadmap items like “research report generator” as if shipped.
 
+## Runtimes (Direct)
+
+Agent Workspace can switch among the built-in Loop, Codex App Server, and DeepSeek Harness. External runtimes run as local child processes and are not bundled in the Starcat DMG. The Mac App Store build always uses the built-in runtime.
+
+Setup: [Runtime setup](/agent-workspace/runtime-setup). The execution timeline shows thinking summaries, tool calls, errors, and artifacts. The task inspector adds structured steps and run metrics.
+
 ## Prerequisites
 
 - [Pro](/subscribe/plan-comparison)  

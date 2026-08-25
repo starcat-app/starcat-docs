@@ -29,6 +29,7 @@ Prerequisites:
 
 - Left and right columns are resizable; width often restores on reopen  
 - Center column shows retrieve / plan / generate steps while running; you can collapse manually  
+- Long thinking stays usable; expand the full text when it finishes. Query-planning substeps and the plan pane appear only after planning actually completes  
 
 ## Question flow
 
@@ -68,6 +69,14 @@ See [External search](/search/external-search).
 ## Read-only by design
 
 The workspace is Q&A-first: it **does not** change tags / notes / status without confirmation. To mutate data, use organize UI or [CLI `--apply`](/cli/usage).
+
+## Workspace settings
+
+The gear opens settings for the inference backend, prompts, and retrieval strategy. Prompt editing is covered in [AI configuration](/ai-features/configuration).
+
+## Direct: local CLI inference
+
+Knowledge-base RAG can use local **Codex CLI** or **Claude Code CLI** and reuse their existing login. Workspace settings detect install, version, and path, and show setup help when missing. The Mac App Store build does not include this path.
 
 ## Sessions and export
 

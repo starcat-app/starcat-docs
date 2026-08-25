@@ -13,6 +13,20 @@ RAG workspace header or **Index** tab:
 
 Low coverage means many ingested repos are not yet retrievable by vector/keyword search.
 
+Vectorization progress is the ready coverage of the **current Embedding model**. The toolbar status panel can show progress and pause it. The last build is not marked complete while it is still running.
+
+## Shard status
+
+Knowledge-base cards and shard detail distinguish:
+
+- Whether the shard is still in the knowledge base  
+- Whether it is vectorized for the current model  
+- Updated time and approximate token count (also on the edit page)  
+
+Click a pending, failed, or expired card to open the knowledge base and jump to that shard.
+
+When rebuilding, the **Meilisearch keyword index syncs text first**, so you can search before every vector is ready. Local FTS supports Chinese infix matching; naming a repo more reliably lands on indexed README content.
+
 ## When to rebuild
 
 | Situation | Recommendation |

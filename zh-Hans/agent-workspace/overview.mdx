@@ -17,6 +17,12 @@ App 内 **Agent 工作台**面向需要多步骤、调用工具的任务，与�
 
 当前处于 **Beta**：界面与可用工具仍会迭代；文档只描述已贯彻的安全边界与入口，不罗列未交付的「调研报告生成器」等路线图当操作说明。
 
+## Runtime（Direct）
+
+Agent 工作台可在内置 Loop、Codex App Server 与 DeepSeek Harness 之间切换。外部 Runtime 以本机子进程运行，不打进 Starcat DMG。Mac App Store 版始终使用内置 Runtime。
+
+配置与检测见 [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)。执行时间线会展示思考摘要、工具调用、错误与产物；任务检查器补充结构化步骤和运行指标。
+
 ## 前提
 
 - [Pro](/zh-Hans/subscribe/plan-comparison)  

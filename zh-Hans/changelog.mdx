@@ -9,6 +9,27 @@ description: "Starcat 各版本重要变化摘要；完整说明以官网为准"
   官网完整更新日志（含排版与历史归档）：[starcat.ink/changelog](https://starcat.ink/changelog)
 </Note>
 
+## 1.5.0
+
+当前开发版 / Direct 已提供下列能力。App Store 以实际上架版本为准。
+
+### 新增
+
+- **Awesome 列表**：探索里浏览 Starcat 精选与自定义公开 Awesome 来源，可后台解析并刷新 — [Awesome](/zh-Hans/discover/explore/awesome)
+- **Agent 多 Runtime**（Direct）：内置 Runtime、Codex App Server 与 DeepSeek Harness 可切换 — [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)
+- **自研仓库推荐**（Direct）：相似仓库走新的推荐链路，入口不变 — [相似推荐](/zh-Hans/discover/explore/similar-repos)
+- **公开 Star 数据贡献**：默认关闭；可匿名贡献公开仓库 ID 与 Star 时间 — [隐私](/zh-Hans/data-privacy/privacy)
+- **应用内打开仓库文档**：README 里指向本仓库的 Markdown 链接可在独立窗口打开 — [仓库详情](/zh-Hans/main-interface/repo-detail)
+- **README 视频**：详情页用原生控件播放 GitHub README 视频
+- **仓库安全公告与 Release 附件**：洞察页查看公告、GHSA / CVE，以及最新 Release 附件 — [洞察](/zh-Hans/main-interface/insights)
+- **通知会话增强**：Issue / PR 状态、入库筛选、评论粘贴图片、标签与事件流 — [活动](/zh-Hans/discover/activity/activity)
+
+### 优化
+
+- Agent 工作台执行时间线展示思考摘要、工具调用、错误与产物
+- 通知时间线空页、Issue 评论 / 事件本地缓存与按帖草稿
+- 工具栏可查看 GitHub 官方状态
+
 ## 1.4.0
 
 活动页接入 GitHub 通知，并继续打磨知识库索引与探索体验。在线服务已升级：请更新到 1.4.0；旧版本仍可查看本地缓存，但在线刷新、推荐、发现、Wiki 和分享将不再可用。
@@ -19,13 +40,15 @@ description: "Starcat 各版本重要变化摘要；完整说明以官网为准"
 - **Issue / PR 会话**：阅读开帖和评论，撰写或预览回复；完成等同 GitHub Inbox 的 Done，不会关闭 Issue；也可跳到 GitHub 或 Starcat 仓库
 - **AI 撰写评论**：按当前会话起草回复，或润色已输入的草稿；回复语言跟帖子走
 - **通知会话翻译**：对照或全文翻译开帖和评论；标题、仓库名和输入框保持原文
+- **本机 CLI 推理**（Direct）：知识库 RAG 可选用 Codex CLI 或 Claude Code CLI — [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)
 
 ### 优化
 
-- 知识库问答和仓库对话在长思考时保持可操作
-- 语义搜索与知识库索引状态、预拉进度、中文中缀匹配
-- README 翻译可跟随界面语言，并跳过已是目标语言的段落
-- 探索离线缓存与首次启动分类数量
+- 知识库问答和仓库对话在长思考时保持可操作 — [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)、[AI 对话](/zh-Hans/ai-features/chat)
+- 语义搜索与知识库索引状态、预拉、暂停、Meilisearch / Qdrant 测试、中文中缀匹配 — [索引管理](/zh-Hans/knowledge-base/index-management)、[语义搜索](/zh-Hans/search/semantic-search)
+- README 翻译可跟随界面语言，并跳过已是目标语言的段落 — [README 翻译](/zh-Hans/ai-features/readme-translation)
+- 探索离线缓存与首次启动分类数量 — [探索概览](/zh-Hans/discover/explore/overview)
+- Direct：CodebaseMemory 改为检测本机官方安装，不再内置大体积可执行文件 — [集成](/zh-Hans/settings/integrations)
 
 ### 修复
 
@@ -40,6 +63,7 @@ description: "Starcat 各版本重要变化摘要；完整说明以官网为准"
 ### 新增
 
 - **我的项目**：集中查看个人、组织及外部协作仓库；通过 GitHub App 按授权范围浏览公开、私有和 Internal 项目 — [我的项目](/zh-Hans/main-interface/my-projects)
+- **App Store 更新检查**：启动或重新激活时检测新版本，也可从操作菜单检查并前往商店升级 — [安装](/zh-Hans/getting-started/installation)
 - **我的洞察**：从全部收藏或知识库范围查看整理进度、技术分布、项目状态与待处理事项，并可下钻到仓库列表 — [洞察](/zh-Hans/main-interface/insights)
 - **仓库洞察**：Star 增长、协作活动、提交趋势、贡献者、发布节奏、健康度、社区规范与安全信号
 - **洞察上下文**：生成后的洞察可复用于 AI 摘要、仓库对话与 RAG，并以可移除的只读 XML 上下文展示
@@ -48,15 +72,15 @@ description: "Starcat 各版本重要变化摘要；完整说明以官网为准"
 
 ### 优化
 
-- 洞察聚合数据可作为上下文参与 RAG 知识库问答
-- RAG 提示词设置：对照并复制只读默认提示词；问答与压缩模板 Markdown 更清晰
+- 洞察聚合数据可作为上下文参与 RAG 知识库问答 — [洞察](/zh-Hans/main-interface/insights)
+- RAG 提示词设置：对照并复制只读默认提示词；问答与压缩模板 Markdown 更清晰 — [AI 配置](/zh-Hans/ai-features/configuration)
 - 自定义提示词诊断：明确支持的上下文能力与占位符，且不再自动改写用户内容
-- 首次使用引导：功能截图、欢迎音效、卡片层级与窗口尺寸优化
+- 首次使用引导：功能截图、欢迎音效、卡片层级与窗口尺寸优化 — [快速开始](/zh-Hans/getting-started/quickstart)
 
 ### 修复
 
 - 分享卡片主题切换：版式与配色按钮使用完整点击区域
-- RAG 引用证据：关键词命中的元数据分片与知识库统计可显示实际引用片段（无需向量化）
+- RAG 引用证据：关键词命中的元数据分片与知识库统计可显示实际引用片段（无需向量化） — [引用](/zh-Hans/knowledge-base/citations)
 
 ## 1.2.0
 

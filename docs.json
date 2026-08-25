@@ -106,6 +106,7 @@
                 "group": "Discover",
                 "pages": [
                   "discover/explore/overview",
+                  "discover/explore/awesome",
                   "discover/trending/trending",
                   "discover/explore/hot-and-new",
                   "discover/weekly/weekly",
@@ -434,6 +435,7 @@
                 "group": "发现与探索",
                 "pages": [
                   "zh-Hans/discover/explore/overview",
+                  "zh-Hans/discover/explore/awesome",
                   "zh-Hans/discover/trending/trending",
                   "zh-Hans/discover/explore/hot-and-new",
                   "zh-Hans/discover/weekly/weekly",

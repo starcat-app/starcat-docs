@@ -1,6 +1,6 @@
 ---
 title: "Explore overview"
-description: "Five modes, Discover data source / rules / cache, organize-after-discover"
+description: "Explore modes, Discover data source / rules / cache, organize-after-discover"
 ---
 
 ## Pick the right top-level area
@@ -9,13 +9,14 @@ description: "Five modes, Discover data source / rules / cache, organize-after-d
 |------|---------|------|
 | **Manage** | Organize existing Stars / knowledge base | [Sidebar](/main-interface/sidebar) |
 | **Explore** | Discover new projects | This page |
-| **Activity** | Feed and notifications | [Activity](/discover/activity/activity) |
+| **Activity** | GitHub notification inbox and local activity | [Activity](/discover/activity/activity) |
 
-## Five Explore modes
+## Explore modes
 
 | Mode | What you’re looking for | Dedicated page |
 |------|-------------------------|----------------|
 | **Discover** | Curated recommendation feed; filter by topic / platform | Below on this page |
+| **Awesome** | Topic lists from curated or custom Awesome sources | [Awesome](/discover/explore/awesome) |
 | **Trending** | Recent momentum | [Trending](/discover/trending/trending) |
 | **Hot** | High-heat repositories | [Hot and new](/discover/explore/hot-and-new) |
 | **New releases** | Stable-release activity | Same as above |
@@ -46,6 +47,7 @@ GitHub Search, repository metadata, and Release data.
 - **TTL**: 3 hours; shares one project-catalog cache with Hot and New releases.
 - **Refresh**: Prefer local cache while valid; refetch the catalog after expiry.
 - **Offline**: On update failure, keep the last successful cache and note that content may be stale.
+- **Category counts**: the first open restores cached counts for Discover, Hot, New releases, and Weekly, without clicking each item.
 
 ## After you find something good
 
@@ -61,5 +63,6 @@ Batch work: [Batch operations](/manage-stars/batch-operations).
 
 ## Related
 
+- [Awesome](/discover/explore/awesome)
 - [Similar repos](/discover/explore/similar-repos)
 - [Search Center · GitHub scope](/search/search-center) (active search vs browsing lists)

@@ -1,31 +1,66 @@
 ---
 title: "Activity"
-description: "Announcements, Release, Star, following, and recommendation feed"
+description: "GitHub notification inbox, Issue / PR threads, and local activity feeds"
 ---
 
-## Entry
+Top-level sidebar **Activity**. It opens on **Notifications** by default, so you can handle mentions, review requests, and Issue / PR threads without leaving Starcat.
 
-Top-level sidebar **Activity**.
+The current category’s count appears in the window subtitle. Category help lives in the middle column.
 
-## Common categories
+<Note>
+  Notifications need GitHub notification permission. Starcat prompts you to re-authorize if it is missing. You can also receive alerts in Notification Center.
+</Note>
 
-| Category | Description |
-|----------|-------------|
-| All | Combined feed (some special types may be listed separately) |
-| Announcements | Product / ops announcements |
-| Release | Related to subscribed Releases |
-| Star | Star-related activity |
-| Repository | Repository events |
-| Following | Following and similar cached events |
-| Recommendations | Recommendation entries |
-| Undo Star | Unstar-related (may not appear under All) |
+## GitHub notification inbox
 
-Tap an entry to jump to a repo, the [Release timeline](/release/timeline), or an external link.
+The timeline groups items by Today, Yesterday, This week, and Earlier. Opened items stay read; the sync button spins while refreshing.
 
-## Relationship to notifications
+**All** mixes GitHub notifications with your own Star, Unstar, and Fork ledger, ordered by time. Ledger rows open repository detail, not an Issue thread.
 
-Tapping a system notification often lands in Activity or the timeline. See [Release notifications](/release/notifications).
+The timeline distinguishes Issues from PRs. Avatars and usernames open GitHub profiles; Dependabot uses the official circular icon. Star / Unstar / Fork rows show whether the repository is in the knowledge base.
+
+### Filters
+
+The type menu filters by Unread, Issue, PR, Discussion, Release, Open, Closed, Merged, Mentions, Reviews, Star, Unstar, Fork, In library, and Outside library.
+
+Long lists prefetch the next page about eight rows from the bottom. When nothing is selected, the right pane shows a diagram that points you back to the middle column.
+
+### Issue / PR threads
+
+Select a notification to read the opening post and comments, write or preview a reply, and move to the previous / next thread.
+
+- **Done** matches GitHub Inbox Done and does **not** close the Issue
+- You can close an Issue that is still open, or reopen a closed one
+- You can also open GitHub or the repository in Starcat
+- The opening post shows the title and all labels, wrapping when needed; empty bodies show “No description”
+- Open / Closed / Merged appears under the timestamp and in the detail header; closing or reopening updates both
+
+### AI drafts and translation
+
+An empty composer drafts a reply from the current thread; existing text is polished and completed. Reply language follows the thread, not the draft or the app UI language.
+
+Segmented or full translation covers the opening post and every comment. Titles, repository names, and the composer stay original. The target language can follow the UI; paragraphs already in that language are skipped. Event rows such as label changes stay original.
+
+Requires [Pro](/subscribe/plan-comparison) and [AI configuration](/ai-features/configuration). Failures show a toast in the lower-right corner.
+
+### Images in comments
+
+Paste a screenshot or image into the comment box. Starcat uploads it and inserts the link; preview shows the image.
+
+### Event stream and local cache
+
+**Settings → General → Activity**: turn on **Show issue events** to insert label changes, closes, commit references, and related PRs between comments. Comments only is the default.
+
+Reopening an Issue after quitting Starcat still reads local comments and events first. Unsent handwritten or AI replies are kept per thread. Both can be cleared in [Settings → Storage](/settings/storage).
+
+## Other local categories
+
+Besides Notifications, Activity still has local aggregate categories (Announcements, Release, Star, Repository, Following, Recommendations, Undo Star, and more). Tap an entry to jump to a repo, the [Release timeline](/release/timeline), or an external link.
+
+Tapping a system notification often lands in the notification timeline or the Release timeline. See [Release notifications](/release/notifications).
 
 ## Related
 
 - [Explore overview](/discover/explore/overview)
+- [Repository detail](/main-interface/repo-detail)
+- [General settings](/settings/general)

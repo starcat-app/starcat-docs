@@ -36,6 +36,12 @@ If you only want curated ingested content, prefer **knowledge**, or ask directly
 
 Your query is encoded as a vector and compared with locally cached repo vectors; some flows may blend with keyword results. Quality depends heavily on the Embedding model and whether the index covers target repos.
 
+## Build progress
+
+After you start a build, a busy ring appears first. Repos that are already current advance the progress ring, and only missing or expired vectors are filled. Relevance percentages in list results use the same type size as language, Stars, and Forks.
+
+Knowledge-base keyword search supports Chinese infix matching; naming a repo more reliably lands on indexed README content. See [Index management](/knowledge-base/index-management).
+
 ## Related
 
 - [AI settings](/settings/ai)

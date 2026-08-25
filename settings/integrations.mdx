@@ -1,6 +1,6 @@
 ---
 title: "Integrations settings"
-description: "Local API Key, browser plugin, and External Search"
+description: "Local API Key, browser plugin, External Search, and Agent Runtime"
 ---
 
 ## Entry
@@ -43,6 +43,10 @@ The nav page [External search settings](/settings/external-search) points here.
 
 Alfred, uTools, and Raycast companions live in separate GitHub repos. Setup: [Desktop launchers](/integrations/desktop-launchers).
 
-## Other
+## Direct: CodebaseMemory and CodeFlow
 
-May include CodeFlow / CodebaseMemory output directories and similar items. Follow the UI; do not treat unreleased capabilities as shipped.
+**CodeFlow** is a 3D code graph for public repositories (Pro), opened from the list / detail toolbar. Private repos do not get this entry.
+
+The Direct build no longer ships large bundled executables. Settings can auto-detect a current official install, or you can choose the executable or output directory yourself. If no compatible version is found, follow the on-page prompt to install or pick a path again. Graph startup reuses an account-level shared service so “already installed but not found” and port timeouts are less likely.
+
+**CodebaseMemory** uses the same local official-install detection. The Mac App Store build cannot launch user-installed executables because of the sandbox.

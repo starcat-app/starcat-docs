@@ -1,6 +1,6 @@
 ---
 title: "集成设置"
-description: "Local API Key、浏览器插件、External Search"
+description: "Local API Key、浏览器插件、External Search、Agent Runtime"
 ---
 
 ## 入口
@@ -43,6 +43,10 @@ Starcat Direct 可在这里检测并配置 Codex App Server 与 DeepSeek Harness
 
 Alfred、uTools、Raycast 配套项目在独立 GitHub 仓库。安装见 [桌面启动器](/zh-Hans/integrations/desktop-launchers)。
 
-## 其他
+## Direct：CodebaseMemory 与 CodeFlow
 
-可能包含 CodeFlow / CodebaseMemory 输出目录等。以界面为准；未开放的能力不要当作已上线。
+**CodeFlow** 是公开仓库的 3D 代码图谱（Pro），从列表 / 详情工具栏打开。私仓没有这个入口。
+
+Direct 版不再内置大体积可执行文件。设置页可自动检测当前官方安装，也可手动选择可执行文件或输出目录。找不到兼容版本时，按页面提示安装或重新选择路径。图谱启动复用账户级共享服务，避免「已安装仍提示未找到」或端口超时。
+
+**CodebaseMemory** 同样走本机官方安装检测。App Store 版受 Sandbox 限制，不能启动用户安装的这类可执行文件。

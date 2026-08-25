@@ -39,9 +39,16 @@ Without a working Embedding model:
 
 Chat configured but Embedding empty is the most common “I have Pro but semantic/RAG still fails” case.
 
-## Prompts (when exposed)
+## RAG prompts
 
-Some tasks allow custom system prompts. Changes affect tone and length; test on one repo before using with Auto Tidy.
+In [RAG workspace](/knowledge-base/rag-workspace) settings you can edit the Q&A, planner, compressor, and title templates:
+
+- Compare and **copy** the read-only default prompts  
+- Q&A and conversation-compression templates use clearer Markdown  
+- Custom templates list supported context capabilities and placeholders (for example Insights); omitting a placeholder does not inject that context silently  
+- Starcat **does not** rewrite your saved custom text  
+
+If summary, tags, or translation expose custom prompts, test on one repository before using them with [Auto Tidy](/ai-features/auto-tidy).
 
 ## Output language
 
@@ -50,4 +57,5 @@ Default follows UI language; you can set AI output language separately. See [AI 
 ## Related
 
 - [Auto Tidy](/ai-features/auto-tidy)
+- [RAG workspace](/knowledge-base/rag-workspace)
 - [FAQ · AI](/faq/ai)

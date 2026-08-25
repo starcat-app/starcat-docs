@@ -5,6 +5,27 @@ description: "Notable Starcat release highlights; full archive on the website"
 
 In-docs summary of major releases. Full formatted archive: [starcat.ink/changelog](https://starcat.ink/changelog)
 
+## 1.5.0
+
+These capabilities are available in the current Direct / development build. Mac App Store follows the version that is actually listed.
+
+### New
+
+- **Awesome lists**: browse Starcat curated and custom public Awesome sources in Explore, with background parsing and refresh — [Awesome](/discover/explore/awesome)
+- **Multiple Agent runtimes** (Direct): switch built-in Loop, Codex App Server, and DeepSeek Harness — [Runtime setup](/agent-workspace/runtime-setup)
+- **In-house similar-repo recommendations** (Direct): new recommendation pipeline behind the same entry — [Similar repos](/discover/explore/similar-repos)
+- **Public Star data contribution**: off by default; optionally contribute public repo IDs and Star times anonymously — [Privacy](/data-privacy/privacy)
+- **Open repository docs in the app**: README Markdown links to the same repo can open in a separate window — [Repository detail](/main-interface/repo-detail)
+- **README video**: play GitHub README videos with native controls on the detail page
+- **Security advisories and Release assets**: Insights shows advisories, GHSA / CVE, and the latest Release assets — [Insights](/main-interface/insights)
+- **Richer notification threads**: Issue / PR state, library filters, pasted images, labels, and event stream — [Activity](/discover/activity/activity)
+
+### Improvements
+
+- Agent Workspace timeline shows thinking summaries, tool calls, errors, and artifacts
+- Empty notification pane, local Issue comment / event cache, and per-thread drafts
+- Toolbar can show official GitHub status
+
 ## 1.4.0
 
 GitHub notifications in Activity, plus knowledge-base indexing and Explore refinements. Online services were upgraded: update to 1.4.0; older builds can still show local cache, but live refresh, recommendations, Discovery, Wiki, and sharing no longer work.
@@ -15,13 +36,15 @@ GitHub notifications in Activity, plus knowledge-base indexing and Explore refin
 - **Issue / PR threads**: read the opening post and comments, write or preview a reply, mark Done without closing the issue, and jump to GitHub or the repository in Starcat
 - **AI comment drafts**: generate a reply from the thread, or polish text you already typed; the reply follows the thread language
 - **Thread translation**: segmented or full translation of the opening post and comments; titles, repository names, and the composer stay original
+- **Local CLI inference** (Direct): knowledge-base RAG can use Codex CLI or Claude Code CLI — [RAG workspace](/knowledge-base/rag-workspace)
 
 ### Improvements
 
-- Long thinking stays responsive in knowledge Q&A and repository chat
-- Semantic search and knowledge-base index status, prefetch, and Chinese infix matching
-- README translation can follow the app UI language and skip same-language paragraphs
-- Explore offline cache and first-launch category counts
+- Long thinking stays responsive in knowledge Q&A and repository chat — [RAG workspace](/knowledge-base/rag-workspace), [AI chat](/ai-features/chat)
+- Semantic search and knowledge-base index status, prefetch, pause, Meilisearch / Qdrant test, and Chinese infix matching — [Index management](/knowledge-base/index-management), [Semantic search](/search/semantic-search)
+- README translation can follow the app UI language and skip same-language paragraphs — [README translation](/ai-features/readme-translation)
+- Explore offline cache and first-launch category counts — [Explore overview](/discover/explore/overview)
+- Direct: CodebaseMemory detects a local official install instead of bundling a large executable — [Integrations](/settings/integrations)
 
 ### Fixes
 
@@ -36,6 +59,7 @@ My Projects, library-wide and repository insights, macOS desktop widgets, reusab
 ### New
 
 - **My Projects**: browse personal, organization, and collaborator repositories; GitHub App unlocks authorized private / Internal projects alongside public ones — [My Projects](/main-interface/my-projects)
+- **App Store update check**: detects a new version on launch or re-activation; Check for Updates opens the Mac App Store — [Install](/getting-started/installation)
 - **My Insights**: organization progress, tech distribution, status, and action items across Stars or Knowledge Base, with drill-down lists — [Insights](/main-interface/insights)
 - **Repository Insights**: Star growth, collaboration, commits, contributors, releases, health, community, and security signals
 - **Insight context**: reuse generated insights in AI summary, repo chat, and RAG as removable read-only XML context
@@ -44,15 +68,15 @@ My Projects, library-wide and repository insights, macOS desktop widgets, reusab
 
 ### Improvements
 
-- Insight aggregates feed RAG knowledge-base answers
-- RAG prompt settings: compare / copy read-only defaults; clearer Markdown templates
+- Insight aggregates feed RAG knowledge-base answers — [Insights](/main-interface/insights)
+- RAG prompt settings: compare / copy read-only defaults; clearer Markdown templates — [AI configuration](/ai-features/configuration)
 - Custom prompt diagnostics for supported placeholders (no silent rewriting)
-- First-run onboarding polish (screenshots, welcome audio, card hierarchy)
+- First-run onboarding polish (screenshots, welcome audio, card hierarchy) — [Quickstart](/getting-started/quickstart)
 
 ### Fixes
 
 - Share card theme controls use full click targets
-- RAG citations show real snippets for keyword-hit metadata and library stats without requiring vectors
+- RAG citations show real snippets for keyword-hit metadata and library stats without requiring vectors — [Citations](/knowledge-base/citations)
 
 ## 1.2.0
 

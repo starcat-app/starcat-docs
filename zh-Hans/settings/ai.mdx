@@ -17,9 +17,16 @@ description: "Provider、Auto Tidy、索引与 RAG 相关选项总览"
 | 已发现模型 | 刷新模型列表、调参数 |
 | 默认任务映射 | 摘要/标签/对话/Embedding/翻译各用哪个模型 |
 | Auto Tidy | 后台整理开关与触发 → [自动整理](/zh-Hans/ai-features/auto-tidy) |
-| AI 索引 | 语义向量构建/更新 → [语义搜索](/zh-Hans/search/semantic-search) |
-| RAG 相关 | 检索/Rerank/自托管后端等高级项（有则显示） |
+| AI 索引 | 语义向量构建/更新；显示上次预拉完成时间、计数，以及绿 / 橙 / 红结果 → [语义搜索](/zh-Hans/search/semantic-search) |
+| RAG 相关 | 检索/Rerank、可选 Meilisearch / Qdrant 等（有则显示） |
 | 输出语言 | 跟随界面或单独指定 |
+| AI 用量 | 本地请求数、Token、延迟和失败统计；新版本可看预估费用。不保存 Prompt 或回答正文 |
+
+## AI 索引与外部检索
+
+打开 **AI 索引** 即可看到上次预拉时间和计数。可开始、暂停或恢复后台预拉；取消 embedding 不会被当成网络不可用。
+
+若配置了外部 **Meilisearch** 或 **Qdrant**，各自「测试并保存」旁会显示结果：成功为绿勾、需重建为橙警告、失败为红叉。它们不是 [设置 → 服务](/zh-Hans/settings/services) 里的 Go 后端。详见 [索引管理](/zh-Hans/knowledge-base/index-management)。
 
 ## 使用前检查清单
 
