@@ -1,61 +1,54 @@
 ---
 title: "AI 配置"
-description: "添加 Provider、映射任务模型、Embedding 与测试"
+description: "添加 Provider、映射任务模型、Embedding 与测试连接"
 ---
 
-## 入口
+## 用来做什么
 
-**设置 → AI**
+没有可用模型，Pro 开关等于摆设。这一页把 **设置 → AI** 配到「摘要能出、语义能搜、RAG 能问」。Chat 和 Embedding 是两件事，配一个不等于配另一个。
 
-## 配置步骤
+<Frame caption="截图待补充 · `images/screenshots/ai-features/configuration.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → AI：Provider 列表、任务映射、测试连接
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="添加 Provider">
-    选择类型（OpenAI / 兼容接口、DeepSeek、OpenRouter、Gemini、Ollama、LM Studio 等，以列表为准）。
-    填写 API Key、Base URL（自建或兼容端点时）。
-  </Step>
-  <Step title="发现模型">
-    刷新「已发现模型」；必要时在行内调整温度等参数。
-  </Step>
-  <Step title="默认任务映射">
-    为下列任务分别指定 Provider + 模型（名称以界面为准）：
-    - 摘要、标签、对话
-    - Embedding（语义搜索 / RAG 向量）
-    - 翻译
-  </Step>
-  <Step title="测试">
-    使用测试连接；再到详情页用 ⇧⌘A 做一次真实调用。
-  </Step>
-</Steps>
+## 怎么配
 
-Key 存 macOS Keychain。更多说明：[BYOK](/zh-Hans/subscribe/byok)。
+1. **添加 Provider**：OpenAI / 兼容接口、DeepSeek、OpenRouter、Gemini、Ollama、LM Studio 等（以列表为准）。填 API Key、自建时填 Base URL。
+2. **发现模型**：刷新已发现模型；必要时改温度等行内参数。
+3. **默认任务映射**（名称以界面为准）：摘要、标签、对话；**Embedding**（语义 / RAG）；翻译。
+4. **测试**：先测连接，再到详情用 ⇧⌘A 做一次真实调用。
+
+Key 进 macOS Keychain。更多：[BYOK](/zh-Hans/subscribe/byok)。
 
 ## Embedding 特别重要
 
 没有可用 Embedding 时：
 
-- [语义搜索](/zh-Hans/search/semantic-search) 不可用  
-- [RAG 索引](/zh-Hans/knowledge-base/index-management) 向量侧无法建立  
+- [语义搜索](/zh-Hans/search/semantic-search) 不可用
+- [RAG 索引](/zh-Hans/knowledge-base/index-management) 向量侧建不起来
 
-Chat 模型配好但 Embedding 空着，是最常见的「Pro 了但仍不能语义/RAG」原因。
+Chat 配好但 Embedding 空着，是最常见的「Pro 了但仍不能语义 / RAG」原因。
 
 ## RAG 提示词
 
-在 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 的设置里，可编辑问答、规划、压缩和标题模板：
+在 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 设置里可编辑问答、规划、压缩和标题模板：
 
-- 可对照并**复制**只读默认提示词  
-- 问答与对话压缩模板使用更清晰的 Markdown  
-- 自定义模板会标明支持的上下文能力与占位符（例如洞察）；没写占位符就不会静默注入  
-- Starcat **不会**自动改写你保存的自定义内容  
+- 可对照并**复制**只读默认提示词
+- 自定义模板会标明支持的占位符；没写的不会静默注入
+- Starcat **不会**自动改写你保存的自定义内容
 
-摘要、标签、翻译等任务若开放自定义提示词，同样建议先对单个仓库试验，再用于 [Auto Tidy](/zh-Hans/ai-features/auto-tidy)。
+摘要、标签、翻译若开放自定义提示词，先对单个仓库试验，再用于 [Auto Tidy](/zh-Hans/ai-features/auto-tidy)。
 
-## 输出语言
+输出语言默认跟界面，也可单独指定。见 [AI 设置](/zh-Hans/settings/ai)。
 
-默认跟随界面语言，也可单独指定 AI 输出语言。见 [AI 设置](/zh-Hans/settings/ai)。
+## 注意
+
+- App Store 渠道不能帮你拉起本机 CLI；本地推理（Ollama 等）要自己先把服务跑起来。
+- 换 Embedding 模型后，旧向量可能对不齐，按界面重建索引。
 
 ## 相关
 
 - [Auto Tidy](/zh-Hans/ai-features/auto-tidy)
-- [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)
 - [FAQ · AI](/zh-Hans/faq/ai)

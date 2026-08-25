@@ -1,44 +1,44 @@
 ---
 title: "README 翻译"
-description: "分段中英对照与全文翻译两种模式"
+description: "分段中英对照，或全文替换可见 README；需要 Pro"
 ---
 
-## 入口
+## 用来做什么
 
-本地仓库详情 README 工具区中的 **翻译** 按钮。
+英文 README 不想整页丢进浏览器翻译时，在详情里分段对照或全文替换。适合扫文档；代码块和表格可能不如原文整齐。
+
+<Frame caption="截图待补充 · `images/screenshots/ai-features/readme-translation.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    README 工具区翻译按钮：分段对照 / 全文模式
+  </div>
+</Frame>
+
+## 怎么用
+
+本地仓库详情 README 工具区的 **翻译** 按钮。
 
 | 场景 | 通常是否可用 |
 |------|----------------|
 | Manage / Explore 本地详情 | 是 |
 | 部分 Activity / 外链预览 | 可能否 |
 
-## 模式
-
 | 模式 | 行为 |
 |------|------|
 | **分段**（默认） | 按段对照 / 双语阅读 |
 | **全文** | 替换可见 README 文本，尽量保留结构 |
 
-翻译比早期版本更快：更小首批请求、增量展示、最多 4 路并发、分段缓存，以及对未完成段落的续译。
+步骤：等 README 加载完 → 点翻译 → 选目标语言和模式 → 在译文与原文间切换。需要 Pro，并在 [AI 配置](/zh-Hans/ai-features/configuration) 指定翻译模型。目标语言可自动跟随界面。已经是目标语言的段落会跳过。失败时右下角 toast。
 
-## 步骤
-
-<Steps>
-  <Step title="打开详情">等待 README 加载完成。</Step>
-  <Step title="点翻译">选择目标语言；默认可跟随界面语言。在控件中选择分段或全文模式（文案以 App 为准）。</Step>
-  <Step title="阅读">按需在译文与原文间切换。</Step>
-</Steps>
-
-需 Pro，并在 [AI 配置](/zh-Hans/ai-features/configuration) 指定翻译模型。
-
-目标语言可设为自动（跟随界面语言）。已经是目标语言的段落会跳过。失败时右下角 toast 提示；AI 配置不完整时可前往设置。
+翻译比早期版本更快：更小首批、增量展示、最多 4 路并发、分段缓存、未完成段落可续译。
 
 ## 注意
 
-- 超长 README 耗时与费用更高  
-- 代码块 / 表格可能排版不如原文  
-- Mermaid 与复杂图表在译文不理想时可能更接近原文  
+- 超长 README 更耗时、更费 token
+- 代码块 / 表格可能排版不如原文
+- Mermaid 与复杂图表不理想时，译文可能更接近原文
+- 这是阅读辅助，不是发布级本地化
 
 ## 相关
 
 - [仓库详情](/zh-Hans/main-interface/repo-detail)
+- [AI 配置](/zh-Hans/ai-features/configuration)

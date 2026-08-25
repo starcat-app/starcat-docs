@@ -1,32 +1,34 @@
 ---
 title: "AI 摘要"
-description: "生成结构化摘要、缓存位置与质量注意"
+description: "先拿结构化要点再决定要不要通读 README"
 ---
 
-## 用途
+## 用来做什么
 
-在通读长 README 之前，先拿一版结构化要点（背景、特性、适用场景、注意事项等；具体结构随提示词变化）。
+长 README 通读之前，先看一版结构化要点（背景、特性、适用场景、注意事项等；结构随提示词变）。适合扫新 Star，不适合当许可证或安全结论。
 
 <Frame caption="AI 摘要">
   <img src="/images/screenshots/ai-summary.webp" alt="AI 摘要截图" className="rounded-xl" />
 </Frame>
 
-## 入口
+若上图缺失，补拍：`images/screenshots/ai-summary.webp`（摘要卡片结构）。
 
-1. 详情 AI 浮层 → 摘要（**⇧⌘A**）  
-2. [Auto Tidy](/zh-Hans/ai-features/auto-tidy) 批量生成  
+## 怎么打开
+
+1. 详情 AI 浮层 → 摘要（**⇧⌘A**）
+2. [Auto Tidy](/zh-Hans/ai-features/auto-tidy) 批量生成
+
+需要 Pro + 可用 Chat 模型。
 
 ## 缓存
 
-摘要写入本地缓存，避免重复消耗 token。可在 **设置 → 存储** 清理摘要缓存。见 [存储管理](/zh-Hans/settings/storage)。
+摘要写入本地缓存，避免重复烧 token。可在 **设置 → 存储** 清理。见 [存储管理](/zh-Hans/settings/storage)。重新生成会再调模型，费用看你的 Provider。
 
-重新生成会再次调用模型（费用与配额取决于你的 Provider）。
+## 注意
 
-## 质量注意
-
-- 摘要不能替代阅读许可证、安全公告与最新 Release  
-- README 极短或纯图片时，摘要质量会下降  
-- 需要 Pro + 可用 Chat 模型  
+- 不能替代阅读许可证、安全公告与最新 Release
+- README 极短或纯图片时，摘要会变差
+- Auto Tidy 批量生成会快速推高账单，先单仓确认质量
 
 ## 相关
 

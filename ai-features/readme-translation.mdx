@@ -1,44 +1,44 @@
 ---
 title: "README translation"
-description: "Segmented bilingual and full README translation modes"
+description: "Segment bilingual view or replace the visible README; Pro required"
 ---
 
-## Entry point
+## What it is for
 
-The **Translate** button in the local repository detail README toolbar.
+When you do not want to dump a long English README into a browser translator, translate in detail: segment-by-segment or full-text replace. Good for reading. Code blocks and tables may be less tidy than the original.
 
-| Scenario | Usually available? |
-|----------|-------------------|
+<Frame caption="Screenshot TODO · `images/screenshots/ai-features/readme-translation.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    README toolbar Translate: segment vs full-text mode
+  </div>
+</Frame>
+
+## How to use it
+
+The **Translate** control in the local-repo README toolbar.
+
+| Scene | Usually available |
+|-------|-------------------|
 | Manage / Explore local detail | Yes |
-| Some Activity / external previews | Maybe not |
-
-## Modes
+| Some Activity / remote previews | Maybe not |
 
 | Mode | Behavior |
 |------|----------|
-| **Segmented** (default) | Side-by-side / bilingual reading per segment |
-| **Full** | Replaces visible README text while keeping structure |
+| **Segment** (default) | Side-by-side / bilingual by paragraph |
+| **Full text** | Replaces visible README text, keeping structure where possible |
 
-Translation is faster than earlier releases: smaller first batch, incremental display, up to four concurrent requests, per-segment caching, and resume for unfinished segments.
+Wait for README load → Translate → pick language and mode → switch original / translation. Requires Pro and a translation model in [AI configuration](/ai-features/configuration). Target language can follow the UI. Paragraphs already in the target language are skipped. Failures toast at the bottom-right.
 
-## Steps
-
-<Steps>
-  <Step title="Open detail">Wait for README to finish loading.</Step>
-  <Step title="Translate">Pick target language; default can follow UI language. Choose segmented or full mode in the control (wording follows the app).</Step>
-  <Step title="Read">Switch between translation and original as needed.</Step>
-</Steps>
-
-Requires Pro and a translation model in [AI configuration](/ai-features/configuration).
-
-The target language can be **Auto** (follow the UI language). Paragraphs already in that language are skipped. Failures show a toast in the lower-right corner; incomplete AI setup can jump to Settings.
+Translation is faster than early versions: smaller first request, incremental display, up to 4-way concurrency, per-segment cache, and resume for unfinished paragraphs.
 
 ## Notes
 
-- Very long READMEs cost more time and tokens  
-- Code blocks / tables may layout worse than the original  
-- Mermaid and complex diagrams may stay closer to the source when translation is imperfect  
+- Very long READMEs cost more time and tokens
+- Code blocks / tables may layout worse than the original
+- Mermaid and complex diagrams may stay closer to the original when translation is poor
+- This is a reading aid, not ship-quality localization
 
 ## Related
 
 - [Repository detail](/main-interface/repo-detail)
+- [AI configuration](/ai-features/configuration)

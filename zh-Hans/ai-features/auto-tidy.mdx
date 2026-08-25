@@ -1,33 +1,35 @@
 ---
 title: "自动整理 Auto Tidy"
-description: "触发器、动作、配额注意与安全边界"
+description: "在你允许的时机后台跑摘要、标签推荐；先小范围再定时"
 ---
 
-## 是什么
+## 用来做什么
 
-**设置 → AI → Auto Tidy** 里的后台整理：在你允许的时机，对仓库跑摘要、标签推荐等动作。
+不想每个新 Star 都手动开 ⇧⌘A 时，用 **设置 → AI → Auto Tidy** 在同步完成或定时时跑你勾选的动作。它是加速器，不是「全自动整理完不用看」。
 
-## 典型可配项
+<Frame caption="截图待补充 · `images/screenshots/ai-features/auto-tidy.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → AI → Auto Tidy：总开关、触发器、动作勾选
+  </div>
+</Frame>
+
+## 怎么配
 
 | 项 | 说明 |
 |----|------|
-| 总开关 | 立即停用全部自动整理 |
+| 总开关 | 立刻停用全部自动整理 |
 | 触发 | 启动后延迟、同步完成、定时等 |
-| 动作 | 摘要、标签推荐等（以界面勾选项为准） |
-| 立刻执行 | 手动跑一轮，用于试配置 |
+| 动作 | 摘要、标签推荐等（以界面为准） |
+| 立刻执行 | 手动跑一轮，试配置 |
 
-## 建议开启顺序
+建议顺序：单仓浮层确认输出可读 → 只勾真正需要的动作 → 小范围触发（例如仅同步完成）观察一天 → 再考虑定时。
 
-1. 先在单仓浮层确认模型输出可读  
-2. 动只勾选你真正需要的动作  
-3. 小范围触发（例如仅同步完成）观察一天  
-4. 再考虑定时  
+## 注意
 
-## 风险与限额
-
-- 大库 + 定时 = Provider 账单上升  
-- 标签写入仍受[确认策略](/zh-Hans/ai-features/tag-recommendation)与免费 **20** 标签上限约束  
-- 需要 Pro 与有效 Provider  
+- 大库 + 定时 = Provider 账单上升
+- 标签写入仍要 [确认](/zh-Hans/ai-features/tag-recommendation)，且受免费 **20** 标签上限约束
+- 需要 Pro 与有效 Provider
+- 关掉总开关应立即停下后续批次；正在跑的一轮可能还会结束
 
 ## 相关
 

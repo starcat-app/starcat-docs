@@ -1,28 +1,33 @@
 ---
 title: "AI personal notes"
-description: "Generate learning-note drafts and confirm before writing private notes"
+description: "Draft a study note; save to private notes only after you confirm"
 ---
 
-## Entry point
+## What it is for
 
-The **Generate with AI** control in the header of the detail **Private notes** area.
+Turn a README into a **personal** study-note draft: why you starred it, how you will use it, what broke. Existing body text is not overwritten until you confirm. Notes stay on this Mac; GitHub collaborators never see them.
 
-Requires Pro + a Chat model. For the notes area itself, see [Notes & status](/manage-stars/notes-and-status).
+<Frame caption="Screenshot TODO · `images/screenshots/ai-features/personal-notes.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Private notes header Generate with AI, draft preview, confirm save
+  </div>
+</Frame>
 
-## Flow
+## How to use it
 
-<Steps>
-  <Step title="Generate or refine">Create a learning note from the current README, or improve an existing draft. Progress is shown while generating.</Step>
-  <Step title="Edit and preview">Edit Markdown with preview; you can copy the draft. Unconfirmed text does not overwrite existing notes.</Step>
-  <Step title="Confirm save">Writes to private notes and shows save status.</Step>
-</Steps>
+Entry: **Generate with AI** at the top of **Private notes** in detail. Requires Pro and a Chat model. The notes pane itself: [Notes and status](/manage-stars/notes-and-status).
 
-## Storage and privacy
+1. Generate or refine: from the README, or improve an existing draft; a progress indicator runs
+2. Edit Markdown and preview; you can copy the draft. Unconfirmed text does not replace the body
+3. Confirm save into private notes and watch the save status
 
-- Notes stay on device only; not uploaded to GitHub  
-- Generation sends necessary context to your configured AI Provider (BYOK)  
-- See [Privacy](/data-privacy/privacy), [BYOK](/subscribe/byok)  
+## Notes
+
+- Stored on this Mac only; never uploaded to GitHub.
+- Generation sends the needed context to your configured AI provider (BYOK). See [Privacy](/data-privacy/privacy) and [BYOK](/subscribe/byok).
+- Unconfirmed drafts are not list-searchable.
 
 ## Related
 
 - [AI overview](/ai-features/overview)
+- [List search](/search/global-search)

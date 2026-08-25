@@ -1,15 +1,25 @@
 ---
 title: "AI 功能概览"
-description: "Pro AI 能力表、入口、配置前提与保守策略"
+description: "Pro AI 能做什么、从哪进、配置前提，以及确认后才写入"
 ---
+
+## 用来做什么
+
+Starcat 的 AI 帮你**读库、分类、提问**，不替你静默改数据。标签和笔记都要你点确认才落库。适合已经 Star 了一堆仓、不想每份 README 从头读的人。
+
+<Frame caption="截图待补充 · `images/screenshots/ai-features/overview.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    详情 AI 浮层：摘要 / 对话 Tab，⇧⌘A
+  </div>
+</Frame>
 
 ## 使用前提
 
-1. 激活 [Pro](/zh-Hans/subscribe/purchase) → 权益表见 [方案对比](/zh-Hans/subscribe/plan-comparison)  
-2. **设置 → AI** 配置 Provider（[BYOK](/zh-Hans/subscribe/byok)、[逐步配置](/zh-Hans/ai-features/configuration)）  
-3. 为任务选好默认模型：Chat（摘要/对话/标签）与 **Embedding**（语义/RAG）  
+1. 激活 [Pro](/zh-Hans/subscribe/purchase) → [方案对比](/zh-Hans/subscribe/plan-comparison)
+2. **设置 → AI** 配 Provider（[BYOK](/zh-Hans/subscribe/byok)、[逐步配置](/zh-Hans/ai-features/configuration)）
+3. 为任务选默认模型：Chat（摘要 / 对话 / 标签）和 **Embedding**（语义 / RAG）
 
-缺 Embedding 是最常见的「开了 Pro 仍不能语义/RAG」原因。
+缺 Embedding 是最常见的「开了 Pro 仍不能语义 / RAG」原因。
 
 ## 能力一览
 
@@ -25,10 +35,7 @@ description: "Pro AI 能力表、入口、配置前提与保守策略"
 | Auto Tidy | 设置 → AI | [自动整理](/zh-Hans/ai-features/auto-tidy) |
 | Agent 工作台 | 独立窗口 | [Agent Beta](/zh-Hans/agent-workspace/overview) |
 
-说明：
-
-- [Search Center](/zh-Hans/search/search-center) 的**网页** Scope 不强制 Pro  
-- AI 若附带联网上下文，仍受 Pro / 开关约束 → [外部搜索](/zh-Hans/search/external-search)  
+[Search Center](/zh-Hans/search/search-center) 的**网页** Scope 不强制 Pro。AI 若附带联网上下文，仍受 Pro / 开关约束 → [外部搜索](/zh-Hans/search/external-search)。
 
 ## 保守策略
 
@@ -41,15 +48,13 @@ description: "Pro AI 能力表、入口、配置前提与保守策略"
 
 ## 推荐上手顺序
 
-<Steps>
-  <Step title="配通模型">[AI 配置](/zh-Hans/ai-features/configuration) → 测试连接。</Step>
-  <Step title="单仓试用">详情 → ⇧⌘A → 摘要或问一句。</Step>
-  <Step title="需要语义时">补齐 Embedding → 建索引 → 列表语义模式。</Step>
-  <Step title="需要跨仓问答">精选入库 → [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)。</Step>
-  <Step title="再谈自动">确认输出质量后，再开 [Auto Tidy](/zh-Hans/ai-features/auto-tidy)。</Step>
-</Steps>
+1. [AI 配置](/zh-Hans/ai-features/configuration) → 测试连接
+2. 详情 → ⇧⌘A → 摘要或问一句
+3. 需要语义时补齐 Embedding → 建索引 → 列表语义
+4. 跨仓问答：精选入库 → [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)
+5. 输出稳定后再开 [Auto Tidy](/zh-Hans/ai-features/auto-tidy)
 
 ## 相关
 
-- [AI 设置总览](/zh-Hans/settings/ai)
+- [AI 设置](/zh-Hans/settings/ai)
 - [FAQ · AI](/zh-Hans/faq/ai)

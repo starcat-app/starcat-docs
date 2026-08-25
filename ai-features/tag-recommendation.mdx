@@ -1,33 +1,34 @@
 ---
 title: "AI tag recommendations"
-description: "Suggestions, confirm-before-write, and free tag limits"
+description: "Suggest 3–8 tags; written only after confirm; free cap 20"
 ---
 
-## Behavior
+## What it is for
 
-AI recommends tags from README / context (often 3–8; confidence may be shown).
+Suggest a handful of tags from the README / context (often 3–8, sometimes with confidence) so you can map onto **your existing names** instead of inventing a taxonomy from scratch.
 
-**Nothing is written until you confirm**—part of Starcat’s conservative AI policy. See [AI overview](/ai-features/overview).
+**Nothing is written until you confirm.** That is part of Starcat’s conservative AI policy. See [AI overview](/ai-features/overview).
 
-## Entry points
+<Frame caption="Screenshot TODO · `images/screenshots/ai-features/tag-recommendation.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    AI overlay tag suggestions: candidates, confidence, confirm
+  </div>
+</Frame>
 
-- Tag recommendations in the detail AI panel  
-- [Auto Tidy](/ai-features/auto-tidy) batch recommendations (still subject to confirm / action settings)  
+## How to use it
 
-## Limits
+- Tag suggestions in the detail AI overlay
+- [Auto Tidy](/ai-features/auto-tidy) batch suggestions (still gated by confirm / which actions you enabled)
 
-The free tier allows at most **20** tags. If you are at the cap:
+Free accounts cap at **20** tags. If you are full: delete unused tags, or upgrade [Pro](/subscribe/plan-comparison). See [Tags](/manage-stars/tags).
 
-1. Delete unused tags, or  
-2. Upgrade to [Pro](/subscribe/plan-comparison)  
+## Notes
 
-See [Tag management](/manage-stars/tags).
-
-## Tips
-
-- Define your naming convention first, then let AI align to it  
-- Subtract from recommendations to avoid tag sprawl  
+- Keep your own naming first so AI fills the system instead of exploding it.
+- Subtract from suggestions. Auto Tidy batch is the easy way to create one-off tags.
+- Hitting the cap blocks writes even if the model suggested something.
 
 ## Related
 
-- [Batch manual tagging](/manage-stars/batch-operations)
+- [Manual batch tagging](/manage-stars/batch-operations)
+- [AI overview](/ai-features/overview)

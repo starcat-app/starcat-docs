@@ -1,9 +1,19 @@
 ---
 title: "AI 对话"
-description: "详情 AI 浮层：摘要/对话切换、独立窗口与外部上下文"
+description: "详情 AI 浮层：针对当前仓库提问，可拆独立窗口"
 ---
 
-## 打开方式
+## 用来做什么
+
+对着**当前这个仓**问 README 里的问题：它解决什么、怎么上手、有哪些非目标。跨很多入库仓对比，请用 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)，不要用单仓浮层硬撑。
+
+<Frame caption="截图待补充 · `images/screenshots/ai-features/chat.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    AI 浮层对话 Tab，可拆独立窗口对照 README
+  </div>
+</Frame>
+
+## 怎么打开
 
 | 方式 | 说明 |
 |------|------|
@@ -11,31 +21,26 @@ description: "详情 AI 浮层：摘要/对话切换、独立窗口与外部上�
 | 详情浮层 | 选中仓库后打开 AI 面板 |
 | 独立窗口 | 浮层内拆出，便于对照 README |
 
-需 [Pro](/zh-Hans/subscribe/plan-comparison) + 已配置 Chat 模型 → [AI 配置](/zh-Hans/ai-features/configuration)。
+需要 [Pro](/zh-Hans/subscribe/plan-comparison) + 已配置 Chat 模型 → [AI 配置](/zh-Hans/ai-features/configuration)。
 
-## 浮层常见结构
-
-- **摘要**相关操作 → [AI 摘要](/zh-Hans/ai-features/summary)  
-- **对话** Tab：针对**当前仓库**提问  
-- 可能附带标签推荐等入口 → [标签推荐](/zh-Hans/ai-features/tag-recommendation)  
-
-具体 Tab 文案以 App 为准。
+浮层常见结构：摘要相关操作、**对话** Tab、可能还有标签推荐。Tab 文案以 App 为准。
 
 ## 适合问什么
 
-- 「用三条概括这个库解决什么问题」  
-- 「快速上手步骤是什么（依据 README）」  
-- 「有哪些明显限制或非目标」  
+- 「用三条概括这个库解决什么问题」
+- 「快速上手步骤是什么（依据 README）」
+- 「有哪些明显限制或非目标」
 
-跨多个入库仓库对比，请用 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)，而不是单仓浮层硬撑。
+较长思考过程中界面保持可操作，完成后仍可展开全文。失败时右下角 toast。
 
-较长思考过程中界面保持可操作，完成后仍可展开阅读全文。失败时右下角 toast 提示。
+若启用 AI 外部搜索上下文，回答可能带网页来源。配置在 **设置 → 集成**。见 [外部搜索](/zh-Hans/search/external-search)。
 
-## 外部上下文
+## 注意
 
-若启用 AI 外部搜索上下文，回答可能附带网页来源。配置在 **设置 → 集成**。见 [外部搜索](/zh-Hans/search/external-search)。
+- 模型只看见当前仓上下文（外加你打开的联网），不会自动扫遍全部 Stars。
+- 许可证、安全公告、最新 Release 仍要自己核对。
 
 ## 相关
 
-- [AI 概览](/zh-Hans/ai-features/overview)
+- [AI 摘要](/zh-Hans/ai-features/summary)
 - [仓库详情](/zh-Hans/main-interface/repo-detail)

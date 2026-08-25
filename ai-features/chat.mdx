@@ -1,41 +1,46 @@
 ---
 title: "AI chat"
-description: "Detail AI panel: summary/chat switch, detached window, and external context"
+description: "Detail overlay: ask about the current repo; detachable window"
 ---
 
-## How to open
+## What it is for
 
-| Method | Notes |
-|--------|-------|
-| Shortcut | Default **⇧⌘A** ([customizable](/settings/shortcuts)) |
-| Detail panel | Open the AI panel after selecting a repository |
-| Detached window | Detach from the panel to read alongside README |
+Ask questions about **this repository’s README**: what it solves, how to start, what it is not for. Comparing many ingested repos belongs in the [RAG workspace](/knowledge-base/rag-workspace), not this overlay.
 
-Requires [Pro](/subscribe/plan-comparison) + a configured Chat model → [AI configuration](/ai-features/configuration).
+<Frame caption="Screenshot TODO · `images/screenshots/ai-features/chat.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    AI overlay Chat tab, detached window next to README
+  </div>
+</Frame>
 
-## Typical panel layout
+## How to open it
 
-- **Summary** actions → [AI summary](/ai-features/summary)  
-- **Chat** tab: ask about the **current repository**  
-- May include tag recommendation entry points → [Tag recommendations](/ai-features/tag-recommendation)  
+| Method | Detail |
+|--------|--------|
+| Shortcut | Default **⇧⌘A** ([editable](/settings/shortcuts)) |
+| Detail overlay | Open the AI panel with a repo selected |
+| Detached window | Split out of the overlay to read README side by side |
 
-Exact tab labels follow the app UI.
+Requires [Pro](/subscribe/plan-comparison) and a Chat model → [AI configuration](/ai-features/configuration).
 
-## Good questions to ask
+Typical overlay: summary actions, a **Chat** tab, and sometimes tag suggestions. Tab copy follows the app.
 
-- “Summarize in three bullets what problem this repo solves”  
-- “What are the quick-start steps (based on README)?”  
-- “What are obvious limits or non-goals?”  
+## Good questions
 
-For comparisons across multiple ingested repos, use the [RAG workspace](/knowledge-base/rag-workspace) instead of stretching the single-repo panel.
+- “Summarize in three bullets what this library solves”
+- “What are the quick-start steps according to the README?”
+- “What are obvious limits or non-goals?”
 
-Long thinking stays usable; expand the full text when it finishes. Failures show a toast in the lower-right corner.
+The UI stays usable during long thinking; you can expand the full text afterward. Failures toast at the bottom-right.
 
-## External context
+If AI live web context is on, answers may cite web sources. Configure that in **Settings → Integrations**. See [External search](/search/external-search).
 
-If AI external search context is enabled, answers may include web sources. Configure under **Settings → Integrations**. See [External search](/search/external-search).
+## Notes
+
+- The model sees this repo (plus live web if you enabled it). It does not scan every Star.
+- Still verify licenses, security advisories, and the latest Release yourself.
 
 ## Related
 
-- [AI overview](/ai-features/overview)
+- [AI summary](/ai-features/summary)
 - [Repository detail](/main-interface/repo-detail)

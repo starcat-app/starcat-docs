@@ -1,55 +1,60 @@
 ---
-title: "AI features overview"
-description: "Pro AI capability map, entry points, setup prerequisites, and conservative policy"
+title: "AI overview"
+description: "What Pro AI can do, where to open it, setup, and confirm-before-write"
 ---
 
-## Prerequisites
+## What it is for
 
-1. Activate [Pro](/subscribe/purchase) → see the entitlement table in [Plan comparison](/subscribe/plan-comparison)  
-2. Configure a Provider under **Settings → AI** ([BYOK](/subscribe/byok), [step-by-step setup](/ai-features/configuration))  
-3. Pick default models for each task: Chat (summary / chat / tags) and **Embedding** (semantic search / RAG)  
+Starcat AI helps you **read, classify, and ask**—it does not silently rewrite your data. Tags and notes land only after you confirm. Use it when you have starred too many repos to read every README from scratch.
 
-Missing Embedding is the most common reason you have Pro but still cannot use semantic search or RAG.
+<Frame caption="Screenshot TODO · `images/screenshots/ai-features/overview.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Detail AI overlay: Summary / Chat tabs, ⇧⌘A
+  </div>
+</Frame>
 
-## Capability map
+## Requirements
+
+1. Activate [Pro](/subscribe/purchase) → [Plans](/subscribe/plan-comparison)
+2. Configure a provider in **Settings → AI** ([BYOK](/subscribe/byok), [setup](/ai-features/configuration))
+3. Map defaults: Chat (summary / chat / tags) and **Embedding** (semantic / RAG)
+
+A missing Embedding mapping is the usual reason Pro still cannot do semantic search or RAG.
+
+## Capabilities
 
 | Feature | Typical entry | Docs |
 |---------|---------------|------|
-| AI summary | Detail panel **⇧⌘A** | [Summary](/ai-features/summary) |
-| AI chat | Same panel; can detach to a separate window | [Chat](/ai-features/chat) |
-| Tag recommendations | Panel / Auto Tidy | [Tag recommendations](/ai-features/tag-recommendation) |
+| AI summary | Detail overlay **⇧⌘A** | [Summary](/ai-features/summary) |
+| AI chat | Same overlay; can detach | [Chat](/ai-features/chat) |
+| Tag suggestions | Overlay / Auto Tidy | [Tag recommendations](/ai-features/tag-recommendation) |
 | README translation | README toolbar | [Translation](/ai-features/readme-translation) |
-| AI personal notes | **Generate with AI** in the notes area | [Personal notes](/ai-features/personal-notes) |
+| AI personal notes | Notes **Generate with AI** | [Personal notes](/ai-features/personal-notes) |
 | Semantic search | List semantic mode | [Semantic search](/search/semantic-search) |
 | RAG Q&A | **⇧⌘K** | [Knowledge base](/knowledge-base/overview) |
 | Auto Tidy | Settings → AI | [Auto Tidy](/ai-features/auto-tidy) |
 | Agent workspace | Separate window | [Agent Beta](/agent-workspace/overview) |
 
-Notes:
-
-- The **web** scope in [Search Center](/search/search-center) does not require Pro  
-- If AI attaches live web context, Pro and toggle rules still apply → [External search](/search/external-search)  
+[Search Center](/search/search-center) **Web** scope does not require Pro. Live web context on AI answers still follows Pro / switches → [External search](/search/external-search).
 
 ## Conservative policy
 
-| Scenario | Rule |
-|----------|------|
-| Tag recommendations | Written only after you confirm |
-| AI notes | Saved only after you confirm the draft |
-| Agent | Data changes require explicit authorization |
-| Auto Tidy | Runs only the actions and triggers you enable |
+| Scene | Rule |
+|-------|------|
+| Tag suggestions | Written only after confirm |
+| AI notes | Saved only after you accept the draft |
+| Agent | Data changes need explicit authorization |
+| Auto Tidy | Runs only the actions and triggers you enabled |
 
-## Recommended onboarding order
+## Suggested order
 
-<Steps>
-  <Step title="Configure models">[AI configuration](/ai-features/configuration) → test connection.</Step>
-  <Step title="Try one repo">Detail → ⇧⌘A → summary or ask one question.</Step>
-  <Step title="When you need semantic search">Add Embedding → build index → list semantic mode.</Step>
-  <Step title="When you need cross-repo Q&A">Curate ingest → [RAG workspace](/knowledge-base/rag-workspace).</Step>
-  <Step title="Then automate">After output quality looks good, enable [Auto Tidy](/ai-features/auto-tidy).</Step>
-</Steps>
+1. [Configure AI](/ai-features/configuration) and test the connection
+2. Detail → ⇧⌘A → one summary or one question
+3. For semantic search: map Embedding → build the index → list semantic mode
+4. Cross-repo Q&A: ingest a curated set → [RAG workspace](/knowledge-base/rag-workspace)
+5. Turn on [Auto Tidy](/ai-features/auto-tidy) only after output looks stable
 
 ## Related
 
-- [AI settings overview](/settings/ai)
+- [AI settings](/settings/ai)
 - [FAQ · AI](/faq/ai)

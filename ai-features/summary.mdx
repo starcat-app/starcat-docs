@@ -1,32 +1,34 @@
 ---
 title: "AI summary"
-description: "Generate structured summaries, cache location, and quality notes"
+description: "Structured highlights before you commit to a long README"
 ---
 
-## Purpose
+## What it is for
 
-Before reading a long README end to end, get a structured outline (background, features, use cases, caveats, etc.; exact structure varies with the prompt).
+Before reading a long README, grab structured highlights (background, features, fit, caveats; the shape follows your prompt). Good for triaging new Stars. Not a license or security verdict.
 
 <Frame caption="AI summary">
   <img src="/images/screenshots/ai-summary.webp" alt="AI summary screenshot" className="rounded-xl" />
 </Frame>
 
-## Entry points
+If that file is missing, capture `images/screenshots/ai-summary.webp` (summary card structure).
 
-1. Detail AI panel → Summary (**⇧⌘A**)  
-2. [Auto Tidy](/ai-features/auto-tidy) batch generation  
+## How to open it
+
+1. Detail AI overlay → Summary (**⇧⌘A**)
+2. [Auto Tidy](/ai-features/auto-tidy) for batch generation
+
+Requires Pro and a working Chat model.
 
 ## Cache
 
-Summaries are stored in local cache to avoid repeat token use. Clear summary cache under **Settings → Storage**. See [Storage management](/settings/storage).
+Summaries are cached locally so you do not burn tokens twice. Clear them in **Settings → Storage**. See [Storage](/settings/storage). Regenerating calls the model again; cost follows your provider.
 
-Regenerating calls the model again (cost and quota depend on your Provider).
+## Notes
 
-## Quality notes
-
-- Summaries do not replace reading the license, security advisories, or latest Release  
-- Very short or image-only READMEs produce weaker summaries  
-- Requires Pro + an available Chat model  
+- Does not replace reading the license, security advisories, or the latest Release
+- Very short or image-only READMEs produce weak summaries
+- Auto Tidy batch generation can spike the bill; confirm quality on one repo first
 
 ## Related
 

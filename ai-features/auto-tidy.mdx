@@ -1,33 +1,35 @@
 ---
 title: "Auto Tidy"
-description: "Triggers, actions, quota notes, and safety boundaries"
+description: "Background summaries and tag suggestions on triggers you allow"
 ---
 
-## What it is
+## What it is for
 
-Background tidy under **Settings → AI → Auto Tidy**: at times you allow, run summary, tag recommendations, and other actions on repositories.
+When you do not want to open ⇧⌘A on every new Star, **Settings → AI → Auto Tidy** runs the actions you checked after sync or on a schedule. It is an accelerator, not “tidy everything with no review”.
 
-## Typical settings
+<Frame caption="Screenshot TODO · `images/screenshots/ai-features/auto-tidy.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → AI → Auto Tidy: master switch, triggers, action checkboxes
+  </div>
+</Frame>
 
-| Item | Notes |
-|------|-------|
-| Master toggle | Stop all auto-tidy immediately |
-| Triggers | Delay after launch, after sync, scheduled, etc. |
-| Actions | Summary, tag recommendations, etc. (per UI checkboxes) |
-| Run now | Manual one-off run to test configuration |
+## How to configure it
 
-## Suggested rollout
+| Item | Meaning |
+|------|---------|
+| Master switch | Stops all automatic tidy immediately |
+| Triggers | Delay after launch, after sync, schedule, and similar |
+| Actions | Summary, tag suggestions, and whatever the UI lists |
+| Run now | One manual pass to test the setup |
 
-1. Confirm model output quality in the single-repo panel first  
-2. Enable only actions you actually want  
-3. Start with a narrow trigger (e.g. after sync only) and observe for a day  
-4. Then consider scheduled runs  
+Suggested order: confirm overlay output on one repo → enable only the actions you need → a narrow trigger (for example after sync) for a day → then consider a schedule.
 
-## Risks and limits
+## Notes
 
-- Large libraries + schedules → higher Provider bills  
-- Tag writes still follow [confirm policy](/ai-features/tag-recommendation) and the free **20**-tag cap  
-- Requires Pro and a working Provider  
+- A large library plus a schedule raises the provider bill
+- Tag writes still need [confirm](/ai-features/tag-recommendation) and the free **20**-tag cap
+- Requires Pro and a working provider
+- Turning the master switch off should stop further batches; an in-flight pass may still finish
 
 ## Related
 

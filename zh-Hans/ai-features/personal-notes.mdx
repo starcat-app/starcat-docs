@@ -1,28 +1,33 @@
 ---
 title: "AI 个人笔记"
-description: "生成学习笔记草稿并确认写入私有笔记"
+description: "生成学习笔记草稿，确认后才写入本机私有笔记"
 ---
 
-## 入口
+## 用来做什么
 
-详情「私有笔记」区域头部的 **AI 生成** 控件。
+对着 README 生成一份**给你自己看**的学习笔记草稿：为什么 Star、怎么用、坑在哪。确认前不会覆盖已有正文。笔记只在本机，GitHub 协作者看不到。
 
-需 Pro + Chat 模型。笔记区本身说明见 [笔记与状态](/zh-Hans/manage-stars/notes-and-status)。
+<Frame caption="截图待补充 · `images/screenshots/ai-features/personal-notes.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    私有笔记头部「AI 生成」+ 草稿预览与确认保存
+  </div>
+</Frame>
 
-## 流程
+## 怎么用
 
-<Steps>
-  <Step title="触发生成或优化">可基于当前 README 生成学习笔记，或优化已有草稿。生成过程有进度提示。</Step>
-  <Step title="编辑预览">用 Markdown 编辑并预览；草稿可复制。未确认不会覆盖已有正文。</Step>
-  <Step title="确认保存">写入私有笔记，并显示保存状态。</Step>
-</Steps>
+入口：详情「私有笔记」头部的 **AI 生成**。需要 Pro + Chat 模型。笔记区本身见 [笔记与状态](/zh-Hans/manage-stars/notes-and-status)。
 
-## 存储与隐私
+1. 触发生成或优化：可基于 README 生成，或优化已有草稿；过程有进度
+2. 用 Markdown 编辑预览；草稿可复制。未确认不覆盖正文
+3. 确认保存，写入私有笔记并显示保存状态
 
-- 笔记只存本机，不上传 GitHub  
-- 生成过程会把必要上下文发给你配置的 AI Provider（BYOK）  
-- 见 [隐私](/zh-Hans/data-privacy/privacy)、[BYOK](/zh-Hans/subscribe/byok)  
+## 注意
+
+- 笔记只存本机，不上传 GitHub。
+- 生成会把必要上下文发给你配置的 AI Provider（BYOK）。见 [隐私](/zh-Hans/data-privacy/privacy)、[BYOK](/zh-Hans/subscribe/byok)。
+- 没确认的草稿不会进列表搜索。
 
 ## 相关
 
 - [AI 概览](/zh-Hans/ai-features/overview)
+- [列表搜索](/zh-Hans/search/global-search)
