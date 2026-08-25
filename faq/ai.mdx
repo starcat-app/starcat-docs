@@ -1,25 +1,40 @@
 ---
-title: "AI issues"
-description: "Pro, keys, semantic search, RAG, and restore purchase"
+title: "AI FAQ"
+description: "Pro lock, Embedding, RAG misses, Auto Tidy tagging too much"
 ---
 
+## What this is for
+
+Locked AI, empty semantic search, or RAG that ignores your library. Attach screenshots in email, never API keys.
+
+<Frame caption="Screenshot TODO · `images/screenshots/faq/ai.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Locked AI overlay, or Settings → AI with Embedding empty
+  </div>
+</Frame>
+
 <AccordionGroup>
-  <Accordion title="AI entry is locked?">
-    Pro is required, and you must configure a provider under Settings → AI. See [Purchase](/subscribe/purchase) and [Configuration](/ai-features/configuration).
+  <Accordion title="AI controls are locked?">
+    You need Pro and a provider in Settings → AI. See [Purchase](/subscribe/purchase) and [Configuration](/ai-features/configuration).
   </Accordion>
-  <Accordion title="Purchased but still locked?">
-    App Store: **Settings → Pro → Restore purchase**. Direct: check license and device seats. See [Restore purchase](/subscribe/restore).
+  <Accordion title="I paid but nothing unlocked?">
+    App Store: Settings → Pro → Restore. Direct: License and device seats. See [Restore](/subscribe/restore). Receipts do not cross channels.
   </Accordion>
   <Accordion title="Semantic search unavailable?">
-    Besides Pro, you must configure **Embedding** and finish indexing. Chat alone is not enough.
+    Pro plus a mapped **Embedding** and a built index. Chat alone is not enough.
   </Accordion>
   <Accordion title="RAG answers the wrong thing?">
-    Confirm the repo is ingested and index coverage looks healthy; use @ to scope repos; check [Citations](/knowledge-base/citations).
+    Confirm ingest and index coverage; @ the repos; check [citations](/knowledge-base/citations). Uningested Stars are outside default RAG.
   </Accordion>
-  <Accordion title="Auto Tidy tags randomly?">
-    Turn off automation first; review tag confirmation policy and the free 20-tag cap; tighten action scope. See [Auto Tidy](/ai-features/auto-tidy).
+  <Accordion title="Auto Tidy tags everything?">
+    Turn it off, review confirm-before-write and the free 20-tag cap, then tighten actions. See [Auto Tidy](/ai-features/auto-tidy).
   </Accordion>
-  <Accordion title="Index keeps spinning, or pause reports a network error?">
-    Coverage and last prefetch live in [Settings → AI](/settings/ai). Pausing vectorization is not treated as being offline. External Meilisearch / Qdrant each show a green check, orange rebuild warning, or red cross next to **Test and save**. See [Index management](/knowledge-base/index-management).
+  <Accordion title="Index spins forever or pause looks like a network error?">
+    Coverage and last prefetch live in [Settings → AI](/settings/ai). Pausing vectors is not “offline”. External Meilisearch / Qdrant use their own test-and-save (green / amber / red). See [Index management](/knowledge-base/index-management).
   </Accordion>
 </AccordionGroup>
+
+## Related
+
+- [AI overview](/ai-features/overview)
+- [Feedback](/support/feedback)

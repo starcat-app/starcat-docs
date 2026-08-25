@@ -1,22 +1,36 @@
 ---
-title: "Sync issues"
-description: "Stars sync, rate limits, count mismatches, cloud sync"
+title: "Sync FAQ"
+description: "Stars sync, rate limits, count mismatch; tags are not on iCloud"
 ---
+
+## What this is for
+
+Stars will not pull, counts disagree, or you expected tags on a second Mac. Tag cloud sync is **not shipped**.
+
+<Frame caption="Screenshot TODO · `images/screenshots/faq/sync.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Toolbar sync plus a rate-limit countdown
+  </div>
+</Frame>
 
 <AccordionGroup>
   <Accordion title="Sync failed?">
-    Check network → tap manual sync → watch the rate-limit countdown → restart and retry. See [Sync settings](/settings/sync).
+    Network → manual sync → rate-limit countdown → relaunch. See [Sync settings](/settings/sync).
   </Accordion>
-  <Accordion title="What is rate limit?">
-    GitHub limits API frequency. Starcat parses response headers and backs off. Wait for reset, then sync again.
+  <Accordion title="What is a rate limit?">
+    GitHub caps API frequency. Starcat reads the headers and backs off. Wait for reset, then sync.
   </Accordion>
-  <Accordion title="New Star not showing?">
-    Sync again; if it still missing, sign out and sign in for a fuller refresh.
+  <Accordion title="A new Star is missing?">
+    Sync again. Still missing: sign out and in for a fuller refresh.
   </Accordion>
-  <Accordion title="Local Star count doesn't match GitHub?">
-    Interrupted sync, deleted/private repos, or incomplete local fetch can cause this. Manual sync or sign in again.
+  <Accordion title="Local Star count disagrees with GitHub?">
+    Interrupted sync, deleted/private repos, or an unfinished pull. Manual sync or sign in again.
   </Accordion>
-  <Accordion title="Can tags sync automatically across two Macs?">
-    User-data cloud sync is not shipped yet. [Back up manually](/data-privacy/backup).
+  <Accordion title="Do tags sync across two Macs?">
+    User-data cloud sync is not shipped. [Back up by hand](/data-privacy/backup).
   </Accordion>
 </AccordionGroup>
+
+## Related
+
+- [Quickstart](/getting-started/quickstart)

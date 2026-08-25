@@ -1,20 +1,30 @@
 ---
 title: "AI 问题"
-description: "Pro、Key、语义、RAG 与恢复购买"
+description: "Pro 锁定、Embedding、RAG 答非所问、Auto Tidy 乱打标"
 ---
+
+## 用来做什么
+
+AI 入口锁着、语义搜不到、RAG 胡答时先看这一页，再跳到对应说明书。截图可附在邮件里，但不要带 API Key。
+
+<Frame caption="截图待补充 · `images/screenshots/faq/ai.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    详情 AI 浮层锁定态，或设置 → AI 里 Embedding 为空
+  </div>
+</Frame>
 
 <AccordionGroup>
   <Accordion title="AI 入口是锁的？">
     需要 Pro，并在设置 → AI 配置 Provider。见 [购买](/zh-Hans/subscribe/purchase)、[配置](/zh-Hans/ai-features/configuration)。
   </Accordion>
   <Accordion title="已购买仍未解锁？">
-    App Store：设置 → Pro → 恢复购买。Direct：检查 License 与设备席位。见 [恢复购买](/zh-Hans/subscribe/restore)。
+    App Store：设置 → Pro → 恢复购买。Direct：检查 License 与设备席位。见 [恢复购买](/zh-Hans/subscribe/restore)。两渠道凭证不互通。
   </Accordion>
   <Accordion title="语义搜索不可用？">
     除 Pro 外必须配置 **Embedding** 并完成索引。只配 Chat 不够。
   </Accordion>
   <Accordion title="RAG 答非所问？">
-    确认仓库已入库、索引覆盖率正常；用 @ 限定仓库；核对 [引用](/zh-Hans/knowledge-base/citations)。
+    确认仓库已入库、索引覆盖率正常；用 @ 限定仓库；核对 [引用](/zh-Hans/knowledge-base/citations)。未入库的 Stars 不在默认范围内。
   </Accordion>
   <Accordion title="Auto Tidy 乱打标签？">
     先关自动，检查标签确认策略与免费 20 标签上限；再收紧动作范围。见 [Auto Tidy](/zh-Hans/ai-features/auto-tidy)。
@@ -23,3 +33,8 @@ description: "Pro、Key、语义、RAG 与恢复购买"
     覆盖率和上次预拉结果在 [设置 → AI](/zh-Hans/settings/ai)。暂停向量化不会当成断网。外部 Meilisearch / Qdrant 用各自的「测试并保存」看绿勾、橙警告或红叉。见 [索引管理](/zh-Hans/knowledge-base/index-management)。
   </Accordion>
 </AccordionGroup>
+
+## 相关
+
+- [AI 概览](/zh-Hans/ai-features/overview)
+- [反馈](/zh-Hans/support/feedback)
