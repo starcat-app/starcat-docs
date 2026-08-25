@@ -1,6 +1,5 @@
 # Starcat Documentation
 
-<!-- starcat-promo:start -->
 <div align="center">
 <a href="https://starcat.ink"><img src="https://raw.githubusercontent.com/starcat-app/starcat-pro/main/banner.webp" width="100%" alt="Starcat" /></a>
 
@@ -9,7 +8,7 @@
 
 <a href="https://github.com/starcat-app/homebrew-starcat"><img src="https://img.shields.io/badge/Install%20with-Homebrew-FBBF24?style=for-the-badge&logo=homebrew&logoColor=white" width="220" alt="Install with Homebrew"/></a>
 <br/>
-<sub><a href="./README-ZH.md">中文说明</a></sub>
+<sub><a href="https://github.com/starcat-app/starcat-docs/blob/main/README-ZH.md">中文说明</a></sub>
 </div>
 
 <div align="center">
@@ -54,7 +53,6 @@ brew install --cask starcat
 - [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api)
 - [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)
 - [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api)
-<!-- starcat-promo:end -->
 
 This repository contains the official user documentation for Starcat. The documentation is built with [Mintlify](https://mintlify.com/) and published at [starcat.mintlify.site](https://starcat.mintlify.site/).
 
