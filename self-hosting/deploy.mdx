@@ -3,6 +3,16 @@ title: "Deploy support APIs"
 description: "Local Go runs, env essentials, Fly.io deploy, and health checks"
 ---
 
+## What this is for
+
+Run the six Go APIs locally or on Fly.io. Confirm `/healthz` and authenticated `/api/v1/ping` before you paste URLs into the app.
+
+<Frame caption="Screenshot TODO · `images/screenshots/self-hosting/deploy.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Local APIs listening on 5001–5006, or a Fly app list
+  </div>
+</Frame>
+
 ## Prerequisites
 
 - Go (match each repo’s `go.mod`; currently often 1.25+)

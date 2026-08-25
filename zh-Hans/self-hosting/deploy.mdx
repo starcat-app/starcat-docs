@@ -3,6 +3,16 @@ title: "自部署后端 API"
 description: "本地 Go 运行、环境变量要点、Fly.io 部署与健康检查"
 ---
 
+## 用来做什么
+
+在本机或 Fly.io 跑六套 Go API。填进 App 之前先用 `/healthz` 和带 Key 的 `/api/v1/ping` 确认活着。
+
+<Frame caption="截图待补充 · `images/screenshots/self-hosting/deploy.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    终端里本地 API 已监听 5001–5006，或 Fly 应用列表
+  </div>
+</Frame>
+
 ## 前置
 
 - Go（版本与各仓库 `go.mod` 一致，当前多为 1.25+）
