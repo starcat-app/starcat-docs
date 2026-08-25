@@ -1,64 +1,40 @@
 ---
 title: "BYOK 模式"
-description: "Pro 用户自带 API Key，配置自己的 AI Provider"
+description: "Pro 用户自带 API Key；请求直达你配置的 Provider"
 ---
 
-## BYOK（Bring Your Own Key）
+## 用来做什么
 
-Starcat 的 AI 能力采用 **自带 Key** 模式：你在「设置 → AI」配置 Provider 与 API Key 后，请求发往你指定的服务。这是当前正式可用的配置方式，不是「即将推出」的卖点。
+Starcat 的 AI **不代扣模型费用**：你在「设置 → AI」配 Provider 和 API Key，请求发往你指定的服务。这是当前正式方式，不是「即将推出」。用 AI 功能仍需要 **Pro**。
 
-使用 AI 功能仍需要 **Pro**（见 [方案对比](/zh-Hans/subscribe/plan-comparison)）。
+<Frame caption="截图待补充 · `images/screenshots/subscribe/byok.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → AI：添加 Provider、Key、测试连接
+  </div>
+</Frame>
 
-## 优势
+## 怎么配
 
-- **配额自控**：使用你自己的 API 账户与账单  
-- **路径清晰**：请求直达你配置的端点  
-- **模型灵活**：按任务切换 Chat / Embedding 等模型  
+优势：配额自控、路径清晰、可按任务切 Chat / Embedding。
 
-## 支持的 Provider（示例）
+示例 Provider：OpenAI、OpenAI-compatible、DeepSeek、Gemini、OpenRouter、Ollama（需本机服务）。列表以 App 为准。
 
-| Provider | 说明 |
-|----------|------|
-| OpenAI | 官方 API |
-| OpenAI-compatible | 兼容 OpenAI 协议的第三方 |
-| DeepSeek | DeepSeek API |
-| Google Gemini | Gemini 系列 |
-| OpenRouter | 多模型路由 |
-| Ollama | 本机开源模型（需本机服务可用） |
-
-具体可用列表以 App 内「设置 → AI」为准。
-
-## 配置步骤
-
-1. 确认已购买并激活 Pro  
-2. 打开 **设置 → AI**  
-3. 添加 Provider，填入 API Key / Base URL（如需要）  
-4. 为摘要、对话、Embedding 等任务选择模型  
-5. 使用「测试连接」确认可用  
+1. 已购买并激活 Pro
+2. **设置 → AI** 添加 Provider，填 Key / Base URL
+3. 为摘要、对话、Embedding 等选模型
+4. 测试连接
 
 详见 [AI 配置](/zh-Hans/ai-features/configuration)。
 
-## 安全性
+API Key 经 AES-GCM 加密后进 macOS Keychain。Starcat 不会把 Key 当明文传到自有业务服务器。请在 Provider 控制台设用量上限。
 
-- API Key 经 AES-GCM 加密后存入 macOS Keychain  
-- Starcat 不会把你的 Key 当作明文上传到自有业务服务器  
-- 请妥善保管 Key，并在 Provider 控制台设置用量上限  
+## 注意
 
-## 相关页面
+- 不必绑死 OpenAI；兼容接口、Ollama 等都可以。
+- Key 存本机；请求发往你配置的端点。见 [隐私](/zh-Hans/data-privacy/privacy)。
+- 配好 Chat 仍不能 RAG：通常是 **Embedding** 空着。
 
-- [AI 功能概览](/zh-Hans/ai-features/overview)  
+## 相关
+
+- [AI 概览](/zh-Hans/ai-features/overview)
 - [Pro 购买](/zh-Hans/subscribe/purchase)
-
-## 常见问题
-
-<AccordionGroup>
-  <Accordion title="必须用 OpenAI 吗？">
-    不必。可用兼容接口、DeepSeek、OpenRouter、Ollama 等，以设置页列表为准。
-  </Accordion>
-  <Accordion title="Key 会上传到 Starcat 服务器吗？">
-    Key 存本机 Keychain；请求发往你配置的 Provider 端点。见 [隐私](/zh-Hans/data-privacy/privacy)。
-  </Accordion>
-  <Accordion title="配好了仍不能 RAG？">
-    检查是否单独配置了 **Embedding** 模型，而不只是 Chat。见 [AI 配置](/zh-Hans/ai-features/configuration)。
-  </Accordion>
-</AccordionGroup>

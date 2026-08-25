@@ -1,28 +1,28 @@
 ---
 title: "许可证管理"
-description: "Direct License 激活、设备席位与 App Store 订阅差异"
+description: "Direct License 激活、2 台席位，以及和 App Store 订阅的差别"
 ---
 
-## 两种授权方式
+## 用来做什么
+
+Direct 用 License 管 Pro；App Store 用 Apple 订阅 / 买断。换机前先搞清楚自己是哪一种，避免「席位已满」或「恢复购买没反应」。
+
+<Frame caption="截图待补充 · `images/screenshots/subscribe/license.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → Pro → 许可证：设备列表与解绑
+  </div>
+</Frame>
+
+## 两种授权
 
 | | Mac App Store | Direct（官网） |
 |--|---------------|----------------|
 | 支付 | Apple / StoreKit | 官网结账 |
 | 凭证 | Apple 订阅 / 买断交易 | License |
 | 换机 | 「恢复购买」+ 同一 Apple ID | 解绑旧设备 → 新设备激活 |
-| 设备 | 遵循 Apple 订阅规则 | Lifetime 等：本人最多 **2** 台 Mac |
+| 设备 | 遵循 Apple 规则 | Lifetime 等：本人最多 **2** 台 Mac |
 
-## Direct：激活许可证
-
-购买后，License 通常会自动绑定当前设备。也可在 **设置 → Pro → 许可证** 中查看状态与设备列表。
-
-## Direct：设备席位
-
-- 查看已激活设备  
-- **解绑**：释放席位后再在新 Mac 上激活  
-- 席位已满时无法在新设备启用 Pro，需先解绑一台  
-
-## 许可证状态（Direct）
+Direct：购买后 License 通常自动绑当前设备。也可在 **设置 → Pro → 许可证** 查看状态与设备列表。可解绑以释放席位。席位已满时无法在新设备启用 Pro。
 
 | 状态 | 说明 |
 |------|------|
@@ -31,18 +31,16 @@ description: "Direct License 激活、设备席位与 App Store 订阅差异"
 | **席位已满** | 已达设备上限 |
 | **已解绑** | 本机已移除授权 |
 
-## 离线使用（Direct）
+Direct 离线：启动时从本地恢复权益，定期静默校验，异常或过期时提示重新验证。
 
-- 启动时从本地恢复权益  
-- 定期静默校验  
-- 异常或过期时提示重新验证  
+App Store 用户不用手动管 License。换机用同一 Apple ID + [恢复购买](/zh-Hans/subscribe/restore)。
 
-## App Store 用户
+## 注意
 
-无需手动管理 License。换机或重装后用同一 Apple ID，在 **设置 → Pro → 恢复购买** 即可。详见 [恢复购买](/zh-Hans/subscribe/restore)。
+- 两渠道凭证不互通。
+- 解绑旧机前确认那台已经不用，避免两台同时掉权。
 
 ## 相关
 
 - [购买](/zh-Hans/subscribe/purchase)
-- [恢复购买](/zh-Hans/subscribe/restore)
 - [方案对比](/zh-Hans/subscribe/plan-comparison)

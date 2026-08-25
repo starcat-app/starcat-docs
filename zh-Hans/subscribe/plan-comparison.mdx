@@ -1,15 +1,17 @@
 ---
 title: "方案对比"
-description: "免费版与 Pro 版功能对比、限额与定价"
+description: "免费版与 Pro：限额、AI / 知识库，以及渠道怎么选"
 ---
 
-## 定价方案
+## 用来做什么
 
-Starcat 提供免费版和 Pro。免费版覆盖 Stars 整理与搜索；Pro 解锁 AI、知识库、更高限额等能力。
+决定要不要升级 Pro，以及该走 App Store 还是 Direct。免费版已经能整理 Stars、搜索、探索；Pro 解锁 AI、知识库、更高限额。价格以 [starcat.ink](https://starcat.ink) 与 App 内购买页为准，和本文不一致时以购买页为准。
 
-<Note>
-  下列价格以 [starcat.ink](https://starcat.ink) 与 App 内购买页为准；若页面展示与本文不一致，以购买页实时价格为准。
-</Note>
+<Frame caption="截图待补充 · `images/screenshots/subscribe/plan-comparison.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → Pro：月付 / 年付 / 买断与权益对照
+  </div>
+</Frame>
 
 ## 功能对比
 
@@ -39,38 +41,30 @@ Starcat 提供免费版和 Pro。免费版覆盖 Stars 整理与搜索；Pro 解
 | **MCP / CLI 桥接** | ❌ | ✅ |
 | **Agent 工作台** | ❌ | ✅（Beta） |
 
-## Pro 定价
+## Pro 定价与渠道
 
 | 方案 | 价格 | 说明 |
 |------|------|------|
 | **Pro Monthly** | $3.99/月 | 按月自动续费 |
-| **Pro Yearly** | $29.99/年 | 按年自动续费（相对月付更省） |
-| **Pro Lifetime** | $39.99 | 一次性买断；本人使用的最多 **2** 台 Mac |
-
-## 购买入口
+| **Pro Yearly** | $29.99/年 | 按年自动续费 |
+| **Pro Lifetime** | $39.99 | 一次性买断；本人使用最多 **2** 台 Mac |
 
 - **Mac App Store**：[Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
 - **官网 Direct**：[starcat.ink](https://starcat.ink)
 
-两种渠道 Pro 权益一致。详见 [Pro 购买](/zh-Hans/subscribe/purchase)。
+两渠道 Pro **权益一致**；购买凭证不互通。见 [购买](/zh-Hans/subscribe/purchase)、[恢复购买](/zh-Hans/subscribe/restore)。
 
-## BYOK 模式
+更在意 Apple ID / 家庭共享 → App Store。官网买断 / Direct 安装 → starcat.ink。两台 Mac 长期用 → Lifetime（席位见 [许可证](/zh-Hans/subscribe/license)）。先试一年 → Yearly。
 
-Pro 用户在「设置 → AI」配置自己的 Provider API Key：
+AI 请求走你自己的 Key，见 [BYOK](/zh-Hans/subscribe/byok)。
 
-- 使用你自己的 API 配额
-- 请求直达你配置的 Provider
-- 灵活切换模型
+## 注意
 
-详见 [BYOK 模式](/zh-Hans/subscribe/byok)。
+- App Store 与 Direct 是两套安装，License 和 StoreKit **不能**互相恢复。
+- Direct 才有本机 CLI / Agent Runtime；App Store 受沙盒限制。见 [GitHub 连接](/zh-Hans/getting-started/github-connection)。
+- 云同步、JSON 导入导出**尚未上线**，不要按「买了 Pro 就有云盘」来预期。
 
-## 如何选择渠道
+## 相关
 
-| 你更在意… | 建议 |
-|-----------|------|
-| Apple ID 账单与家庭共享规则 | [App Store](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) |
-| 官网买断 / Direct 安装 | [starcat.ink](https://starcat.ink) |
-| 两台 Mac 长期使用 | Lifetime（Direct 席位规则见 [许可证](/zh-Hans/subscribe/license)） |
-| 先试一年 | Yearly |
-
-两渠道 Pro **权益一致**；购买凭证不互通，见 [恢复购买](/zh-Hans/subscribe/restore)。
+- [购买](/zh-Hans/subscribe/purchase)
+- [AI 概览](/zh-Hans/ai-features/overview)

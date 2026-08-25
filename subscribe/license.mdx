@@ -1,48 +1,46 @@
 ---
-title: "License management"
-description: "Direct license activation, device seats, and App Store differences"
+title: "License"
+description: "Direct License activation, two-Mac seats, vs App Store subscriptions"
 ---
 
-## Two authorization models
+## What it is for
 
-| | Mac App Store | Direct (website) |
-|--|---------------|------------------|
-| Payment | Apple / StoreKit | Website checkout |
-| Credential | Apple subscription / one-time purchase | License |
-| New Mac | **Restore purchase** + same Apple ID | Unbind old device → activate on new device |
-| Devices | Follows Apple subscription rules | Lifetime and similar: up to **2** Macs for personal use |
+Direct Pro is a License. App Store Pro is an Apple subscription / Lifetime transaction. Know which one you have before you move Macs, or you will hit “seats full” or a Restore that does nothing.
 
-## Direct: activate a license
+<Frame caption="Screenshot TODO · `images/screenshots/subscribe/license.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Pro → License: device list and unlink
+  </div>
+</Frame>
 
-After purchase, the license usually binds to the current device automatically. You can also check status and the device list under **Settings → Pro → License**.
+## Two grant types
 
-## Direct: device seats
+| | Mac App Store | Direct |
+|--|---------------|--------|
+| Pay | Apple / StoreKit | Site checkout |
+| Proof | Apple subscription / Lifetime | License |
+| New Mac | Restore + same Apple ID | Unlink old device, then activate |
+| Devices | Apple’s rules | Lifetime and similar: **2** Macs personal use |
 
-- View activated devices  
-- **Unbind**: free a seat before activating on a new Mac  
-- When seats are full, Pro cannot be enabled on another device until you unbind one  
-
-## License status (Direct)
+Direct: the License usually binds this device after purchase. **Settings → Pro → License** shows status and devices. Unlink to free a seat. A full seat list blocks Pro on a new Mac.
 
 | Status | Meaning |
 |--------|---------|
-| **Active** | Pro is available |
-| **Expired** | Monthly / Yearly not renewed |
-| **Seats full** | Device limit reached |
-| **Unbound** | This Mac no longer holds the license |
+| **Valid** | Pro works |
+| **Expired** | Monthly / yearly not renewed |
+| **Seats full** | Device cap reached |
+| **Unlinked** | This Mac no longer authorized |
 
-## Offline use (Direct)
+Direct offline: entitlements restore locally at launch, with periodic silent checks. Failures or expiry ask you to re-verify.
 
-- Entitlements restore from local storage at launch  
-- Periodic silent validation  
-- Prompts to re-verify when something is wrong or expired  
+App Store users do not manage a License. Same Apple ID + [Restore](/subscribe/restore).
 
-## App Store users
+## Notes
 
-No manual license management is required. After switching Macs or reinstalling, use the same Apple ID and tap **Restore purchase** under **Settings → Pro**. See [Restore purchase](/subscribe/restore).
+- Receipts do not cross channels.
+- Unlink the old Mac only after you are done with it, or both machines can drop Pro.
 
 ## Related
 
 - [Purchase](/subscribe/purchase)
-- [Restore purchase](/subscribe/restore)
-- [Plan comparison](/subscribe/plan-comparison)
+- [Plans](/subscribe/plan-comparison)

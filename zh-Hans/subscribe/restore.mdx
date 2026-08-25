@@ -1,40 +1,31 @@
 ---
 title: "恢复购买"
-description: "换设备或重装后恢复 Pro 权益"
+description: "换 Mac 或重装后，按渠道把 Pro 找回来"
 ---
 
-## 恢复购买
+## 用来做什么
 
-更换 Mac 或重装系统后，可按渠道恢复 Pro。
+换机或重装后，Pro 不会跟着 Stars 从 GitHub 同步回来，要按**安装渠道**恢复。标签、笔记仍在旧机器的本机库里，见 [备份](/zh-Hans/data-privacy/backup)。
 
-## App Store 用户
+<Frame caption="截图待补充 · `images/screenshots/subscribe/restore.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → Pro：恢复购买（MAS）或许可证登录（Direct）
+  </div>
+</Frame>
 
-1. 新设备登录**同一 Apple ID**  
-2. 安装 [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)  
-3. 打开 **设置 → Pro**  
-4. 点击 **恢复购买**  
-5. 权益恢复后即可使用 Pro 功能  
+## 怎么恢复
 
-## Direct 用户
+**App Store：** 新设备登录同一 Apple ID → 安装 [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) → **设置 → Pro** → **恢复购买**。
 
-1. 安装 Direct 版（[starcat.ink](https://starcat.ink)）  
-2. 打开 **设置 → Pro → 许可证**  
-3. 按提示登录 / 输入 License  
-4. 若席位已满：先在旧设备解绑，再在新设备激活  
+**Direct：** 安装 Direct（[starcat.ink](https://starcat.ink)）→ **设置 → Pro → 许可证** → 登录 / 输入 License。席位已满：先在旧设备解绑，再在新设备激活。见 [许可证管理](/zh-Hans/subscribe/license)。
 
-详见 [许可证管理](/zh-Hans/subscribe/license)。
+## 注意
 
-## 常见问题
+- 用户数据（标签、笔记、状态）目前只在本机。换机请先备份 Application Support，或等尚未上线的跨设备同步。Stars 列表可从 GitHub 重新拉，不必备份。
+- Direct Lifetime 本人最多 2 台 Mac；超出先解绑。App Store 买断跟 Apple 账号规则，优先用恢复购买。
+- App Store 和 Direct **不能**自动互通。
 
-<AccordionGroup>
-  <Accordion title="换设备后标签和笔记还在吗？">
-    用户数据（标签、笔记、状态等）目前保存在本机。换机请先手动备份 Application Support 目录，或等待后续的跨设备同步能力。详见 [备份与恢复](/zh-Hans/data-privacy/backup)。
-    Stars 列表可随时从 GitHub 重新同步，无需备份。
-  </Accordion>
-  <Accordion title="买断可以换设备吗？">
-    可以。Direct Lifetime 支持本人使用的最多 2 台 Mac；超出需先解绑旧设备。App Store 买断遵循 Apple 账号与设备规则，优先使用「恢复购买」。
-  </Accordion>
-  <Accordion title="App Store 和 Direct 的购买能互通吗？">
-    不能自动互通。请在对应渠道恢复：MAS 用恢复购买，Direct 用 License。
-  </Accordion>
-</AccordionGroup>
+## 相关
+
+- [购买](/zh-Hans/subscribe/purchase)
+- [备份与恢复](/zh-Hans/data-privacy/backup)

@@ -1,40 +1,31 @@
 ---
-title: "Restore purchase"
-description: "Restore Pro after switching Macs or reinstalling"
+title: "Restore purchases"
+description: "Bring Pro back after a new Mac or a reinstall, per channel"
 ---
 
-## Restore purchase
+## What this is for
 
-After replacing your Mac or reinstalling macOS, restore Pro through the channel you bought from.
+After a new Mac or reinstall, Pro does not come back with GitHub Stars sync. Restore on the **same channel** you bought. Tags and notes still live in the old machine’s local database. See [Backup](/data-privacy/backup).
 
-## App Store users
+<Frame caption="Screenshot TODO · `images/screenshots/subscribe/restore.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Pro: Restore (MAS) or License sign-in (Direct)
+  </div>
+</Frame>
 
-1. Sign in with the **same Apple ID** on the new device  
-2. Install [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)  
-3. Open **Settings → Pro**  
-4. Tap **Restore purchase**  
-5. Use Pro features once entitlements are restored  
+## How to restore
 
-## Direct users
+**App Store:** same Apple ID on the new Mac → install [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) → **Settings → Pro** → **Restore purchases**.
 
-1. Install the Direct build from [starcat.ink](https://starcat.ink)  
-2. Open **Settings → Pro → License**  
-3. Sign in / enter your license as prompted  
-4. If seats are full: unbind on the old device first, then activate on the new one  
+**Direct:** install Direct ([starcat.ink](https://starcat.ink)) → **Settings → Pro → License** → sign in / paste the License. If seats are full, unlink the old Mac first. See [License](/subscribe/license).
 
-See [License management](/subscribe/license) for details.
+## Notes
 
-## FAQ
+- User data (tags, notes, status) is on-device today. Back up Application Support before you move, or wait for unshipped cross-device sync. Stars can be pulled from GitHub again.
+- Direct Lifetime is 2 Macs for personal use. Unlink extras. App Store Lifetime follows Apple’s account rules; prefer Restore.
+- App Store and Direct do **not** restore each other.
 
-<AccordionGroup>
-  <Accordion title="Will tags and notes survive a device switch?">
-    User data (tags, notes, status, etc.) is stored locally for now. Before switching Macs, back up the Application Support directory manually, or wait for future cross-device sync. See [Backup and restore](/data-privacy/backup).
-    Your Stars list can always be re-synced from GitHub — no backup needed.
-  </Accordion>
-  <Accordion title="Can Lifetime move to a new device?">
-    Yes. Direct Lifetime supports up to 2 Macs for personal use; unbind an old device if you exceed that. App Store Lifetime follows Apple account and device rules — use **Restore purchase** first.
-  </Accordion>
-  <Accordion title="Do App Store and Direct purchases transfer?">
-    No automatic transfer. Restore through the matching channel: App Store → Restore purchase; Direct → License.
-  </Accordion>
-</AccordionGroup>
+## Related
+
+- [Purchase](/subscribe/purchase)
+- [Backup](/data-privacy/backup)

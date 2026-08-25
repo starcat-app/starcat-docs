@@ -1,64 +1,40 @@
 ---
-title: "BYOK mode"
-description: "Pro users bring their own API key and configure their AI provider"
+title: "BYOK"
+description: "Pro users bring their own API key; requests go to the provider you configure"
 ---
 
-## BYOK (Bring Your Own Key)
+## What it is for
 
-Starcat AI uses a **bring-your-own-key** model: after you configure a provider and API key under **Settings → AI**, requests go to the endpoint you specify. This is the current, shipping configuration path — not a “coming soon” feature.
+Starcat does **not** resell model tokens. You configure a provider and API key in **Settings → AI**; requests go to that endpoint. This is the shipped path, not a teaser. AI features still require **Pro**.
 
-Using AI still requires **Pro** (see [Plan comparison](/subscribe/plan-comparison)).
+<Frame caption="Screenshot TODO · `images/screenshots/subscribe/byok.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → AI: add provider, key, test connection
+  </div>
+</Frame>
 
-## Benefits
+## How to set it up
 
-- **Quota control**: use your own API account and billing  
-- **Clear path**: requests go straight to your configured endpoint  
-- **Flexible models**: switch Chat / Embedding models per task  
+You control quota, see a clear path, and can map Chat / Embedding per task.
 
-## Supported providers (examples)
+Example providers: OpenAI, OpenAI-compatible, DeepSeek, Gemini, OpenRouter, Ollama (local service required). The in-app list wins.
 
-| Provider | Notes |
-|----------|-------|
-| OpenAI | Official API |
-| OpenAI-compatible | Third parties that speak the OpenAI protocol |
-| DeepSeek | DeepSeek API |
-| Google Gemini | Gemini family |
-| OpenRouter | Multi-model routing |
-| Ollama | Local open models (requires a running local service) |
+1. Pro is active
+2. **Settings → AI**: add a provider, key / Base URL
+3. Map summary, chat, Embedding, and similar
+4. Test the connection
 
-The live list in **Settings → AI** is authoritative.
+Details: [AI configuration](/ai-features/configuration).
 
-## Setup steps
+Keys are AES-GCM encrypted in the macOS Keychain. Starcat does not upload them in cleartext to its own backend. Set a spend cap in the provider console.
 
-1. Confirm Pro is purchased and active  
-2. Open **Settings → AI**  
-3. Add a provider; enter API key / Base URL if needed  
-4. Assign models for summary, chat, embedding, translation, and other tasks  
-5. Use **Test connection** to confirm it works  
+## Notes
 
-See [AI configuration](/ai-features/configuration) for step-by-step details.
+- You are not locked to OpenAI.
+- The key stays on this Mac; traffic goes to your endpoint. See [Privacy](/data-privacy/privacy).
+- Chat works but RAG does not: **Embedding** is usually empty.
 
-## Security
+## Related
 
-- API keys are encrypted with AES-GCM and stored in the macOS Keychain  
-- Starcat does not upload your key in plaintext to its own business servers  
-- Keep keys safe and set usage limits in your provider console  
-
-## Related pages
-
-- [AI features overview](/ai-features/overview)  
+- [AI overview](/ai-features/overview)
 - [Buy Pro](/subscribe/purchase)
-
-## FAQ
-
-<AccordionGroup>
-  <Accordion title="Do I have to use OpenAI?">
-    No. Compatible endpoints, DeepSeek, OpenRouter, Ollama, and others work — follow the list in Settings.
-  </Accordion>
-  <Accordion title="Are keys uploaded to Starcat servers?">
-    Keys stay in the local Keychain; requests go to your configured provider. See [Privacy](/data-privacy/privacy).
-  </Accordion>
-  <Accordion title="RAG still doesn't work after setup?">
-    Check that you configured an **Embedding** model separately — Chat alone is not enough. See [AI configuration](/ai-features/configuration).
-  </Accordion>
-</AccordionGroup>

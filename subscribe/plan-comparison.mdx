@@ -1,76 +1,70 @@
 ---
 title: "Plan comparison"
-description: "Free vs Pro limits, features, and pricing"
+description: "Free vs Pro: caps, AI / knowledge base, and which channel to pick"
 ---
 
-## Pricing plans
+## What this is for
 
-Starcat offers a free tier and Pro. Free covers Stars organization and search; Pro unlocks AI, the knowledge base, higher limits, and more.
+Decide whether to upgrade to Pro, and whether App Store or Direct fits. Free already covers Stars tidy, search, and explore. Pro unlocks AI, the knowledge base, and higher caps. Prices follow [starcat.ink](https://starcat.ink) and the in-app purchase page. If they disagree, the purchase page wins.
 
-<Note>
-  Prices follow [starcat.ink](https://starcat.ink) and in-app purchase screens. If this page disagrees with checkout, **checkout wins**.
-</Note>
+<Frame caption="Screenshot TODO · `images/screenshots/subscribe/plan-comparison.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Pro: Monthly / Yearly / Lifetime and entitlements
+  </div>
+</Frame>
 
-## Feature comparison
+## Features
 
 | Feature | Free | Pro |
 |---------|------|-----|
-| GitHub Stars sync | ✅ | ✅ |
-| Tag management | ✅ (**20** max) | ✅ Unlimited |
-| Notes and status | ✅ | ✅ |
-| Full-text search (FTS5) | ✅ | ✅ |
-| List filters | ✅ | ✅ |
-| Language / tag views | ✅ | ✅ |
-| Smart collections | ✅ (**4** max) | ✅ Unlimited |
-| GitHub Trending / Explore | ✅ | ✅ |
-| Browser plugin | ✅ | ✅ |
-| External web search (AnySearch) | ✅ | ✅ |
-| **Release subscriptions** | ✅ (**5** repos) | ✅ Unlimited |
-| **AI summary** | ❌ | ✅ |
-| **AI tag recommendations** | ❌ | ✅ |
-| **README translation** | ❌ | ✅ |
-| **AI chat** | ❌ | ✅ |
-| **Semantic search** | ❌ | ✅ |
-| **RAG knowledge base** | ❌ | ✅ |
-| **AI personal notes** | ❌ | ✅ |
-| **Similar repo recommendations** | ❌ | ✅ |
-| **Repo Health / OpenSSF** | ❌ | ✅ |
-| **BYOK (bring your own AI key)** | ❌ | ✅ |
-| **MCP / CLI bridge** | ❌ | ✅ |
-| **Agent workspace** | ❌ | ✅ (Beta) |
+| GitHub Stars sync | Yes | Yes |
+| Tags | Yes (**20**) | Unlimited |
+| Notes and status | Yes | Yes |
+| Full-text search (FTS5) | Yes | Yes |
+| List filters | Yes | Yes |
+| Language / tag groups | Yes | Yes |
+| Smart collections | Yes (**4**) | Unlimited |
+| Trending / Explore | Yes | Yes |
+| Browser extension | Yes | Yes |
+| External web search (AnySearch) | Yes | Yes |
+| **Release subscriptions** | Yes (**5** repos) | Unlimited |
+| **AI summary** | No | Yes |
+| **AI tag suggestions** | No | Yes |
+| **README translation** | No | Yes |
+| **AI chat** | No | Yes |
+| **Semantic search** | No | Yes |
+| **RAG knowledge base** | No | Yes |
+| **AI personal notes** | No | Yes |
+| **Similar repos** | No | Yes |
+| **Repo Health / OpenSSF** | No | Yes |
+| **BYOK** | No | Yes |
+| **MCP / CLI bridge** | No | Yes |
+| **Agent workspace** | No | Yes (Beta) |
 
-## Pro pricing
+## Pricing and channels
 
 | Plan | Price | Notes |
 |------|-------|-------|
-| **Pro Monthly** | $3.99 / mo | Auto-renews monthly |
-| **Pro Yearly** | $29.99 / yr | Auto-renews yearly (saves vs monthly) |
+| **Pro Monthly** | $3.99 / month | Auto-renew |
+| **Pro Yearly** | $29.99 / year | Auto-renew |
 | **Pro Lifetime** | $39.99 | One-time; up to **2** Macs for personal use |
 
-## Where to buy
-
 - **Mac App Store**: [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
-- **Direct (website)**: [starcat.ink](https://starcat.ink)
+- **Direct**: [starcat.ink](https://starcat.ink)
 
-Pro entitlements match across channels. See [Buy Pro](/subscribe/purchase).
+Pro **entitlements match** across channels. Receipts do not. See [Purchase](/subscribe/purchase) and [Restore](/subscribe/restore).
 
-## BYOK mode
+Apple ID / family sharing → App Store. Direct DMG / Lifetime seat → starcat.ink. Two Macs long-term → Lifetime ([License](/subscribe/license)). Try a year → Yearly.
 
-Pro users configure their provider API key under **Settings → AI**:
+AI calls use your own key. See [BYOK](/subscribe/byok).
 
-- Use your own API quota  
-- Requests go to your configured provider  
-- Switch models flexibly  
+## Notes
 
-See [BYOK mode](/subscribe/byok).
+- App Store and Direct are separate installs. License and StoreKit **cannot** restore each other.
+- Direct can launch local CLIs / Agent runtimes. App Store is sandboxed. See [GitHub connection](/getting-started/github-connection).
+- Cloud sync and JSON import/export are **not shipped**. Pro is not a cloud drive.
 
-## How to choose a channel
+## Related
 
-| You care most about… | Suggestion |
-|----------------------|------------|
-| Apple ID billing and Family Sharing rules | [App Store](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12) |
-| Website Lifetime / Direct install | [starcat.ink](https://starcat.ink) |
-| Two Macs long term | Lifetime (Direct seat rules in [License](/subscribe/license)) |
-| Try one year first | Yearly |
-
-Pro entitlements are **identical** across channels; purchase receipts **do not** transfer. See [Restore purchase](/subscribe/restore).
+- [Purchase](/subscribe/purchase)
+- [AI overview](/ai-features/overview)
