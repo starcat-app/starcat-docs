@@ -1,7 +1,17 @@
 ---
 title: "CLI 使用指南"
-description: "常用命令、统计、写入 --apply、MCP 与更新"
+description: "只读 JSON、写入默认 dry-run、MCP stdio、更新"
 ---
+
+## 用来做什么
+
+配对之后在终端搜 Stars、改标签 / 状态 / 笔记，或把 `starcat mcp` 交给外部 Agent。写命令**默认不落库**，必须 `--apply`。App 侧写权限关掉时，即使 `--apply` 也会失败。
+
+<Frame caption="截图待补充 · `images/screenshots/cli/usage.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    终端 starcat stats / repo search，以及 MCP 写权限开关
+  </div>
+</Frame>
 
 ## 命令风格
 
@@ -11,8 +21,6 @@ description: "常用命令、统计、写入 --apply、MCP 与更新"
 | 数据 | JSON | `capabilities` `repo` `tags` |
 
 完整列表以 `starcat help` 与 [README](https://github.com/starcat-app/starcat-cli/blob/main/README-ZH.md) 为准。
-
-## 只读常用
 
 ```bash
 starcat capabilities
@@ -27,32 +35,18 @@ starcat repo summary owner/repo
 starcat tags list
 ```
 
-`stats` 是本地聚合只读视图（Star / 知识库 / AI token / RAG 等），便于巡检。
-
-## 写入（默认 dry-run）
-
 ```bash
-# 预览，不写入
 printf '%s' 'A private note' | starcat repo note set owner/repo
-
-# 真正写入
 printf '%s' 'A private note' | starcat repo note set owner/repo --apply
 starcat repo tags add owner/repo Swift macOS --apply
 starcat repo status set owner/repo using --apply
 ```
 
-App 侧写权限开关关掉时，即使 `--apply` 也会失败。见 [MCP 设置](/zh-Hans/settings/mcp)。
-
-## MCP
-
 ```bash
 starcat mcp
 ```
 
-在 Cursor / Claude Code / Codex 等里注册 MCP server：`command=starcat`，`args=["mcp"]`。  
-协议消息只走 stdout；诊断走 stderr。
-
-## 更新
+在 Cursor / Claude Code / Codex 里注册：`command=starcat`，`args=["mcp"]`。协议只走 stdout；诊断走 stderr。
 
 ```bash
 starcat update
@@ -62,7 +56,6 @@ brew update && brew upgrade starcat
 
 交互式终端最多约每天提示一次新版本；`starcat mcp` 管道不会打印更新骚扰。
 
-## 相关
+## 注意
 
-- [安装与配对](/zh-Hans/cli/installation)
-- [Skill](/zh-Hans/cli/skill)
+不要把 CLI 当直连数据库的后门。见 [MCP 设置](/zh-Hans/settings/mcp)、[Skill](/zh-Hans/cli/skill)。

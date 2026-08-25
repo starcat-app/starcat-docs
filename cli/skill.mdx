@@ -1,34 +1,30 @@
 ---
 title: "Agent Skill"
-description: "starcat-skill prerequisites and how it relates to CLI / MCP"
+description: "starcat-skill cannot bypass the app; install the CLI and pair first"
 ---
 
-## What it is
+## What it is for
 
-[`starcat-skill`](https://github.com/starcat-app/starcat-skill) describes Starcat CLI capabilities as an Agent-loadable Skill for Claude Code, Codex, and similar environments:
+[`starcat-skill`](https://github.com/starcat-app/starcat-skill) describes CLI capabilities as a loadable Skill so Claude Code / Codex can search Stars / the knowledge base, read READMEs, and change notes, tags, and status under dry-run plus app authorization. It **cannot** open the database behind the app’s back.
 
-- Search Stars / knowledge base, view stats  
-- Read context / README / summary  
-- Change notes, tags, and status under dry-run and authorization  
+<Frame caption="Screenshot TODO · `images/screenshots/cli/skill.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    External agent with starcat skill loaded, starcat stats succeeding
+  </div>
+</Frame>
 
 ## Prerequisites (all required)
 
-1. Install the [CLI](/cli/installation)  
-2. Starcat app running, [MCP](/settings/mcp) enabled, and `starcat pair` completed  
-3. Understand `--apply` and app-side write permissions for mutations  
+1. Install the [CLI](/cli/installation)
+2. Starcat running, [MCP](/settings/mcp) on, `starcat pair` done
+3. Understand `--apply` and the app’s write switches
 
-The Skill **cannot** bypass the app and talk to the database directly.
+Copy into the agent’s skills directory per the Skill README (Claude / Codex paths differ).
 
-## Install
-
-Follow the Skill repo README — copy into the skills directory for your Agent (Claude vs Codex paths differ).
-
-## vs in-app Agent
-
-| | Skill + CLI | App Agent workspace |
-|--|-------------|---------------------|
-| Runs in | External Agent terminal / session | Starcat window |
-| Status | Tracks CLI / MCP shipping capabilities | [Beta](/agent-workspace/overview) |
+| | Skill + CLI | In-app Agent workspace |
+|--|-------------|------------------------|
+| Runs | External agent terminal / session | Starcat window |
+| Status | Ships with CLI/MCP | [Beta](/agent-workspace/overview) |
 
 ## Related
 

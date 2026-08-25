@@ -1,17 +1,17 @@
 ---
 title: "CLI installation"
-description: "Homebrew / script install, pairing, and platform notes"
+description: "Homebrew / script install, then MCP-pair with the Pro app on this Mac"
 ---
 
-## What is Starcat CLI
+## What it is for
 
-[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a cross-platform command-line client and **stdio MCP** bridge for AI agents:
+[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a CLI and a **stdio MCP** bridge for agents. It does **not** open SQLite. Reads and writes go through the app’s MCP tools. Permission, dry-run, Pro, and audit stay in the **macOS Starcat app**. The app runs on a Mac; the CLI can live on that Mac or a trusted network to a paired app.
 
-- Does **not** read Starcat SQLite directly  
-- All reads and writes go through the app's MCP tools  
-- Permissions, dry-run, Pro checks, and audit still run in the **macOS Starcat app**  
-
-The app runs on Mac; the CLI can install on the same Mac or connect over a trusted network to a paired app.
+<Frame caption="Screenshot TODO · `images/screenshots/cli/installation.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → MCP pairing URI plus terminal starcat pair / doctor
+  </div>
+</Frame>
 
 ## Install
 
@@ -22,15 +22,15 @@ brew tap starcat-app/starcat-cli
 brew install starcat
 ```
 
-Tap repo: [`homebrew-starcat-cli`](https://github.com/starcat-app/homebrew-starcat-cli).
+Tap: [`homebrew-starcat-cli`](https://github.com/starcat-app/homebrew-starcat-cli).
 
-### macOS / Linux one-line script
+### macOS / Linux script
 
 ```bash
 curl -fsSL https://github.com/starcat-app/starcat-cli/releases/latest/download/install.sh | sh
 ```
 
-Installs to `~/.local/bin/starcat` by default (`STARCAT_INSTALL_DIR` overrides). The script verifies SHA-256.
+Default `~/.local/bin/starcat` (`STARCAT_INSTALL_DIR` overrides). The script checks SHA-256.
 
 ### Windows PowerShell
 
@@ -40,23 +40,16 @@ irm https://github.com/starcat-app/starcat-cli/releases/latest/download/install.
 
 ## Pairing (required)
 
-<Steps>
-  <Step title="Enable MCP in the app">Starcat → **Settings → MCP** → enable the service. Requires [Pro](/subscribe/plan-comparison).</Step>
-  <Step title="Copy the pairing command">Copy from Settings; URI valid ~5 minutes, single-use.</Step>
-  <Step title="Run in Terminal">
+1. Starcat → **Settings → MCP** → enable. Needs [Pro](/subscribe/plan-comparison)
+2. Copy the pair command; URI lasts about 5 minutes, single use
+3. Terminal:
+
 ```bash
 starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
-  </Step>
-  <Step title="Confirm device in the app">Pairing is incomplete until you confirm.</Step>
-</Steps>
 
-You can also run `starcat pair` and paste the URI. Long-lived credentials live in Keychain / Credential Manager / Secret Service.
-
-See [MCP settings](/settings/mcp).
-
-## Verify
+4. **Confirm the device** in the app. Unconfirmed pairing is incomplete. Or run `starcat pair` and paste the URI. Long-lived credentials go in the Keychain. See [MCP](/settings/mcp).
 
 ```bash
 starcat --version
@@ -64,8 +57,6 @@ starcat doctor
 starcat capabilities
 ```
 
-## Next steps
+## Notes
 
-- [Usage guide](/cli/usage)
-- [Agent Skill](/cli/skill)
-- Skill repo: [starcat-skill](https://github.com/starcat-app/starcat-skill)
+The App Store sandbox is not a generic CLI launcher. The CLI is a separate process and still needs a running app that can host MCP. Next: [Usage](/cli/usage), [Agent Skill](/cli/skill).

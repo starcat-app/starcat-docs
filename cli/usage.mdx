@@ -1,18 +1,26 @@
 ---
-title: "CLI usage guide"
-description: "Common commands, stats, writes with --apply, MCP, and updates"
+title: "CLI usage"
+description: "Read-only JSON, writes dry-run until --apply, MCP stdio, updates"
 ---
+
+## What it is for
+
+After pairing, search Stars, change tags / status / notes, or hand `starcat mcp` to an external agent. Writes **do not persist** until `--apply`. If the app’s write switches are off, `--apply` still fails.
+
+<Frame caption="Screenshot TODO · `images/screenshots/cli/usage.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Terminal starcat stats / repo search, plus MCP write toggles
+  </div>
+</Frame>
 
 ## Command style
 
-| Type | Output | Examples |
+| Kind | Output | Examples |
 |------|--------|----------|
 | Ops / friendly | Text | `help` `doctor` `stats` `pair` |
 | Data | JSON | `capabilities` `repo` `tags` |
 
-Full list: `starcat help` and the [README](https://github.com/starcat-app/starcat-cli/blob/main/README-ZH.md).
-
-## Common read-only commands
+Full list: `starcat help` and the [README](https://github.com/starcat-app/starcat-cli/blob/main/README.md).
 
 ```bash
 starcat capabilities
@@ -27,32 +35,18 @@ starcat repo summary owner/repo
 starcat tags list
 ```
 
-`stats` is a local read-only aggregate (Stars / knowledge base / AI tokens / RAG, etc.) for quick inspection.
-
-## Writes (dry-run by default)
-
 ```bash
-# Preview only — no write
 printf '%s' 'A private note' | starcat repo note set owner/repo
-
-# Actually write
 printf '%s' 'A private note' | starcat repo note set owner/repo --apply
 starcat repo tags add owner/repo Swift macOS --apply
 starcat repo status set owner/repo using --apply
 ```
 
-If write permission switches are off in the app, `--apply` still fails. See [MCP settings](/settings/mcp).
-
-## MCP
-
 ```bash
 starcat mcp
 ```
 
-Register as an MCP server in Cursor / Claude Code / Codex: `command=starcat`, `args=["mcp"]`.  
-Protocol messages use stdout only; diagnostics go to stderr.
-
-## Updates
+Register in Cursor / Claude Code / Codex: `command=starcat`, `args=["mcp"]`. Protocol on stdout; diagnostics on stderr.
 
 ```bash
 starcat update
@@ -60,9 +54,8 @@ starcat update
 brew update && brew upgrade starcat
 ```
 
-Interactive terminals may prompt for updates at most about once per day; `starcat mcp` in a pipe does not spam update notices.
+Interactive terminals hint about a new version at most about once a day. `starcat mcp` pipes do not print update noise.
 
-## Related
+## Notes
 
-- [Installation and pairing](/cli/installation)
-- [Skill](/cli/skill)
+The CLI is not a back door to the database. See [MCP](/settings/mcp) and [Skill](/cli/skill).

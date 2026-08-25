@@ -1,33 +1,29 @@
 ---
 title: "Agent Skill"
-description: "starcat-skill 安装前置与和 CLI/MCP 的关系"
+description: "starcat-skill 不能绕过 App；先装 CLI 并完成 pair"
 ---
 
-## 是什么
+## 用来做什么
 
-[`starcat-skill`](https://github.com/starcat-app/starcat-skill) 把 Starcat CLI 能力描述成 Agent 可加载的 Skill，方便在 Claude Code、Codex 等环境里：
+[`starcat-skill`](https://github.com/starcat-app/starcat-skill) 把 CLI 能力描述成 Agent 可加载的 Skill，方便在 Claude Code、Codex 里搜 Stars / 知识库、读 README，并在 dry-run 与授权下改笔记、标签、状态。它**不能**绕过 App 直连数据库。
 
-- 搜 Stars / 知识库、看统计  
-- 读 context / README / summary  
-- 在 dry-run 与授权下改笔记、标签、状态  
+<Frame caption="截图待补充 · `images/screenshots/cli/skill.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    外部 Agent 已加载 starcat skill，并成功跑 starcat stats
+  </div>
+</Frame>
 
 ## 前置（缺一不可）
 
-1. 安装 [CLI](/zh-Hans/cli/installation)  
-2. Starcat App 运行，[MCP](/zh-Hans/settings/mcp) 已启用并完成 `starcat pair`  
-3. 写操作理解 `--apply` 与 App 侧写权限  
-
-Skill **不能**绕过 App 直连数据库。
-
-## 安装
+1. 安装 [CLI](/zh-Hans/cli/installation)
+2. Starcat App 运行，[MCP](/zh-Hans/settings/mcp) 已启用并完成 `starcat pair`
+3. 写操作理解 `--apply` 与 App 侧写权限
 
 按 Skill 仓库 README，复制到对应 Agent 的 skills 目录（Claude / Codex 路径不同）。
 
-## 和 App 内 Agent 的区别
-
 | | Skill + CLI | App Agent 工作台 |
 |--|-------------|------------------|
-| 运行位置 | 外部 Agent 终端/会话 | Starcat 窗口 |
+| 运行位置 | 外部 Agent 终端 / 会话 | Starcat 窗口 |
 | 状态 | 随 CLI/MCP 正式能力 | [Beta](/zh-Hans/agent-workspace/overview) |
 
 ## 相关
