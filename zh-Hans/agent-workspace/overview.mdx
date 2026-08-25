@@ -1,12 +1,22 @@
 ---
 title: "Agent 工作台"
-description: "Pro · Beta：多步骤工具调用；确认后才改数据"
+description: "Pro · Beta：多步骤工具调用；改数据前必须确认"
 badge: "Beta"
 ---
 
-## 定位（Beta）
+## 用来做什么
 
-App 内 **Agent 工作台**面向需要多步骤、调用工具的任务，与单仓 AI 浮层、RAG 问答互补。
+App 内 **Agent 工作台**面向需要多步骤、调用工具的任务：查库、对比、在你授权后改本机整理数据。它和单仓 AI 浮层、RAG 问答互补，不是把那两套再做一遍聊天窗口。
+
+当前是 **Beta**：界面和可用工具还会变。文档只写已经落地的入口和安全边界，不把未交付的路线图当成操作说明。
+
+<Frame caption="截图待补充 · `images/screenshots/agent-workspace/overview.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Agent 工作台：Runtime 切换、执行时间线、任务检查器
+  </div>
+</Frame>
+
+## 和其它 AI 入口怎么选
 
 | 能力 | 文档 |
 |------|------|
@@ -15,28 +25,21 @@ App 内 **Agent 工作台**面向需要多步骤、调用工具的任务，与�
 | 外部 Agent + CLI | [CLI](/zh-Hans/cli/usage)、[Skill](/zh-Hans/cli/skill) |
 | App 内 Agent 工作台 | 本页 |
 
-当前处于 **Beta**：界面与可用工具仍会迭代；文档只描述已贯彻的安全边界与入口，不罗列未交付的「调研报告生成器」等路线图当操作说明。
+## 怎么用
 
-## Runtime（Direct）
+前提：[Pro](/zh-Hans/subscribe/plan-comparison)、[AI 配置](/zh-Hans/ai-features/configuration) 可用。外部 Runtime 还要先完成 [Codex 与 DeepSeek 配置](/zh-Hans/agent-workspace/runtime-setup)。
 
-Agent 工作台可在内置 Loop、Codex App Server 与 DeepSeek Harness 之间切换。外部 Runtime 以本机子进程运行，不打进 Starcat DMG。Mac App Store 版始终使用内置 Runtime。
+打开独立 Agent 窗口，选 Runtime，发一个**小任务**先看时间线：思考摘要、工具调用、错误与产物。任务检查器补充结构化步骤和运行指标。
 
-配置与检测见 [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)。执行时间线会展示思考摘要、工具调用、错误与产物；任务检查器补充结构化步骤和运行指标。
+**Direct** 可在内置 Loop、Codex App Server 与 DeepSeek Harness 之间切换。外部 Runtime 以本机子进程运行，不打进 DMG。**Mac App Store 版始终用内置 Runtime**，不能启动用户安装的可执行文件。
 
-## 前提
+## 注意
 
-- [Pro](/zh-Hans/subscribe/plan-comparison)  
-- [AI 配置](/zh-Hans/ai-features/configuration) 可用  
-- 使用外部 Runtime 时，先完成 [Codex 与 DeepSeek 配置](/zh-Hans/agent-workspace/runtime-setup)
+- **改数据前需要你确认**；可取消进行中的运行；关键步骤保留可追踪信息。与 [AI 概览](/zh-Hans/ai-features/overview) 的保守策略一致。
+- 不要把 Beta 工作台当成无人值守批处理。
+- 反馈可邮件 [dong4j@gmail.com](mailto:dong4j@gmail.com)。
 
-## 安全设计（已贯彻）
+## 相关
 
-- **改数据前需你确认**  
-- 可取消进行中的运行  
-- 关键步骤保留可追踪信息  
-
-与全体 Starcat AI 的保守策略一致。见 [AI 概览](/zh-Hans/ai-features/overview)。
-
-## 反馈
-
-Beta 问题可邮件 [dong4j@gmail.com](mailto:dong4j@gmail.com)。
+- [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)
+- [方案对比](/zh-Hans/subscribe/plan-comparison)

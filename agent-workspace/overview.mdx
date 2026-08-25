@@ -1,42 +1,45 @@
 ---
 title: "Agent workspace"
-description: "Pro · Beta: multi-step tool use; data changes only after confirmation"
+description: "Pro · Beta: multi-step tools; data changes only after you confirm"
 badge: "Beta"
 ---
 
-## Role (Beta)
+## What it is for
 
-The in-app **Agent workspace** targets multi-step tasks with tool calls, complementing single-repo AI panel and RAG Q&A.
+The in-app **Agent workspace** is for multi-step work that calls tools: inspect repos, compare, and change local tidy data **after you authorize it**. It complements single-repo AI and RAG; it is not a third copy of the same chat.
 
-| Capability | Docs |
-|------------|------|
+It is **Beta**. The UI and tools will still move. This page documents shipped entry points and safety rails, not unreleased roadmap items as if they were buttons.
+
+<Frame caption="Screenshot TODO · `images/screenshots/agent-workspace/overview.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Agent workspace: Runtime switcher, execution timeline, task inspector
+  </div>
+</Frame>
+
+## Which AI surface
+
+| Job | Docs |
+|-----|------|
 | Single-repo chat / summary | [AI chat](/ai-features/chat) |
-| Cross-ingest Q&A | [RAG workspace](/knowledge-base/rag-workspace) |
-| External Agent + CLI | [CLI](/cli/usage), [Skill](/cli/skill) |
+| Q&A across ingested repos | [RAG](/knowledge-base/rag-workspace) |
+| External agents + CLI | [CLI](/cli/usage), [Skill](/cli/skill) |
 | In-app Agent workspace | This page |
 
-Currently **Beta**: UI and available tools still evolve; this doc covers enforced safety boundaries and entry points—not roadmap items like “research report generator” as if shipped.
+## How to use it
 
-## Runtimes (Direct)
+Requires [Pro](/subscribe/plan-comparison) and a working [AI configuration](/ai-features/configuration). External runtimes also need [Codex and DeepSeek setup](/agent-workspace/runtime-setup).
 
-Agent Workspace can switch among the built-in Loop, Codex App Server, and DeepSeek Harness. External runtimes run as local child processes and are not bundled in the Starcat DMG. The Mac App Store build always uses the built-in runtime.
+Open the Agent window, pick a Runtime, and send a **small** task first. Watch the timeline: thinking summary, tool calls, errors, artifacts. The task inspector adds structured steps and run metrics.
 
-Setup: [Runtime setup](/agent-workspace/runtime-setup). The execution timeline shows thinking summaries, tool calls, errors, and artifacts. The task inspector adds structured steps and run metrics.
+**Direct** can switch among built-in Loop, Codex App Server, and DeepSeek Harness. External runtimes are local child processes, not inside the DMG. **Mac App Store always uses the built-in Runtime** and cannot launch user-installed executables.
 
-## Prerequisites
+## Notes
 
-- [Pro](/subscribe/plan-comparison)  
-- Working [AI configuration](/ai-features/configuration)  
-- For external runtimes: [Codex and DeepSeek setup](/agent-workspace/runtime-setup)
+- **Data changes need your confirmation.** You can cancel an in-flight run. Key steps stay traceable. Same conservative policy as [AI overview](/ai-features/overview).
+- Do not treat the Beta workspace as unattended batch processing.
+- Feedback: [dong4j@gmail.com](mailto:dong4j@gmail.com).
 
-## Safety (enforced)
+## Related
 
-- **Confirm before changing data**  
-- Cancel in-flight runs  
-- Key steps leave traceable information  
-
-Aligned with Starcat’s conservative AI policy. See [AI overview](/ai-features/overview).
-
-## Feedback
-
-Beta issues: [dong4j@gmail.com](mailto:dong4j@gmail.com).
+- [Runtime setup](/agent-workspace/runtime-setup)
+- [Plans](/subscribe/plan-comparison)

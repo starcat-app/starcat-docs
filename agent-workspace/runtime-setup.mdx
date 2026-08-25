@@ -1,34 +1,38 @@
 ---
-title: "Codex and DeepSeek runtimes"
-description: "Configure external Agent runtimes in Starcat Direct 1.5.0"
+title: "Set up Codex and DeepSeek runtimes"
+description: "Install, detect, and verify external Agent runtimes in Starcat Direct"
 ---
 
-Starcat 1.5.0 supports three interchangeable Agent runtimes: the built-in Loop,
-Codex App Server, and DeepSeek Harness. External runtimes run as local child
-processes and are not bundled in the Starcat DMG.
+## What this is for
+
+Starcat Direct’s Agent workspace can switch among built-in Loop, **Codex App Server**, and **DeepSeek Harness**. External runtimes are local child processes and are **not** inside the Starcat DMG. This page is an install and detection checklist, not a Runtime source tour.
 
 <Warning>
-  Codex App Server and DeepSeek Harness are available in **Starcat Direct only**.
-  The Mac App Store build always uses the built-in runtime because its sandbox
-  cannot launch user-installed executables.
+  Codex App Server and DeepSeek Harness are **Direct-only**. The Mac App Store
+  build is sandboxed, always uses the built-in Runtime, and cannot launch
+  user-installed executables.
 </Warning>
 
 <Note>
-  Agent Workspace requires an active [Pro entitlement](/subscribe/plan-comparison).
+  The Agent workspace needs a valid [Pro entitlement](/subscribe/plan-comparison).
 </Note>
 
-## At a glance
+<Frame caption="Screenshot TODO · `images/screenshots/agent-workspace/runtime-setup.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Integrations → Agent Runtime: Codex / DeepSeek detection
+  </div>
+</Frame>
 
-| Runtime | What you need | Credential source |
-|---------|---------------|-------------------|
-| Codex App Server | Installed and authenticated Codex CLI | Existing Codex CLI login |
-| DeepSeek Harness | Apple Silicon, Python 3.10+, runtime installer, verified Starcat AI Provider | Starcat Keychain |
+## Overview
+
+| Runtime | Prerequisites | Credentials |
+|---------|---------------|-------------|
+| Codex App Server | Installed, authenticated Codex CLI | Existing Codex CLI login |
+| DeepSeek Harness | Apple Silicon, Python 3.10+, installer, a verified Starcat AI provider | Starcat Keychain |
 
 ## Codex App Server
 
-### 1. Verify Codex CLI
-
-This guide assumes Codex CLI is already installed and authenticated:
+### 1. Confirm the Codex CLI
 
 ```bash
 command -v codex
@@ -36,44 +40,40 @@ codex --version
 codex login status
 ```
 
-Starcat does not copy the Codex credential or pass a Starcat AI Provider key to
-Codex. It launches `codex app-server` with the same local `CODEX_HOME` login state.
+Starcat does not copy Codex credentials and does not pass your Starcat AI API key to Codex. `codex app-server` reuses the existing `CODEX_HOME` login.
 
-### 2. Let Starcat find the Runtime directory
+### 2. Let Starcat detect the Runtime directory
 
 Open **Settings → Integrations → Agent Runtime**.
 
-- If Codex shows **Codex CLI**, automatic detection found the installed CLI. That status only means the executable was found, not that you are logged in. `codex login status` remains the source of truth.
-- To use the official standalone package, open [Codex Releases](https://github.com/openai/codex/releases/latest) and download the Apple Silicon archive [`codex-app-server-package-aarch64-apple-darwin.tar.gz`](https://github.com/openai/codex/releases/latest/download/codex-app-server-package-aarch64-apple-darwin.tar.gz). After extracting it, click **Choose** and select that Runtime directory. Starcat accepts binaries directly in the directory or in its `bin/` subdirectory. The package must contain executable `codex-app-server` (or `codex`) and `codex-code-mode-host`.
-- **Use Automatic Detection** clears a manually configured path and searches `PATH`, Homebrew, `~/.local/bin`, `~/.npm-global/bin`, and `~/.bun/bin` again.
+- **Codex CLI** means auto-detect found an executable. That is not the same as being logged in. Auth still follows `codex login status`.
+- For the official standalone package, open [Codex Releases](https://github.com/openai/codex/releases/latest) and download the Apple Silicon [`codex-app-server-package-aarch64-apple-darwin.tar.gz`](https://github.com/openai/codex/releases/latest/download/codex-app-server-package-aarch64-apple-darwin.tar.gz). Unpack, tap Choose, and select that Runtime directory. Binaries may sit at the root or in `bin/`. You need both executable `codex-app-server` (or `codex`) and `codex-code-mode-host`.
+- **Restore auto-detect** clears a manual path and searches `PATH`, Homebrew, `~/.local/bin`, `~/.npm-global/bin`, and `~/.bun/bin`.
 
 <Note>
-  Download the archive whose name includes `package`. `codex-app-server-aarch64-apple-darwin.tar.gz` contains only the App Server binary and is missing `codex-code-mode-host`. Also skip the few-kilobyte asset named exactly `codex-app-server`.
+  Pick the archive with `package` in the name. `codex-app-server-aarch64-apple-darwin.tar.gz` without `package` is App Server only and lacks `codex-code-mode-host`. A few-kilobyte file named exactly `codex-app-server` is also not the binary package.
 </Note>
 
-### 3. Run it
+### 3. Use it in the Agent workspace
 
-Open Agent Workspace, choose **Codex App Server**, then select a provider, model,
-and reasoning effort offered by Codex. Send a small request first and confirm that
-the Runtime badge and execution events both say **Codex App Server**.
+Open the Agent workspace, choose **Codex App Server**, then pick provider, model, and reasoning from what Codex returns. Send a small task and confirm the header Runtime label and event metadata both say **Codex App Server**.
 
 ## DeepSeek Harness
 
-### 1. Verify prerequisites
+### 1. Prerequisites
 
-The provided runtime wheel currently supports macOS arm64 only. Check Python:
+The shipped Runtime wheel is macOS arm64 only:
 
 ```bash
 uname -m
 python3 --version
 ```
 
-Use Python 3.10 or later. No Node installation or local binary compilation is
-required.
+Python must be 3.10 or newer. You do not need Node, and you do not compile binaries locally.
 
-### 2. Install the runtime
+### 2. Install the Runtime
 
-Download the installer shipped with Starcat 1.5.0, inspect it, and then run it:
+Download the installer that matches your Direct version, read it, then run it. Example for 1.5.0:
 
 ```bash
 curl -fL \
@@ -83,68 +83,45 @@ less /tmp/install-starcat-deepseek-runtime.sh
 bash /tmp/install-starcat-deepseek-runtime.sh
 ```
 
-The script installs `deepseek-harness-runtime-bin==0.1.1rc1` under
-`~/Library/Application Support/Starcat/Runtimes/`, creates Starcat's restricted
-Cordis configuration, verifies the three carrier signatures, and writes the
-production Starcat Direct Runtime paths. Restart Starcat after the script finishes.
+The script installs `deepseek-harness-runtime-bin==0.1.1rc1` under `~/Library/Application Support/Starcat/Runtimes/`, writes a Starcat-restricted Cordis config, verifies three carrier signatures, and writes Runtime paths for release Starcat Direct. Fully quit and relaunch Starcat afterward.
 
-### 3. Configure a Provider in Starcat
+### 3. Configure a provider in Starcat
 
-Open **Settings → AI** and add a DeepSeek Provider with your API key. Run the
-connection test and enable at least one Chat model. The key remains in Starcat's
-Keychain; you do not need to export `DEEPSEEK_API_KEY` before launching the app.
+Open **Settings → AI**, add a DeepSeek provider with an API key, test the connection, and enable at least one Chat model. The key stays in the Starcat Keychain. Launching from Finder does not require exporting `DEEPSEEK_API_KEY`.
 
-DeepSeek Harness is the Agent framework, not a provider lock. It can also use a
-verified OpenAI-compatible Provider configured in Starcat. The Provider and model
-selected in Agent Workspace are injected only for that run.
+DeepSeek Harness is an Agent framework; it is not locked to DeepSeek as a model vendor. Verified OpenAI-compatible providers in Starcat work too. The workspace selection applies to that run only.
 
-### 4. Verify and run
+### 4. Detect and run
 
-Open **Settings → Integrations → Agent Runtime**. DeepSeek is ready only when the
-carrier, restricted Cordis config, and a verified AI Provider all pass the same
-checks used by a real run.
+Open **Settings → Integrations → Agent Runtime**. DeepSeek shows ready only when the carrier, restricted Cordis config, and a verified AI provider all pass the same official adapter checks.
 
-Then open Agent Workspace and choose:
+Then in the Agent workspace: Runtime **DeepSeek Harness** → a verified Starcat AI provider → an enabled Chat model → **Default** reasoning unless the model documents another level.
 
-1. Runtime: **DeepSeek Harness**
-2. Provider: a verified Starcat AI Provider
-3. Model: an enabled Chat model from that Provider
-4. Reasoning: **Default** unless the selected model exposes another supported level
+Send a small task, expand steps, and confirm the header and event metadata say **DeepSeek Harness**.
 
-Send a small request and expand the execution steps. The Runtime badge and event
-metadata should both say **DeepSeek Harness**.
-
-## Troubleshooting
+## Notes / troubleshooting
 
 ### Runtime unavailable
 
 - Confirm you installed **Starcat Direct**, not the Mac App Store build.
-- Restart Starcat after installing or changing Runtime paths.
-- Open **Settings → Integrations → Agent Runtime** and use the displayed validation
-  error instead of guessing which path failed.
+- Fully quit and relaunch after installing a Runtime or changing paths.
+- Use the validation errors on **Settings → Integrations → Agent Runtime**; do not guess paths.
 
 ### Codex keeps retrying
 
-Run `codex login status`, then `codex app-server --help` in Terminal. If Terminal
-works but Starcat cannot find Codex, choose the directory containing the complete
-Runtime package. For a CLI installation, this is normally `dirname "$(command -v codex)"`.
+In Terminal run `codex login status` and `codex app-server --help`. If Terminal works but Starcat cannot find Codex, choose the directory that contains the full Runtime. For a CLI install that is usually `dirname "$(command -v codex)"`.
 
-### DeepSeek reports a missing Provider
+### DeepSeek says the provider is missing
 
-The Provider must pass **Settings → AI → Test** and have an enabled Chat model.
-Saving an API key without a successful test is not considered a verified Runtime
-configuration.
+The provider must pass **Settings → AI → Test** and enable at least one Chat model. Saving a key without a successful test is not a verified Runtime setup.
 
 ### Gatekeeper mentions `pty.node`
 
-The wrong Cordis configuration is being used. Re-run the Starcat installer and
-select the generated `starcat.cordis.yml`. Starcat's configuration deliberately
-does not load the Harness bash/subprocess plugins, so a normal Agent run does not
-need `pty.node`.
+That is the wrong Cordis config. Re-run the Starcat installer script and select the generated `starcat.cordis.yml`. Starcat’s config deliberately does not load Harness bash/subprocess plugins; a normal Agent run does not need `pty.node`.
 
 ### Inspect saved paths
 
-These commands show paths only; they do not print API keys:
+These commands read paths only and do not print API keys:
 
 ```bash
 defaults read com.starcat.app.direct AgentRuntimeCodexExecutablePath
@@ -152,5 +129,9 @@ defaults read com.starcat.app.direct AgentRuntimeDeepSeekHarnessExecutablePath
 defaults read com.starcat.app.direct AgentRuntimeDeepSeekHarnessCordisConfigPath
 ```
 
-A missing Codex preference is valid when automatic detection is in use. DeepSeek
-paths are normally written by the installer.
+A missing first preference is normal when Codex uses auto-detect. DeepSeek paths are usually written by the installer.
+
+## Related
+
+- [Agent workspace](/agent-workspace/overview)
+- [AI configuration](/ai-features/configuration)
