@@ -1,40 +1,48 @@
 ---
 title: "我的项目"
-description: "浏览个人、组织与协作仓库，不限于已 Star 的收藏"
+description: "浏览自己在做的仓库（含私有 / Internal），不必已经 Star"
 ---
 
-## 是什么
+## 用来做什么
 
-**我的项目**列出你**拥有、所属组织或外部协作**的仓库——与是否 Star 无关。
+Stars 是「收藏待读」。**我的项目**是「我正在做 / 我有权限的仓」：个人拥有、组织成员、外部协作者，**跟有没有 Star 无关**。
 
-适合日常管理「自己在做的项目」（含私有 / Internal），同时把 Stars 继续当作「收藏待读」库。
+适合把工作仓和收藏库分开：工作仓走我的项目，逛到的开源库继续放在 Stars 里。
 
-## 入口
+## 怎么用
 
-侧栏 → **Manage → 我的项目**（文案以 App 为准）。
+侧栏 **Manage → 我的项目**。
 
-## 能做什么
+<Frame caption="截图待补充 · `images/screenshots/main-interface/my-projects.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    我的项目：按个人 / 组织 / 协作分组的列表，右侧打开某个私仓详情
+  </div>
+</Frame>
 
 | 能力 | 说明 |
 |------|------|
-| 按归属浏览 | 个人拥有 / 组织成员 / 协作者 |
-| 筛选与搜索 | 在可用范围内复用 Manage 列表能力 |
-| 详情栏 | 本地已缓存仓库的 README、标签、笔记、Health、AI 等 |
-| Star 趋势 | 在 GitHub 权限允许读取 stargazer 历史时可用 |
+| 按归属浏览 | 个人拥有 / 组织 / 协作者 |
+| 筛选与搜索 | 复用 Manage 列表的筛选和 ⌘F |
+| 详情 | 已缓存仓的 README、标签、笔记、Health、AI |
+| Star 趋势 | GitHub 允许读 stargazer 历史时可用 |
 
-## 授权说明
+## 授权
 
-| 来源 | 通常覆盖范围 |
-|------|----------------|
-| 主 GitHub 登录（OAuth / PAT） | 可列出的公开项目 |
-| **GitHub App**（应用内授权） | 安装范围内授权的**私有**与 **Internal** 项目 |
+| 来源 | 通常能看到 |
+|------|------------|
+| 主登录（OAuth / PAT） | 能列出的**公开**项目 |
+| **GitHub App**（应用内安装） | 安装范围内的**私有**和 **Internal** |
 
-私有项目不会进入 Discover / 趋势类公开发现面。
+看不到私仓时：在 App 里完成 GitHub App 授权，确认覆盖了对应组织 / 仓库，再同步一次。步骤见 [连接 GitHub](/zh-Hans/getting-started/github-connection)。
 
-若看不到私仓：完成应用内 GitHub App 授权，确认安装覆盖正确的组织 / 仓库，再同步一次。
+## 注意
+
+- 私有项目**不会**出现在 Discover / 趋势这类公开发现面。
+- 部分仅对公开仓开放的信号（例如部分 OpenSSF 路径）在私仓上可能没有。
+- 私仓洞察里需要更高权限的指标会走 GitHub App token，见 [洞察](/zh-Hans/main-interface/insights)。
+- Unstar 仍然走 GitHub API，和 Stars 列表里的行为一样。
 
 ## 相关
 
-- [连接 GitHub](/zh-Hans/getting-started/github-connection)
-- [洞察](/zh-Hans/main-interface/insights)
 - [侧边栏](/zh-Hans/main-interface/sidebar)
+- [仓库详情](/zh-Hans/main-interface/repo-detail)

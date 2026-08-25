@@ -1,37 +1,46 @@
 ---
 title: "Toolbar"
-description: "Center-column page toolbar and global shortcut cross-reference"
+description: "What the middle-column toolbar does, and how it differs from ⌘K / ⌘F"
 ---
 
-## Location
+## What it is for
 
-Top of the **center column** in the main window. Available buttons change with the current page (Manage list, Discover, collections, and more).
+The toolbar sits on **top of the middle column** and changes with the page: Manage list, Explore, collections, and the notification timeline expose different controls. Global search is not on this bar; that is **⌘K** by default.
 
-## High-frequency buttons
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/toolbar.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Middle toolbar: Sync, filters, search field, Knowledge Q&A, status
+  </div>
+</Frame>
 
-| Button | Description |
-|--------|-------------|
-| **Sync** | Fetch / incrementally sync GitHub Stars; spins while in progress |
+## Frequent buttons
+
+| Button | Job |
+|--------|-----|
+| **Sync** | Fetch / incrementally sync Stars; spins while running. Uses the product sync icon `arrow.triangle.2.circlepath` |
 | **Filter** | [Unified filters](/search/filters) |
 | **Multi-select** | [Batch operations](/manage-stars/batch-operations) |
-| **List search** | Keywords / semantic search for the current list; default often **⌘F** |
-| **Knowledge base Q&A** | Open [RAG workspace](/knowledge-base/rag-workspace) |
-| **External link / Clone / AI** | Usually appear when a repo is selected |
-| **Status** | Sync, indexing, and official GitHub status; you can open the GitHub Status page when something is wrong |
+| **List search** | Keyword or semantic search for the **current** list; often **⌘F** |
+| **Knowledge Q&A** | Opens [RAG workspace](/knowledge-base/rag-workspace) |
+| **Link / Clone / AI / CodeFlow** | Usually after a repo is selected |
+| **Status** | Sync, indexing, and official GitHub status; opens GitHub Status when something is wrong |
 
-Refresh-style icon-only controls use the product’s unified sync icon style (not arbitrary `arrow.clockwise`).
+## vs shortcuts
 
-## vs global shortcuts
+| Action | Default | Do not confuse with |
+|--------|---------|---------------------|
+| Search Center | **⌘K** | Four-scope search, **not** the list search field |
+| List search | **⌘F** | Filters the current middle list only |
+| Refresh | **⌘R** | List or detail, depending on focus |
+| Repo AI | **⇧⌘A** | Needs Pro + AI setup |
+| RAG | **⇧⌘K** | Needs Pro |
 
-| Capability | Default shortcut | Notes |
-|------------|------------------|-------|
-| Search Center | **⌘K** | Four-scope aggregated search—not always the same as the list search field |
-| Focus list search | **⌘F** | SmartSearchField |
-| Refresh current content | **⌘R** | List or detail context, depending on focus |
-| Repo AI | **⇧⌘A** | Requires Pro + AI configuration |
-| RAG workspace | **⇧⌘K** | Requires Pro |
+All of these are editable in [Shortcuts](/settings/shortcuts).
 
-All can be changed in [Shortcuts](/settings/shortcuts). Do not confuse ⌘K with ⌘F.
+## Notes
+
+- Refresh on Explore pages refreshes discovery cache, not a full Stars sync.
+- Official GitHub status is public githubstatus.com-style status, not your API quota panel.
 
 ## Related
 

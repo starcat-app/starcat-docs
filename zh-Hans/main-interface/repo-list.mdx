@@ -1,56 +1,51 @@
 ---
 title: "仓库列表"
-description: "中栏列表行信息、工具栏、排序密度与探索差异"
+description: "中栏列表显示什么、如何置顶、和探索列表有何不同"
 ---
 
-## 列表在做什么
+## 用来做什么
 
-中栏展示**当前侧栏选中分类**下的仓库行（Manage）或榜单结果（探索）。
+中栏是当前侧栏分类下的**扫读面**：Manage 里是你的仓库，探索里是榜单结果。点一行，右边打开详情。不要把这里当成 GitHub 网站的仓库首页。
 
-一行里通常能看到：
+<Frame caption="截图待补充 · `images/screenshots/main-interface/repo-list.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Manage 列表：置顶角标、标签胶囊、Health 徽章、选中行
+  </div>
+</Frame>
 
-- 仓库全名与描述摘要  
-- 语言、Star 数等  
-- 标签胶囊（若有）  
-- Health / OpenSSF 等徽章（若已有缓存）  
-- **置顶角标**（左上角）：在 Manage 中置顶时显示  
-- **AI 摘要标识**：已生成摘要的仓库可快速辨认  
+一行里通常能看到：全名和描述摘要、语言与 Star 数、标签胶囊、Health / OpenSSF 徽章（有缓存才显示）、Manage 置顶角标、AI 摘要是否已生成。
 
-点击一行 → 右侧打开 [仓库详情](/zh-Hans/main-interface/repo-detail)。
+## 置顶（仅 Manage）
 
-## 置顶（Manage）
+右键或行内操作 **Pin / Unpin**。当前分类内按**最近置顶**优先。置顶也会给 [Focus 小组件](/zh-Hans/main-interface/widgets) 当候选。探索榜单没有同样的个人置顶语义。
 
-在 Manage 列表可对仓库 **Pin / Unpin**（右键或行内操作）。置顶仓库在当前分类内按**最近置顶**优先排序。置顶也会帮助 [桌面 Focus 小组件](/zh-Hans/main-interface/widgets) 挑选常用仓库。
-
-## Manage 工具栏
+## 工具栏
 
 | 控件 | 作用 | 文档 |
 |------|------|------|
-| 统一筛选 | 状态 / 入库 / 语言 / Wiki / Health… | [筛选](/zh-Hans/search/filters) |
+| 筛选 | 状态 / 入库 / 语言 / Wiki / Health… | [筛选](/zh-Hans/search/filters) |
 | 多选 | 底部批量栏 | [批量操作](/zh-Hans/manage-stars/batch-operations) |
-| Stars 同步 | 与 GitHub 同步 | [同步设置](/zh-Hans/settings/sync) |
-| 列表搜索 | 关键词（常 **⌘F**）或语义 | [列表搜索](/zh-Hans/search/global-search) |
-| 集合齿轮 | 编辑 Smart Collection | [智能集合](/zh-Hans/manage-stars/smart-collections) |
+| 同步 | 拉 GitHub Stars | [同步](/zh-Hans/settings/sync) |
+| 列表搜索 | ⌘F 关键词或语义 | [列表搜索](/zh-Hans/search/global-search) |
+| 集合齿轮 | 编辑当前 Smart Collection | [智能集合](/zh-Hans/manage-stars/smart-collections) |
 
-选中仓库后，trailing 区还可能出现外链、Clone、分享、AI 等。总览见 [工具栏](/zh-Hans/main-interface/toolbar)。
+选中仓库后，右侧还可能出现外链、Clone、分享、AI、CodeFlow。总览见 [工具栏](/zh-Hans/main-interface/toolbar)。
 
-## 探索列表差异
+## 探索列表
 
-- 数据来自发现/趋势/周刊等 API，不是「仅你的 Stars」  
-- 批量动作更偏 Star / 入库  
-- 筛选维度通常更少  
+- 数据来自发现 / 趋势 / 周刊服务，不是「仅你的 Stars」
+- 批量更偏 Star / 入库
+- 筛选维度通常更少
 
 见 [探索概览](/zh-Hans/discover/explore/overview)。
 
-## 排序与密度
+## 注意
 
-- 排序字段与方向：工具栏或列表偏好  
-- 行距：Comfortable / Compact → [通用设置](/zh-Hans/settings/general)  
-- 筛选条件常按模块记忆  
-
-若列表「怎么都空」：检查筛选是否过严，或点重置筛选。
+- 列表空：先看筛选是否过严，再点重置；不要先怀疑同步坏了。
+- 筛选条件常按模块记住：从「标签 A」切回 All Stars，两边可能恢复各自上次条件。
+- 行距 Comfortable / Compact 在 [通用设置](/zh-Hans/settings/general)。
 
 ## 相关
 
 - [侧边栏](/zh-Hans/main-interface/sidebar)
-- [界面概览](/zh-Hans/main-interface/overview)
+- [仓库详情](/zh-Hans/main-interface/repo-detail)

@@ -1,50 +1,70 @@
 ---
 title: "Repository detail"
-description: "README, metadata, tags and notes, AI, Health, and destructive actions"
+description: "README, organize actions, AI, in-app docs, video, CodeFlow, and Unstar"
 ---
 
-## Panel layout
+## What it is for
 
-When you select a repo, the right detail pane roughly includes:
+After you select a repository, the right pane is **that repo’s workbench**: README, tags, notes, Star / ingest / subscribe, plus Pro Health, Insights, similar repos, and AI. The list is for scanning; detail is for acting.
 
-1. **Metadata header**: full name, description, stats, license, homepage link, and more  
-2. **Actions**: Star/Unstar, ingest, subscribe to Release, Wiki, similar repos, Health, and more (some require Pro)  
-3. **README**: WebView-rendered GFM; supports images, anchors, and common GitHub layout  
-4. **Organization**: [Tags](/manage-stars/tags), [Notes and status](/manage-stars/notes-and-status)  
-5. **AI overlay entry**: summary / chat, and more → [AI overview](/ai-features/overview)
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/repo-detail.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Right detail: metadata header, actions, README with Mermaid or video
+  </div>
+</Frame>
 
-## Common README actions
+Typical stack: metadata header → actions → README → tags / notes / status → AI overlay.
 
-| Action | Description |
-|--------|-------------|
-| Open in browser | Jump to the GitHub repo page |
-| Clone menu | Copy HTTPS / SSH, and more |
-| Export Markdown | Export the current README |
-| Translate | Pro → [README translation](/ai-features/readme-translation) |
-| Share link | Copy a link that opens Starcat on this repo → [Share links](/share-export/share-links) |
+## README
 
-README supports common GFM plus **Mermaid** diagrams (local render; falls back to source when rendering fails).
+A WebView renders GitHub Flavored Markdown, including images and anchors. **Mermaid** renders locally and falls back to source on failure.
 
-Videos in GitHub READMEs can play with native controls. Playback is manual; it stops when you switch repositories or close detail. Unsupported sources still open in the browser.
+| Action | Detail |
+|--------|--------|
+| Open in browser | GitHub repository page |
+| Clone | Copy HTTPS / SSH |
+| Export Markdown | Current README |
+| Translate | Pro. See [README translation](/ai-features/readme-translation) |
+| Share link | Open this repo inside Starcat. See [Share links](/share-export/share-links) |
 
-**Settings → General** can turn on **Open repository docs in the app**. Markdown links in the README that point at the same repository then open in a separate window. The default is still the browser; ⌘-click always uses the browser.
+Videos in GitHub READMEs play with native controls. Playback is **manual**; it stops when you switch repos or close detail. Unsupported sources still open in the browser.
 
-## Pro-related entries (in detail)
+**Settings → General → Open repository docs in the app** opens Markdown links that point at **this repository** in a separate window. The default is still the browser; **⌘-click always uses the browser**.
+
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/in-app-docs.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    In-app window showing a same-repo Markdown doc
+  </div>
+</Frame>
+
+## Pro entries
 
 | Capability | Docs |
 |------------|------|
-| Repo Health / OpenSSF | [Repo Health](/main-interface/repo-health) |
+| Repo Health / OpenSSF | [Health](/main-interface/repo-health) |
 | Repository Insights | [Insights](/main-interface/insights) |
-| Similar repos | [Similar recommendations](/discover/explore/similar-repos) |
-| External Wiki | Wiki entry on detail (gating follows the app) |
-| AI overlay | [AI chat](/ai-features/chat) |
-| CodeFlow | 3D code graph for **public** repos (Pro); toolbar entry. Private repos are not supported. Direct needs a local install — [Integrations](/settings/integrations) |
+| Similar repos | [Similar repos](/discover/explore/similar-repos) |
+| Wiki | Detail Wiki entry; gating follows the app |
+| AI overlay | [AI chat](/ai-features/chat), default ⇧⌘A |
+| CodeFlow | 3D graph for **public** repos; no entry on private repos. Direct needs a local install. See [Integrations](/settings/integrations) |
+
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/codeflow.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    CodeFlow 3D graph (public repo, Pro)
+  </div>
+</Frame>
 
 ## Unstar
 
-Unstarring from detail calls the GitHub API and **cannot be undone with one tap inside Starcat**. Batch Unstar: [Batch operations](/manage-stars/batch-operations).
+Unstarring from detail calls the GitHub API and **cannot be undone in one tap inside Starcat**. Batch: [Batch operations](/manage-stars/batch-operations).
+
+## Notes
+
+- README is cached; a file you just changed on GitHub may need a refresh.
+- In-app docs only follow same-repo links. External URLs still use the browser.
 
 ## Related
 
-- [Adding to the knowledge base](/knowledge-base/adding-repos)
-- [Release subscription](/release/subscription)
+- [Ingest](/knowledge-base/adding-repos)
+- [Release subscriptions](/release/subscription)
+- [Tags](/manage-stars/tags)

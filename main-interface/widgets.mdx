@@ -1,35 +1,42 @@
 ---
 title: "Desktop widgets"
-description: "macOS widgets for Focus, Rediscovery, Release Watch, and Collection Trend"
+description: "Focus repos, daily rediscovery, unread Releases, and collection growth on the desktop"
 ---
 
-## What you get
+## What they are for
 
-Starcat ships four WidgetKit widgets you can add from the macOS desktop / Notification Center widget gallery:
+Glance without opening Starcat: repos you actually use, a daily rediscovery from Stars, unread Releases, and recent collection growth. Taps return to the matching surface **inside the app**, not a random GitHub tab.
 
-| Widget | Purpose |
-|--------|---------|
-| **Starcat Focus** | Frequently used / pinned / “using” repositories with deep links |
-| **Rediscovery** | A daily rediscovery pick from your library |
-| **Release Watch** | Unread or recent Release signals with deep links into Starcat |
-| **Collection Trend** | Recent starring / collection growth at a glance |
+Four WidgetKit widgets (system names follow the UI language):
 
-Exact titles follow localized widget display names in the system gallery.
+| Widget | Job |
+|--------|-----|
+| **Starcat Focus** | Frequent / pinned / “using” repos |
+| **Rediscovery** | One daily pick from your Stars |
+| **Release Watch** | Unread or recent Releases |
+| **Collection Trend** | Recent Stars growth |
 
-## Requirements
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/widgets.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    macOS desktop with all four Starcat widgets
+  </div>
+</Frame>
 
-- Starcat installed (App Store or Direct) with the widget extension  
-- Signed in at least once so the app can publish a widget snapshot  
-- macOS widget gallery → search **Starcat** → add the size you want  
+## How to add them
 
-If a widget looks empty or stale: open Starcat once (to refresh the snapshot), confirm you are signed in, then wait for the next timeline refresh or re-add the widget.
+1. Install Starcat (App Store or Direct); the widget extension ships with it
+2. Sign in at least once so the app can publish snapshots
+3. Open the macOS widget gallery, search **Starcat**, pick a size
 
-## Deep links
+Blank or stale: open Starcat once, confirm you are signed in, wait for the next timeline refresh, or remove and add the widget again.
 
-Tapping a row usually opens Starcat at the matching repository, Release timeline, or related surface. Release deep links prefer App-controlled URLs rather than raw GitHub Release pages.
+## Notes
+
+- Taps use controlled `starcat://` links. Release items prefer the in-app timeline, not the raw GitHub Release page.
+- Focus candidates include repos you [pin](/main-interface/repo-list) in the list.
+- Widgets read **this Mac’s** snapshot, not another machine’s library.
 
 ## Related
 
 - [Release notifications](/release/notifications)
-- [Repository list](/main-interface/repo-list) (pinning feeds Focus candidates)
-- [Changelog](/changelog)
+- [Repository list](/main-interface/repo-list)

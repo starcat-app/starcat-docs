@@ -1,59 +1,61 @@
 ---
 title: "Insights"
-description: "My Insights for the whole library and Repository Insights per repo"
+description: "Library-wide organization progress, plus per-repo activity, advisories, and Release assets"
 ---
 
-## Overview
+## What it is for
 
-Starcat insights help you **see the shape of your library** and **understand a single repository** without leaving the app.
+Two layers:
 
-| Surface | Scope | Entry |
-|---------|-------|-------|
-| **My Insights** | All Stars **or** Knowledge Base | Sidebar → Manage → My Insights |
-| **Repository Insights** | Selected repository | Detail pane / Insights entry on a repo |
+- **My Insights**: how the whole Stars library or knowledge base is organized, tech distribution, what still needs attention
+- **Repository Insights**: what this repo has been doing, health, and security advisories
+
+Generated insights can attach to AI summary, repo chat, and RAG as removable read-only context.
 
 ## My Insights
 
-Review:
+Entry: sidebar **Manage → My Insights**. Switch scope between All Stars and Knowledge base. Refresh manually when you need fresh data; it is not a live GitHub dashboard.
 
-- Organization progress and triage metrics  
-- Technology / language / topic-style distributions (as shown in the UI)  
-- Project status and assets that may need cleanup  
-- Action items that **drill down** into the matching repository list  
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/my-insights.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    My Insights: progress, distribution charts, drill-down action cards
+  </div>
+</Frame>
 
-Switch scope between **All Stars** and **Knowledge Base**, then refresh when you want a fresh snapshot.
+Typical content: triage metrics, language / topic distribution, project status, cleanup candidates. Cards **drill down** into the matching repository list.
 
 ## Repository Insights
 
-Typical sections (availability depends on network, permissions, and cache):
+Entry: Insights on the selected repository’s detail pane. Sections depend on network, permissions, and cache.
 
-- Star growth and collaboration activity  
-- Commit trends and contributors  
-- Release cadence; the latest Release can show the first 3 assets, expand the rest, copy links, or download locally  
-- Project health, community standards, and security signals  
-- The latest 5 published security advisories: severity, GHSA / CVE, date, and publisher, with links to the advisory or the full GitHub list 
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/repo-insights.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Repository Insights: Star growth, release cadence, advisories, and Release assets
+  </div>
+</Frame>
 
-Content should stay stable while you switch repositories or refresh; some GitHub stats endpoints may briefly show a generating state and retry automatically.
+- Star growth and collaboration
+- Commit trends and contributors
+- Release cadence; the latest Release shows the first 3 assets, expandable, with copy / download
+- Health, community standards, security signals
+- Latest 5 published advisories: severity, GHSA / CVE, date, publisher; open the advisory or the full GitHub list
 
-### Private My Projects
+Content should stay stable while you switch repos or refresh. Some GitHub stats endpoints briefly show a generating state and retry.
 
-For private repos listed under [My Projects](/main-interface/my-projects), metrics that require elevated access use the **GitHub App** token. Some public-only signals (for example certain OpenSSF paths) may remain unavailable.
+For private repos in [My Projects](/main-interface/my-projects), elevated metrics use the **GitHub App** token. Some public-only signals may stay unavailable.
 
-## Insight context for AI and RAG
+## For AI / RAG
 
-After insights are generated, Starcat can attach them as a **removable, read-only XML context** to:
+Insights become **removable read-only XML context** for summary, chat, and [RAG](/knowledge-base/rag-workspace). Custom prompts that omit insight placeholders do **not** inject them silently. Unavailable, not injected, or fallback states are labeled in the UI.
 
-- AI repository summaries  
-- Repository chat  
-- [RAG workspace](/knowledge-base/rag-workspace) answers  
+Library-wide aggregates also feed knowledge-base answers as shared context.
 
-You should see clear status when insights are unavailable, when a custom prompt omits them, or when the app falls back.
+## Notes
 
-Library-level insight aggregates can also feed knowledge-base Q&A as shared facts.
+- Insights are a reading aid, not a security audit.
+- Advisories and assets need GitHub access. A fetch failure is not “no vulnerabilities”.
 
 ## Related
 
-- [My Projects](/main-interface/my-projects)
 - [Repo Health](/main-interface/repo-health)
 - [AI overview](/ai-features/overview)
-- [RAG workspace](/knowledge-base/rag-workspace)

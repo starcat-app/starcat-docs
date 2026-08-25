@@ -1,52 +1,55 @@
 ---
 title: "Repo Health and OpenSSF"
-description: "Four-dimension health scores, OpenSSF badges, and Pro gating"
+description: "Four-axis scores and OpenSSF badges to decide whether a repo is worth your time (Pro)"
 ---
 
-## Repo Health (Pro)
+## What it is for
 
-Helps you quickly judge whether a repo is worth your time: maintenance activity, community and quality signals, and more.
+Before you dive into source or file an issue, check whether the repo is still maintained and what quality / security signals look like. **Repo Health is a reading aid, not a security audit.**
+
+Requires [Pro](/subscribe/plan-comparison). Non-Pro taps open the paywall.
 
 <Frame caption="Repo Health">
-  <img src="/images/screenshots/health-score.webp" alt="Repo Health screenshot" className="rounded-xl" />
+  <img src="/images/screenshots/health-score.webp" alt="Repo Health" className="rounded-xl" />
 </Frame>
 
-### Where to see it
+## Where to look
 
-- Health badge on list rows  
-- Badge in the detail metadata area → opens the **Repo Health** panel  
+- Health badge on list rows
+- Badge in detail metadata → **Repo Health** panel
 
-Non-Pro taps show the paywall. See [Plan comparison](/subscribe/plan-comparison) and [Purchase](/subscribe/purchase).
+Typical four axes (0–100; labels follow the app):
 
-### What the panel shows
+- **Maintenance**: commit / Release activity
+- **Popularity**: Stars and community heat
+- **Quality**: docs and engineering signals
+- **Security**: including OpenSSF alignment
 
-Common four-dimension score cards (0–100; dimension labels follow the app), for example:
-
-- **Maintenance**: commit / Release activity and related signals  
-- **Popularity**: Stars, community heat, and similar  
-- **Quality**: documentation and engineering signals  
-- **Security**: security-related signals (including OpenSSF-related display)
-
-You can open “scoring rules” for an explanation and refresh manually. Scores are a helper—not a substitute for your own security review.
+Open **Scoring rules** and refresh manually when needed.
 
 ## OpenSSF
 
-Detail can show OpenSSF Scorecard-related badges:
+Detail can show an OpenSSF Scorecard badge: hover or click for a summary / radar; full checks open a sheet.
 
-- Hover / click for a summary or radar view  
-- Full checks open in a dedicated sheet (when provided)  
+<Frame caption="OpenSSF Scorecard">
+  <img src="/images/screenshots/openssf.webp" alt="OpenSSF score" className="rounded-xl" />
+</Frame>
 
-Data depends on network and cache; on failure, follow the in-app error message.
+Data depends on network and cache. A fetch error is not a score of zero.
 
-## Filtering
+## Filters and the browser extension
 
-Toolbar filters can limit to repos that **already have Health / OpenSSF data**, so you browse only scored projects. See [Filters](/search/filters).
+Toolbar filters can limit the list to repos that already have Health / OpenSSF cache. See [Filters](/search/filters).
 
-## Browser extension
+The browser extension shows **locally cached** read-only scores; it does not recompute a full Scorecard on github.com. See [Extension features](/browser-plugin/features).
 
-The GitHub page extension can show **locally cached** Health / OpenSSF read-only info; it does not trigger a full recalculation on the web page. See [Extension features](/browser-plugin/features).
+## Notes
+
+- Some OpenSSF paths are unavailable on private repos. See [My Projects](/main-interface/my-projects).
+- Directory-style GitHub Issue Forms count as community standards, not as “missing”.
 
 ## Related
 
 - [Repository detail](/main-interface/repo-detail)
-- OpenSSF Scorecard upstream concept: [openssf.org](https://openssf.org/) (external)
+- [Insights](/main-interface/insights)
+- OpenSSF: [openssf.org](https://openssf.org/)

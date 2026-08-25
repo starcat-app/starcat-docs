@@ -1,35 +1,42 @@
 ---
 title: "桌面小组件"
-description: "macOS 小组件：Focus、今日重逢、Release Watch、收藏趋势"
+description: "在桌面看常用仓、每日重逢、未读 Release 和收藏增长"
 ---
 
-## 有哪些
+## 用来做什么
 
-Starcat 提供四个 WidgetKit 小组件，可在 macOS 桌面 / 通知中心小组件库中添加：
+不必打开 Starcat 也能扫一眼：常去的仓、今天该重逢的老收藏、未读 Release、最近 Stars 涨了多少。点进去仍回到 App 里对应界面，而不是随手打开 GitHub 网页。
+
+四个 WidgetKit 小组件（系统库里的名字跟语言走）：
 
 | 小组件 | 作用 |
 |--------|------|
-| **Starcat Focus** | 常用 / 置顶 /「使用中」仓库，可点击直达 |
-| **今日重逢（Rediscovery）** | 从收藏库中给出每日重逢推荐 |
-| **Release Watch** | 未读或近期 Release 信号，点击进入 Starcat |
-| **收藏趋势（Collection Trend）** | 一眼查看近期收藏增长 |
+| **Starcat Focus** | 常用 / 置顶 /「使用中」仓库 |
+| **今日重逢** | 从收藏里抽一条每日重逢 |
+| **Release Watch** | 未读或近期 Release |
+| **收藏趋势** | 近期收藏增长 |
 
-系统小组件库中的显示名称以本地化为准。
+<Frame caption="截图待补充 · `images/screenshots/main-interface/widgets.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    macOS 桌面：四个 Starcat 小组件排在一起
+  </div>
+</Frame>
 
-## 使用前提
+## 怎么加
 
-- 已安装 Starcat（App Store 或 Direct）并带有小组件扩展  
-- 至少登录过一次，以便应用发布小组件快照  
-- 打开 macOS 小组件库 → 搜索 **Starcat** → 添加合适尺寸  
+1. 安装 Starcat（App Store 或 Direct），扩展会一起装上
+2. 至少成功登录一次，App 才会发布快照
+3. 打开 macOS 小组件库，搜 **Starcat**，选尺寸
 
-若小组件空白或过期：先打开一次 Starcat（刷新快照），确认已登录，等待下一次时间线刷新，或重新添加小组件。
+空白或过期：先打开一次 Starcat，确认已登录，等下一轮刷新，或删掉重加。
 
-## 深层链接
+## 注意
 
-点击条目通常会打开 Starcat 中对应的仓库、Release 时间线或相关界面。Release 链接优先走应用可控的 URL，而不是直接跳到原始 GitHub Release 页。
+- 点击走 `starcat://` 一类可控链接。Release 优先进 App 的时间线，不直接跳原始 GitHub Release 页。
+- Focus 候选包含你在列表里 [置顶](/zh-Hans/main-interface/repo-list) 的仓。
+- 小组件读的是本机快照，不是另一台 Mac 上的库。
 
 ## 相关
 
 - [Release 通知](/zh-Hans/release/notifications)
-- [仓库列表](/zh-Hans/main-interface/repo-list)（置顶会进入 Focus 候选）
-- [更新日志](/zh-Hans/changelog)
+- [仓库列表](/zh-Hans/main-interface/repo-list)

@@ -1,50 +1,70 @@
 ---
 title: "仓库详情"
-description: "README、元数据、标签笔记、AI、Health 与危险操作"
+description: "README、整理、AI、文档链接、视频、CodeFlow 和 Unstar"
 ---
 
-## 面板组成
+## 用来做什么
 
-选中仓库后，右侧详情大致包括：
+选中仓库后，右侧是**这一仓的工作台**：读 README、打标签、写笔记、Star / 入库 / 订阅，以及 Pro 的 Health、洞察、相似推荐、AI。列表负责扫，详情负责动手。
 
-1. **元数据头**：全名、描述、统计、许可证、主页链接等  
-2. **操作区**：Star/Unstar、入库、订阅 Release、Wiki、相似推荐、Health 等（部分需 Pro）  
-3. **README**：WebView 渲染 GFM；支持图片、锚点等常见 GitHub 排版  
-4. **整理区**：[标签](/zh-Hans/manage-stars/tags)、[笔记与状态](/zh-Hans/manage-stars/notes-and-status)  
-5. **AI 浮层入口**：摘要 / 对话等 → [AI 概览](/zh-Hans/ai-features/overview)
+<Frame caption="截图待补充 · `images/screenshots/main-interface/repo-detail.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    右侧详情：元数据头、操作按钮、README（含 Mermaid 或视频）
+  </div>
+</Frame>
 
-## README 常用操作
+面板大致是：元数据头 → 操作区 → README → 标签 / 笔记 / 状态 → AI 浮层入口。
+
+## README
+
+WebView 渲染 GitHub Flavored Markdown，含图片、锚点。**Mermaid** 在本地画，失败则退回源码。
 
 | 操作 | 说明 |
 |------|------|
-| 浏览器打开 | 跳转 GitHub 仓库页 |
-| Clone 菜单 | 复制 HTTPS / SSH 等 |
+| 浏览器打开 | GitHub 仓库页 |
+| Clone | 复制 HTTPS / SSH |
 | 导出 Markdown | 导出当前 README |
-| 翻译 | Pro → [README 翻译](/zh-Hans/ai-features/readme-translation) |
-| 分享链接 | 复制可在 Starcat 中定位该仓库的链接 → [分享链接](/zh-Hans/share-export/share-links) |
+| 翻译 | Pro，见 [README 翻译](/zh-Hans/ai-features/readme-translation) |
+| 分享链接 | 在 Starcat 里定位该仓，见 [分享链接](/zh-Hans/share-export/share-links) |
 
-README 支持常见 GFM，以及 **Mermaid** 图表（本地渲染；失败时回退显示原始内容）。
+GitHub README 里的视频用原生控件播：要**手动开始**；切仓或关掉详情立刻停。不支持的来源仍走浏览器。
 
-GitHub README 里的视频可用原生控件播放：需手动开始，切换仓库或关闭详情页后立即停止；不支持的来源继续在浏览器打开。
+**设置 → 通用 → 应用内打开仓库文档** 打开后，指向**本仓库**的 Markdown 链接会在独立窗口打开。默认仍用浏览器；**⌘-点击始终用浏览器**。
 
-**设置 → 通用** 可开启「应用内打开仓库文档」。开启后，README 中指向本仓库的 Markdown 链接会在独立窗口打开；默认仍走浏览器，⌘-点击始终打开浏览器。
+<Frame caption="截图待补充 · `images/screenshots/main-interface/in-app-docs.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    独立窗口打开的仓库内 Markdown 文档
+  </div>
+</Frame>
 
-## Pro 相关入口（详情内）
+## Pro 入口
 
-| 能力 | 文档 |
+| 能力 | 说明 |
 |------|------|
-| Repo Health / OpenSSF | [Repo Health](/zh-Hans/main-interface/repo-health) |
+| Repo Health / OpenSSF | [Health](/zh-Hans/main-interface/repo-health) |
 | 仓库洞察 | [洞察](/zh-Hans/main-interface/insights) |
 | 相似仓库 | [相似推荐](/zh-Hans/discover/explore/similar-repos) |
-| 外部 Wiki | 详情 Wiki 入口（门控以 App 为准） |
-| AI 浮层 | [AI 对话](/zh-Hans/ai-features/chat) |
-| CodeFlow | 公开仓库的 3D 代码图谱（Pro）；工具栏入口。私仓不可用。Direct 需本机安装，见 [集成](/zh-Hans/settings/integrations) |
+| Wiki | 详情 Wiki 入口；是否开放看 App 门控 |
+| AI 浮层 | [AI 对话](/zh-Hans/ai-features/chat)，默认 ⇧⌘A |
+| CodeFlow | **公开仓**的 3D 代码图谱；私仓没有入口。Direct 要本机安装，见 [集成](/zh-Hans/settings/integrations) |
+
+<Frame caption="截图待补充 · `images/screenshots/main-interface/codeflow.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    CodeFlow 3D 代码图谱（公开仓、Pro）
+  </div>
+</Frame>
 
 ## Unstar
 
-在详情发起取消 Star 会调用 GitHub API，**不可在 Starcat 内一键撤销**。批量 Unstar 见 [批量操作](/zh-Hans/manage-stars/batch-operations)。
+详情里取消 Star 会打 GitHub API，**不能在 Starcat 里一键撤销**。批量见 [批量操作](/zh-Hans/manage-stars/batch-operations)。
+
+## 注意
+
+- README 是缓存的；刚改过 GitHub 上的文件，可能要等刷新。
+- 应用内文档只跟当前仓库的相对 / 同仓链接；外链仍走浏览器。
 
 ## 相关
 
 - [入库](/zh-Hans/knowledge-base/adding-repos)
 - [Release 订阅](/zh-Hans/release/subscription)
+- [标签](/zh-Hans/manage-stars/tags)

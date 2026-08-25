@@ -1,59 +1,61 @@
 ---
 title: "洞察"
-description: "我的洞察（全局）与仓库洞察（单仓）"
+description: "看整个收藏库的整理进度，以及单个仓库的活动、安全和 Release 附件"
 ---
 
-## 概览
+## 用来做什么
 
-洞察帮助你**看清整个收藏库的状态**，并在**单个仓库**上快速理解活动与健康信号。
+洞察有两层：
 
-| 界面 | 范围 | 入口 |
-|------|------|------|
-| **我的洞察** | 全部收藏 **或** 知识库 | 侧栏 → Manage → 我的洞察 |
-| **仓库洞察** | 当前选中仓库 | 仓库详情中的洞察入口 |
+- **我的洞察**：整个 Stars 库或知识库「整理得怎么样、技术栈怎么分布、有哪些该处理」
+- **仓库洞察**：当前这个仓最近在忙什么、健不健康、有没有安全公告
+
+生成后的洞察可以挂到 AI 摘要、仓库对话和 RAG 上当只读上下文，用完能摘掉。
 
 ## 我的洞察
 
-可查看：
+入口：侧栏 **Manage → 我的洞察**。范围可在「全部收藏」和「知识库」之间切。要点刷新时手动刷，不要假设它实时跟 GitHub 同步。
 
-- 整理进度与分诊指标  
-- 技术 / 语言 / Topic 等分布（以界面展示为准）  
-- 项目状态与可能需要清理的资产  
-- 可**下钻**到对应仓库列表的待办项  
+<Frame caption="截图待补充 · `images/screenshots/main-interface/my-insights.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    我的洞察：整理进度、分布图、可下钻的待办卡片
+  </div>
+</Frame>
 
-在「全部收藏」与「知识库」之间切换范围；需要新鲜数据时手动刷新。
+常见内容：整理 / 分诊指标、语言与 Topic 分布、项目状态、需要清理的项。点卡片会**下钻**到对应仓库列表。
 
 ## 仓库洞察
 
-常见区块（取决于网络、权限与缓存）：
+入口：选中仓库后，详情里的洞察。依赖网络、权限和缓存，区块不一定每次都齐。
 
-- Star 增长与协作活动  
-- 提交趋势与贡献者  
-- 发布节奏；最新 Release 可查看前 3 个附件，可展开全部，并复制链接或下载到本地  
-- 项目健康度、社区规范与安全信号  
-- 最近 5 条已发布安全公告：风险等级、GHSA / CVE、发布日期和发布者，可打开公告详情或 GitHub 完整列表 
+<Frame caption="截图待补充 · `images/screenshots/main-interface/repo-insights.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    仓库洞察：Star 增长、发布节奏、安全公告和 Release 附件
+  </div>
+</Frame>
 
-切换仓库或刷新时内容应保持稳定；部分 GitHub 统计接口可能短暂处于生成中并自动重试。
+- Star 增长与协作活动
+- 提交趋势与贡献者
+- 发布节奏；最新 Release 先展示前 3 个附件，可展开全部，复制链接或下载到本地
+- 健康度、社区规范、安全信号
+- 最近 5 条已发布安全公告：风险等级、GHSA / CVE、日期、发布者；可打开公告或 GitHub 完整列表
 
-### 私有「我的项目」
+切仓或刷新时内容应稳住。部分 GitHub 统计会先显示「生成中」再自动重试。
 
-[我的项目](/zh-Hans/main-interface/my-projects) 中的私仓，需要更高权限的指标会走 **GitHub App** token。部分仅公开仓可用的信号（例如部分 OpenSSF 路径）可能仍不可用。
+[我的项目](/zh-Hans/main-interface/my-projects) 里的私仓，高权限指标走 **GitHub App** token。部分只对公开仓开放的信号可能仍没有。
 
-## 洞察上下文（AI / RAG）
+## 给 AI / RAG 用
 
-洞察生成后，可作为**可移除的只读 XML 上下文**参与：
+洞察生成后是**可移除的只读 XML 上下文**，可参与摘要、对话和 [RAG](/zh-Hans/knowledge-base/rag-workspace)。自定义提示词没写洞察占位符时，**不会**偷偷塞进去。不可用、未注入或回退时，界面会标明。
 
-- AI 仓库摘要  
-- 仓库对话  
-- [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 回答  
+全局洞察聚合也会作为知识库问答的共享上下文。
 
-当洞察不可用、自定义提示词未注入，或发生回退时，界面会给出明确状态。
+## 注意
 
-全局洞察聚合事实也可作为知识库问答的共享上下文。
+- 洞察是辅助判断，不是安全审计结论。
+- 安全公告和附件需要能访问 GitHub；失败时看界面提示，不要当「没有漏洞」。
 
 ## 相关
 
-- [我的项目](/zh-Hans/main-interface/my-projects)
 - [Repo Health](/zh-Hans/main-interface/repo-health)
-- [AI 总览](/zh-Hans/ai-features/overview)
-- [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace)
+- [AI 概览](/zh-Hans/ai-features/overview)

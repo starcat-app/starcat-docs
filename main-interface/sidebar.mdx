@@ -1,46 +1,63 @@
 ---
 title: "Sidebar"
-description: "Manage, Discover, and Activity sub-entries plus the user area"
+description: "When to use Manage, Explore, and Activity, plus the user area"
 ---
 
-## Structure
+## What it is for
 
-The sidebar is typically organized top to bottom as:
+The sidebar picks **which set of repositories or notifications** the list shows. Switch the top-level area first, then a subcategory. That is faster than tightening filters on All Stars.
 
-1. **Top-level switch**: Manage / Discover / Activity  
-2. **Sub-navigation under the current top level** (groups can collapse)  
-3. **User area**: avatar, account, Pro status, share, and sign out  
+Top to bottom:
 
-Group header rows are generally **clickable on the full row** to collapse or expand; the chevron only reflects state.
+1. **Top-level switch**: Manage / Explore / Activity
+2. **Sub-navigation** under the current area (groups collapse)
+3. **User area**: avatar, Pro, share, sign out
 
-## Common Manage sub-entries
+Group headers are **clickable on the full row**; the chevron is not the only hit target.
 
-| Entry | Description | Further reading |
-|-------|-------------|-----------------|
-| All Stars | All synced Stars | — |
-| Untagged | Repos without tags yet | [Tags](/manage-stars/tags) |
-| Library / Knowledge base | Ingested repos | [Knowledge base](/knowledge-base/overview) |
-| My Projects | Owned / org / collaborator repos (not only Stars) | [My Projects](/main-interface/my-projects) |
-| My Insights | Library-wide organization and drill-downs | [Insights](/main-interface/insights) |
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/sidebar.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Sidebar: top-level switch, Manage expanded, user area at the bottom
+  </div>
+</Frame>
+
+## Manage
+
+| Entry | When to use it | Docs |
+|-------|----------------|------|
+| All Stars | Every synced Star | — |
+| Untagged | Daily inbox for repos still missing tags | [Tags](/manage-stars/tags) |
+| Library | Ingested repos for RAG | [Knowledge base](/knowledge-base/overview) |
+| My Projects | Repos you work on, starred or not | [My Projects](/main-interface/my-projects) |
+| My Insights | Organization progress, drill into lists | [Insights](/main-interface/insights) |
 | Languages | Browse by language | [Filters](/search/filters) |
-| Tags | Browse by tag; “+” shortcut to manage tags | [Tags](/manage-stars/tags) |
-| Smart Collections | System + custom rule-based collections | [Smart collections](/manage-stars/smart-collections) |
+| Tags | Browse by tag; “+” manages tags | [Tags](/manage-stars/tags) |
+| Smart Collections | Rule-based sets, system + custom | [Smart collections](/manage-stars/smart-collections) |
 | GitHub Stars Lists | Lists synced from GitHub | [GitHub Lists](/manage-stars/github-lists) |
-| Release timeline | Aggregated view of subscribed Releases | [Timeline](/release/timeline) |
+| Release timeline | Aggregated subscribed releases | [Timeline](/release/timeline) |
 
-Exact labels and ordering follow the current app version.
+Labels and order follow the current app.
 
-## Discover
+## Explore and Activity
 
-Explore modes: Discover, Awesome, Trending, Hot, New releases, and Weekly. See [Discover overview](/discover/explore/overview).
+Explore: Discover, Awesome, Trending, Hot, New releases, Weekly. See [Explore overview](/discover/explore/overview).
 
-## Activity
-
-Activity is primarily **Notifications** (GitHub Inbox), plus local feeds such as Announcements, Release, and Star. See [Activity](/discover/activity/activity).
+Activity opens on **Notifications** (GitHub Inbox), plus announcements, Release, Star, and other local categories. See [Activity](/discover/activity/activity).
 
 ## User area
 
-- View the current GitHub user
-- Open Pro / settings-related entries (or open Settings from the menu)
+- Current GitHub user
+- Pro / Settings (or the app menu)
 - [Share cards](/share-export/share-cards)
-- Sign out and switch accounts (see [GitHub connection](/getting-started/github-connection))
+- Sign out and switch accounts: [Connect GitHub](/getting-started/github-connection)
+
+## Notes
+
+- Untagged does not auto-tag; it only narrows the list.
+- An empty Library means nothing is ingested yet, not that sync failed.
+- Collapsing a group does not delete data.
+
+## Related
+
+- [Interface overview](/main-interface/overview)
+- [Repository list](/main-interface/repo-list)

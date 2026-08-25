@@ -1,46 +1,63 @@
 ---
 title: "侧边栏"
-description: "Manage、探索、Activity 子入口与用户区"
+description: "Manage / 探索 / Activity 怎么选，以及用户区做什么"
 ---
 
-## 结构
+## 用来做什么
 
-侧栏自上而下通常是：
+侧栏决定「当前列表是哪一批仓库或通知」。先换一级区域，再点子分类，比在 All Stars 里靠筛选硬收要快。
 
-1. **一级切换**：Manage / 探索 / Activity  
-2. **当前一级下的子导航**（分组可折叠）  
-3. **用户区**：头像、账号、Pro 状态、分享与登出  
+自上而下：
 
-分组标题行一般**整行可点**折叠/展开，chevron 只表示状态。
+1. **一级切换**：Manage / 探索 / Activity
+2. **当前一级的子导航**（分组可折叠）
+3. **用户区**：头像、Pro、分享、登出
 
-## Manage 常见子入口
+分组标题行**整行可点**折叠；chevron 只表示状态，不是唯一热区。
 
-| 入口 | 说明 | 延伸阅读 |
-|------|------|----------|
-| All Stars | 全部已同步 Stars | — |
-| 未分类 / Untagged | 尚无标签的仓库 | [标签](/zh-Hans/manage-stars/tags) |
-| 知识库 / Library | 已入库仓库 | [知识库](/zh-Hans/knowledge-base/overview) |
-| 我的项目 | 个人 / 组织 / 协作仓库（不限于 Stars） | [我的项目](/zh-Hans/main-interface/my-projects) |
-| 我的洞察 | 全局整理进度与可下钻待办 | [洞察](/zh-Hans/main-interface/insights) |
-| Languages | 按语言浏览 | [筛选](/zh-Hans/search/filters) |
-| Tags | 按标签浏览；旁路「+」管理标签 | [标签](/zh-Hans/manage-stars/tags) |
-| Smart Collections | 系统 + 自定义规则集合 | [智能集合](/zh-Hans/manage-stars/smart-collections) |
-| GitHub Stars Lists | 同步自 GitHub 的 List | [GitHub Lists](/zh-Hans/manage-stars/github-lists) |
-| Release 时间线 | 订阅 Release 聚合视图 | [时间线](/zh-Hans/release/timeline) |
+<Frame caption="截图待补充 · `images/screenshots/main-interface/sidebar.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    侧栏：一级切换 + Manage 子入口展开 + 底部用户区
+  </div>
+</Frame>
 
-具体文案与排序以当前版 App 为准。
+## Manage
 
-## 探索
+| 入口 | 什么时候用 | 文档 |
+|------|------------|------|
+| All Stars | 看全部已同步收藏 | — |
+| 未分类 / Untagged | 还没打标签，适合每天清一轮 | [标签](/zh-Hans/manage-stars/tags) |
+| 知识库 / Library | 已经入库、给 RAG 用的仓 | [知识库](/zh-Hans/knowledge-base/overview) |
+| 我的项目 | 自己在做的仓，不必已 Star | [我的项目](/zh-Hans/main-interface/my-projects) |
+| 我的洞察 | 看整理进度，点卡片下钻列表 | [洞察](/zh-Hans/main-interface/insights) |
+| Languages | 按语言逛 | [筛选](/zh-Hans/search/filters) |
+| Tags | 按标签逛；旁边「+」管理标签 | [标签](/zh-Hans/manage-stars/tags) |
+| Smart Collections | 规则集合，系统 + 自定义 | [智能集合](/zh-Hans/manage-stars/smart-collections) |
+| GitHub Stars Lists | GitHub 上的 List，同步过来 | [GitHub Lists](/zh-Hans/manage-stars/github-lists) |
+| Release 时间线 | 已订阅 Release 的聚合 | [时间线](/zh-Hans/release/timeline) |
 
-探索模式：发现、Awesome、趋势、热门、新发布、周刊。见 [探索概览](/zh-Hans/discover/explore/overview)。
+文案和顺序以当前 App 为准。
 
-## Activity
+## 探索与 Activity
 
-动态分类以 **通知** 为主（GitHub Inbox），另有公告、Release、Star 等本地聚合。见 [Activity](/zh-Hans/discover/activity/activity)。
+探索：发现、Awesome、趋势、热门、新发布、周刊。见 [探索概览](/zh-Hans/discover/explore/overview)。
+
+Activity 默认是 **通知**（GitHub Inbox），另外还有公告、Release、Star 等本地分类。见 [活动](/zh-Hans/discover/activity/activity)。
 
 ## 用户区
 
-- 查看当前 GitHub 用户
-- 进入 Pro / 设置相关入口（或经菜单打开设置）
+- 当前 GitHub 用户
+- 进入 Pro / 设置（也可以用菜单）
 - [分享卡片](/zh-Hans/share-export/share-cards)
-- 登出并换号（见 [账号连接](/zh-Hans/getting-started/github-connection)）
+- 登出换号，见 [账号连接](/zh-Hans/getting-started/github-connection)
+
+## 注意
+
+- 点「未分类」不会自动打标签，只是把范围收窄。
+- 知识库入口空，说明还没入库，不是同步失败。
+- 折叠分组不会删数据。
+
+## 相关
+
+- [界面概览](/zh-Hans/main-interface/overview)
+- [仓库列表](/zh-Hans/main-interface/repo-list)

@@ -1,56 +1,51 @@
 ---
 title: "Repository list"
-description: "Center-column row info, toolbar, sort/density, and Discover differences"
+description: "What the middle list shows, pinning, and how Explore lists differ"
 ---
 
-## What the list does
+## What it is for
 
-The center column shows repository rows for the **sidebar category you selected** (Manage) or ranked results (Discover).
+The middle column is a **scan surface** for the current sidebar category: your repos in Manage, ranked results in Explore. Click a row to open detail. This is not GitHub’s repository home page.
 
-Each row usually shows:
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/repo-list.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Manage list: pin badge, tag pills, Health badge, selected row
+  </div>
+</Frame>
 
-- Full repo name and description snippet  
-- Language, Star count, and similar metadata  
-- Tag pills (when present)  
-- Health / OpenSSF badges (when cached)  
-- **Pin badge** (top-left) when the repository is pinned in Manage  
-- **AI summary badge** when a summary has already been generated  
+A row typically shows: full name and description snippet, language and Stars, tag pills, Health / OpenSSF badges when cached, a pin badge in Manage, and whether an AI summary exists.
 
-Click a row → the right pane opens [Repository detail](/main-interface/repo-detail).
+## Pinning (Manage only)
 
-## Pinning (Manage)
+**Pin / Unpin** from the context menu or row action. Within the current category, **most recently pinned** sorts first. Pins also feed the [Focus widget](/main-interface/widgets). Explore boards do not use the same personal pin semantics.
 
-In Manage lists you can **Pin / Unpin** a repository (context menu or row action). Pinned repos sort by **most recently pinned** within the current category. Pinning also helps [desktop Focus widgets](/main-interface/widgets) pick frequently used repos.
+## Toolbar
 
-## Manage toolbar
-
-| Control | Purpose | Docs |
-|---------|---------|------|
-| Unified filter | Status / ingest / language / Wiki / Health… | [Filters](/search/filters) |
+| Control | Job | Docs |
+|---------|-----|------|
+| Filters | Status / ingest / language / Wiki / Health… | [Filters](/search/filters) |
 | Multi-select | Bottom batch bar | [Batch operations](/manage-stars/batch-operations) |
-| Stars sync | Sync with GitHub | [Sync settings](/settings/sync) |
-| List search | Keywords (often **⌘F**) or semantic | [List search](/search/global-search) |
-| Collection gear | Edit a Smart Collection | [Smart collections](/manage-stars/smart-collections) |
+| Sync | Pull GitHub Stars | [Sync](/settings/sync) |
+| List search | ⌘F keyword or semantic | [List search](/search/global-search) |
+| Collection gear | Edit the current Smart Collection | [Smart collections](/manage-stars/smart-collections) |
 
-After selecting a repo, the trailing area may also show external links, Clone, Share, AI, and more. See [Toolbar](/main-interface/toolbar) for an overview.
+With a repo selected, trailing actions may include external link, Clone, share, AI, CodeFlow. See [Toolbar](/main-interface/toolbar).
 
-## Discover list differences
+## Explore lists
 
-- Data comes from Discover / Trending / Weekly APIs—not “only your Stars”  
-- Batch actions lean toward Star / ingest  
-- Fewer filter dimensions  
+- Data comes from discovery / trending / weekly services, not “only your Stars”
+- Batch actions lean toward Star / ingest
+- Fewer filter dimensions
 
-See [Discover overview](/discover/explore/overview).
+See [Explore overview](/discover/explore/overview).
 
-## Sort and density
+## Notes
 
-- Sort field and direction: toolbar or list preferences  
-- Row spacing: Comfortable / Compact → [General settings](/settings/general)  
-- Filter conditions are often remembered per module  
-
-If the list stays empty: check whether filters are too strict, or reset filters.
+- Empty list: reset filters before assuming sync is broken.
+- Filter state often persists per module: Tag A and All Stars may restore different last-used conditions.
+- Row density Comfortable / Compact lives in [General settings](/settings/general).
 
 ## Related
 
 - [Sidebar](/main-interface/sidebar)
-- [Interface overview](/main-interface/overview)
+- [Repository detail](/main-interface/repo-detail)

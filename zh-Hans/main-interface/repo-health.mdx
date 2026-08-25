@@ -1,52 +1,55 @@
 ---
 title: "Repo Health 与 OpenSSF"
-description: "健康度四维评分、OpenSSF 徽章与 Pro 门控"
+description: "用四维评分和 OpenSSF 徽章判断仓是否值得投入时间（Pro）"
 ---
 
-## Repo Health（Pro）
+## 用来做什么
 
-用于快速判断仓库是否值得投入时间：维护是否活跃、社区与质量信号如何等。
+在点进源码或开 Issue 之前，先看这个仓还维不维护、文档和安全信号如何。**Repo Health 是辅助阅读，不是安全审计报告。**
+
+需要 [Pro](/zh-Hans/subscribe/plan-comparison)。非 Pro 点徽章会进付费墙。
 
 <Frame caption="Repo Health">
   <img src="/images/screenshots/health-score.webp" alt="Repo Health 截图" className="rounded-xl" />
 </Frame>
 
-### 在哪里看
+## 怎么看
 
-- 列表行上的 Health 徽章  
-- 详情元数据区徽章 → 打开 **Repo Health** 面板  
+- 列表行上的 Health 徽章
+- 详情元数据区徽章 → **Repo Health** 面板
 
-非 Pro 点击会进入付费引导，见 [方案对比](/zh-Hans/subscribe/plan-comparison)、[购买](/zh-Hans/subscribe/purchase)。
+面板常见四维（0–100，名称以 App 为准）：
 
-### 面板里有什么
+- **维护**：提交 / Release 是否还活跃
+- **人气**：Star、社区热度
+- **质量**：文档与工程信号
+- **安全**：含与 OpenSSF 的对照
 
-常见四维评分卡（0–100，具体维度文案以 App 为准），例如：
-
-- **维护**：提交 / Release 活跃度等信号  
-- **人气**：Star、社区热度等  
-- **质量**：文档与工程信号等  
-- **安全**：安全相关信号（含与 OpenSSF 的关联展示）
-
-可打开「评分规则」说明，并手动刷新。评分是辅助判断，不能替代你自己的安全审计。
+可打开「评分规则」，并手动刷新。
 
 ## OpenSSF
 
-详情可展示 OpenSSF Scorecard 相关徽章：
+详情可显示 OpenSSF Scorecard 徽章：悬停或点击看摘要 / 雷达；完整 checks 进 Sheet。
 
-- 悬停 / 点击查看摘要或雷达  
-- 完整 checks 进入专门 Sheet（若提供）  
+<Frame caption="OpenSSF Scorecard">
+  <img src="/images/screenshots/openssf.webp" alt="OpenSSF 评分" className="rounded-xl" />
+</Frame>
 
-数据依赖网络与缓存；失败时以界面错误提示为准。
+数据依赖网络和缓存。失败时看界面错误，不要当成「0 分」。
 
-## 筛选
+## 筛选与插件
 
-工具栏筛选可限定「已有 Health / OpenSSF 数据」的仓库，便于只浏览已评分项目。见 [筛选](/zh-Hans/search/filters)。
+工具栏可筛「已有 Health / OpenSSF 缓存」的仓，见 [筛选](/zh-Hans/search/filters)。
 
-## 浏览器插件
+浏览器插件只展示**本机已缓存**的只读分数，不会在 GitHub 网页上重算一整遍。见 [插件功能](/zh-Hans/browser-plugin/features)。
 
-GitHub 页插件可显示**本地已缓存**的 Health / OpenSSF 只读信息，不会在网页里单独发起完整重算。详见 [插件功能](/zh-Hans/browser-plugin/features)。
+## 注意
+
+- 私仓上部分 OpenSSF 路径可能不可用，见 [我的项目](/zh-Hans/main-interface/my-projects)。
+- 目录型 GitHub Issue Forms 会按社区规范识别，不再误标成「缺失」。
 
 ## 相关
 
 - [仓库详情](/zh-Hans/main-interface/repo-detail)
-- OpenSSF Scorecard 上游概念：[openssf.org](https://openssf.org/)（外部）
+- [洞察](/zh-Hans/main-interface/insights)
+- OpenSSF：[openssf.org](https://openssf.org/)

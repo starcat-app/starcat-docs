@@ -1,55 +1,63 @@
 ---
 title: "Interface overview"
-description: "Three-column layout, top-level navigation, and separate windows"
+description: "Three-column window, which top-level area to use, and detached windows"
 ---
 
-## Three-column layout
+## What it is for
 
-Starcat’s main window uses the familiar macOS three-column structure:
+The main window is the daily Stars workspace, not an admin console. Layout matches Finder / Mail: **pick a scope on the left, scan the list in the middle, inspect the selection on the right**.
+
+Learn the three columns before tags and AI, and you will spend less time wondering where you are.
 
 ```
 ┌────────────┬─────────────────────┬──────────────────────┐
 │  Sidebar   │  List + toolbar     │  Detail panel        │
-│            │  Repo / Activity    │  README · metadata   │
+│            │  Repo / Activity    │  README · notes      │
 └────────────┴─────────────────────┴──────────────────────┘
 ```
 
-| Column | Role | Docs |
-|--------|------|------|
-| Left | Switch Manage / Discover / Activity; sub-entries for tags, collections, and more | [Sidebar](/main-interface/sidebar) |
-| Center | Repos or activity for the current category; page toolbar on top | [Repository list](/main-interface/repo-list), [Toolbar](/main-interface/toolbar) |
-| Right | README, tags, notes, AI, Health, and more for the selection | [Repository detail](/main-interface/repo-detail) |
+<Frame caption="Screenshot TODO · `images/screenshots/main-interface/three-columns.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Full main window: Manage expanded, All Stars in the middle, README on the right
+  </div>
+</Frame>
 
-As the window narrows, the detail column may collapse or the list may take priority (actual behavior follows adaptive layout).
+| Column | Job | Docs |
+|--------|-----|------|
+| Left | Switch Manage / Explore / Activity, then a subcategory | [Sidebar](/main-interface/sidebar) |
+| Center | Repos or notifications for the current category; page toolbar on top | [Repository list](/main-interface/repo-list), [Toolbar](/main-interface/toolbar) |
+| Right | README, tags, notes, Health, AI for the selection | [Repository detail](/main-interface/repo-detail) |
 
-## Three top-level sidebar areas
+When the window narrows, the detail column may collapse so the list stays usable. That is adaptive layout, not a bug.
 
-| Area | What it solves |
-|------|----------------|
-| **Manage** | Organize Stars, My Projects, My Insights, knowledge base, tags, collections, Release timeline |
-| **Discover** | Find projects not yet in your library (Trending, Weekly, Awesome, Hot, and more) |
-| **Activity** | GitHub notification inbox, plus announcements, Release, and other local activity |
+## Three top-level areas
 
-Discover modes: [Discover overview](/discover/explore/overview).
+| Area | Job |
+|------|-----|
+| **Manage** | What you already have: Stars, My Projects, knowledge base, tags, collections, Release timeline, Insights |
+| **Explore** | What is not in your library yet: Trending, Weekly, Awesome, Hot, New releases |
+| **Activity** | GitHub notification inbox by default, plus announcements, Release, and other local feeds |
 
-## Separate windows
+Daily triage lives in Manage. Rankings live in Explore. Mentions and reviews live in Activity.
 
-Some capabilities work better pulled out beside the main window:
+## Detached windows
 
-| Window | How to open (common) | Docs |
-|--------|----------------------|------|
-| Repo AI | Detail overlay → separate window; default **⇧⌘A** | [AI chat](/ai-features/chat) |
-| RAG workspace | Toolbar / default **⇧⌘K** | [RAG workspace](/knowledge-base/rag-workspace) |
+When you need README beside a long chat, or cross-repo Q&A, pull the tool out of the main window:
+
+| Window | How to open | Docs |
+|--------|-------------|------|
+| Repo AI | Detach the overlay, or **⇧⌘A** | [AI chat](/ai-features/chat) |
+| RAG workspace | Toolbar or **⇧⌘K** | [RAG workspace](/knowledge-base/rag-workspace) |
 | Agent workspace | Dedicated entry | [Agent (Beta)](/agent-workspace/overview) |
 
-## Appearance and density
+## Appearance
 
-In [General settings](/settings/general) you can adjust:
+**Settings → General**: 18 UI languages, Light / Dark / System, font scale, list density, reduce motion. See [General settings](/settings/general).
 
-- UI language (18 locales; see [General settings](/settings/general))
-- Theme (System / Light / Dark)
-- Font scale, list density
-- Reduce motion
+## Notes
+
+- Manage lists are your Stars / projects. Explore lists come from Starcat discovery services, not a mirror of local Stars.
+- Activity opens on **Notifications**, not “everything”. See [Activity](/discover/activity/activity).
 
 ## Related
 
@@ -57,10 +65,3 @@ In [General settings](/settings/general) you can adjust:
 - [My Projects](/main-interface/my-projects)
 - [Insights](/main-interface/insights)
 - [Desktop widgets](/main-interface/widgets)
-- [Repo Health](/main-interface/repo-health)
-
-## Next steps
-
-- First time: follow [Quickstart](/getting-started/quickstart) for sync and triage  
-- Daily triage: start from [Sidebar](/main-interface/sidebar) Smart Collections / Untagged  
-- For AI: begin with [AI overview](/ai-features/overview)
