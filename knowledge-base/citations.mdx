@@ -1,35 +1,33 @@
 ---
-title: "Citations & evidence"
-description: "Citation chips, source types, verification, and when citations are missing"
+title: "Citations and evidence"
+description: "Where citation chips come from, how to verify, and what to do when there are none"
 ---
 
-## How citations appear
+## What they are for
 
-Repository citation chips in answers (e.g. `[owner/repo]`) mean chunks from that repo matched. On click:
+`[owner/repo]` chips in a RAG answer tell you which chunk fired. Open them before you trust a summary that might over-compress or mix repos. Treat uncited claims as unverified.
 
-- Right Inspector shows evidence  
-- May auto-switch to the citations pane and scroll  
-- Source types can include README, notes, AI summary, etc.  
+<Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/citations.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Citation chips in the answer and Inspector snippets on the right
+  </div>
+</Frame>
 
-Keyword hits on **metadata shards** and knowledge-base stats also show the actual quoted fragment, without waiting for vectorization.
+## How to use them
 
-## Best practices
+After a click: the Inspector shows evidence; the UI may switch to the citations pane and scroll. Sources can include README, notes, AI summaries, and similar.
+
+Keyword hits on **metadata chunks** and library stats also show real snippets; you do not have to wait for vectors.
 
 | Practice | Why |
 |----------|-----|
-| Open source for key claims | Avoid over-summary or cross-repo mix-ups |
+| Open the source for any load-bearing claim | Catch over-summary and mixed repos |
 | Narrow with @ | Cleaner citations |
-| Export answers with citations | Easier audit later → [Sessions](/knowledge-base/session-management) |
+| Export answers that keep citations | Audit later → [Sessions](/knowledge-base/session-management) |
 
-## No citations?
+## When there are no citations
 
-Possible causes:
-
-- Question too broad; model did not attach sources  
-- Index does not cover relevant repos  
-- @ scope excluded the real sources  
-
-Try: rephrase → check [index](/knowledge-base/index-management) → @ specific repos.
+The question may be too broad, the model may not have annotated, the index may miss the repo, or @ excluded the real source. Rephrase → check the [index](/knowledge-base/index-management) → @ the repo explicitly.
 
 ## Related
 

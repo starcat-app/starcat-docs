@@ -1,60 +1,62 @@
 ---
 title: "Knowledge base overview"
-description: "Stars vs knowledge base boundaries, capability map, and onboarding path"
+description: "Stars vs library, capability map, and a suggested first path"
 ---
 
-## What the knowledge base is
+## What it is for
 
-The knowledge base is a **curated set of repositories you explicitly ingest** for retrieval and Q&A in the RAG workspace. It is not the same as “all Stars.”
+The knowledge base is the set of repositories you **ingest on purpose** so the RAG workspace can retrieve and answer. It is not another name for All Stars. Starring does not make a repo askable; ingesting does.
+
+<Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/overview.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Sidebar Library plus toolbar Knowledge Q&A
+  </div>
+</Frame>
 
 ## Stars vs knowledge base
 
 | | Stars | Knowledge base |
 |--|-------|----------------|
-| Source | Synced from GitHub stars | Marked for ingest in Starcat |
-| Scale | Can reach thousands | Curated (often dozens to ~200) |
-| List search | ✅ | ✅ (can also limit to knowledge) |
-| Default RAG scope | ❌ | ✅ ingested repos only |
-| Typical index | FTS, etc. | Chunks + keywords + vectors |
+| Source | GitHub star sync | You mark ingest in Starcat |
+| Scale | Thousands is normal | Curate (often dozens to a couple hundred) |
+| List search | Yes | Yes (can limit to knowledge) |
+| Default RAG scope | No | Yes, ingested only |
+| Typical index | FTS and similar | Chunks + keywords + vectors |
 
-Independence (remember this):
+Remember:
 
-- Starring **does not** auto-ingest  
-- Unstarring **does not** auto-remove from the knowledge base  
-- Not starred but ingested: still searchable; you can also [subscribe to Releases](/release/subscription)  
+- Star does **not** auto-ingest
+- Unstar does **not** auto-remove from the library
+- Ingested but not starred: still askable, and you can still [subscribe to Releases](/release/subscription)
 
 ## What you need
 
-1. [Pro](/subscribe/plan-comparison)  
-2. Chat + **Embedding** → [AI configuration](/ai-features/configuration)  
-3. Some ingested repositories → [Adding repos](/knowledge-base/adding-repos)  
+1. [Pro](/subscribe/plan-comparison)
+2. Chat + **Embedding** → [AI configuration](/ai-features/configuration)
+3. Some ingested repos → [Adding repos](/knowledge-base/adding-repos)
+
+Without Embedding the workspace may open, but vector retrieval cannot build. See [Index management](/knowledge-base/index-management).
 
 ## Capability map
 
-| I want to… | Go to |
-|------------|-------|
-| Add repos to the knowledge base | [Adding repos](/knowledge-base/adding-repos) |
-| Start asking questions | [RAG workspace](/knowledge-base/rag-workspace) (⇧⌘K) |
-| Inspect cited source text | [Citations & evidence](/knowledge-base/citations) |
-| Manage session history | [Session management](/knowledge-base/session-management) |
-| Fix low index coverage | [Index management](/knowledge-base/index-management) |
+| I want to… | Go here |
+|------------|---------|
+| Put a repo in the library | [Adding repos](/knowledge-base/adding-repos) |
+| Ask a question | [RAG workspace](/knowledge-base/rag-workspace) (⇧⌘K) |
+| Open the cited source | [Citations](/knowledge-base/citations) |
+| Manage history | [Sessions](/knowledge-base/session-management) |
+| Fix low coverage | [Index management](/knowledge-base/index-management) |
 
-## Recommended onboarding path
+Suggested path: ingest 20–50 repos (prefer **using**) → confirm Embedding and coverage → @ one repo first → then ask across repos.
 
-<Steps>
-  <Step title="Ingest 20–50 repos">Prioritize repos you actively use or consult often.</Step>
-  <Step title="Confirm Embedding and coverage">[Settings → AI](/settings/ai) + workspace Index tab.</Step>
-  <Step title="Try @ one repo first">Verify citations open correctly.</Step>
-  <Step title="Then ask cross-repo questions">Remove overly narrow @, or @ two or three repos to compare.</Step>
-</Steps>
+Entries: sidebar Manage → Library; toolbar Knowledge Q&A or **⇧⌘K**; knowledge-related Smart Collections.
 
-## Entry points
+## Notes
 
-- Sidebar Manage → Knowledge base / Library  
-- Toolbar “Knowledge base Q&A” or default **⇧⌘K**  
-- Knowledge-related Smart Collections  
+- [Semantic search](/search/semantic-search) is list-level vector search, not workspace Q&A.
+- Ingesting everything you starred stretches index time and the Embedding bill. Curation beats bulk.
 
 ## Related
 
-- [Semantic search](/search/semantic-search) (list-level vector retrieval, not workspace Q&A)
 - [AI overview](/ai-features/overview)
+- [Insights](/main-interface/insights)

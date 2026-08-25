@@ -1,50 +1,48 @@
 ---
-title: "Adding repositories to the knowledge base"
-description: "Single, batch, search/explore ingest, removal, and independence from Stars"
+title: "Adding repositories"
+description: "Ingest one repo, a batch, or from Search/Explore; removal; independent of Star"
 ---
 
-## Ingest methods
+## What it is for
+
+Put repos you will actually **ask about** into the knowledge base. Only ingested repos enter the default RAG scope, after Starcat fetches README-like sources, chunks them, and builds keyword / vector indexes.
+
+<Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/adding-repos.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Detail ingest control, or batch bar Add to knowledge base
+  </div>
+</Frame>
+
+## How to ingest
 
 | Method | Best for | How |
 |--------|----------|-----|
-| Detail heart | One curated repo | Open detail → Add to knowledge base |
-| Multi-select batch | Dozens at once | [Batch operations](/manage-stars/batch-operations) |
-| Search / Explore | Discover and collect | Ingest control on results |
-| Status linkage | Repos you actively use | Prompt on **using** status → [Notes & status](/manage-stars/notes-and-status) |
+| Detail heart / ingest control | One curated repo | Open detail → add to knowledge base |
+| Multi-select | Dozens at once | [Batch operations](/manage-stars/batch-operations) |
+| Search / Explore | Discover then keep | Ingest control on the result |
+| Status prompt | Libraries you are using | When marking **using**, follow the prompt → [Status](/manage-stars/notes-and-status) |
 
-## Batch steps
+Batch: toolbar multi-select → optionally [filter](/search/filters) → Add to knowledge base → open the [RAG workspace](/knowledge-base/rag-workspace) and watch coverage.
 
-<Steps>
-  <Step title="Enter multi-select">List toolbar → multi-select.</Step>
-  <Step title="Select repos">Narrow with [filters](/search/filters) first if needed.</Step>
-  <Step title="Add to knowledge base">Confirm in the bottom bar.</Step>
-  <Step title="Check index">Open [RAG workspace](/knowledge-base/rag-workspace) and watch coverage rise.</Step>
-</Steps>
+After ingest: fetch sources locally → chunk and index keywords / vectors (needs Embedding) → default RAG scope. Progress and failures: [Index management](/knowledge-base/index-management).
 
-## After ingest
+## Remove
 
-1. Fetch README and other sources into local cache  
-2. Chunk and build keyword / vector index (requires Embedding)  
-3. Include in default RAG retrieval scope  
+Tap the ingest control again. The repo leaves default RAG. Whether local caches disappear immediately follows the app.
 
-Progress and failures → [Index management](/knowledge-base/index-management).
+An empty library shows onboarding. Do not expect “starred but never ingested” to be askable.
 
-## Remove from knowledge base
-
-Tap the ingest control again. Removed repos leave default RAG; whether local cache is deleted immediately depends on app behavior.
-
-## Empty library
-
-The workspace guides you to ingest first. Do not expect “starred but not ingested” repos to answer across your full collection.
-
-## Independence recap
+## Notes
 
 ```text
-Star   ──✗──► auto-ingest
-Unstar ──✗──► auto-remove
-Ingest ──✓──► can be not starred
+Star   ──✗──► auto ingest
+Unstar ──✗──► auto remove
+Ingest ──✓──► may be unstarred
 ```
+
+Ingesting too many at once raises both the Embedding bill and wait time. Prefer **using** and repos you reopen often.
 
 ## Related
 
-- [Knowledge base overview](/knowledge-base/overview)
+- [Overview](/knowledge-base/overview)
+- [Smart collections](/manage-stars/smart-collections)

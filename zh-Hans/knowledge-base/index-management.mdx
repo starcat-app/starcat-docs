@@ -1,31 +1,27 @@
 ---
 title: "索引管理"
-description: "覆盖率含义、重建时机、Embedding 与排障清单"
+description: "覆盖率含义、何时重建、Embedding，以及找不到内容时先查什么"
 ---
+
+## 用来做什么
+
+入库只是第一步。索引没跟上，RAG 会「库里明明有、问了却没有」。这一页解释覆盖率、重建时机，以及 Chat 配好但 Embedding 空着时为什么向量侧是空的。
+
+<Frame caption="截图待补充 · `images/screenshots/knowledge-base/index-management.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    RAG 工作台 Index：覆盖率、向量化进度、失败卡片
+  </div>
+</Frame>
 
 ## 状态看哪里
 
-RAG 工作台顶栏或 **Index** 页签：
+RAG 工作台顶栏或 **Index** 页签：知识库仓库数、索引覆盖率（关键词 / 向量等以界面为准）、当前 Embedding 提示。
 
-- 知识库仓库数  
-- 索引覆盖率（关键词 / 向量等维度以界面为准）  
-- 当前 Embedding 相关提示  
+覆盖率低 = 很多已入库仓还不能被好好检索。向量化进度按**当前 Embedding 模型**的已就绪覆盖率显示。工具栏状态面板也可查看与暂停；最近一次构建不会在未完成时误标完成。
 
-覆盖率低 = 很多已入库仓还不能被向量/关键词好好检索。
+知识库卡片和分片详情会区分：分片是否仍在库里、当前模型下是否已向量化、更新时间与约略 token 数。点开待处理、失败或过期卡片，会打开知识库并定位到对应分片。
 
-向量化进度按**当前 Embedding 模型**的已就绪覆盖率显示。工具栏状态面板也可查看与暂停；最近一次构建不会在未完成时误标完成。
-
-## 分片状态
-
-知识库卡片和分片详情会区分：
-
-- 分片是否仍在知识库里  
-- 当前模型下是否已向量化  
-- 更新时间与约略 token 数（编辑页同样显示）  
-
-点开待处理、失败或过期卡片，会打开知识库并定位到对应分片。
-
-重建知识库时，**Meilisearch 关键词索引会先同步文本**，不必等全部向量化完成就能检索。本地 FTS 对中文支持中缀匹配；点名仓库时更容易落到 README 等已索引内容。
+重建时 **Meilisearch 关键词索引会先同步文本**，不必等全部向量化就能检索。本地 FTS 对中文支持中缀匹配；点名仓库时更容易落到 README。
 
 ## 何时重建
 
@@ -36,15 +32,15 @@ RAG 工作台顶栏或 **Index** 页签：
 | 清过缓存后检索变空 | 重建 |
 | 长期「找不到」但库非空 | 先看覆盖率与 @ 是否过窄 |
 
-重建耗时与 API 费用随库规模上升；大库请盯紧进度与取消。
+重建耗时与 API 费用随库规模上升；大库请盯进度与取消。
 
-## 排障清单
+## 排障
 
-1. Pro 是否有效 → [恢复购买](/zh-Hans/subscribe/restore)  
-2. Embedding 测试是否通过 → [AI 配置](/zh-Hans/ai-features/configuration)  
-3. 目标仓是否真的已入库 → [添加入库](/zh-Hans/knowledge-base/adding-repos)  
-4. 是否错误 @ 排除了关键仓 → [工作台](/zh-Hans/knowledge-base/rag-workspace)  
-5. 仅 Chat 配好、Embedding 为空 → 补 Embedding  
+1. Pro 是否有效 → [恢复购买](/zh-Hans/subscribe/restore)
+2. Embedding 测试是否通过 → [AI 配置](/zh-Hans/ai-features/configuration)
+3. 目标仓是否真的已入库 → [添加入库](/zh-Hans/knowledge-base/adding-repos)
+4. 是否错误 @ 排除了关键仓 → [工作台](/zh-Hans/knowledge-base/rag-workspace)
+5. 仅 Chat 配好、Embedding 为空 → 补 Embedding
 
 ## 相关
 

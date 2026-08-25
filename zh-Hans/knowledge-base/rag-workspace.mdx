@@ -3,95 +3,52 @@ title: "RAG 工作台"
 description: "独立窗口三栏：提问、@ 选仓、时间线、引用与索引"
 ---
 
-## 打开（Pro）
+## 用来做什么
+
+对着**已入库**的仓库问跨仓问题：冲突策略怎么选、两个库在嵌入式场景怎么比。单仓 README 细节用 [AI 对话](/zh-Hans/ai-features/chat)；这里默认**不会**扫「只 Star 未入库」的收藏。
+
+<Frame caption="截图待补充 · `images/screenshots/knowledge-base/rag-workspace.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    RAG 三栏：会话列表、问答流 + @、右侧引用 / Index
+  </div>
+</Frame>
+
+## 怎么打开（Pro）
 
 | 方式 | 说明 |
 |------|------|
-| 快捷键 | 默认 **⇧⌘K**（可改 → [快捷键](/zh-Hans/settings/shortcuts)） |
+| 快捷键 | 默认 **⇧⌘K**（[可改](/zh-Hans/settings/shortcuts)） |
 | 工具栏 | 「知识库问答」 |
-| 其它入口 | 知识库页 / 相关 Smart Collection |
+| 其它 | 知识库页 / 相关 Smart Collection |
 
-前置：
+前置：[Pro](/zh-Hans/subscribe/plan-comparison)、[设置 → AI](/zh-Hans/settings/ai) 的 Chat + Embedding、至少一些[已入库](/zh-Hans/knowledge-base/adding-repos)仓库。
 
-1. [Pro](/zh-Hans/subscribe/plan-comparison)  
-2. Chat + Embedding 已在 [设置 → AI](/zh-Hans/settings/ai) 配好  
-3. 知识库里至少有一些[已入库](/zh-Hans/knowledge-base/adding-repos)仓库  
+三栏：左会话（新建 / 置顶）、中问答流 + Composer + @、右引用 / 计划 / 索引。左右栏可拖宽，重开常会恢复。生成时可看到检索 / 规划 / 生成步骤，运行中可折叠。较长思考时界面仍可操作；规划子步骤等规划真正完成后再出现。
 
-## 三栏布局
+## 怎么问
 
-```
-┌────────────┬─────────────────────┬──────────────────┐
-│ 会话列表    │ 问答流 + 执行时间线   │ 引用 / 计划 / 索引 │
-│ 新建/置顶   │ Composer + @        │ Evidence / Index  │
-└────────────┴─────────────────────┴──────────────────┘
-```
+1. 写具体问题，例如「我知识库里做本地优先同步的库，冲突策略有哪些？」
+2. 可选：输入 `@` 打开仓库选择器，多选；顶部芯片可删。用于 only / prefer / exclude（以界面为准）
+3. 发送，看时间线
+4. 点回答里的引用芯片 → 右侧证据。见 [引用与证据](/zh-Hans/knowledge-base/citations)
 
-- 左右栏可拖拽调宽，重开窗口常会恢复  
-- 中栏在生成时可看到检索/规划/生成等步骤，运行中可手动折叠  
-- 较长思考过程中界面保持可操作，完成后仍可展开阅读全文；查询规划的子步骤和右侧计划面板会等规划真正完成后再出现  
+空库时会引导从 Smart Collections、Search、Explore 入库。
 
-## 提问流程
+若启用 External Search 作实时上下文：成功时可能混入网页证据；失败时卡片可能引导打开 **设置 → 集成 → External Search**。见 [外部搜索](/zh-Hans/search/external-search)。
 
-<Steps>
-  <Step title="写问题">
-    尽量具体。例如：
-    - 「我知识库里做本地优先同步的库，冲突策略有哪些？」
-    - 「@foo/bar @baz/qux 这两个在嵌入式场景怎么选？」
-  </Step>
-  <Step title="@ 选仓（可选）">
-    输入 `@` 打开知识库仓库选择器；可多选；顶部芯片可删。
-    用于 only / prefer / exclude 一类范围控制（以界面语义为准）。
-  </Step>
-  <Step title="发送">
-    观察时间线；等待流式或分段输出。
-  </Step>
-  <Step title="核对引用">
-    点击回答中的引用芯片 → 右侧证据。见 [引用与证据](/zh-Hans/knowledge-base/citations)。
-  </Step>
-</Steps>
+齿轮里可改推理后端、提示词和检索策略。提示词见 [AI 配置](/zh-Hans/ai-features/configuration)。
 
-## 默认检索范围
+**Direct：** 可选本机 Codex CLI 或 Claude Code CLI，沿用它们自己的登录态。工作台会检测安装 / 版本 / 路径。App Store 版没有这条路径。
 
-**只检索已入库仓库**，不包含「仅 Star 未入库」。
+已生成的 [洞察](/zh-Hans/main-interface/insights) 可作为可移除的只读上下文；自定义提示词没写洞察占位符就不会静默注入。
 
-空库时会出现引导：从 Smart Collections、Search、Explore 入库。见 [添加入库](/zh-Hans/knowledge-base/adding-repos)。
+## 注意
 
-## 联网上下文
-
-若启用 External Search 作为实时上下文：
-
-- 成功时回答可能混入网页证据  
-- 失败时卡片可能引导你打开 **设置 → 集成 → External Search**  
-
-见 [外部搜索](/zh-Hans/search/external-search)。
-
-## 只读承诺
-
-工作台以问答为主：**不会**在未确认时改标签 / 笔记 / 状态。要改数据请用整理 UI 或 [CLI `--apply`](/zh-Hans/cli/usage)。
-
-## 工作台设置
-
-齿轮打开设置：推理后端、提示词和检索策略。提示词用法见 [AI 配置](/zh-Hans/ai-features/configuration)。
-
-## Direct：本机 CLI 推理
-
-知识库 RAG 可选择本机 **Codex CLI** 或 **Claude Code CLI**，沿用它们自己的登录态。工作台设置会检测安装、版本和路径；未安装时提供指引。App Store 版没有这条路径。
-
-## 会话与导出
-
-左栏管理历史；可导出 Markdown。见 [会话管理](/zh-Hans/knowledge-base/session-management)。
-
-## 索引不健康时
-
-顶栏覆盖率过低或提示无索引 → [索引管理](/zh-Hans/knowledge-base/index-management)。
-
-## 洞察上下文
-
-已生成的 [洞察](/zh-Hans/main-interface/insights)（全局聚合与单仓）可作为可移除的只读上下文参与回答。自定义提示词若未包含洞察占位符，不会静默注入。
+- 工作台以问答为主：**不会**在未确认时改标签 / 笔记 / 状态。改数据用整理 UI 或 [CLI `--apply`](/zh-Hans/cli/usage)。
+- 顶栏覆盖率过低 → [索引管理](/zh-Hans/knowledge-base/index-management)。
+- 会话导出见 [会话管理](/zh-Hans/knowledge-base/session-management)。
 
 ## 相关
 
 - [知识库概述](/zh-Hans/knowledge-base/overview)
-- [洞察](/zh-Hans/main-interface/insights)
-- [AI 配置](/zh-Hans/ai-features/configuration)
 - [FAQ · AI](/zh-Hans/faq/ai)

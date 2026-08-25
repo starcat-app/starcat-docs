@@ -1,43 +1,38 @@
 ---
 title: "添加仓库到知识库"
-description: "单仓、批量、搜索/探索入库、移出与独立性"
+description: "单仓、批量、搜索/探索入库；移出；和 Star 互不自动联动"
 ---
 
-## 入库方式对照
+## 用来做什么
+
+把「真正会拿来问」的仓放进知识库，而不是把全部 Stars 倒进去。入库之后才会进默认 RAG 范围，并开始拉 README、切分片、建关键词 / 向量索引。
+
+<Frame caption="截图待补充 · `images/screenshots/knowledge-base/adding-repos.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    详情加入知识库控件，或批量底部栏「加入知识库」
+  </div>
+</Frame>
+
+## 怎么入库
 
 | 方式 | 适合 | 怎么做 |
 |------|------|--------|
-| 详情心形 | 精选单个 | 打开详情 → 加入知识库 |
+| 详情心形 / 入库控件 | 精选单个 | 打开详情 → 加入知识库 |
 | 多选批量 | 一次几十个 | [批量操作](/zh-Hans/manage-stars/batch-operations) |
 | Search / 探索 | 边发现边收 | 结果上的入库控件 |
 | 状态联动 | 正在使用的库 | 设为 using 时按提示入库 → [状态](/zh-Hans/manage-stars/notes-and-status) |
 
-## 批量步骤
+批量：工具栏多选 → 可先 [筛选](/zh-Hans/search/filters) → 底部「加入知识库」→ 打开 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 看覆盖率是否上升。
 
-<Steps>
-  <Step title="进入多选">列表工具栏 → 多选。</Step>
-  <Step title="勾选仓库">可先用[筛选](/zh-Hans/search/filters)缩小范围。</Step>
-  <Step title="加入知识库">底部栏确认。</Step>
-  <Step title="看索引">打开 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 查看覆盖率是否上升。</Step>
-</Steps>
-
-## 入库后发生什么
-
-1. 拉取 README 等来源到本地缓存  
-2. 切分片并建关键词 / 向量索引（需 Embedding）  
-3. 进入默认 RAG 检索范围  
-
-进度与失败提示见 [索引管理](/zh-Hans/knowledge-base/index-management)。
+入库后：拉 README 等到本地 → 切分片并建关键词 / 向量（需 Embedding）→ 进入默认 RAG 范围。进度与失败见 [索引管理](/zh-Hans/knowledge-base/index-management)。
 
 ## 移出
 
-再次点击入库控件。移出后不再参与默认 RAG；是否立刻删本地缓存以 App 为准。
+再点一次入库控件。移出后不再参与默认 RAG；本地缓存是否立刻删以 App 为准。
 
-## 空库
+空库时工作台会引导你先入库。不要期望「只 Star 不入库」就能问到全部收藏。
 
-工作台会引导你先入库。不要期望「只 Star 不入库」就能问到全部收藏。
-
-## 独立性复习
+## 注意
 
 ```text
 Star  ──✗──► 自动入库
@@ -45,6 +40,9 @@ Unstar ──✗──► 自动移出
 入库   ──✓──► 可未 Star
 ```
 
+一次入库太多会把 Embedding 账单和等待时间一起拉高。优先「正在使用」和常查阅的库。
+
 ## 相关
 
 - [知识库概述](/zh-Hans/knowledge-base/overview)
+- [智能集合](/zh-Hans/manage-stars/smart-collections)

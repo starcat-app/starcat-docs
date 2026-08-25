@@ -1,98 +1,54 @@
 ---
 title: "RAG workspace"
-description: "Detached three-column window: questions, @ repo picker, timeline, citations, and index"
+description: "Three-pane window: ask, @ repos, timeline, citations, and index"
 ---
 
-## Open (Pro)
+## What it is for
 
-| Method | Notes |
-|--------|-------|
-| Shortcut | Default **⇧⌘K** (changeable → [Shortcuts](/settings/shortcuts)) |
-| Toolbar | “Knowledge base Q&A” |
-| Other | Knowledge base page / related Smart Collection |
+Ask **across ingested repos**: conflict strategies, how two libraries compare in an embedded setting. Single-repo README questions belong in [AI chat](/ai-features/chat). Default RAG does **not** scan Stars you never ingested.
 
-Prerequisites:
+<Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/rag-workspace.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    RAG three panes: sessions, Q&A + @, citations / Index
+  </div>
+</Frame>
 
-1. [Pro](/subscribe/plan-comparison)  
-2. Chat + Embedding configured under [Settings → AI](/settings/ai)  
-3. At least some [ingested](/knowledge-base/adding-repos) repos in the knowledge base  
+## How to open it (Pro)
 
-## Three-column layout
+| Method | Detail |
+|--------|--------|
+| Shortcut | Default **⇧⌘K** ([editable](/settings/shortcuts)) |
+| Toolbar | Knowledge Q&A |
+| Other | Library page / related Smart Collection |
 
-```
-┌────────────┬─────────────────────┬──────────────────┐
-│ Sessions   │ Q&A stream +        │ Citations /      │
-│ New / pin  │ execution timeline  │ plan / index     │
-│            │ Composer + @        │ Evidence / Index │
-└────────────┴─────────────────────┴──────────────────┘
-```
+Requires [Pro](/subscribe/plan-comparison), Chat + Embedding in [Settings → AI](/settings/ai), and some [ingested](/knowledge-base/adding-repos) repos.
 
-- Left and right columns are resizable; width often restores on reopen  
-- Center column shows retrieve / plan / generate steps while running; you can collapse manually  
-- Long thinking stays usable; expand the full text when it finishes. Query-planning substeps and the plan pane appear only after planning actually completes  
+Layout: sessions (new / pin) | stream + composer + @ | citations / plan / index. Side panes are resizable and often restore. During generation you see retrieve / plan / generate steps and can collapse them. The UI stays usable during long thinking; plan substeps appear only after planning finishes.
 
-## Question flow
+## How to ask
 
-<Steps>
-  <Step title="Write your question">
-    Be specific. For example:
-    - “Among repos in my knowledge base for local-first sync, what conflict strategies exist?”
-    - “@foo/bar @baz/qux — how do I choose between these for embedded use?”
-  </Step>
-  <Step title="@ pick repos (optional)">
-    Type `@` to open the knowledge-base repo picker; multi-select; remove chips at the top.
-    Used for only / prefer / exclude style scope (per UI semantics).
-  </Step>
-  <Step title="Send">
-    Watch the timeline; wait for streaming or segmented output.
-  </Step>
-  <Step title="Verify citations">
-    Click citation chips in the answer → evidence on the right. See [Citations & evidence](/knowledge-base/citations).
-  </Step>
-</Steps>
+1. Be specific, e.g. “Which local-first sync libraries in my knowledge base discuss conflict strategy?”
+2. Optional: type `@` to pick repos; chips on top are removable. Use only / prefer / exclude as the UI defines them
+3. Send and watch the timeline
+4. Click citation chips → evidence on the right. See [Citations](/knowledge-base/citations)
 
-## Default retrieval scope
+An empty library onboards you to ingest from Smart Collections, Search, or Explore.
 
-**Ingested repositories only**—not “starred but not ingested.”
+If External Search is live context: successful answers may mix web evidence; failures may send you to **Settings → Integrations → External Search**. See [External search](/search/external-search).
 
-When empty, onboarding points you to Smart Collections, Search, or Explore to ingest. See [Adding repos](/knowledge-base/adding-repos).
+The gear edits inference backend, prompts, and retrieval. Prompts: [AI configuration](/ai-features/configuration).
 
-## Live web context
+**Direct:** you can pick local Codex CLI or Claude Code CLI and reuse their own login. The workspace detects install / version / path. The App Store build has no such path.
 
-If External Search is enabled as live context:
+Generated [Insights](/main-interface/insights) can be removable read-only context. Custom prompts without the insights placeholder do not inject them silently.
 
-- Successful runs may mix in web evidence  
-- Failures may surface a card pointing to **Settings → Integrations → External Search**  
+## Notes
 
-See [External search](/search/external-search).
-
-## Read-only by design
-
-The workspace is Q&A-first: it **does not** change tags / notes / status without confirmation. To mutate data, use organize UI or [CLI `--apply`](/cli/usage).
-
-## Workspace settings
-
-The gear opens settings for the inference backend, prompts, and retrieval strategy. Prompt editing is covered in [AI configuration](/ai-features/configuration).
-
-## Direct: local CLI inference
-
-Knowledge-base RAG can use local **Codex CLI** or **Claude Code CLI** and reuse their existing login. Workspace settings detect install, version, and path, and show setup help when missing. The Mac App Store build does not include this path.
-
-## Sessions and export
-
-Manage history in the left column; export Markdown. See [Session management](/knowledge-base/session-management).
-
-## Unhealthy index
-
-Low coverage in the header or “no index” hints → [Index management](/knowledge-base/index-management).
-
-## Insight context
-
-Generated [Insights](/main-interface/insights) (library aggregates and per-repo) can attach as removable read-only context for answers. Custom prompts that omit insight placeholders will not inject them silently.
+- The workspace is Q&A: it does **not** change tags / notes / status without confirmation. Mutate data in the tidy UI or [CLI `--apply`](/cli/usage).
+- Low header coverage → [Index management](/knowledge-base/index-management).
+- Export: [Sessions](/knowledge-base/session-management).
 
 ## Related
 
-- [Knowledge base overview](/knowledge-base/overview)
-- [Insights](/main-interface/insights)
-- [AI configuration](/ai-features/configuration)
+- [Overview](/knowledge-base/overview)
 - [FAQ · AI](/faq/ai)

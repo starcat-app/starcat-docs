@@ -1,50 +1,46 @@
 ---
 title: "Index management"
-description: "Coverage meaning, rebuild timing, Embedding, and troubleshooting"
+description: "What coverage means, when to rebuild, Embedding, and what to check first"
 ---
 
-## Where to check status
+## What it is for
 
-RAG workspace header or **Index** tab:
+Ingest is step one. If the index lags, RAG looks empty even though the library is not. This page covers coverage, rebuild timing, and why vectors stay empty when Chat is mapped but Embedding is not.
 
-- Knowledge-base repo count  
-- Index coverage (keyword / vector dimensions per UI)  
-- Current Embedding-related hints  
+<Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/index-management.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    RAG workspace Index: coverage, vector progress, failed cards
+  </div>
+</Frame>
 
-Low coverage means many ingested repos are not yet retrievable by vector/keyword search.
+## Where to look
 
-Vectorization progress is the ready coverage of the **current Embedding model**. The toolbar status panel can show progress and pause it. The last build is not marked complete while it is still running.
+Workspace header or the **Index** tab: library size, coverage (keyword / vector as the UI shows), Embedding hints.
 
-## Shard status
+Low coverage means many ingested repos are not searchable yet. Vector progress is **ready coverage for the current Embedding model**. The toolbar status panel can inspect and pause; an unfinished build is not marked complete.
 
-Knowledge-base cards and shard detail distinguish:
+Cards distinguish: still in the library, vectorized for this model, updated time, approximate tokens. Opening pending / failed / stale cards jumps to that chunk.
 
-- Whether the shard is still in the knowledge base  
-- Whether it is vectorized for the current model  
-- Updated time and approximate token count (also on the edit page)  
-
-Click a pending, failed, or expired card to open the knowledge base and jump to that shard.
-
-When rebuilding, the **Meilisearch keyword index syncs text first**, so you can search before every vector is ready. Local FTS supports Chinese infix matching; naming a repo more reliably lands on indexed README content.
+On rebuild, the **Meilisearch keyword index syncs text first**, so keyword search can work before every vector is ready. Local FTS supports Chinese infix matching; naming a repo is more likely to hit README.
 
 ## When to rebuild
 
-| Situation | Recommendation |
-|-----------|----------------|
-| Changed Embedding model | Rebuild—vector spaces will not align otherwise |
-| Just bulk-ingested many repos | Wait for auto index or trigger manually |
-| Cleared cache and search went empty | Rebuild |
-| Long-term “can’t find” but library non-empty | Check coverage and whether @ is too narrow |
+| Situation | Do this |
+|-----------|---------|
+| Changed Embedding model | Rebuild or spaces will not match |
+| Just ingested many repos | Wait for auto-index or fill gaps |
+| Search went empty after clearing cache | Rebuild |
+| “Nothing found” but the library is not empty | Check coverage and whether @ is too narrow |
 
-Rebuild time and API cost scale with library size; watch progress and cancel on large libraries.
+Time and API cost scale with library size. Watch progress and cancel on a large rebuild.
 
-## Troubleshooting checklist
+## Checklist
 
-1. Is Pro active? → [Restore purchase](/subscribe/restore)  
-2. Does Embedding pass test? → [AI configuration](/ai-features/configuration)  
-3. Is the target repo actually ingested? → [Adding repos](/knowledge-base/adding-repos)  
-4. Did @ accidentally exclude key repos? → [RAG workspace](/knowledge-base/rag-workspace)  
-5. Chat only, Embedding empty → add Embedding  
+1. Pro still valid → [Restore](/subscribe/restore)
+2. Embedding test passed → [AI configuration](/ai-features/configuration)
+3. Target repo actually ingested → [Adding repos](/knowledge-base/adding-repos)
+4. @ did not exclude the real source → [Workspace](/knowledge-base/rag-workspace)
+5. Chat mapped, Embedding empty → map Embedding
 
 ## Related
 

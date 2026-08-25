@@ -1,9 +1,19 @@
 ---
 title: "会话管理"
-description: "新建、置顶、重命名、切换与导出"
+description: "新建、置顶、重命名、切换，以及把问答导出为 Markdown"
 ---
 
-## 左栏能做什么
+## 用来做什么
+
+RAG 工作台左栏是问答线程列表：调研可以开一条长期会话，换题目就新建，避免上下文串味。导出 Markdown 方便贴进笔记软件或做归档。
+
+<Frame caption="截图待补充 · `images/screenshots/knowledge-base/sessions.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    左栏会话：新建、置顶、重命名；导出 Markdown 菜单
+  </div>
+</Frame>
+
+## 怎么用
 
 | 操作 | 说明 |
 |------|------|
@@ -14,20 +24,13 @@ description: "新建、置顶、重命名、切换与导出"
 
 切换会话时，未发送输入会按产品逻辑保留或提示，避免误丢。
 
-## 导出
+可将单次回答或会话 transcript 导出为 Markdown。入口在工作台菜单或会话操作中（以界面为准）。
 
-可将单次回答或会话 transcript 导出为 Markdown，便于：
-
-- 贴进博客 / 笔记软件  
-- 做技术调研归档  
-
-入口在工作台菜单或会话操作中（以界面为准）。
-
-## 存储与清理
+## 注意
 
 会话占本地磁盘 → **设置 → 存储** 可清「RAG 会话历史」。见 [存储管理](/zh-Hans/settings/storage)。
 
-清理历史**不会**取消入库，也不会删标签笔记。
+清理历史**不会**取消入库，也不会删标签或笔记。
 
 ## 相关
 
