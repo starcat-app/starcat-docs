@@ -1,20 +1,32 @@
 ---
 title: "Safari 插件"
-description: "Safari 伴侣：与 Chrome 共用本机 API，注意成熟度"
+description: "与 Chrome 共用本机 API；完整度可能落后，以当前扩展版本为准"
 ---
 
-## 状态
+## 用来做什么
 
-Safari 扩展与 Chrome Companion **共用本机 Local API** 模型。设置页可能已有入口；**功能完整度可能落后于 Chrome**，以当前扩展版本为准。
+在 Safari 的 GitHub 仓库页使用同一套本机 Local API。设置页可能已有入口，**功能完整度可能落后于 Chrome**。
+
+<Frame caption="截图待补充 · `images/screenshots/browser-plugin/safari.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Safari 扩展已启用 + 与 Chrome 相同的端口 / Token
+  </div>
+</Frame>
+
+## 怎么配
 
 仓库：[starcat-safari-plugin](https://github.com/starcat-app/starcat-safari-plugin)
 
-## 配置
-
-与 Chrome 相同：
-
-1. Starcat 运行中  
-2. **设置 → 集成** 中端口与 Token  
-3. 按仓库 README 安装 / 信任 Safari 扩展  
+1. Starcat 运行中
+2. **设置 → 集成** 中端口与 Token
+3. 按仓库 README 安装 / 信任 Safari 扩展
 
 能力边界见 [功能说明](/zh-Hans/browser-plugin/features)。
+
+## 注意
+
+Safari 要在「设置 → 扩展」里明确打开。缺注入时先看 Chrome 同款排障：App 是否在跑、Token 是否一致。
+
+## 相关
+
+- [Chrome](/zh-Hans/browser-plugin/chrome)

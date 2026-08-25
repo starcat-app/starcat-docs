@@ -1,11 +1,19 @@
 ---
 title: "桌面启动器"
-description: "用 Alfred、uTools、Raycast 搜索 Starcat 本地仓库与 GitHub"
+description: "用 Alfred、uTools、Raycast 搜本机 Stars，再经 starcat:// 打开"
 ---
 
-## 概览
+## 用来做什么
 
-Starcat 提供独立配套项目，让你在常用启动器里搜索**本机 Stars / 仓库**与 **GitHub**：
+不打开主窗口，也能在常用启动器里搜**本机 Stars / 仓库**和 GitHub，命中后用 `starcat://` 跳回 App。它们是独立仓库，安装以各 README 为准。
+
+<Frame caption="截图待补充 · `images/screenshots/integrations/desktop-launchers.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Alfred / Raycast 搜索本机仓库并回跳 Starcat
+  </div>
+</Frame>
+
+## 配套项目
 
 | 启动器 | 项目 |
 |--------|------|
@@ -13,24 +21,15 @@ Starcat 提供独立配套项目，让你在常用启动器里搜索**本机 Sta
 | **uTools** | [starcat-utools-plugin](https://github.com/starcat-app/starcat-utools-plugin) |
 | **Raycast** | [starcat-raycast-extension](https://github.com/starcat-app/starcat-raycast-extension) |
 
-它们与主应用分属不同仓库，安装步骤以各项目 README 为准。
+典型能力：检索本机库；需要时回退 GitHub 搜索；在 Starcat 中打开命中项。
 
-## 典型能力
+前置：按扩展要求保持 Starcat 运行或近期用过，以便本地搜索 / 配对可用；完成各项目说明里的权限、关键词与 macOS 隐私授权。
 
-各启动器命令不同，但产品意图一致：
+## 注意
 
-1. 检索本机 Starcat 本地库  
-2. 需要时结合或回退到 GitHub 搜索  
-3. 在 Starcat 中打开命中项（通常经 `starcat://…` 深层链接）  
-
-## 前置条件
-
-- 按扩展要求保持 Starcat 运行或近期使用过，以便本地搜索数据 / 配对可用  
-- 按各项目说明完成权限、关键词与 macOS 隐私授权  
+App Store 沙盒**不能**替你拉起任意用户 CLI；启动器扩展是独立进程，但仍依赖本机 App 的 Local API / 深层链接。链接形态见 [分享链接](/zh-Hans/share-export/share-links)。
 
 ## 相关
 
-- [分享链接](/zh-Hans/share-export/share-links)（深层链接形态）
 - [浏览器插件](/zh-Hans/browser-plugin/features)
 - [集成设置](/zh-Hans/settings/integrations)
-- [更新日志](/zh-Hans/changelog)

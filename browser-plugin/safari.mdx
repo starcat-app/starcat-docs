@@ -1,20 +1,32 @@
 ---
 title: "Safari extension"
-description: "Safari Companion: same local API as Chrome; maturity may differ"
+description: "Same local API as Chrome; completeness may lag, follow the current build"
 ---
 
-## Status
+## What it is for
 
-The Safari extension and Chrome Companion **share the same local API** model. Settings may already expose an entry; **feature completeness may lag Chrome** — follow the current extension version.
+The same localhost Local API on GitHub repo pages in Safari. Settings may already expose an entry. **Feature completeness can lag Chrome.**
+
+<Frame caption="Screenshot TODO · `images/screenshots/browser-plugin/safari.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Safari extension enabled, same port / token as Chrome
+  </div>
+</Frame>
+
+## How to set it up
 
 Repo: [starcat-safari-plugin](https://github.com/starcat-app/starcat-safari-plugin)
 
-## Setup
+1. Starcat is running
+2. Port and token in **Settings → Integrations**
+3. Install / trust the Safari extension per the README
 
-Same as Chrome:
+Scope: [Features](/browser-plugin/features).
 
-1. Starcat running  
-2. Port and token under **Settings → Integrations**  
-3. Install / trust the Safari extension per repo README  
+## Notes
 
-Capability boundaries: [Features](/browser-plugin/features).
+Safari requires the extension to be enabled in Settings → Extensions. If nothing injects, use the same checklist as Chrome: app running, token match.
+
+## Related
+
+- [Chrome](/browser-plugin/chrome)

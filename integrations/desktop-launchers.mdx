@@ -1,11 +1,19 @@
 ---
 title: "Desktop launchers"
-description: "Search Starcat local repositories and GitHub from Alfred, uTools, or Raycast"
+description: "Search local Stars from Alfred, uTools, or Raycast, then open via starcat://"
 ---
 
-## Overview
+## What they are for
 
-Starcat provides open companion projects so you can search **local Stars / repositories** and **GitHub** without leaving your launcher of choice:
+Search **local Stars / repos** and GitHub from a launcher you already use, then jump back with `starcat://`. These are separate repos. Install from each README.
+
+<Frame caption="Screenshot TODO · `images/screenshots/integrations/desktop-launchers.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Alfred / Raycast searching local repos and handing off to Starcat
+  </div>
+</Frame>
+
+## Companion projects
 
 | Launcher | Project |
 |----------|---------|
@@ -13,24 +21,15 @@ Starcat provides open companion projects so you can search **local Stars / repos
 | **uTools** | [starcat-utools-plugin](https://github.com/starcat-app/starcat-utools-plugin) |
 | **Raycast** | [starcat-raycast-extension](https://github.com/starcat-app/starcat-raycast-extension) |
 
-These are separate repositories from the main Starcat app. Install from each project’s README.
+Typical jobs: search the local library, fall back to GitHub when needed, open hits in Starcat.
 
-## Typical capabilities
+Keep Starcat running or recently used so local search / pairing works. Finish permissions, keywords, and macOS privacy prompts in each project’s README.
 
-Exact commands differ by launcher, but the product intent is the same:
+## Notes
 
-1. Query Starcat’s local library on this Mac  
-2. Fall back to or combine with GitHub search when useful  
-3. Open a hit in Starcat (often via `starcat://…` deep links)  
-
-## Prerequisites
-
-- Starcat running (or recently used) so local search data / pairing is available when the extension requires it  
-- Follow each project’s setup for permissions, keywords, and macOS privacy prompts  
+The App Store sandbox cannot launch arbitrary user CLIs. Launcher extensions are separate processes but still need the app’s Local API / deep links. URL shapes: [Share links](/share-export/share-links).
 
 ## Related
 
-- [Share links](/share-export/share-links) (deep-link shapes)
-- [Browser plugins](/browser-plugin/features)
-- [Integrations settings](/settings/integrations)
-- [Changelog](/changelog)
+- [Browser extension](/browser-plugin/features)
+- [Integrations](/settings/integrations)

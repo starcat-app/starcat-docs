@@ -1,44 +1,42 @@
 ---
 title: "浏览器插件功能"
-description: "Companion v1：推荐、Wiki、笔记、Health 等"
+description: "Companion v1：在 GitHub 仓库页读推荐、笔记、Health；完整 AI 请回 App"
 ---
 
-## 设计范围（v1）
+## 用来做什么
 
-在 **GitHub 仓库页**注入增强，典型包括：
+在 **GitHub 仓库页**加一层本机 Starcat 能力，少切一次桌面。v1 是增强，不是把整个 App 搬进浏览器。
+
+<Frame caption="截图待补充 · `images/screenshots/browser-plugin/features.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    GitHub 仓库页上的 Starcat 增强区：笔记 / Health / 相似推荐
+  </div>
+</Frame>
+
+## v1 有什么
 
 | 能力 | 说明 |
 |------|------|
 | 相似推荐 | 只读列表（条数有上限） |
-| Wiki 入口 | 跳转 / 打开 Wiki 相关 |
+| Wiki 入口 | 跳转 / 打开 Wiki |
 | 私有笔记 | 编辑本机笔记；通常限**已 Star** 仓库 |
 | Health / OpenSSF | 展示本地已缓存分数；不在网页里完整重算 |
 | CodeFlow / Codebase 按钮 | 若桌面端启用，提供跳转 |
 
-**明确不做（v1）**：完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单等。完整 AI 请回 App。
+**明确不做（v1）**：完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单。完整 AI 请回 App。
 
-正式方案背景（高级阅读）：仓库内 `docs/2-产品/需求讨论/正式方案/Chrome-Companion-v1-正式方案.md`。
+通信：`http://127.0.0.1:{port}/plugin/v1/...`，`Authorization: Bearer <token>`，流量留在本机。Token 在 [集成设置](/zh-Hans/settings/integrations) 管理。
 
-## 通信
+## 注意
 
-- `http://127.0.0.1:{port}/plugin/v1/...`  
-- `Authorization: Bearer <token>`  
-- 流量留在本机  
-
-Token 在 [集成设置](/zh-Hans/settings/integrations) 管理。
+| 现象 | 处理 |
+|------|------|
+| GitHub 页无注入 | App 是否运行；扩展是否启用；端口 / Token 是否一致 |
+| 笔记不能编 | 是否已 Star；Token 是否过期 |
+| Health 不显示 | 本机是否已有缓存；回 App 打开详情触发评分 |
 
 ## 相关
 
 - [Chrome 安装](/zh-Hans/browser-plugin/chrome)
 - [相似推荐](/zh-Hans/discover/explore/similar-repos)
 - [Repo Health](/zh-Hans/main-interface/repo-health)
-
-## 排障
-
-| 现象 | 处理 |
-|------|------|
-| GitHub 页无注入 | App 是否运行；扩展是否启用；端口/Token 是否一致 |
-| 笔记不能编 | 是否已 Star；Token 是否过期 |
-| Health 不显示 | 本机是否已有缓存；回 App 打开详情触发评分 |
-
-详见 [Chrome](/zh-Hans/browser-plugin/chrome)、[集成](/zh-Hans/settings/integrations)。

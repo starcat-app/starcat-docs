@@ -1,44 +1,42 @@
 ---
-title: "Browser plugin features"
-description: "Companion v1: recommendations, Wiki, notes, Health, and more"
+title: "Browser extension features"
+description: "Companion v1: recommendations, notes, Health on GitHub repo pages; full AI stays in the app"
 ---
 
-## Design scope (v1)
+## What it is for
 
-Enhancements inject on **GitHub repo pages**, typically including:
+A thin layer of **local Starcat** on GitHub repository pages so you switch to the desktop less. v1 is an enhancement, not the whole app in a browser.
 
-| Capability | Description |
-|------------|-------------|
-| Similar recommendations | Read-only list (capped count) |
-| Wiki entry | Jump / open Wiki-related flows |
-| Private notes | Edit local notes; usually **starred repos only** |
-| Health / OpenSSF | Show locally cached scores; no full recompute in the browser |
-| CodeFlow / Codebase buttons | Jump when enabled on desktop |
+<Frame caption="Screenshot TODO · `images/screenshots/browser-plugin/features.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Starcat inject on a GitHub repo page: notes / Health / similar repos
+  </div>
+</Frame>
 
-**Explicitly out of scope (v1)**: full Inbox, desktop-grade AI summary workflows, complex context menus, etc. Use the app for full AI.
+## What v1 includes
 
-Formal design background (advanced): `docs/2-产品/需求讨论/正式方案/Chrome-Companion-v1-正式方案.md` in the repo.
+| Capability | Detail |
+|------------|--------|
+| Similar repos | Read-only list (capped) |
+| Wiki | Jump / open Wiki |
+| Private notes | Edit on-device notes; usually **starred** repos only |
+| Health / OpenSSF | Shows cached scores; does not fully recompute in the page |
+| CodeFlow / Codebase buttons | Jump into the desktop app when those features are on |
 
-## Communication
+**Out of v1:** full Inbox, desktop AI summary workflows, heavy context menus. Full AI stays in the app.
 
-- `http://127.0.0.1:{port}/plugin/v1/...`  
-- `Authorization: Bearer <token>`  
-- Traffic stays on localhost  
+Traffic: `http://127.0.0.1:{port}/plugin/v1/...` with `Authorization: Bearer <token>`, all on localhost. Manage the token in [Integrations](/settings/integrations).
 
-Manage the token under [Integrations settings](/settings/integrations).
+## Notes
+
+| Symptom | Try |
+|---------|-----|
+| No inject | Is the app running? Is the extension enabled? Port / token match? |
+| Notes locked | Is the repo starred? Did the token expire? |
+| No Health | Is there a local cache? Open detail in the app to score it |
 
 ## Related
 
-- [Chrome install](/browser-plugin/chrome)
+- [Chrome](/browser-plugin/chrome)
 - [Similar repos](/discover/explore/similar-repos)
 - [Repo Health](/main-interface/repo-health)
-
-## Troubleshooting
-
-| Symptom | Fix |
-|---------|-----|
-| No injection on GitHub | Is the app running? Extension enabled? Port/token match? |
-| Can't edit notes | Starred? Token expired? |
-| Health missing | Local cache empty? Open detail in the app to trigger scoring |
-
-See [Chrome](/browser-plugin/chrome) and [Integrations](/settings/integrations).

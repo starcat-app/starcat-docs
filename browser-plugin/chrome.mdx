@@ -1,35 +1,42 @@
 ---
 title: "Chrome extension"
-description: "Install Chrome Companion and connect to local Starcat"
+description: "Install Chrome Companion and connect it to a running Starcat with a local token"
 ---
 
-## Prerequisites
+## What it is for
 
-1. Starcat installed and **running** on this Mac  
-2. **Settings → Integrations**: configure Local API Key and Browser Plugin (port, token)  
-3. Install the Chrome extension  
+Let GitHub repo pages in Chrome read on-device notes and Health. The extension does not hold your Stars library. **Starcat must be running.**
 
-Extension repo / release notes: [starcat-chrome-plugin](https://github.com/starcat-app/starcat-chrome-plugin). If listed on Chrome Web Store, follow install links on the website or repo README.
+<Frame caption="Screenshot TODO · `images/screenshots/browser-plugin/chrome.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Integrations: Browser Plugin port and token; Chrome extension enabled
+  </div>
+</Frame>
 
-## Connection model
+## How to install
+
+1. Starcat is installed and **running**
+2. **Settings → Integrations**: Local API key and Browser Plugin (port, token)
+3. Install the Chrome extension
+
+Repo / release notes: [starcat-chrome-plugin](https://github.com/starcat-app/starcat-chrome-plugin). If it is on the Chrome Web Store, prefer the site or README install link.
 
 ```text
 Chrome extension ──HTTP──► 127.0.0.1:port /plugin/v1/*
-        Bearer Token (matches Integrations settings)
+        Bearer token (same as Integrations)
                 │
                 ▼
-         Local Starcat app
+         Starcat on this Mac
 ```
 
-When the app quits, injection fails or goes stale — launch Starcat before browsing GitHub.
+Quitting the app breaks the inject. Launch Starcat, then reload GitHub.
 
-## Verify
+Verify on any starred GitHub repo page. You should see the enhance block ([features](/browser-plugin/features)). If not: extension permission, port / token, app running.
 
-1. Open any GitHub repo page you've starred  
-2. You should see Starcat enhancements (notes / Health, etc. — see [Features](/browser-plugin/features))  
-3. If missing: check extension permissions, port/token, and whether the app is running  
+## Notes
+
+A leaked token is a local API credential (lower risk while bound to 127.0.0.1; still do not screenshot Settings into a chat). Safari: [Safari extension](/browser-plugin/safari).
 
 ## Related
 
-- [Integrations settings](/settings/integrations)
-- [Safari](/browser-plugin/safari)
+- [Integrations](/settings/integrations)
