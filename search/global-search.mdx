@@ -1,50 +1,60 @@
 ---
-title: "Global search and list search"
-description: "How ⌘K Search Center and ⌘F list search divide the work"
+title: "Global vs list search"
+description: "⌘K Search Center versus ⌘F list search"
 ---
 
-## Know the two entry points first
+## What they are for
 
-| Entry | Default shortcut | Purpose |
-|-------|------------------|---------|
-| **Search Center** | **⌘K** | Standalone panel: All / Local / GitHub / Web |
-| **List search box** | **⌘F** | Filter the **current** Manage / Explore list |
+Starcat has two search entries. Do not treat them as one:
 
-Both shortcuts can be changed in [Keyboard shortcuts](/settings/shortcuts). Older docs that say “⌘F opens global search” are outdated.
+| Entry | Default shortcut | Job |
+|-------|------------------|-----|
+| **Search Center** | **⌘K** | Standalone panel: local Stars, GitHub, and the web |
+| **List search** | **⌘F** | Filter **only** the current Manage / Explore list |
 
-Dedicated Search Center page: [Search Center](/search/search-center).
+Docs that said “⌘F opens global search” are outdated. Shortcuts are editable in [Shortcuts](/settings/shortcuts). Dedicated page: [Search Center](/search/search-center).
 
-## List keyword search
+<Frame caption="Screenshot TODO · `images/screenshots/search/list-search.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Middle-column list search (⌘F) with keyword / semantic toggle
+  </div>
+</Frame>
 
-Type keywords in the middle-column search box. Uses local FTS5 and typically covers:
+## Keyword list search
 
-- Repository name, owner, description  
-- topics  
-- Private note body  
+Focus the middle search field. Local FTS5 usually covers name, owner, description, topics, and **saved** private notes.
 
-Overview:
+- Multi-word matching
+- Relevance ranking (BM25-style)
+- Combines with [toolbar filters](/search/filters)
+- Knowledge-base content supports Chinese infix matching
 
-- Multi-word matching  
-- Relevance ranking (BM25-style)  
-- Can stack with [toolbar filters](/search/filters)  
-- Chinese infix matching for knowledge-base content  
+Unsaved note drafts are not indexed.
 
-## List semantic search (Pro)
+## Semantic list search (Pro)
 
-Switch to **Semantic** mode to describe the repo you want in natural language.
+Switch to **Semantic** and describe the library in natural language. Requirements:
 
-Prerequisites:
+1. [Pro](/subscribe/plan-comparison)
+2. Embedding configured in [Settings → AI](/settings/ai)
+3. Build / refresh the AI index when the UI asks
 
-1. [Pro](/subscribe/plan-comparison)  
-2. Configure Embedding in [Settings → AI](/settings/ai)  
-3. Build or refresh the AI index as prompted  
+Scope can be starred / knowledge / all (follow the app). See [Semantic search](/search/semantic-search).
 
-Scope options include starred / knowledge / all (exact options follow the app). See [Semantic search](/search/semantic-search).
+## Which entry
 
-## When to use which
+| Situation | Use |
+|-----------|-----|
+| Shrink Untagged right now | ⌘F + filters |
+| Search local + GitHub + web together | ⌘K |
+| “Is there a local RAG library?” | List semantic, or the [RAG workspace](/knowledge-base/rag-workspace) |
 
-| Scenario | Use |
-|----------|-----|
-| Quickly narrow a list like Untagged | ⌘F list search + filters |
-| Search local + GitHub + web at once | ⌘K Search Center |
-| Semantic questions like “repos that do local RAG” | List semantic mode or RAG later |
+## Notes
+
+- ⌘F never searches Stars outside the current list.
+- Semantic search is not web search. Web uses External Search providers; semantic uses the embedding index.
+
+## Related
+
+- [Search Center](/search/search-center)
+- [Filters](/search/filters)

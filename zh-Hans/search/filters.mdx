@@ -1,21 +1,27 @@
 ---
 title: "筛选与过滤"
-description: "工具栏统一筛选：维度、组合、重置与和搜索叠加"
+description: "工具栏统一筛选：维度、组合、重置，以及和搜索怎么叠"
 ---
 
-## 入口
+## 用来做什么
 
-Manage（以及部分列表页）工具栏的 **统一筛选** 菜单（漏斗图标，文案以 App 为准）。
+侧栏决定「这一大类」，筛选决定「这一类里还要满足哪些硬条件」。适合每天整理：先点「未分类」或某个 Smart Collection，再用漏斗收窄，最后 [批量](/zh-Hans/manage-stars/batch-operations)。比在 All Stars 里裸勾高效。
 
-推荐工作流：
+<Frame caption="截图待补充 · `images/screenshots/search/filters.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    工具栏漏斗：状态、语言、标签、入库等多条件
+  </div>
+</Frame>
 
-1. 侧栏先选一个范围（如「未分类」或某个 Smart Collection）  
-2. 再用筛选收窄  
-3. 需要时 [多选批量处理](/zh-Hans/manage-stars/batch-operations)  
+## 怎么用
 
-比在「全部 Stars」里裸勾选高效得多。
+Manage（以及部分列表页）工具栏的统一筛选（漏斗，文案以 App 为准）：
 
-## 维度说明
+1. 侧栏先选范围
+2. 打开筛选，勾维度
+3. 需要时再 ⌘F 或批量
+
+## 有哪些维度
 
 | 维度 | 说明 | 延伸 |
 |------|------|------|
@@ -30,19 +36,11 @@ Manage（以及部分列表页）工具栏的 **统一筛选** 菜单（漏斗�
 | **隐藏归档** | 去掉 archived | — |
 | **隐藏 Fork** | 去掉 fork | — |
 
-不是每一页都暴露全部维度；探索列表的筛选会更少或不同。
+不是每一页都露出全部维度；探索列表通常更少。
 
-## 组合逻辑
+## 组合与叠加
 
-多条件一般为 **AND**。
-
-示例：
-
-> 语言 = Swift **且** 状态 = 正在使用 **且** 未入库  
-
-适合找出「我正在用、但还没放进知识库的 Swift 项目」。
-
-## 与搜索叠加
+多条件一般为 **AND**。例如：语言 = Swift **且** 状态 = 正在使用 **且** 未入库。
 
 | 层 | 作用 |
 |----|------|
@@ -50,15 +48,17 @@ Manage（以及部分列表页）工具栏的 **统一筛选** 菜单（漏斗�
 | 筛选 | 结构化约束 |
 | 列表搜索（⌘F） | 关键词 / 语义再找 |
 
-三者同时生效时，先理解「当前列表已经是筛选后的子集」。见 [列表搜索](/zh-Hans/search/global-search)。
+三者同时生效时，当前列表已经是子集。见 [列表搜索](/zh-Hans/search/global-search)。
 
-## 重置与记忆
+## 重置
 
-- 菜单底部 **重置**：清掉当前筛选  
-- 条件常按模块持久化：切到「标签 A」再切回「All Stars」，可能恢复各自上次条件  
-- 若行为怪异： [通用设置](/zh-Hans/settings/general) → 重置列表偏好  
+- 菜单底部 **重置**：清掉当前筛选
+- 条件常按模块记住：切到「标签 A」再切回 All Stars，可能各自恢复上次条件
+- 行为怪异时：[通用设置](/zh-Hans/settings/general) → 重置列表偏好
+
+想把同一套规则天天留在侧栏，用 [智能集合](/zh-Hans/manage-stars/smart-collections)，不要指望筛选菜单当收藏夹。
 
 ## 相关
 
-- [智能集合](/zh-Hans/manage-stars/smart-collections)（规则过滤 ≈ 可保存的筛选）
 - [仓库列表](/zh-Hans/main-interface/repo-list)
+- [工具栏](/zh-Hans/main-interface/toolbar)

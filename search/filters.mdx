@@ -1,64 +1,64 @@
 ---
 title: "Filters"
-description: "Unified toolbar filters: dimensions, combinations, reset, and stacking with search"
+description: "Toolbar filters: dimensions, AND logic, reset, and stacking with search"
 ---
 
-## Entry point
+## What they are for
 
-The **unified filter** menu on the Manage toolbar (and some list pages)—funnel icon; label follows the app.
+The sidebar picks a **category**. Filters pick **hard constraints inside that category**. Daily triage: open Untagged or a Smart Collection, narrow with the funnel, then [batch](/manage-stars/batch-operations). Faster than checking rows on raw All Stars.
 
-Recommended workflow:
+<Frame caption="Screenshot TODO · `images/screenshots/search/filters.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Toolbar funnel: status, language, tags, ingest, and more
+  </div>
+</Frame>
 
-1. Pick a scope in the sidebar first (e.g. Untagged or a Smart Collection)  
-2. Narrow with filters  
-3. Use [batch multi-select](/manage-stars/batch-operations) when needed  
+## How to use them
 
-Much faster than toggling filters on raw All Stars.
+Manage (and some list pages) expose a unified filter menu (funnel; copy follows the app):
+
+1. Pick a sidebar scope
+2. Open filters and check dimensions
+3. Optionally ⌘F or batch
 
 ## Dimensions
 
-| Dimension | Description | More |
-|-----------|-------------|------|
+| Dimension | Meaning | More |
+|-----------|---------|------|
 | **Status** | unread / read / using | [Notes and status](/manage-stars/notes-and-status) |
-| **Starred / not starred** | Top bar may also offer a quick toggle | — |
+| **Starred / not starred** | Toolbar may also have a shortcut | — |
 | **Knowledge base** | Ingested / not ingested | [Knowledge base](/knowledge-base/overview) |
-| **Language** | Multi-select; pairs with “languages of interest” | [List preferences](/settings/list-preferences) |
-| **Tags** | Filter by tag | [Tags](/manage-stars/tags) |
-| **Wiki** | Repos with Wiki signals | Wiki entry on detail |
-| **Health** | Repos with cached health scores | [Repo Health](/main-interface/repo-health) |
-| **OpenSSF** | Repos with cached security scores | Same as above |
-| **Hide archived** | Exclude archived | — |
-| **Hide fork** | Exclude forks | — |
+| **Language** | Multi-select; can pair with interest languages | [List preferences](/settings/list-preferences) |
+| **Tags** | Narrow by tag | [Tags](/manage-stars/tags) |
+| **Wiki** | Repos with a wiki signal | Wiki entry in detail |
+| **Health** | Cached health score | [Repo Health](/main-interface/repo-health) |
+| **OpenSSF** | Cached security score | Same |
+| **Hide archived** | Drop archived repos | — |
+| **Hide forks** | Drop forks | — |
 
-Not every page exposes every dimension; Explore lists may offer fewer or different filters.
+Not every page shows every dimension. Explore lists usually expose fewer.
 
-## Combination logic
+## Combining layers
 
-Multiple conditions are usually **AND**.
+Multiple conditions are generally **AND**. Example: language = Swift **and** status = using **and** not ingested.
 
-Example:
-
-> Language = Swift **and** status = using **and** not ingested  
-
-Good for finding “Swift projects I’m actively using but haven’t added to the knowledge base yet.”
-
-## Stacking with search
-
-| Layer | Role |
-|-------|------|
-| Sidebar category | Broadest scope |
+| Layer | Job |
+|-------|-----|
+| Sidebar category | Outer scope |
 | Filters | Structured constraints |
-| List search (⌘F) | Keyword / semantic refinement |
+| List search (⌘F) | Keywords / semantic on top |
 
-When all three apply, remember the current list is already a filtered subset. See [List search](/search/global-search).
+When all three apply, the list is already a subset. See [List search](/search/global-search).
 
-## Reset and persistence
+## Reset
 
-- **Reset** at the bottom of the menu clears current filters  
-- Conditions often persist per module: switch to “Tag A” then back to All Stars and each may restore its last state  
-- If behavior seems wrong: [General settings](/settings/general) → reset list preferences  
+- **Reset** at the bottom of the menu clears the current filters
+- Conditions are often remembered **per module**: switching Tag A → All Stars may restore each last state
+- If it feels stuck: [General](/settings/general) → reset list preferences
+
+To keep the same rule in the sidebar every day, use a [smart collection](/manage-stars/smart-collections). The filter menu is not a bookmark.
 
 ## Related
 
-- [Smart collections](/manage-stars/smart-collections) (rule filters ≈ savable filters)
 - [Repository list](/main-interface/repo-list)
+- [Toolbar](/main-interface/toolbar)

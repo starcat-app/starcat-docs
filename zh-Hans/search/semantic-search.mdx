@@ -3,9 +3,9 @@ title: "语义搜索"
 description: "Pro：用自然语言检索 Stars / 知识库向量索引"
 ---
 
-## 适用场景
+## 用来做什么
 
-当你说不清准确关键词，但能描述「我想要什么」时：
+关键词对不上、但你说得出「想要什么样的库」时用语义，而不是再猜 topic 拼写。
 
 | 关键词思维 | 语义示例 |
 |------------|----------|
@@ -13,34 +13,44 @@ description: "Pro：用自然语言检索 Stars / 知识库向量索引"
 | `react state` | 「带中间件的 React 状态管理」 |
 | `cli json` | 「命令行下处理 JSON 的工具」 |
 
-## 前提条件
+<Frame caption="截图待补充 · `images/screenshots/search/semantic.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    列表搜索切到语义 + 相关度百分比结果
+  </div>
+</Frame>
 
-1. 已激活 [Pro](/zh-Hans/subscribe/purchase)  
-2. **设置 → AI** 配置可用的 **Embedding** Provider / 模型  
-3. 按界面提示构建或更新 AI 索引  
-4. 在列表搜索切换到「语义」模式  
+## 前提
 
-非 Pro 会看到锁定态并打开付费墙。
+1. 已激活 [Pro](/zh-Hans/subscribe/purchase)
+2. **设置 → AI** 配好可用的 **Embedding** Provider / 模型
+3. 按界面构建或更新 AI 索引
+4. 列表搜索切到「语义」
+
+非 Pro 会看到锁定态并打开付费墙。没建索引时结果会空或明显偏少。
 
 ## 范围
 
 常见可选：
 
-- **starred**：已 Star  
-- **knowledge**：知识库  
-- **all**：更广（以 App 为准）  
+- **starred**：已 Star
+- **knowledge**：知识库
+- **all**：更广（以 App 为准）
 
-若目标是「只在我精选入库的内容里找」，优先 knowledge，或直接用 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 提问。
+只想在精选入库内容里找，优先 knowledge，或直接去 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) 提问。
 
 ## 原理（用户向）
 
-查询被编码为向量，与本地缓存的仓库向量比相似度；部分场景会与关键词结果融合排序。质量强烈依赖 Embedding 模型与索引是否覆盖目标仓库。
+查询编成向量，和本机缓存的仓库向量比相似度；部分场景会和关键词结果融合。质量取决于 Embedding 模型和索引是否覆盖目标仓。
 
-## 构建进度
+点构建后先出现忙碌细环；已是最新的仓会推进进度，且只补缺或过期向量。列表里的相关度百分比与语言、Stars、Forks 同字号。
 
-点击构建后先出现忙碌细环；已经是最新的仓库会推进进度环，且只补缺或过期向量。列表结果里的相关度百分比与语言、Stars、Forks 同字号。
+知识库关键词检索支持中文中缀；点名仓库时更容易落到 README 等已索引内容。见 [索引管理](/zh-Hans/knowledge-base/index-management)。
 
-知识库侧的关键词检索支持中文中缀；点名仓库时更容易落到 README 等已索引内容。详见 [索引管理](/zh-Hans/knowledge-base/index-management)。
+## 注意
+
+- 语义搜索不是 Search Center 的「网页」Scope。
+- Embedding 换模型后，旧向量可能对不齐，需要按界面重建索引。
+- 私有仓能否进向量索引，受登录权限和入库范围约束。
 
 ## 相关
 

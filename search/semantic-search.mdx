@@ -1,49 +1,59 @@
 ---
 title: "Semantic search"
-description: "Pro: find Stars and knowledge-base entries with natural language"
+description: "Pro: natural-language search over Stars / knowledge-base vectors"
 ---
 
-## When to use it
+## What it is for
 
-When you cannot name exact keywords but can describe what you want:
+Use semantic search when you can describe the library but cannot guess the exact keyword or topic spelling.
 
-| Keyword mindset | Semantic example |
-|---------------|------------------|
-| `python http server` | “Python libraries for quickly standing up an HTTP service” |
+| Keyword thinking | Semantic example |
+|------------------|------------------|
+| `python http server` | “a Python library to stand up an HTTP service quickly” |
 | `react state` | “React state management with middleware” |
-| `cli json` | “CLI tools for working with JSON” |
+| `cli json` | “a CLI tool for JSON” |
 
-## Prerequisites
+<Frame caption="Screenshot TODO · `images/screenshots/search/semantic.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    List search on Semantic, with relevance percentages
+  </div>
+</Frame>
 
-1. Active [Pro](/subscribe/purchase)  
-2. **Settings → AI**: configure a working **Embedding** provider / model  
-3. Build or update the AI index as prompted in the UI  
-4. Switch list search to **Semantic** mode  
+## Requirements
 
-Non-Pro users see a locked state and the paywall.
+1. [Pro](/subscribe/purchase) is active
+2. A working **Embedding** provider / model in **Settings → AI**
+3. Build or refresh the AI index when the UI asks
+4. Switch list search to **Semantic**
+
+Non-Pro sees a lock and the paywall. Without an index, results are empty or obviously thin.
 
 ## Scope
 
-Common options:
+Typical options:
 
-- **starred**: starred repos  
-- **knowledge**: knowledge base  
-- **all**: broader (exact options follow the app)  
+- **starred**: your Stars
+- **knowledge**: the knowledge base
+- **all**: broader (follow the app)
 
-If you only want curated ingested content, prefer **knowledge**, or ask directly in the [RAG workspace](/knowledge-base/rag-workspace).
+If you only want curated ingested content, prefer knowledge, or ask in the [RAG workspace](/knowledge-base/rag-workspace).
 
 ## How it works (user-facing)
 
-Your query is encoded as a vector and compared with locally cached repo vectors; some flows may blend with keyword results. Quality depends heavily on the Embedding model and whether the index covers target repos.
+The query is encoded as a vector and compared with cached repo vectors. Some paths fuse with keyword ranking. Quality tracks the embedding model and whether the index covers the target repos.
 
-## Build progress
+After you tap Build, a busy ring appears first; already-fresh repos advance the progress ring, and only missing or stale vectors are filled. Relevance percentages in the list match the type size of language, Stars, and Forks.
 
-After you start a build, a busy ring appears first. Repos that are already current advance the progress ring, and only missing or expired vectors are filled. Relevance percentages in list results use the same type size as language, Stars, and Forks.
+Knowledge-base keyword search supports Chinese infix matching; naming a repo is more likely to hit indexed README content. See [Index management](/knowledge-base/index-management).
 
-Knowledge-base keyword search supports Chinese infix matching; naming a repo more reliably lands on indexed README content. See [Index management](/knowledge-base/index-management).
+## Notes
+
+- Semantic search is not Search Center’s **Web** scope.
+- Changing the embedding model can misalign old vectors; rebuild when the UI says so.
+- Whether private repos enter the vector index depends on login scope and ingest range.
 
 ## Related
 
 - [AI settings](/settings/ai)
 - [Search Center](/search/search-center)
-- [Plan comparison](/subscribe/plan-comparison)
+- [Plans](/subscribe/plan-comparison)

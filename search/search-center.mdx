@@ -3,58 +3,51 @@ title: "Search Center"
 description: "⌘K: All / Local / GitHub / Web in one panel"
 ---
 
-## Open it
+## What it is for
+
+Search Center is a standalone panel for when you **do not know which source** holds the answer: local starred cache, GitHub repos you have not starred, and the web. ⌘F on the current list cannot cross sources.
+
+<Frame caption="Search Center / global search">
+  <img src="/images/screenshots/global-search.webp" alt="Search Center screenshot" className="rounded-xl" />
+</Frame>
+
+If that file is missing, capture `images/screenshots/global-search.webp` (four scopes plus one GitHub hit).
+
+## How to open it
 
 - Default **⌘K**
-- Global search entry beside the list
-- Menu item “Open global search” (wording follows the app)
-
-<Frame caption="Search Center">
-  <img src="/images/screenshots/global-search.webp" alt="Global search screenshot" className="rounded-xl" />
-</Frame>
+- Global search control next to the list
+- Menu **Open global search** (copy follows the app)
 
 ## Four scopes
 
 | Scope | Searches | Notes |
 |-------|----------|-------|
-| **All** | Multi-source aggregation | When you’re unsure where results live |
-| **Local** | Your Stars / local library | FTS; same engine as list search |
-| **GitHub** | GitHub Search API | Ingest badge; Star / ingest actions |
-| **Web** | External Search | Setup below |
+| **All** | Aggregated sources | When you are unsure |
+| **Local** | Your Stars / local library | FTS; same family as list search |
+| **GitHub** | GitHub Search API | Ingest badge; Star / ingest |
+| **Web** | External Search | See [External search](/search/external-search) |
 
-**Web search** is available to all users (providers may need a key). **Semantic search** remains Pro and lives mainly in list semantic mode—don’t confuse it with the Web scope.
+**Web search** is available to everyone (the provider may need a key). **Semantic search** is still Pro and lives mainly in list semantic mode. Do not confuse it with Web scope.
 
-## GitHub scope filters (examples)
+GitHub scope filters typically include language, topic, minimum stars, created / pushed time, and sort. Use it to find unstarred repos, then ingest or Star in one step.
 
-Language, topic, minimum stars, created/pushed dates, sort order, and more. Exact controls follow the panel.
+## What you can do on a result
 
-Good for discovering repos you haven’t starred yet, then ingesting or starring in one step.
+- Open local detail or the system browser
+- Ingest / Star (depends on result type and login)
+- Jump from a GitHub hit into your tidy workflow
 
-## Web scope
+## Notes
 
-Uses providers enabled under **Settings → Integrations → External Search**:
-
-- AnySearch / Tavily / Exa / Brave LLM Context, etc.  
-- Domain, content type, freshness, allow/block lists, and more  
-
-See [External search](/search/external-search) and [Integrations settings](/settings/integrations).
-
-## Actions on results
-
-- Open local detail or the system browser  
-- Add to knowledge base / Star (depends on result type and sign-in)  
-- Jump from GitHub results straight into your organize flow  
+| Symptom | What to try |
+|---------|-------------|
+| ⌘K does nothing | [Shortcuts](/settings/shortcuts) remapped or conflicting |
+| Empty GitHub scope | Login and rate limit → [FAQ sync](/faq/sync) |
+| Web scope fails | Key / test in [Integrations → External Search](/settings/integrations) |
+| Local miss on a note word | Confirm the note is saved; try [list search](/search/global-search) |
 
 ## Related
 
 - [List search](/search/global-search)
 - [Filters](/search/filters)
-
-## Troubleshooting
-
-| Symptom | What to try |
-|---------|-------------|
-| ⌘K does nothing | Check [Keyboard shortcuts](/settings/shortcuts) for remapping or conflicts |
-| GitHub scope empty | Check sign-in and rate limit → [FAQ · Sync](/faq/sync) |
-| Web scope fails | Check keys / test under [Integrations → External Search](/settings/integrations) |
-| Local miss words from notes | Confirm notes are saved; try [list search](/search/global-search) |

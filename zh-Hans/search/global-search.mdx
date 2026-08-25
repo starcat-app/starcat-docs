@@ -1,50 +1,60 @@
 ---
 title: "全局搜索与列表搜索"
-description: "⌘K Search Center 与 ⌘F 列表搜索的分工"
+description: "⌘K Search Center 与 ⌘F 列表搜索分别解决什么问题"
 ---
 
-## 先分清两个入口
+## 用来做什么
 
-| 入口 | 默认快捷键 | 作用 |
-|------|------------|------|
-| **Search Center** | **⌘K** | 独立面板：全部 / 本地 / GitHub / 网页 |
-| **列表搜索框** | **⌘F** | 过滤**当前** Manage/探索列表 |
+Starcat 有两个搜索入口，不要混用：
 
-两者都可在 [快捷键](/zh-Hans/settings/shortcuts) 修改。旧文档若写「⌘F 打开全局搜索」已过时。
+| 入口 | 默认快捷键 | 用来做什么 |
+|------|------------|------------|
+| **Search Center** | **⌘K** | 独立面板：一次搜本地 Stars、GitHub、网页 |
+| **列表搜索** | **⌘F** | 只过滤**当前** Manage / 探索列表 |
 
-Search Center 专页：[Search Center](/zh-Hans/search/search-center)。
+旧文档若写「⌘F 打开全局搜索」已经过时。快捷键可在 [快捷键](/zh-Hans/settings/shortcuts) 改。Search Center 专页见 [Search Center](/zh-Hans/search/search-center)。
 
-## 列表关键词搜索
+<Frame caption="截图待补充 · `images/screenshots/search/list-search.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    中栏列表搜索框（⌘F）+ 关键词 / 语义切换
+  </div>
+</Frame>
 
-在中栏搜索框输入关键词，使用本地 FTS5，通常覆盖：
+## 怎么用列表关键词搜索
 
-- 仓库名、owner、描述  
-- topics  
-- 私有笔记正文  
+焦点在中栏搜索框，本地 FTS5 通常覆盖：仓库名、owner、描述、topics、已保存的私有笔记。
 
-特性概览：
+- 多词组合匹配
+- 按相关性排序（BM25 一类机制）
+- 可与 [工具栏筛选](/zh-Hans/search/filters) 叠加
+- 知识库内容支持中文中缀匹配
 
-- 多词组合匹配  
-- 相关性排序（BM25 一类机制）  
-- 可与[工具栏筛选](/zh-Hans/search/filters)叠加  
-- 知识库内容支持中文中缀匹配  
+没保存的笔记草稿搜不到。
 
 ## 列表语义搜索（Pro）
 
-切换到「语义」模式后，可用自然语言描述目标库。
+切到「语义」后，用自然语言描述目标库，而不是死磕关键词。前提：
 
-前提：
-
-1. [Pro](/zh-Hans/subscribe/plan-comparison)  
-2. [设置 → AI](/zh-Hans/settings/ai) 配置 Embedding  
-3. 按需构建 AI 索引  
+1. [Pro](/zh-Hans/subscribe/plan-comparison)
+2. [设置 → AI](/zh-Hans/settings/ai) 配好 Embedding
+3. 按界面构建 / 更新 AI 索引
 
 范围可选 starred / knowledge / all（以 App 为准）。详见 [语义搜索](/zh-Hans/search/semantic-search)。
 
-## 使用建议
+## 怎么选入口
 
 | 场景 | 用哪个 |
 |------|--------|
-| 在「未分类」里快速缩小列表 | ⌘F 列表搜索 + 筛选 |
-| 同时搜本地 + GitHub + 网页 | ⌘K Search Center |
-| 「有没有做本地 RAG 的库」这类语义问法 | 列表语义或后续 RAG |
+| 在「未分类」里快速缩小当前列表 | ⌘F + 筛选 |
+| 同时搜本地 + GitHub + 网页 | ⌘K |
+| 「有没有做本地 RAG 的库」这类问法 | 列表语义，或 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) |
+
+## 注意
+
+- ⌘F 不会搜当前列表以外的 Stars。
+- 语义和网页搜索不是一回事：网页走 External Search Provider，语义走 Embedding 索引。
+
+## 相关
+
+- [Search Center](/zh-Hans/search/search-center)
+- [筛选](/zh-Hans/search/filters)
