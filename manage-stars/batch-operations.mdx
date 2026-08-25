@@ -1,35 +1,40 @@
 ---
 title: "Batch operations"
-description: "Multi-select workflow; Manage vs Explore action differences"
+description: "Multi-select to tag, ingest, or Unstar; Manage vs Explore actions"
 ---
 
-## When to use
+## What they are for
 
-- Clear a large Untagged backlog: filter, then batch tag  
-- Batch ingest repos marked **Using**  
-- Star / ingest multiple ranked items from Discover  
+Tag thirty untagged Swift repos at once, or ingest everything marked **using**, instead of opening detail one by one. **Narrow the list first.** Do not multi-select hundreds of rows on raw All Stars.
 
-## Standard workflow
+<Frame caption="Screenshot TODO · `images/screenshots/manage-stars/batch.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Multi-select: checked rows and the bottom batch bar
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="Narrow scope">Pick a sidebar category + [filters](/search/filters) / list search.</Step>
-  <Step title="Multi-select">Toolbar → Multi-select → check repos.</Step>
-  <Step title="Run action">Choose an action on the bottom bar and confirm.</Step>
-  <Step title="Finish">Usually exits multi-select automatically with a toast summary; or press Esc to cancel.</Step>
-</Steps>
+## How to do it
+
+1. Pick a sidebar category, then [filters](/search/filters) or ⌘F
+2. Toolbar **Multi-select**, check rows
+3. Choose an action on the bottom bar and confirm
+4. Starcat usually exits multi-select and toasts a summary; Esc cancels
 
 ## Manage actions
 
-| Action | Behavior | Notes |
-|--------|----------|-------|
-| Tags | Append; does not remove existing tags | Free tag limit: 20 |
-| Add / remove from knowledge base | Changes ingest state | [Adding repos](/knowledge-base/adding-repos) |
-| Unstar | Calls GitHub API | Cannot undo in-app with one tap; multi-repo confirmation |
-| Move to Stars List | When Lists are synced | [GitHub Lists](/manage-stars/github-lists) |
+| Action | Behavior | Watch out |
+|--------|----------|-----------|
+| Tags | Appends; does not clear existing tags | Free cap 20 tags |
+| Ingest / remove from library | Changes ingest | [Ingest](/knowledge-base/adding-repos) |
+| Unstar | GitHub API | **Cannot** undo in-app; extra confirm for many rows |
+| Move to Stars List | If Lists are synced | [GitHub Lists](/manage-stars/github-lists) |
 
-## Explore actions
+Explore more often Stars / Unstars or ingests. See [Explore overview](/discover/explore/overview).
 
-More common: Star / Unstar, add to knowledge base. See [Discover overview](/discover/explore/overview).
+## Notes
+
+- Batch Unstar really unstars on GitHub.
+- A full free tag quota will fail or gate batch tagging. Delete unused tags or upgrade Pro.
 
 ## Related
 

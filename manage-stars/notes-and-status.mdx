@@ -1,61 +1,58 @@
 ---
 title: "Notes and status"
-description: "Private Markdown notes and unread / read / using"
+description: "Private on-device Markdown notes, and unread / read / using"
 ---
 
-## Private notes
+## What they are for
 
-Each repo can have one private note:
+Each repository can have a **local-only** note: why you starred it, what broke, how you plan to use it. The body is indexed for local search. Collaborators on GitHub never see it.
 
-- Stored in local SQLite only—**not uploaded to GitHub**
-- Markdown edit / preview
-- Body is indexed for local search (see [List search](/search/global-search))
+Status is a three-value triage, not a kanban:
 
-### Edit workflow
+| Status | Meaning |
+|--------|---------|
+| **unread** | Not handled yet; common default for new Stars |
+| **read** | You have seen the README / you understand it |
+| **using** | You actually depend on it in a project |
 
-<Steps>
-  <Step title="Open detail">Select a repo; find the **Private notes** collapsible section on the right.</Step>
-  <Step title="Edit">Type in the Edit tab; switch to Preview when needed.</Step>
-  <Step title="Save">Auto-save indicator in the UI; persisted to the database on save.</Step>
-</Steps>
+Older labels such as “reading / deprecated” are gone.
 
-After external writes (browser extension, MCP/CLI), the detail pane refreshes to show the new content.
+<Frame caption="Screenshot TODO · `images/screenshots/manage-stars/notes-status.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Detail: private note Markdown preview and status capsule
+  </div>
+</Frame>
 
-### AI-generated notes (Pro)
+## Notes
 
-**AI generate** in the notes header: produces a draft first; **you confirm before write**—no silent overwrite. See [AI personal notes](/ai-features/personal-notes).
+1. Select a repo and open **Private notes** on the right
+2. Write Markdown on the Edit tab; switch to Preview as needed
+3. Watch the autosave indicator; it writes local SQLite
 
-## Reading status
+Successful writes from the browser extension or MCP/CLI refresh the pane.
 
-The current model has three values:
+**AI generate (Pro):** **Generate with AI** in the notes header produces a draft. **Nothing is saved until you confirm.** See [AI personal notes](/ai-features/personal-notes).
 
-| Status | Meaning | Typical use |
-|--------|---------|-------------|
-| **Unread** | Not processed yet | Common default for new Stars |
-| **Read** | Seen / understood | After browsing the README |
-| **Using** | In active use in a project | Libraries you actually depend on |
+## Status
 
-<Note>
-  Follow the three in-app statuses. Older copy such as “reading” or “deprecated” is obsolete.
-</Note>
+In detail: tap unread / read to enter **using**; tap × on using to return to read.
 
-### How to change (detail)
-
-- Unread / Read: click the status pill → moves to **Using**
-- Using: click × → back to **Read**
-
-You can also use the CLI (after pairing):
+Filter via [Filters](/search/filters). After CLI pairing:
 
 ```bash
 starcat repo status set owner/repo using --apply
 ```
 
-See [CLI usage](/cli/usage).
+See [CLI](/cli/usage).
 
-### Filter by status
+Marking **using** may ask whether to ingest for RAG. Ingest, Star, and status are independent. See [Ingest](/knowledge-base/adding-repos).
 
-Unified toolbar filters support status. See [Filters](/search/filters).
+## Notes
 
-## Knowledge base
+- Notes are not on GitHub. Moving Macs requires [backup](/data-privacy/backup).
+- Unsaved drafts are not list-searchable.
 
-When marked **Using**, the UI may prompt whether to add the repo to the knowledge base for RAG. Ingest, Star, and status are independent. See [Adding repos](/knowledge-base/adding-repos).
+## Related
+
+- [Tags](/manage-stars/tags)
+- [List search](/search/global-search)

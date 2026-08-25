@@ -1,49 +1,46 @@
 ---
 title: "Smart collections"
-description: "System collections, custom rules, Free limit of 4 custom collections"
+description: "Rule-based dynamic sets of repos; free cap 4 custom collections"
 ---
 
-## Concept
+## What they are for
 
-Dynamically include repos by **rules**: when data changes, membership updates automatically. Good for standing views like Untagged, low maintenance, or Using.
+Filters are temporary. A **smart collection** stores the rule: membership updates as data changes. Use them as daily entry points—Untagged, Using, low maintenance, Stars not in the knowledge base.
 
 <Note>
-  Free tier: up to **4** **custom** collections; Pro: unlimited. Built-in system collections generally do not count toward the limit.
+  Free: **4** custom collections. Pro: unlimited. Built-in system collections usually do not count against the cap.
 </Note>
 
-## Entry
+<Frame caption="Smart collections">
+  <img src="/images/screenshots/smart-collections.webp" alt="Smart collections" className="rounded-xl" />
+</Frame>
 
-Sidebar **Manage → Smart Collections**:
+If that file is missing, capture `images/screenshots/smart-collections.webp` (sidebar collections + rule editor).
 
-- Overview of system + custom collections  
-- Click a name to open the matching list  
-- Gear opens the rule editor  
+## How to use them
 
-## System collections (examples)
+Sidebar **Manage → Smart Collections**: overview of system + custom; open a name for the matching list; gear edits rules.
 
-Names follow the app; common perspectives include:
+System names follow the app. Typical views: in library / not ingested, needs review, low maintenance, untagged, using, recently active. Use them as a triage start, then [batch](/manage-stars/batch-operations).
 
-- In knowledge base / Stars not ingested  
-- Needs review, low maintenance, high value  
-- Untagged, **Using**, recently active  
+## Custom collections
 
-Use system collections as daily triage entry points, then [batch operations](/manage-stars/batch-operations).
+1. Tap “+”
+2. Add conditions: language, tags, status, Stars, updated time, ingest, and similar; AND / OR
+3. Name and save; it appears in the sidebar
 
-## Create a custom collection
+Hitting the cap is gated → [Plans](/subscribe/plan-comparison).
 
-<Steps>
-  <Step title="New">Tap “+”.</Step>
-  <Step title="Add conditions">Language, tags, status, Star count, last updated, ingest state, and more; AND / OR.</Step>
-  <Step title="Name and save">Appears in the sidebar.</Step>
-</Steps>
+Editing, renaming, or deleting a collection **does not delete repositories**.
 
-At the limit, entitlement gating blocks creation → [Plan comparison](/subscribe/plan-comparison).
+## vs filters
 
-## Edit / delete
-
-Changing rules, renaming, or deleting a collection **does not** delete repositories.
+| | Filters | Smart collection |
+|--|---------|------------------|
+| Lifetime | This list session | Stays in the sidebar |
+| Best for | One-off narrowing | A view you reopen every day |
 
 ## Related
 
-- [Filters](/search/filters) (temporary narrow vs saved rules)
+- [Filters](/search/filters)
 - [Tags](/manage-stars/tags)

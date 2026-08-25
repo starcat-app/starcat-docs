@@ -1,80 +1,54 @@
 ---
-title: "Tag management"
-description: "Create and edit tags, apply tags, batch tagging, and Free limits"
+title: "Tags"
+description: "Local tags for fine-grained Stars classification; free cap 20"
 ---
 
-## What tags are
+## What they are for
 
-Tags are Starcat’s core local classification: you define color, icon, and name. They **live on this Mac only** (cross-device cloud sync is not shipped yet—see [Backup](/data-privacy/backup)).
+Tags are Starcat’s usual **on-device classification**: you pick color, icon, and name. They never leave this Mac. GitHub Stars Lists match GitHub’s own grouping; tags match *your* scheme (`frontend/react`, `ops/k8s`).
+
+Cross-device cloud sync is not shipped. [Back up](/data-privacy/backup) before you move machines.
 
 <Note>
-  Free tier: up to **20** tags; Pro: unlimited. See [Plan comparison](/subscribe/plan-comparison).
+  Free: **20** tags. Pro: unlimited. See [Plans](/subscribe/plan-comparison).
 </Note>
+
+<Frame caption="Screenshot TODO · `images/screenshots/manage-stars/tags.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Tag manager: color palette, SF Symbols, Tags list in the sidebar
+  </div>
+</Frame>
 
 ## Create a tag
 
-<Steps>
-  <Step title="Open management">
-    Tap “+” next to the Tags group in the sidebar, or open the tag management panel.
-  </Step>
-  <Step title="Create">
-    Set:
-    - **Name**
-    - **Color** (preset palette)
-    - **Icon** (SF Symbols collection)
-  </Step>
-  <Step title="Save">
-    The tag appears in the sidebar and is ready to apply.
-  </Step>
-</Steps>
+1. Tap “+” next to Tags in the sidebar, or open tag management
+2. Set name, color, and SF Symbol
+3. Save; you can apply it immediately
 
-At the Free limit, creation is blocked by entitlement gating with an upgrade-to-Pro prompt.
+Hitting the free cap is gated with a Pro prompt.
+
+## Apply tags
+
+**One repo:** [Repository detail](/main-interface/repo-detail) → tag area → search and multi-select. Applies immediately.
+
+**Many repos:** [Multi-select](/manage-stars/batch-operations) → Tags on the bottom bar. Batch **appends**; it does not clear existing tags.
+
+Click a tag in the sidebar to list only those repos. Toolbar filters can narrow by tag too. See [Filters](/search/filters).
 
 ## Edit and delete
 
-| Action | Typical path |
-|--------|--------------|
-| Rename | Right-click tag → Rename |
-| Change color / icon | Right-click → Edit |
-| Delete | Right-click → Delete |
+Context menu: rename, recolor / icon, delete. Deleting a tag **does not delete repositories**; it only drops the association.
 
-Deleting a tag **does not** delete repositories—only the association.
+## AI suggestions (Pro)
 
-## Tag a repository
+Repo AI can suggest 3–8 tags; **nothing is written until you confirm**. See [Tag recommendations](/ai-features/tag-recommendation). Keep your own naming first so AI fills the existing system instead of exploding the vocabulary.
 
-### Single repo
+## Notes
 
-1. Open [Repository detail](/main-interface/repo-detail)  
-2. Click the tag area  
-3. Search and select tag(s) (multi-select depends on the control)  
-4. Takes effect immediately  
-
-### Batch
-
-1. Enter [multi-select](/manage-stars/batch-operations) from the list  
-2. Select repos → bottom bar **Tags**  
-3. Choose tag(s) and apply  
-
-Batch tagging usually **appends** tags; it does not clear existing ones.
-
-## Browse and filter by tag
-
-- Click a tag in the sidebar → list shows only repos with that tag  
-- Toolbar filters can narrow by tag too → [Filters](/search/filters)  
-
-## AI tag recommendations (Pro)
-
-Detail AI can suggest 3–8 tags; **nothing is written until you confirm**. See [AI tag recommendations](/ai-features/tag-recommendation) and [Auto Tidy](/ai-features/auto-tidy).
-
-## Practical tips
-
-| Tip | Why |
-|-----|-----|
-| Keep the count in the dozens | Too many tags hurt filter efficiency |
-| Use consistent naming | e.g. `frontend/react`, `ops/k8s` |
-| Split work with Stars Lists | Lists for GitHub-side grouping; tags for personal fine-grained sorting → [GitHub Lists](/manage-stars/github-lists) |
+- Too many tags make filters worse. Dozens of good ones beat hundreds of one-offs.
+- Do not 1:1-map Lists to tags. Lists follow GitHub; tags follow you.
 
 ## Related
 
 - [Notes and status](/manage-stars/notes-and-status)
-- [Smart collections](/manage-stars/smart-collections) (rules can include tag conditions)
+- [Smart collections](/manage-stars/smart-collections)

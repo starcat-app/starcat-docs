@@ -1,35 +1,40 @@
 ---
 title: "批量操作"
-description: "多选流程；Manage 与 Explore 动作差异"
+description: "多选后打标、入库、Unstar；Manage 与探索动作不同"
 ---
 
-## 何时用
+## 用来做什么
 
-- 清空一大批未分类：筛选后批量打标  
-- 把「正在使用」批量入库  
-- 探索里一次 Star / 入库多个榜单项目  
+把「未分类里这一语言的 30 个仓」一次打上标签，或把「正在使用」一次性入库，比逐个点详情快。先**收窄范围再多选**，不要在 All Stars 里裸勾几百个。
 
-## 标准流程
+<Frame caption="截图待补充 · `images/screenshots/manage-stars/batch.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    多选模式：勾选行 + 底部批量栏
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="收窄范围">侧栏选分类 + [筛选](/zh-Hans/search/filters) / 列表搜索。</Step>
-  <Step title="多选">工具栏 → 多选 → 勾选仓库。</Step>
-  <Step title="执行">底部栏选动作并确认。</Step>
-  <Step title="结束">通常自动退出多选并 Toast 摘要；或 Esc 取消。</Step>
-</Steps>
+## 怎么做
 
-## Manage 动作
+1. 侧栏选分类，再用 [筛选](/zh-Hans/search/filters) 或 ⌘F 收窄
+2. 工具栏 **多选**，勾仓库
+3. 底部栏选动作并确认
+4. 结束后通常退出多选并 Toast；Esc 取消
+
+## Manage 里有哪些动作
 
 | 动作 | 行为 | 注意 |
 |------|------|------|
-| 标签 | 追加，不删旧标签 | 免费标签上限 20 |
-| 加入/移出知识库 | 改入库状态 | [入库](/zh-Hans/knowledge-base/adding-repos) |
-| Unstar | 调 GitHub API | 不可在 App 内一键撤销；多仓二次确认 |
+| 标签 | 追加，不删旧标签 | 免费最多 20 个标签 |
+| 加入 / 移出知识库 | 改入库 | [入库](/zh-Hans/knowledge-base/adding-repos) |
+| Unstar | 调 GitHub API | **不能**在 App 里一键撤销；多仓会二次确认 |
 | 移到 Stars List | 若已同步 List | [GitHub Lists](/zh-Hans/manage-stars/github-lists) |
 
-## Explore 动作
+探索里更常见 Star / Unstar、入库。见 [探索概览](/zh-Hans/discover/explore/overview)。
 
-更常见：Star / Unstar、加入知识库。见 [探索概览](/zh-Hans/discover/explore/overview)。
+## 注意
+
+- 批量 Unstar 是真的对 GitHub 取消收藏。
+- 免费标签满了，批量打标会失败或被门控，先删不用的标签或升级 Pro。
 
 ## 相关
 

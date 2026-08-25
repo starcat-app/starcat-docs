@@ -1,32 +1,40 @@
 ---
 title: "GitHub Stars Lists"
-description: "Sync GitHub official Stars Lists; how they differ from local tags"
+description: "Sync official GitHub Stars Lists into the sidebar; how they differ from local tags"
 ---
 
-## What they are
+## What they are for
 
-GitHub offers [Stars Lists](https://github.blog/changelog/) (official Stars grouping; follow GitHub’s current product). Starcat **syncs your Lists into the sidebar** for local browsing.
+GitHub’s own [Stars Lists](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) group Stars on your account. Starcat **syncs those lists into the sidebar** so you can open them locally instead of grouping in the browser.
+
+They are not “cloud tags”. Lists live on GitHub; tags live on this Mac.
+
+<Frame caption="Screenshot TODO · `images/screenshots/manage-stars/github-lists.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Sidebar GitHub Stars Lists, middle column showing one list
+  </div>
+</Frame>
 
 ## What you can do in Starcat
 
-| Capability | Description |
-|------------|-------------|
-| Sync and view | Lists created or edited on GitHub appear in the sidebar |
-| Open a list | Click a List name to see its repos |
-| Batch move | Multi-select may offer **Move to List** (follows the app) |
+| Capability | Detail |
+|------------|--------|
+| Sync and browse | Lists you create or edit on GitHub show up in the sidebar |
+| Open a list | Click the name to see its repositories |
+| Batch move | Multi-select may offer Move to List |
 
-List structure is authoritative on GitHub; do not equate Starcat tags with Lists.
+The structure follows GitHub. Do not invent a parallel “fake List” inside Starcat.
 
-## Tags vs Lists
+## vs tags
 
-| | Stars List | Starcat tag |
-|--|------------|-------------|
+| | Stars List | Starcat tags |
+|--|------------|--------------|
 | Stored | GitHub | This Mac |
-| Cross-device | With GitHub account | Local only (cloud sync [not shipped yet](/data-privacy/backup)) |
-| Customization | Relatively simple grouping | Finer control: color, icon, and more |
-| Visibility | Per List public/private settings | Local only |
+| Other devices | Follows the GitHub account | This Mac ([cloud sync not shipped](/data-privacy/backup)) |
+| Shape | Groups | Color, icon, fine classification |
+| Visibility | List public / private | This Mac only |
 
-**Suggestion**: use Lists when you want grouping aligned with GitHub on the web; use [tags](/manage-stars/tags) for personal fine-grained classification.
+Use Lists when the grouping must match github.com. Use [tags](/manage-stars/tags) for personal taxonomy.
 
 ## Related
 

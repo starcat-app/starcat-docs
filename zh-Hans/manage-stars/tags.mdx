@@ -1,80 +1,54 @@
 ---
 title: "标签管理"
-description: "创建与编辑标签、打标、批量打标与免费限额"
+description: "用本机标签给 Stars 做精细分类；免费最多 20 个"
 ---
 
-## 标签是什么
+## 用来做什么
 
-标签是 Starcat 里最核心的本地分类方式：颜色、图标、名称都由你定义，**只存在本机**（跨设备云同步尚未上线，见 [备份](/zh-Hans/data-privacy/backup)）。
+标签是 Starcat 最常用的**本机分类**：颜色、图标、名称都你定，只存在这台 Mac。GitHub Stars List 适合跟网页分组对齐；标签适合你自己的体系（例如 `frontend/react`、`ops/k8s`）。
+
+跨设备云同步尚未上线，换机器请 [备份](/zh-Hans/data-privacy/backup)。
 
 <Note>
-  免费版最多创建 **20** 个标签；Pro 不限数量。见 [方案对比](/zh-Hans/subscribe/plan-comparison)。
+  免费版最多 **20** 个标签；Pro 不限。见 [方案对比](/zh-Hans/subscribe/plan-comparison)。
 </Note>
 
-## 创建标签
+<Frame caption="截图待补充 · `images/screenshots/manage-stars/tags.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    标签管理：色板、SF Symbol、侧栏 Tags 列表
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="打开管理入口">
-    侧栏 Tags 分组旁点「+」，或进入标签管理面板。
-  </Step>
-  <Step title="新建">
-    设置：
-    - **名称**
-    - **颜色**（预设色板）
-    - **图标**（SF Symbol 集合）
-  </Step>
-  <Step title="保存">
-    标签出现在侧栏，可立即用于打标。
-  </Step>
-</Steps>
+## 怎么创建
 
-达到免费上限时，创建会被权益门控拦截，并提示升级 Pro。
+1. 侧栏 Tags 旁点「+」，或打开标签管理
+2. 设名称、颜色、图标（SF Symbol）
+3. 保存后立刻能打在仓库上
+
+到免费上限会被门控拦住，并提示升级 Pro。
+
+## 打标
+
+**单个：** 打开 [仓库详情](/zh-Hans/main-interface/repo-detail) → 点标签区 → 搜索多选，即时生效。
+
+**批量：** [多选](/zh-Hans/manage-stars/batch-operations) → 底部「标签」。批量是**追加**，不会清掉已有标签。
+
+侧栏点某个标签，列表只显示带它的仓；工具栏筛选也能按标签收窄，见 [筛选](/zh-Hans/search/filters)。
 
 ## 编辑与删除
 
-| 操作 | 典型路径 |
-|------|----------|
-| 重命名 | 右键标签 → 重命名 |
-| 改颜色 / 图标 | 右键 → 编辑 |
-| 删除 | 右键 → 删除 |
+右键标签：重命名、改颜色 / 图标、删除。删标签**不删仓库**，只去掉关联。
 
-删除标签**不会**删除仓库，只移除关联。
+## AI 推荐（Pro）
 
-## 给仓库打标签
+详情 AI 可推荐 3–8 个标签，**确认后才写入**。见 [标签推荐](/zh-Hans/ai-features/tag-recommendation)。建议先有自己的命名，再让 AI 往现有标签上靠，避免标签爆炸。
 
-### 单个
+## 注意
 
-1. 打开 [仓库详情](/zh-Hans/main-interface/repo-detail)  
-2. 点击标签区域  
-3. 搜索并选择标签（可多选，视控件而定）  
-4. 即时生效  
-
-### 批量
-
-1. 列表进入[多选](/zh-Hans/manage-stars/batch-operations)  
-2. 勾选仓库 → 底部栏「标签」  
-3. 选择标签并应用  
-
-批量打标一般为**追加**，不会清掉已有标签。
-
-## 按标签浏览与筛选
-
-- 侧栏点某个标签 → 列表只显示带该标签的仓库  
-- 工具栏筛选也可按标签收窄 → [筛选](/zh-Hans/search/filters)  
-
-## AI 标签推荐（Pro）
-
-详情 AI 能力可推荐 3–8 个标签；**确认后才写入**。见 [AI 标签推荐](/zh-Hans/ai-features/tag-recommendation)、[Auto Tidy](/zh-Hans/ai-features/auto-tidy)。
-
-## 实践建议
-
-| 建议 | 原因 |
-|------|------|
-| 控制在数十个以内 | 过多标签会降低筛选效率 |
-| 用一致命名 | 如 `frontend/react`、`ops/k8s` |
-| 与 Stars List 分工 | List 偏 GitHub 侧分组；标签偏个人精细分类 → [GitHub Lists](/zh-Hans/manage-stars/github-lists) |
+- 标签太多会降低筛选效率，宁可几十个高质量，不要上百个一次性标签。
+- 和 Stars List 不要一一对应；List 跟 GitHub 走，标签跟你走。
 
 ## 相关
 
 - [笔记与状态](/zh-Hans/manage-stars/notes-and-status)
-- [智能集合](/zh-Hans/manage-stars/smart-collections)（规则里可用标签条件）
+- [智能集合](/zh-Hans/manage-stars/smart-collections)

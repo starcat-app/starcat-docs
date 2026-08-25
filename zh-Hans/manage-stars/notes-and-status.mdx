@@ -1,61 +1,58 @@
 ---
 title: "笔记与状态"
-description: "私有 Markdown 笔记与 unread / read / using"
+description: "本机私有 Markdown 笔记，以及未读 / 已读 / 正在使用"
 ---
 
-## 私有笔记
+## 用来做什么
 
-每个仓库可以有一份私有笔记：
+每个仓库可以有一份**只在本机**的笔记，用来记「为什么 Star、踩过什么坑、准备怎么用」。正文进本地搜索，GitHub 上的协作者看不到。
 
-- 仅存本地 SQLite，**不上传 GitHub**
-- 支持 Markdown 编辑 / 预览
-- 正文会被本地搜索索引（见 [列表搜索](/zh-Hans/search/global-search)）
+状态只有三档，用来分诊而不是当看板：
 
-### 编辑步骤
+| 状态 | 含义 |
+|------|------|
+| **未读 unread** | 还没处理；新 Star 常见默认 |
+| **已读 read** | 看过 README / 已经了解 |
+| **正在使用 using** | 项目里真正在用 |
 
-<Steps>
-  <Step title="打开详情">选中仓库，右侧找到「私有笔记」折叠区。</Step>
-  <Step title="编辑">在编辑 Tab 输入；可切换预览。</Step>
-  <Step title="保存">界面有自动保存指示；保存后写入数据库。</Step>
-</Steps>
+旧文案里的「在读 / 废弃」已经不用。
 
-外部写入（浏览器插件、MCP/CLI）成功后，详情区会刷新显示。
+<Frame caption="截图待补充 · `images/screenshots/manage-stars/notes-status.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    详情：私有笔记 Markdown 预览 + 状态胶囊
+  </div>
+</Frame>
 
-### AI 生成笔记（Pro）
+## 怎么写笔记
 
-笔记区头部 **AI 生成**：先出草稿，**你确认后**才写入，不会静默覆盖。见 [AI 个人笔记](/zh-Hans/ai-features/personal-notes)。
+1. 选中仓库，右侧打开「私有笔记」
+2. 编辑 Tab 写 Markdown，可切预览
+3. 看自动保存指示；写入本地 SQLite
 
-## 阅读状态
+插件或 MCP/CLI 写入成功后，详情会刷新。
 
-当前状态模型为三个值：
+**AI 生成（Pro）：** 笔记区头部「AI 生成」先出草稿，**确认后才保存**，不会覆盖你没点确认的正文。见 [AI 个人笔记](/zh-Hans/ai-features/personal-notes)。
 
-| 状态 | 含义 | 典型用法 |
-|------|------|----------|
-| **未读 (unread)** | 尚未处理 | 新 Star 的默认常见状态 |
-| **已读 (read)** | 已看过 / 已了解 | 浏览过 README |
-| **正在使用 (using)** | 正在项目中使用 | 真正依赖的库 |
+## 怎么改状态
 
-<Note>
-  请以 App 内三种状态为准。旧文案里的「在读 / 废弃」等已废弃。
-</Note>
+详情里：未读 / 已读胶囊点一下进入「正在使用」；正在使用点 × 回到已读。
 
-### 如何切换（详情）
-
-- 未读 / 已读：点击状态胶囊 → 进入「正在使用」
-- 正在使用：点 × → 回到「已读」
-
-也可用 CLI（配对后）：
+筛选见 [筛选](/zh-Hans/search/filters)。配对 CLI：
 
 ```bash
 starcat repo status set owner/repo using --apply
 ```
 
-见 [CLI 使用](/zh-Hans/cli/usage)。
+见 [CLI](/zh-Hans/cli/usage)。
 
-### 按状态筛选
+标成「正在使用」时，可能会问要不要入库，方便 RAG。入库、Star、状态三者独立。见 [入库](/zh-Hans/knowledge-base/adding-repos)。
 
-工具栏统一筛选可按状态过滤。见 [筛选](/zh-Hans/search/filters)。
+## 注意
 
-## 与知识库
+- 笔记不进 GitHub，换机器靠 [备份](/zh-Hans/data-privacy/backup)。
+- 没保存的草稿不会被列表搜索到。
 
-标记为「正在使用」时，界面可能提示是否加入知识库，便于 RAG。入库与 Star、状态彼此独立。见 [添加入库](/zh-Hans/knowledge-base/adding-repos)。
+## 相关
+
+- [标签](/zh-Hans/manage-stars/tags)
+- [列表搜索](/zh-Hans/search/global-search)
