@@ -41,13 +41,13 @@ Starcat 启动 `codex app-server` 时复用本机 `CODEX_HOME` 的现有登录�
 
 打开 **设置 → 集成 → Agent Runtime**。
 
-- 如果 Codex 显示 **Codex CLI**，说明自动检测已找到本机 CLI。该状态不会宣称认证成功，
-  认证结果仍以 `codex login status` 为准。
-- 如需使用独立发布包，点击「选择」并选择完整 Runtime 目录。二进制文件可以直接位于
-  该目录，也可以位于其 `bin/` 子目录；其中必须同时包含可执行的
-  `codex-app-server`（或 `codex`）与 `codex-code-mode-host`。
-- 「恢复自动检测」会清除手工路径，重新搜索 `PATH`、Homebrew、`~/.local/bin`、
-  `~/.npm-global/bin` 和 `~/.bun/bin`。
+- 如果 Codex 显示 **Codex CLI**，说明自动检测已找到本机 CLI。这个状态只表示找到了可执行文件，不代表已经登录。认证结果仍以 `codex login status` 为准。
+- 要用官方独立包，打开 [Codex Releases](https://github.com/openai/codex/releases/latest)，下载 Apple Silicon 的 [`codex-app-server-package-aarch64-apple-darwin.tar.gz`](https://github.com/openai/codex/releases/latest/download/codex-app-server-package-aarch64-apple-darwin.tar.gz)。解压后点「选择」，选中这个 Runtime 目录。二进制可以直接位于该目录，也可以位于 `bin/` 子目录；其中必须同时有可执行的 `codex-app-server`（或 `codex`）和 `codex-code-mode-host`。
+- 「恢复自动检测」会清掉手工路径，再搜索 `PATH`、Homebrew、`~/.local/bin`、`~/.npm-global/bin` 和 `~/.bun/bin`。
+
+<Note>
+  选带 `package` 的归档。没有 `package` 字样的 `codex-app-server-aarch64-apple-darwin.tar.gz` 只有 App Server，缺 `codex-code-mode-host`。体积只有几 KB、文件名恰好是 `codex-app-server` 的那个也不是二进制包。
+</Note>
 
 ### 3. 在 Agent 工作台使用
 

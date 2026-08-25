@@ -43,15 +43,13 @@ Codex. It launches `codex app-server` with the same local `CODEX_HOME` login sta
 
 Open **Settings → Integrations → Agent Runtime**.
 
-- If Codex shows **Codex CLI**, automatic detection found the installed CLI. The
-  status intentionally does not claim that authentication succeeded;
-  `codex login status` remains the source of truth.
-- To use a standalone package, choose its Runtime directory. Starcat accepts
-  binaries directly in that directory or in its `bin/` subdirectory. The package
-  must contain executable `codex-app-server` (or `codex`) and
-  `codex-code-mode-host` files.
-- **Use Automatic Detection** clears a manually configured path and searches `PATH`,
-  Homebrew, `~/.local/bin`, `~/.npm-global/bin`, and `~/.bun/bin` again.
+- If Codex shows **Codex CLI**, automatic detection found the installed CLI. That status only means the executable was found, not that you are logged in. `codex login status` remains the source of truth.
+- To use the official standalone package, open [Codex Releases](https://github.com/openai/codex/releases/latest) and download the Apple Silicon archive [`codex-app-server-package-aarch64-apple-darwin.tar.gz`](https://github.com/openai/codex/releases/latest/download/codex-app-server-package-aarch64-apple-darwin.tar.gz). After extracting it, click **Choose** and select that Runtime directory. Starcat accepts binaries directly in the directory or in its `bin/` subdirectory. The package must contain executable `codex-app-server` (or `codex`) and `codex-code-mode-host`.
+- **Use Automatic Detection** clears a manually configured path and searches `PATH`, Homebrew, `~/.local/bin`, `~/.npm-global/bin`, and `~/.bun/bin` again.
+
+<Note>
+  Download the archive whose name includes `package`. `codex-app-server-aarch64-apple-darwin.tar.gz` contains only the App Server binary and is missing `codex-code-mode-host`. Also skip the few-kilobyte asset named exactly `codex-app-server`.
+</Note>
 
 ### 3. Run it
 
