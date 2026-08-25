@@ -1,52 +1,36 @@
 ---
 title: "集成设置"
-description: "Local API Key、浏览器插件、External Search、Agent Runtime"
+description: "Local API、浏览器插件、External Search、Direct 上的 Agent / CodeFlow"
 ---
 
-## 入口
+## 用来做什么
 
-**设置 → 集成**
+**设置 → 集成** 把本机周边接上：插件、网页搜索、Direct 的 Agent Runtime 和 CodeFlow。不是 GitHub Stars 同步（那是 [同步](/zh-Hans/settings/sync)），也不是自建探索后端（那是 [服务](/zh-Hans/settings/services)）。
 
-## Agent Runtime
+<Frame caption="截图待补充 · `images/screenshots/settings/integrations.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → 集成：插件端口 / Token、External Search、Agent Runtime
+  </div>
+</Frame>
 
-Starcat Direct 可在这里检测并配置 Codex App Server 与 DeepSeek Harness。进入 Agent
-工作台选择 Runtime 前，请先按[外部 Runtime 配置指南](/zh-Hans/agent-workspace/runtime-setup)
-完成安装和验证。
+## 怎么用
 
-## Local API Key
+**Agent Runtime（Direct）：** 检测 Codex App Server 与 DeepSeek Harness。进工作台前先看 [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)。
 
-供本机插件与本地 HTTP API 鉴权。请：
+**Local API Key：** 给本机插件与本地 HTTP API 鉴权。定期轮换；不要提交到公开 git；仅受信本机使用。
 
-- 定期轮换（若界面提供）  
-- 不要提交到公开 git  
-- 仅在受信本机使用  
+**浏览器插件：** 启用本地服务；端口 / Token 必须和扩展一致；**Starcat 必须在运行**。`http://127.0.0.1:{port}/plugin/v1/...` + Bearer。见 [Chrome](/zh-Hans/browser-plugin/chrome)。
 
-## 浏览器插件
+**External Search：** 网页搜索与 AI 联网上下文。见 [外部搜索](/zh-Hans/search/external-search)。导航里的 [外部搜索设置](/zh-Hans/settings/external-search) 指向此处。
 
-| 项 | 说明 |
-|----|------|
-| 启用 | 打开插件本地服务 |
-| 端口 / Token | 扩展请求需一致 |
-| 前提 | **Starcat 必须在运行** |
+Alfred / Raycast 等见 [桌面启动器](/zh-Hans/integrations/desktop-launchers)。
 
-请求形态：`http://127.0.0.1:{port}/plugin/v1/...`，`Authorization: Bearer <token>`。
+**CodeFlow（Pro，公开仓）：** 3D 代码图谱，从列表 / 详情工具栏打开。私仓没有入口。Direct 可检测本机官方安装或手动选路径。**CodebaseMemory** 同样走本机检测。App Store 不能启动用户安装的这类可执行文件。
 
-详见 [Chrome](/zh-Hans/browser-plugin/chrome)、[功能](/zh-Hans/browser-plugin/features)、[Safari](/zh-Hans/browser-plugin/safari)。
+## 注意
 
-## External Search
+Token 截图不要发群。App Store 没有外部 Runtime / CLI 拉起。
 
-配置网页搜索与 AI 联网上下文 Provider。步骤见 [外部搜索](/zh-Hans/search/external-search)。
+## 相关
 
-导航里的 [外部搜索设置](/zh-Hans/settings/external-search) 页指向此处。
-
-## 桌面启动器
-
-Alfred、uTools、Raycast 配套项目在独立 GitHub 仓库。安装见 [桌面启动器](/zh-Hans/integrations/desktop-launchers)。
-
-## Direct：CodebaseMemory 与 CodeFlow
-
-**CodeFlow** 是公开仓库的 3D 代码图谱（Pro），从列表 / 详情工具栏打开。私仓没有这个入口。
-
-Direct 版不再内置大体积可执行文件。设置页可自动检测当前官方安装，也可手动选择可执行文件或输出目录。找不到兼容版本时，按页面提示安装或重新选择路径。图谱启动复用账户级共享服务，避免「已安装仍提示未找到」或端口超时。
-
-**CodebaseMemory** 同样走本机官方安装检测。App Store 版受 Sandbox 限制，不能启动用户安装的这类可执行文件。
+- [Agent 工作台](/zh-Hans/agent-workspace/overview)

@@ -1,39 +1,38 @@
 ---
 title: "AI 设置"
-description: "Provider、Auto Tidy、索引与 RAG 相关选项总览"
+description: "Provider、任务映射、Auto Tidy 与索引；Embedding 空着就没有 RAG"
 ---
 
-## 入口
+## 用来做什么
 
-**设置 → AI**
+**设置 → AI** 是 AI 的总闸。逐步操作见 [AI 配置](/zh-Hans/ai-features/configuration)。Chat 配好但 Embedding 空着，语义和 RAG 仍会挂。
 
-本页是设置侧总览；逐步配置见 [AI 配置](/zh-Hans/ai-features/configuration)。
+<Frame caption="截图待补充 · `images/screenshots/settings/ai.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → AI：Provider、任务映射、Auto Tidy、AI 索引
+  </div>
+</Frame>
 
-## 区块说明
+## 区块
 
 | 区块 | 做什么 |
 |------|--------|
-| Provider 列表 | 增删改 BYOK Provider，Key 进 Keychain |
-| 已发现模型 | 刷新模型列表、调参数 |
-| 默认任务映射 | 摘要/标签/对话/Embedding/翻译各用哪个模型 |
-| Auto Tidy | 后台整理开关与触发 → [自动整理](/zh-Hans/ai-features/auto-tidy) |
-| AI 索引 | 语义向量构建/更新；显示上次预拉完成时间、计数，以及绿 / 橙 / 红结果 → [语义搜索](/zh-Hans/search/semantic-search) |
-| RAG 相关 | 检索/Rerank、可选 Meilisearch / Qdrant 等（有则显示） |
+| Provider 列表 | 增删改 BYOK，Key 进 Keychain |
+| 已发现模型 | 刷新列表、调参数 |
+| 默认任务映射 | 摘要 / 标签 / 对话 / Embedding / 翻译 |
+| Auto Tidy | [自动整理](/zh-Hans/ai-features/auto-tidy) |
+| AI 索引 | 语义向量；绿 / 橙 / 红结果 → [语义搜索](/zh-Hans/search/semantic-search) |
+| RAG 相关 | 检索 / Rerank、可选 Meilisearch / Qdrant |
 | 输出语言 | 跟随界面或单独指定 |
-| AI 用量 | 本地请求数、Token、延迟和失败统计；新版本可看预估费用。不保存 Prompt 或回答正文 |
+| AI 用量 | 本地请求数、Token、延迟、失败；不保存 Prompt 正文 |
 
-## AI 索引与外部检索
+打开 **AI 索引** 可看上次预拉时间和计数；可开始、暂停、恢复。取消 embedding 不会被当成网络不可用。外部 Meilisearch / Qdrant 的「测试并保存」：成功绿勾、需重建橙、失败红叉。它们不是 [设置 → 服务](/zh-Hans/settings/services) 里的 Go 后端。
 
-打开 **AI 索引** 即可看到上次预拉时间和计数。可开始、暂停或恢复后台预拉；取消 embedding 不会被当成网络不可用。
+使用前：Pro 是否激活、Chat 测试是否通过、Embedding 是否已配、再到详情 ⇧⌘A 真调一次。
 
-若配置了外部 **Meilisearch** 或 **Qdrant**，各自「测试并保存」旁会显示结果：成功为绿勾、需重建为橙警告、失败为红叉。它们不是 [设置 → 服务](/zh-Hans/settings/services) 里的 Go 后端。详见 [索引管理](/zh-Hans/knowledge-base/index-management)。
+## 注意
 
-## 使用前检查清单
-
-1. Pro 是否激活 → [方案对比](/zh-Hans/subscribe/plan-comparison)  
-2. Chat 模型能否测试通过  
-3. Embedding 是否已配（RAG/语义强依赖）  
-4. 再到详情 ⇧⌘A 做一次真实调用  
+用量统计不保存 Prompt。换 Embedding 后按界面重建索引。
 
 ## 相关
 

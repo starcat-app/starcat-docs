@@ -1,20 +1,24 @@
 ---
-title: "Services settings"
-description: "Settings → Services: override support-API URLs and keys"
+title: "Services"
+description: "Override self-hosted explore backend URLs; not Stars sync, not the plugin token"
 ---
 
-## Entry
+## What it is for
 
-**Settings → Services**
+**Settings → Services** points Trending, Weekly, Discovery, Wiki, Recommend, and Sharing at your **URL** and **API key**. Empty fields use the official instances. Walkthrough: [Self-hosting](/self-hosting/overview).
 
-Configure custom **URL** and **API Key** for Trending, Weekly, Discovery, Wiki, Recommend, and Sharing. Leave fields empty to use official defaults.
+<Frame caption="Screenshot TODO · `images/screenshots/settings/services.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Services: backend URL / API key / test
+  </div>
+</Frame>
 
-Full guide:
-
-- [Self-hosted backends overview](/self-hosting/overview)
-- [Deploy](/self-hosting/deploy)
-- [Configure in Starcat](/self-hosting/configure)
+Full steps: [Deploy](/self-hosting/deploy), [Configure in Starcat](/self-hosting/configure).
 
 <Note>
-  Unrelated to [Sync](/settings/sync) (GitHub Stars pull) or [Integrations](/settings/integrations) (browser plugin / External Search).
+  Unrelated to [Sync](/settings/sync) (GitHub Stars) and [Integrations](/settings/integrations) (plugin / External Search).
 </Note>
+
+## Related
+
+- [Explore overview](/discover/explore/overview)

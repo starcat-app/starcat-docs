@@ -1,48 +1,40 @@
 ---
-title: "MCP settings"
-description: "Enable MCP, pair the CLI, write permissions, and port"
+title: "MCP"
+description: "Pro: enable MCP, pair the CLI, writes stay dry-run until --apply"
 ---
 
-## Entry and prerequisites
+## What it is for
 
-**Settings → MCP**
+**Settings → MCP** lets the local [CLI](/cli/installation) call App capabilities over MCP (tag, status, and similar). Needs [Pro](/subscribe/plan-comparison). Writes default to dry-run; `--apply` actually persists.
 
-- Requires [Pro](/subscribe/plan-comparison)  
-- A local or trusted-network [CLI](/cli/installation) reaches app capabilities through MCP  
+<Frame caption="Screenshot TODO · `images/screenshots/settings/mcp.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → MCP: switch, port, permission toggles, pairing URI
+  </div>
+</Frame>
 
-## Enable steps
+## How to use it
 
-<Steps>
-  <Step title="Turn on the switch">Enable MCP Service.</Step>
-  <Step title="Confirm the port">Default is often **5555** (follow the UI); avoid port conflicts.</Step>
-  <Step title="Permission sub-switches">As needed: read private notes, local writes, batch writes, replace-style writes, etc.</Step>
-  <Step title="Pair">Copy the pairing command and run it in Terminal (below).</Step>
-</Steps>
-
-## Pairing
+1. Enable MCP Service
+2. Confirm the port (often **5555**; avoid clashes)
+3. Allow as needed: read private notes, local writes, batch writes, replace writes
+4. Copy the pair command and run it:
 
 ```bash
 starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
 
-- The URI is valid for about **5 minutes** and is single-use  
-- You must **confirm the device** in the app  
-- Long-lived credentials live in Keychain / Credential Manager  
+The URI lasts about **5 minutes** and is single-use. You must **confirm the device** in the app. Long-lived credentials go in the Keychain. Full flow: [CLI usage](/cli/usage).
 
-Full details: [CLI installation](/cli/installation), [CLI usage](/cli/usage).
+The settings page can copy Claude / Codex MCP snippets that register `starcat mcp`. See [Skill](/cli/skill).
 
-## Security notes
+## Notes
 
-- Write commands default to dry-run; use `--apply` to commit  
-- Remote connections require TLS and certificate fingerprint constraints (see the CLI security model)  
-- Permissions and audit run in the app; the CLI does not read the database directly  
-
-## Agent install snippets
-
-Settings can copy MCP config snippets for Claude, Codex, etc., registering `starcat mcp` as an MCP server.
+- The app enforces permission and audit. The CLI does not open the database.
+- Remote connections need TLS and cert pinning (CLI security model).
+- Do not link internal design docs from this handbook.
 
 ## Related
 
-- [Skill](/cli/skill)
-- Design background (advanced): `docs/3-设计/详细设计/34-StarcatCLI与外部MCP桥接设计.md` in the repo
+- [CLI install](/cli/installation)

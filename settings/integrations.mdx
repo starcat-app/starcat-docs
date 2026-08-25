@@ -1,52 +1,36 @@
 ---
-title: "Integrations settings"
-description: "Local API Key, browser plugin, External Search, and Agent Runtime"
+title: "Integrations"
+description: "Local API, browser plugin, External Search, Direct Agent / CodeFlow"
 ---
 
-## Entry
+## What it is for
 
-**Settings → Integrations**
+**Settings → Integrations** wires local companions: the plugin, web search, Direct Agent runtimes, and CodeFlow. Not GitHub Stars sync ([Sync](/settings/sync)). Not self-hosted explore backends ([Services](/settings/services)).
 
-## Agent Runtime
+<Frame caption="Screenshot TODO · `images/screenshots/settings/integrations.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Integrations: plugin port / token, External Search, Agent Runtime
+  </div>
+</Frame>
 
-Starcat Direct can detect and configure Codex App Server and DeepSeek Harness from
-this page. Follow the [external Runtime setup guide](/agent-workspace/runtime-setup)
-before selecting a Runtime in Agent Workspace.
+## How to use it
 
-## Local API Key
+**Agent Runtime (Direct):** detect Codex App Server and DeepSeek Harness. Read [Runtime setup](/agent-workspace/runtime-setup) before the workspace.
 
-Authenticates the local HTTP API for plugins on this Mac. Please:
+**Local API key:** auth for the plugin and local HTTP API. Rotate it. Do not commit it. Trusted Mac only.
 
-- Rotate periodically (when the UI offers it)  
-- Never commit it to public git  
-- Use only on trusted local machines  
+**Browser plugin:** enable the local service; port / token must match; **Starcat must be running**. `http://127.0.0.1:{port}/plugin/v1/...` plus Bearer. See [Chrome](/browser-plugin/chrome).
 
-## Browser plugin
+**External Search:** web search and AI live context. See [External search](/search/external-search). The nav item [External search settings](/settings/external-search) points here.
 
-| Item | Description |
-|------|-------------|
-| Enable | Starts the plugin local service |
-| Port / Token | Must match what the extension sends |
-| Prerequisite | **Starcat must be running** |
+Alfred / Raycast: [Desktop launchers](/integrations/desktop-launchers).
 
-Request shape: `http://127.0.0.1:{port}/plugin/v1/...` with `Authorization: Bearer <token>`.
+**CodeFlow (Pro, public repos):** 3D code graph from list / detail. No entry on private repos. Direct can detect the official local install or a manual path. **CodebaseMemory** uses the same detection. App Store cannot launch those user-installed binaries.
 
-See [Chrome](/browser-plugin/chrome), [Features](/browser-plugin/features), and [Safari](/browser-plugin/safari).
+## Notes
 
-## External Search
+Do not screenshot tokens into chat. App Store has no external Runtime / CLI launch.
 
-Configure web search and AI web-context providers. Steps are in [External search](/search/external-search).
+## Related
 
-The nav page [External search settings](/settings/external-search) points here.
-
-## Desktop launchers
-
-Alfred, uTools, and Raycast companions live in separate GitHub repos. Setup: [Desktop launchers](/integrations/desktop-launchers).
-
-## Direct: CodebaseMemory and CodeFlow
-
-**CodeFlow** is a 3D code graph for public repositories (Pro), opened from the list / detail toolbar. Private repos do not get this entry.
-
-The Direct build no longer ships large bundled executables. Settings can auto-detect a current official install, or you can choose the executable or output directory yourself. If no compatible version is found, follow the on-page prompt to install or pick a path again. Graph startup reuses an account-level shared service so “already installed but not found” and port timeouts are less likely.
-
-**CodebaseMemory** uses the same local official-install detection. The Mac App Store build cannot launch user-installed executables because of the sandbox.
+- [Agent workspace](/agent-workspace/overview)

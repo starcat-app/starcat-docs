@@ -1,26 +1,31 @@
 ---
 title: "Shortcuts"
-description: "Configurable Search Center, list search, refresh, AI, and RAG shortcuts"
+description: "⌘K / ⌘F / ⇧⌘A / ⇧⌘K are editable; conflicts are rejected"
 ---
 
-## Defaults (common)
+## What they are for
+
+Bind Search Center, list search, AI, and RAG to keys you already use. Docs that said “⌘F opens global search” are outdated: **⌘K** is Search Center, **⌘F** is the current list.
+
+<Frame caption="Screenshot TODO · `images/screenshots/settings/shortcuts.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Shortcuts: recorder, master switch, restore defaults
+  </div>
+</Frame>
+
+## Common defaults
 
 | Action | Default |
 |--------|---------|
 | Search Center | **⌘K** |
 | Focus list search | **⌘F** |
-| Refresh current content | **⌘R** |
+| Refresh | **⌘R** |
 | Repo AI overlay | **⇧⌘A** |
 | RAG workspace | **⇧⌘K** |
 
-Follow what Settings shows. A **master switch** and **per-action toggles** can disable shortcuts without clearing the recorded keys.
+Follow the settings page. Master and per-item switches can disable shortcuts without clearing recorded keys. **Restore default** appears only after you change a binding.
 
-The recorder control uses a wider key display. **Restore default** appears in the field only after you change that shortcut.
-
-## Constraints
-
-- Usually requires at least one modifier key plus a letter or number to avoid swallowing normal typing  
-- Conflicts with in-app reserved combos or another configured action are rejected  
+Usually you need a modifier plus a letter / digit. Occupied combinations are rejected.
 
 ## Related
 

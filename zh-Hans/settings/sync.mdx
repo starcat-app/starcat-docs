@@ -1,33 +1,34 @@
 ---
 title: "同步设置"
-description: "GitHub Stars 同步行为；云同步尚未上线"
+description: "GitHub Stars 与本机缓存；iCloud 用户数据同步尚未上线"
 ---
 
-## 本页范围
+## 用来做什么
 
-这里只描述 **GitHub Stars** 与本机缓存的同步。标签/笔记的 iCloud 同步**尚未上线**。
+这里只描述 **GitHub Stars** 拉到本机。标签 / 笔记的 iCloud 同步**尚未上线**。换机请 [手动备份](/zh-Hans/data-privacy/backup)。
 
-## 手动同步
+<Frame caption="截图待补充 · `images/screenshots/settings/sync.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → 同步：Stars 同步与后台检查（无云同步开关）
+  </div>
+</Frame>
 
-点击列表工具栏同步按钮：
+## 怎么用
 
-- 首次：全量拉取  
-- 之后：增量 / ETag 策略，尽量少拉未变数据  
+列表工具栏同步：首次全量，之后增量 / ETag。Getting Started 要求你主动点一次，见 [快速开始](/zh-Hans/getting-started/quickstart)。
 
-Getting Started 清单要求你主动点同步，见 [快速开始](/zh-Hans/getting-started/quickstart)。
+GitHub API 有 Rate Limit。触发后会退避并显示重置倒计时。见 [FAQ · 同步](/zh-Hans/faq/sync)。
 
-## Rate Limit
-
-GitHub API 有频率限制。触发后 Starcat 会退避并显示重置倒计时。排障见 [FAQ · 同步](/zh-Hans/faq/sync)。
-
-## 后台同步
-
-在系统允许时，可使用后台任务做定时检查（开关以 App 为准）。
-
-## 跨设备用户数据（即将推出）
+系统允许时可用后台任务做定时检查（开关以 App 为准）。
 
 <Warning>
-  CloudKit / iCloud 用户数据同步尚未提供。换机请 [手动备份](/zh-Hans/data-privacy/backup)。
+  CloudKit / iCloud 用户数据同步尚未提供。JSON 导入导出亦为 [即将推出](/zh-Hans/share-export/data-export)。
 </Warning>
 
-JSON 导入导出亦为 [即将推出](/zh-Hans/share-export/data-export)。
+## 注意
+
+不要把 Stars 同步理解成「标签也上云」。Stars 可重建；标签不能。
+
+## 相关
+
+- [备份](/zh-Hans/data-privacy/backup)

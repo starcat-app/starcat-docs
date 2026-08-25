@@ -1,41 +1,37 @@
 ---
 title: "存储管理"
-description: "缓存占用、清除、Finder 入口与危险区"
+description: "清缓存、用 Finder 定位目录；恢复出厂不可逆"
 ---
 
-## 入口
+## 用来做什么
 
-**设置 → 存储**
+**设置 → 存储** 看缓存占了多少、按行清掉可重建的东西。危险区会删用户数据。云同步和 JSON 导出都还没上，清之前先 [备份](/zh-Hans/data-privacy/backup)。
 
-## 缓存类型（示例）
+<Frame caption="截图待补充 · `images/screenshots/settings/storage.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → 存储：缓存分项、Finder 按钮、危险区
+  </div>
+</Frame>
+
+## 怎么用
 
 | 类型 | 说明 |
 |------|------|
-| README / 图片 | 详情渲染缓存，可重建 |
-| AI 对话历史 | 单仓 AI 浮层历史 |
-| RAG 会话历史 | 知识库问答历史 |
-| 外部搜索缓存 | 网页搜索与 AI 上下文缓存 |
+| README / 图片 | 详情渲染，可重建 |
+| AI 对话历史 | 单仓浮层 |
+| RAG 会话历史 | 知识库问答 |
+| 外部搜索缓存 | 网页搜索与 AI 上下文 |
 | AI 摘要缓存 | 生成过的摘要 |
-| Issue 评论与事件 | 活动页 Issue / PR 会话的本地缓存 |
+| Issue 评论与事件 | Activity 会话 |
 | Issue 评论草稿 | 未提交的手写或 AI 回复 |
 
-可单行清除或全部清除。清 README 后，下次打开详情会重新下载。
+可单行或全部清除。清 README 后下次打开会重新下载。行旁文件夹按钮打开对应目录（沙盒允许时）。App Store 与 Direct 路径不同。
 
-## Finder 入口
+**恢复出厂**删除本地用户数据与缓存（以确认文案为准），**不可逆**。若有「删除本地数据库但保留设置」，同样先备份。
 
-行旁文件夹按钮可打开对应目录（沙盒允许时）。App Store 与 Direct 路径不同。
+## 注意
 
-## 危险区
-
-### 恢复出厂设置
-
-删除本地用户数据与缓存等（以确认文案为准）。**不可逆**。
-
-操作前请先 [手动备份](/zh-Hans/data-privacy/backup)。云同步与 JSON 导出尚未上线，不要假设能从云端拉回。
-
-### 仅清数据保留设置
-
-若提供「删除本地数据库但保留设置」，同样先备份。
+清 RAG 会话不会取消入库。清摘要只是下次再花 token。
 
 ## 相关
 

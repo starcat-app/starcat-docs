@@ -1,48 +1,40 @@
 ---
 title: "MCP 设置"
-description: "启用 MCP、配对 CLI、写权限与端口"
+description: "Pro：启用 MCP、配对 CLI、写权限默认 dry-run"
 ---
 
-## 入口与前提
+## 用来做什么
 
-**设置 → MCP**
+**设置 → MCP** 让本机 [CLI](/zh-Hans/cli/installation) 通过 MCP 调 App 能力（打标、改状态等）。需要 [Pro](/zh-Hans/subscribe/plan-comparison)。写操作默认 dry-run，必须 `--apply` 才落库。
 
-- 需要 [Pro](/zh-Hans/subscribe/plan-comparison)  
-- 本机或可信任网络上的 [CLI](/zh-Hans/cli/installation) 通过 MCP 访问 App 能力  
+<Frame caption="截图待补充 · `images/screenshots/settings/mcp.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → MCP：开关、端口、权限子开关、配对 URI
+  </div>
+</Frame>
 
-## 启用步骤
+## 怎么用
 
-<Steps>
-  <Step title="打开开关">启用 MCP Service。</Step>
-  <Step title="确认端口">常见默认 **5555**（以界面为准）；避免端口冲突。</Step>
-  <Step title="权限子开关">按需允许：读私有笔记、本地写入、批量写入、替换式写入等。</Step>
-  <Step title="配对">复制配对命令，在终端执行（见下）。</Step>
-</Steps>
-
-## 配对
+1. 启用 MCP Service
+2. 确认端口（常见 **5555**，避免冲突）
+3. 按需打开：读私有笔记、本地写入、批量写入、替换式写入
+4. 复制配对命令，在终端执行：
 
 ```bash
 starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
 
-- URI 约 **5 分钟**有效、单次兑换  
-- 必须在 App 内**确认设备**  
-- 长期凭据存系统钥匙串 / Credential Manager  
+URI 约 **5 分钟**有效、单次兑换；必须在 App 内**确认设备**。长期凭据进钥匙串。完整说明：[CLI 使用](/zh-Hans/cli/usage)。
 
-完整说明：[CLI 安装](/zh-Hans/cli/installation)、[CLI 使用](/zh-Hans/cli/usage)。
+设置页可复制 Claude / Codex 等 MCP 配置片段，把 `starcat mcp` 注册为 MCP server。见 [Skill](/zh-Hans/cli/skill)。
 
-## 安全要点
+## 注意
 
-- 写命令默认 dry-run，需 `--apply`  
-- 远程连接要求 TLS 与证书指纹约束（见 CLI 安全模型）  
-- 权限与审计由 App 执行，CLI 不直读数据库  
-
-## Agent 安装片段
-
-设置页可复制 Claude / Codex 等 MCP 配置片段，将 `starcat mcp` 注册为 MCP server。
+- 权限与审计由 App 执行，CLI 不直读数据库。
+- 远程连接要求 TLS 与证书指纹（见 CLI 安全模型）。
+- 不要把内部设计文档当用户手册链接。
 
 ## 相关
 
-- [Skill](/zh-Hans/cli/skill)
-- 设计背景（高级）：仓库内 `docs/3-设计/详细设计/34-StarcatCLI与外部MCP桥接设计.md`
+- [CLI 安装](/zh-Hans/cli/installation)

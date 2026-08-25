@@ -1,42 +1,38 @@
 ---
-title: "Storage management"
-description: "Cache usage, cleanup, Finder shortcuts, and danger zone"
+title: "Storage"
+description: "Clear caches, reveal folders in Finder; factory reset is irreversible"
 ---
 
-## Entry
+## What it is for
 
-**Settings → Storage**
+**Settings → Storage** shows cache size and lets you drop rebuildable rows. The danger zone deletes user data. Cloud sync and JSON export are not shipped. [Back up](/data-privacy/backup) first.
 
-## Cache types (examples)
+<Frame caption="Screenshot TODO · `images/screenshots/settings/storage.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Storage: cache rows, Finder buttons, danger zone
+  </div>
+</Frame>
 
-| Type | Description |
-|------|-------------|
-| README / images | Detail rendering cache; rebuildable |
-| AI chat history | Per-repo AI overlay history |
-| RAG session history | Knowledge-base Q&A history |
-| External search cache | Web search and AI context cache |
+## How to use it
+
+| Type | Detail |
+|------|--------|
+| README / images | Detail render; rebuildable |
+| AI chat history | Single-repo overlay |
+| RAG sessions | Knowledge Q&A |
+| External search cache | Web search and AI context |
 | AI summary cache | Generated summaries |
-| Issue comments and events | Local cache for Activity Issue / PR threads |
-| Issue comment drafts | Unsent handwritten or AI replies |
+| Issue comments and events | Activity threads |
+| Issue drafts | Unsent handwritten or AI replies |
 
-Clear one row or everything. After clearing README cache, the next detail open re-downloads content.
+Clear one row or all. README clears re-download on next open. Folder buttons reveal paths when the sandbox allows. App Store and Direct paths differ.
 
-## Finder shortcuts
+**Factory reset** deletes local user data and caches (follow the confirm copy). **Irreversible.** “Delete the database but keep settings” also needs a backup first.
 
-The folder button beside a row opens the matching directory when the sandbox allows. App Store and Direct use different paths.
+## Notes
 
-## Danger zone
-
-### Factory reset
-
-Deletes local user data, caches, and more (confirm the dialog). **Irreversible.**
-
-Back up first: [Manual backup](/data-privacy/backup). Cloud sync and JSON export are not shipped — do not assume you can pull data back from the cloud.
-
-### Clear data but keep settings
-
-If **Delete local database but keep settings** is offered, back up first as well.
+Clearing RAG sessions does not un-ingest. Clearing summaries only costs tokens next time.
 
 ## Related
 
-- [Data storage](/data-privacy/storage)
+- [Where data lives](/data-privacy/storage)

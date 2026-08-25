@@ -1,39 +1,38 @@
 ---
 title: "AI settings"
-description: "Providers, Auto Tidy, indexing, and RAG options at a glance"
+description: "Providers, task mapping, Auto Tidy, and the index; no Embedding means no RAG"
 ---
 
-## Entry
+## What it is for
 
-**Settings → AI**
+**Settings → AI** is the AI control panel. Step-by-step: [AI configuration](/ai-features/configuration). Chat without Embedding still cannot do semantic search or RAG.
 
-This page is the settings-side overview; step-by-step setup is in [AI configuration](/ai-features/configuration).
+<Frame caption="Screenshot TODO · `images/screenshots/settings/ai.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → AI: providers, task mapping, Auto Tidy, AI index
+  </div>
+</Frame>
 
 ## Sections
 
-| Section | Purpose |
-|---------|---------|
-| Provider list | Add, edit, or remove BYOK providers; keys go to Keychain |
-| Discovered models | Refresh model lists and tune parameters |
-| Default task mapping | Pick models for summary, tags, chat, embedding, translation, etc. |
-| Auto Tidy | Background tidy toggle and triggers → [Auto Tidy](/ai-features/auto-tidy) |
-| AI index | Semantic vector build / refresh; last prefetch time, counts, and green / orange / red result → [Semantic search](/search/semantic-search) |
-| RAG-related | Retrieval / rerank, optional Meilisearch / Qdrant (when shown) |
-| Output language | Follow UI language or set separately |
-| AI usage | Local request counts, tokens, latency, and failures; newer builds can show estimated cost. Prompt and answer bodies are not stored |
+| Block | Job |
+|-------|-----|
+| Providers | BYOK CRUD; keys in Keychain |
+| Discovered models | Refresh, tweak params |
+| Default task mapping | Summary / tags / chat / Embedding / translation |
+| Auto Tidy | [Auto Tidy](/ai-features/auto-tidy) |
+| AI index | Semantic vectors; green / amber / red → [Semantic search](/search/semantic-search) |
+| RAG | Retrieve / rerank; optional Meilisearch / Qdrant |
+| Output language | Follow UI or override |
+| Usage | Local request counts, tokens, latency, failures; no prompt bodies |
 
-## AI index and external retrieval
+**AI index** shows last prefetch time and counts; start, pause, resume. Cancelling embedding is not treated as “network down”. External Meilisearch / Qdrant test-and-save: green / amber rebuild / red fail. Those are not the Go backends in [Settings → Services](/settings/services).
 
-**AI index** shows the last prefetch time and counts. You can start, pause, or resume background prefetch; cancelling embedding is not treated as a network outage.
+Before use: Pro active, Chat test ok, Embedding mapped, then one real ⇧⌘A call.
 
-If you configure external **Meilisearch** or **Qdrant**, each **Test and save** control shows its own result: green check on success, orange warning when a rebuild is needed, red cross on failure. These are not the Go backends under [Settings → Services](/settings/services). See [Index management](/knowledge-base/index-management).
+## Notes
 
-## Pre-flight checklist
-
-1. Is Pro active? → [Plan comparison](/subscribe/plan-comparison)  
-2. Does the Chat model pass **Test connection**?  
-3. Is Embedding configured? (RAG / semantic search depend on it)  
-4. Then try a real call in repo detail with **⇧⌘A**  
+Usage stats do not store prompts. Rebuild after changing Embedding when the UI says so.
 
 ## Related
 

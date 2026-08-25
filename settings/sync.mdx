@@ -1,33 +1,34 @@
 ---
-title: "Sync settings"
-description: "GitHub Stars sync behavior; cloud sync not shipped yet"
+title: "Sync"
+description: "GitHub Stars into the local cache; iCloud user-data sync is not shipped"
 ---
 
-## Scope of this page
+## What it is for
 
-This page covers **GitHub Stars** and local cache sync only. iCloud sync for tags and notes is **not available yet**.
+This page is **GitHub Stars → this Mac** only. iCloud sync for tags / notes is **not shipped**. Moving Macs means a [manual backup](/data-privacy/backup).
 
-## Manual sync
+<Frame caption="Screenshot TODO · `images/screenshots/settings/sync.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Sync: Stars sync and background check (no cloud-sync switch)
+  </div>
+</Frame>
 
-Click the sync button on the list toolbar:
+## How to use it
 
-- First run: full fetch  
-- Later: incremental / ETag strategy to minimize unchanged data  
+Toolbar sync: full pull the first time, then incremental / ETag. Getting Started asks you to tap it once. See [Quickstart](/getting-started/quickstart).
 
-Getting Started expects you to tap sync yourself — see [Quickstart](/getting-started/quickstart).
+GitHub rate limits trigger backoff and a reset countdown. See [FAQ · Sync](/faq/sync).
 
-## Rate limit
-
-The GitHub API has rate limits. When hit, Starcat backs off and shows a reset countdown. Troubleshooting: [FAQ · Sync](/faq/sync).
-
-## Background sync
-
-When the system allows, scheduled checks may run in the background (toggle follows the app).
-
-## Cross-device user data (coming soon)
+Background checks may run when the OS allows (follow the app switch).
 
 <Warning>
-  CloudKit / iCloud user-data sync is **not available**. Before switching Macs, [back up manually](/data-privacy/backup).
+  CloudKit / iCloud user-data sync is not available. JSON import/export is also [coming soon](/share-export/data-export).
 </Warning>
 
-JSON import and export are also [coming soon](/share-export/data-export).
+## Notes
+
+Stars sync is not “tags go to the cloud”. Stars rebuild; tags do not.
+
+## Related
+
+- [Backup](/data-privacy/backup)
