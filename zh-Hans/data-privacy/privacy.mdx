@@ -1,20 +1,19 @@
 ---
 title: "隐私政策"
-description: "本地优先、BYOK、遥测与完整法律文本入口"
+description: "本地优先、BYOK、遥测默认关；完整法律文本在官网"
 ---
 
-## 原则摘要
+## 用来做什么
 
-Starcat 以**本地优先**为默认：
+说明数据默认留在哪台 Mac、什么时候会离开本机。完整法律文本以 [starcat.ink/privacy](https://starcat.ink/privacy) 为准。
 
-- 标签、笔记、状态等用户数据优先只在本机  
-- 不出售个人数据、无广告追踪  
-- 不读取 GitHub 密码  
-- AI Key 存 Keychain；笔记不用于「拿去训练你们的模型」这类用途  
+<Frame caption="截图待补充 · `images/screenshots/data-privacy/privacy.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → 通用 → 隐私与推荐（默认关闭）
+  </div>
+</Frame>
 
-完整法律文本以官网为准：[starcat.ink/privacy](https://starcat.ink/privacy)。
-
-## 数据分类
+本地优先：标签、笔记、状态只在本机；不出售个人数据、无广告追踪；不读 GitHub 密码；AI Key 进 Keychain；笔记不会拿去训练「官方模型」。
 
 | 类型 | 例子 | 可否从 GitHub 重建 |
 |------|------|--------------------|
@@ -24,20 +23,12 @@ Starcat 以**本地优先**为默认：
 
 跨设备云同步尚未上线 → [备份](/zh-Hans/data-privacy/backup)。
 
-## AI 与第三方
+**BYOK** 请求发往你配置的 Provider。[外部搜索](/zh-Hans/search/external-search) 仅在启用时发查询。分享卡片 / 链接需你主动操作。
 
-- **BYOK**：请求发往你配置的 Provider → [BYOK](/zh-Hans/subscribe/byok)  
-- **外部搜索**：仅在启用时把查询发给对应 Provider → [外部搜索](/zh-Hans/search/external-search)  
-- **分享**：卡片导出或公开链接需你主动操作 → [分享卡片](/zh-Hans/share-export/share-cards)  
+「匿名贡献公开 Star 数据」在 **设置 → 通用 → 隐私与推荐**，**默认关闭**。开启后，成功全量同步时静默上报公开仓库 ID 和可用 Star 时间，用于改进推荐。不上报私有仓、标签、笔记、浏览行为或账号身份。上报前换成随机匿名标识。失败不影响同步。首次可能弹出一次性授权，「暂不参与」即保持关闭。
 
-## 公开 Star 数据贡献
+匿名遥测**默认关**，在 **设置 → 诊断** 开启。见 [遥测](/zh-Hans/data-privacy/telemetry)。
 
-**设置 → 通用 → 隐私与推荐** 有「匿名贡献公开 Star 数据」，**默认关闭**。开启后，成功完成 Stars 全量同步时，Starcat 会静默上报公开仓库 ID 和可用 Star 时间，用于改进推荐。
+## 相关
 
-不会上传私有仓库、标签、笔记、浏览行为或账号身份。上报前会换成随机匿名标识。失败不会影响正常同步。
-
-首次使用时可能弹出一次性授权提示，选「暂不参与」即可保持关闭。
-
-## 遥测
-
-匿名遥测**默认关**，在 **设置 → 诊断** 开启。详见 [遥测](/zh-Hans/data-privacy/telemetry)。
+- [BYOK](/zh-Hans/subscribe/byok)

@@ -1,39 +1,29 @@
 ---
 title: "备份与恢复"
-description: "手动备份本地数据；云同步尚未上线"
+description: "手动拷贝 Application Support；云同步尚未上线"
 ---
 
-## 为什么要备份
+## 用来做什么
 
-标签、笔记、状态、智能集合规则等**无法从 GitHub 重新生成**。换机、重装、误点恢复出厂前，请先备份。
+标签、笔记、状态、智能集合规则**无法从 GitHub 重新生成**。换机、重装、恢复出厂前先备份。不要等一个还不存在的「打开 iCloud 开关」。
 
-## 手动备份（推荐）
+<Frame caption="截图待补充 · `images/screenshots/data-privacy/backup.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → 存储的 Finder 入口，用来定位 Application Support
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="完全退出 Starcat">避免拷贝到正在写入的数据库。</Step>
-  <Step title="复制数据目录">
-    Direct 常见路径：
-    ```text
-    ~/Library/Application Support/Starcat/
-    ```
-    App Store 版在沙盒容器内，路径不同。可在 **设置 → 存储** 用 Finder 入口定位后再拷贝。
-  </Step>
-  <Step title="存到安全位置">外置盘 / 加密备份均可。</Step>
-</Steps>
+## 怎么备份
 
-## 手动恢复
+1. 完全退出 Starcat，避免拷贝正在写入的数据库
+2. 复制数据目录。Direct 常见：`~/Library/Application Support/Starcat/`。App Store 在沙盒容器内，路径不同。可在 **设置 → 存储** 用 Finder 入口定位
+3. 存到外置盘 / 加密备份
 
-1. 完全退出 Starcat  
-2. 将备份恢复到**同一渠道**对应路径（App Store 与 Direct 不要混用）  
-3. 再打开 App  
-
-## 云同步（即将推出）
+恢复：完全退出 → 把备份放到**同一渠道**对应路径（MAS 与 Direct 不要混用）→ 再打开 App。
 
 <Warning>
-  iCloud / CloudKit 用户数据同步**尚未提供**。本站不会再写「打开同步开关即可换机恢复」的假步骤。
+  iCloud / CloudKit 用户数据同步**尚未提供**。本站不会写「打开同步开关即可换机恢复」的假步骤。
 </Warning>
-
-## 优先级表
 
 | 优先级 | 数据 |
 |--------|------|
@@ -41,9 +31,8 @@ description: "手动备份本地数据；云同步尚未上线"
 | 中 | AI / RAG 会话历史 |
 | 低 | README / 图片 / 摘要缓存（可重建） |
 
-Stars 列表可重新同步，一般不必单独备份。
+Stars 列表可重新同步，一般不必单独备份。JSON 导出见 [即将推出](/zh-Hans/share-export/data-export)。
 
 ## 相关
 
 - [存储说明](/zh-Hans/data-privacy/storage)
-- [数据导出（即将推出）](/zh-Hans/share-export/data-export)

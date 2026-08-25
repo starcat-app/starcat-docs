@@ -1,33 +1,29 @@
 ---
-title: "Data storage"
-description: "SQLite, Keychain, sandbox, and data isolation"
+title: "Where data lives"
+description: "SQLite vs Keychain; App Store and Direct do not share databases"
 ---
 
-## Local SQLite
+## What this is for
 
-| Data type | Rebuildable? |
-|-----------|--------------|
+What GitHub can rebuild, and what is gone if you delete the folder. Stack: GRDB.swift + FTS5. Shipping apps use versioned migrations. **Do not delete the database to “fix” it.**
+
+<Frame caption="Screenshot TODO · `images/screenshots/data-privacy/storage.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Storage categories (rebuildable vs not)
+  </div>
+</Frame>
+
+| Data | Rebuildable? |
+|------|----------------|
 | Repo metadata / README cache | Yes |
 | Tags / notes / status / collections | **No** |
-| AI / RAG history | Back up if you need it |
-| AI summary cache | Regeneratable |
+| AI / RAG history | Back up if you care |
+| AI summary cache | Regenerable |
 
-Stack: GRDB.swift + FTS5; schema upgrades through versioned migrations — production users should not delete the database.
+Keychain: GitHub OAuth / PAT, AI keys, local integration secrets.
 
-## Keychain
+App Store and Direct use different containers and **do not share data**. See [Install](/getting-started/installation). GitHub accounts are isolated locally; switching accounts does not wipe the other. Cloud sync is not shipped. See [Backup](/data-privacy/backup).
 
-- GitHub OAuth / PAT  
-- AI provider API keys  
-- Local integration secrets  
+## Related
 
-## App Store vs Direct
-
-Separate containers and directories — **data does not transfer automatically**. See [Installation](/getting-started/installation).
-
-## Account isolation
-
-Local data is isolated per GitHub account; switching accounts does not automatically wipe another account's data.
-
-## Cloud sync
-
-Not shipped yet. See [Backup](/data-privacy/backup).
+- [Storage settings](/settings/storage)

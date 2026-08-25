@@ -1,9 +1,17 @@
 ---
 title: "数据存储说明"
-description: "SQLite、Keychain、沙盒与数据隔离"
+description: "SQLite 与 Keychain 各存什么；App Store 与 Direct 数据不互通"
 ---
 
-## 本地 SQLite
+## 用来做什么
+
+搞清楚哪些能从 GitHub 重建、哪些丢了就没了。技术栈是 GRDB.swift + FTS5；正式版用版本化 Migration，**不要删库重建**。
+
+<Frame caption="截图待补充 · `images/screenshots/data-privacy/storage.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    设置 → 存储列出的数据类别（可重建 vs 不可重建）
+  </div>
+</Frame>
 
 | 数据类型 | 可重建？ |
 |----------|----------|
@@ -12,22 +20,10 @@ description: "SQLite、Keychain、沙盒与数据隔离"
 | AI / RAG 历史 | 视需求备份 |
 | 摘要等 AI 缓存 | 可再生成 |
 
-技术栈：GRDB.swift + FTS5；Schema 通过版本化 Migration 升级，正式版用户无需删库。
+Keychain：GitHub OAuth / PAT、AI Key、本地集成密钥。
 
-## Keychain
+App Store 与 Direct 两套容器，**数据不自动互通**。见 [安装](/zh-Hans/getting-started/installation)。不同 GitHub 账号本地隔离；切换账号不会自动清空另一账号。云同步尚未上线。见 [备份](/zh-Hans/data-privacy/backup)。
 
-- GitHub OAuth / PAT  
-- AI Provider API Key  
-- 本地集成相关密钥  
+## 相关
 
-## App Store vs Direct
-
-两套容器/目录，**数据不自动互通**。见 [安装](/zh-Hans/getting-started/installation)。
-
-## 账号隔离
-
-不同 GitHub 账号的本地数据隔离；切换账号不会自动清空另一账号数据。
-
-## 云同步
-
-尚未上线。见 [备份](/zh-Hans/data-privacy/backup)。
+- [存储管理](/zh-Hans/settings/storage)

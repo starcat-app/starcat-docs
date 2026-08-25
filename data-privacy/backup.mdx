@@ -1,49 +1,38 @@
 ---
 title: "Backup and restore"
-description: "Manual local backup; cloud sync not shipped yet"
+description: "Copy Application Support by hand; cloud sync is not shipped"
 ---
 
-## Why back up
+## What it is for
 
-Tags, notes, status, smart collection rules, and similar data **cannot be regenerated from GitHub**. Back up before switching Macs, reinstalling, or using factory reset.
+Tags, notes, status, and smart-collection rules **cannot be rebuilt from GitHub**. Back up before you move Macs, reinstall, or factory-reset. Do not wait for an iCloud switch that does not exist.
 
-## Manual backup (recommended)
+<Frame caption="Screenshot TODO · `images/screenshots/data-privacy/backup.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Finder reveal in Settings → Storage to locate Application Support
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="Quit Starcat completely">Avoid copying a database mid-write.</Step>
-  <Step title="Copy the data directory">
-    Common Direct path:
-    ```text
-    ~/Library/Application Support/Starcat/
-    ```
-    The App Store build lives in a sandbox container with a different path. Use the Finder shortcut under **Settings → Storage** to locate it, then copy.
-  </Step>
-  <Step title="Store somewhere safe">External drive or encrypted backup both work.</Step>
-</Steps>
+## How to back up
 
-## Manual restore
+1. Quit Starcat fully so you do not copy a live database
+2. Copy the data folder. Direct is often `~/Library/Application Support/Starcat/`. App Store uses a sandbox container. **Settings → Storage** Finder buttons help
+3. Store it on an external disk / encrypted backup
 
-1. Quit Starcat completely  
-2. Restore the backup to the **same channel's** path (do not mix App Store and Direct)  
-3. Open the app again  
-
-## Cloud sync (coming soon)
+Restore: quit → put the backup on the **same channel** path (do not mix MAS and Direct) → launch.
 
 <Warning>
-  iCloud / CloudKit user-data sync is **not available**. This site will not describe fake “turn on sync and you're done” steps.
+  iCloud / CloudKit user-data sync is **not available**. This handbook will not pretend a sync switch restores another Mac.
 </Warning>
-
-## Priority table
 
 | Priority | Data |
 |----------|------|
 | High | Tags, notes, status, collection rules |
-| Medium | AI / RAG session history |
+| Medium | AI / RAG history |
 | Low | README / images / summary cache (rebuildable) |
 
-Stars lists can be re-synced from GitHub — usually no separate backup needed.
+Stars can re-sync. JSON export is [coming soon](/share-export/data-export).
 
 ## Related
 
-- [Data storage](/data-privacy/storage)
-- [Data export (coming soon)](/share-export/data-export)
+- [Where data lives](/data-privacy/storage)

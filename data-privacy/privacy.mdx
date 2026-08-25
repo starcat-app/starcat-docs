@@ -1,43 +1,34 @@
 ---
-title: "Privacy policy"
-description: "Local-first, BYOK, telemetry, and full legal text entry"
+title: "Privacy"
+description: "Local-first, BYOK, telemetry off; the legal text lives on the site"
 ---
 
-## Principles (summary)
+## What this is for
 
-Starcat defaults to **local-first**:
+Where data stays by default, and when it leaves this Mac. The legal text is [starcat.ink/privacy](https://starcat.ink/privacy).
 
-- Tags, notes, status, and other user data stay on your Mac first  
-- No selling personal data; no ad tracking  
-- Starcat does not read your GitHub password  
-- AI keys live in Keychain; notes are not used to “train our models”  
+<Frame caption="Screenshot TODO · `images/screenshots/data-privacy/privacy.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → General → Privacy and recommendations (off by default)
+  </div>
+</Frame>
 
-Full legal text: [starcat.ink/privacy](https://starcat.ink/privacy).
+Local-first: tags, notes, status stay on this Mac; no sale of personal data; no ad tracking; no GitHub password; AI keys in Keychain; notes are not used to train an “official model”.
 
-## Data categories
-
-| Type | Examples | Rebuildable from GitHub? |
-|------|----------|--------------------------|
+| Kind | Examples | Rebuild from GitHub? |
+|------|----------|----------------------|
 | Repo cache | Metadata, README | Yes |
 | User data | Tags, notes, status, collection rules | **No** |
 | Secrets | GitHub token, AI keys | Keychain |
 
 Cross-device cloud sync is not shipped → [Backup](/data-privacy/backup).
 
-## AI and third parties
+**BYOK** traffic goes to your provider. [External search](/search/external-search) sends queries only when enabled. Share cards / links need an explicit action.
 
-- **BYOK**: requests go to your configured provider → [BYOK](/subscribe/byok)  
-- **External search**: queries go to enabled providers only → [External search](/search/external-search)  
-- **Sharing**: share cards or public links only when you choose → [Share cards](/share-export/share-cards)  
+**Anonymously contribute public Star data** lives in **Settings → General → Privacy and recommendations** and is **off by default**. When on, a successful full Stars sync may silently report public repo IDs and available starred-at times to improve recommendations. No private repos, tags, notes, browsing, or account identity. A random anonymous id is used. Failures do not block sync. First-run may ask once; **Not now** keeps it off.
 
-## Public Star data contribution
+Anonymous telemetry is **off by default** in **Settings → Diagnostics**. See [Telemetry](/data-privacy/telemetry).
 
-**Settings → General → Privacy & Recommendations** has **Anonymously contribute public Star data**, **off by default**. After a successful full Stars sync, Starcat can silently upload public repository IDs and Star times to improve recommendations.
+## Related
 
-Private repositories, tags, notes, browsing activity, and account identity are never uploaded. Uploads use a random anonymous identifier. Failures do not affect normal sync.
-
-A one-time consent sheet may appear; choose **Not Now** to keep the switch off.
-
-## Telemetry
-
-Anonymous telemetry is **off by default**; enable under **Settings → Diagnostics**. See [Telemetry](/data-privacy/telemetry).
+- [BYOK](/subscribe/byok)

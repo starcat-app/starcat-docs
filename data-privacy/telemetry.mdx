@@ -1,37 +1,23 @@
 ---
 title: "Telemetry and diagnostics"
-description: "Anonymous telemetry off by default; diagnostic log export"
+description: "Anonymous telemetry off by default; redacted diagnostic packs for support"
 ---
 
-## Anonymous telemetry
+## What it is for
 
-Path: **Settings → Diagnostics → Anonymous telemetry** (**off by default**).
+Whether coarse product metrics leave this Mac, and what a support pack contains. Path: **Settings → Diagnostics → Anonymous telemetry** (**off by default**).
 
-### May include
+<Frame caption="Screenshot TODO · `images/screenshots/data-privacy/telemetry.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Settings → Diagnostics: anonymous telemetry off
+  </div>
+</Frame>
 
-- Event names: app launch, open Manage, run search, sync start/end, etc. (whitelist)  
-- App version, coarse bucket metrics  
+May include: allow-listed event names (launch, open Manage, search, sync start/end), app version, coarse buckets. Does not include: GitHub username, Stars contents, query strings, README, notes, AI prompts / responses, API keys, local paths. The pipe is Aptabase-like; the privacy policy wins.
 
-### Does not include
-
-- GitHub username, Stars content  
-- Search terms, README, notes  
-- AI prompts / responses, API keys, local paths  
-
-Implementation uses a pipeline such as Aptabase; details follow the privacy policy.
-
-## Diagnostic export
-
-Export a diagnostics bundle from the menu for troubleshooting:
-
-- Version and build number  
-- Database status summary  
-- Recent errors (redacted)  
-- Sync-related info  
-
-Send to [dong4j@gmail.com](mailto:dong4j@gmail.com).
+Menu export: version, database status, recent errors (redacted), sync hints. Send [dong4j@gmail.com](mailto:dong4j@gmail.com).
 
 ## Related
 
 - [Privacy](/data-privacy/privacy)
-- [Diagnostics settings](/settings/diagnostics)
+- [Diagnostics](/settings/diagnostics)
