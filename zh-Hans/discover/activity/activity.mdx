@@ -1,9 +1,17 @@
 ---
 title: "动态 Activity"
-description: "GitHub 通知收件箱、Issue / PR 会话，以及本地聚合动态"
+description: "默认是 GitHub 通知收件箱；也可看本地聚合动态"
 ---
 
-侧栏一级 **Activity**。默认落在 **通知**：不必打开浏览器，也能处理被 @、评审请求和 Issue / PR 会话。
+## 用来做什么
+
+侧栏一级 **Activity** 默认落在 **通知**：不必开浏览器，也能处理被 @、评审请求和 Issue / PR 会话。不要把它理解成「全部动态」首页——「全部」会把通知和你自己的 Star / Unstar / Fork 混在一条时间线上。
+
+<Frame caption="截图待补充 · `images/screenshots/discover/activity-inbox.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Activity 通知时间线（今天 / 昨天分组）+ 右侧 Issue 会话
+  </div>
+</Frame>
 
 当前分类的条数显示在窗口标题栏 subtitle。分类说明入口在中栏。
 
@@ -19,48 +27,35 @@ description: "GitHub 通知收件箱、Issue / PR 会话，以及本地聚合动
 
 时间线可区分 Issue / PR。头像和用户名可打开 GitHub 主页；Dependabot 使用官方圆形图标。Star / Unstar / Fork 行会显示已入库或未入库。
 
-### 筛选
+类型下拉可按未读、Issue、PR、讨论、Release、打开、关闭、已合并、提及、评审、Star、Unstar、Fork、已入库、未入库筛选。长列表滚到距底部约 8 条时会提前加载下一页。未选中事件时，右侧用示意图引导从中间栏选择。
 
-类型下拉可按未读、Issue、PR、讨论、Release、打开、关闭、已合并、提及、评审、Star、Unstar、Fork、已入库、未入库筛选。
-
-长列表滚动到距底部约 8 条时会提前加载下一页。未选中事件时，右侧用示意图引导从中间栏选择。
-
-### Issue / PR 会话
+## Issue / PR 会话
 
 选中通知后，右侧阅读开帖和评论，撰写或预览回复，并支持上一条 / 下一条。
 
-- **完成**等同 GitHub Inbox 的 Done，不会关闭 Issue
+- **完成**等同 GitHub Inbox 的 Done，**不会**关闭 Issue
 - 确认仍开放时可关闭；已关闭的可重新打开
 - 也可在 GitHub 打开，或在 Starcat 打开对应仓库
 - 开帖展示标题和全部标签，多标签自动换行；没有正文时显示「没有描述」
 - 时间戳下和详情顶栏显示打开、关闭、已合并；在会话里关闭或重开后两边一起更新
 
-### AI 撰写与翻译
-
-空输入时按当前会话起草回复，有草稿时润色并补全。回复语言跟帖子走，不跟草稿或 App 界面语言。
-
-对照或全文翻译开帖和全部评论；标题、仓库名和输入框保持原文。目标语言可自动跟随界面；已经是目标语言的段落会跳过。加标签等事件行保持原文。
-
-需 [Pro](/zh-Hans/subscribe/plan-comparison) 与 [AI 配置](/zh-Hans/ai-features/configuration)。失败时右下角 toast 提示。
-
-### 评论图片
+空输入时按当前会话起草回复，有草稿时润色并补全。回复语言跟帖子走，不跟草稿或 App 界面语言。对照或全文翻译开帖和全部评论；标题、仓库名和输入框保持原文。目标语言可自动跟随界面；已经是目标语言的段落会跳过。加标签等事件行保持原文。需 [Pro](/zh-Hans/subscribe/plan-comparison) 与 [AI 配置](/zh-Hans/ai-features/configuration)。失败时右下角 toast。
 
 在评论框粘贴截图或图片，会自动上传并插入链接；预览即可看到图。
 
-### 事件流与本地缓存
-
-**设置 → 通用 → 活动** 打开「显示 Issue 事件」后，评论之间插入加标签、关闭、commit 引用和关联 PR。默认只显示评论。
-
-关掉 App 后再打开对应 Issue，仍先读本地评论和事件。未提交的手写或 AI 回复会按帖保留。两者都可在 [设置 → 存储](/zh-Hans/settings/storage) 清除。
+**设置 → 通用 → 活动** 打开「显示 Issue 事件」后，评论之间插入加标签、关闭、commit 引用和关联 PR。默认只显示评论。关掉 App 后再打开对应 Issue，仍先读本地评论和事件。未提交的手写或 AI 回复会按帖保留。两者都可在 [设置 → 存储](/zh-Hans/settings/storage) 清除。
 
 ## 其它本地分类
 
-通知之外，Activity 仍保留本地聚合分类（公告、Release、Star、仓库、关注、推荐、Undo Star 等）。点击条目可跳到仓库、[Release 时间线](/zh-Hans/release/timeline) 或外部链接。
+通知之外，Activity 仍保留本地聚合分类（公告、Release、Star、仓库、关注、推荐、Undo Star 等）。点击条目可跳到仓库、[Release 时间线](/zh-Hans/release/timeline) 或外部链接。系统通知点进来后，往往落到通知时间线或 Release 时间线。见 [Release 通知](/zh-Hans/release/notifications)。
 
-系统通知点进来后，往往落到通知时间线或 Release 时间线。见 [Release 通知](/zh-Hans/release/notifications)。
+## 注意
+
+- 默认分类是**通知**，不是「全部」。
+- App Store 只有 Web OAuth；缺通知权限时按提示重新授权。
+- 「完成」不是关闭 Issue。
 
 ## 相关
 
 - [探索概览](/zh-Hans/discover/explore/overview)
-- [仓库详情](/zh-Hans/main-interface/repo-detail)
 - [通用设置](/zh-Hans/settings/general)

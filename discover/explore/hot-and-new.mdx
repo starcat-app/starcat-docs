@@ -1,64 +1,47 @@
 ---
 title: "Hot and new releases"
-description: "Hot and New releases: data source, selection rules, and cache"
+description: "Sources, inclusion rules, and cache for Hot and New releases"
 ---
 
-## Hot
+## What they are for
 
-Sidebar **Explore → Hot**.
+**Hot** is high-heat repos. **New releases** are projects that recently shipped a stable Release. Both come from Starcat’s discovery pool, not from your Stars. You still decide whether to Star or ingest.
 
 <Frame caption="In-app Hot info panel">
   <img src="/images/screenshots/hot-info.png" alt="Hot info" className="rounded-xl" />
 </Frame>
 
-### Data source
-
-Starcat’s discovery project pool.
-
-### Selection rules
-
-- Archived and Fork repositories are excluded.
-- A project must reach **1,000 Stars**, or meet the composite heat threshold.
-- Composite heat considers Stars, Forks, Release download counts, and recent activity.
-
-### Cache
-
-- **TTL**: 3 hours; shares one project-catalog cache with Discover and New releases.
-- **Refresh**: After expiry, refetch the shared catalog and recompute the Hot list.
-- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
-
-## New releases
-
-Sidebar **Explore → New releases**.
-
 <Frame caption="In-app New releases info panel">
   <img src="/images/screenshots/new-releases-info.png" alt="New releases info" className="rounded-xl" />
 </Frame>
 
-### Data source
+If those files are missing, capture `images/screenshots/hot-info.png` and `images/screenshots/new-releases-info.png`.
 
-GitHub Releases within Starcat’s discovery project pool.
+## Hot
 
-### Selection rules
+Sidebar **Explore → Hot**. Source: Starcat discovery pool.
 
-- Only projects that shipped a **stable** release in the last **180 days**.
-- Drafts, pre-releases, releases with no downloadable assets, archived projects, and Forks are excluded.
-- Default sort: most recent release time.
+- Archived repos and forks are excluded
+- Needs **1,000 Stars**, or a composite heat threshold
+- Heat considers Stars, Forks, Release downloads, and recent activity
 
-### Cache
+Cache: **3 hours**, shared with Discover and New releases. After expiry the shared catalog is refetched and Hot is recomputed. On failure the last good cache stays, with a stale hint.
 
-- **TTL**: 3 hours; shares one project-catalog cache with Discover and Hot.
-- **Refresh**: After expiry, refetch projects and Release info.
-- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
+## New releases
 
-## Organize after discovery
+Sidebar **Explore → New releases**. Source: GitHub Releases inside the discovery pool.
 
-When something looks worth keeping:
+- Only projects with a stable Release in the last **180 days**
+- Drafts, prereleases, Releases with nothing to download, archived repos, and forks are excluded
+- Default sort is last release time
 
-1. Star (optional)  
-2. Tag / write a short note  
-3. For long-term use → [Ingest](/knowledge-base/adding-repos)  
+Same **3-hour** shared catalog. After expiry, projects and Release info are refetched. Failures keep the last good cache.
+
+## Notes
+
+After a find: optionally Star → tag / one-line note → [ingest](/knowledge-base/adding-repos) if you will keep it. Hot is not “fits your stack”. A new Release is not “production-ready”.
 
 ## Related
 
 - [Explore overview](/discover/explore/overview)
+- [Release subscriptions](/release/subscription)

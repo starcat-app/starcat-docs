@@ -1,17 +1,19 @@
 ---
 title: "探索概览"
-description: "探索模式对比、发现数据来源与入选规则、整理建议"
+description: "探索模式怎么选、发现数据从哪来，以及发现之后怎么整理"
 ---
 
-## 三个一级区域怎么选
+## 用来做什么
 
-| 区域 | 目的 | 文档 |
-|------|------|------|
-| **Manage** | 整理已有 Stars / 知识库 | [侧边栏](/zh-Hans/main-interface/sidebar) |
-| **探索** | 发现新项目 | 本页 |
-| **Activity** | GitHub 通知收件箱与本地动态 | [Activity](/zh-Hans/discover/activity/activity) |
+**探索**用来发现你还没 Star 的项目。它不是本机 Stars 的镜像，数据来自 Starcat 的 discovery / trending / weekly 等服务。已经收藏的库请回 [Manage](/zh-Hans/main-interface/sidebar)。GitHub 通知请去 [Activity](/zh-Hans/discover/activity/activity)（默认落在**通知**，不是「全部」）。
 
-## 探索模式
+<Frame caption="App 内「发现」说明面板">
+  <img src="/images/screenshots/discover-info.png" alt="发现说明" className="rounded-xl" />
+</Frame>
+
+若上图缺失，补拍：`images/screenshots/discover-info.png`。
+
+## 怎么选模式
 
 | 模式 | 你在找什么 | 专页 |
 |------|------------|------|
@@ -22,47 +24,34 @@ description: "探索模式对比、发现数据来源与入选规则、整理建
 | **新发布** | 稳定版 Release 相关 | 同上 |
 | **周刊** | 多来源周刊条目 | [周刊](/zh-Hans/discover/weekly/weekly) |
 
-数据来自 Starcat 的 discovery / trending / weekly 等服务，不是本机 Stars 镜像。若要改用自己的实例，见 [自托管后端](/zh-Hans/self-hosting/overview)。
+要改用自己的实例，见 [自托管后端](/zh-Hans/self-hosting/overview)。
 
 ## 发现（Discover）
 
 侧栏 **探索 → 发现**。
 
-<Frame caption="App 内「发现」说明面板">
-  <img src="/images/screenshots/discover-info.png" alt="发现说明" className="rounded-xl" />
-</Frame>
+**数据来源：** GitHub Search、仓库资料和 Release 数据。
 
-### 数据来源
+**入选规则：** 综合收录高关注度、近 30 天活跃，以及近一年出现的新项目；推荐会看近期活跃度、主题相关性和平台匹配度。项目池会定期更新，**不代表** GitHub 全站。
 
-GitHub Search、仓库资料和 Release 数据。
-
-### 入选规则
-
-- Starcat 综合收录高关注度、近 30 天活跃，以及近一年出现的新项目。
-- 推荐会综合考虑近期活跃度、主题相关性和平台匹配度。
-- 项目池会定期更新，并不代表 GitHub 全站的全部仓库。
-
-### 缓存说明
-
-- **缓存有效期**：3 小时，与热门、新发布共享同一份项目目录缓存。
-- **更新方式**：有效期内优先读取本地缓存；过期后重新获取最新项目目录。
-- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
-- **分类数量**：首次打开时会恢复「发现」「热门」「新发布」和「周刊」的缓存数量，无需逐项点击。
+**缓存：** 有效期 3 小时，与热门、新发布共享同一份项目目录。有效期内优先读本地；过期后重新拉目录；失败时继续用上次成功缓存并提示可能不是最新。首次打开会恢复「发现」「热门」「新发布」和「周刊」的缓存数量，不必逐项点开。
 
 ## 发现好项目之后
 
-建议流水线：
+1. 打开详情读 README
+2. 可选：Star
+3. 打标签或写一句笔记
+4. 长期要用 → [入库](/zh-Hans/knowledge-base/adding-repos)
+5. 要追版本 → [订阅 Release](/zh-Hans/release/subscription)（注意免费 5 仓限额）
 
-1. 打开详情读 README  
-2. 可选：Star  
-3. 打标签或写一句笔记  
-4. 长期要用 → [入库](/zh-Hans/knowledge-base/adding-repos)  
-5. 要追版本 → [订阅 Release](/zh-Hans/release/subscription)（注意免费 5 仓限额）  
+批量见 [批量操作](/zh-Hans/manage-stars/batch-operations)。
 
-批量处理见 [批量操作](/zh-Hans/manage-stars/batch-operations)。
+## 注意
+
+- 探索列表和 Manage 的筛选维度不完全一样，不要按 All Stars 的漏斗来预期。
+- 主动搜未 Star 的库用 [Search Center · GitHub Scope](/zh-Hans/search/search-center)，浏览榜单用本区。
 
 ## 相关
 
 - [Awesome](/zh-Hans/discover/explore/awesome)
 - [相似推荐](/zh-Hans/discover/explore/similar-repos)
-- [Search Center · GitHub Scope](/zh-Hans/search/search-center)（主动搜索 vs 浏览榜单）

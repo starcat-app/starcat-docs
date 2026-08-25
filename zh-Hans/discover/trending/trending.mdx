@@ -1,39 +1,30 @@
 ---
 title: "趋势 Trending"
-description: "探索 → 趋势：数据来源、入选规则与缓存"
+description: "探索 → 趋势：日周月榜、和长期热门不是一回事"
 ---
 
-## 入口
+## 用来做什么
 
-侧栏 **探索 → 趋势**。
+侧栏 **探索 → 趋势** 看 GitHub **日榜 / 周榜 / 月榜**里短期关注度变化。适合每天扫一眼「今天在涨什么」，**不等同于** [热门](/zh-Hans/discover/explore/hot-and-new) 那种长期高热度。
 
 <Frame caption="App 内「趋势」说明面板">
   <img src="/images/screenshots/trending-info.png" alt="趋势说明" className="rounded-xl" />
 </Frame>
 
-## 数据来源
+若上图缺失，补拍：`images/screenshots/trending-info.png`。
 
-GitHub Trending，并通过 GitHub API 补全仓库资料。
+## 数据与规则
 
-## 入选规则
+来源：GitHub Trending，并通过 GitHub API 补全仓库资料。展示日榜、周榜和月榜中的项目。
 
-- 展示 GitHub **日榜、周榜和月榜**中的项目。
-- 趋势反映短期关注度变化，**不等同于长期热门**。
+缓存：日榜 **1 小时**、周榜 **6 小时**、月榜 **24 小时**。过期后先显示已有榜单，同时在后台更新；手动刷新会立即请求最新数据。失败时保留当前缓存，不会清空已有榜单。
 
-## 缓存说明
+可按语言等条件查看（控件以 App 为准）。打开详情、Star、入库。
 
-- **缓存有效期**：日榜 **1 小时**、周榜 **6 小时**、月榜 **24 小时**。
-- **更新方式**：过期后先显示已有榜单，同时在后台更新；手动刷新会立即请求最新数据。
-- **离线处理**：更新失败时保留当前缓存，不会清空已有榜单。
+## 注意
 
-## 能做什么
-
-- 按语言等条件查看近期趋势仓库（控件以 App 为准）  
-- 打开详情、Star、入库  
-
-适合每日扫一眼「今天热门」，再把值得跟进的项目打上标签或入库。
+趋势是短期噪声友好型榜单。上榜不等于适合入库；先读 README 再决定。服务仓库（外部）：[starcat-trending-api](https://github.com/starcat-app/starcat-trending-api)。
 
 ## 相关
 
 - [探索概览](/zh-Hans/discover/explore/overview)
-- 服务仓库（外部）：[starcat-trending-api](https://github.com/starcat-app/starcat-trending-api)

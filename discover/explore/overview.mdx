@@ -1,68 +1,57 @@
 ---
 title: "Explore overview"
-description: "Explore modes, Discover data source / rules / cache, organize-after-discover"
+description: "Which explore mode to pick, where Discover data comes from, and what to do after you find a repo"
 ---
 
-## Pick the right top-level area
+## What it is for
 
-| Area | Purpose | Docs |
-|------|---------|------|
-| **Manage** | Organize existing Stars / knowledge base | [Sidebar](/main-interface/sidebar) |
-| **Explore** | Discover new projects | This page |
-| **Activity** | GitHub notification inbox and local activity | [Activity](/discover/activity/activity) |
-
-## Explore modes
-
-| Mode | What you’re looking for | Dedicated page |
-|------|-------------------------|----------------|
-| **Discover** | Curated recommendation feed; filter by topic / platform | Below on this page |
-| **Awesome** | Topic lists from curated or custom Awesome sources | [Awesome](/discover/explore/awesome) |
-| **Trending** | Recent momentum | [Trending](/discover/trending/trending) |
-| **Hot** | High-heat repositories | [Hot and new](/discover/explore/hot-and-new) |
-| **New releases** | Stable-release activity | Same as above |
-| **Weekly** | Multi-source weekly entries | [Weekly](/discover/weekly/weekly) |
-
-Data comes from Starcat discovery / trending / weekly services—not a mirror of your local Stars. To point at your own instances, see [Self-hosted backends](/self-hosting/overview).
-
-## Discover
-
-Sidebar **Explore → Discover**.
+**Explore** finds projects you have not starred yet. It is not a mirror of local Stars. Data comes from Starcat discovery / trending / weekly services. Already-starred repos belong in [Manage](/main-interface/sidebar). GitHub notifications belong in [Activity](/discover/activity/activity) (default is **Notifications**, not All).
 
 <Frame caption="In-app Discover info panel">
   <img src="/images/screenshots/discover-info.png" alt="Discover info" className="rounded-xl" />
 </Frame>
 
-### Data source
+If that file is missing, capture `images/screenshots/discover-info.png`.
 
-GitHub Search, repository metadata, and Release data.
+## Which mode
 
-### Selection rules
+| Mode | You are looking for | Page |
+|------|---------------------|------|
+| **Discover** | Mixed recommendations; topic / platform filters | Below |
+| **Awesome** | Curated or custom Awesome lists | [Awesome](/discover/explore/awesome) |
+| **Trending** | Short-term attention | [Trending](/discover/trending/trending) |
+| **Hot** | High-heat repos | [Hot and new](/discover/explore/hot-and-new) |
+| **New releases** | Stable Release activity | Same |
+| **Weekly** | Multi-source weekly items | [Weekly](/discover/weekly/weekly) |
 
-- Starcat includes high-attention projects, projects active in the last 30 days, and new projects that appeared within the last year.
-- Recommendations weigh recent activity, topic relevance, and platform fit.
-- The project pool updates regularly and does **not** represent every repository on GitHub.
+To point at your own instance, see [Self-hosting](/self-hosting/overview).
 
-### Cache
+## Discover
 
-- **TTL**: 3 hours; shares one project-catalog cache with Hot and New releases.
-- **Refresh**: Prefer local cache while valid; refetch the catalog after expiry.
-- **Offline**: On update failure, keep the last successful cache and note that content may be stale.
-- **Category counts**: the first open restores cached counts for Discover, Hot, New releases, and Weekly, without clicking each item.
+Sidebar **Explore → Discover**.
 
-## After you find something good
+**Sources:** GitHub Search, repository metadata, and Release data.
 
-Suggested pipeline:
+**Inclusion:** high-attention repos, activity in the last 30 days, and projects that appeared in the last year. Ranking considers recent activity, topic fit, and platform match. The pool updates periodically and is **not** all of GitHub.
 
-1. Open detail and read the README  
-2. Optional: Star  
-3. Tag or jot a short note  
-4. Long-term use → [Ingest](/knowledge-base/adding-repos)  
-5. Track versions → [Subscribe to Release](/release/subscription) (free **5**-repo limit)  
+**Cache:** 3 hours, shared with Hot and New releases. Fresh cache is used first; after expiry the catalog is refetched; on failure the last good cache stays, with a stale hint. First open restores cached counts for Discover, Hot, New releases, and Weekly so you do not have to click each once.
 
-Batch work: [Batch operations](/manage-stars/batch-operations).
+## After you find something
+
+1. Open detail and read the README
+2. Optionally Star
+3. Tag or write a one-line note
+4. Long-term use → [ingest](/knowledge-base/adding-repos)
+5. Follow versions → [Release subscription](/release/subscription) (free cap is 5 repos)
+
+Batch: [Batch operations](/manage-stars/batch-operations).
+
+## Notes
+
+- Explore filters are not the same set as Manage. Do not expect the All Stars funnel.
+- To search unstarred repos on purpose, use [Search Center · GitHub scope](/search/search-center). Use this section to browse lists.
 
 ## Related
 
 - [Awesome](/discover/explore/awesome)
 - [Similar repos](/discover/explore/similar-repos)
-- [Search Center · GitHub scope](/search/search-center) (active search vs browsing lists)

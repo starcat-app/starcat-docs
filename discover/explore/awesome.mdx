@@ -3,26 +3,46 @@ title: "Awesome lists"
 description: "Browse curated and custom Awesome sources, then Star or ingest"
 ---
 
-Sidebar **Explore → Awesome**. Use it to discover repositories from topic lists, not to re-browse Stars you already have.
+## What it is for
 
-## Choose sources
+Sidebar **Explore → Awesome** finds repos from theme lists instead of re-browsing Stars you already have. Use it when you want to see what you still missed in awesome-go / awesome-rust.
 
-The first time you open Awesome, Starcat shows **Choose Awesome sources**. You can open **Manage Awesome sources** again from the Awesome page later.
+<Frame caption="Screenshot TODO · `images/screenshots/discover/awesome-sources.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Pick / manage Awesome sources: curated catalog plus a custom GitHub URL
+  </div>
+</Frame>
 
-| Source | What it is |
-|--------|------------|
-| Starcat curated | Public Awesome catalog from the Explore service; enable items and tap Done to save |
-| Custom | Paste a public GitHub repository URL (for example `owner/awesome-xxx`); it is enabled as soon as validation succeeds |
+<Frame caption="Screenshot TODO · `images/screenshots/discover/awesome-list.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Middle-column repos for one source, detail on the right
+  </div>
+</Frame>
 
-Custom sources must be public repositories. Archived or unavailable sources cannot be added. Sources, READMEs, and parse results stay in the current GitHub account’s local database.
+## How to pick sources
 
-Custom lists parse incrementally in the background. Progress appears on the source card. You can browse entries that are already ready before parsing finishes.
+The first visit opens **Choose Awesome sources**. Later you can reopen **Manage Awesome sources** from the Awesome page.
 
-## Browse a list
+| Source | Detail |
+|--------|--------|
+| Starcat curated | Public Awesome catalog from the explore service; check items and confirm |
+| Custom | Paste a public GitHub repo (`owner/awesome-xxx`); it enables after a successful check |
 
-After you select a source, the middle column lists repositories from that Awesome README. Opening a row shows detail on the right, where you can Star, tag, [ingest](/knowledge-base/adding-repos), or [subscribe to Release](/release/subscription).
+Custom sources must be **public**. Archived or unavailable repos cannot be added. Sources, READMEs, and parse results stay in the local database for the current GitHub account.
 
-The toolbar can refresh the current source. The catalog and entries are cached locally; a brief network outage keeps the last successful data on screen.
+Custom lists parse incrementally in the background. Progress shows on the source card. You can already browse ready items before parsing finishes.
+
+## How to browse
+
+After you select a source, the middle column lists repos from that Awesome README. Opening one shows detail: Star, tag, [ingest](/knowledge-base/adding-repos), or [subscribe to Releases](/release/subscription).
+
+The toolbar can refresh the current source. Catalog and items are cached locally; a brief network failure keeps the last good data.
+
+## Notes
+
+- The custom URL must be publicly reachable on GitHub. Private awesome repos cannot be added.
+- Incremental parse progress on a card does not mean every README link is done.
+- Awesome discovery and your Stars list are separate. After you Star, go back to Manage to tag.
 
 ## Related
 

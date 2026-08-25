@@ -3,26 +3,46 @@ title: "Awesome 列表"
 description: "浏览精选与自定义 Awesome 来源，再 Star 或入库"
 ---
 
-侧栏 **探索 → Awesome**。用来按主题清单发现仓库，而不是再刷一遍你已经 Star 过的列表。
+## 用来做什么
 
-## 选择来源
+侧栏 **探索 → Awesome** 按主题清单发现仓库，而不是再刷一遍已经 Star 过的列表。适合「我想看看 awesome-go / awesome-rust 里还漏了什么」。
 
-第一次点进 Awesome 时，会打开「选择 Awesome 来源」。之后也可从 Awesome 页再次打开「管理 Awesome 来源」。
+<Frame caption="截图待补充 · `images/screenshots/discover/awesome-sources.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    选择 / 管理 Awesome 来源：精选目录 + 自定义 GitHub 地址
+  </div>
+</Frame>
+
+<Frame caption="截图待补充 · `images/screenshots/discover/awesome-list.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    选中某个来源后的中栏仓库列表 + 右侧详情
+  </div>
+</Frame>
+
+## 怎么选来源
+
+第一次点进 Awesome 会打开「选择 Awesome 来源」。之后也可从 Awesome 页再打开「管理 Awesome 来源」。
 
 | 来源 | 说明 |
 |------|------|
 | Starcat 精选 | 来自探索服务的公开 Awesome 目录，勾选后点完成写入 |
 | 自定义 | 粘贴公开 GitHub 仓库地址（例如 `owner/awesome-xxx`）；校验成功后立即启用 |
 
-自定义来源必须是公开仓库。已归档或不可用的来源无法添加。来源、README 和解析结果只保存在当前 GitHub 账号的本地数据库。
+自定义来源必须是**公开**仓库。已归档或不可用的来源无法添加。来源、README 和解析结果只保存在当前 GitHub 账号的本地数据库。
 
-自定义列表会在后台增量解析，进度会显示在来源卡片上。解析未完成时仍可先看已就绪的条目。
+自定义列表会在后台增量解析，进度显示在来源卡片上。解析未完成时仍可先看已就绪的条目。
 
-## 浏览清单
+## 怎么浏览
 
 选中一个来源后，中栏列出该 Awesome README 里的仓库。点选后右侧打开详情，可继续 Star、打标签、[入库](/zh-Hans/knowledge-base/adding-repos) 或 [订阅 Release](/zh-Hans/release/subscription)。
 
 工具栏可主动刷新当前来源。来源目录与条目有本地缓存；网络短暂不可用时继续显示上次成功数据。
+
+## 注意
+
+- 自定义地址必须能被 GitHub 公开访问；私有 awesome 仓加不进去。
+- 解析是增量的，卡片上的进度不等于已经扫完 README 里每一个链接。
+- Awesome 发现流和你的 Stars 列表是两套数据，Star 之后记得回 Manage 打标。
 
 ## 相关
 

@@ -1,24 +1,38 @@
 ---
-title: "Similar repository recommendations"
-description: "Detail-pane similar repos (Pro) and read-only browser extension"
+title: "Similar repositories"
+description: "Pro similar-repo suggestions in detail, plus a read-only list in the browser extension"
 ---
+
+## What it is for
+
+Find **alternatives or same-domain projects** for the current repo without hunting topics yourself. Desktop opens from detail actions. The extension shows a read-only list on GitHub repo pages.
+
+<Frame caption="Screenshot TODO · `images/screenshots/discover/similar-repos.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Similar repositories list in repository detail actions
+  </div>
+</Frame>
 
 ## Desktop (Pro)
 
-In the repository detail actions area, open **Similar repos / Recommendations**.
+Open **Similar / Recommended** in repository detail.
 
-- Requires network access to the recommendation service  
-- Direct uses Starcat’s in-house recommendation pipeline; the existing entry and cache behavior stay the same  
-- Find alternative implementations or projects in the same space  
-- Non-Pro hits the paywall  
+- Needs network access to the recommendation service
+- Direct uses Starcat’s own recommendation path over offline-trained results; existing entry points and cache behavior stay the same
+- Non-Pro hits the paywall
 
-See [Plan comparison](/subscribe/plan-comparison).
+See [Plans](/subscribe/plan-comparison).
 
 ## Browser extension
 
-GitHub repo pages can show a read-only recommendation list (usually with a count cap). Requires the local app + [Integrations settings](/settings/integrations). See [Extension features](/browser-plugin/features).
+GitHub repo pages can show a read-only recommendation list (usually capped). Requires the desktop app plus [Integrations](/settings/integrations). See [Extension features](/browser-plugin/features).
+
+## Notes
+
+- Suggestions are “maybe related”, not a dependency audit. Still read the README and license before you Star.
+- An unreachable service can look empty or stale. That is not proof that no similar project exists.
 
 ## Related
 
 - [Repository detail](/main-interface/repo-detail)
-- Service repo (external): [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)
+- External service repo: [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)

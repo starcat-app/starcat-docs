@@ -3,62 +3,45 @@ title: "热门与新发布"
 description: "探索中热门、新发布的数据来源、入选规则与缓存"
 ---
 
-## 热门
+## 用来做什么
 
-侧栏 **探索 → 热门**。
+**热门**看高热度仓库；**新发布**看最近出过稳定版 Release 的项目。两者都来自 Starcat 发现项目池，不是你的 Stars 列表。发现之后仍要自己决定要不要 Star / 入库。
 
 <Frame caption="App 内「热门」说明面板">
   <img src="/images/screenshots/hot-info.png" alt="热门说明" className="rounded-xl" />
 </Frame>
 
-### 数据来源
-
-Starcat 的发现项目池。
-
-### 入选规则
-
-- 归档项目和 Fork 项目不会进入本分类。
-- 项目需要达到 **1,000 Stars**，或达到综合热度门槛。
-- 综合热度会参考 Stars、Forks、Release 下载量和近期活跃度。
-
-### 缓存说明
-
-- **缓存有效期**：3 小时，与发现、新发布共享同一份项目目录缓存。
-- **更新方式**：缓存过期后重新获取共享目录，并计算最新热门列表。
-- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
-
-## 新发布
-
-侧栏 **探索 → 新发布**。
-
 <Frame caption="App 内「新发布」说明面板">
   <img src="/images/screenshots/new-releases-info.png" alt="新发布说明" className="rounded-xl" />
 </Frame>
 
-### 数据来源
+若上图缺失，补拍：`images/screenshots/hot-info.png`、`images/screenshots/new-releases-info.png`。
 
-Starcat 发现项目池中的 GitHub Releases。
+## 热门
 
-### 入选规则
+侧栏 **探索 → 热门**。数据来自 Starcat 发现项目池。
 
-- 仅收录最近 **180 天**发布过稳定版本的项目。
-- 草稿版、预发布版、没有可下载内容的 Release、归档项目和 Fork 项目不会进入本分类。
-- 默认按照项目最近一次发布时间排序。
+- 归档和 Fork 不会进入
+- 需要达到 **1,000 Stars**，或达到综合热度门槛
+- 综合热度参考 Stars、Forks、Release 下载量和近期活跃度
 
-### 缓存说明
+缓存有效期 **3 小时**，与发现、新发布共享同一份项目目录。过期后重新拉共享目录并计算热门列表；失败时继续用上次成功缓存并提示可能不是最新。
 
-- **缓存有效期**：3 小时，与发现、热门共享同一份项目目录缓存。
-- **更新方式**：缓存过期后重新获取最新项目及 Release 信息。
-- **离线处理**：更新失败时继续使用上次成功缓存，并提示内容可能不是最新。
+## 新发布
 
-## 整理建议
+侧栏 **探索 → 新发布**。数据来自发现项目池中的 GitHub Releases。
 
-发现好项目后：
+- 仅收录最近 **180 天**发布过稳定版本的项目
+- 草稿、预发布、没有可下载内容的 Release、归档和 Fork 不会进入
+- 默认按项目最近一次发布时间排序
 
-1. Star（可选）  
-2. 打标签 / 写一句笔记  
-3. 真正要长期用的 → [入库](/zh-Hans/knowledge-base/adding-repos)  
+缓存同样是 **3 小时**共享目录；过期后重新拉项目及 Release；失败时保留上次成功缓存。
+
+## 注意
+
+发现好项目后：可选 Star → 打标签 / 写一句笔记 → 长期用的再 [入库](/zh-Hans/knowledge-base/adding-repos)。热门 ≠ 适合你的栈；新发布 ≠ 已经稳定到可以上生产。
 
 ## 相关
 
 - [探索概览](/zh-Hans/discover/explore/overview)
+- [Release 订阅](/zh-Hans/release/subscription)
