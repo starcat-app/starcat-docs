@@ -1,11 +1,13 @@
 ---
 title: "Welcome to Starcat"
-description: "What Starcat is, core values, and reading path"
+description: "What Starcat is, who it is for, and how to read this guide"
 ---
 
-## What is Starcat?
+## What it is for
 
-Starcat is a **macOS** GitHub Star manager and AI knowledge tool: turn a flat starred list into a searchable, annotated library you can retrieve with AI / RAG.
+GitHub Stars are easy to collect and hard to find again. Months later you often have a name and a stale description.
+
+Starcat is a **native macOS** Star manager and knowledge tool: sync Stars locally, organize with tags, notes, status, and smart collections, then retrieve “that library I starred last year” with search, AI, and a knowledge base. Explore, Weekly, Awesome, and GitHub notifications are for discovery and tracking—not a replacement for the library you already have.
 
 Website: [starcat.ink](https://starcat.ink)  
 App Store: [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
@@ -14,47 +16,46 @@ App Store: [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github
   <img src="/images/banner.webp" alt="Starcat banner" className="rounded-xl" />
 </Frame>
 
-<Frame caption="Main window">
+<Frame caption="Main three-column window">
   <img src="/images/main.webp" alt="Starcat main window" className="rounded-xl" />
 </Frame>
 
-### Core values
+## Who it is for
 
-| Value | What you can do |
-|------|------------------|
-| **Organize** | Tags, private notes, status, smart collections, GitHub Stars Lists |
-| **Understand** | AI summaries, README translation, repo chat, Repo Health |
-| **Find** | List search, ⌘K Search Center, semantic search, filters |
-| **Retain** | Knowledge-base ingest + RAG answers with citations |
-| **Track** | Release subscriptions, Explore boards, Weekly, Awesome lists, GitHub notification inbox |
+- Indie developers who need to find a solution they starred months ago
+- Writers / media following trends, weeklies, and topic lists
+- macOS users who want local-first data and [BYOK](/subscribe/byok) AI (Apple Silicon, macOS 15+)
 
-### Who it is for
+## Four rules while you read
 
-- Indie developers who need to find “that solution I starred months ago”
-- Writers / media tracking trends and weekly picks
-- macOS users who want local-first data and BYOK AI
-
-## Design principles
-
-1. **Local-first**: tags, notes, and status stay on device; cross-device CloudKit user sync is **not shipped yet**.
-2. **Conservative AI**: suggested tags / AI notes are written only after you confirm.
-3. **Stars ≠ knowledge base**: starring and ingesting are independent.
-4. **Two channels**: App Store vs Direct use separate data directories and entitlement flows.
+1. **Local-first**: tags, notes, and status stay on this Mac. Cross-device cloud sync is not shipped; [back up](/data-privacy/backup) before you move machines.
+2. **Conservative AI**: suggested tags and AI notes are written only after you confirm.
+3. **Stars ≠ knowledge base**: starring does not ingest; unstarring does not remove ingest. RAG searches ingested repos by default. See [Knowledge base](/knowledge-base/overview).
+4. **Two channels**: App Store and Direct use separate data directories and Pro entitlements. See [Install](/getting-started/installation).
 
 ## Suggested reading order
 
 <Steps>
   <Step title="Install and sign in">
-    [Install](/getting-started/installation) → [Quickstart](/getting-started/quickstart) → [GitHub](/getting-started/github-connection)
+    [Install](/getting-started/installation) → [Quickstart](/getting-started/quickstart) → [Connect GitHub](/getting-started/github-connection)
   </Step>
-  <Step title="Main UI">
-    [Overview](/main-interface/overview)
+  <Step title="Three-column UI">
+    [Overview](/main-interface/overview) → [Sidebar](/main-interface/sidebar)
   </Step>
-  <Step title="Pro / RAG">
-    [Plans](/subscribe/plan-comparison) → [AI](/ai-features/overview) → [RAG](/knowledge-base/overview)
+  <Step title="Start organizing">
+    [Tags](/manage-stars/tags) → [Notes and status](/manage-stars/notes-and-status)
+  </Step>
+  <Step title="Go deeper as needed">
+    [Search Center](/search/search-center) · [Knowledge base](/knowledge-base/overview) · [Agent](/agent-workspace/overview) · [Plans](/subscribe/plan-comparison)
   </Step>
 </Steps>
 
-<Note>
-  Prefer Simplified Chinese? Use the language switcher, or open the [Chinese welcome](/zh-Hans/getting-started/welcome).
-</Note>
+## Requirements
+
+macOS 15 Sequoia+, Apple Silicon. Full detail: [Install](/getting-started/installation).
+
+## Related
+
+- [Docs home](/)
+- [CLI](/cli/installation)
+- Support: [dong4j@gmail.com](mailto:dong4j@gmail.com)

@@ -1,79 +1,82 @@
 ---
 title: "GitHub 账号连接"
-description: "OAuth、PAT、权限、Keychain 与多账号"
+description: "登录方式、权限、GitHub App、Keychain 与多账号"
 ---
 
-## 登录方式
+## 用来做什么
 
-### 1. Web Application Flow（推荐）
+Starcat 用你的 GitHub 身份拉 Stars、读公开仓库元数据，并在你明确操作时 Unstar。它**不会**要你的 GitHub 密码。凭证进 macOS Keychain。
 
-1. 登录页点击「使用 GitHub 登录」
+登录只建立会话。仓库列表要靠 [快速开始](/zh-Hans/getting-started/quickstart) 里那一下同步。
+
+## 怎么登录
+
+<Frame caption="截图待补充 · `images/screenshots/getting-started/login.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    登录页：GitHub 登录主按钮，以及「其他登录方式」
+  </div>
+</Frame>
+
+### GitHub 登录（推荐）
+
+1. 点「使用 GitHub 登录」
 2. 系统浏览器打开 GitHub 授权页
-3. 登录并授权后回到 Starcat
+3. 授权后回到 Starcat
 
-<Tip>Starcat 不会接触你的 GitHub 密码；授权码交换在客户端 OAuth 流程内完成。</Tip>
+App Store 构建走 `ASWebAuthenticationSession`，不能用会拉起外部浏览器的 Device Flow，也不能用 PAT 当主登录（界面会藏掉，执行层也会拒绝）。
 
-### 2. Personal Access Token (PAT)
+### Direct：Device Flow 与 PAT
 
-适合无法顺畅完成浏览器回调，或偏好手动凭证的用户：
+Direct 额外提供 Device Flow（适合浏览器回调不顺的网络）和 PAT：
 
 <Steps>
   <Step title="创建 Token">
-    打开 GitHub [Developer settings → Personal access tokens](https://github.com/settings/tokens)。
+    GitHub [Developer settings → Personal access tokens](https://github.com/settings/tokens)。
   </Step>
   <Step title="权限">
-    - **Classic**：通常勾选 `read:user`、`public_repo`
-    - **Fine-grained**：按界面需要授予读取用户信息与公开仓库元数据的只读权限（以 GitHub 当前选项为准）
+    - **Classic**：通常 `read:user`、`public_repo`
+    - **Fine-grained**：至少能读用户资料和公开仓库 / Stars 元数据
   </Step>
-  <Step title="粘贴到 Starcat">
+  <Step title="粘贴">
     登录页展开「其他登录方式」，粘贴 Token。
   </Step>
 </Steps>
 
-Token 经加密后写入 macOS Keychain。
+同一活跃会话只用一种凭证。换方式前先登出。
 
-## Starcat 请求的权限
+## Starcat 要哪些权限
 
-| Scope / 能力 | 用途 |
-|--------------|------|
-| `read:user` | 用户名、头像等资料 |
-| `public_repo` | 读取 Stars 列表与公开仓库信息 |
+| 权限 | 用途 |
+|------|------|
+| `read:user` | 用户名、头像 |
+| `public_repo` | Stars 列表和公开仓库信息 |
 
-日常浏览**不会**为了读 README 去扫你的私有业务仓。  
-**取消 Star** 会调用 GitHub Unstar API，属于你在详情里明确触发的操作。
+日常读 README **不会**去扫你的私有业务仓。  
+**取消 Star** 会调 GitHub Unstar API，只在你从详情或批量操作里明确触发时发生。
+
+通知收件箱还需要通知相关授权；缺权限时 Activity 会提示重新授权，见 [活动](/zh-Hans/discover/activity/activity)。
 
 ## GitHub App（我的项目）
 
-浏览 [我的项目](/zh-Hans/main-interface/my-projects) 中的**私有 / Internal** 仓库需要额外完成 **GitHub App** 授权（按安装范围）。公开项目列表仍可走主 OAuth / PAT 会话。若看不到私仓，请在应用内完成 App 安装后再同步。
+看 [我的项目](/zh-Hans/main-interface/my-projects) 里的**私有 / Internal** 仓库，要再做一次 **GitHub App** 安装（按组织 / 仓库范围）。公开项目列表仍可用主 OAuth / PAT。看不到私仓时，在 App 里把 GitHub App 装完再同步。
 
 ## 多账号
 
-- 同一时间一个活跃 GitHub 账号
-- 切换：侧栏头像 → 登出 → 用另一账号登录
-- 各账号本地数据隔离；切回原账号后数据仍在
+- 同一时间只有一个活跃 GitHub 账号
+- 切换：侧栏头像 → 登出 → 换号登录
+- 各账号本地数据隔离；切回原账号后标签笔记还在
 
-## 安全要点
+工作号和个人号如果要彻底分开，用不同的 macOS 用户或接受登出切换，不要把两个 Token 叠在同一会话里。
 
-- GitHub Token、AI API Key 均存 Keychain
-- 不要把 PAT 发到聊天工具或提交进 git
-- Token 失效出现 401 时，按提示重新登录或更换 PAT
+## 注意
 
-## 常见问题
-
-<AccordionGroup>
-  <Accordion title="授权后卡在同步？">
-    先确认已[主动点同步](/zh-Hans/getting-started/quickstart)。首次全量耗时与 Star 数量相关。仍失败见 [FAQ · 同步](/zh-Hans/faq/sync)。
-  </Accordion>
-  <Accordion title="PAT 与 OAuth 可以混用吗？">
-    同一活跃会话使用一种凭证。换登录方式前先登出。
-  </Accordion>
-  <Accordion title="公司网络拦截回调？">
-    优先尝试 PAT；或检查是否允许打开系统浏览器完成 GitHub 授权。
-  </Accordion>
-</AccordionGroup>
+- 不要把 PAT 发到聊天或提交进 git
+- 401 时按提示重新登录或换 Token
+- 公司网络拦回调时，Direct 优先试 PAT 或 Device Flow
+- Token 失效不会自动删你的本地标签；只是暂时拉不到远端
 
 ## 相关
 
 - [快速开始](/zh-Hans/getting-started/quickstart)
 - [FAQ · 登录](/zh-Hans/faq/login)
-- GitHub 文档：[Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- GitHub：[Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)

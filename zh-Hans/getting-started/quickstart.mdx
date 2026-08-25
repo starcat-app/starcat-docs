@@ -1,64 +1,81 @@
 ---
 title: "快速开始"
-description: "登录、主动同步、Getting Started 清单与第一天常用操作"
+description: "第一次打开：登录、亲手同步、整理一个仓库"
 ---
 
-## 目标
+## 用来做什么
 
-第一次打开 Starcat，完成：**登录 → 同步 Stars → 浏览并整理一个仓库**。
+第一次打开 Starcat，只要完成三件事：**登录 GitHub → 点同步拉 Stars → 打开一个仓库做点整理**。后面的标签体系、知识库和 AI 都可以等库里有数据再配。
+
+登录成功不等于已经同步。Getting Started 清单里的「同步」一步，通常要你**亲手点工具栏同步**才会勾上。
 
 ## 三步上手
 
 <Steps>
   <Step title="连接 GitHub">
-    使用「GitHub 登录」或 PAT。权限与多账号说明见 [GitHub 账号连接](/zh-Hans/getting-started/github-connection)。
+    用「GitHub 登录」或 PAT。App Store 走系统浏览器授权；Direct 还可选 Device Flow / PAT。权限与多账号见 [GitHub 账号连接](/zh-Hans/getting-started/github-connection)。
   </Step>
-  <Step title="主动点击同步">
-    登录后，点击列表工具栏的 **同步** 按钮，拉取 Stars。
+  <Step title="点同步">
+    登录后，点中栏工具栏的 **同步**（统一的旋转箭头图标）。
     <Warning>
-      界面上的 Getting Started 清单里，「同步」一步通常要你**亲手点同步**才会勾选完成；登录本身不等于已同步。
+      不要等它「自己变有数据」。没点同步，列表经常是空的。
     </Warning>
-    - 进度体现在同步按钮上
-    - Star 很多时可能需要数分钟；同步过程中已拉到的仓库可先浏览
-    - 若近期刚同步过，启动时可能跳过自动同步（以 App 策略为准），仍建议首次手动点一次
+    - 进度在同步按钮上转
+    - Star 很多时可能要几分钟；已经拉下来的仓库可以边下边看
+    - 近期刚同步过，启动时可能跳过自动同步，第一次仍建议手动点一次
   </Step>
-  <Step title="浏览与整理">
-    侧栏进入 **Manage → All Stars**（文案以 App 为准）：
-    1. 点击一个仓库 → 右侧阅读 README
-    2. 在详情里添加标签或笔记
-    3. 需要时点心形加入[知识库](/zh-Hans/knowledge-base/adding-repos)
+  <Step title="打开一个仓库整理">
+    侧栏 **Manage → All Stars**：
+    1. 点一行，右侧读 README
+    2. 加一个标签或写一句笔记
+    3. 长期要用的，点心形加入 [知识库](/zh-Hans/knowledge-base/adding-repos)
   </Step>
 </Steps>
 
+<Frame caption="截图待补充 · `images/screenshots/getting-started/sync-toolbar.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    中栏工具栏：同步按钮转圈、列表开始出现仓库
+  </div>
+</Frame>
+
 ## Getting Started 清单
 
-登录后主界面可能出现可折叠清单（约十余步），例如：同步、选中仓库、打开 GitHub 主页、入库、整理、搜索、试用 AI、打开 RAG、分享卡、Unstar 等。
+登录后主窗口可能出现可折叠清单（十来步），例如：同步、选中仓库、打开 GitHub、入库、整理、搜索、试用 AI、打开 RAG、分享卡、Unstar。
 
-| 特性 | 说明 |
+| 行为 | 说明 |
 |------|------|
-| 推进方式 | 由**真实操作**驱动，不是点「下一步」 |
-| 关闭 | 可折叠或关闭 |
-| 重看 | **设置 → 通用 → 重看首次引导**（同时重置清单进度） |
+| 怎么推进 | 靠**真实操作**勾选，不是点「下一步」 |
+| 关掉 | 可以折叠或关闭，不挡使用 |
+| 再看一遍 | **设置 → 通用 → 重看首次引导**（同时重置清单进度） |
 
-首次欢迎含功能截图。部分控件带黄色胶囊提示（同步、搜索、AI 等），避免与系统提示叠层。
+欢迎页带功能截图。部分按钮会出黄色胶囊提示（同步、搜索、AI），避免和系统对话框叠在一起。
 
-## 第一天建议捷径
+<Frame caption="截图待补充 · `images/screenshots/getting-started/checklist.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    主窗口 Getting Started 清单展开态
+  </div>
+</Frame>
+
+## 第一天常用操作
 
 | 你想… | 怎么做 |
 |------|--------|
-| 全局找仓库 / 搜 GitHub / 搜网页 | 默认 **⌘K** 打开 [Search Center](/zh-Hans/search/search-center) |
-| 过滤当前列表 | 列表搜索框（默认常为 **⌘F**，可改）+ [筛选](/zh-Hans/search/filters) |
-| 打开仓库 AI | 默认 **⇧⌘A**（需 [Pro](/zh-Hans/subscribe/plan-comparison) + [AI 配置](/zh-Hans/ai-features/configuration)） |
-| 打开 RAG 工作台 | 默认 **⇧⌘K** 或工具栏「知识库问答」 |
-| 看新版本 | [Release 订阅](/zh-Hans/release/subscription)（免费最多 5 个仓库） |
+| 全局找仓库 / 搜 GitHub / 搜网页 | **⌘K** [Search Center](/zh-Hans/search/search-center) |
+| 过滤当前列表 | **⌘F** + [筛选](/zh-Hans/search/filters) |
+| 打开当前仓库 AI | **⇧⌘A**（需 [Pro](/zh-Hans/subscribe/plan-comparison) 和 [AI 配置](/zh-Hans/ai-features/configuration)） |
+| 打开 RAG 工作台 | **⇧⌘K** 或工具栏「知识库问答」 |
+| 盯新版本 | [Release 订阅](/zh-Hans/release/subscription)（免费最多 5 个仓库） |
 
-快捷键均可在 [快捷键设置](/zh-Hans/settings/shortcuts) 修改。
+快捷键可在 [快捷键](/zh-Hans/settings/shortcuts) 改。
 
-## 接下来
+## 注意
 
-<CardGroup cols={2}>
-  <Card title="主界面" icon="map" href="/zh-Hans/main-interface/overview">三栏与侧栏一级导航</Card>
-  <Card title="标签" icon="tag" href="/zh-Hans/manage-stars/tags">免费最多 20 个标签</Card>
-  <Card title="Search Center" icon="magnifying-glass" href="/zh-Hans/search/search-center">⌘K 四 Scope</Card>
-  <Card title="Pro" icon="crown" href="/zh-Hans/subscribe/plan-comparison">限额与定价</Card>
-</CardGroup>
+- 同步受 GitHub API 速率限制。大号第一次全量会久一些，失败先看 [FAQ · 同步](/zh-Hans/faq/sync)。
+- 还没配 AI 也能整理标签和笔记；Pro 不是上手的前置条件。
+- 私有「我的项目」还要额外授权 GitHub App，见 [我的项目](/zh-Hans/main-interface/my-projects)。
+
+## 相关
+
+- [界面概览](/zh-Hans/main-interface/overview)
+- [标签](/zh-Hans/manage-stars/tags)
+- [方案对比](/zh-Hans/subscribe/plan-comparison)

@@ -1,36 +1,82 @@
 ---
 title: "Connect GitHub"
-description: "OAuth, PAT, scopes, multi-account notes"
+description: "Sign-in methods, scopes, GitHub App, Keychain, and multiple accounts"
 ---
 
-## Sign-in options
+## What this page is for
 
-Starcat supports browser / OAuth-style GitHub login and personal access token (PAT) flows. Prefer the in-app chooser on first launch.
+Starcat uses your GitHub identity to pull Stars, read public repository metadata, and Unstar when you explicitly ask. It **does not** take your GitHub password. Credentials go into the macOS Keychain.
 
-### Suggested scopes
+Sign-in only creates a session. The repository list still needs the Sync tap in [Quickstart](/getting-started/quickstart).
 
-Typical OAuth scopes used by Starcat: `read:user`, `public_repo` (exact list follows the app’s auth screen).
+## How to sign in
 
-### PAT tips
+<Frame caption="Screenshot TODO · `images/screenshots/getting-started/login.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Sign-in screen: primary GitHub button and Other sign-in methods
+  </div>
+</Frame>
 
-- Create a classic or fine-grained token with enough read access for your Stars
-- Store the token only in Starcat’s Keychain-backed storage
-- Revoke unused tokens on GitHub if you rotate
+### Sign in with GitHub (recommended)
 
-## After connect
+1. Tap **Sign in with GitHub**
+2. The system browser opens GitHub’s authorize page
+3. After you approve, you return to Starcat
 
-1. Tap **Sync** to pull Stars ([Quickstart](/getting-started/quickstart))
-2. Rate limits: GitHub may throttle large accounts—wait and retry
-3. Switching GitHub accounts may clear or isolate local caches depending on channel—export / backup first when unsure
+The App Store build uses `ASWebAuthenticationSession`. Device Flow (which would launch an external browser) and PAT-as-primary-login are blocked there—hidden in UI and rejected in the auth layer.
+
+### Direct: Device Flow and PAT
+
+Direct also offers Device Flow (when the OAuth callback is awkward) and a PAT:
+
+<Steps>
+  <Step title="Create a token">
+    GitHub [Developer settings → Personal access tokens](https://github.com/settings/tokens).
+  </Step>
+  <Step title="Scopes">
+    - **Classic**: typically `read:user` and `public_repo`
+    - **Fine-grained**: enough read access for profile and public Stars / repo metadata
+  </Step>
+  <Step title="Paste">
+    Expand **Other sign-in methods** on the login screen and paste the token.
+  </Step>
+</Steps>
+
+One active session uses one credential. Sign out before you switch methods.
+
+## What Starcat asks for
+
+| Scope | Why |
+|-------|-----|
+| `read:user` | Username and avatar |
+| `public_repo` | Stars list and public repository metadata |
+
+Reading a README in daily use does **not** scan your private work repos.  
+**Unstar** calls the GitHub Unstar API only when you trigger it from detail or batch actions.
+
+The notification inbox needs notification permission. Activity prompts you to re-authorize when it is missing. See [Activity](/discover/activity/activity).
 
 ## GitHub App (My Projects)
 
-Browsing **private / Internal** repositories under [My Projects](/main-interface/my-projects) uses an additional **GitHub App** authorization (installation scope). Public project listing can still work from the main OAuth / PAT session. Complete the in-app App install when private projects are missing.
+**Private / Internal** repositories under [My Projects](/main-interface/my-projects) need a separate **GitHub App** installation (org / repo scope). Public project listing can still use the main OAuth / PAT session. If private projects are missing, finish the in-app App install and sync again.
 
-## Multi-account
+## Multiple accounts
 
-Use one GitHub identity per Starcat profile/session. If you maintain work and personal Stars, prefer separate Mac user accounts or be careful when switching tokens.
+- One active GitHub account at a time
+- Switch: sidebar avatar → sign out → sign in with the other account
+- Local data is isolated per account; tags and notes return when you switch back
 
-## Troubleshooting
+If work and personal Stars must stay strictly apart, use separate macOS users or accept sign-out switching. Do not stack two tokens in one session.
 
-See [Login FAQ](/faq/login) for deeper cases, or [email support](/support/feedback).
+## Notes
+
+- Never paste a PAT into chat or git
+- On 401, sign in again or rotate the token
+- If a corporate network blocks the callback, Direct users should try PAT or Device Flow
+- An expired token does not delete local tags; it only blocks remote fetches until you refresh credentials
+
+## Related
+
+- [Quickstart](/getting-started/quickstart)
+- [FAQ · Login](/faq/login)
+- GitHub: [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)

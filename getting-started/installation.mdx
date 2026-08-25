@@ -1,61 +1,79 @@
 ---
 title: "Install and requirements"
-description: "System requirements, App Store vs Direct, updates, and data directories"
+description: "Requirements, App Store vs Direct, install steps, and how updates work"
 ---
+
+## What this page is for
+
+Starcat ships a **macOS** desktop app only. Pick a channel before you install: App Store and Direct (website DMG) look like the same product, but **local databases and Pro entitlements are separate**. Do not treat them as one install.
 
 ## Requirements
 
 | Requirement | Detail |
 |-------------|--------|
 | **OS** | macOS 15 Sequoia or later |
-| **Chip** | Apple Silicon (M-series) |
-| **Network** | Needed for GitHub sync, Explore, online purchase |
-| **GitHub** | Account required to sync Stars |
+| **Chip** | Apple Silicon (M-series). No Intel build |
+| **Network** | Needed for Stars sync, Explore, purchase, and notifications |
+| **GitHub** | An account is required to pull Stars |
 
-Desktop clients are macOS-only. CLI can run on more platforms, but data still comes from a paired Starcat app.
+There is no Windows / Linux desktop app. The [CLI](/cli/installation) can run on more platforms, but repository data and write permission still come from a paired Starcat app on a Mac.
 
-## Download channels
+## Choosing a channel
 
 ### Mac App Store
 
-- [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
-- Auto updates; App Store **sandbox**
-- Pro via StoreKit (Apple ID)
+- Download: [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
+- Runs in the App Store **sandbox**: it cannot launch user-installed executables such as Codex CLI or CodeFlow
+- Pro uses Apple In-App Purchase (StoreKit / Apple ID)
+- Updates: Starcat detects a new version on launch or when the app becomes active. **Check for Updates** in the **Actions** menu or menu bar opens the Mac App Store; Starcat does not download the store package itself
 
 ### Direct (website)
 
-- [starcat.ink](https://starcat.ink)
-- Download DMG → drag to Applications
-- Updates via **Sparkle**
-- Pro via web checkout + license key
+- Download: [starcat.ink](https://starcat.ink)
+- Open the DMG and drag Starcat into Applications
+- Pro uses website checkout + license. See [License](/subscribe/license)
+- **Sparkle** checks on launch; you can also check and install from Settings or the **Actions** menu
+- Can attach local Agent runtimes, CodebaseMemory, and RAG CLI inference. See [Integrations](/settings/integrations)
 
 <Warning>
-  App Store and Direct builds use **separate local data directories**. Switching channels means a new local library—back up first; do not copy database files blindly.
+  The two channels use **separate data directories**. Switching channels is a new local library. Do not copy the SQLite file blindly; [back up](/data-privacy/backup) first.
 </Warning>
+
+<Frame caption="Screenshot TODO · `images/screenshots/getting-started/direct-dmg.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Direct: DMG window with Starcat dragged onto Applications
+  </div>
+</Frame>
 
 ## Install steps
 
 <Steps>
-  <Step title="Download">Get the latest build from the App Store or website.</Step>
-  <Step title="Install">
-    - App Store: installs into Applications automatically
-    - Direct: open the DMG and drag Starcat to Applications
+  <Step title="Download">Get the latest build from the App Store or the website. Do not expect two channels to merge data automatically.</Step>
+  <Step title="Put it in Applications">
+    App Store installs for you. Direct: open the DMG and drag Starcat into Applications.
   </Step>
   <Step title="First launch">
     If Gatekeeper blocks: System Settings → Privacy & Security → Open Anyway.
   </Step>
-  <Step title="Onboarding">
-    Full-screen welcome appears once. Replay later from **Settings → General** (resets Getting Started checklist progress).
+  <Step title="Welcome">
+    Full-screen welcome appears once. Replay later from **Settings → General → Replay first-run guide** (this also resets Getting Started checklist progress).
   </Step>
 </Steps>
 
-## Updates
+<Frame caption="Screenshot TODO · `images/screenshots/getting-started/welcome.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    First-run full-screen welcome / feature tour
+  </div>
+</Frame>
 
-| Channel | How |
-|---------|-----|
-| App Store | Auto-detects a new version on launch or when the app becomes active again. You can also choose **Check for Updates** from the **Actions** menu or the menu bar, then upgrade in the Mac App Store. Starcat does not download the store package itself. |
-| Direct | **Sparkle** checks on launch; you can also check and install from Settings or the **Actions** menu |
+## Notes
 
-## Next
+- You can keep both channels installed; they will not share tags or notes. Pick one for daily use.
+- Sparkle update UI is hidden in the App Store build.
+- After install, sign in and **tap Sync yourself**. See [Quickstart](/getting-started/quickstart).
 
-[Quickstart](/getting-started/quickstart)
+## Related
+
+- [Connect GitHub](/getting-started/github-connection)
+- [Buy Pro](/subscribe/purchase)
+- [Backup](/data-privacy/backup)
