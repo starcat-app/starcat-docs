@@ -1,33 +1,36 @@
 ---
 title: "Release notifications"
-description: "System notifications and in-app unread indicators"
+description: "System banners vs in-app unread, and how to quiet them"
 ---
 
-## Where notifications come from
+## What they are for
 
-When a **subscribed** repo gets a new Release and polling detects it, you may get:
+When a subscribed repo ships a Release and polling sees it, you may get a macOS banner and unread marks on the timeline / Activity. A notification is a reminder. You still download assets yourself.
 
-1. **macOS system notification** (banner / Notification Center)  
-2. **In-app unread** (timeline badge, Activity, etc.)  
+<Frame caption="Screenshot TODO · `images/screenshots/release/notifications.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    System banner plus Settings → General → Notifications Release switch
+  </div>
+</Frame>
 
-## Checklist before they show
+## Checklist
 
 | Check | Where |
 |-------|-------|
-| Subscribed to the repo | [Subscriptions](/release/subscription) |
-| Within free **5**-repo limit (or on Pro) | [Plan comparison](/subscribe/plan-comparison) |
-| System notification permission allowed | System dialog on first subscribe; change in System Settings |
-| In-app Release notification toggle | **Settings → General → Notifications** |
+| Subscribed | [Subscriptions](/release/subscription) |
+| Under the free cap of 5 (or Pro) | [Plans](/subscribe/plan-comparison) |
+| Notification permission allowed | First-subscribe dialog; System Settings later |
+| In-app Release notification switch | **Settings → General → Notifications** |
 | Background polling healthy | [Background refresh](/release/background-refresh) |
 
-## Notification content
+Content usually includes repo name, tag, and Release title. A click jumps to that Release / timeline.
 
-Usually includes repo name, version (tag), and Release title. Tap to open the Release / timeline.
+To quiet things: disable system banners, or the in-app Release switch, or unsubscribe low-priority repos to free slots.
 
-## When you want fewer alerts
+## Notes
 
-- Turn off system notifications, or the in-app Release notification toggle  
-- Or unsubscribe low-priority repos to save free slots  
+- No system permission means no banner. Timeline unread can still appear.
+- Clicking a system notification often lands on the notification timeline or the Release timeline. See [Activity](/discover/activity/activity).
 
 ## Related
 

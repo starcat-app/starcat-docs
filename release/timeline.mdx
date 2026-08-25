@@ -1,38 +1,34 @@
 ---
 title: "Release timeline"
-description: "Aggregated Releases from subscribed repos: unread, pagination, check now"
+description: "All subscribed Releases in one place: read state, paging, check now"
 ---
 
-## Entry
+## What it is for
 
-Manage sidebar **Release timeline** (opens as a panel/sheet; layout follows the app).
+One timeline for Releases from every subscribed repo, instead of polling each GitHub Releases page. Opens as a panel / sheet (follow the app). Entry: Manage sidebar **Release timeline**.
 
-## What you see
+<Frame caption="Screenshot TODO · `images/screenshots/release/timeline.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Release timeline: unread highlight, expanded body, Check now
+  </div>
+</Frame>
 
-- Releases from all subscribed repos, newest first  
-- **Unread** items highlighted; mark one read or mark all read  
-- Expand to read Release body (GFM) and asset list  
-- **About 20 items per page**, load more on scroll  
+## How to use it
 
-## Check now
+- Releases from all subscribed repos, newest first
+- **Unread** highlight; mark one or all read
+- Expand for GFM body and assets
+- About **20 rows per page**, load more on scroll
+- Body type size follows the UI font scale in [General](/settings/general)
 
-**Check now** at the top triggers one polling round (`ReleasePoller.runNow`-style path) without waiting for the background interval. Handy right after a release ships.
+**Check now** at the top runs one poll immediately. Use it right after an upstream cut. Default interval: [Background refresh](/release/background-refresh).
 
-Default background interval: [Background refresh](/release/background-refresh).
+The top filter matches asset filenames (`dmg`, `arm64`, `linux`). See [Assets](/release/assets-download).
 
-## Asset filter
+## Notes
 
-Use the top filter box to match asset file names, for example:
-
-- `dmg` / `pkg`  
-- `arm64` / `aarch64`  
-- `linux` / `windows`  
-
-See [Asset downloads](/release/assets-download).
-
-## Font size
-
-Timeline body text follows the UI font scale in [General settings](/settings/general).
+- The timeline is **subscribed** repos only, not every Star’s Releases.
+- Check now hits the GitHub API. Rapid clicks can hit rate limits.
 
 ## Related
 

@@ -1,33 +1,36 @@
 ---
 title: "Release 通知"
-description: "系统通知与应用内未读如何打开"
+description: "系统横幅和应用内未读分别怎么打开、不想被打扰时关哪"
 ---
 
-## 通知从哪来
+## 用来做什么
 
-当**已订阅**仓库出现新 Release，且轮询检测到更新时，你可能收到：
+已订阅仓出了新 Release、轮询检测到更新时，你可能收到 macOS 横幅，以及时间线 / Activity 里的未读。通知是提醒，下载安装包仍要自己点资产。
 
-1. **macOS 系统通知**（横幅 / 通知中心）  
-2. **应用内未读**（时间线红点、Activity 等）  
+<Frame caption="截图待补充 · `images/screenshots/release/notifications.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    系统通知横幅 + 设置 → 通用 → 通知里的 Release 开关
+  </div>
+</Frame>
 
-## 打开条件清单
+## 打开条件
 
 | 检查项 | 在哪里 |
 |--------|--------|
 | 已订阅该仓 | [订阅管理](/zh-Hans/release/subscription) |
-| 未超免费 5 仓限额（或已是 Pro） | [方案对比](/zh-Hans/subscribe/plan-comparison) |
-| 系统通知权限已允许 | 首次订阅时的系统对话框；可在系统设置里改 |
+| 未超免费 5 仓（或已是 Pro） | [方案对比](/zh-Hans/subscribe/plan-comparison) |
+| 系统通知权限已允许 | 首次订阅时的对话框；可在系统设置改 |
 | App 内 Release 通知开关 | **设置 → 通用 → 通知** |
 | 后台轮询正常 | [后台刷新](/zh-Hans/release/background-refresh) |
 
-## 通知内容
+通知通常含仓库名、版本号（tag）、Release 标题。点击跳到对应 Release / 时间线。
 
-通常含：仓库名、版本号（tag）、Release 标题。点击可跳到对应 Release / 时间线。
+不想被打扰：关系统通知，或关 App 内 Release 开关；或取消低优先级订阅以省名额。
 
-## 不想被打扰时
+## 注意
 
-- 关系统通知，或关 App 内 Release 通知开关  
-- 或取消低优先级仓库的订阅以省名额  
+- 没允许系统权限就没有横幅，时间线未读仍可能在。
+- 点击系统通知往往落到通知时间线或 Release 时间线，见 [Activity](/zh-Hans/discover/activity/activity)。
 
 ## 相关
 

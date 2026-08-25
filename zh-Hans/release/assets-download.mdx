@@ -1,33 +1,38 @@
 ---
 title: "Release 资产下载"
-description: "浏览 Release 附件并按文件名过滤"
+description: "浏览 Release 附件，按文件名片段过滤后再交给系统下载"
 ---
 
-## 资产列表
+## 用来做什么
 
-在[时间线](/zh-Hans/release/timeline)或 Release 详情中展开资产区：
+发版附件（`.dmg`、checksum、各架构包）在时间线或 Release 详情的资产区浏览。Starcat 列出文件名和大小，下载 / 打开交给系统，不做静默安装。
 
-- 显示文件名与大小  
-- 可下载 / 打开（交由系统处理）  
-- 资产较多时可展开查看全部  
+<Frame caption="截图待补充 · `images/screenshots/release/assets.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    展开的资产列表 + 顶部文件名过滤（如 dmg / arm64）
+  </div>
+</Frame>
 
-## 过滤技巧
+## 怎么用
 
-使用时间线顶部过滤框，按关键字匹配文件名，例如只看 macOS 安装包：
+展开资产区：看文件名与大小；可下载 / 打开；资产多时可展开全部。
+
+时间线顶部过滤框按关键字匹配文件名，不必记完整名：
 
 ```text
 dmg
-```
-
-或 CPU 架构：
-
-```text
 arm64
+linux
 ```
 
-无需记完整文件名。
+GitHub Release 概念见 [GitHub Docs · Releases](https://docs.github.com/en/repositories/releasing-projects-on-github)。
+
+## 注意
+
+- 过滤只作用于**当前时间线可见的文件名**，不是 GitHub 全站搜索。
+- 下载的是上游产物，Starcat 不替你验签；checksum 要自己对。
 
 ## 相关
 
 - [订阅](/zh-Hans/release/subscription)
-- GitHub Release 概念：[GitHub Docs · Releases](https://docs.github.com/en/repositories/releasing-projects-on-github)
+- [时间线](/zh-Hans/release/timeline)

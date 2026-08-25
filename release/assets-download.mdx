@@ -1,33 +1,38 @@
 ---
-title: "Release asset downloads"
-description: "Browse Release attachments and filter by file name"
+title: "Release assets"
+description: "Browse Release attachments and filter by filename before the system downloads"
 ---
 
-## Asset list
+## What it is for
 
-In the [timeline](/release/timeline) or Release detail, expand the assets section:
+Release attachments (`.dmg`, checksums, per-arch packages) live in the timeline or Release detail asset list. Starcat shows name and size. Download / open is handed to the system. Nothing is installed silently.
 
-- File name and size  
-- Download / open (handled by the system)  
-- Expand to see all assets when the list is long  
+<Frame caption="Screenshot TODO · `images/screenshots/release/assets.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Expanded asset list plus filename filter (dmg / arm64)
+  </div>
+</Frame>
 
-## Filter tips
+## How to use it
 
-Use the timeline top filter box to match file names—for macOS installers only:
+Expand assets: names and sizes; download / open; expand all when there are many.
+
+The timeline filter matches filename fragments. You do not need the full name:
 
 ```text
 dmg
-```
-
-Or CPU architecture:
-
-```text
 arm64
+linux
 ```
 
-No need to remember full file names.
+GitHub’s own concept: [GitHub Docs · Releases](https://docs.github.com/en/repositories/releasing-projects-on-github).
+
+## Notes
+
+- The filter applies to **filenames visible on this timeline**, not all of GitHub.
+- You download upstream artifacts. Starcat does not verify signatures; check checksums yourself.
 
 ## Related
 
 - [Subscriptions](/release/subscription)
-- GitHub Releases concept: [GitHub Docs · Releases](https://docs.github.com/en/repositories/releasing-projects-on-github)
+- [Timeline](/release/timeline)

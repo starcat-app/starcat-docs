@@ -1,29 +1,33 @@
 ---
 title: "Background refresh"
-description: "Scheduled polling for subscribed repos; check now and rate limits"
+description: "Poll subscribed repos on a schedule; Check now and GitHub rate limits"
 ---
+
+## What it is for
+
+You do not have to keep the timeline open. Starcat checks subscribed repos for new Releases on an interval. Use **Check now** when a cut just landed and you want confirmation immediately.
+
+<Frame caption="Screenshot TODO · `images/screenshots/release/background-refresh.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Timeline Check now plus a spinning sync icon during a poll
+  </div>
+</Frame>
 
 ## How it works (user-facing)
 
-Starcat uses macOS background tasks to check subscribed repos for new Releases on an interval (default on the order of hours with jitter; exact timing follows the current build).
+A macOS background task polls on an interval (on the order of hours, with jitter; follow the current build). Conditional requests / ETags keep GitHub API use down. Only still-associated targets (starred or ingested) are polled.
 
-- Conditional requests / ETag reduce GitHub API usage  
-- Only polls targets still linked (starred or ingested)  
-- Tap **Check now** on the timeline to run one round manually  
-
-## Limits
-
-Free tier: up to **5** subscriptions; only active slots keep delivering value. See [Subscriptions](/release/subscription).
+Free accounts cap at **5** subscriptions. See [Subscriptions](/release/subscription).
 
 ## Troubleshooting
 
 | Symptom | Try |
 |---------|-----|
-| No new notifications for a long time | Open timeline → Check now; confirm subscription still valid |
-| Rate limit | Wait for reset; reduce concurrent manual refreshes |
-| System killed background work | Allow background activity for the app; open the app and check again |
-| No banner | [Notification settings](/release/notifications) + system notification permission |
+| No notifications for a long time | Timeline → Check now; confirm the subscription is still valid |
+| Rate limit | Wait for reset; stop hammering Check now |
+| OS killed background work | Allow background activity; open the app and check once |
+| No banner | [Notification settings](/release/notifications) plus system permission |
 
 ## Related
 
-- [FAQ · Sync](/faq/sync) (similar GitHub API limit issues)
+- [FAQ · Sync](/faq/sync)
