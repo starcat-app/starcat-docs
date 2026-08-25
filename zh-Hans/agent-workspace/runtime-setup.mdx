@@ -37,13 +37,15 @@ codex login status
 Starcat 不会复制 Codex 凭据，也不会把 Starcat AI Provider 的 API Key 传给 Codex。
 Starcat 启动 `codex app-server` 时复用本机 `CODEX_HOME` 的现有登录态。
 
-### 2. 让 Starcat 检测可执行文件
+### 2. 让 Starcat 检测 Runtime 目录
 
 打开 **设置 → 集成 → Agent Runtime**。
 
-- 如果 Codex 显示「已找到可执行文件」，说明路径可用。该状态不会宣称认证成功，
+- 如果 Codex 显示 **Codex CLI**，说明自动检测已找到本机 CLI。该状态不会宣称认证成功，
   认证结果仍以 `codex login status` 为准。
-- 如果未找到，点击「选择可执行文件」，选择 `command -v codex` 输出的路径。
+- 如需使用独立发布包，点击「选择」并选择完整 Runtime 目录。二进制文件可以直接位于
+  该目录，也可以位于其 `bin/` 子目录；其中必须同时包含可执行的
+  `codex-app-server`（或 `codex`）与 `codex-code-mode-host`。
 - 「恢复自动检测」会清除手工路径，重新搜索 `PATH`、Homebrew、`~/.local/bin`、
   `~/.npm-global/bin` 和 `~/.bun/bin`。
 
@@ -119,7 +121,8 @@ Provider 全部通过正式 adapter 的同一套检查时，DeepSeek 才会显�
 ### Codex 一直重试
 
 在 Terminal 依次运行 `codex login status` 和 `codex app-server --help`。如果 Terminal
-可用但 Starcat 找不到 Codex，在设置页手工选择 `command -v codex` 返回的准确路径。
+可用但 Starcat 找不到 Codex，请在设置页选择包含完整 Runtime 的目录。CLI 安装通常选择
+`dirname "$(command -v codex)"` 输出的目录。
 
 ### DeepSeek 提示缺少 Provider
 

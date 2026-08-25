@@ -39,16 +39,18 @@ codex login status
 Starcat does not copy the Codex credential or pass a Starcat AI Provider key to
 Codex. It launches `codex app-server` with the same local `CODEX_HOME` login state.
 
-### 2. Let Starcat find the executable
+### 2. Let Starcat find the Runtime directory
 
 Open **Settings → Integrations → Agent Runtime**.
 
-- If Codex shows **Executable found**, the path is ready. The status intentionally
-  does not claim that authentication succeeded; `codex login status` is the source
-  of truth.
-- If Codex is not found, click **Choose Executable** and select the path printed by
-  `command -v codex`.
-- **Use Automatic Detection** clears a manually selected path and searches `PATH`,
+- If Codex shows **Codex CLI**, automatic detection found the installed CLI. The
+  status intentionally does not claim that authentication succeeded;
+  `codex login status` remains the source of truth.
+- To use a standalone package, choose its Runtime directory. Starcat accepts
+  binaries directly in that directory or in its `bin/` subdirectory. The package
+  must contain executable `codex-app-server` (or `codex`) and
+  `codex-code-mode-host` files.
+- **Use Automatic Detection** clears a manually configured path and searches `PATH`,
   Homebrew, `~/.local/bin`, `~/.npm-global/bin`, and `~/.bun/bin` again.
 
 ### 3. Run it
@@ -126,8 +128,8 @@ metadata should both say **DeepSeek Harness**.
 ### Codex keeps retrying
 
 Run `codex login status`, then `codex app-server --help` in Terminal. If Terminal
-works but Starcat cannot find Codex, select the exact `command -v codex` path in
-Settings.
+works but Starcat cannot find Codex, choose the directory containing the complete
+Runtime package. For a CLI installation, this is normally `dirname "$(command -v codex)"`.
 
 ### DeepSeek reports a missing Provider
 
