@@ -3,9 +3,9 @@ title: "Set up Codex and DeepSeek runtimes"
 description: "Install, detect, and verify external Agent runtimes in Starcat Direct"
 ---
 
-## What this is for
+## Purpose
 
-Starcat Direct’s Agent workspace can switch among built-in Loop, **Codex App Server**, and **DeepSeek Harness**. External runtimes are local child processes and are **not** inside the Starcat DMG. This page is an install and detection checklist, not a Runtime source tour.
+Starcat Direct’s Agent workspace can switch among built-in Loop, Codex App Server, and DeepSeek Harness. External runtimes run as local child processes and are not inside the Starcat DMG.
 
 <Warning>
   Codex App Server and DeepSeek Harness are **Direct-only**. The Mac App Store
@@ -89,7 +89,7 @@ The script installs `deepseek-harness-runtime-bin==0.1.1rc1` under `~/Library/Ap
 
 Open **Settings → AI**, add a DeepSeek provider with an API key, test the connection, and enable at least one Chat model. The key stays in the Starcat Keychain. Launching from Finder does not require exporting `DEEPSEEK_API_KEY`.
 
-DeepSeek Harness is an Agent framework; it is not locked to DeepSeek as a model vendor. Verified OpenAI-compatible providers in Starcat work too. The workspace selection applies to that run only.
+DeepSeek Harness is an Agent framework. Verified OpenAI-compatible providers in Starcat work too. The workspace selection applies to that run only.
 
 ### 4. Detect and run
 

@@ -3,9 +3,9 @@ title: "Connect GitHub"
 description: "Sign-in methods, scopes, GitHub App, Keychain, and multiple accounts"
 ---
 
-## What this page is for
+## Purpose
 
-Starcat uses your GitHub identity to pull Stars, read public repository metadata, and Unstar when you explicitly ask. It **does not** take your GitHub password. Credentials go into the macOS Keychain.
+Starcat uses your GitHub identity to pull Stars, read public repository metadata, and Unstar when you explicitly ask. It does not take your GitHub password. Credentials go into the macOS Keychain.
 
 Sign-in only creates a session. The repository list still needs the Sync tap in [Quickstart](/getting-started/quickstart).
 
@@ -23,7 +23,7 @@ Sign-in only creates a session. The repository list still needs the Sync tap in 
 2. The system browser opens GitHub’s authorize page
 3. After you approve, you return to Starcat
 
-The App Store build uses `ASWebAuthenticationSession`. Device Flow (which would launch an external browser) and PAT-as-primary-login are blocked there—hidden in UI and rejected in the auth layer.
+The App Store build uses `ASWebAuthenticationSession`. Device Flow (which would launch an external browser) and PAT-as-primary-login are blocked there: hidden in UI and rejected in the auth layer.
 
 ### Direct: Device Flow and PAT
 
@@ -51,14 +51,14 @@ One active session uses one credential. Sign out before you switch methods.
 | `read:user` | Username and avatar |
 | `public_repo` | Stars list and public repository metadata |
 
-Reading a README in daily use does **not** scan your private work repos.  
+Reading a README in daily use does not scan your private work repos.  
 **Unstar** calls the GitHub Unstar API only when you trigger it from detail or batch actions.
 
 The notification inbox needs notification permission. Activity prompts you to re-authorize when it is missing. See [Activity](/discover/activity/activity).
 
 ## GitHub App (My Projects)
 
-**Private / Internal** repositories under [My Projects](/main-interface/my-projects) need a separate **GitHub App** installation (org / repo scope). Public project listing can still use the main OAuth / PAT session. If private projects are missing, finish the in-app App install and sync again.
+Private / Internal repositories under [My Projects](/main-interface/my-projects) need a separate **GitHub App** installation (org / repo scope). Public project listing can still use the main OAuth / PAT session. If private projects are missing, finish the in-app App install and sync again.
 
 ## Multiple accounts
 

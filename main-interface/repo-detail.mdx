@@ -3,9 +3,9 @@ title: "Repository detail"
 description: "README, organize actions, AI, in-app docs, video, CodeFlow, and Unstar"
 ---
 
-## What it is for
+## Purpose
 
-After you select a repository, the right pane is **that repo’s workbench**: README, tags, notes, Star / ingest / subscribe, plus Pro Health, Insights, similar repos, and AI. The list is for scanning; detail is for acting.
+After you select a repository, the right pane shows that repo’s README, tags, notes, Star / ingest / subscribe, plus Pro Health, Insights, similar repos, and AI.
 
 <Frame caption="Screenshot TODO · `images/screenshots/main-interface/repo-detail.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,7 +17,7 @@ Typical stack: metadata header → actions → README → tags / notes / status 
 
 ## README
 
-A WebView renders GitHub Flavored Markdown, including images and anchors. **Mermaid** renders locally and falls back to source on failure.
+A WebView renders GitHub Flavored Markdown, including images and anchors. Mermaid renders locally and falls back to source on failure.
 
 | Action | Detail |
 |--------|--------|
@@ -27,9 +27,9 @@ A WebView renders GitHub Flavored Markdown, including images and anchors. **Merm
 | Translate | Pro. See [README translation](/ai-features/readme-translation) |
 | Share link | Open this repo inside Starcat. See [Share links](/share-export/share-links) |
 
-Videos in GitHub READMEs play with native controls. Playback is **manual**; it stops when you switch repos or close detail. Unsupported sources still open in the browser.
+Videos in GitHub READMEs play with native controls. Playback is manual; it stops when you switch repos or close detail. Unsupported sources still open in the browser.
 
-**Settings → General → Open repository docs in the app** opens Markdown links that point at **this repository** in a separate window. The default is still the browser; **⌘-click always uses the browser**.
+**Settings → General → Open repository docs in the app** opens Markdown links that point at this repository in a separate window. The default is still the browser; **⌘-click always uses the browser**.
 
 <Frame caption="Screenshot TODO · `images/screenshots/main-interface/in-app-docs.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -56,7 +56,7 @@ Videos in GitHub READMEs play with native controls. Playback is **manual**; it s
 
 ## Unstar
 
-Unstarring from detail calls the GitHub API and **cannot be undone in one tap inside Starcat**. Batch: [Batch operations](/manage-stars/batch-operations).
+Unstarring from detail calls the GitHub API and cannot be undone in one tap inside Starcat. Batch: [Batch operations](/manage-stars/batch-operations).
 
 ## Notes
 

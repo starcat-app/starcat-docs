@@ -3,9 +3,9 @@ title: "知识库概述"
 description: "Stars 与知识库的边界、能力地图，以及建议的上手路径"
 ---
 
-## 用来做什么
+## 用途
 
-知识库是你**主动入库**的精选仓库，给 RAG 工作台检索和问答用。它不是「全部 Stars 的另一个名字」。Star 了不等于能问；问的是你精选过的那一批。
+知识库是你主动入库、给 RAG 工作台检索和问答用的那批仓库。Star 一个仓不会自动入库。
 
 <Frame caption="截图待补充 · `images/screenshots/knowledge-base/overview.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -23,16 +23,14 @@ description: "Stars 与知识库的边界、能力地图，以及建议的上手
 | 默认 RAG 范围 | ❌ | ✅ 仅已入库 |
 | 典型索引 | FTS 等 | 分片 + 关键词 + 向量 |
 
-务必记住：
-
-- Star **不会**自动入库
-- Unstar **不会**自动移出知识库
+- Star 不会自动入库
+- Unstar 不会自动移出知识库
 - 未 Star 但已入库：仍可问答，也可 [订阅 Release](/zh-Hans/release/subscription)
 
 ## 你需要什么
 
 1. [Pro](/zh-Hans/subscribe/plan-comparison)
-2. Chat + **Embedding** → [AI 配置](/zh-Hans/ai-features/configuration)
+2. Chat + Embedding → [AI 配置](/zh-Hans/ai-features/configuration)
 3. 若干已入库仓库 → [添加入库](/zh-Hans/knowledge-base/adding-repos)
 
 缺 Embedding 时工作台可能能开，但向量检索建不起来。见 [索引管理](/zh-Hans/knowledge-base/index-management)。
@@ -47,14 +45,14 @@ description: "Stars 与知识库的边界、能力地图，以及建议的上手
 | 管理历史会话 | [会话管理](/zh-Hans/knowledge-base/session-management) |
 | 索引覆盖率低 | [索引管理](/zh-Hans/knowledge-base/index-management) |
 
-建议路径：精选 20～50 个仓（优先「正在使用」）→ 确认 Embedding 与覆盖率 → 先 @ 单仓试问 → 再做跨仓问题。
+建议路径：精选 20-50 个仓（优先「正在使用」）→ 确认 Embedding 与覆盖率 → 先 @ 单仓试问 → 再做跨仓问题。
 
 入口：侧栏 Manage → 知识库 / Library；工具栏「知识库问答」或 **⇧⌘K**；与知识库相关的 Smart Collections。
 
 ## 注意
 
 - [语义搜索](/zh-Hans/search/semantic-search) 是列表级向量检索，不是工作台问答。
-- 入库太多会拉长索引时间和 Embedding 账单；精选比「全 Star 入库」更有用。
+- 入库太多会拉长索引时间和 Embedding 账单。
 
 ## 相关
 

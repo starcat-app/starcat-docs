@@ -3,9 +3,9 @@ title: "Knowledge base overview"
 description: "Stars vs library, capability map, and a suggested first path"
 ---
 
-## What it is for
+## Purpose
 
-The knowledge base is the set of repositories you **ingest on purpose** so the RAG workspace can retrieve and answer. It is not another name for All Stars. Starring does not make a repo askable; ingesting does.
+The knowledge base is the set of repositories you ingest so the RAG workspace can retrieve and answer. Starring a repo does not ingest it.
 
 <Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/overview.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -23,16 +23,14 @@ The knowledge base is the set of repositories you **ingest on purpose** so the R
 | Default RAG scope | No | Yes, ingested only |
 | Typical index | FTS and similar | Chunks + keywords + vectors |
 
-Remember:
-
-- Star does **not** auto-ingest
-- Unstar does **not** auto-remove from the library
+- Star does not auto-ingest
+- Unstar does not auto-remove from the library
 - Ingested but not starred: still askable, and you can still [subscribe to Releases](/release/subscription)
 
 ## What you need
 
 1. [Pro](/subscribe/plan-comparison)
-2. Chat + **Embedding** → [AI configuration](/ai-features/configuration)
+2. Chat + Embedding → [AI configuration](/ai-features/configuration)
 3. Some ingested repos → [Adding repos](/knowledge-base/adding-repos)
 
 Without Embedding the workspace may open, but vector retrieval cannot build. See [Index management](/knowledge-base/index-management).
@@ -47,14 +45,14 @@ Without Embedding the workspace may open, but vector retrieval cannot build. See
 | Manage history | [Sessions](/knowledge-base/session-management) |
 | Fix low coverage | [Index management](/knowledge-base/index-management) |
 
-Suggested path: ingest 20–50 repos (prefer **using**) → confirm Embedding and coverage → @ one repo first → then ask across repos.
+Suggested path: ingest 20-50 repos (prefer **using**) → confirm Embedding and coverage → @ one repo first → then ask across repos.
 
 Entries: sidebar Manage → Library; toolbar Knowledge Q&A or **⇧⌘K**; knowledge-related Smart Collections.
 
 ## Notes
 
 - [Semantic search](/search/semantic-search) is list-level vector search, not workspace Q&A.
-- Ingesting everything you starred stretches index time and the Embedding bill. Curation beats bulk.
+- Ingesting everything you starred stretches index time and the Embedding bill.
 
 ## Related
 

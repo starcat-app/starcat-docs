@@ -3,9 +3,9 @@ title: "GitHub 账号连接"
 description: "登录方式、权限、GitHub App、Keychain 与多账号"
 ---
 
-## 用来做什么
+## 用途
 
-Starcat 用你的 GitHub 身份拉 Stars、读公开仓库元数据，并在你明确操作时 Unstar。它**不会**要你的 GitHub 密码。凭证进 macOS Keychain。
+Starcat 用你的 GitHub 身份拉 Stars、读公开仓库元数据，并在你明确操作时 Unstar。它不会要你的 GitHub 密码。凭证进 macOS Keychain。
 
 登录只建立会话。仓库列表要靠 [快速开始](/zh-Hans/getting-started/quickstart) 里那一下同步。
 
@@ -51,14 +51,14 @@ Direct 额外提供 Device Flow（适合浏览器回调不顺的网络）和 PAT
 | `read:user` | 用户名、头像 |
 | `public_repo` | Stars 列表和公开仓库信息 |
 
-日常读 README **不会**去扫你的私有业务仓。  
+日常读 README 不会去扫你的私有业务仓。  
 **取消 Star** 会调 GitHub Unstar API，只在你从详情或批量操作里明确触发时发生。
 
 通知收件箱还需要通知相关授权；缺权限时 Activity 会提示重新授权，见 [活动](/zh-Hans/discover/activity/activity)。
 
 ## GitHub App（我的项目）
 
-看 [我的项目](/zh-Hans/main-interface/my-projects) 里的**私有 / Internal** 仓库，要再做一次 **GitHub App** 安装（按组织 / 仓库范围）。公开项目列表仍可用主 OAuth / PAT。看不到私仓时，在 App 里把 GitHub App 装完再同步。
+看 [我的项目](/zh-Hans/main-interface/my-projects) 里的私有 / Internal 仓库，要再做一次 **GitHub App** 安装（按组织 / 仓库范围）。公开项目列表仍可用主 OAuth / PAT。看不到私仓时，在 App 里把 GitHub App 装完再同步。
 
 ## 多账号
 

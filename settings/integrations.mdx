@@ -3,9 +3,9 @@ title: "Integrations"
 description: "Local API, browser plugin, External Search, Direct Agent / CodeFlow"
 ---
 
-## What it is for
+## Purpose
 
-**Settings → Integrations** wires local companions: the plugin, web search, Direct Agent runtimes, and CodeFlow. Not GitHub Stars sync ([Sync](/settings/sync)). Not self-hosted explore backends ([Services](/settings/services)).
+Settings → Integrations wires local companions: the plugin, web search, Direct Agent runtimes, and CodeFlow. GitHub Stars sync is under [Sync](/settings/sync). Self-hosted explore backends are under [Services](/settings/services).
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/integrations.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,17 +15,17 @@ description: "Local API, browser plugin, External Search, Direct Agent / CodeFlo
 
 ## How to use it
 
-**Agent Runtime (Direct):** detect Codex App Server and DeepSeek Harness. Read [Runtime setup](/agent-workspace/runtime-setup) before the workspace.
+Agent Runtime (Direct): detect Codex App Server and DeepSeek Harness. Read [Runtime setup](/agent-workspace/runtime-setup) before the workspace.
 
-**Local API key:** auth for the plugin and local HTTP API. Rotate it. Do not commit it. Trusted Mac only.
+Local API key: auth for the plugin and local HTTP API. Rotate it. Do not commit it. Trusted Mac only.
 
-**Browser plugin:** enable the local service; port / token must match; **Starcat must be running**. `http://127.0.0.1:{port}/plugin/v1/...` plus Bearer. See [Chrome](/browser-plugin/chrome).
+Browser plugin: enable the local service; port / token must match; Starcat must be running. `http://127.0.0.1:{port}/plugin/v1/...` plus Bearer. See [Chrome](/browser-plugin/chrome).
 
-**External Search:** web search and AI live context. See [External search](/search/external-search). The nav item [External search settings](/settings/external-search) points here.
+External Search is configured here: web search and AI live context. See [External search](/search/external-search). The nav item [External search settings](/settings/external-search) points here.
 
 Alfred / Raycast: [Desktop launchers](/integrations/desktop-launchers).
 
-**CodeFlow (Pro, public repos):** 3D code graph from list / detail. No entry on private repos. Direct can detect the official local install or a manual path. **CodebaseMemory** uses the same detection. App Store cannot launch those user-installed binaries.
+CodeFlow (Pro, public repos): 3D code graph from list / detail. No entry on private repos. Direct can detect the official local install or a manual path. CodebaseMemory uses the same detection. App Store cannot launch those user-installed binaries.
 
 ## Notes
 

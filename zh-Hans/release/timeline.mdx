@@ -3,9 +3,9 @@ title: "Release 时间线"
 description: "聚合已订阅仓库的 Release：已读、分页、立即检查"
 ---
 
-## 用来做什么
+## 用途
 
-把多个已订阅仓的发版收成一条时间线，不用每个 GitHub Releases 页轮询。打开为面板 / Sheet（以 App 为准）。入口：Manage 侧栏 **Release 时间线**。
+把多个已订阅仓的发版收成一条时间线，不用每个 GitHub Releases 页轮询。打开为面板 / Sheet（以 App 为准）。入口：Manage 侧栏 Release 时间线。
 
 <Frame caption="截图待补充 · `images/screenshots/release/timeline.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -16,19 +16,20 @@ description: "聚合已订阅仓库的 Release：已读、分页、立即检查"
 ## 怎么用
 
 - 所有已订阅仓库的 Release，按时间倒序
-- **未读**高亮；可单条已读或全部已读
+- 未读高亮；可单条已读或全部已读
 - 展开后阅读 Release 正文（GFM）与资产列表
-- **每页约 20 条**，滚动加载更多
+- 每页约 20 条，滚动加载更多
 - 正文字号跟随 [通用设置](/zh-Hans/settings/general) 的界面字体倍率
 
-顶部 **立即检查** 立刻跑一轮轮询，不等待后台间隔。适合刚发版、想马上确认。后台默认间隔见 [后台刷新](/zh-Hans/release/background-refresh)。
+顶部「立即检查」立刻跑一轮轮询，不等待后台间隔。刚发版、想马上确认时用。后台默认间隔见 [后台刷新](/zh-Hans/release/background-refresh)。
 
 顶部过滤框可按文件名片段筛资产，例如 `dmg`、`arm64`、`linux`。见 [资产下载](/zh-Hans/release/assets-download)。
 
 ## 注意
 
-- 时间线只含**已订阅**仓，不是全部 Stars 的 Release。
-- 立即检查会打 GitHub API，短时间连点可能碰到 Rate Limit。
+时间线只含已订阅仓，不是全部 Stars 的 Release。
+
+立即检查会打 GitHub API，短时间连点可能碰到 Rate Limit。
 
 ## 相关
 

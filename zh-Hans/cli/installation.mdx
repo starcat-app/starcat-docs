@@ -3,9 +3,9 @@ title: "CLI 安装"
 description: "Homebrew / 脚本安装，再和本机 Pro App 做 MCP 配对"
 ---
 
-## 用来做什么
+## 用途
 
-[`starcat-cli`](https://github.com/starcat-app/starcat-cli) 是命令行客户端，也可当 AI Agent 的 **stdio MCP** 桥。它**不**直读 SQLite；读写走 App 的 MCP Tools。权限、dry-run、Pro、审计仍由 **macOS 上的 Starcat App** 执行。App 跑在 Mac；CLI 可装在同一台 Mac，或经可信网络连已配对的 App。
+[`starcat-cli`](https://github.com/starcat-app/starcat-cli) 是命令行客户端，也可当 AI Agent 的 stdio MCP 桥。它不打开 SQLite；读写走 App 的 MCP Tools。权限、dry-run、Pro、审计仍由 macOS 上的 Starcat App 执行。App 跑在 Mac；CLI 可装在同一台 Mac，或经可信网络连已配对的 App。
 
 <Frame caption="截图待补充 · `images/screenshots/cli/installation.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -40,7 +40,7 @@ irm https://github.com/starcat-app/starcat-cli/releases/latest/download/install.
 
 ## 配对（必做）
 
-1. Starcat → **设置 → MCP** → 启用。需 [Pro](/zh-Hans/subscribe/plan-comparison)
+1. Starcat → 设置 → MCP → 启用。需 [Pro](/zh-Hans/subscribe/plan-comparison)
 2. 复制配对命令；URI 约 5 分钟有效、单次兑换
 3. 终端：
 
@@ -49,7 +49,7 @@ starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
 
-4. 回到 App **确认设备**。未确认则配对未完成。也可 `starcat pair` 后粘贴 URI。长期凭据进钥匙串。见 [MCP 设置](/zh-Hans/settings/mcp)。
+4. 回到 App 确认设备。未确认则配对未完成。也可 `starcat pair` 后粘贴 URI。长期凭据进钥匙串。见 [MCP 设置](/zh-Hans/settings/mcp)。
 
 ```bash
 starcat --version
@@ -59,4 +59,4 @@ starcat capabilities
 
 ## 注意
 
-App Store 沙盒不能当「替你启动任意 CLI」的宿主；CLI 是独立进程，仍要本机 Direct/能开 MCP 的 App 在跑。下一步：[使用指南](/zh-Hans/cli/usage)、[Agent Skill](/zh-Hans/cli/skill)。
+App Store 沙盒不能拉起任意用户 CLI。CLI 是独立进程，仍需要能托管 MCP 的 App 在运行。下一步：[使用指南](/zh-Hans/cli/usage)、[Agent Skill](/zh-Hans/cli/skill)。

@@ -3,9 +3,9 @@ title: "AI 设置"
 description: "Provider、任务映射、Auto Tidy 与索引；Embedding 空着就没有 RAG"
 ---
 
-## 用来做什么
+## 用途
 
-**设置 → AI** 是 AI 的总闸。逐步操作见 [AI 配置](/zh-Hans/ai-features/configuration)。Chat 配好但 Embedding 空着，语义和 RAG 仍会挂。
+Provider、任务映射、Auto Tidy 和 AI 索引。逐步操作见 [AI 配置](/zh-Hans/ai-features/configuration)。语义搜索和 RAG 需要已映射的 Embedding。
 
 <Frame caption="截图待补充 · `images/screenshots/settings/ai.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -26,7 +26,7 @@ description: "Provider、任务映射、Auto Tidy 与索引；Embedding 空着�
 | 输出语言 | 跟随界面或单独指定 |
 | AI 用量 | 本地请求数、Token、延迟、失败；不保存 Prompt 正文 |
 
-打开 **AI 索引** 可看上次预拉时间和计数；可开始、暂停、恢复。取消 embedding 不会被当成网络不可用。外部 Meilisearch / Qdrant 的「测试并保存」：成功绿勾、需重建橙、失败红叉。它们不是 [设置 → 服务](/zh-Hans/settings/services) 里的 Go 后端。
+打开 AI 索引 可看上次预拉时间和计数；可开始、暂停、恢复。取消 embedding 不会被当成网络不可用。外部 Meilisearch / Qdrant 的「测试并保存」：成功绿勾、需重建橙、失败红叉。它们不是 [设置 → 服务](/zh-Hans/settings/services) 里的 Go 后端。
 
 使用前：Pro 是否激活、Chat 测试是否通过、Embedding 是否已配、再到详情 ⇧⌘A 真调一次。
 

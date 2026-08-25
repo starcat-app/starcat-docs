@@ -3,9 +3,9 @@ title: "Configure self-hosted APIs in Starcat"
 description: "Settings → Services: custom URL, API key, test connection, reset"
 ---
 
-## What this is for
+## Purpose
 
-Point the app at your own instance root URL and key. Most users leave the fields empty. Do not put RAG Meilisearch here.
+Point the app at a custom instance root URL and key. Most users leave the fields empty. RAG Meilisearch / Qdrant are configured under Settings → AI.
 
 <Frame caption="Screenshot TODO · `images/screenshots/self-hosting/configure.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,34 +15,34 @@ Point the app at your own instance root URL and key. Most users leave the fields
 
 ## Entry
 
-**Settings → Services**
+Settings → Services
 
-Intro copy: “Configure custom endpoints for Starcat backend services.” Each service card includes:
+Intro copy: "Configure custom endpoints for Starcat backend services." Each service card includes:
 
 | Control | Purpose |
 |---------|---------|
-| **Self-host** link | Opens that service’s GitHub repository |
-| **URL** | Custom baseURL; empty = official default |
-| **API Key** | Override Bearer token; empty = baked-in production key |
-| **Test connection** | `GET /api/v1/ping` with auth |
-| **Reset** | Clear custom URL/key for that service |
+| Self-host link | Opens that service's GitHub repository |
+| URL | Custom baseURL; empty = official default |
+| API Key | Override Bearer token; empty = baked-in production key |
+| Test connection | `GET /api/v1/ping` with auth |
+| Reset | Clear custom URL/key for that service |
 
 ## Rules
 
-1. **URL is the service root only** — no business path, no trailing slash noise.  
-   - Good: `http://127.0.0.1:5002` or `https://trending.example.com`  
-   - Bad: `http://127.0.0.1:5002/api/v1` or a legacy `…/api` suffix (Sharing’s old `/api` form is stripped on save)
-2. **API Key** must be one entry from the instance’s `API_KEYS` allowlist.  
+1. URL is the service root only: no business path, no extra trailing slash.
+   - Good: `http://127.0.0.1:5002` or `https://trending.example.com`
+   - Bad: `http://127.0.0.1:5002/api/v1` or a legacy `…/api` suffix (Sharing's old `/api` form is stripped on save)
+2. API Key must be one entry from the instance's `API_KEYS` allowlist.
    Client priority: custom key on this page → baked-in production key → none (requests omit `Authorization`, usually 401).
-3. **Test connection** succeeds when the host is reachable, the key is accepted, and `data.service` matches the card (catches wrong ports).
+3. Test connection succeeds when the host is reachable, the key is accepted, and `data.service` matches the card (catches wrong ports).
 4. You may override only some services (e.g. self-host Discovery, keep official Trending).
 
-## Related “self-host” that is not this page
+## Related "self-host" that is not this page
 
 | Capability | Where | Notes |
 |------------|-------|-------|
-| Meilisearch / Qdrant (optional RAG) | **Settings → AI** | Not the Go support APIs |
-| AI Provider base URL | **Settings → AI** | BYOK model endpoints |
+| Meilisearch / Qdrant (optional RAG) | Settings → AI | Not the Go support APIs |
+| AI Provider base URL | Settings → AI | BYOK model endpoints |
 | Direct License | No user override | Payments / entitlement; out of scope |
 
 ## Local wiring example
@@ -64,7 +64,7 @@ Paste matching keys and test each card.
 
 Saving hot-updates the client baseURL / key (full app restart usually unnecessary; refresh the Explore pane if a list looks stale).
 
-Status-bar availability uses **`/healthz`** (no key), which is different from **Test connection**:
+Status-bar availability uses `/healthz` (no key), which is different from Test connection:
 
 | Entry | Path | Auth | Meaning |
 |-------|------|------|---------|
@@ -77,7 +77,7 @@ Status-bar availability uses **`/healthz`** (no key), which is different from **
 |---------|-------|
 | Unreachable | Firewall / bind address; use `127.0.0.1` locally |
 | Unauthorized | Key missing from server `API_KEYS` or mistyped in the app |
-| Service mismatch | URL points at another service’s port |
+| Service mismatch | URL points at another service's port |
 | Business 404 | Extra `/api` or path on the baseURL |
 | Empty Trending/Discover | Self-hosted crawler not warm yet; logs + GitHub PAT quota |
 
@@ -85,4 +85,4 @@ Status-bar availability uses **`/healthz`** (no key), which is different from **
 
 - [Overview](/self-hosting/overview)
 - [Deploy](/self-hosting/deploy)
-- [Integrations](/settings/integrations) (plugins / External Search — different from these APIs)
+- [Integrations](/settings/integrations) (plugin token and External Search)

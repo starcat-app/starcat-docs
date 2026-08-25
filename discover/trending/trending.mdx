@@ -3,9 +3,9 @@ title: "Trending"
 description: "Explore → Trending: daily / weekly / monthly, not the same as long-term Hot"
 ---
 
-## What it is for
+## Purpose
 
-Sidebar **Explore → Trending** shows short-term attention on GitHub **daily / weekly / monthly** charts. Good for a daily glance at what is moving. It is **not** the same as [Hot](/discover/explore/hot-and-new) long-term heat.
+Explore → Trending shows short-term attention on GitHub daily / weekly / monthly charts. It is a different ranking from [Hot](/discover/explore/hot-and-new) long-term heat.
 
 <Frame caption="In-app Trending info panel">
   <img src="/images/screenshots/trending-info.png" alt="Trending info" className="rounded-xl" />
@@ -17,13 +17,13 @@ If that file is missing, capture `images/screenshots/trending-info.png`.
 
 Source: GitHub Trending, with GitHub API metadata fill-in. Shows daily, weekly, and monthly lists.
 
-Cache: daily **1 hour**, weekly **6 hours**, monthly **24 hours**. After expiry the current list stays on screen while a background refresh runs. Manual refresh requests immediately. Failures keep the cache; the list is not wiped.
+Cache: daily 1 hour, weekly 6 hours, monthly 24 hours. After expiry the current list stays on screen while a background refresh runs. Manual refresh requests immediately. Failures keep the cache; the list is not wiped.
 
 Filter by language and similar controls (follow the app). Open detail, Star, ingest.
 
 ## Notes
 
-Trending is noisy on purpose. Charting is not a reason to ingest. Read the README first. External service: [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api).
+Trending lists change quickly. Charting is not a reason to ingest. Read the README first. External service: [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api).
 
 ## Related
 

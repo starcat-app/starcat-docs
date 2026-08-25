@@ -3,25 +3,25 @@ title: "Deploy support APIs"
 description: "Local Go runs, env essentials, Fly.io deploy, and health checks"
 ---
 
-## What this is for
+## Purpose
 
-Run the six Go APIs locally or on Fly.io. Confirm `/healthz` and authenticated `/api/v1/ping` before you paste URLs into the app.
+Run the six Go APIs locally or on Fly.io. Confirm `/healthz` and authenticated `/api/v1/ping` before pasting URLs into the app.
 
 <Frame caption="Screenshot TODO · `images/screenshots/self-hosting/deploy.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
-    Local APIs listening on 5001–5006, or a Fly app list
+    Local APIs listening on 5001-5006, or a Fly app list
   </div>
 </Frame>
 
 ## Prerequisites
 
-- Go (match each repo’s `go.mod`; currently often 1.25+)
+- Go (match each repo's `go.mod`; currently often 1.25+)
 - Optional: `flyctl` for [Fly.io](https://fly.io)
-- At least one GitHub PAT (**Trending / Weekly / Discovery** need it; Sharing benefits from tokens for public repo enrichment)
+- At least one GitHub PAT (Trending / Weekly / Discovery need it; Sharing benefits from tokens for public repo enrichment)
 
 Get the code either by:
 
-- Cloning each [GitHub repo](/self-hosting/overview) separately, or  
+- Cloning each [GitHub repo](/self-hosting/overview) separately, or
 - From a full Starcat tree: `cd supports && ./clone-all.sh`, then enter each `starcat-*-api/`
 
 ## Local single service
@@ -59,7 +59,7 @@ curl -sS -H "Authorization: Bearer <one of your API_KEYS>" \
 
 ## Monorepo: start all local APIs
 
-From a full Starcat checkout’s `supports/`:
+From a full Starcat checkout's `supports/`:
 
 ```bash
 cd supports
@@ -68,7 +68,7 @@ cd supports
 ./start-all.sh --stop
 ```
 
-Ports `5001`–`5006` must be free; start from the `supports/` root (do not run binaries only from `bin/`).
+Ports `5001-5006` must be free; start from the `supports/` root (do not run binaries only from `bin/`).
 
 ## Deploy on Fly.io
 
@@ -90,7 +90,7 @@ make fly-deploy-trending    # or fly-deploy-all
 make fly-health-all
 ```
 
-Never commit secrets. Local `.env` and Fly secrets are separate. See each repo’s docs and (if present) `supports/docs/fly-io-环境变量.md`.
+Never commit secrets. Local `.env` and Fly secrets are separate. See each repo's docs and (if present) `supports/docs/fly-io-环境变量.md`.
 
 ### Optional cross-service wiring
 
@@ -99,8 +99,8 @@ Never commit secrets. Local `.env` and Fly secrets are separate. See each repo�
 
 ## After deploy
 
-Paste the public HTTPS URL (or LAN `http://IP:port`) and one key from `API_KEYS` into Starcat — see [Configure in Starcat](/self-hosting/configure).
+Paste the public HTTPS URL (or LAN `http://IP:port`) and one key from `API_KEYS` into Starcat. See [Configure in Starcat](/self-hosting/configure).
 
 <Warning>
-  You own uptime, quotas, compliance, and key security for self-hosted instances. Released App Store / Direct builds keep official defaults until you override them under **Settings → Services**.
+  You own uptime, quotas, compliance, and key security for self-hosted instances. Released App Store / Direct builds keep official defaults until you override them under Settings → Services.
 </Warning>

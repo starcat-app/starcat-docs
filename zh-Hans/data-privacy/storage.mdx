@@ -3,9 +3,9 @@ title: "数据存储说明"
 description: "SQLite 与 Keychain 各存什么；App Store 与 Direct 数据不互通"
 ---
 
-## 用来做什么
+## 用途
 
-搞清楚哪些能从 GitHub 重建、哪些丢了就没了。技术栈是 GRDB.swift + FTS5；正式版用版本化 Migration，**不要删库重建**。
+哪些能从 GitHub 重建、哪些丢了就没了。技术栈是 GRDB.swift + FTS5；正式版用版本化 Migration。不要删库重建。
 
 <Frame caption="截图待补充 · `images/screenshots/data-privacy/storage.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -16,13 +16,13 @@ description: "SQLite 与 Keychain 各存什么；App Store 与 Direct 数据不�
 | 数据类型 | 可重建？ |
 |----------|----------|
 | 仓库元数据 / README 缓存 | 是 |
-| 标签 / 笔记 / 状态 / 集合 | **否** |
+| 标签 / 笔记 / 状态 / 集合 | 否 |
 | AI / RAG 历史 | 视需求备份 |
 | 摘要等 AI 缓存 | 可再生成 |
 
 Keychain：GitHub OAuth / PAT、AI Key、本地集成密钥。
 
-App Store 与 Direct 两套容器，**数据不自动互通**。见 [安装](/zh-Hans/getting-started/installation)。不同 GitHub 账号本地隔离；切换账号不会自动清空另一账号。云同步尚未上线。见 [备份](/zh-Hans/data-privacy/backup)。
+App Store 与 Direct 两套容器，数据不自动互通。见 [安装](/zh-Hans/getting-started/installation)。不同 GitHub 账号本地隔离；切换账号不会自动清空另一账号。云同步尚未上线。见 [备份](/zh-Hans/data-privacy/backup)。
 
 ## 相关
 

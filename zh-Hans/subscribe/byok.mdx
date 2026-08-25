@@ -3,9 +3,9 @@ title: "BYOK 模式"
 description: "Pro 用户自带 API Key；请求直达你配置的 Provider"
 ---
 
-## 用来做什么
+## 用途
 
-Starcat 的 AI **不代扣模型费用**：你在「设置 → AI」配 Provider 和 API Key，请求发往你指定的服务。这是当前正式方式，不是「即将推出」。用 AI 功能仍需要 **Pro**。
+Starcat 的 AI 不代扣模型费用。在「设置 → AI」配 Provider 和 API Key，请求发往指定的服务。这是当前正式方式。用 AI 功能仍需要 Pro。
 
 <Frame caption="截图待补充 · `images/screenshots/subscribe/byok.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,12 +15,12 @@ Starcat 的 AI **不代扣模型费用**：你在「设置 → AI」配 Provider
 
 ## 怎么配
 
-优势：配额自控、路径清晰、可按任务切 Chat / Embedding。
+配额由 Provider 账号控制。可按任务切 Chat / Embedding。
 
 示例 Provider：OpenAI、OpenAI-compatible、DeepSeek、Gemini、OpenRouter、Ollama（需本机服务）。列表以 App 为准。
 
 1. 已购买并激活 Pro
-2. **设置 → AI** 添加 Provider，填 Key / Base URL
+2. 设置 → AI 添加 Provider，填 Key / Base URL
 3. 为摘要、对话、Embedding 等选模型
 4. 测试连接
 
@@ -30,9 +30,11 @@ API Key 经 AES-GCM 加密后进 macOS Keychain。Starcat 不会把 Key 当明�
 
 ## 注意
 
-- 不必绑死 OpenAI；兼容接口、Ollama 等都可以。
-- Key 存本机；请求发往你配置的端点。见 [隐私](/zh-Hans/data-privacy/privacy)。
-- 配好 Chat 仍不能 RAG：通常是 **Embedding** 空着。
+不必绑死 OpenAI；兼容接口、Ollama 等都可以。
+
+Key 存本机；请求发往你配置的端点。见 [隐私](/zh-Hans/data-privacy/privacy)。
+
+配好 Chat 仍不能 RAG：通常是 Embedding 空着。
 
 ## 相关
 

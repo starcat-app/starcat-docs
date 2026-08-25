@@ -3,9 +3,9 @@ title: "Agent Skill"
 description: "starcat-skill 不能绕过 App；先装 CLI 并完成 pair"
 ---
 
-## 用来做什么
+## 用途
 
-[`starcat-skill`](https://github.com/starcat-app/starcat-skill) 把 CLI 能力描述成 Agent 可加载的 Skill，方便在 Claude Code、Codex 里搜 Stars / 知识库、读 README，并在 dry-run 与授权下改笔记、标签、状态。它**不能**绕过 App 直连数据库。
+[`starcat-skill`](https://github.com/starcat-app/starcat-skill) 把 CLI 能力描述成 Agent 可加载的 Skill，方便在 Claude Code、Codex 里搜 Stars / 知识库、读 README，并在 dry-run 与授权下改笔记、标签、状态。它不打开 SQLite。
 
 <Frame caption="截图待补充 · `images/screenshots/cli/skill.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">

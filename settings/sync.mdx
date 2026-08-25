@@ -3,9 +3,9 @@ title: "Sync"
 description: "GitHub Stars into the local cache; iCloud user-data sync is not shipped"
 ---
 
-## What it is for
+## Purpose
 
-This page is **GitHub Stars → this Mac** only. iCloud sync for tags / notes is **not shipped**. Moving Macs means a [manual backup](/data-privacy/backup).
+Pull GitHub Stars into the local cache. iCloud sync for tags and notes is not shipped. Moving Macs means a [manual backup](/data-privacy/backup).
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/sync.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,7 +15,7 @@ This page is **GitHub Stars → this Mac** only. iCloud sync for tags / notes is
 
 ## How to use it
 
-Toolbar sync: full pull the first time, then incremental / ETag. Getting Started asks you to tap it once. See [Quickstart](/getting-started/quickstart).
+Toolbar sync: full pull the first time, then incremental / ETag. Getting Started asks for one tap. See [Quickstart](/getting-started/quickstart).
 
 GitHub rate limits trigger backoff and a reset countdown. See [FAQ · Sync](/faq/sync).
 
@@ -27,7 +27,7 @@ Background checks may run when the OS allows (follow the app switch).
 
 ## Notes
 
-Stars sync is not “tags go to the cloud”. Stars rebuild; tags do not.
+Stars rebuild from GitHub. Tags, notes, and status stay local. CloudKit user-data sync is not shipped.
 
 ## Related
 

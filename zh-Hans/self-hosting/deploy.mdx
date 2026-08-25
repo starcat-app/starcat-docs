@@ -3,13 +3,13 @@ title: "自部署后端 API"
 description: "本地 Go 运行、环境变量要点、Fly.io 部署与健康检查"
 ---
 
-## 用来做什么
+## 用途
 
 在本机或 Fly.io 跑六套 Go API。填进 App 之前先用 `/healthz` 和带 Key 的 `/api/v1/ping` 确认活着。
 
 <Frame caption="截图待补充 · `images/screenshots/self-hosting/deploy.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
-    终端里本地 API 已监听 5001–5006，或 Fly 应用列表
+    终端里本地 API 已监听 5001-5006，或 Fly 应用列表
   </div>
 </Frame>
 
@@ -17,11 +17,11 @@ description: "本地 Go 运行、环境变量要点、Fly.io 部署与健康检�
 
 - Go（版本与各仓库 `go.mod` 一致，当前多为 1.25+）
 - 可选：`flyctl`（部署到 [Fly.io](https://fly.io)）
-- 至少一个 GitHub PAT（**Trending / Weekly / Discovery** 抓取需要；Sharing 的公开页补全仓库信息时也建议配置）
+- 至少一个 GitHub PAT（Trending / Weekly / Discovery 抓取需要；Sharing 的公开页补全仓库信息时也建议配置）
 
 源码任选其一：
 
-- 单独 clone 上表各 [GitHub 仓库](/zh-Hans/self-hosting/overview)  
+- 单独 clone 上表各 [GitHub 仓库](/zh-Hans/self-hosting/overview)
 - 或使用 Starcat monorepo：`cd supports && ./clone-all.sh` 拉取各 `starcat-*-api/`，再进入对应目录
 
 ## 本地单服务（通用步骤）
@@ -63,12 +63,12 @@ curl -sS -H "Authorization: Bearer <你的 API_KEYS 之一>" \
 
 ```bash
 cd supports
-./start-all.sh          # 构建并启动 5001–5006
+./start-all.sh          # 构建并启动 5001-5006
 ./start-all.sh --status
 ./start-all.sh --stop
 ```
 
-约束：端口 5001–5006 空闲；从 `supports/` 根启动（不要只进 `bin/` 跑二进制）。
+约束：端口 5001-5006 空闲；从 `supports/` 根启动（不要只进 `bin/` 跑二进制）。
 
 ## 部署到 Fly.io
 
@@ -95,12 +95,12 @@ Secrets 不要提交到 git；本地 `.env` 与 Fly secrets 是两套渠道。�
 ### 服务间依赖（可选）
 
 - Trending / Weekly 可配置 `WIKI_API_URL` + `WIKI_API_KEY`，在抓到新仓后通知 Wiki 预热。
-- Sharing 的 `BASE_URL` 应指向你对外公开的分享域名（用于拼短链）。
+- Sharing 的 `BASE_URL` 应指向对外公开的分享域名（用于拼短链）。
 
 ## 部署完成后
 
 把公网 HTTPS 地址（或局域网 `http://IP:端口`）与 `API_KEYS` 中的某一个 Key，填进 Starcat：见 [在 Starcat 中配置](/zh-Hans/self-hosting/configure)。
 
 <Warning>
-  自托管实例的可用性、配额、合规与密钥安全由你自行负责。App Store / Direct 正式版默认仍指向官方实例，直到你在「设置 → 服务」显式覆盖。
+  自托管实例的可用性、配额、合规与密钥安全由你自行负责。App Store / Direct 正式版默认仍指向官方实例，直到在「设置 → 服务」显式覆盖。
 </Warning>

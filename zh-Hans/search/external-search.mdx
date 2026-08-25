@@ -3,14 +3,14 @@ title: "外部搜索"
 description: "网页 Scope 与 AI/RAG 联网上下文共用的 Provider"
 ---
 
-## 用来做什么
+## 用途
 
 把第三方网页检索接到 Starcat，给两处用：
 
 1. [Search Center](/zh-Hans/search/search-center) 的 **网页** Scope
 2. AI / RAG 需要时的**联网上下文**（受开关和隐私选项约束）
 
-AnySearch、Tavily 等是 Provider，不是另一套互不相干的产品。
+AnySearch、Tavily 等是 Provider。
 
 <Frame caption="截图待补充 · `images/screenshots/search/external-search.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -41,7 +41,7 @@ AnySearch、Tavily 等是 Provider，不是另一套互不相干的产品。
 - 结果会本地缓存，减少重复计费 / 请求；可在 **设置 → 存储** 清外部搜索缓存。
 - 查询会发往你启用的第三方服务。
 - 私有仓库是否允许附带外部上下文，受集成 / AI 开关约束。原则见 [隐私](/zh-Hans/data-privacy/privacy)。
-- 网页 Scope **不是**语义搜索。
+- 网页 Scope 走 External Search Provider。语义搜索走 Embedding 索引。
 
 ## 相关
 

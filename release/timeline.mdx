@@ -3,9 +3,9 @@ title: "Release timeline"
 description: "All subscribed Releases in one place: read state, paging, check now"
 ---
 
-## What it is for
+## Purpose
 
-One timeline for Releases from every subscribed repo, instead of polling each GitHub Releases page. Opens as a panel / sheet (follow the app). Entry: Manage sidebar **Release timeline**.
+One timeline for Releases from every subscribed repo, instead of opening each GitHub Releases page. Opens as a panel / sheet (follow the app). Entry: Manage sidebar Release timeline.
 
 <Frame caption="Screenshot TODO · `images/screenshots/release/timeline.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -16,19 +16,20 @@ One timeline for Releases from every subscribed repo, instead of polling each Gi
 ## How to use it
 
 - Releases from all subscribed repos, newest first
-- **Unread** highlight; mark one or all read
+- Unread highlight; mark one or all read
 - Expand for GFM body and assets
-- About **20 rows per page**, load more on scroll
+- About 20 rows per page, load more on scroll
 - Body type size follows the UI font scale in [General](/settings/general)
 
-**Check now** at the top runs one poll immediately. Use it right after an upstream cut. Default interval: [Background refresh](/release/background-refresh).
+Check now at the top runs one poll immediately. Use it right after an upstream cut. Default interval: [Background refresh](/release/background-refresh).
 
 The top filter matches asset filenames (`dmg`, `arm64`, `linux`). See [Assets](/release/assets-download).
 
 ## Notes
 
-- The timeline is **subscribed** repos only, not every Star’s Releases.
-- Check now hits the GitHub API. Rapid clicks can hit rate limits.
+The timeline is subscribed repos only, not every Star’s Releases.
+
+Check now hits the GitHub API. Rapid clicks can hit rate limits.
 
 ## Related
 

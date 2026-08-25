@@ -3,9 +3,9 @@ title: "配置 Codex 与 DeepSeek Runtime"
 description: "在 Starcat Direct 中安装、检测并验证外部 Agent Runtime"
 ---
 
-## 用来做什么
+## 用途
 
-Starcat Direct 的 Agent 工作台可以在内置 Loop、**Codex App Server** 和 **DeepSeek Harness** 之间切换。外部 Runtime 以本机子进程运行，**不会**打进 Starcat DMG。这一页是安装和检测清单，不是把 Runtime 源码讲一遍。
+Starcat Direct 的 Agent 工作台可以在内置 Loop、Codex App Server 和 DeepSeek Harness 之间切换。外部 Runtime 以本机子进程运行，不会打进 Starcat DMG。
 
 <Warning>
   Codex App Server 与 DeepSeek Harness **仅适用于 Starcat Direct**。Mac App Store
@@ -88,7 +88,7 @@ bash /tmp/install-starcat-deepseek-runtime.sh
 
 打开 **设置 → AI**，添加 DeepSeek Provider 并填写 API Key，执行连接测试，再启用至少一个 Chat 模型。API Key 只保存在 Starcat Keychain；从 Finder 启动 App 时不需要额外导出 `DEEPSEEK_API_KEY`。
 
-DeepSeek Harness 是 Agent 框架，不会把模型服务商锁死为 DeepSeek。它也可以使用已在 Starcat 中验证的 OpenAI-compatible Provider；工作台选择的 Provider 与模型只会注入当前这次运行。
+DeepSeek Harness 是 Agent 框架。已在 Starcat 中验证的 OpenAI-compatible Provider 也可以用。工作台选择的 Provider 与模型只会注入当前这次运行。
 
 ### 4. 检测并运行
 

@@ -3,9 +3,9 @@ title: "Release notifications"
 description: "System banners vs in-app unread, and how to quiet them"
 ---
 
-## What they are for
+## Purpose
 
-When a subscribed repo ships a Release and polling sees it, you may get a macOS banner and unread marks on the timeline / Activity. A notification is a reminder. You still download assets yourself.
+When a subscribed repo ships a Release and polling sees it, macOS may show a banner, and the timeline / Activity can show unread marks. A notification is a reminder. Assets still download from the list.
 
 <Frame caption="Screenshot TODO · `images/screenshots/release/notifications.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -20,7 +20,7 @@ When a subscribed repo ships a Release and polling sees it, you may get a macOS 
 | Subscribed | [Subscriptions](/release/subscription) |
 | Under the free cap of 5 (or Pro) | [Plans](/subscribe/plan-comparison) |
 | Notification permission allowed | First-subscribe dialog; System Settings later |
-| In-app Release notification switch | **Settings → General → Notifications** |
+| In-app Release notification switch | Settings → General → Notifications |
 | Background polling healthy | [Background refresh](/release/background-refresh) |
 
 Content usually includes repo name, tag, and Release title. A click jumps to that Release / timeline.
@@ -29,8 +29,9 @@ To quiet things: disable system banners, or the in-app Release switch, or unsubs
 
 ## Notes
 
-- No system permission means no banner. Timeline unread can still appear.
-- Clicking a system notification often lands on the notification timeline or the Release timeline. See [Activity](/discover/activity/activity).
+No system permission means no banner. Timeline unread can still appear.
+
+Clicking a system notification often lands on the notification timeline or the Release timeline. See [Activity](/discover/activity/activity).
 
 ## Related
 

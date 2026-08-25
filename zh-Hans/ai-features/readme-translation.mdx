@@ -3,9 +3,9 @@ title: "README 翻译"
 description: "分段中英对照，或全文替换可见 README；需要 Pro"
 ---
 
-## 用来做什么
+## 用途
 
-英文 README 不想整页丢进浏览器翻译时，在详情里分段对照或全文替换。适合扫文档；代码块和表格可能不如原文整齐。
+在详情里翻译 README：按段对照，或全文替换可见文本。代码块和表格可能不如原文整齐。
 
 <Frame caption="截图待补充 · `images/screenshots/ai-features/readme-translation.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -24,19 +24,19 @@ description: "分段中英对照，或全文替换可见 README；需要 Pro"
 
 | 模式 | 行为 |
 |------|------|
-| **分段**（默认） | 按段对照 / 双语阅读 |
-| **全文** | 替换可见 README 文本，尽量保留结构 |
+| 分段（默认） | 按段对照 / 双语阅读 |
+| 全文 | 替换可见 README 文本，尽量保留结构 |
 
 步骤：等 README 加载完 → 点翻译 → 选目标语言和模式 → 在译文与原文间切换。需要 Pro，并在 [AI 配置](/zh-Hans/ai-features/configuration) 指定翻译模型。目标语言可自动跟随界面。已经是目标语言的段落会跳过。失败时右下角 toast。
 
-翻译比早期版本更快：更小首批、增量展示、最多 4 路并发、分段缓存、未完成段落可续译。
+翻译会用更小的首批请求、增量展示、最多 4 路并发、分段缓存，未完成段落可续译。
 
 ## 注意
 
 - 超长 README 更耗时、更费 token
 - 代码块 / 表格可能排版不如原文
 - Mermaid 与复杂图表不理想时，译文可能更接近原文
-- 这是阅读辅助，不是发布级本地化
+- 用来阅读即可，不要当发布级本地化交出去
 
 ## 相关
 

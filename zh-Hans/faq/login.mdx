@@ -3,9 +3,9 @@ title: "登录问题"
 description: "OAuth、PAT（仅 Direct）、同步勾选与换号"
 ---
 
-## 用来做什么
+## 用途
 
-登不进去、PAT 被拒、换号后列表不对时看这里。**App Store 只有 Web OAuth**，没有 PAT / Device Flow。
+登不进去、PAT 被拒、换号后列表不对。App Store 只有 Web OAuth。PAT / Device Flow 仅 Direct 提供。
 
 <Frame caption="截图待补充 · `images/screenshots/faq/login.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,11 +17,11 @@ description: "OAuth、PAT（仅 Direct）、同步勾选与换号"
   <Accordion title="无法完成 GitHub 登录？">
     1. 确认能打开 [github.com](https://github.com)
     2. 先在浏览器登录 GitHub，再回 Starcat 授权
-    3. 公司网络拦截回调时，**Direct** 可改用 PAT；App Store 不行
+    3. 公司网络拦截回调时，Direct 可改用 PAT；App Store 不行
     详见 [账号连接](/zh-Hans/getting-started/github-connection)。
   </Accordion>
   <Accordion title="登录后 Getting Started 的同步一直不勾？">
-    需要**主动点击**工具栏同步。见 [快速开始](/zh-Hans/getting-started/quickstart)。
+    需要主动点击工具栏同步。见 [快速开始](/zh-Hans/getting-started/quickstart)。
   </Accordion>
   <Accordion title="Token / 会话失效（401）？">
     按提示重新登录；PAT 用户到 GitHub 创建新 Token 后再贴入（仅 Direct）。

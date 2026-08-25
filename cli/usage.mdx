@@ -3,9 +3,9 @@ title: "CLI usage"
 description: "Read-only JSON, writes dry-run until --apply, MCP stdio, updates"
 ---
 
-## What it is for
+## Purpose
 
-After pairing, search Stars, change tags / status / notes, or hand `starcat mcp` to an external agent. Writes **do not persist** until `--apply`. If the app’s write switches are off, `--apply` still fails.
+After pairing, search Stars, change tags / status / notes, or hand `starcat mcp` to an external agent. Writes do not persist until `--apply`. If the app's write switches are off, `--apply` still fails.
 
 <Frame caption="Screenshot TODO · `images/screenshots/cli/usage.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -58,4 +58,4 @@ Interactive terminals hint about a new version at most about once a day. `starca
 
 ## Notes
 
-The CLI is not a back door to the database. See [MCP](/settings/mcp) and [Skill](/cli/skill).
+The CLI does not open SQLite. See [MCP](/settings/mcp) and [Skill](/cli/skill).

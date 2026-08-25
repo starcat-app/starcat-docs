@@ -3,9 +3,9 @@ title: "集成设置"
 description: "Local API、浏览器插件、External Search、Direct 上的 Agent / CodeFlow"
 ---
 
-## 用来做什么
+## 用途
 
-**设置 → 集成** 把本机周边接上：插件、网页搜索、Direct 的 Agent Runtime 和 CodeFlow。不是 GitHub Stars 同步（那是 [同步](/zh-Hans/settings/sync)），也不是自建探索后端（那是 [服务](/zh-Hans/settings/services)）。
+设置 → 集成 接上本机周边：插件、网页搜索、Direct 的 Agent Runtime 和 CodeFlow。GitHub Stars 同步在 [同步](/zh-Hans/settings/sync)。自建探索后端在 [服务](/zh-Hans/settings/services)。
 
 <Frame caption="截图待补充 · `images/screenshots/settings/integrations.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,17 +15,17 @@ description: "Local API、浏览器插件、External Search、Direct 上的 Agen
 
 ## 怎么用
 
-**Agent Runtime（Direct）：** 检测 Codex App Server 与 DeepSeek Harness。进工作台前先看 [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)。
+Agent Runtime（Direct）：检测 Codex App Server 与 DeepSeek Harness。进工作台前先看 [Runtime 配置](/zh-Hans/agent-workspace/runtime-setup)。
 
-**Local API Key：** 给本机插件与本地 HTTP API 鉴权。定期轮换；不要提交到公开 git；仅受信本机使用。
+Local API Key：给本机插件与本地 HTTP API 鉴权。定期轮换；不要提交到公开 git；仅受信本机使用。
 
-**浏览器插件：** 启用本地服务；端口 / Token 必须和扩展一致；**Starcat 必须在运行**。`http://127.0.0.1:{port}/plugin/v1/...` + Bearer。见 [Chrome](/zh-Hans/browser-plugin/chrome)。
+浏览器插件：启用本地服务；端口 / Token 必须和扩展一致；Starcat 必须在运行。`http://127.0.0.1:{port}/plugin/v1/...` + Bearer。见 [Chrome](/zh-Hans/browser-plugin/chrome)。
 
-**External Search：** 网页搜索与 AI 联网上下文。见 [外部搜索](/zh-Hans/search/external-search)。导航里的 [外部搜索设置](/zh-Hans/settings/external-search) 指向此处。
+External Search 在这里配置：网页搜索与 AI 联网上下文。见 [外部搜索](/zh-Hans/search/external-search)。导航里的 [外部搜索设置](/zh-Hans/settings/external-search) 指向此处。
 
 Alfred / Raycast 等见 [桌面启动器](/zh-Hans/integrations/desktop-launchers)。
 
-**CodeFlow（Pro，公开仓）：** 3D 代码图谱，从列表 / 详情工具栏打开。私仓没有入口。Direct 可检测本机官方安装或手动选路径。**CodebaseMemory** 同样走本机检测。App Store 不能启动用户安装的这类可执行文件。
+CodeFlow（Pro，公开仓）：3D 代码图谱，从列表 / 详情工具栏打开。私仓没有入口。Direct 可检测本机官方安装或手动选路径。CodebaseMemory 同样走本机检测。App Store 不能启动用户安装的这类可执行文件。
 
 ## 注意
 

@@ -3,9 +3,9 @@ title: "README translation"
 description: "Segment bilingual view or replace the visible README; Pro required"
 ---
 
-## What it is for
+## Purpose
 
-When you do not want to dump a long English README into a browser translator, translate in detail: segment-by-segment or full-text replace. Good for reading. Code blocks and tables may be less tidy than the original.
+Translate the README in the detail view, either paragraph by paragraph or as a full-text replacement of the visible document. Code blocks and tables may be less tidy than the original.
 
 <Frame caption="Screenshot TODO · `images/screenshots/ai-features/readme-translation.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -24,19 +24,19 @@ The **Translate** control in the local-repo README toolbar.
 
 | Mode | Behavior |
 |------|----------|
-| **Segment** (default) | Side-by-side / bilingual by paragraph |
-| **Full text** | Replaces visible README text, keeping structure where possible |
+| Segment (default) | Side-by-side / bilingual by paragraph |
+| Full text | Replaces visible README text, keeping structure where possible |
 
 Wait for README load → Translate → pick language and mode → switch original / translation. Requires Pro and a translation model in [AI configuration](/ai-features/configuration). Target language can follow the UI. Paragraphs already in the target language are skipped. Failures toast at the bottom-right.
 
-Translation is faster than early versions: smaller first request, incremental display, up to 4-way concurrency, per-segment cache, and resume for unfinished paragraphs.
+Translation uses a smaller first request, incremental display, up to 4-way concurrency, per-segment cache, and resume for unfinished paragraphs.
 
 ## Notes
 
 - Very long READMEs cost more time and tokens
 - Code blocks / tables may layout worse than the original
 - Mermaid and complex diagrams may stay closer to the original when translation is poor
-- This is a reading aid, not ship-quality localization
+- Use it to read. Do not ship the output as official localization
 
 ## Related
 

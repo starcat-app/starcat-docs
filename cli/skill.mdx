@@ -3,9 +3,9 @@ title: "Agent Skill"
 description: "starcat-skill cannot bypass the app; install the CLI and pair first"
 ---
 
-## What it is for
+## Purpose
 
-[`starcat-skill`](https://github.com/starcat-app/starcat-skill) describes CLI capabilities as a loadable Skill so Claude Code / Codex can search Stars / the knowledge base, read READMEs, and change notes, tags, and status under dry-run plus app authorization. It **cannot** open the database behind the app’s back.
+[`starcat-skill`](https://github.com/starcat-app/starcat-skill) describes CLI capabilities as a loadable Skill so Claude Code / Codex can search Stars / the knowledge base, read READMEs, and change notes, tags, and status under dry-run plus app authorization. It does not open SQLite.
 
 <Frame caption="Screenshot TODO · `images/screenshots/cli/skill.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,9 +17,9 @@ description: "starcat-skill cannot bypass the app; install the CLI and pair firs
 
 1. Install the [CLI](/cli/installation)
 2. Starcat running, [MCP](/settings/mcp) on, `starcat pair` done
-3. Understand `--apply` and the app’s write switches
+3. Understand `--apply` and the app's write switches
 
-Copy into the agent’s skills directory per the Skill README (Claude / Codex paths differ).
+Copy into the agent's skills directory per the Skill README (Claude / Codex paths differ).
 
 | | Skill + CLI | In-app Agent workspace |
 |--|-------------|------------------------|

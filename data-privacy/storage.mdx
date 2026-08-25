@@ -3,9 +3,9 @@ title: "Where data lives"
 description: "SQLite vs Keychain; App Store and Direct do not share databases"
 ---
 
-## What this is for
+## Purpose
 
-What GitHub can rebuild, and what is gone if you delete the folder. Stack: GRDB.swift + FTS5. Shipping apps use versioned migrations. **Do not delete the database to “fix” it.**
+What GitHub can rebuild, and what is gone if the folder is deleted. The stack is GRDB.swift + FTS5. Shipping apps use versioned migrations. Do not delete the database to "fix" it.
 
 <Frame caption="Screenshot TODO · `images/screenshots/data-privacy/storage.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -16,13 +16,13 @@ What GitHub can rebuild, and what is gone if you delete the folder. Stack: GRDB.
 | Data | Rebuildable? |
 |------|----------------|
 | Repo metadata / README cache | Yes |
-| Tags / notes / status / collections | **No** |
+| Tags / notes / status / collections | No |
 | AI / RAG history | Back up if you care |
 | AI summary cache | Regenerable |
 
 Keychain: GitHub OAuth / PAT, AI keys, local integration secrets.
 
-App Store and Direct use different containers and **do not share data**. See [Install](/getting-started/installation). GitHub accounts are isolated locally; switching accounts does not wipe the other. Cloud sync is not shipped. See [Backup](/data-privacy/backup).
+App Store and Direct use different containers and do not share data. See [Install](/getting-started/installation). GitHub accounts are isolated locally; switching accounts does not wipe the other. Cloud sync is not shipped. See [Backup](/data-privacy/backup).
 
 ## Related
 

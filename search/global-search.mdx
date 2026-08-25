@@ -3,16 +3,16 @@ title: "Global vs list search"
 description: "⌘K Search Center versus ⌘F list search"
 ---
 
-## What they are for
+## Purpose
 
-Starcat has two search entries. Do not treat them as one:
+Starcat has two search entries:
 
 | Entry | Default shortcut | Job |
 |-------|------------------|-----|
 | **Search Center** | **⌘K** | Standalone panel: local Stars, GitHub, and the web |
-| **List search** | **⌘F** | Filter **only** the current Manage / Explore list |
+| **List search** | **⌘F** | Filter only the current Manage / Explore list |
 
-Docs that said “⌘F opens global search” are outdated. Shortcuts are editable in [Shortcuts](/settings/shortcuts). Dedicated page: [Search Center](/search/search-center).
+Shortcuts are editable in [Shortcuts](/settings/shortcuts). Dedicated page: [Search Center](/search/search-center).
 
 <Frame caption="Screenshot TODO · `images/screenshots/search/list-search.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -47,12 +47,12 @@ Scope can be starred / knowledge / all (follow the app). See [Semantic search](/
 |-----------|-----|
 | Shrink Untagged right now | ⌘F + filters |
 | Search local + GitHub + web together | ⌘K |
-| “Is there a local RAG library?” | List semantic, or the [RAG workspace](/knowledge-base/rag-workspace) |
+| "Is there a local RAG library?" | List semantic, or the [RAG workspace](/knowledge-base/rag-workspace) |
 
 ## Notes
 
 - ⌘F never searches Stars outside the current list.
-- Semantic search is not web search. Web uses External Search providers; semantic uses the embedding index.
+- Semantic search uses the embedding index. Web search uses External Search providers.
 
 ## Related
 

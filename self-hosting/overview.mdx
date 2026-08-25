@@ -3,9 +3,9 @@ title: "Self-hosted backends overview"
 description: "Six open-source support APIs: purpose, defaults, and GitHub repos"
 ---
 
-## What this is for
+## Purpose
 
-Most users **do not** need to self-host. Starcat ships with default Fly.io endpoints and baked-in API keys. This topic is for advanced users who want to inspect the source, run APIs locally, or point Explore / Weekly / Sharing at their own instances. Direct license / payment is **not** under **Settings → Services**.
+Most users can keep the official Fly.io endpoints. This topic is for inspecting the source, running APIs locally, or pointing Explore / Weekly / Sharing at private instances. Direct license / payment is not under Settings → Services.
 
 <Frame caption="Screenshot TODO · `images/screenshots/self-hosting/overview.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,28 +17,28 @@ Most users **do not** need to self-host. Starcat ships with default Fly.io endpo
 
 | Service | Used for (in-app) | Default production URL | Local port | GitHub |
 |---------|-------------------|------------------------|------------|--------|
-| **Trending** | Explore → Trending | `https://starcat-trending-api.fly.dev` | `5002` | [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api) |
-| **Weekly** | Explore → Weekly | `https://starcat-weekly-api.fly.dev` | `5003` | [starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api) |
-| **Discovery** | Explore → Discover / Hot / New releases | `https://starcat-discovery-api.fly.dev` | `5006` | [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api) |
-| **Wiki** | Wiki / external docs probes | `https://starcat-wiki-api.fly.dev` | `5004` | [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api) |
-| **Recommend** | Similar-repository recommendations | `https://starcat-recommend-api.fly.dev` | `5005` | [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api) |
-| **Sharing** | AI share pages / short links | `https://starcat-sharing-api.fly.dev` | `5001` | [starcat-sharing-api](https://github.com/starcat-app/starcat-sharing-api) |
+| Trending | Explore → Trending | `https://starcat-trending-api.fly.dev` | `5002` | [starcat-trending-api](https://github.com/starcat-app/starcat-trending-api) |
+| Weekly | Explore → Weekly | `https://starcat-weekly-api.fly.dev` | `5003` | [starcat-weekly-api](https://github.com/starcat-app/starcat-weekly-api) |
+| Discovery | Explore → Discover / Hot / New releases | `https://starcat-discovery-api.fly.dev` | `5006` | [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api) |
+| Wiki | Wiki / external docs probes | `https://starcat-wiki-api.fly.dev` | `5004` | [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api) |
+| Recommend | Similar-repository recommendations | `https://starcat-recommend-api.fly.dev` | `5005` | [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api) |
+| Sharing | AI share pages / short links | `https://starcat-sharing-api.fly.dev` | `5001` | [starcat-sharing-api](https://github.com/starcat-app/starcat-sharing-api) |
 
 <Note>
-  The Direct license / payment backend is **not** listed under **Settings → Services** and is out of scope here.
+  The Direct license / payment backend is not listed under Settings → Services and is out of scope here.
 </Note>
 
 ## Auth conventions
 
 - Business and probe routes: `/api/v1/*` require `Authorization: Bearer <API_KEY>`
-- Liveness: `GET /healthz` is **unauthenticated** (status-bar availability)
-- Settings **Test connection**: `GET /api/v1/ping` (URL + key + service identity)
+- Liveness: `GET /healthz` is unauthenticated (status-bar availability)
+- Settings Test connection: `GET /api/v1/ping` (URL + key + service identity)
 
-Keys usually look like `sk-starcat-` plus 32 characters. Generate with each repo’s README guidance or the monorepo script `supports/scripts/gen-api-key.sh`.
+Keys usually look like `sk-starcat-` plus 32 characters. Generate with each repo's README guidance or the monorepo script `supports/scripts/gen-api-key.sh`.
 
 ## Next
 
-1. [Deploy](/self-hosting/deploy) — local or Fly.io  
-2. [Configure in Starcat](/self-hosting/configure) — **Settings → Services**
+1. [Deploy](/self-hosting/deploy): local or Fly.io
+2. [Configure in Starcat](/self-hosting/configure): Settings → Services
 
 Related product docs: [Explore overview](/discover/explore/overview), [Weekly](/discover/weekly/weekly), [Trending](/discover/trending/trending), [Share cards](/share-export/share-cards).

@@ -3,9 +3,9 @@ title: "浏览器插件功能"
 description: "Companion v1：在 GitHub 仓库页读推荐、笔记、Health；完整 AI 请回 App"
 ---
 
-## 用来做什么
+## 用途
 
-在 **GitHub 仓库页**加一层本机 Starcat 能力，少切一次桌面。v1 是增强，不是把整个 App 搬进浏览器。
+在 GitHub 仓库页，Companion v1 可以显示相似仓库、Wiki、本机笔记、已缓存的 Health 分数，以及在启用时跳转到 CodeFlow / Codebase。
 
 <Frame caption="截图待补充 · `images/screenshots/browser-plugin/features.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -19,11 +19,11 @@ description: "Companion v1：在 GitHub 仓库页读推荐、笔记、Health；�
 |------|------|
 | 相似推荐 | 只读列表（条数有上限） |
 | Wiki 入口 | 跳转 / 打开 Wiki |
-| 私有笔记 | 编辑本机笔记；通常限**已 Star** 仓库 |
+| 私有笔记 | 编辑本机笔记；通常限已 Star 仓库 |
 | Health / OpenSSF | 展示本地已缓存分数；不在网页里完整重算 |
 | CodeFlow / Codebase 按钮 | 若桌面端启用，提供跳转 |
 
-**明确不做（v1）**：完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单。完整 AI 请回 App。
+v1 不含完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单。完整 AI 请回 App。
 
 通信：`http://127.0.0.1:{port}/plugin/v1/...`，`Authorization: Bearer <token>`，流量留在本机。Token 在 [集成设置](/zh-Hans/settings/integrations) 管理。
 

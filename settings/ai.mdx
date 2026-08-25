@@ -3,9 +3,9 @@ title: "AI settings"
 description: "Providers, task mapping, Auto Tidy, and the index; no Embedding means no RAG"
 ---
 
-## What it is for
+## Purpose
 
-**Settings → AI** is the AI control panel. Step-by-step: [AI configuration](/ai-features/configuration). Chat without Embedding still cannot do semantic search or RAG.
+Providers, task mapping, Auto Tidy, and the AI index. Step-by-step: [AI configuration](/ai-features/configuration). Semantic search and RAG need a mapped Embedding.
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/ai.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -26,7 +26,7 @@ description: "Providers, task mapping, Auto Tidy, and the index; no Embedding me
 | Output language | Follow UI or override |
 | Usage | Local request counts, tokens, latency, failures; no prompt bodies |
 
-**AI index** shows last prefetch time and counts; start, pause, resume. Cancelling embedding is not treated as “network down”. External Meilisearch / Qdrant test-and-save: green / amber rebuild / red fail. Those are not the Go backends in [Settings → Services](/settings/services).
+AI index shows last prefetch time and counts; start, pause, resume. Cancelling embedding is not treated as "network down". External Meilisearch / Qdrant test-and-save: green / amber rebuild / red fail. Those are not the Go backends in [Settings → Services](/settings/services).
 
 Before use: Pro active, Chat test ok, Embedding mapped, then one real ⇧⌘A call.
 

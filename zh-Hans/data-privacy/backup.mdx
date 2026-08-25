@@ -3,9 +3,9 @@ title: "备份与恢复"
 description: "手动拷贝 Application Support；云同步尚未上线"
 ---
 
-## 用来做什么
+## 用途
 
-标签、笔记、状态、智能集合规则**无法从 GitHub 重新生成**。换机、重装、恢复出厂前先备份。不要等一个还不存在的「打开 iCloud 开关」。
+标签、笔记、状态、智能集合规则无法从 GitHub 重新生成。换机、重装、恢复出厂前先备份。
 
 <Frame caption="截图待补充 · `images/screenshots/data-privacy/backup.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -16,13 +16,13 @@ description: "手动拷贝 Application Support；云同步尚未上线"
 ## 怎么备份
 
 1. 完全退出 Starcat，避免拷贝正在写入的数据库
-2. 复制数据目录。Direct 常见：`~/Library/Application Support/Starcat/`。App Store 在沙盒容器内，路径不同。可在 **设置 → 存储** 用 Finder 入口定位
+2. 复制数据目录。Direct 常见：`~/Library/Application Support/Starcat/`。App Store 在沙盒容器内，路径不同。可在设置 → 存储 用 Finder 入口定位
 3. 存到外置盘 / 加密备份
 
-恢复：完全退出 → 把备份放到**同一渠道**对应路径（MAS 与 Direct 不要混用）→ 再打开 App。
+恢复：完全退出 → 把备份放到同一渠道对应路径（MAS 与 Direct 不要混用）→ 再打开 App。
 
 <Warning>
-  iCloud / CloudKit 用户数据同步**尚未提供**。本站不会写「打开同步开关即可换机恢复」的假步骤。
+  iCloud / CloudKit 用户数据同步尚未提供。恢复时把备份拷到同一渠道对应路径。
 </Warning>
 
 | 优先级 | 数据 |

@@ -3,9 +3,9 @@ title: "Install and requirements"
 description: "Requirements, App Store vs Direct, install steps, and how updates work"
 ---
 
-## What this page is for
+## Purpose
 
-Starcat ships a **macOS** desktop app only. Pick a channel before you install: App Store and Direct (website DMG) look like the same product, but **local databases and Pro entitlements are separate**. Do not treat them as one install.
+Starcat ships a macOS desktop app only. App Store and Direct (website DMG) look like the same product, but they use separate local databases and Pro entitlements.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ There is no Windows / Linux desktop app. The [CLI](/cli/installation) can run on
 ### Mac App Store
 
 - Download: [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
-- Runs in the App Store **sandbox**: it cannot launch user-installed executables such as Codex CLI or CodeFlow
+- Runs in the App Store sandbox: it cannot launch user-installed executables such as Codex CLI or CodeFlow
 - Pro uses Apple In-App Purchase (StoreKit / Apple ID)
 - Updates: Starcat detects a new version on launch or when the app becomes active. **Check for Updates** in the **Actions** menu or menu bar opens the Mac App Store; Starcat does not download the store package itself
 
@@ -32,11 +32,11 @@ There is no Windows / Linux desktop app. The [CLI](/cli/installation) can run on
 - Download: [starcat.ink](https://starcat.ink)
 - Open the DMG and drag Starcat into Applications
 - Pro uses website checkout + license. See [License](/subscribe/license)
-- **Sparkle** checks on launch; you can also check and install from Settings or the **Actions** menu
+- Sparkle checks on launch; you can also check and install from Settings or the **Actions** menu
 - Can attach local Agent runtimes, CodebaseMemory, and RAG CLI inference. See [Integrations](/settings/integrations)
 
 <Warning>
-  The two channels use **separate data directories**. Switching channels is a new local library. Do not copy the SQLite file blindly; [back up](/data-privacy/backup) first.
+  The two channels use separate data directories. Switching channels is a new local library. Do not copy the SQLite file blindly; [back up](/data-privacy/backup) first.
 </Warning>
 
 <Frame caption="Screenshot TODO · `images/screenshots/getting-started/direct-dmg.webp`">
@@ -48,7 +48,7 @@ There is no Windows / Linux desktop app. The [CLI](/cli/installation) can run on
 ## Install steps
 
 <Steps>
-  <Step title="Download">Get the latest build from the App Store or the website. Do not expect two channels to merge data automatically.</Step>
+  <Step title="Download">Get the latest build from the App Store or the website. The two channels do not merge data automatically.</Step>
   <Step title="Put it in Applications">
     App Store installs for you. Direct: open the DMG and drag Starcat into Applications.
   </Step>
@@ -70,7 +70,7 @@ There is no Windows / Linux desktop app. The [CLI](/cli/installation) can run on
 
 - You can keep both channels installed; they will not share tags or notes. Pick one for daily use.
 - Sparkle update UI is hidden in the App Store build.
-- After install, sign in and **tap Sync yourself**. See [Quickstart](/getting-started/quickstart).
+- After install, sign in and tap Sync yourself. See [Quickstart](/getting-started/quickstart).
 
 ## Related
 

@@ -3,14 +3,14 @@ title: "External search"
 description: "Providers shared by Web scope and AI/RAG live context"
 ---
 
-## What it is for
+## Purpose
 
 Third-party web search plugs into Starcat in two places:
 
 1. [Search Center](/search/search-center) **Web** scope
 2. **Live web context** for AI / RAG when those switches allow it
 
-AnySearch, Tavily, and similar are providers, not a separate product.
+AnySearch, Tavily, and similar are providers.
 
 <Frame caption="Screenshot TODO · `images/screenshots/search/external-search.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -41,7 +41,7 @@ In Search Center: ⌘K → **Web** → type a query → results include source s
 - Results are cached locally to cut repeat billing / requests. Clear the cache in **Settings → Storage**.
 - Queries go to the third-party service you enabled.
 - Whether private repos may attach live web context is gated by integration / AI switches. See [Privacy](/data-privacy/privacy).
-- Web scope is **not** semantic search.
+- Web scope uses External Search providers. Semantic search uses the embedding index.
 
 ## Related
 

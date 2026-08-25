@@ -3,9 +3,9 @@ title: "BYOK"
 description: "Pro users bring their own API key; requests go to the provider you configure"
 ---
 
-## What it is for
+## Purpose
 
-Starcat does **not** resell model tokens. You configure a provider and API key in **Settings → AI**; requests go to that endpoint. This is the shipped path, not a teaser. AI features still require **Pro**.
+Starcat does not resell model tokens. Configure a provider and API key in Settings → AI; requests go to that endpoint. This is the shipped path. AI features still require Pro.
 
 <Frame caption="Screenshot TODO · `images/screenshots/subscribe/byok.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,12 +15,12 @@ Starcat does **not** resell model tokens. You configure a provider and API key i
 
 ## How to set it up
 
-You control quota, see a clear path, and can map Chat / Embedding per task.
+Quota stays on the provider account. Chat / Embedding can be mapped per task.
 
 Example providers: OpenAI, OpenAI-compatible, DeepSeek, Gemini, OpenRouter, Ollama (local service required). The in-app list wins.
 
 1. Pro is active
-2. **Settings → AI**: add a provider, key / Base URL
+2. Settings → AI: add a provider, key / Base URL
 3. Map summary, chat, Embedding, and similar
 4. Test the connection
 
@@ -30,9 +30,11 @@ Keys are AES-GCM encrypted in the macOS Keychain. Starcat does not upload them i
 
 ## Notes
 
-- You are not locked to OpenAI.
-- The key stays on this Mac; traffic goes to your endpoint. See [Privacy](/data-privacy/privacy).
-- Chat works but RAG does not: **Embedding** is usually empty.
+You are not locked to OpenAI.
+
+The key stays on this Mac; traffic goes to your endpoint. See [Privacy](/data-privacy/privacy).
+
+Chat works but RAG does not: Embedding is usually empty.
 
 ## Related
 

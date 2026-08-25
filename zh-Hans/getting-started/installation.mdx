@@ -3,9 +3,9 @@ title: "安装与系统要求"
 description: "系统要求、App Store 与 Direct 的差异、安装步骤和更新方式"
 ---
 
-## 用来做什么
+## 用途
 
-Starcat 只提供 **macOS** 桌面客户端。先选对渠道再安装：App Store 和 Direct（官网 DMG）看起来是同一个 App，**本地数据库和 Pro 授权却是两套**，不能当同一个安装来混用。
+Starcat 只提供 macOS 桌面客户端。App Store 和 Direct（官网 DMG）看起来是同一个 App，但本地数据库和 Pro 授权是两套。
 
 ## 系统要求
 
@@ -23,7 +23,7 @@ Starcat 只提供 **macOS** 桌面客户端。先选对渠道再安装：App Sto
 ### Mac App Store
 
 - 下载：[Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
-- 运行在 App Store **沙盒**里：不能启动你自己安装的 Codex CLI、CodeFlow 等外部可执行文件
+- 运行在 App Store 沙盒里：不能启动你自己安装的 Codex CLI、CodeFlow 等外部可执行文件
 - Pro 走 Apple 内购（StoreKit / Apple ID）
 - 更新：启动或重新激活时检测新版本；**操作**菜单或菜单栏「检查更新」会打开 Mac App Store，Starcat 不自己下载商店包
 
@@ -32,11 +32,11 @@ Starcat 只提供 **macOS** 桌面客户端。先选对渠道再安装：App Sto
 - 下载：[starcat.ink](https://starcat.ink)
 - 打开 DMG，拖到「应用程序」
 - Pro 走官网结账 + License，见 [许可证](/zh-Hans/subscribe/license)
-- 更新由 **Sparkle** 负责：启动检查，也可在设置或 **操作** 菜单里手动检查并安装
+- 更新由 Sparkle 负责：启动检查，也可在设置或 **操作** 菜单里手动检查并安装
 - 可配置本机 Agent Runtime、CodebaseMemory、RAG 的 CLI 推理等，见 [集成](/zh-Hans/settings/integrations)
 
 <Warning>
-  两个渠道的**数据目录相互独立**。换渠道等于换一套本地库。不要直接拷 SQLite 文件；先按 [备份](/zh-Hans/data-privacy/backup) 处理。
+  两个渠道的数据目录相互独立。换渠道等于换一套本地库。不要直接拷 SQLite 文件；先按 [备份](/zh-Hans/data-privacy/backup) 处理。
 </Warning>
 
 <Frame caption="截图待补充 · `images/screenshots/getting-started/direct-dmg.webp`">
@@ -48,7 +48,7 @@ Starcat 只提供 **macOS** 桌面客户端。先选对渠道再安装：App Sto
 ## 安装步骤
 
 <Steps>
-  <Step title="下载">从 App Store 或官网取最新版。不要混装两个渠道还指望数据自动合并。</Step>
+  <Step title="下载">从 App Store 或官网取最新版。两个渠道不会自动合并数据。</Step>
   <Step title="装入 Applications">
     App Store 会直接装好。Direct 打开 DMG，把 Starcat 拖进「应用程序」。
   </Step>
@@ -70,7 +70,7 @@ Starcat 只提供 **macOS** 桌面客户端。先选对渠道再安装：App Sto
 
 - 本机可同时装着两个渠道，它们不会共用标签和笔记。日常用一个即可。
 - Direct 的 Sparkle 更新入口不会出现在 App Store 构建里，避免审核包暴露自更新。
-- 装好后下一步是登录并**亲手点同步**，见 [快速开始](/zh-Hans/getting-started/quickstart)。
+- 装好后下一步是登录并亲手点同步，见 [快速开始](/zh-Hans/getting-started/quickstart)。
 
 ## 相关
 

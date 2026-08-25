@@ -3,9 +3,9 @@ title: "CLI installation"
 description: "Homebrew / script install, then MCP-pair with the Pro app on this Mac"
 ---
 
-## What it is for
+## Purpose
 
-[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a CLI and a **stdio MCP** bridge for agents. It does **not** open SQLite. Reads and writes go through the app’s MCP tools. Permission, dry-run, Pro, and audit stay in the **macOS Starcat app**. The app runs on a Mac; the CLI can live on that Mac or a trusted network to a paired app.
+[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a CLI and a stdio MCP bridge for agents. It does not open SQLite. Reads and writes go through the app's MCP tools. Permission, dry-run, Pro, and audit stay in the macOS Starcat app. The app runs on a Mac; the CLI can live on that Mac or a trusted network to a paired app.
 
 <Frame caption="Screenshot TODO · `images/screenshots/cli/installation.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -40,7 +40,7 @@ irm https://github.com/starcat-app/starcat-cli/releases/latest/download/install.
 
 ## Pairing (required)
 
-1. Starcat → **Settings → MCP** → enable. Needs [Pro](/subscribe/plan-comparison)
+1. Starcat → Settings → MCP → enable. Needs [Pro](/subscribe/plan-comparison)
 2. Copy the pair command; URI lasts about 5 minutes, single use
 3. Terminal:
 
@@ -49,7 +49,7 @@ starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
 
-4. **Confirm the device** in the app. Unconfirmed pairing is incomplete. Or run `starcat pair` and paste the URI. Long-lived credentials go in the Keychain. See [MCP](/settings/mcp).
+4. Confirm the device in the app. Unconfirmed pairing is incomplete. Or run `starcat pair` and paste the URI. Long-lived credentials go in the Keychain. See [MCP](/settings/mcp).
 
 ```bash
 starcat --version
@@ -59,4 +59,4 @@ starcat capabilities
 
 ## Notes
 
-The App Store sandbox is not a generic CLI launcher. The CLI is a separate process and still needs a running app that can host MCP. Next: [Usage](/cli/usage), [Agent Skill](/cli/skill).
+The App Store sandbox cannot launch arbitrary user CLIs. The CLI is a separate process and still needs a running app that can host MCP. Next: [Usage](/cli/usage), [Agent Skill](/cli/skill).

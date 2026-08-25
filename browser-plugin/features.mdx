@@ -3,9 +3,9 @@ title: "Browser extension features"
 description: "Companion v1: recommendations, notes, Health on GitHub repo pages; full AI stays in the app"
 ---
 
-## What it is for
+## Purpose
 
-A thin layer of **local Starcat** on GitHub repository pages so you switch to the desktop less. v1 is an enhancement, not the whole app in a browser.
+On GitHub repository pages, Companion v1 can show similar repos, Wiki, on-device notes, cached Health scores, and jumps into CodeFlow or Codebase when those features are on.
 
 <Frame caption="Screenshot TODO · `images/screenshots/browser-plugin/features.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -19,11 +19,11 @@ A thin layer of **local Starcat** on GitHub repository pages so you switch to th
 |------------|--------|
 | Similar repos | Read-only list (capped) |
 | Wiki | Jump / open Wiki |
-| Private notes | Edit on-device notes; usually **starred** repos only |
+| Private notes | Edit on-device notes; usually starred repos only |
 | Health / OpenSSF | Shows cached scores; does not fully recompute in the page |
 | CodeFlow / Codebase buttons | Jump into the desktop app when those features are on |
 
-**Out of v1:** full Inbox, desktop AI summary workflows, heavy context menus. Full AI stays in the app.
+v1 does not include full Inbox, desktop AI summary workflows, or heavy context menus. Full AI stays in the app.
 
 Traffic: `http://127.0.0.1:{port}/plugin/v1/...` with `Authorization: Bearer <token>`, all on localhost. Manage the token in [Integrations](/settings/integrations).
 

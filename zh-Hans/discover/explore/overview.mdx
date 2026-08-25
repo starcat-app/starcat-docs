@@ -3,9 +3,9 @@ title: "探索概览"
 description: "探索模式怎么选、发现数据从哪来，以及发现之后怎么整理"
 ---
 
-## 用来做什么
+## 用途
 
-**探索**用来发现你还没 Star 的项目。它不是本机 Stars 的镜像，数据来自 Starcat 的 discovery / trending / weekly 等服务。已经收藏的库请回 [Manage](/zh-Hans/main-interface/sidebar)。GitHub 通知请去 [Activity](/zh-Hans/discover/activity/activity)（默认落在**通知**，不是「全部」）。
+探索列出尚未 Star 的项目。数据来自 Starcat 的 discovery / trending / weekly 等服务。已经收藏的库请回 [Manage](/zh-Hans/main-interface/sidebar)。GitHub 通知在 [Activity](/zh-Hans/discover/activity/activity)，打开时默认落在通知，而不是「全部」。
 
 <Frame caption="App 内「发现」说明面板">
   <img src="/images/screenshots/discover-info.png" alt="发现说明" className="rounded-xl" />
@@ -17,24 +17,24 @@ description: "探索模式怎么选、发现数据从哪来，以及发现之后
 
 | 模式 | 你在找什么 | 专页 |
 |------|------------|------|
-| **发现** | 综合推荐流；可按 topic / platform 筛 | 本页下方 |
-| **Awesome** | 按主题清单浏览精选或自定义 Awesome 来源 | [Awesome](/zh-Hans/discover/explore/awesome) |
-| **趋势** | 近期热度变化 | [趋势](/zh-Hans/discover/trending/trending) |
-| **热门** | 高热度仓库 | [热门与新发布](/zh-Hans/discover/explore/hot-and-new) |
-| **新发布** | 稳定版 Release 相关 | 同上 |
-| **周刊** | 多来源周刊条目 | [周刊](/zh-Hans/discover/weekly/weekly) |
+| 发现 | 综合推荐流；可按 topic / platform 筛 | 本页下方 |
+| Awesome | 按主题清单浏览精选或自定义 Awesome 来源 | [Awesome](/zh-Hans/discover/explore/awesome) |
+| 趋势 | 近期热度变化 | [趋势](/zh-Hans/discover/trending/trending) |
+| 热门 | 高热度仓库 | [热门与新发布](/zh-Hans/discover/explore/hot-and-new) |
+| 新发布 | 稳定版 Release 相关 | 同上 |
+| 周刊 | 多来源周刊条目 | [周刊](/zh-Hans/discover/weekly/weekly) |
 
 要改用自己的实例，见 [自托管后端](/zh-Hans/self-hosting/overview)。
 
 ## 发现（Discover）
 
-侧栏 **探索 → 发现**。
+侧栏 探索 → 发现。
 
-**数据来源：** GitHub Search、仓库资料和 Release 数据。
+数据来自 GitHub Search、仓库资料和 Release 数据。
 
-**入选规则：** 综合收录高关注度、近 30 天活跃，以及近一年出现的新项目；推荐会看近期活跃度、主题相关性和平台匹配度。项目池会定期更新，**不代表** GitHub 全站。
+入选范围包括高关注度、近 30 天活跃，以及近一年出现的新项目。推荐会看近期活跃度、主题相关性和平台匹配度。项目池会定期更新，不代表 GitHub 全站。
 
-**缓存：** 有效期 3 小时，与热门、新发布共享同一份项目目录。有效期内优先读本地；过期后重新拉目录；失败时继续用上次成功缓存并提示可能不是最新。首次打开会恢复「发现」「热门」「新发布」和「周刊」的缓存数量，不必逐项点开。
+缓存有效期 3 小时，与热门、新发布共享同一份项目目录。有效期内优先读本地；过期后重新拉目录；失败时继续用上次成功缓存并提示可能不是最新。首次打开会恢复「发现」「热门」「新发布」和「周刊」的缓存数量，不必逐项点开。
 
 ## 发现好项目之后
 
@@ -42,14 +42,15 @@ description: "探索模式怎么选、发现数据从哪来，以及发现之后
 2. 可选：Star
 3. 打标签或写一句笔记
 4. 长期要用 → [入库](/zh-Hans/knowledge-base/adding-repos)
-5. 要追版本 → [订阅 Release](/zh-Hans/release/subscription)（注意免费 5 仓限额）
+5. 要追版本 → [订阅 Release](/zh-Hans/release/subscription)（免费上限 5 仓）
 
 批量见 [批量操作](/zh-Hans/manage-stars/batch-operations)。
 
 ## 注意
 
-- 探索列表和 Manage 的筛选维度不完全一样，不要按 All Stars 的漏斗来预期。
-- 主动搜未 Star 的库用 [Search Center · GitHub Scope](/zh-Hans/search/search-center)，浏览榜单用本区。
+探索列表和 Manage 的筛选维度不完全一样，不能按 All Stars 的漏斗来预期。
+
+主动搜未 Star 的库用 [Search Center · GitHub Scope](/zh-Hans/search/search-center)，浏览榜单用本区。
 
 ## 相关
 

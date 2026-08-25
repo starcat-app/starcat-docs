@@ -3,9 +3,9 @@ title: "CLI 使用指南"
 description: "只读 JSON、写入默认 dry-run、MCP stdio、更新"
 ---
 
-## 用来做什么
+## 用途
 
-配对之后在终端搜 Stars、改标签 / 状态 / 笔记，或把 `starcat mcp` 交给外部 Agent。写命令**默认不落库**，必须 `--apply`。App 侧写权限关掉时，即使 `--apply` 也会失败。
+配对之后在终端搜 Stars、改标签 / 状态 / 笔记，或把 `starcat mcp` 交给外部 Agent。写命令默认不落库，必须 `--apply`。App 侧写权限关掉时，即使 `--apply` 也会失败。
 
 <Frame caption="截图待补充 · `images/screenshots/cli/usage.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -58,4 +58,4 @@ brew update && brew upgrade starcat
 
 ## 注意
 
-不要把 CLI 当直连数据库的后门。见 [MCP 设置](/zh-Hans/settings/mcp)、[Skill](/zh-Hans/cli/skill)。
+CLI 不打开 SQLite。见 [MCP 设置](/zh-Hans/settings/mcp)、[Skill](/zh-Hans/cli/skill)。

@@ -3,9 +3,9 @@ title: "Explore overview"
 description: "Which explore mode to pick, where Discover data comes from, and what to do after you find a repo"
 ---
 
-## What it is for
+## Purpose
 
-**Explore** finds projects you have not starred yet. It is not a mirror of local Stars. Data comes from Starcat discovery / trending / weekly services. Already-starred repos belong in [Manage](/main-interface/sidebar). GitHub notifications belong in [Activity](/discover/activity/activity) (default is **Notifications**, not All).
+Explore lists projects that are not in local Stars yet. Data comes from Starcat discovery, trending, and weekly services. Already-starred repos belong in [Manage](/main-interface/sidebar). GitHub notifications belong in [Activity](/discover/activity/activity), which opens on Notifications rather than All.
 
 <Frame caption="In-app Discover info panel">
   <img src="/images/screenshots/discover-info.png" alt="Discover info" className="rounded-xl" />
@@ -17,24 +17,24 @@ If that file is missing, capture `images/screenshots/discover-info.png`.
 
 | Mode | You are looking for | Page |
 |------|---------------------|------|
-| **Discover** | Mixed recommendations; topic / platform filters | Below |
-| **Awesome** | Curated or custom Awesome lists | [Awesome](/discover/explore/awesome) |
-| **Trending** | Short-term attention | [Trending](/discover/trending/trending) |
-| **Hot** | High-heat repos | [Hot and new](/discover/explore/hot-and-new) |
-| **New releases** | Stable Release activity | Same |
-| **Weekly** | Multi-source weekly items | [Weekly](/discover/weekly/weekly) |
+| Discover | Mixed recommendations; topic / platform filters | Below |
+| Awesome | Curated or custom Awesome lists | [Awesome](/discover/explore/awesome) |
+| Trending | Short-term attention | [Trending](/discover/trending/trending) |
+| Hot | High-heat repos | [Hot and new](/discover/explore/hot-and-new) |
+| New releases | Stable Release activity | Same |
+| Weekly | Multi-source weekly items | [Weekly](/discover/weekly/weekly) |
 
 To point at your own instance, see [Self-hosting](/self-hosting/overview).
 
 ## Discover
 
-Sidebar **Explore → Discover**.
+Sidebar Explore → Discover.
 
-**Sources:** GitHub Search, repository metadata, and Release data.
+Data comes from GitHub Search, repository metadata, and Release data.
 
-**Inclusion:** high-attention repos, activity in the last 30 days, and projects that appeared in the last year. Ranking considers recent activity, topic fit, and platform match. The pool updates periodically and is **not** all of GitHub.
+The pool includes high-attention repos, activity in the last 30 days, and projects that appeared in the last year. Ranking uses recent activity, topic fit, and platform match. The pool updates periodically and is not all of GitHub.
 
-**Cache:** 3 hours, shared with Hot and New releases. Fresh cache is used first; after expiry the catalog is refetched; on failure the last good cache stays, with a stale hint. First open restores cached counts for Discover, Hot, New releases, and Weekly so you do not have to click each once.
+Cache lasts 3 hours and is shared with Hot and New releases. Fresh cache is used first; after expiry the catalog is refetched; on failure the last good cache stays, with a stale hint. First open restores cached counts for Discover, Hot, New releases, and Weekly so each item does not have to be opened once.
 
 ## After you find something
 
@@ -48,8 +48,9 @@ Batch: [Batch operations](/manage-stars/batch-operations).
 
 ## Notes
 
-- Explore filters are not the same set as Manage. Do not expect the All Stars funnel.
-- To search unstarred repos on purpose, use [Search Center · GitHub scope](/search/search-center). Use this section to browse lists.
+Explore filters are not the same set as Manage. The All Stars funnel does not apply here.
+
+To search unstarred repos on purpose, use [Search Center · GitHub scope](/search/search-center). Use this section to browse lists.
 
 ## Related
 

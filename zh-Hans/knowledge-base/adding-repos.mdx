@@ -3,9 +3,9 @@ title: "添加仓库到知识库"
 description: "单仓、批量、搜索/探索入库；移出；和 Star 互不自动联动"
 ---
 
-## 用来做什么
+## 用途
 
-把「真正会拿来问」的仓放进知识库，而不是把全部 Stars 倒进去。入库之后才会进默认 RAG 范围，并开始拉 README、切分片、建关键词 / 向量索引。
+把仓库放进知识库后，才会进入默认 RAG 范围。Starcat 接着拉 README 类来源、切分片，并建关键词 / 向量索引。
 
 <Frame caption="截图待补充 · `images/screenshots/knowledge-base/adding-repos.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -30,7 +30,7 @@ description: "单仓、批量、搜索/探索入库；移出；和 Star 互不�
 
 再点一次入库控件。移出后不再参与默认 RAG；本地缓存是否立刻删以 App 为准。
 
-空库时工作台会引导你先入库。不要期望「只 Star 不入库」就能问到全部收藏。
+空库时工作台会引导你先入库。只 Star、从未入库的仓不在默认 RAG 范围内。
 
 ## 注意
 

@@ -3,9 +3,9 @@ title: "Login FAQ"
 description: "OAuth, PAT (Direct only), the sync checkbox, switching accounts"
 ---
 
-## What this is for
+## Purpose
 
-Login loops, rejected PATs, or the wrong list after switching accounts. **App Store is Web OAuth only**—no PAT / Device Flow.
+Login loops, rejected PATs, or the wrong list after switching accounts. App Store is Web OAuth only. PAT and Device Flow are Direct-only.
 
 <Frame caption="Screenshot TODO · `images/screenshots/faq/login.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,11 +17,11 @@ Login loops, rejected PATs, or the wrong list after switching accounts. **App St
   <Accordion title="GitHub login never finishes?">
     1. Confirm [github.com](https://github.com) loads
     2. Sign in to GitHub in a browser, then authorize Starcat
-    3. If the company network blocks the callback, **Direct** can use a PAT; App Store cannot
+    3. If the company network blocks the callback, Direct can use a PAT; App Store cannot
     See [Account connection](/getting-started/github-connection).
   </Accordion>
   <Accordion title="Getting Started never checks sync?">
-    You must **tap** toolbar sync. See [Quickstart](/getting-started/quickstart).
+    You must tap toolbar sync. See [Quickstart](/getting-started/quickstart).
   </Accordion>
   <Accordion title="Token / session 401?">
     Sign in again. PAT users mint a new GitHub token and paste it (Direct only).

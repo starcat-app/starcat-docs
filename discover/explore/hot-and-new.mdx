@@ -3,9 +3,9 @@ title: "Hot and new releases"
 description: "Sources, inclusion rules, and cache for Hot and New releases"
 ---
 
-## What they are for
+## Purpose
 
-**Hot** is high-heat repos. **New releases** are projects that recently shipped a stable Release. Both come from Starcat’s discovery pool, not from your Stars. You still decide whether to Star or ingest.
+Hot lists high-heat repos. New releases lists projects that recently shipped a stable Release. Both come from Starcat’s discovery pool, not from local Stars. Whether to Star or ingest is still a separate step.
 
 <Frame caption="In-app Hot info panel">
   <img src="/images/screenshots/hot-info.png" alt="Hot info" className="rounded-xl" />
@@ -19,27 +19,27 @@ If those files are missing, capture `images/screenshots/hot-info.png` and `image
 
 ## Hot
 
-Sidebar **Explore → Hot**. Source: Starcat discovery pool.
+Sidebar Explore → Hot. Source: Starcat discovery pool.
 
 - Archived repos and forks are excluded
-- Needs **1,000 Stars**, or a composite heat threshold
+- Needs 1,000 Stars, or a composite heat threshold
 - Heat considers Stars, Forks, Release downloads, and recent activity
 
-Cache: **3 hours**, shared with Discover and New releases. After expiry the shared catalog is refetched and Hot is recomputed. On failure the last good cache stays, with a stale hint.
+Cache lasts 3 hours and is shared with Discover and New releases. After expiry the shared catalog is refetched and Hot is recomputed. On failure the last good cache stays, with a stale hint.
 
 ## New releases
 
-Sidebar **Explore → New releases**. Source: GitHub Releases inside the discovery pool.
+Sidebar Explore → New releases. Source: GitHub Releases inside the discovery pool.
 
-- Only projects with a stable Release in the last **180 days**
+- Only projects with a stable Release in the last 180 days
 - Drafts, prereleases, Releases with nothing to download, archived repos, and forks are excluded
 - Default sort is last release time
 
-Same **3-hour** shared catalog. After expiry, projects and Release info are refetched. Failures keep the last good cache.
+Same 3-hour shared catalog. After expiry, projects and Release info are refetched. Failures keep the last good cache.
 
 ## Notes
 
-After a find: optionally Star → tag / one-line note → [ingest](/knowledge-base/adding-repos) if you will keep it. Hot is not “fits your stack”. A new Release is not “production-ready”.
+After a find: optionally Star → tag / one-line note → [ingest](/knowledge-base/adding-repos) if you will keep it. Heat is not a fit score for a given stack. A recent Release is not a production-ready signal.
 
 ## Related
 

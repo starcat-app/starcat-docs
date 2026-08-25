@@ -3,9 +3,9 @@ title: "后台刷新"
 description: "定时轮询已订阅仓库；立即检查与 GitHub Rate Limit"
 ---
 
-## 用来做什么
+## 用途
 
-不用一直开着时间线，Starcat 也会按间隔检查已订阅仓有没有新 Release。适合「订了就等通知」；刚发版想马上确认时用时间线的 **立即检查**。
+不用一直开着时间线，Starcat 也会按间隔检查已订阅仓有没有新 Release。刚发版想马上确认时，用时间线的「立即检查」。
 
 <Frame caption="截图待补充 · `images/screenshots/release/background-refresh.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,7 +17,7 @@ description: "定时轮询已订阅仓库；立即检查与 GitHub Rate Limit"
 
 macOS 后台任务按间隔检查（默认约数小时一级，带抖动；以当前实现为准）。使用条件请求 / ETag，降低 GitHub API 消耗。仅轮询仍有效关联的目标（已 Star 或已入库）。
 
-免费最多 **5** 个订阅；名额内才会持续有用。见 [订阅管理](/zh-Hans/release/subscription)。
+免费最多 5 个订阅；名额内才会持续有用。见 [订阅管理](/zh-Hans/release/subscription)。
 
 ## 排障
 

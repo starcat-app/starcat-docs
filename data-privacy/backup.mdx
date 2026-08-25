@@ -3,9 +3,9 @@ title: "Backup and restore"
 description: "Copy Application Support by hand; cloud sync is not shipped"
 ---
 
-## What it is for
+## Purpose
 
-Tags, notes, status, and smart-collection rules **cannot be rebuilt from GitHub**. Back up before you move Macs, reinstall, or factory-reset. Do not wait for an iCloud switch that does not exist.
+Tags, notes, status, and smart-collection rules cannot be rebuilt from GitHub. Back up before moving Macs, reinstalling, or factory-reset.
 
 <Frame caption="Screenshot TODO · `images/screenshots/data-privacy/backup.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -16,13 +16,13 @@ Tags, notes, status, and smart-collection rules **cannot be rebuilt from GitHub*
 ## How to back up
 
 1. Quit Starcat fully so you do not copy a live database
-2. Copy the data folder. Direct is often `~/Library/Application Support/Starcat/`. App Store uses a sandbox container. **Settings → Storage** Finder buttons help
+2. Copy the data folder. Direct is often `~/Library/Application Support/Starcat/`. App Store uses a sandbox container. Settings → Storage Finder buttons help
 3. Store it on an external disk / encrypted backup
 
-Restore: quit → put the backup on the **same channel** path (do not mix MAS and Direct) → launch.
+Restore: quit → put the backup on the same channel path (do not mix MAS and Direct) → launch.
 
 <Warning>
-  iCloud / CloudKit user-data sync is **not available**. This handbook will not pretend a sync switch restores another Mac.
+  iCloud / CloudKit user-data sync is not available. Restore by copying the backup onto the same channel path.
 </Warning>
 
 | Priority | Data |

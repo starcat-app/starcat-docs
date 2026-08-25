@@ -3,9 +3,9 @@ title: "Adding repositories"
 description: "Ingest one repo, a batch, or from Search/Explore; removal; independent of Star"
 ---
 
-## What it is for
+## Purpose
 
-Put repos you will actually **ask about** into the knowledge base. Only ingested repos enter the default RAG scope, after Starcat fetches README-like sources, chunks them, and builds keyword / vector indexes.
+Ingest a repository so it enters the default RAG scope. Starcat then fetches README-like sources, chunks them, and builds keyword and vector indexes.
 
 <Frame caption="Screenshot TODO · `images/screenshots/knowledge-base/adding-repos.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -30,7 +30,7 @@ After ingest: fetch sources locally → chunk and index keywords / vectors (need
 
 Tap the ingest control again. The repo leaves default RAG. Whether local caches disappear immediately follows the app.
 
-An empty library shows onboarding. Do not expect “starred but never ingested” to be askable.
+An empty library shows onboarding. A starred repo that was never ingested is outside default RAG.
 
 ## Notes
 

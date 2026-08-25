@@ -3,9 +3,9 @@ title: "引用与证据"
 description: "引用芯片从哪来、怎么核对原文，以及没有引用时先查什么"
 ---
 
-## 用来做什么
+## 用途
 
-RAG 回答里的 `[owner/repo]` 芯片告诉你命中了哪个仓的分片。点开才能判断模型有没有概括过度或串仓。没有引用的结论，先当未证实。
+RAG 回答里的 `[owner/repo]` 芯片标出命中了哪个仓的分片。点开才能判断模型有没有概括过度或串仓。没有引用的结论，先当未证实。
 
 <Frame caption="截图待补充 · `images/screenshots/knowledge-base/citations.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,7 +17,7 @@ RAG 回答里的 `[owner/repo]` 芯片告诉你命中了哪个仓的分片。点
 
 点击芯片后：右侧 Inspector 展示证据；可能自动切到引用页并滚动定位。来源类型可包括 README、笔记、AI 摘要等。
 
-关键词命中的**元数据分片**与知识库统计事实，也会显示实际片段，不必等向量化完成。
+关键词命中的元数据分片与知识库统计事实，也会显示实际片段，不必等向量化完成。
 
 | 做法 | 原因 |
 |------|------|

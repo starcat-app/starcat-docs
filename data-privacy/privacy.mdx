@@ -3,7 +3,7 @@ title: "Privacy"
 description: "Local-first, BYOK, telemetry off; the legal text lives on the site"
 ---
 
-## What this is for
+## Purpose
 
 Where data stays by default, and when it leaves this Mac. The legal text is [starcat.ink/privacy](https://starcat.ink/privacy).
 
@@ -13,21 +13,21 @@ Where data stays by default, and when it leaves this Mac. The legal text is [sta
   </div>
 </Frame>
 
-Local-first: tags, notes, status stay on this Mac; no sale of personal data; no ad tracking; no GitHub password; AI keys in Keychain; notes are not used to train an “official model”.
+Local-first: tags, notes, status stay on this Mac; no sale of personal data; no ad tracking; no GitHub password; AI keys in Keychain; notes are not used to train an "official model".
 
 | Kind | Examples | Rebuild from GitHub? |
 |------|----------|----------------------|
 | Repo cache | Metadata, README | Yes |
-| User data | Tags, notes, status, collection rules | **No** |
+| User data | Tags, notes, status, collection rules | No |
 | Secrets | GitHub token, AI keys | Keychain |
 
-Cross-device cloud sync is not shipped → [Backup](/data-privacy/backup).
+Cross-device cloud sync is not shipped. See [Backup](/data-privacy/backup).
 
-**BYOK** traffic goes to your provider. [External search](/search/external-search) sends queries only when enabled. Share cards / links need an explicit action.
+BYOK traffic goes to the configured provider. [External search](/search/external-search) sends queries only when enabled. Share cards / links need an explicit action.
 
-**Anonymously contribute public Star data** lives in **Settings → General → Privacy and recommendations** and is **off by default**. When on, a successful full Stars sync may silently report public repo IDs and available starred-at times to improve recommendations. No private repos, tags, notes, browsing, or account identity. A random anonymous id is used. Failures do not block sync. First-run may ask once; **Not now** keeps it off.
+Anonymously contribute public Star data lives in Settings → General → Privacy and recommendations and is off by default. When on, a successful full Stars sync may silently report public repo IDs and available starred-at times to improve recommendations. No private repos, tags, notes, browsing, or account identity. A random anonymous id is used. Failures do not block sync. First-run may ask once; Not now keeps it off.
 
-Anonymous telemetry is **off by default** in **Settings → Diagnostics**. See [Telemetry](/data-privacy/telemetry).
+Anonymous telemetry is off by default in Settings → Diagnostics. See [Telemetry](/data-privacy/telemetry).
 
 ## Related
 

@@ -3,9 +3,9 @@ title: "Activity"
 description: "Default view is the GitHub notification inbox; local aggregated feeds are extra"
 ---
 
-## What it is for
+## Purpose
 
-Sidebar **Activity** opens on **Notifications** by default: handle mentions, review requests, and Issue / PR threads without the browser. It is not an “All activity” home. **All** mixes GitHub notifications with your own Star / Unstar / Fork ledger.
+Sidebar Activity opens on Notifications. Mentions, review requests, and Issue / PR threads can be handled without the browser. All mixes GitHub notifications with the local Star / Unstar / Fork ledger on one timeline.
 
 <Frame caption="Screenshot TODO · `images/screenshots/discover/activity-inbox.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -23,7 +23,7 @@ The current category count shows in the window subtitle. Category help lives in 
 
 The timeline groups Today, Yesterday, This week, and Earlier. Seen items stay read. The sync control spins while refreshing.
 
-**All** interleaves GitHub notifications with your own Star, Unstar, and Fork rows. Ledger rows open repository detail, not an Issue thread.
+All interleaves GitHub notifications with your own Star, Unstar, and Fork rows. Ledger rows open repository detail, not an Issue thread.
 
 The timeline distinguishes Issues / PRs. Avatars and names open GitHub profiles. Dependabot uses the official circular mark. Star / Unstar / Fork rows show ingested or not.
 
@@ -33,17 +33,17 @@ The type dropdown filters unread, Issue, PR, Discussion, Release, open, closed, 
 
 Select a notification to read the opener and comments, compose or preview a reply, and move previous / next.
 
-- **Done** matches GitHub Inbox Done and does **not** close the Issue
+- Done matches GitHub Inbox Done and does not close the Issue
 - You can close if it is still open, or reopen if it is closed
 - Open on GitHub, or open the repo in Starcat
-- The opener shows the title and all labels, wrapping as needed; empty bodies show “No description”
+- The opener shows the title and all labels, wrapping as needed; empty bodies show "No description"
 - Open / closed / merged appear under timestamps and in the detail header; closing or reopening in the thread updates both
 
 Empty composer drafts a reply from the thread; existing drafts are polished. Reply language follows the thread, not the draft or the app UI. Segment or full-text translation covers the opener and comments; title, repo name, and the composer stay original. Target language can follow the UI; already-translated paragraphs are skipped. Label-change event rows stay original. Needs [Pro](/subscribe/plan-comparison) and [AI configuration](/ai-features/configuration). Failures toast at the bottom-right.
 
 Paste a screenshot or image into the composer to upload and insert a link; Preview shows it.
 
-**Settings → General → Activity** → **Show Issue events** inserts label, close, commit-reference, and linked-PR rows between comments. Default is comments only. Reopening an Issue after quitting still reads local comments and events first. Unsent handwritten or AI replies are kept per thread. Both caches can be cleared in [Settings → Storage](/settings/storage).
+Settings → General → Activity → Show Issue events inserts label, close, commit-reference, and linked-PR rows between comments. Default is comments only. Reopening an Issue after quitting still reads local comments and events first. Unsent handwritten or AI replies are kept per thread. Both caches can be cleared in [Settings → Storage](/settings/storage).
 
 ## Other local categories
 
@@ -51,9 +51,11 @@ Besides Notifications, Activity still has local aggregated feeds (announcements,
 
 ## Notes
 
-- The default category is **Notifications**, not All.
-- App Store is Web OAuth only; follow the prompt if notification permission is missing.
-- Done is not Close Issue.
+The default category is Notifications, not All.
+
+App Store is Web OAuth only; follow the prompt if notification permission is missing.
+
+Done is not Close Issue.
 
 ## Related
 

@@ -3,9 +3,9 @@ title: "Chrome 插件"
 description: "安装 Chrome Companion，并用本机 Token 连上正在运行的 Starcat"
 ---
 
-## 用来做什么
+## 用途
 
-让 Chrome 里的 GitHub 仓库页能读本机笔记和 Health。扩展自己不存你的 Stars 库，**Starcat 必须在跑**。
+Chrome 里的 GitHub 仓库页可以读本机笔记和 Health。扩展不保存 Stars 库。Starcat 必须在运行。
 
 <Frame caption="截图待补充 · `images/screenshots/browser-plugin/chrome.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,8 +15,8 @@ description: "安装 Chrome Companion，并用本机 Token 连上正在运行的
 
 ## 怎么装
 
-1. 本机已安装并**正在运行** Starcat
-2. **设置 → 集成**：配置 Local API Key 与 Browser Plugin（端口、Token）
+1. 本机已安装并正在运行 Starcat
+2. 设置 → 集成：配置 Local API Key 与 Browser Plugin（端口、Token）
 3. 安装 Chrome 扩展
 
 扩展仓库 / 发布说明：[starcat-chrome-plugin](https://github.com/starcat-app/starcat-chrome-plugin)。若已上架 Chrome Web Store，以官网或仓库 README 的安装链接为准。
@@ -29,13 +29,13 @@ Chrome 扩展 ──HTTP──► 127.0.0.1:端口 /plugin/v1/*
          本机 Starcat App
 ```
 
-App 退出后注入会失败——先开 App 再刷 GitHub 页。
+App 退出后注入会失败。先打开 Starcat，再刷新 GitHub 页。
 
 验证：打开任意已 Star 的 GitHub 仓库页，应看到增强区（见 [功能](/zh-Hans/browser-plugin/features)）。若无：检查扩展权限、端口 / Token、App 是否运行。
 
 ## 注意
 
-Token 泄漏等于本机 API 被局域网里别人用（只绑 127.0.0.1 时风险较低，仍不要截图设置页发群）。Safari 见 [Safari 插件](/zh-Hans/browser-plugin/safari)。
+Token 泄漏等于本机 API 凭据外泄（只绑 127.0.0.1 时风险较低，仍不要截图设置页发群）。Safari 见 [Safari 插件](/zh-Hans/browser-plugin/safari)。
 
 ## 相关
 

@@ -3,12 +3,9 @@ title: "Insights"
 description: "Library-wide organization progress, plus per-repo activity, advisories, and Release assets"
 ---
 
-## What it is for
+## Purpose
 
-Two layers:
-
-- **My Insights**: how the whole Stars library or knowledge base is organized, tech distribution, what still needs attention
-- **Repository Insights**: what this repo has been doing, health, and security advisories
+My Insights shows how the whole Stars library or knowledge base is organized, tech distribution, and what still needs attention. Repository Insights shows what this repo has been doing, health, and security advisories.
 
 Generated insights can attach to AI summary, repo chat, and RAG as removable read-only context.
 
@@ -22,7 +19,7 @@ Entry: sidebar **Manage → My Insights**. Switch scope between All Stars and Kn
   </div>
 </Frame>
 
-Typical content: triage metrics, language / topic distribution, project status, cleanup candidates. Cards **drill down** into the matching repository list.
+Typical content: triage metrics, language / topic distribution, project status, cleanup candidates. Cards drill down into the matching repository list.
 
 ## Repository Insights
 
@@ -46,14 +43,14 @@ For private repos in [My Projects](/main-interface/my-projects), elevated metric
 
 ## For AI / RAG
 
-Insights become **removable read-only XML context** for summary, chat, and [RAG](/knowledge-base/rag-workspace). Custom prompts that omit insight placeholders do **not** inject them silently. Unavailable, not injected, or fallback states are labeled in the UI.
+Insights become removable read-only XML context for summary, chat, and [RAG](/knowledge-base/rag-workspace). Custom prompts that omit insight placeholders do not inject them silently. Unavailable, not injected, or fallback states are labeled in the UI.
 
 Library-wide aggregates also feed knowledge-base answers as shared context.
 
 ## Notes
 
 - Insights are a reading aid, not a security audit.
-- Advisories and assets need GitHub access. A fetch failure is not “no vulnerabilities”.
+- Advisories and assets need GitHub access. A fetch failure is not "no vulnerabilities".
 
 ## Related
 

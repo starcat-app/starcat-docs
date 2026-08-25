@@ -3,9 +3,9 @@ title: "Background refresh"
 description: "Poll subscribed repos on a schedule; Check now and GitHub rate limits"
 ---
 
-## What it is for
+## Purpose
 
-You do not have to keep the timeline open. Starcat checks subscribed repos for new Releases on an interval. Use **Check now** when a cut just landed and you want confirmation immediately.
+The timeline does not have to stay open. Starcat checks subscribed repos for new Releases on an interval. Use Check now when a cut just landed and confirmation is needed immediately.
 
 <Frame caption="Screenshot TODO · `images/screenshots/release/background-refresh.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,7 +17,7 @@ You do not have to keep the timeline open. Starcat checks subscribed repos for n
 
 A macOS background task polls on an interval (on the order of hours, with jitter; follow the current build). Conditional requests / ETags keep GitHub API use down. Only still-associated targets (starred or ingested) are polled.
 
-Free accounts cap at **5** subscriptions. See [Subscriptions](/release/subscription).
+Free accounts cap at 5 subscriptions. See [Subscriptions](/release/subscription).
 
 ## Troubleshooting
 

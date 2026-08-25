@@ -3,9 +3,9 @@ title: "AI configuration"
 description: "Add a provider, map task models, set Embedding, and test"
 ---
 
-## What it is for
+## Purpose
 
-Without a working model, Pro is a switch with nothing behind it. This page gets **Settings → AI** to the point where summaries run, semantic search works, and RAG can answer. Chat and Embedding are separate mappings.
+Pro needs a working provider and task mapping in **Settings → AI**. Chat and Embedding are separate mappings; configuring one does not configure the other.
 
 <Frame caption="Screenshot TODO · `images/screenshots/ai-features/configuration.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -15,29 +15,29 @@ Without a working model, Pro is a switch with nothing behind it. This page gets 
 
 ## How to set it up
 
-1. **Add a provider**: OpenAI-compatible, DeepSeek, OpenRouter, Gemini, Ollama, LM Studio, and others (follow the list). Fill the API key and a Base URL for self-hosted endpoints.
-2. **Discover models**: refresh discovered models; tweak temperature inline if needed.
-3. **Default task mapping** (names follow the UI): summary, tags, chat; **Embedding** (semantic / RAG); translation.
-4. **Test**: test the connection, then run a real ⇧⌘A call from detail.
+1. Add a provider from the list (OpenAI-compatible, DeepSeek, OpenRouter, Gemini, Ollama, LM Studio, and others). Fill the API key. For a self-hosted endpoint, fill the Base URL.
+2. Refresh discovered models. Tweak temperature inline if needed.
+3. Map default tasks (names follow the UI): summary, tags, chat; Embedding (semantic / RAG); translation.
+4. Test the connection, then run a real ⇧⌘A call from detail.
 
 Keys go in the macOS Keychain. More: [BYOK](/subscribe/byok).
 
-## Embedding matters
+## Embedding
 
 With no usable Embedding:
 
 - [Semantic search](/search/semantic-search) is unavailable
 - [RAG index](/knowledge-base/index-management) cannot build vectors
 
-Chat configured and Embedding empty is the usual “I have Pro but no semantic / RAG” case.
+Chat configured and Embedding empty is the usual case of Pro without semantic search or RAG.
 
 ## RAG prompts
 
 In [RAG workspace](/knowledge-base/rag-workspace) settings you can edit Q&A, planning, compression, and title templates:
 
-- Compare and **copy** the read-only defaults
+- Compare and copy the read-only defaults
 - Custom templates list supported placeholders; unlisted ones are not injected silently
-- Starcat **does not** rewrite saved custom prompts
+- Starcat does not rewrite saved custom prompts
 
 If summary / tags / translation expose custom prompts, try them on one repo before [Auto Tidy](/ai-features/auto-tidy).
 
