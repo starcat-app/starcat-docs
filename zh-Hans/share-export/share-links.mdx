@@ -1,37 +1,39 @@
 ---
 title: "分享链接"
-description: "打开后可在 Starcat 中定位对应仓库的公开链接"
+description: "打开后在 Starcat 里定位到对应仓库的公开链接"
 ---
 
-## 是什么
+## 用来做什么
 
-**分享链接**是可复制的公开地址，形如 `https://starcat.ink/r/{owner}/{repo}`。对方若已安装 Starcat，打开链接应**启动应用并定位到该仓库**。
+复制 `https://starcat.ink/r/{owner}/{repo}` 这类地址。对方若已安装 Starcat，打开链接应**启动应用并定位到该仓库**。用来在聊天里丢一个仓，不是导出图片。
 
-分享链接用于在 Starcat 内定位仓库，与 [分享卡片](/zh-Hans/share-export/share-cards)（图片导出）不是同一能力。
+<Frame caption="截图待补充 · `images/screenshots/share-export/share-links.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    详情或工具栏「复制分享链接」
+  </div>
+</Frame>
 
-## 典型流程
+## 怎么用
 
-<Steps>
-  <Step title="选中仓库">在 Manage、探索或我的项目中打开目标仓库。</Step>
-  <Step title="复制分享链接">在详情或工具栏使用分享 / 复制链接控件（文案以 App 为准）。</Step>
-  <Step title="在另一台 Mac 打开">粘贴到浏览器或聊天工具。若 Universal Links / 关联域已生效，应由 Starcat 接管。</Step>
-</Steps>
-
-## 链接形态
+1. 在 Manage、探索或我的项目中打开目标仓库
+2. 详情或工具栏用分享 / 复制链接（文案以 App 为准）
+3. 在另一台 Mac 打开浏览器或聊天里的链接。Universal Links / 关联域生效时由 Starcat 接管
 
 | 形态 | 用途 |
 |------|------|
 | 公开 HTTPS | `https://starcat.ink/r/owner/repo?v=1`（可选 `rid` 稳定仓库 ID） |
-| 本机 App URL | `starcat://repo/owner/repo`（小组件与本机集成使用） |
+| 本机 App URL | `starcat://repo/owner/repo`（小组件与本机集成） |
 
 没有 `rid` 的旧链接仍按 `owner/name` 解析。
 
-## AI 分享
+创建 AI 辅助分享内容时，可**复用已有 AI 摘要**，并可在界面上取消或重新生成分享链接。
 
-创建 AI 辅助分享内容时，可**复用已有 AI 摘要**，并支持在界面上**取消**或**重新生成**分享链接。
+## 注意
+
+- 对方没装 Starcat 时，链接会落在网页，而不是 App。
+- 本机 `starcat://` 只在这台 Mac 有意义。见 [桌面启动器](/zh-Hans/integrations/desktop-launchers)。
 
 ## 相关
 
 - [分享卡片](/zh-Hans/share-export/share-cards)
 - [仓库详情](/zh-Hans/main-interface/repo-detail)
-- [桌面启动器](/zh-Hans/integrations/desktop-launchers)

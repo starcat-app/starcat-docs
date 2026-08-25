@@ -1,31 +1,35 @@
 ---
 title: "分享卡片"
-description: "侧栏分享：版式、PNG、复制与分享到 X"
+description: "把 Stars 统计做成 PNG，复制或发到 X；不是仓库列表导出"
 ---
 
-## 入口
+## 用来做什么
 
-侧栏用户区 **分享** → 打开分享卡编辑器。
+侧栏用户区 **分享** 打开卡片编辑器，用来做一张个人统计图（数据看板、终端风等，以 App 为准）。**不是**把仓库列表导出成 HTML/MD，也不是给别人定位某个仓的链接。
 
-## 流程
+<Frame caption="截图待补充 · `images/screenshots/share-export/share-cards.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    分享卡编辑器：版式、配色、预览、导出 PNG
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="选版式与配色">多种视觉风格（数据看板、终端风等，以 App 内列表为准）。</Step>
-  <Step title="预览">确认统计与布局。</Step>
-  <Step title="导出">保存 PNG、复制到剪贴板，或分享到 X（以按钮为准）。</Step>
-</Steps>
+## 怎么用
 
-用于展示你的 Stars 统计等个人卡片，**不是**仓库列表 HTML/MD 导出。
+1. 选版式与配色
+2. 预览统计与布局
+3. 保存 PNG、复制到剪贴板，或分享到 X（以按钮为准）
 
-若要发送可在 Starcat 中打开并定位某仓库的链接，见 [分享链接](/zh-Hans/share-export/share-links)。
-
-## 与文件导出的区别
+定位某个仓库给另一台已装 Starcat 的 Mac，用 [分享链接](/zh-Hans/share-export/share-links)。列表快照用 [导出文件](/zh-Hans/share-export/export-files)。
 
 | | 分享卡片 | 文件导出 |
 |--|----------|----------|
-| 产物 | 图片 | HTML / Markdown 文件 |
-| 入口 | 同一分享相关 Sheet 内也可能并存 | [导出文件](/zh-Hans/share-export/export-files) |
+| 产物 | 图片 | HTML / Markdown |
+| 入口 | 分享相关 Sheet | [导出文件](/zh-Hans/share-export/export-files) |
+
+## 注意
+
+主动导出才离开本机。见 [隐私](/zh-Hans/data-privacy/privacy)。卡片上的数字来自本机统计，换机前未备份则对不上。
 
 ## 相关
 
-- [隐私](/zh-Hans/data-privacy/privacy)（主动分享才离开本机）
+- [分享链接](/zh-Hans/share-export/share-links)

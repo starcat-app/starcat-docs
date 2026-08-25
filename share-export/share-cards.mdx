@@ -1,31 +1,35 @@
 ---
 title: "Share cards"
-description: "Sidebar share: layouts, PNG, copy, and share to X"
+description: "Export Stars stats as PNG to copy or post on X; not a repo-list export"
 ---
 
-## Entry
+## What they are for
 
-Sidebar user area **Share** → opens the share card editor.
+Sidebar user area **Share** opens the card editor: a personal stats image (dashboard / terminal styles, follow the app). It is **not** an HTML/MD repo list, and it is not a deep link to one repository.
 
-## Flow
+<Frame caption="Screenshot TODO · `images/screenshots/share-export/share-cards.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Share-card editor: layout, colors, preview, export PNG
+  </div>
+</Frame>
 
-<Steps>
-  <Step title="Pick layout and colors">Multiple visual styles (dashboard, terminal, etc. — follow the in-app list).</Step>
-  <Step title="Preview">Confirm stats and layout.</Step>
-  <Step title="Export">Save PNG, copy to clipboard, or share to X (per available buttons).</Step>
-</Steps>
+## How to use them
 
-Shows your Stars stats as a personal card — **not** HTML/Markdown export of the repo list.
+1. Pick layout and colors
+2. Preview stats and layout
+3. Save PNG, copy, or share to X (follow the buttons)
 
-To send a link that opens Starcat on a specific repository, use [Share links](/share-export/share-links).
-
-## vs file export
+To point another Mac that already has Starcat at one repo, use [Share links](/share-export/share-links). For a list snapshot, use [Export files](/share-export/export-files).
 
 | | Share card | File export |
 |--|------------|-------------|
-| Output | Image | HTML / Markdown files |
-| Entry | May coexist in the same share sheet | [Export files](/share-export/export-files) |
+| Output | Image | HTML / Markdown |
+| Entry | Share sheet | [Export files](/share-export/export-files) |
+
+## Notes
+
+Nothing leaves this Mac until you export. See [Privacy](/data-privacy/privacy). Numbers come from local stats; they will not match after a move without backup.
 
 ## Related
 
-- [Privacy](/data-privacy/privacy) (leaves your Mac only when you choose to share)
+- [Share links](/share-export/share-links)

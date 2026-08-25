@@ -1,33 +1,40 @@
 ---
 title: "Export files"
-description: "Export Starred or knowledge base as HTML or Markdown"
+description: "Export Starred or the knowledge base as HTML / Markdown; not a full JSON dump"
 ---
 
-## Supported today
+## What it is for
 
-In the share / export UI, pick scope and format:
+A readable snapshot for a coworker or a notes app. It does **not** replace the unshipped full-library JSON backup. Moving Macs still starts with a [manual folder backup](/data-privacy/backup).
 
-| Scope | Format |
-|-------|--------|
+<Frame caption="Screenshot TODO · `images/screenshots/share-export/export-files.webp`">
+  <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
+    Share / export: Starred or knowledge base, HTML / Markdown
+  </div>
+</Frame>
+
+## What is shipped
+
+| Scope | Formats |
+|-------|---------|
 | Starred | HTML / Markdown |
 | Knowledge base | HTML / Markdown |
 
-Knowledge-base export may include local notes, tags, status, README, Health, summary cache, and other read-only snapshots (as in the actual file).
+Knowledge-base export can include local notes, tags, status, README, Health, and cached summaries as a read-only snapshot (follow the actual file).
 
-## Typical steps
+1. Open Share / Export
+2. Pick Starred or knowledge base
+3. Pick HTML or Markdown
+4. Choose a save location
 
-1. Open share / export  
-2. Choose Starred or knowledge base  
-3. Pick HTML or Markdown  
-4. Choose save location  
+Also: single-repo README → detail README toolbar → Export Markdown. RAG sessions → workspace `.md` → [Sessions](/knowledge-base/session-management).
 
-## Other exports
+Full JSON: [Data export](/share-export/data-export) (coming soon).
 
-| Source | How |
-|--------|-----|
-| Single-repo README | Detail README toolbar → Export Markdown |
-| RAG session | Workspace export `.md` → [Session management](/knowledge-base/session-management) |
+## Notes
 
-## Not supported yet
+HTML/MD is a snapshot. Importing it will not rebuild your tag system. Do not treat it as a full migration.
 
-Full-library JSON backup / migration: [Data export](/share-export/data-export) (coming soon). For device moves, [back up the directory manually](/data-privacy/backup) first.
+## Related
+
+- [Data export](/share-export/data-export)
