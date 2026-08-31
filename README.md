@@ -1,14 +1,15 @@
 # Starcat Documentation
 
+<!-- starcat-promo:start -->
 <div align="center">
 <a href="https://starcat.ink"><img src="https://raw.githubusercontent.com/starcat-app/starcat-pro/main/banner.webp" width="100%" alt="Starcat" /></a>
 
 <p><strong>Official documentation for Starcat, covering setup, GitHub Stars management, AI features, RAG knowledge base, and integrations.</strong></p>
-<p>Starcat is a native macOS app that turns GitHub Stars into a searchable, organized and AI-assisted local knowledge base. Version 1.4.0 includes README rendering, knowledge-base RAG, GitHub notifications, My Projects, library and repository insights, macOS desktop widgets, tags and private notes, release tracking, repository health signals, AI summaries, semantic search, browser plugins, Alfred / uTools / Raycast search integrations, and self-hostable support APIs.</p>
+<p>Starcat is a native macOS app that turns GitHub Stars into a searchable, organized and AI-assisted local knowledge base, with a broader ecosystem of desktop clients, plugins, CLI tools, and self-hostable services.</p>
 
 <a href="https://github.com/starcat-app/homebrew-starcat"><img src="https://img.shields.io/badge/Install%20with-Homebrew-FBBF24?style=for-the-badge&logo=homebrew&logoColor=white" width="220" alt="Install with Homebrew"/></a>
 <br/>
-<sub><a href="https://github.com/starcat-app/starcat-docs/blob/main/README-ZH.md">中文说明</a></sub>
+<sub><a href="./README-ZH.md">中文说明</a></sub>
 </div>
 
 <div align="center">
@@ -34,7 +35,6 @@ brew install --cask starcat
 
 - Home and downloads: https://starcat.ink
 - Mac App Store: search for Starcat for GitHub
-- Current Direct build: https://starcat.ink/downloads/Starcat-1.4.0-arm64.dmg
 - Public support and release notes: https://github.com/starcat-app/starcat-pro
 - Starcat App Homebrew tap: https://github.com/starcat-app/homebrew-starcat
 - CLI / MCP: [starcat-cli](https://github.com/starcat-app/starcat-cli) / [Homebrew tap](https://github.com/starcat-app/homebrew-starcat-cli)
@@ -53,6 +53,7 @@ brew install --cask starcat
 - [starcat-wiki-api](https://github.com/starcat-app/starcat-wiki-api)
 - [starcat-recommend-api](https://github.com/starcat-app/starcat-recommend-api)
 - [starcat-discovery-api](https://github.com/starcat-app/starcat-discovery-api)
+<!-- starcat-promo:end -->
 
 This repository contains the official user documentation for Starcat. The documentation is built with [Mintlify](https://mintlify.com/) and published at [starcat.mintlify.site](https://starcat.mintlify.site/).
 
