@@ -25,6 +25,41 @@ Local AI leads this release: on-device models with no API key, free and enabled 
 - Settings reorganized by frequency, with Notifications and Keyboard Shortcuts as separate pages — [Shortcuts](/settings/shortcuts)
 - Stars badges replace the green checkmark; the language menu uses native names
 
+## 1.6.1
+
+Follow-up release fixing layout, filtering, search, and authorization issues found after 1.6.0, and applying native macOS 26 Liquid Glass across the app.
+
+### Improvements
+
+- Native macOS 26 Liquid Glass appearance across the main window, search, repository details, and AI / Knowledge Base workspaces
+- Star history unified on GitHub's official data as the single source, removing mixed estimates
+- Unified Search Center combining keyword and semantic retrieval in one entry, with visible index status
+- Local search covers every repository cached locally, including unstarred My Projects and private repos
+
+### Fixes
+
+- Private repository access, AI organization result handling, model-list freezes with large catalogs, and batch tagging reliability
+
+## 1.6.0
+
+Performance and polish release: lower background load at launch, smoother scrolling and long lists, plus a privacy settings page, Owner profile card, README Star history, and new providers.
+
+### New
+
+- **README Star history**: full-history star chart starting at repository creation, with totals, compact labels, and light / dark themes
+- **Star Journey**: timeline of creation, first record, milestones, and growth events
+- **Owner profile card**: avatar, bio, social links, and stats on repository details; follow / unfollow directly
+- **OrcaRouter provider** and **Firecrawl web search**: new AI provider and web search provider with domain filtering
+- **Privacy settings page**: sign-in scope disclosure and public data contribution controls in one place — [Privacy](/data-privacy/privacy)
+- **Language distribution bar**: per-language share on repository details; click to filter by language
+- **Tag auto-creation**: AI auto-apply can create missing tags on the spot (off by default)
+- **Cache usage overview**: cache grouped into Content / Discover / AI / Code categories
+
+### Improvements
+
+- Native Settings experience with a macOS-style sidebar, search, and back / forward navigation — [Settings](/settings/general)
+- Unified RAG configuration in the main Settings window with automatic saving
+
 ## 1.5.0
 
 These capabilities are available in the current Direct / development build. Mac App Store follows the version that is actually listed.
