@@ -5,6 +5,27 @@ description: "Notable Starcat release highlights; full archive on the website"
 
 In-docs summary of major releases. Full formatted archive: [starcat.ink/changelog](https://starcat.ink/changelog)
 
+## 1.8.0
+
+Repository files become downloadable from the details page, external Stars get their own alerts, and an experimental decision engine joins Labs.
+
+### New
+
+- **Repository file download**: Browse the file tree from repository details, preview source and images, then download selected files including Git LFS
+- **External Star alerts**: While Starcat is active, Stars added through GitHub, a browser, or other tools surface as an avatar alert in All Repositories, syncing with one click
+- **Labs decision engine**: An optional, off-by-default TypeSafe Jev experiment; manual GitHub Lists grouping and tag generation reuse existing categories first, with the configured LLM filling the gap when new tags are allowed and needed
+- **System screensaver (Direct only)**: Install the Owner avatar wall as a macOS screensaver, managed in Settings
+- **App Store data import (Direct only)**: On first launch, Direct can copy the official App Store library, notes, and caches on this Mac, or start fresh
+
+### Improvements
+
+- **GitHub Lists grouping**: Organization repos blocked by OAuth restrictions keep their grouping locally with a clear status and retry after re-authorization; batch updates run concurrently for shorter waits
+- **Star history motion**: Insight charts and README star-history cards animate the first time they enter view, with the total Star count in sync; Reduce Motion and image exports stay static
+
+### Fixes
+
+- **README image loading**: Works around intermittent GitHub camo proxy failures, falls back to the native star-history card, and keeps a visible fallback for other failed images
+
 ## 1.7.0
 
 Local AI leads this release: on-device models with no API key, free and enabled by default. Anthropic and CC Switch import join the provider list, alongside search, translation, contributors, insights, and fork upgrades.
