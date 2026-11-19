@@ -5,7 +5,7 @@ description: "Add a provider, map task models, set Embedding, and test"
 
 ## Purpose
 
-Pro needs a working provider and task mapping in **Settings → AI**. Chat and Embedding are separate mappings; configuring one does not configure the other.
+**Settings → AI** has two paths: the on-device model and a cloud provider. Chat and Embedding are separate mappings; configuring one does not configure the other.
 
 <Frame caption="Screenshot TODO · `images/screenshots/ai-features/configuration.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -13,7 +13,13 @@ Pro needs a working provider and task mapping in **Settings → AI**. Chat and E
   </div>
 </Frame>
 
-## How to set it up
+## On-device model
+
+The built-in model needs no API key. Summaries, tags, chat, translation, semantic search, and RAG do not require Pro while the task stays on this Mac. Download by category from Hugging Face or ModelScope. App Store and Direct share one verified copy on the machine, so a second install does not take the same gigabytes again.
+
+If the model is not downloaded yet, the call fails as unavailable configuration, not as an upgrade prompt. Run logs live in the **View** menu. They do not store prompts or answer text.
+
+## How to set up a cloud provider
 
 1. Add a provider from the list (OpenAI-compatible, DeepSeek, OpenRouter, Gemini, Ollama, LM Studio, and others). Fill the API key. For a self-hosted endpoint, fill the Base URL.
 2. Refresh discovered models. Tweak temperature inline if needed.

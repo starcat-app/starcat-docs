@@ -1,0 +1,38 @@
+---
+title: "Repository skills"
+description: "Preview and install Agent Skills from a repository, or maintain installed Skills on this Mac"
+keywords: ["Skill", "SKILL.md", "Codex", "Claude Code"]
+---
+
+## Purpose
+
+Install an Agent Skill from a repository into the Codex or Claude Code user directory, or review Skills already on this Mac.
+
+## Install from a repository
+
+1. Open Skills in [repository details](/main-interface/repo-detail).
+2. Filter single skills, collections, or skills embedded in the project. Click the row to preview.
+3. Read `SKILL.md`. You can translate the preview. Install always uses the original files.
+4. Use the tool capsule to install the full directory. Replacing an existing name asks first.
+5. Uninstall checks the source and file contents. Local edits, a conflicting source, or a directory Starcat did not install are left in place.
+
+You can save one file or download the directory. The install prompt in the rendered view is text for an agent. The install action does not run that prompt.
+
+## Local workspace (Beta)
+
+A separate three-column window lists Skills on this Mac: scan directories, follow file changes, import from disk or GitHub, and preview text and files as read-only.
+
+Check the diff before a batch update. Retry a failure, or roll back a version. Uninstall still skips directories you have changed.
+
+## Watch-outs
+
+<Warning>
+  Install writes into the Codex or Claude Code user skill directory. Uninstall deletes only the copy that still matches the receipt. It does not remove files you edited.
+</Warning>
+
+Large collections scan in the background so the list stays scrollable. An invalid Skill can still be previewed and diagnosed. It cannot be installed.
+
+## Related
+
+- [Repository details](/main-interface/repo-detail)
+- [CLI skill](/cli/skill)

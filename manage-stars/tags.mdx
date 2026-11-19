@@ -39,7 +39,15 @@ Click a tag in the sidebar to list only those repos. Toolbar filters can narrow 
 
 Context menu: rename, recolor / icon, delete. Deleting a tag does not delete repositories; it only drops the association.
 
-## AI suggestions (Pro)
+## First tag set
+
+When the tag library is empty, Starcat can analyze synced Stars on this Mac and show the stage and progress. Confirm the candidates, then review repository by repository. This pass does not require an AI provider.
+
+The Labs decision engine is off by default. Grouping and tag reuse can use Jev or the on-device Laya model. Laya does not need Python. Existing tags are reused first. A configured model adds tags only when new tags are allowed and the current set is not enough. Suggestions are still written only after you confirm.
+
+New groups omit the color dot. An existing group can drop the dot and keep an emoji in the name. You can add a color back later.
+
+## AI suggestions (Pro or on-device)
 
 Repo AI can suggest 3-8 tags; nothing is written until you confirm. See [Tag recommendations](/ai-features/tag-recommendation). Keep your own naming first so AI fills the existing system instead of exploding the vocabulary.
 

@@ -1,6 +1,6 @@
 ---
 title: "README 翻译"
-description: "分段中英对照，或全文替换可见 README；需要 Pro"
+description: "分段对照或全文替换；AI 引擎看本地模型或 Pro，系统翻译和 Google 另算"
 ---
 
 ## 用途
@@ -27,7 +27,7 @@ description: "分段中英对照，或全文替换可见 README；需要 Pro"
 | 分段（默认） | 按段对照 / 双语阅读 |
 | 全文 | 替换可见 README 文本，尽量保留结构 |
 
-步骤：等 README 加载完 → 点翻译 → 选目标语言和模式 → 在译文与原文间切换。需要 Pro，并在 [AI 配置](/zh-Hans/ai-features/configuration) 指定翻译模型。目标语言可自动跟随界面。已经是目标语言的段落会跳过。失败时右下角 toast。
+步骤：等 README 加载完 → 点翻译 → 选引擎、目标语言和模式 → 在译文与原文间切换。系统翻译和 Google 翻译走对应引擎，不强制自备模型。AI 引擎在设备端模型上不要求 Pro，改用云端 Provider 后需要 Pro，并在 [AI 配置](/zh-Hans/ai-features/configuration) 指定翻译模型。目标语言可自动跟随界面。已经是目标语言的段落会跳过。失败时右下角 toast。
 
 翻译会用更小的首批请求、增量展示、最多 4 路并发、分段缓存，未完成段落可续译。
 

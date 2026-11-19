@@ -5,7 +5,7 @@ description: "Read-only JSON, writes dry-run until --apply, MCP stdio, updates"
 
 ## Purpose
 
-After pairing, search Stars, change tags / status / notes, or hand `starcat mcp` to an external agent. Writes do not persist until `--apply`. If the app's write switches are off, `--apply` still fails.
+After pairing, search Stars, change tags / status / notes, or hand `starcat mcp` to an external agent. Reads work by default. Writes do not persist until `--apply`, and the app's write switches must be on. The contract is v3: repositories, notifications, releases, the knowledge base, and models are callable. Update the app and the CLI together.
 
 <Frame caption="Screenshot TODO · `images/screenshots/cli/usage.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">

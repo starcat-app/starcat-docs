@@ -5,7 +5,7 @@ description: "Pro: enable MCP, pair the CLI, writes stay dry-run until --apply"
 
 ## Purpose
 
-Settings → MCP lets the local [CLI](/cli/installation) call App capabilities over MCP (tag, status, and similar). Needs [Pro](/subscribe/plan-comparison). Writes default to dry-run; `--apply` actually persists.
+Settings → MCP lets the local [CLI](/cli/installation) call App capabilities over MCP. Needs [Pro](/subscribe/plan-comparison). Reads are on by default. Writes must be enabled here, and the command still needs `--apply` before anything is stored. The contract is v3. Update the app and the CLI together.
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/mcp.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -27,7 +27,9 @@ starcat doctor
 
 The URI lasts about 5 minutes and is single-use. Confirm the device in the app. Long-lived credentials go in the Keychain. Full flow: [CLI usage](/cli/usage).
 
-The settings page can copy Claude / Codex MCP snippets that register `starcat mcp`. See [Skill](/cli/skill).
+The settings page can copy a full setup prompt for an agent, and it checks the CLI version before install, updating it when needed. Paired devices show the pairing date so you can tell a new machine from an old one.
+
+Agents can read repositories, notifications, releases, the knowledge base, and models. Tag, note, Star, and Unstar writes still go through confirmation and the audit log. See [CLI usage](/cli/usage).
 
 ## Notes
 

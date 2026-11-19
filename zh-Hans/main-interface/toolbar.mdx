@@ -20,6 +20,7 @@ description: "中栏顶栏按钮做什么，以及和 ⌘K / ⌘F 的区别"
 | **同步** | 拉 / 增量同步 Stars；转圈表示进行中。图标是产品统一的 `arrow.triangle.2.circlepath` |
 | **筛选** | [统一筛选](/zh-Hans/search/filters) |
 | **多选** | [批量操作](/zh-Hans/manage-stars/batch-operations) |
+| **快速搜索** | 从中栏展开，只查当前这一类列表（Manage、探索、通知、Undo Star 等），不是 ⌘K |
 | **列表搜索** | 当前列表关键词或语义，常 **⌘F** |
 | **知识库问答** | 打开 [RAG 工作台](/zh-Hans/knowledge-base/rag-workspace) |
 | **外链 / Clone / AI / CodeFlow** | 多在选中仓库后出现 |
@@ -32,10 +33,16 @@ description: "中栏顶栏按钮做什么，以及和 ⌘K / ⌘F 的区别"
 | Search Center | **⌘K** | 四 Scope 聚合，不是列表搜索框 |
 | 列表搜索 | **⌘F** | 只过滤当前中栏 |
 | 刷新 | **⌘R** | 焦点在列表或详情 |
-| 仓库 AI | **⇧⌘A** | 要 Pro + AI 配置 |
+| 仓库 AI | **⇧⌘A** | 云端要 Pro；设备端模型不要 |
 | RAG | **⇧⌘K** | 要 Pro |
 
 均可在 [快捷键](/zh-Hans/settings/shortcuts) 改。
+
+## 同步提醒与菜单栏
+
+Starcat 在前台时，如果 Star 是从 GitHub 网页、浏览器或其他工具加上的，「全部仓库」会显示头像提醒。点一下开始同步，列表回到顶部。
+
+菜单栏里的 Starcat 图标：左键打开状态面板，看同步、后台任务和诊断，能暂停或停止其中的任务；右键是快捷菜单。增强诊断在 [诊断](/zh-Hans/settings/diagnostics)。
 
 ## 注意
 

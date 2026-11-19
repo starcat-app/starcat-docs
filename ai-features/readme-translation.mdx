@@ -1,6 +1,6 @@
 ---
 title: "README translation"
-description: "Segment bilingual view or replace the visible README; Pro required"
+description: "Segment bilingual view or full replacement; system and Google engines, or AI on-device / Pro"
 ---
 
 ## Purpose
@@ -27,7 +27,7 @@ The **Translate** control in the local-repo README toolbar.
 | Segment (default) | Side-by-side / bilingual by paragraph |
 | Full text | Replaces visible README text, keeping structure where possible |
 
-Wait for README load → Translate → pick language and mode → switch original / translation. Requires Pro and a translation model in [AI configuration](/ai-features/configuration). Target language can follow the UI. Paragraphs already in the target language are skipped. Failures toast at the bottom-right.
+Wait for README load → Translate → pick the engine, language, and mode → switch original / translation. System translation and Google translation use those engines and do not require your model key. The AI engine is free on the on-device model and requires Pro plus a translation model in [AI configuration](/ai-features/configuration) when you point it at a cloud provider. Target language can follow the UI. Paragraphs already in the target language are skipped. Failures toast at the bottom-right.
 
 Translation uses a smaller first request, incremental display, up to 4-way concurrency, per-segment cache, and resume for unfinished paragraphs.
 

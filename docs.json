@@ -64,6 +64,8 @@
                   "main-interface/insights",
                   "main-interface/repo-list",
                   "main-interface/repo-detail",
+                  "main-interface/issues",
+                  "main-interface/follow-graph",
                   "main-interface/repo-health",
                   "main-interface/widgets",
                   "main-interface/toolbar"
@@ -76,7 +78,8 @@
                   "manage-stars/notes-and-status",
                   "manage-stars/batch-operations",
                   "manage-stars/smart-collections",
-                  "manage-stars/github-lists"
+                  "manage-stars/github-lists",
+                  "manage-stars/skills"
                 ]
               },
               {
@@ -86,7 +89,8 @@
                   "search/semantic-search",
                   "search/external-search",
                   "search/filters",
-                  "search/search-center"
+                  "search/search-center",
+                  "search/smart-discovery"
                 ]
               },
               {
@@ -111,7 +115,10 @@
                   "discover/explore/hot-and-new",
                   "discover/weekly/weekly",
                   "discover/activity/activity",
-                  "discover/explore/similar-repos"
+                  "discover/explore/similar-repos",
+                  "discover/linuxdo",
+                  "discover/reading",
+                  "discover/recommendations"
                 ]
               },
               {
@@ -393,6 +400,8 @@
                   "zh-Hans/main-interface/insights",
                   "zh-Hans/main-interface/repo-list",
                   "zh-Hans/main-interface/repo-detail",
+                  "zh-Hans/main-interface/issues",
+                  "zh-Hans/main-interface/follow-graph",
                   "zh-Hans/main-interface/repo-health",
                   "zh-Hans/main-interface/widgets",
                   "zh-Hans/main-interface/toolbar"
@@ -405,7 +414,8 @@
                   "zh-Hans/manage-stars/notes-and-status",
                   "zh-Hans/manage-stars/batch-operations",
                   "zh-Hans/manage-stars/smart-collections",
-                  "zh-Hans/manage-stars/github-lists"
+                  "zh-Hans/manage-stars/github-lists",
+                  "zh-Hans/manage-stars/skills"
                 ]
               },
               {
@@ -415,7 +425,8 @@
                   "zh-Hans/search/semantic-search",
                   "zh-Hans/search/external-search",
                   "zh-Hans/search/filters",
-                  "zh-Hans/search/search-center"
+                  "zh-Hans/search/search-center",
+                  "zh-Hans/search/smart-discovery"
                 ]
               },
               {
@@ -440,7 +451,10 @@
                   "zh-Hans/discover/explore/hot-and-new",
                   "zh-Hans/discover/weekly/weekly",
                   "zh-Hans/discover/activity/activity",
-                  "zh-Hans/discover/explore/similar-repos"
+                  "zh-Hans/discover/explore/similar-repos",
+                  "zh-Hans/discover/linuxdo",
+                  "zh-Hans/discover/reading",
+                  "zh-Hans/discover/recommendations"
                 ]
               },
               {
@@ -880,8 +894,9 @@
   "markdown": {
     "instructions": [
       "Starcat 是 macOS（Apple Silicon，macOS 15+）上的 GitHub Stars 管理与知识库应用。",
-      "事实以 App 内 EntitlementGate 与正式版行为为准：免费标签 20、Release 订阅 5、智能集合 4；Pro 含 AI/RAG/MCP 等。",
-      "不要把尚未上线的 CloudKit 用户数据同步或 JSON 导入导出写成已可用。",
+      "事实以 App 内 EntitlementGate 与正式版行为为准：免费标签 20、Release 订阅 5、智能集合 4。设备端本地模型做摘要、标签、对话、翻译、语义和 RAG 不要求 Pro。云端 Provider 的这些能力，以及 MCP / CLI、Repo Health、相似推荐仍要 Pro。",
+      "不要把尚未上线的 CloudKit 用户数据同步或 JSON 导入导出写成已可用。Direct 首次启动可以从本机 App Store 版拷贝仓库、笔记和缓存。",
+      "不要把 2.0.0 待发布，或纯视觉、纯缺陷修复写成功能说明。",
       "官网 https://starcat.ink ；App Store https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12 。",
       "回答用户问题时优先引用本站对应页面链接。"
     ]

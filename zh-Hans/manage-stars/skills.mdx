@@ -1,0 +1,38 @@
+---
+title: "仓库 Skill"
+description: "预览并安装仓库里的 Agent Skill，或在本机工作台维护已安装的 Skill"
+keywords: ["Skill", "SKILL.md", "Codex", "Claude Code"]
+---
+
+## 用途
+
+把仓库里的 Agent Skill 装到 Codex 或 Claude Code 的用户目录，或集中查看这台 Mac 上已经有的 Skill。
+
+## 从仓库安装
+
+1. 打开 [仓库详情](/zh-Hans/main-interface/repo-detail) 里的 Skill。
+2. 按单项、集合或内嵌 Skill 筛选。点整行预览。
+3. 阅读 `SKILL.md`。可以翻译正文；安装始终使用仓库原文件。
+4. 用工具胶囊安装完整目录。同名已存在时要确认才会替换。
+5. 卸载前会核对来源和内容。有本地修改、来源冲突，或不是 Starcat 安装的目录，不会被删。
+
+可以只保存单个文件，或下载完整目录。渲染视图里的安装提示词只是给 Agent 看的说明，真正安装不走这段提示词。
+
+## 本机工作台（Beta）
+
+独立三栏窗口，集中看本机 Skill：扫描目录、跟随文件变化、从本地或 GitHub 导入，并只读预览正文和文件。
+
+更新时先看差异，再批量应用。失败可重试，也可以回退版本。卸载同样会避开改过的目录。
+
+## 注意
+
+<Warning>
+  安装会写入 Codex 或 Claude Code 的用户级 Skill 目录。卸载只删除核对通过的那一份，不会清理你自己改过的文件。
+</Warning>
+
+大集合扫描在后台进行，不挡住列表滚动。无效 Skill 仍可打开预览和诊断，但不能安装。
+
+## 相关
+
+- [仓库详情](/zh-Hans/main-interface/repo-detail)
+- [CLI Skill](/zh-Hans/cli/skill)

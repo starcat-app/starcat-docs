@@ -19,13 +19,11 @@ Agent Runtime (Direct): detect Codex App Server and DeepSeek Harness. Read [Runt
 
 Local API key: auth for the plugin and local HTTP API. Rotate it. Do not commit it. Trusted Mac only.
 
-Browser plugin: enable the local service; port / token must match; Starcat must be running. `http://127.0.0.1:{port}/plugin/v1/...` plus Bearer. See [Chrome](/browser-plugin/chrome).
+Browser plugin: enable the local service. Pair with the six-digit code, or match the port and token by hand. Starcat must be running. See [Plugin features](/browser-plugin/features).
 
 External Search is configured here: web search and AI live context. See [External search](/search/external-search). The nav item [External search settings](/settings/external-search) points here.
 
 Alfred / Raycast: [Desktop launchers](/integrations/desktop-launchers).
-
-In the upcoming 2.0.0 release, RepoContextPacker, CodeFlow, and CodebaseMemory no longer require Pro. Earlier releases retain their existing limits.
 
 CodeFlow (public repos): 3D code graph from list / detail. No entry on private repos. Direct can detect the official local install or a manual path. CodebaseMemory uses the same detection. App Store cannot launch those user-installed binaries.
 

@@ -5,7 +5,7 @@ description: "添加 Provider、映射任务模型、Embedding 与测试连接"
 
 ## 用途
 
-Pro 要在 **设置 → AI** 配好可用的 Provider 和任务映射。Chat 和 Embedding 是两套映射，配一个不等于配另一个。
+**设置 → AI** 里，设备端模型和云端 Provider 是两条路。Chat 和 Embedding 是两套映射，配一个不等于配另一个。
 
 <Frame caption="截图待补充 · `images/screenshots/ai-features/configuration.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -13,7 +13,13 @@ Pro 要在 **设置 → AI** 配好可用的 Provider 和任务映射。Chat 和
   </div>
 </Frame>
 
-## 怎么配
+## 设备端模型
+
+内置模型免 API Key。摘要、标签、对话、翻译、语义和 RAG 在任务解析到这台 Mac 上的模型时不要求 Pro。按类别下载，来源可以是 Hugging Face 或魔塔。App Store 与 Direct 共用本机同一份已校验模型，避免两套安装各占一份磁盘。
+
+模型还没下好时，调用失败是「配置不可用」，不是升级提示。运行日志在 **显示** 菜单，不记录提示词和回答正文。
+
+## 怎么配云端 Provider
 
 1. 从列表添加 Provider（OpenAI / 兼容接口、DeepSeek、OpenRouter、Gemini、Ollama、LM Studio 等，以列表为准）。填 API Key。自建端点再填 Base URL。
 2. 刷新已发现模型。必要时改温度等行内参数。
