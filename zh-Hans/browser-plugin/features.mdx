@@ -3,9 +3,13 @@ title: "浏览器插件功能"
 description: "Companion v1：在 GitHub 仓库页读推荐、笔记、Health；完整 AI 请回 App"
 ---
 
-## 用途
+import { DirectVersionBadge } from "/snippets/channel-badges.jsx";
 
-在 GitHub 仓库页，Companion v1 可以显示相似仓库、Wiki、本机笔记、已缓存的 Health 分数，以及在启用时跳转到 CodeFlow / Codebase。
+## 你要解决的事
+
+你正在 GitHub 上看一个仓库，想立刻看到自己以前写的笔记和已经缓存的 Health，不想先回 Starcat 再搜索。
+
+浏览器插件就是贴在仓库页上的这一层。完整 AI 仍回 App。插件本身两边都有。
 
 <Frame caption="截图待补充 · `images/screenshots/browser-plugin/features.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -27,7 +31,7 @@ v1 不含完整 Inbox、桌面级 AI 摘要工作流、复杂右键菜单。完�
 
 通信：`http://127.0.0.1:{port}/plugin/v1/...`，`Authorization: Bearer <token>`，流量留在本机。Token 在 [集成设置](/zh-Hans/settings/integrations) 管理。
 
-也可以不手填 Key：在 App 里核对六位配对码。每个浏览器单独授权，可随时查看或撤销。
+<DirectVersionBadge /> 你不想把一长串 Key 粘进扩展。在 App 里核对六位配对码即可。每个浏览器单独授权，可随时查看或撤销。App Store 1.9.1 仍要手填 Token。
 
 ## 注意
 

@@ -3,9 +3,13 @@ title: "General"
 description: "Language, theme, notifications, in-app docs, and data contribution off by default"
 ---
 
-## Purpose
+import { DirectBadge } from "/snippets/channel-badges.jsx";
 
-Language, theme, type size, notifications, and whether README docs open in-app. Anonymously contribute public Star data is off by default. Clearing caches and factory reset are on [Storage](/settings/storage).
+## The job
+
+You want the language, theme, and notifications to match how you work, and you want the "does this upload anything" switch to be obvious.
+
+General settings are those everyday preferences. Anonymous public Star contribution is off by default. Cache clearing and factory reset are on [Storage](/settings/storage).
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/general.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -35,13 +39,15 @@ Anonymously contribute public Star data is off by default. See [Privacy](/data-p
 | Reset list preferences | Sort / filter / density |
 | Reset all settings | Defaults; usually keeps tags and notes (follow the confirm sheet) |
 
-## Direct Beta updates
+## Direct Beta updates <DirectBadge />
 
-In the Direct edition, open **Settings → General → Updates** and turn on **Include Beta updates** to receive Beta versions as well as later stable releases. The switch is off by default and is not shown in the Mac App Store edition.
+You want to try a build that is not in the store yet, without pulling the store app onto that channel.
+
+On Direct, open **Settings → General → Updates** and turn on **Include Beta updates**. The switch is off by default. The App Store build does not show this block. Its updates stay in the store.
 
 Beta versions may include unfinished or unstable features. Turning the switch off keeps the installed version and waits for a newer stable build; it does not downgrade the app. Existing update preferences carry over when upgrading.
 
-Direct can also install the owner avatar wall as a macOS screensaver, then update or remove it in Settings. The App Store build does not offer this.
+<DirectBadge /> You also want the people behind the repositories you starred on the screen when you step away, instead of a stock screensaver. Direct can install that avatar wall, then update or remove it in Settings. The App Store build does not offer this.
 
 ## Notes
 

@@ -3,9 +3,13 @@ title: "配置 Codex 与 DeepSeek Runtime"
 description: "在 Starcat Direct 中安装、检测并验证外部 Agent Runtime"
 ---
 
-## 用途
+import { DirectBadge } from "/snippets/channel-badges.jsx";
 
-Starcat Direct 的 Agent 工作台可以在内置 Loop、Codex App Server 和 DeepSeek Harness 之间切换。外部 Runtime 以本机子进程运行，不会打进 Starcat DMG。
+## 你要解决的事
+
+你已经在用 Codex 或 DeepSeek，希望 Starcat 的 Agent 工作台接着用那套本机 Runtime，而不是再配一套只能在 App 里说话的模型。
+
+<DirectBadge /> 外部 Runtime 以本机子进程运行，不会打进 DMG。内置 Loop 两边都有。App Store 版不能启动你自己安装的可执行文件。
 
 <Warning>
   Codex App Server 与 DeepSeek Harness **仅适用于 Starcat Direct**。Mac App Store

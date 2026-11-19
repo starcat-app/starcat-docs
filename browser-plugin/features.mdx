@@ -3,9 +3,13 @@ title: "Browser extension features"
 description: "Companion v1: recommendations, notes, Health on GitHub repo pages; full AI stays in the app"
 ---
 
-## Purpose
+import { DirectVersionBadge } from "/snippets/channel-badges.jsx";
 
-On GitHub repository pages, Companion v1 can show similar repos, Wiki, on-device notes, cached Health scores, and jumps into CodeFlow or Codebase when those features are on.
+## The job
+
+You are on a GitHub repository page and want the note you wrote before, plus the Health score already cached, without switching back to Starcat to search.
+
+The browser extension is that layer on the page. Full AI stays in the app. The extension itself exists on both builds.
 
 <Frame caption="Screenshot TODO · `images/screenshots/browser-plugin/features.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -27,7 +31,7 @@ v1 does not include full Inbox, desktop AI summary workflows, or heavy context m
 
 Traffic: `http://127.0.0.1:{port}/plugin/v1/...` with `Authorization: Bearer <token>`, all on localhost. Manage the token in [Integrations](/settings/integrations).
 
-You can skip typing the key: confirm the six-digit pairing code in the app. Each browser is authorized on its own, and you can review or revoke it later.
+<DirectVersionBadge /> You do not want to paste a long key into the extension. Confirm the six-digit code in the app. Each browser is authorized on its own, and you can review or revoke it later. App Store 1.9.1 still asks you to type the token.
 
 ## Notes
 

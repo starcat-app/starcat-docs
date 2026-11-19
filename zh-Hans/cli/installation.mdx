@@ -3,9 +3,13 @@ title: "CLI 安装"
 description: "Homebrew / 脚本安装，再和本机 Pro App 做 MCP 配对"
 ---
 
-## 用途
+import { DirectBadge } from "/snippets/channel-badges.jsx";
 
-[`starcat-cli`](https://github.com/starcat-app/starcat-cli) 是命令行客户端，也可当 AI Agent 的 stdio MCP 桥。它不打开 SQLite；读写走 App 的 MCP Tools。权限、dry-run、Pro、审计仍由 macOS 上的 Starcat App 执行。App 跑在 Mac；CLI 可装在同一台 Mac，或经可信网络连已配对的 App。
+## 你要解决的事
+
+你想让终端或另一个 AI Agent 查这台 Mac 上的 Stars、通知和知识库，又不想把数据库文件交给它们。
+
+<DirectBadge /> CLI 是这条桥。它不打开 SQLite，读写走 App 的 MCP。权限和审计仍在 Starcat 里。App Store 版不能走这条本机桥。
 
 <Frame caption="截图待补充 · `images/screenshots/cli/installation.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">

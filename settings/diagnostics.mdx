@@ -3,9 +3,13 @@ title: "Diagnostics"
 description: "Anonymous telemetry off by default; export a pack for support"
 ---
 
-## Purpose
+import { DirectVersionBadge } from "/snippets/channel-badges.jsx";
 
-Anonymous telemetry is off by default. Settings → Diagnostics can turn it on, or export a support pack. Do not attach that pack to a public issue.
+## The job
+
+Something broke and you want support to see it, without also sending repository contents, prompts, or keys.
+
+Diagnostics leave anonymous telemetry off. The exported pack has the version, database status, and redacted recent errors. Do not attach it to a public issue.
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/diagnostics.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,9 +21,11 @@ Enabled telemetry sends allow-listed events and coarse metrics. See [Telemetry](
 
 Export Diagnostics includes version, database status, and recent errors (redacted). Email [dong4j@gmail.com](mailto:dong4j@gmail.com).
 
-## Enhanced recording
+## Enhanced recording <DirectVersionBadge />
 
-For a bug that is hard to reproduce, describe the problem, the area, and when it happened in **Settings → Diagnostics**, then turn on enhanced recording. It runs for at most 15 minutes. Exporting the report is a separate action. Logs stay on this Mac. Do not paste them into a public issue.
+The bug comes and goes, and you need a recording that includes your own description, not an empty crash log.
+
+In **Settings → Diagnostics**, write the problem, the area, and when it happened, then turn on enhanced recording. It runs for at most 15 minutes. Exporting the report is a separate action. Logs stay on this Mac. App Store 1.9.1 does not have enhanced recording yet. Ordinary export exists on both.
 
 The menu-bar status panel (left click) also shows sync and background work. See [Toolbar](/main-interface/toolbar).
 

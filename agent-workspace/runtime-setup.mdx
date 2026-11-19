@@ -3,9 +3,13 @@ title: "Set up Codex and DeepSeek runtimes"
 description: "Install, detect, and verify external Agent runtimes in Starcat Direct"
 ---
 
-## Purpose
+import { DirectBadge } from "/snippets/channel-badges.jsx";
 
-Starcat Direct’s Agent workspace can switch among built-in Loop, Codex App Server, and DeepSeek Harness. External runtimes run as local child processes and are not inside the Starcat DMG.
+## The job
+
+You already use Codex or DeepSeek, and you want the Agent workspace to keep that local runtime instead of a second model that only talks inside the app.
+
+<DirectBadge /> External runtimes are local child processes. They are not inside the DMG. The built-in loop exists on both builds. The App Store build cannot launch executables you installed yourself.
 
 <Warning>
   Codex App Server and DeepSeek Harness are **Direct-only**. The Mac App Store

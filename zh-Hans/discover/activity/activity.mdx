@@ -3,9 +3,11 @@ title: "动态 Activity"
 description: "默认是 GitHub 通知收件箱；也可看本地聚合动态"
 ---
 
-## 用途
+## 你要解决的事
 
-侧栏一级 Activity 打开时落在通知。可以在应用里处理被 @、评审请求和 Issue / PR 会话。「全部」会把 GitHub 通知和本机 Star / Unstar / Fork 记在同一条时间线上。
+有人 @ 了你，或请求你评审，你想在 Starcat 里处理完，而不是再打开 GitHub Inbox。
+
+活动页打开时落在通知。两边都有。「全部」会把 GitHub 通知和你自己的 Star / Unstar / Fork 排在一起。同一类条件多选是 Direct 1.9.6 才有的，App Store 1.9.1 仍是一次选一个类型。
 
 <Frame caption="截图待补充 · `images/screenshots/discover/activity-inbox.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -27,7 +29,7 @@ description: "默认是 GitHub 通知收件箱；也可看本地聚合动态"
 
 时间线可区分 Issue / PR。头像和用户名可打开 GitHub 主页；Dependabot 使用官方圆形图标。Star / Unstar / Fork 行会显示已入库或未入库。
 
-类型下拉可按未读、Issue、PR、讨论、Release、打开、关闭、已合并、提及、评审、Star、Unstar、Fork、已入库、未入库筛选。同一类可以多选，并和其他条件一起用；列表数量和右侧详情保持一致。长列表滚到距底部约 8 条时会提前加载下一页。未选中事件时，右侧用示意图引导从中间栏选择。
+类型下拉可按未读、Issue、PR、讨论、Release、打开、关闭、已合并、提及、评审、Star、Unstar、Fork、已入库、未入库筛选。Direct 1.9.6 里，同一类可以多选，并和其他条件一起用；列表数量和右侧详情保持一致。App Store 1.9.1 一次选一个类型。长列表滚到距底部约 8 条时会提前加载下一页。未选中事件时，右侧用示意图引导从中间栏选择。
 
 单个仓库的 Issue 列表、新建和总结在 [Issues 工作台](/zh-Hans/main-interface/issues)，不要和这条跨仓库收件箱混用。
 

@@ -3,9 +3,11 @@ title: "相似仓库推荐"
 description: "详情页相似推荐（Pro），以及浏览器插件里的只读列表"
 ---
 
-## 用途
+## 你要解决的事
 
-当前仓库可以带出替代实现或同领域项目，不必再自己搜 topic。桌面端在详情操作区打开；插件在 GitHub 仓库页给只读列表。
+你打开一个仓库之后，想马上看到替代实现或同一类项目，不想再自己搜 topic。
+
+相似推荐就是这份名单。桌面端在详情里打开，浏览器插件给只读列表。功能本身两边都有，而且需要 Pro。
 
 <Frame caption="截图待补充 · `images/screenshots/discover/similar-repos.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,8 +19,9 @@ description: "详情页相似推荐（Pro），以及浏览器插件里的只读
 
 在仓库详情操作区打开 相似仓库 / 推荐。
 
-- 需要网络访问 Starcat 推荐服务
-- App Store 与 Direct 都走 Starcat 自研推荐，不再请求第三方推荐服务
+- 需要网络
+- App Store 1.9.1 仍走原来的推荐路径
+- Direct 1.9.6 改用 Starcat 自研模型，不再请求第三方
 - 非 Pro 会遇到付费墙
 
 见 [方案对比](/zh-Hans/subscribe/plan-comparison)。

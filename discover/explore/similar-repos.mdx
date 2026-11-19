@@ -3,9 +3,11 @@ title: "Similar repositories"
 description: "Pro similar-repo suggestions in detail, plus a read-only list in the browser extension"
 ---
 
-## Purpose
+## The job
 
-The current repo can surface alternatives or same-domain projects without a manual topic search. Desktop opens from detail actions. The extension shows a read-only list on GitHub repo pages.
+You opened a repository and want alternatives or the same kind of project immediately, without searching the topic yourself.
+
+Similar repositories are that list. Desktop opens it from the detail actions. The browser extension shows a read-only list. The feature exists on both builds and requires Pro.
 
 <Frame caption="Screenshot TODO · `images/screenshots/discover/similar-repos.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,8 +19,9 @@ The current repo can surface alternatives or same-domain projects without a manu
 
 Open Similar / Recommended in repository detail.
 
-- Needs network access to the Starcat recommendation service
-- App Store and Direct both use Starcat's own model and no longer call a third-party recommender
+- Needs a network
+- App Store 1.9.1 still uses the previous recommendation path
+- Direct 1.9.6 uses Starcat's own model and no longer calls a third party
 - Non-Pro hits the paywall
 
 See [Plans](/subscribe/plan-comparison).

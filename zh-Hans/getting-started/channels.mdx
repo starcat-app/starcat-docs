@@ -1,0 +1,66 @@
+---
+title: "渠道与当前版本"
+description: "先看你要办的事，再看 App Store 1.9.1 和 Direct 1.9.6 谁能办"
+keywords: ["App Store", "Direct", "1.9.1", "1.9.6"]
+---
+
+import { AppStoreBadge, DirectBadge, DirectVersionBadge } from "/snippets/channel-badges.jsx";
+
+## 你要解决的事
+
+你手里可能是商店版，也可能是官网版。同一句话在一边能做，在另一边会找不到入口。先对一下自己装的是哪边，再往下读功能页。
+
+当前已发布版本：Mac App Store **1.9.1**，Direct **1.9.6**。
+
+没有胶囊的功能，两边都有。胶囊只标专属，或当前只有一边发布了的能力。
+
+<AppStoreBadge /> 商店沙盒或 Apple 购买才有的。
+
+<DirectBadge /> 官网版才能做的。商店版受沙盒限制，以后更新也不会用同一条路。
+
+<DirectVersionBadge /> 现在只有 Direct 1.9.6。App Store 仍是 1.9.1，还没有。
+
+## 两边都有
+
+这些能力从 App Store 1.9.1 就能用，Direct 1.9.6 也在。
+
+| 你想… | 去哪 |
+|------|------|
+| 把 Stars 找回来 | [标签](/zh-Hans/manage-stars/tags)、[笔记](/zh-Hans/manage-stars/notes-and-status)、[Search Center](/zh-Hans/search/search-center) |
+| 看自己的仓库，含私有仓 | [我的项目](/zh-Hans/main-interface/my-projects) |
+| 看整理得怎么样 | [洞察](/zh-Hans/main-interface/insights) |
+| 在桌面看一眼收藏 | [小组件](/zh-Hans/main-interface/widgets) |
+| 发现还没 Star 的项目 | [探索](/zh-Hans/discover/explore/overview)、[Awesome](/zh-Hans/discover/explore/awesome)、[周刊](/zh-Hans/discover/weekly/weekly)、[Linux.do](/zh-Hans/discover/linuxdo) |
+| 处理 GitHub 通知 | [活动](/zh-Hans/discover/activity/activity) |
+| 盯新版本 | [Release 订阅](/zh-Hans/release/subscription) |
+| 读 README、下文件、取消 Star 前看清会删什么 | [仓库详情](/zh-Hans/main-interface/repo-detail) |
+| 在当前列表里快速找 | 中栏快速搜索，见 [工具栏](/zh-Hans/main-interface/toolbar) |
+| 按许可证收窄 | [筛选](/zh-Hans/search/filters) |
+| 用设备端模型做摘要、标签、对话 | [AI](/zh-Hans/ai-features/overview) |
+| 问已经入库的资料 | [知识库](/zh-Hans/knowledge-base/overview) |
+| 在 GitHub 网页上看本机笔记 | [浏览器插件](/zh-Hans/browser-plugin/features) |
+| 空标签库先在本机分析再审核 | [标签](/zh-Hans/manage-stars/tags) |
+
+## 只有一边有
+
+| 你想… | 现在 |
+|------|------|
+| 用 Apple ID 买 Pro、从商店检查更新 | <AppStoreBadge /> [购买](/zh-Hans/subscribe/purchase)、[安装](/zh-Hans/getting-started/installation) |
+| 用 License 激活、接收 Beta、把头像墙装成屏保 | <DirectBadge /> [许可证](/zh-Hans/subscribe/license)、[通用设置](/zh-Hans/settings/general) |
+| 下载 Codex / DeepSeek / CodebaseMemory，或让本机 CLI 调 App | <DirectBadge /> [Runtime](/zh-Hans/agent-workspace/runtime-setup)、[CLI](/zh-Hans/cli/installation) |
+| 第一次打开时，把本机商店版的库拷进 Direct | <DirectBadge /> [数据导入](/zh-Hans/share-export/data-import) |
+| 用十分钟读今天的热点和 AI 周报 | <DirectVersionBadge /> [每日热点与每周 AI 大事](/zh-Hans/discover/reading) |
+| 顺着关注关系找人 | <DirectVersionBadge /> [关注图谱](/zh-Hans/main-interface/follow-graph) |
+| 在一个仓库里看 Issue、写总结 | <DirectVersionBadge /> [Issues 工作台](/zh-Hans/main-interface/issues) |
+| 把仓库里的 Skill 装进 Codex 或 Claude Code | <DirectVersionBadge /> [仓库 Skill](/zh-Hans/manage-stars/skills) |
+| 用一句话找还没 Star 的仓库 | <DirectVersionBadge /> [智能发现](/zh-Hans/search/smart-discovery) |
+| 按已有 Stars 看今天的推荐 | <DirectVersionBadge /> [每日推荐](/zh-Hans/discover/recommendations) |
+| 用六位码连接浏览器，而不是手填 Key | <DirectVersionBadge /> [浏览器插件](/zh-Hans/browser-plugin/features) |
+| 从菜单栏看同步和后台任务，或做 15 分钟增强诊断 | <DirectVersionBadge /> [工具栏](/zh-Hans/main-interface/toolbar)、[诊断](/zh-Hans/settings/diagnostics) |
+
+内置 Agent 循环两边都有。外部 Runtime 只有 Direct。相似推荐两边都有；改用 Starcat 自研模型是 Direct 1.9.6 的行为，App Store 1.9.1 仍走原来的推荐路径。见 [相似仓库](/zh-Hans/discover/explore/similar-repos)。
+
+## 相关
+
+- [安装](/zh-Hans/getting-started/installation)
+- [方案对比](/zh-Hans/subscribe/plan-comparison)

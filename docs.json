@@ -44,6 +44,7 @@
                   "index",
                   "getting-started/welcome",
                   "getting-started/installation",
+                  "getting-started/channels",
                   "getting-started/quickstart",
                   "getting-started/github-connection"
                 ]
@@ -380,6 +381,7 @@
                   "zh-Hans/index",
                   "zh-Hans/getting-started/welcome",
                   "zh-Hans/getting-started/installation",
+                  "zh-Hans/getting-started/channels",
                   "zh-Hans/getting-started/quickstart",
                   "zh-Hans/getting-started/github-connection"
                 ]

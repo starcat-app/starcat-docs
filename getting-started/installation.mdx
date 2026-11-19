@@ -3,9 +3,13 @@ title: "Install and requirements"
 description: "Requirements, App Store vs Direct, install steps, and how updates work"
 ---
 
-## Purpose
+import { AppStoreBadge, DirectBadge } from "/snippets/channel-badges.jsx";
 
-Starcat ships a macOS desktop app only. App Store and Direct (website DMG) look like the same product, but they use separate local databases and Pro entitlements.
+## The job
+
+You want Starcat on this Mac, but the store and the website are two installs. If you pick the wrong one, Pro you already bought and the library you already organized do not come with you.
+
+Install one and stay with it. They look like the same app. The local database and Pro entitlement are separate. The store build is 1.9.1. Direct is 1.9.6. See [Channels and current versions](/getting-started/channels).
 
 ## Requirements
 
@@ -20,14 +24,14 @@ There is no Windows / Linux desktop app. The [CLI](/cli/installation) can run on
 
 ## Choosing a channel
 
-### Mac App Store
+### Mac App Store <AppStoreBadge />
 
 - Download: [Starcat for GitHub](https://apps.apple.com/cn/app/starcat-for-github/id6788809803?mt=12)
 - Runs in the App Store sandbox: it cannot launch user-installed executables such as Codex CLI or CodeFlow
 - Pro uses Apple In-App Purchase (StoreKit / Apple ID)
 - Updates: Starcat detects a new version on launch or when the app becomes active. **Check for Updates** in the **Actions** menu or menu bar opens the Mac App Store; Starcat does not download the store package itself
 
-### Direct (website)
+### Direct (website) <DirectBadge />
 
 - Download: [starcat.ink](https://starcat.ink)
 - Open the DMG and drag Starcat into Applications

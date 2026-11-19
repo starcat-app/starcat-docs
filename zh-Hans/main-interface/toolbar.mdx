@@ -3,9 +3,13 @@ title: "工具栏"
 description: "中栏顶栏按钮做什么，以及和 ⌘K / ⌘F 的区别"
 ---
 
-## 用途
+import { DirectVersionBadge } from "/snippets/channel-badges.jsx";
 
-工具栏贴在中栏顶部，跟着当前页变：Manage 列表、探索、集合、通知时间线的按钮组合不一样。全局搜索默认是 **⌘K**，不在这条栏上。
+## 你要解决的事
+
+你人已经在某一份列表里，只想同步、筛选或在这份列表里找一个名字，不想先打开全局搜索。
+
+中栏工具栏跟着当前页变。全局搜索仍是 **⌘K**。中栏快速搜索两边都有。
 
 <Frame caption="截图待补充 · `images/screenshots/main-interface/toolbar.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -42,7 +46,7 @@ description: "中栏顶栏按钮做什么，以及和 ⌘K / ⌘F 的区别"
 
 Starcat 在前台时，如果 Star 是从 GitHub 网页、浏览器或其他工具加上的，「全部仓库」会显示头像提醒。点一下开始同步，列表回到顶部。
 
-菜单栏里的 Starcat 图标：左键打开状态面板，看同步、后台任务和诊断，能暂停或停止其中的任务；右键是快捷菜单。增强诊断在 [诊断](/zh-Hans/settings/diagnostics)。
+<DirectVersionBadge /> 你还想不打开主窗口就知道同步和下载有没有卡住。菜单栏里的 Starcat 图标：左键打开状态面板，可以暂停或停止任务；右键是快捷菜单。App Store 1.9.1 还没有这块状态面板。外部 Star 的头像提醒两边都有。增强诊断见 [诊断](/zh-Hans/settings/diagnostics)。
 
 ## 注意
 

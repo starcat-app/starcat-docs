@@ -3,9 +3,13 @@ title: "Toolbar"
 description: "What the middle-column toolbar does, and how it differs from ⌘K / ⌘F"
 ---
 
-## Purpose
+import { DirectVersionBadge } from "/snippets/channel-badges.jsx";
 
-The toolbar sits on top of the middle column and changes with the page: Manage list, Explore, collections, and the notification timeline expose different controls. Global search is **⌘K** by default, not on this bar.
+## The job
+
+You are already in one list and only want to sync, filter, or find a name in that list, without opening global search first.
+
+The middle-column toolbar changes with the page. Global search stays **⌘K**. Quick search in the middle column exists on both builds.
 
 <Frame caption="Screenshot TODO · `images/screenshots/main-interface/toolbar.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -42,7 +46,7 @@ All of these are editable in [Shortcuts](/settings/shortcuts).
 
 While Starcat is in front, a Star added from the GitHub website, a browser, or another tool shows an avatar alert on All repositories. Click it to sync. The list returns to the top.
 
-The Starcat icon in the menu bar: left click opens the status panel for sync, background work, and diagnostics, including pause or stop; right click opens the shortcut menu. Enhanced diagnostics: [Diagnostics](/settings/diagnostics).
+<DirectVersionBadge /> You also want to see whether sync or a download is stuck without opening the main window. Left-click the Starcat menu-bar icon for that status panel. You can pause or stop a task there. Right-click opens the shortcut menu. App Store 1.9.1 does not have this panel yet. The external-Star avatar alert exists on both. Enhanced diagnostics: [Diagnostics](/settings/diagnostics).
 
 ## Notes
 

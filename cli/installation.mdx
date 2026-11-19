@@ -3,9 +3,13 @@ title: "CLI installation"
 description: "Homebrew / script install, then MCP-pair with the Pro app on this Mac"
 ---
 
-## Purpose
+import { DirectBadge } from "/snippets/channel-badges.jsx";
 
-[`starcat-cli`](https://github.com/starcat-app/starcat-cli) is a CLI and a stdio MCP bridge for agents. It does not open SQLite. Reads and writes go through the app's MCP tools. Permission, dry-run, Pro, and audit stay in the macOS Starcat app. The app runs on a Mac; the CLI can live on that Mac or a trusted network to a paired app.
+## The job
+
+You want a terminal or another agent to read the Stars, notifications, and knowledge base on this Mac, without handing them the database file.
+
+<DirectBadge /> The CLI is that bridge. It does not open SQLite. Reads and writes go through the app's MCP tools. Permission and audit stay in Starcat. The App Store build cannot use this local bridge.
 
 <Frame caption="Screenshot TODO · `images/screenshots/cli/installation.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">

@@ -3,9 +3,11 @@ title: "Activity"
 description: "Default view is the GitHub notification inbox; local aggregated feeds are extra"
 ---
 
-## Purpose
+## The job
 
-Sidebar Activity opens on Notifications. Mentions, review requests, and Issue / PR threads can be handled without the browser. All mixes GitHub notifications with the local Star / Unstar / Fork ledger on one timeline.
+Someone mentioned you, or asked for a review, and you want to finish it in Starcat instead of opening the GitHub Inbox again.
+
+Activity opens on Notifications. Both builds have it. All mixes GitHub notifications with your own Star, Unstar, and Fork rows. Selecting more than one value in the same filter is Direct 1.9.6 only. App Store 1.9.1 still picks one type at a time.
 
 <Frame caption="Screenshot TODO · `images/screenshots/discover/activity-inbox.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -27,7 +29,7 @@ All interleaves GitHub notifications with your own Star, Unstar, and Fork rows. 
 
 The timeline distinguishes Issues / PRs. Avatars and names open GitHub profiles. Dependabot uses the official circular mark. Star / Unstar / Fork rows show ingested or not.
 
-The type dropdown filters unread, Issue, PR, Discussion, Release, open, closed, merged, mention, review, Star, Unstar, Fork, ingested, not ingested. You can select more than one value in a type and combine types. The list count and the detail stay on the visible set. Long lists prefetch the next page about eight rows from the bottom. With nothing selected, the right pane shows a diagram telling you to pick a middle-column event.
+The type dropdown filters unread, Issue, PR, Discussion, Release, open, closed, merged, mention, review, Star, Unstar, Fork, ingested, not ingested. On Direct 1.9.6 you can select more than one value in a type and combine types. The list count and the detail stay on the visible set. App Store 1.9.1 picks one type at a time. Long lists prefetch the next page about eight rows from the bottom. With nothing selected, the right pane shows a diagram telling you to pick a middle-column event.
 
 Issue lists, new issues, and summaries for a single repository live in the [Issues workspace](/main-interface/issues). That is not this cross-repository inbox.
 

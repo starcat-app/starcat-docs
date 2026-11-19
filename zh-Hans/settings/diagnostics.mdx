@@ -3,9 +3,13 @@ title: "诊断"
 description: "匿名遥测默认关闭；导出诊断包发给支持"
 ---
 
-## 用途
+import { DirectVersionBadge } from "/snippets/channel-badges.jsx";
 
-匿名遥测默认关闭。设置 → 诊断 可以打开它，或导出排障包。不要把诊断包发到公开 issue。
+## 你要解决的事
+
+出了问题你想交给支持看，又不想把仓库内容、提示词或 Key 一起发出去。
+
+诊断页默认关闭匿名遥测。导出的包只含版本、数据库状态和脱敏后的近期错误。不要把包贴到公开 issue。
 
 <Frame caption="截图待补充 · `images/screenshots/settings/diagnostics.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
@@ -17,9 +21,11 @@ description: "匿名遥测默认关闭；导出诊断包发给支持"
 
 菜单里的 Export Diagnostics 可导出版本、数据库状态、近期错误（脱敏），邮件 [dong4j@gmail.com](mailto:dong4j@gmail.com)。
 
-## 增强记录
+## 增强记录 <DirectVersionBadge />
 
-排查复现不稳定的问题时，在 **设置 → 诊断** 写下问题、相关模块和发生时间，再打开增强记录。最长 15 分钟。导出故障报告是单独动作，日志留在本机，不要贴到公开 issue。
+问题时有时无，你需要一段带着你自己描述的记录，而不是一份空的崩溃日志。
+
+在 **设置 → 诊断** 写下问题、相关模块和发生时间，再打开增强记录。最长 15 分钟。导出故障报告是单独动作，日志留在本机。App Store 1.9.1 还没有这段增强记录。普通导出两边都有。
 
 菜单栏左键的状态面板也能看到同步和后台任务。见 [工具栏](/zh-Hans/main-interface/toolbar)。
 
