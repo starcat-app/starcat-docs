@@ -47,6 +47,8 @@ The preview validates the request and summarizes the questions and assets withou
 
 `POST /v1/systemone` runs an evaluation immediately. It accepts uncompressed `application/json` and `multipart/form-data` bodies up to 32 MiB. Replace `5555` if you changed the MCP port.
 
+**For local-only access**, turn off **Allow Other Devices** in MCP settings and use `http://127.0.0.1:5555`. The Python SDK and multipart examples below also use this setting.
+
 ```bash
 curl -X POST http://127.0.0.1:5555/v1/systemone \
   -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
@@ -54,7 +56,18 @@ curl -X POST http://127.0.0.1:5555/v1/systemone \
   --data @request.json
 ```
 
-To call from another device on a trusted network, enable **Allow Other Devices**. Use the hostname and port displayed by Starcat with the `/v1/systemone` path over HTTPS. Verify the server certificate using Starcat's displayed fingerprint.
+**With Allow Other Devices on**, the MCP port uses HTTPS for every connection, including `127.0.0.1`. If you send plain HTTP to this port, curl may report `(52) Empty reply from server` before the request reaches the decision engine.
+
+On the Mac running Starcat, set the `STARCAT_LOCAL_API_KEY` shell variable to your local API key. This request asks the selected engine whether a sentence is about software development.
+
+```bash
+curl --noproxy '*' -ki https://127.0.0.1:5555/v1/systemone \
+  -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
+  -H 'Content-Type: application/json' \
+  --data-raw '{"state":"I am looking for an open-source Swift networking library.","questions":{"is_programming_related":{"type":"noul","instructions":"Is this about software development?"}}}'
+```
+
+On success, the response is `200 OK`. `model` identifies the engine that answered, and `answers.is_programming_related.noul` is the probability of a yes answer. Use `-k` only for this loopback test with the self-signed certificate. From another device, use the HTTPS hostname and port shown by Starcat and verify its certificate fingerprint, or use the paired CLI.
 
 ### TypeSafe Python SDK
 

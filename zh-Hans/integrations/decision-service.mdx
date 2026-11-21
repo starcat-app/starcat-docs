@@ -42,6 +42,8 @@ starcat tools call starcat.evaluate_system_one --input request.json --apply
 
 `POST /v1/systemone` 会直接执行评估，接受未压缩的 `application/json` 或 `multipart/form-data`，请求体上限为 32 MiB。如果修改过 MCP 端口，请将示例中的 `5555` 换成实际端口。
 
+**仅本机连接**时，在 MCP 设置中关闭「允许其他设备连接」，使用 `http://127.0.0.1:5555`。下文的 Python SDK 和 multipart 示例也使用这个设置。
+
 ```bash
 curl -X POST http://127.0.0.1:5555/v1/systemone \
   -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
@@ -49,7 +51,18 @@ curl -X POST http://127.0.0.1:5555/v1/systemone \
   --data @request.json
 ```
 
-在可信网络内跨设备调用时，打开 **允许其他设备连接**。用 Starcat 显示的主机名与端口访问 HTTPS 下的 `/v1/systemone`，并按 Starcat 显示的指纹验证服务证书。
+**开启「允许其他设备连接」**后，整个 MCP 端口使用 HTTPS，包括来自 `127.0.0.1` 的连接。此时向该端口发送明文 HTTP，curl 可能报 `(52) Empty reply from server`，请求还没到达决策引擎。
+
+在运行 Starcat 的 Mac 上，将本地 API Key 存入 shell 变量 `STARCAT_LOCAL_API_KEY`。这条命令会让当前引擎判断一段文字是否与软件开发有关。
+
+```bash
+curl --noproxy '*' -ki https://127.0.0.1:5555/v1/systemone \
+  -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
+  -H 'Content-Type: application/json' \
+  --data-raw '{"state":"我正在寻找一个开源的 Swift 网络请求库。","questions":{"is_programming_related":{"type":"noul","instructions":"这段内容是否与软件开发有关？"}}}'
+```
+
+成功时返回 `200 OK`，`model` 是实际作答的模型，`answers.is_programming_related.noul` 是回答为「是」的概率。`-k` 仅用于本机回环地址上的自签名证书自测。跨设备调用请使用 Starcat 显示的 HTTPS 主机名与端口，并核对证书指纹，或使用已配对的 CLI。
 
 ### TypeSafe Python SDK
 
