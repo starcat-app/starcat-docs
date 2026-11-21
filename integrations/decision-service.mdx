@@ -1,0 +1,188 @@
+---
+title: "Decision service"
+description: "Reuse Starcat's Jev or Laya decision engine from the CLI, MCP, or the /v1/systemone HTTP API"
+---
+
+## What it is
+
+Send a `state` and one or more named `questions` to Starcat, and get structured `answers` using the Jev System One format. Starcat uses the engine selected under **Settings → Labs → Decision Engine**. The request's optional `model` field is accepted for compatibility and has no effect on engine selection.
+
+| Question type | Result | Jev 1.14 | Laya (local) |
+|---------------|--------|----------|--------------|
+| `noul` | Probability that the answer is yes | Text or image | Text |
+| `choice` | One named option and option probabilities | Text or image | Text |
+| `score` | Rating across ordered levels | Text or image | Text |
+| `box` | Bounding box in an image | Image | Unsupported |
+
+You can mix supported question types in one request. Use Jev 1.14 for all four types. Starcat keeps any native Jev version you previously selected.
+
+- **Jev:** Starcat uses TypeSafe unless the native key is missing or the last explicit connection test failed. In either case, an enabled and verified OpenRouter configuration with a key can serve Jev 1.14. Request data goes to the selected provider. If the selected path fails, Starcat returns an error.
+- **Laya:** Install the multilingual model in **Labs**. Starcat loads it on the first real request and reuses the loaded model. Allow more time for the first call. Requests with images or `box` fail before loading. Evaluation runs on the Mac.
+
+## Requirements
+
+1. Keep Starcat running with an active [Pro](/subscribe/plan-comparison) subscription. Turn on **Enable decision engine** in **Settings → Labs** and configure the engine there.
+2. Open **Settings → Extensions & Connections → MCP**. Turn on **Enable Service** and **Allow Writes**. Starcat treats evaluation as a write capability because it can start inference and consume provider quota.
+3. For CLI or MCP stdio, pair the CLI and confirm the device in Starcat. For direct HTTP, use the MCP port and the **Local API Key** from **Settings → Extensions & Connections → Browser Extensions**, or a paired device token. See [MCP setup](/settings/mcp).
+
+## CLI and MCP
+
+List available capabilities.
+
+```bash
+starcat capabilities
+```
+
+Save the [JSON example](#json-request) as `request.json`. Use `--apply` to run the evaluation.
+
+```bash
+starcat tools describe starcat.evaluate_system_one
+starcat tools call starcat.evaluate_system_one --input request.json
+starcat tools call starcat.evaluate_system_one --input request.json --apply
+```
+
+The preview validates the request and summarizes the questions and assets without loading a model or making a provider call. An MCP client can run `starcat mcp` and call `starcat.evaluate_system_one` with `state`, `questions`, and `"dry_run": false`. Omit `dry_run` or set it to `true` for a preview. For images in CLI or MCP, use JSON Base64. CLI JSON input is limited to 8 MiB and the MCP request body also has an 8 MiB limit. Use direct HTTP for larger requests.
+
+## HTTP
+
+`POST /v1/systemone` runs an evaluation immediately. It accepts uncompressed `application/json` and `multipart/form-data` bodies up to 32 MiB. Replace `5555` if you changed the MCP port.
+
+```bash
+curl -X POST http://127.0.0.1:5555/v1/systemone \
+  -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
+  -H "Content-Type: application/json" \
+  --data @request.json
+```
+
+To call from another device on a trusted network, enable **Allow Other Devices**. Use the hostname and port displayed by Starcat with the `/v1/systemone` path over HTTPS. Verify the server certificate using Starcat's displayed fingerprint.
+
+### TypeSafe Python SDK
+
+Install the Python SDK with `pip install typesafe-sdk==0.7.5`. Use the server root as `base_url` and set `compression=False` to send an uncompressed body. The SDK adds `/v1/systemone` and can send images as multipart.
+
+```python
+import os
+
+from typesafe_sdk import Noul, TypeSafeClient
+
+with TypeSafeClient(
+    base_url="http://127.0.0.1:5555",
+    api_key=os.environ["STARCAT_LOCAL_API_KEY"],
+    compression=False,
+) as client:
+    result = client.system_one(
+        state="I was charged twice.",
+        questions={"billing": Noul(instructions="Is this about billing?")},
+    )
+    print(result.answers["billing"].noul)
+```
+
+### JSON request
+
+```json
+{
+  "state": "The user asks for a short, factual repository recommendation.",
+  "questions": {
+    "worth_trying": {
+      "type": "noul",
+      "instructions": "Is this likely to be useful to an indie developer?",
+      "criteria": {
+        "true": "It solves a real daily task.",
+        "false": "It is an unfinished experiment with no clear use."
+      }
+    },
+    "tone": {
+      "type": "choice",
+      "instructions": "Choose the closest review tone.",
+      "criteria": {
+        "critical": "Looks for missing pieces.",
+        "neutral": "States facts without preference.",
+        "enthusiastic": "Would try it immediately."
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How urgent is this recommendation?",
+      "criteria": ["low", "medium", "high"]
+    }
+  }
+}
+```
+
+### Response
+
+```json
+{
+  "answers": {
+    "worth_trying": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "tone": {
+      "type": "choice",
+      "choice": "neutral",
+      "probabilities": {"critical": 0.2, "enthusiastic": 0.1, "neutral": 0.7},
+      "confidence": 0.82
+    },
+    "urgency": {
+      "type": "score",
+      "score": 1,
+      "legend": {"0": "low", "1": "medium", "2": "high"},
+      "probabilities": {"0": 0.2, "1": 0.7, "2": 0.1},
+      "confidence": 0.74
+    }
+  },
+  "model": "jev-1.14.0",
+  "usage": {"input_tokens": 128, "output_tokens": 32}
+}
+```
+
+Answers are keyed by question name. `model` identifies the model that answered. `usage` carries token counts when available. `score.legend` is zero-based and `box.confidence` can be `null`.
+
+### Images and multipart
+
+For images or `box`, set `TypeSafe-Danger-Zone-Images: true`. In JSON, send an asset with `type: "image"`, `format: "png"` or `"jpeg"`, and `data_base64`. For multipart, save the following example as `image-request.json` and send it first in a part named `request`. Each asset's `part` points to a separate image part.
+
+```json
+{
+  "state": {"image": "photo"},
+  "questions": {
+    "find_ui": {
+      "type": "box",
+      "instructions": "Locate the primary action button."
+    }
+  },
+  "assets": {
+    "photo": {"type": "image", "part": "photo"}
+  }
+}
+```
+
+```bash
+curl -X POST http://127.0.0.1:5555/v1/systemone \
+  -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
+  -H "TypeSafe-Danger-Zone-Images: true" \
+  -F "request=@image-request.json;type=application/json" \
+  -F "photo=@screenshot.png;type=image/png"
+```
+
+## Errors
+
+| HTTP status | Usual meaning |
+|-------------|---------------|
+| 400 | Invalid payload, unsupported question for the selected engine, or missing image opt-in header |
+| 401 | Missing or invalid bearer credential |
+| 403 | MCP service off, Pro missing, writes disabled, or Origin not allowed |
+| 413 | Request body exceeds 32 MiB |
+| 415 | Unsupported request compression. Send an uncompressed body |
+| 421 | Host header not allowed |
+| 502 | The selected engine returned an answer that did not match the request |
+| 503 | The selected engine is unavailable or the selected path failed |
+
+If you can no longer connect, check that Starcat is running and the MCP service is enabled. For `503`, check the selected engine under **Labs**. Jev needs an eligible provider and Laya needs the local model installed.
+
+## Related
+
+- [MCP](/settings/mcp)
+- [CLI usage](/cli/usage)
+- [AI configuration](/ai-features/configuration)

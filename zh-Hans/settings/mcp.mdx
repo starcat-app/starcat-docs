@@ -5,19 +5,19 @@ description: "Pro：启用 MCP、配对 CLI、写权限默认 dry-run"
 
 ## 用途
 
-设置 → MCP 让本机 [CLI](/zh-Hans/cli/installation) 通过 MCP 调 App 能力。需要 [Pro](/zh-Hans/subscribe/plan-comparison)。读取默认开放。写入要在这里打开，并且命令仍要 `--apply` 才落库。契约是 v3，App 和 CLI 要一起更新。
+在 **设置 → 扩展与连接 → MCP** 中，你可以启用 [CLI](/zh-Hans/cli/installation) 和 MCP 客户端对 Starcat 的访问。服务需要 [Pro](/zh-Hans/subscribe/plan-comparison)。读取默认开放。修改笔记、执行决策等操作需要打开 **允许写入**。支持预览的 CLI 命令用 `--apply` 执行。
 
 <Frame caption="截图待补充 · `images/screenshots/settings/mcp.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
-    设置 → MCP：开关、端口、权限子开关、配对 URI
+    MCP 设置中的服务开关、端口、权限和配对命令
   </div>
 </Frame>
 
 ## 怎么用
 
-1. 启用 MCP Service
+1. 打开 **启用服务**
 2. 确认端口（常见 5555，避免冲突）
-3. 按需打开：读私有笔记、本地写入、批量写入、替换式写入
+3. 客户端需要执行写操作时，打开 **允许写入**
 4. 复制配对命令，在终端执行：
 
 ```bash
@@ -39,3 +39,4 @@ Agent 可以查仓库、通知、Release、知识库和模型。写入标签、�
 ## 相关
 
 - [CLI 安装](/zh-Hans/cli/installation)
+- [决策服务](/zh-Hans/integrations/decision-service)，了解如何通过 CLI、MCP 或 HTTP 调用 System One

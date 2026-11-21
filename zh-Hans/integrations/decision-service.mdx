@@ -1,0 +1,183 @@
+---
+title: "决策服务"
+description: "通过 CLI、MCP 或 /v1/systemone HTTP API 复用 Starcat 的 Jev 或 Laya 决策引擎"
+---
+
+## 能力说明
+
+应用、脚本和 Agent 可以向 Starcat 发送 `state` 和一组具名的 `questions`，并按 Jev System One 格式获取结构化 `answers`。Starcat 使用 **设置 → 实验性功能 → 决策引擎** 中选定的引擎。请求中的 `model` 是可选兼容字段，不参与引擎选择。
+
+| 题型 | 返回结果 | Jev 1.14 | Laya（本地） |
+|------|----------|----------|--------------|
+| `noul` | 回答为「是」的概率 | 文本或图片 | 文本 |
+| `choice` | 选中的选项和各选项概率 | 文本或图片 | 文本 |
+| `score` | 按有序档位给出的评分 | 文本或图片 | 文本 |
+| `box` | 图片中目标的边界框 | 图片 | 不支持 |
+
+同一个请求可以混合使用引擎支持的题型。需要四种题型时请选 Jev 1.14。Starcat 会保留你已经选定的原生 Jev 版本。
+
+- **Jev** 默认使用 TypeSafe。只有原生 Key 缺失或最近一次主动测试连接失败时，才会使用已启用、验证通过且有 Key 的 OpenRouter 配置调用 Jev 1.14。请求内容会发送给选中的服务。执行路径失败时直接返回错误。
+- **Laya** 在「实验性功能」中安装多语言模型后，首次实际调用会先加载模型，后续可复用已加载的模型。请为首次调用预留更长的时间。包含图片或 `box` 的请求会在加载前被拒绝。推理在本机完成。
+
+## 使用前提
+
+1. 保持 Starcat 运行并拥有有效的 [Pro](/zh-Hans/subscribe/plan-comparison) 权益。在 **设置 → 实验性功能** 打开 **启用决策引擎** 并配置引擎。
+2. 进入 **设置 → 扩展与连接 → MCP**，打开 **启用服务** 和 **允许写入**。决策会触发推理，也可能消耗服务额度，所以需要写权限。
+3. CLI 和 MCP stdio 使用已配对的 CLI，在 Starcat 中确认设备。直连 HTTP 使用 MCP 端口和 **设置 → 扩展与连接 → 浏览器扩展** 中的本地 API Key，也可使用配对设备的 token。配对步骤见 [MCP 设置](/zh-Hans/settings/mcp)。
+
+## CLI 与 MCP
+
+把 [JSON 请求示例](#json-请求) 保存为 `request.json`，即可查看能力、预览请求或执行评估。
+
+```bash
+starcat capabilities
+starcat tools describe starcat.evaluate_system_one
+starcat tools call starcat.evaluate_system_one --input request.json
+starcat tools call starcat.evaluate_system_one --input request.json --apply
+```
+
+预览会校验请求并返回题型和资产统计，此时不加载模型或调用上游。MCP 客户端可以启动 `starcat mcp`，调用 `starcat.evaluate_system_one` 并传入 `state`、`questions` 和 `"dry_run": false` 来执行评估。省略 `dry_run` 或设为 `true` 则预览。CLI 和 MCP 通过 JSON Base64 传图。CLI JSON 输入和 MCP 请求体均有 8 MiB 上限，更大的请求可以走直连 HTTP。
+
+## HTTP
+
+`POST /v1/systemone` 会直接执行评估，接受未压缩的 `application/json` 或 `multipart/form-data`，请求体上限为 32 MiB。如果修改过 MCP 端口，请将示例中的 `5555` 换成实际端口。
+
+```bash
+curl -X POST http://127.0.0.1:5555/v1/systemone \
+  -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
+  -H "Content-Type: application/json" \
+  --data @request.json
+```
+
+在可信网络内跨设备调用时，打开 **允许其他设备连接**。用 Starcat 显示的主机名与端口访问 HTTPS 下的 `/v1/systemone`，并按 Starcat 显示的指纹验证服务证书。
+
+### TypeSafe Python SDK
+
+用 `pip install typesafe-sdk==0.7.5` 安装 Python SDK。将 `base_url` 设为服务根地址，并设置 `compression=False` 发送未压缩的请求。SDK 会自动拼接 `/v1/systemone`，传图时可以使用 multipart。
+
+```python
+import os
+
+from typesafe_sdk import Noul, TypeSafeClient
+
+with TypeSafeClient(
+    base_url="http://127.0.0.1:5555",
+    api_key=os.environ["STARCAT_LOCAL_API_KEY"],
+    compression=False,
+) as client:
+    result = client.system_one(
+        state="我被重复扣款了。",
+        questions={"billing": Noul(instructions="这条消息和账单有关吗？")},
+    )
+    print(result.answers["billing"].noul)
+```
+
+### JSON 请求
+
+```json
+{
+  "state": "用户希望得到一条简短、事实型的仓库推荐。",
+  "questions": {
+    "worth_trying": {
+      "type": "noul",
+      "instructions": "这个仓库对独立开发者可能有帮助吗？",
+      "criteria": {
+        "true": "解决真实的日常任务。",
+        "false": "是没有明确用途的未完成实验。"
+      }
+    },
+    "tone": {
+      "type": "choice",
+      "instructions": "选择最接近的评论语气。",
+      "criteria": {
+        "critical": "会寻找缺失的能力。",
+        "neutral": "只陈述事实，不带偏好。",
+        "enthusiastic": "会立刻试用。"
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "这条推荐有多紧急？",
+      "criteria": ["low", "medium", "high"]
+    }
+  }
+}
+```
+
+### 响应
+
+```json
+{
+  "answers": {
+    "worth_trying": {
+      "type": "noul",
+      "noul": 0.91
+    },
+    "tone": {
+      "type": "choice",
+      "choice": "neutral",
+      "probabilities": {"critical": 0.2, "enthusiastic": 0.1, "neutral": 0.7},
+      "confidence": 0.82
+    },
+    "urgency": {
+      "type": "score",
+      "score": 1,
+      "legend": {"0": "low", "1": "medium", "2": "high"},
+      "probabilities": {"0": 0.2, "1": 0.7, "2": 0.1},
+      "confidence": 0.74
+    }
+  },
+  "model": "jev-1.14.0",
+  "usage": {"input_tokens": 128, "output_tokens": 32}
+}
+```
+
+`answers` 按题目名称返回。`model` 表示实际作答的模型。`usage` 包含可用的 token 计数。`score.legend` 从 0 开始编号，`box.confidence` 可以为 `null`。
+
+### 图片与 multipart
+
+使用图片或 `box` 时，添加请求头 `TypeSafe-Danger-Zone-Images: true`。JSON 图片资产使用 `type: "image"`、`format: "png"` 或 `"jpeg"`，以及 `data_base64`。使用 multipart 时，把下面的示例存为 `image-request.json`，放在第一个名为 `request` 的 part 中。每个图片资产的 `part` 指向一个独立的图片 part。
+
+```json
+{
+  "state": {"image": "photo"},
+  "questions": {
+    "find_ui": {
+      "type": "box",
+      "instructions": "找到主操作按钮。"
+    }
+  },
+  "assets": {
+    "photo": {"type": "image", "part": "photo"}
+  }
+}
+```
+
+```bash
+curl -X POST http://127.0.0.1:5555/v1/systemone \
+  -H "Authorization: Bearer $STARCAT_LOCAL_API_KEY" \
+  -H "TypeSafe-Danger-Zone-Images: true" \
+  -F "request=@image-request.json;type=application/json" \
+  -F "photo=@screenshot.png;type=image/png"
+```
+
+## 错误
+
+| HTTP 状态 | 常见含义 |
+|-----------|----------|
+| 400 | 请求内容无效、所选引擎不支持该题型，或缺少图片启用头 |
+| 401 | Bearer 凭据缺失或无效 |
+| 403 | MCP 服务关闭、缺少 Pro、写入被关闭，或 Origin 不允许 |
+| 413 | 请求体超过 32 MiB |
+| 415 | 请求压缩不受支持，请发送未压缩的请求体 |
+| 421 | Host 头不允许 |
+| 502 | 所选引擎返回的答案不符合请求约束 |
+| 503 | 所选引擎不可用，或所选路径执行失败 |
+
+如果连接失败，先确认 Starcat 正在运行且已启用 MCP 服务。出现 `503` 时，到「实验性功能」检查所选引擎。Jev 需要可用的服务配置，Laya 需要先安装本地模型。
+
+## 相关
+
+- [MCP](/zh-Hans/settings/mcp)
+- [CLI 使用](/zh-Hans/cli/usage)
+- [AI 配置](/zh-Hans/ai-features/configuration)

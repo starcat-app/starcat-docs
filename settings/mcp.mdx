@@ -5,11 +5,11 @@ description: "Pro: enable MCP, pair the CLI, writes stay dry-run until --apply"
 
 ## Purpose
 
-Settings → MCP lets the local [CLI](/cli/installation) call App capabilities over MCP. Needs [Pro](/subscribe/plan-comparison). Reads are on by default. Writes must be enabled here, and the command still needs `--apply` before anything is stored. The contract is v3. Update the app and the CLI together.
+In **Settings → Extensions & Connections → MCP**, enable the [CLI](/cli/installation) and MCP clients to call Starcat capabilities. The service requires [Pro](/subscribe/plan-comparison). Reads are on by default. Use **Allow Writes** for operations such as updating a note or running an evaluation. CLI commands with a preview require `--apply` to execute.
 
 <Frame caption="Screenshot TODO · `images/screenshots/settings/mcp.webp`">
   <div className="rounded-xl border-2 border-dashed border-zinc-400/80 px-6 py-14 text-center text-sm text-zinc-500 dark:border-zinc-600 dark:text-zinc-400">
-    Settings → MCP: switch, port, permission toggles, pairing URI
+    MCP settings with the service switch, port, permissions, and pairing command
   </div>
 </Frame>
 
@@ -17,7 +17,7 @@ Settings → MCP lets the local [CLI](/cli/installation) call App capabilities o
 
 1. Enable MCP Service
 2. Confirm the port (often 5555; avoid clashes)
-3. Allow as needed: read private notes, local writes, batch writes, replace writes
+3. Turn on **Allow Writes** if the client needs to run write capabilities
 4. Copy the pair command and run it:
 
 ```bash
@@ -39,3 +39,4 @@ Agents can read repositories, notifications, releases, the knowledge base, and m
 ## Related
 
 - [CLI install](/cli/installation)
+- [Decision service](/integrations/decision-service) for System One calls through CLI, MCP, or HTTP

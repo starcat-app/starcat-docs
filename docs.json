@@ -163,7 +163,8 @@
               {
                 "group": "Integrations",
                 "pages": [
-                  "integrations/desktop-launchers"
+                  "integrations/desktop-launchers",
+                  "integrations/decision-service"
                 ]
               },
               {
@@ -500,7 +501,8 @@
               {
                 "group": "集成扩展",
                 "pages": [
-                  "zh-Hans/integrations/desktop-launchers"
+                  "zh-Hans/integrations/desktop-launchers",
+                  "zh-Hans/integrations/decision-service"
                 ]
               },
               {
