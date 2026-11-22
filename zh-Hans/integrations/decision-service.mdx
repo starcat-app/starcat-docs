@@ -5,7 +5,7 @@ description: "通过 CLI、MCP 或 /v1/systemone HTTP API 复用 Starcat 的 Jev
 
 ## 能力说明
 
-应用、脚本和 Agent 可以向 Starcat 发送 `state` 和一组具名的 `questions`，并按 Jev System One 格式获取结构化 `answers`。Starcat 使用 **设置 → 实验性功能 → 决策引擎** 中选定的引擎。请求中的 `model` 是可选兼容字段，不参与引擎选择。
+应用、脚本和 Agent 可以向 Starcat 发送 `state` 和一组具名的 `questions`，并按 Jev System One 格式获取结构化 `answers`。Starcat 使用 **设置 → 决策引擎** 中选定的引擎。请求中的 `model` 是可选兼容字段，不参与引擎选择。
 
 | 题型 | 返回结果 | Jev 1.14 | Laya（本地） |
 |------|----------|----------|--------------|
@@ -17,11 +17,11 @@ description: "通过 CLI、MCP 或 /v1/systemone HTTP API 复用 Starcat 的 Jev
 同一个请求可以混合使用引擎支持的题型。需要四种题型时请选 Jev 1.14。Starcat 会保留你已经选定的原生 Jev 版本。
 
 - **Jev** 默认使用 TypeSafe。只有原生 Key 缺失或最近一次主动测试连接失败时，才会使用已启用、验证通过且有 Key 的 OpenRouter 配置调用 Jev 1.14。请求内容会发送给选中的服务。执行路径失败时直接返回错误。
-- **Laya** 在「实验性功能」中安装多语言模型后，首次实际调用会先加载模型，后续可复用已加载的模型。请为首次调用预留更长的时间。包含图片或 `box` 的请求会在加载前被拒绝。推理在本机完成。
+- **Laya** 在「决策引擎」中安装多语言模型后，首次实际调用会先加载模型，后续可复用已加载的模型。请为首次调用预留更长的时间。包含图片或 `box` 的请求会在加载前被拒绝。推理在本机完成。
 
 ## 使用前提
 
-1. 保持 Starcat 运行并拥有有效的 [Pro](/zh-Hans/subscribe/plan-comparison) 权益。在 **设置 → 实验性功能** 打开 **启用决策引擎** 并配置引擎。
+1. 保持 Starcat 运行并拥有有效的 [Pro](/zh-Hans/subscribe/plan-comparison) 权益。在 **设置 → 决策引擎** 打开 **启用决策引擎** 并配置引擎。
 2. 进入 **设置 → 扩展与连接 → MCP**，打开 **启用服务** 和 **允许写入**。决策会触发推理，也可能消耗服务额度，所以需要写权限。
 3. CLI 和 MCP stdio 使用已配对的 CLI，在 Starcat 中确认设备。直连 HTTP 使用 MCP 端口和 **设置 → 扩展与连接 → 浏览器扩展** 中的本地 API Key，也可使用配对设备的 token。配对步骤见 [MCP 设置](/zh-Hans/settings/mcp)。
 
@@ -39,6 +39,8 @@ starcat tools call starcat.evaluate_system_one --input request.json --apply
 预览会校验请求并返回题型和资产统计，此时不加载模型或调用上游。MCP 客户端可以启动 `starcat mcp`，调用 `starcat.evaluate_system_one` 并传入 `state`、`questions` 和 `"dry_run": false` 来执行评估。省略 `dry_run` 或设为 `true` 则预览。CLI 和 MCP 通过 JSON Base64 传图。CLI JSON 输入和 MCP 请求体均有 8 MiB 上限，更大的请求可以走直连 HTTP。
 
 ## HTTP
+
+直连 API 前，在 **设置 → 决策引擎** 打开 **启动 HTTP 服务**。开关默认关闭，切换后立即对新请求生效。
 
 `POST /v1/systemone` 会直接执行评估，接受未压缩的 `application/json` 或 `multipart/form-data`，请求体上限为 32 MiB。如果修改过 MCP 端口，请将示例中的 `5555` 换成实际端口。
 
@@ -178,14 +180,14 @@ curl -X POST http://127.0.0.1:5555/v1/systemone \
 |-----------|----------|
 | 400 | 请求内容无效、所选引擎不支持该题型，或缺少图片启用头 |
 | 401 | Bearer 凭据缺失或无效 |
-| 403 | MCP 服务关闭、缺少 Pro、写入被关闭，或 Origin 不允许 |
+| 403 | 决策 HTTP 服务或 MCP 服务关闭、缺少 Pro、写入被关闭，或 Origin 不允许 |
 | 413 | 请求体超过 32 MiB |
 | 415 | 请求压缩不受支持，请发送未压缩的请求体 |
 | 421 | Host 头不允许 |
 | 502 | 所选引擎返回的答案不符合请求约束 |
 | 503 | 所选引擎不可用，或所选路径执行失败 |
 
-如果连接失败，先确认 Starcat 正在运行且已启用 MCP 服务。出现 `503` 时，到「实验性功能」检查所选引擎。Jev 需要可用的服务配置，Laya 需要先安装本地模型。
+如果连接失败，先确认 Starcat 正在运行且已启用 MCP 服务。出现 `403` 时，检查「启动 HTTP 服务」和「允许写入」。出现 `503` 时，到「决策引擎」检查所选引擎。Jev 需要可用的服务配置，Laya 需要先安装本地模型。
 
 ## 相关
 

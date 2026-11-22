@@ -5,7 +5,7 @@ description: "Reuse Starcat's Jev or Laya decision engine from the CLI, MCP, or 
 
 ## What it is
 
-Send a `state` and one or more named `questions` to Starcat, and get structured `answers` using the Jev System One format. Starcat uses the engine selected under **Settings → Labs → Decision Engine**. The request's optional `model` field is accepted for compatibility and has no effect on engine selection.
+Send a `state` and one or more named `questions` to Starcat, and get structured `answers` using the Jev System One format. Starcat uses the engine selected under **Settings → Decision Engine**. The request's optional `model` field is accepted for compatibility and has no effect on engine selection.
 
 | Question type | Result | Jev 1.14 | Laya (local) |
 |---------------|--------|----------|--------------|
@@ -17,11 +17,11 @@ Send a `state` and one or more named `questions` to Starcat, and get structured 
 You can mix supported question types in one request. Use Jev 1.14 for all four types. Starcat keeps any native Jev version you previously selected.
 
 - **Jev:** Starcat uses TypeSafe unless the native key is missing or the last explicit connection test failed. In either case, an enabled and verified OpenRouter configuration with a key can serve Jev 1.14. Request data goes to the selected provider. If the selected path fails, Starcat returns an error.
-- **Laya:** Install the multilingual model in **Labs**. Starcat loads it on the first real request and reuses the loaded model. Allow more time for the first call. Requests with images or `box` fail before loading. Evaluation runs on the Mac.
+- **Laya:** Install the multilingual model in **Decision Engine**. Starcat loads it on the first real request and reuses the loaded model. Allow more time for the first call. Requests with images or `box` fail before loading. Evaluation runs on the Mac.
 
 ## Requirements
 
-1. Keep Starcat running with an active [Pro](/subscribe/plan-comparison) subscription. Turn on **Enable decision engine** in **Settings → Labs** and configure the engine there.
+1. Keep Starcat running with an active [Pro](/subscribe/plan-comparison) subscription. Turn on **Enable decision engine** in **Settings → Decision Engine** and configure the engine there.
 2. Open **Settings → Extensions & Connections → MCP**. Turn on **Enable Service** and **Allow Writes**. Starcat treats evaluation as a write capability because it can start inference and consume provider quota.
 3. For CLI or MCP stdio, pair the CLI and confirm the device in Starcat. For direct HTTP, use the MCP port and the **Local API Key** from **Settings → Extensions & Connections → Browser Extensions**, or a paired device token. See [MCP setup](/settings/mcp).
 
@@ -44,6 +44,8 @@ starcat tools call starcat.evaluate_system_one --input request.json --apply
 The preview validates the request and summarizes the questions and assets without loading a model or making a provider call. An MCP client can run `starcat mcp` and call `starcat.evaluate_system_one` with `state`, `questions`, and `"dry_run": false`. Omit `dry_run` or set it to `true` for a preview. For images in CLI or MCP, use JSON Base64. CLI JSON input is limited to 8 MiB and the MCP request body also has an 8 MiB limit. Use direct HTTP for larger requests.
 
 ## HTTP
+
+Turn on **Start HTTP Service** under **Settings → Decision Engine** to accept direct API requests. This switch is off by default and takes effect on the next request.
 
 `POST /v1/systemone` runs an evaluation immediately. It accepts uncompressed `application/json` and `multipart/form-data` bodies up to 32 MiB. Replace `5555` if you changed the MCP port.
 
@@ -183,14 +185,14 @@ curl -X POST http://127.0.0.1:5555/v1/systemone \
 |-------------|---------------|
 | 400 | Invalid payload, unsupported question for the selected engine, or missing image opt-in header |
 | 401 | Missing or invalid bearer credential |
-| 403 | MCP service off, Pro missing, writes disabled, or Origin not allowed |
+| 403 | Decision HTTP service off, MCP service off, Pro missing, writes disabled, or Origin not allowed |
 | 413 | Request body exceeds 32 MiB |
 | 415 | Unsupported request compression. Send an uncompressed body |
 | 421 | Host header not allowed |
 | 502 | The selected engine returned an answer that did not match the request |
 | 503 | The selected engine is unavailable or the selected path failed |
 
-If you can no longer connect, check that Starcat is running and the MCP service is enabled. For `503`, check the selected engine under **Labs**. Jev needs an eligible provider and Laya needs the local model installed.
+If you can no longer connect, check that Starcat is running and the MCP service is enabled. For `403`, check **Start HTTP Service** and **Allow Writes**. For `503`, check the selected engine under **Decision Engine**. Jev needs an eligible provider and Laya needs the local model installed.
 
 ## Related
 
