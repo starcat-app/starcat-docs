@@ -18,14 +18,20 @@ In **Settings → Extensions & Connections → MCP**, enable the [CLI](/cli/inst
 1. Enable MCP Service
 2. Confirm the port (often 5555; avoid clashes)
 3. Turn on **Allow Writes** if the client needs to run write capabilities
-4. Copy the pair command and run it:
+4. Copy the terminal pairing command and run it on the Mac running Starcat. To pair another device, enable **Allow Other Devices**, then copy **Pair from Another Device** and run it there.
 
 ```bash
 starcat pair "starcat-pair://connect?..."
 starcat doctor
 ```
 
-The URI lasts about 5 minutes and is single-use. Confirm the device in the app. Long-lived credentials go in the Keychain. Full flow: [CLI usage](/cli/usage).
+The URI lasts about 5 minutes and can be used once. Confirm the device in the app. The CLI stores the device token in the operating system's credential store. See [CLI usage](/cli/usage).
+
+## Local and network addresses
+
+On Starcat builds with HTTP-only listening, the local MCP address is `http://127.0.0.1:5555/mcp` with **Allow Other Devices** on or off. The setting adds a network address on the same port. Use the address shown in MCP settings. For a different device, use the Mac's `.local` name if it resolves there, or the Mac's current network IPv4 address for direct HTTP requests.
+
+For cross-device pairing, use the HTTP-only App build with a CLI v3 build. Run `starcat doctor` after updating. If the saved host and port respond over HTTP with the existing device credential, the CLI updates the address automatically. If the host or port changed, copy a fresh pairing command. Restart running `starcat mcp` processes after the update.
 
 The settings page can copy a full setup prompt for an agent, and it checks the CLI version before install, updating it when needed. Paired devices show the pairing date so you can tell a new machine from an old one.
 
@@ -34,7 +40,6 @@ Agents can read repositories, notifications, releases, the knowledge base, and m
 ## Notes
 
 - The app enforces permission and audit. The CLI does not open SQLite.
-- Remote connections need TLS and cert pinning (CLI security model).
 
 ## Related
 
