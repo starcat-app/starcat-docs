@@ -52,10 +52,10 @@ export function DirectBadge() {
   )
 }
 
-/** 当前 Direct 1.9.6 已有、App Store 1.9.1 还没有。不是沙盒永远做不到。 */
+/** Direct 1.9.6 已有，1.9.7 Beta 1 也有；App Store 1.9.1 还没有。不是沙盒永远做不到。 */
 export function DirectVersionBadge() {
   return (
-    <span style={{ ...pill, background: "#178A45" }} title="当前仅 Direct 1.9.6。App Store 仍是 1.9.1">
+    <span style={{ ...pill, background: "#178A45" }} title="Direct 1.9.6 有，1.9.7 Beta 1 也有。App Store 仍是 1.9.1">
       <span style={dot} />
       Direct
       <span style={version}>1.9.6</span>
